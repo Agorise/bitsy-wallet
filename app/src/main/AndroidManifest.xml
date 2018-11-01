@@ -27,13 +27,8 @@
         </activity>
         <activity android:name=".activities.SendTransactionActivity">
         </activity>
-        <activity android:name=".activities.ReceiveTransactionActivity">
+        <activity android:name="de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity">
         </activity>
-
-        <!--<activity
-                android:name="de.bitshares_munich.smartcoinswallet.ReceiveActivity"
-                android:screenOrientation="portrait"
-                android:theme="@style/AppTheme" />-->
 
         <activity
                 android:name=".activities.RequestActivity"

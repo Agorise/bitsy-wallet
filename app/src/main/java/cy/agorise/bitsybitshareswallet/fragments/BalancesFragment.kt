@@ -40,6 +40,9 @@ class BalancesFragment : Fragment() {
 
         btnReceive.setOnClickListener {
             val intent = Intent(view.context, ReceiveTransactionActivity::class.java)
+            intent.putExtra("to","dtvvdtvv-12345") //Testing porpouse, fix it
+            intent.putExtra("account_id","1") //Testing porpouse, fix it
+            intent.putExtra("price","")
             startActivity(intent)
         }
 

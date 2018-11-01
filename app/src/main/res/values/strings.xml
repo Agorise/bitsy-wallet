@@ -19,6 +19,24 @@
 
     <string name="pref_language">language</string>
 
+    <string name="rcv_screen_name">Receive</string>
+
+    <string name="pay_to">Pay to</string>
+
+    <string name="price">price</string>
+
+    <string name="currency">currency</string>
+
+    <string name="please_enter_valid_amount">Please enter valid amount</string>
+
+    <string name="please_pay">Please pay</string>
+
+    <string name="share_qr_code">Share QR Code</string>
+    <string name="folder_name">SmartcoinsWallet</string>
+
+    <string name="beta">""</string>
+    <string name="requested">requested</string>
+
     <string name="next">NEXT</string>
 
     <string name="from_capital">From</string>

@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import cy.agorise.bitsybitshareswallet.BuildConfig
+import cy.agorise.bitsybitshareswallet.utils.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.fragments.BalancesFragment
 import cy.agorise.bitsybitshareswallet.fragments.MerchantsFragment
