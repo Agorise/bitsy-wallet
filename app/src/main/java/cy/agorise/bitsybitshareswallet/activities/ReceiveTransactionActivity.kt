@@ -36,9 +36,6 @@ import java.util.HashMap
 
 import java.util.UUID
 
-/**
- * Created by Syed Muhammad Muzzammil on 5/16/16.
- */
 class ReceiveTransactionActivity : AppCompatActivity() {
 
     // Storage Permissions

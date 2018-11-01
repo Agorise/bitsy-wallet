@@ -4,14 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import cy.agorise.bitsybitshareswallet.BuildConfig
 import kotlinx.android.synthetic.main.activity_send_transaction.*
 import cy.agorise.bitsybitshareswallet.R
-import kotlinx.android.synthetic.main.fragment_balances.*
 
-/**
- * Created by Syed Muhammad Muzzammil on 5/6/16.
- */
 class SendTransactionActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {

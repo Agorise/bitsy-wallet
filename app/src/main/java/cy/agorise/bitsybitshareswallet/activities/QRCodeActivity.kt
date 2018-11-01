@@ -16,9 +16,7 @@ import com.google.zxing.Result
 import cy.agorise.bitsybitshareswallet.R
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
-/**
- * Created by Syed Muhammad Muzzammil on 5/10/16.
- */
+
 class QRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     internal var id: Int = 0
     internal var progressDialog: ProgressDialog? = null
