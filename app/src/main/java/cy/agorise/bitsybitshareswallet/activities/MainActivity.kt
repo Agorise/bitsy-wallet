@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import cy.agorise.bitsybitshareswallet.utils.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.dialogs.Loading
 import cy.agorise.bitsybitshareswallet.fragments.BalancesFragment
 import cy.agorise.bitsybitshareswallet.fragments.MerchantsFragment
 import cy.agorise.bitsybitshareswallet.fragments.TransactionsFragment

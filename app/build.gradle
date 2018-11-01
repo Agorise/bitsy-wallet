@@ -41,6 +41,7 @@ dependencies {
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation 'com.afollestad.material-dialogs:core:2.0.0-beta4'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
     implementation "androidx.room:room-runtime:$room_version"
