@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.activities.ReceiveTransactionActivity
 import cy.agorise.bitsybitshareswallet.activities.SendTransactionActivity
 import cy.agorise.bitsybitshareswallet.viewmodels.BalancesViewModel
+import de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity
 import kotlinx.android.synthetic.main.fragment_balances.*
 
 class BalancesFragment : Fragment() {
