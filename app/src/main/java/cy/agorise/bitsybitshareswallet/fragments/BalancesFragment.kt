@@ -54,6 +54,7 @@ class BalancesFragment : Fragment() {
 
         btnReadQR.setOnClickListener {
             val intent = Intent(view.context, QRCodeActivity::class.java)
+            intent.putExtra("id", 1)
             startActivity(intent)
         }
     }
