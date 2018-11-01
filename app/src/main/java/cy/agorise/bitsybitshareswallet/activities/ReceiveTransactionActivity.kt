@@ -7,13 +7,16 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.FileProvider
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
@@ -134,7 +137,11 @@ class ReceiveTransactionActivity : AppCompatActivity() {
 
                     val sharingIntent = Intent(Intent.ACTION_SEND)
                     var uri: Uri? = null
-                    uri = Uri.fromFile(mFile)
+                    if (Build.VERSION.SDK_INT < 24) {
+                        uri = Uri.fromFile(mFile)
+                    } else {
+                        uri = Uri.parse(mFile!!.path);
+                    }
                     sharingIntent.data = uri
                     sharingIntent.type = "*/*"
                     sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareText)
@@ -143,6 +150,7 @@ class ReceiveTransactionActivity : AppCompatActivity() {
                     startActivity(Intent.createChooser(sharingIntent, activity.getString(R.string.share_qr_code)))
 
                 } catch (e: Exception) {
+                    Toast.makeText(activity, e.message, Toast.LENGTH_SHORT).show()
                     e.printStackTrace()
                 }
             }

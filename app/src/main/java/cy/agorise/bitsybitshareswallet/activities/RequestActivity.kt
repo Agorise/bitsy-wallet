@@ -59,6 +59,7 @@ class RequestActivity : AppCompatActivity() , View.OnClickListener {
                 intent.putExtra(getString(R.string.currency), popwin1.getText().toString())
                 intent.putExtra(getString(R.string.to), to)
                 intent.putExtra(getString(R.string.account_id), account_id)
+                intent.putExtra("price", "")
                 startActivity(intent)
                 finish()
             }
