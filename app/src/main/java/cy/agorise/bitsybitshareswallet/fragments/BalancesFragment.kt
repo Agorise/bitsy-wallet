@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.activities.QRCodeActivity
 import cy.agorise.bitsybitshareswallet.activities.SendTransactionActivity
 import cy.agorise.bitsybitshareswallet.viewmodels.BalancesViewModel
 import de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity
@@ -48,6 +49,11 @@ class BalancesFragment : Fragment() {
 
         btnSend.setOnClickListener {
             val intent = Intent(view.context, SendTransactionActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnReadQR.setOnClickListener {
+            val intent = Intent(view.context, QRCodeActivity::class.java)
             startActivity(intent)
         }
     }

@@ -39,6 +39,8 @@
         </activity>
         <activity android:name="de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity">
         </activity>
+        <activity android:name=".activities.QRCodeActivity">
+        </activity>
 
         <activity
                 android:name=".activities.RequestActivity"
