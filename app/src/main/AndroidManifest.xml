@@ -37,8 +37,8 @@
         </activity>
         <activity android:name=".activities.SendTransactionActivity">
         </activity>
-        <activity android:name=".activities.MainActivity">
-        </activity>
+        <activity android:name=".activities.MainActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity">
         </activity>
         <activity android:name=".activities.QRCodeActivity">
