@@ -21,7 +21,9 @@
 
     <string name="rcv_screen_name">Receive</string>
 
+    <string name="loading">Loading...</string>
     <string name="pay_to">Pay to</string>
+    <string name="ok">OK</string>
 
     <string name="price">price</string>
 
