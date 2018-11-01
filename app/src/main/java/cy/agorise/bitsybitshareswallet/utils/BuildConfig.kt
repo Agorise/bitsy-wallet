@@ -6,7 +6,7 @@ object BuildConfig {
     val BUILD_TYPE = "debug"
     val FLAVOR = ""
     val VERSION_CODE = 205
-    val VERSION_NAME = "1.5.16"
+    val VERSION_NAME = "1.0.0"
     // Fields from build type: debug
     val USE_CRASHLYTICS = false
 }
