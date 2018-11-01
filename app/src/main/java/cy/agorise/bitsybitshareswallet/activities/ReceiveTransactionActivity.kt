@@ -94,11 +94,11 @@ class ReceiveTransactionActivity : AppCompatActivity() {
             val concate =
                 this.getString(R.string.amount) + ": " + price + " " + currency + " " + this.getString(R.string.requested)
             notfound.text = concate
+        }
 
-            qrimage.post {
-                qrimage.setImageBitmap(null)
-                createQR()
-            }
+        qrimage.post {
+            qrimage.setImageBitmap(null)
+            createQR()
         }
 
         tvAppVersion_rcv_screen_activity.setText("v" + BuildConfig.VERSION_NAME + getString(R.string.beta))
