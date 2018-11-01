@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.fragments.BalancesFragment
 
 
 class SplashActivity : Activity() {
@@ -17,8 +16,15 @@ class SplashActivity : Activity() {
     }
 
     private fun checkWhereToGo() {
-        val i = Intent(this@SplashActivity, BalancesFragment::class.java)
-        startActivity(i)
+
+        openMainScreen()
+
         finish()
+    }
+
+    private fun openMainScreen(){
+
+        val myIntent = Intent(this, MainActivity::class.java)
+        startActivity(myIntent)
     }
 }
