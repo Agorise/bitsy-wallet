@@ -6,21 +6,24 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentPagerAdapter
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import cy.agorise.bitsybitshareswallet.utils.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.dialogs.Loading
 import cy.agorise.bitsybitshareswallet.fragments.BalancesFragment
 import cy.agorise.bitsybitshareswallet.fragments.MerchantsFragment
 import cy.agorise.bitsybitshareswallet.fragments.TransactionsFragment
 import cy.agorise.bitsybitshareswallet.utils.Constants
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     var SETTINGS_SELECTED:Int = 1
+
+    private var timer: Timer? = null
 
     /**
      * The [androidx.fragment.app.FragmentPagerAdapter] that will provide
@@ -35,7 +38,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Sets the theme to night mode if it has been selected by the user
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
         ) {
@@ -63,6 +65,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    override fun onPause() {
+        super.onPause()
+
+        if (PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(Constants.KEY_MINUTES_CLOSE_MODE_ACTIVATED, false)
+        ) {
+            timer = Timer()
+            val logoutTimeTask = LogOutTimerTask()
+            timer!!.schedule(logoutTimeTask, 180000) //auto logout in 3 minutes
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (timer != null) {
+            timer!!.cancel()
+            timer = null
+        }
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -108,6 +130,13 @@ class MainActivity : AppCompatActivity() {
                 1       -> getString(R.string.title_transactions)
                 else    -> getString(R.string.title_merchants)
             }
+        }
+    }
+
+    private inner class LogOutTimerTask : TimerTask() {
+
+        override fun run() {
+            System.exit(0);
         }
     }
 }

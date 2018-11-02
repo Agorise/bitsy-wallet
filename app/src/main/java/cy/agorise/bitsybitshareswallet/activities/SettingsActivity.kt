@@ -29,6 +29,8 @@ class SettingsActivity : AppCompatActivity() {
 
         initNightModeSwitch()
 
+        initMinutesClose()
+
         txtAccount.text = "dtvvdtvv-123456"
     }
 
@@ -37,6 +39,19 @@ class SettingsActivity : AppCompatActivity() {
      */
     private fun setupActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun initMinutesClose() {
+        val minutesClose = PreferenceManager.getDefaultSharedPreferences(this)
+            .getBoolean(Constants.KEY_MINUTES_CLOSE_MODE_ACTIVATED, false)
+
+        close_bitshare.isChecked = minutesClose
+
+        close_bitshare.setOnCheckedChangeListener { checkbox, isChecked ->
+
+            PreferenceManager.getDefaultSharedPreferences(baseContext).edit()
+                .putBoolean(Constants.KEY_MINUTES_CLOSE_MODE_ACTIVATED, isChecked).apply()
+        }
     }
 
     private fun initNightModeSwitch() {
