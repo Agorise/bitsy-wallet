@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import androidx.fragment.app.FragmentPagerAdapter
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import cy.agorise.bitsybitshareswallet.utils.BuildConfig
@@ -13,10 +14,13 @@ import cy.agorise.bitsybitshareswallet.dialogs.Loading
 import cy.agorise.bitsybitshareswallet.fragments.BalancesFragment
 import cy.agorise.bitsybitshareswallet.fragments.MerchantsFragment
 import cy.agorise.bitsybitshareswallet.fragments.TransactionsFragment
+import cy.agorise.bitsybitshareswallet.utils.Constants
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var SETTINGS_SELECTED:Int = 1
 
     /**
      * The [androidx.fragment.app.FragmentPagerAdapter] that will provide
@@ -30,6 +34,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Sets the theme to night mode if it has been selected by the user
+        if (PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
+        ) {
+            setTheme(R.style.AppTheme_Dark)
+        }
+
         setContentView(R.layout.activity_main)
 
         // Create the adapter that will return a fragment for each of the three
@@ -47,9 +59,19 @@ class MainActivity : AppCompatActivity() {
 
         ivSettings.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent,SETTINGS_SELECTED)
         }
     }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == SETTINGS_SELECTED){
+            recreate()
+        }
+    }
+
 
     private fun initBottomBar() {
         // Show app version number in bottom bar

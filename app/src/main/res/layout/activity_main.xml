@@ -48,29 +48,32 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:background="#dddddd">
+        android:layout_height="36dp">
 
         <TextView
-            android:id="@+id/tvBuildVersion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            tools:text="v0.3"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:text="@string/v_1_0_beta"
+                android:id="@+id/tvBuildVersion"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tvBlockNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Block: ----"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="0dp"
+                android:id="@+id/tvBlockNumber"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textColor="?android:textColorPrimary"
+                android:text="@string/block_number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivSocketConnected"

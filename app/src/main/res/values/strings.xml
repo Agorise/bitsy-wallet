@@ -20,9 +20,40 @@
     <string name="pref_language">language</string>
 
     <string name="rcv_screen_name">Receive</string>
+    <string name="audio_folder_path">Audio Folder Path</string>
+    <string name="refresh_keys">REFRESH ACCOUNT KEYS</string>
+    <string name="register_new_account">REGISTER NEW ACCOUNT</string>
+    <string name="import_new_account">IMPORT ACCOUNT</string>
+    <string name="upgrade_account">UPGRADE ACCOUNT</string>
+    <string name="remove_account">REMOVE ACCOUNT</string>
+    <string name="check_for_updates">Check for updates on startup</string>
+    <string name="automatically_install">Automatically install major version</string>
+    <string name="require_pin">Require PIN/Pattern to send funds &amp; view memos</string>
+    <string name="close_bitshare">Automatically close Smartcoins Wallet after 3 minutes of inactivity</string>
+    <string name="always_donate">Always Donate 2 BTS to the Support Developers at BitShares Munich(bitshares munich)</string>
+    <string name="hide_donations">Hide Donations from homescreen Transactions list</string>
+    <string name="backup">BACKUP .bin</string>
+    <string name="backup_brainkey">BACKUP BRAINKEY</string>
+    <string name="secure_pin">EDIT PIN</string>
+    <string name="large_text">
+    </string>
+    <string name="import_gravatar">Import Gravatar</string>
+    <string name="bugs_or_errors">Bugs or Errors?</string>
+    <string name="bugs_or_ideas">Bugs or Ideas?</string>
+    <string name="please_let_us_know">Please let us know:</string>
+    <string name="Telegram_chat">Telegram chat:</string>
+    <string name="Email">Email:</string>
+    <string name="Open_Source">Open Source:</string>
+    <string name="url_telegram" translatable="false">https://t.me/Agorise</string>
+    <string name="url_email" translatable="false">agorise@protonmail.ch</string>
+    <string name="url_open_source" translatable="false">https://github.com/Agorise </string>
 
     <string name="loading">Loading...</string>
     <string name="send_screen_name">Send</string>
+    <string name="taxable_country">Taxable Country</string>
+    <string name="preferred_lang">Preferred Language</string>
+    <string name="date_time">Display Dates and Times as</string>
+    <string name="imported_created_accounts">Created Account</string>
     <string name="qr_code_activity_name">Scan QR</string>
     <string name="pay_to">Pay to</string>
     <string name="ok">OK</string>

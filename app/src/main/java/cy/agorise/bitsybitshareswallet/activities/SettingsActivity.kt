@@ -6,7 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.utils.Constants
-import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.activity_setting.*
 
 /**
  * A simple activity for the user to select his preferences
@@ -16,7 +16,6 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO move the below to a BaseActivity to apply it to all activities
         // Sets the theme to night mode if it has been selected by the user
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
@@ -24,11 +23,13 @@ class SettingsActivity : AppCompatActivity() {
             setTheme(R.style.AppTheme_Dark)
         }
 
-        setContentView(R.layout.activity_settings)
+        setContentView(R.layout.activity_setting)
 
         setupActionBar()
 
         initNightModeSwitch()
+
+        txtAccount.text = "dtvvdtvv-123456"
     }
 
     /**

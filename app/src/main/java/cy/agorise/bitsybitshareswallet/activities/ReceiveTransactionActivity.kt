@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
@@ -26,6 +27,7 @@ import com.google.zxing.common.BitMatrix
 import cy.agorise.bitsybitshareswallet.utils.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.activities.RequestActivity
+import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.graphenej.Invoice
 import cy.agorise.graphenej.LineItem
 import kotlinx.android.synthetic.main.activity_receive.*
@@ -55,6 +57,13 @@ class ReceiveTransactionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Sets the theme to night mode if it has been selected by the user
+        if (PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
+        ) {
+            setTheme(R.style.AppTheme_Dark)
+        }
 
         setContentView(R.layout.activity_receive)
 

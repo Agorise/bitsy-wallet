@@ -3,6 +3,7 @@ package cy.agorise.bitsybitshareswallet.fragments
 import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.activities.QRCodeActivity
 import cy.agorise.bitsybitshareswallet.activities.SendTransactionActivity
+import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.BalancesViewModel
 import de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity
 import kotlinx.android.synthetic.main.fragment_balances.*
@@ -34,6 +36,13 @@ class BalancesFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(BalancesViewModel::class.java)
         // TODO: Use the ViewModel
+
+        // Sets the theme to night mode if it has been selected by the user
+        if (PreferenceManager.getDefaultSharedPreferences(activity)
+                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
+        ) {
+            activity!!.setTheme(R.style.AppTheme_Dark)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
