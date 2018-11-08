@@ -16,6 +16,8 @@ import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.bitsybitshareswallet.models.*
+import cy.agorise.bitsybitshareswallet.models.seed.*
+import cy.agorise.bitsybitshareswallet.models.seed.BIP39
 import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.*
 import cy.agorise.graphenej.*
@@ -249,17 +251,10 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                     }
                 })
                 GrapheneApiGenerator.getAccountByOwnerOrActiveAddress(
-                    Address(
-                        ECKey.fromPublicOnly(
-                            bip39.getBitsharesActiveKey(
-                                0
-                            ).getPubKey()
-                        )
-                    ), getAccountNamesBP39
+                    Address(ECKey.fromPublicOnly(bip39.getBitsharesActiveKey(0).getPubKey())), getAccountNamesBP39
                 )
             }
         })
-
 
         val bk = BrainKey(importRequest.mnemonic, 0)
 

@@ -54,7 +54,7 @@ class GrapheneAccountInfo {
      */
     constructor(account: GrapheneAccount) {
         this.cryptoNetAccountId = account.id
-        this.name = account.name
+        this.name = account.name!!
         this.accountId = account.accountId
     }
 }

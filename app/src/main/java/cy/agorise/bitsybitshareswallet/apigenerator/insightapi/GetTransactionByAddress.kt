@@ -63,7 +63,7 @@ class GetTransactionByAddress
             }
 
             for (txi in addressTxi.items!!) {
-                GeneralAccountManager.getAccountManager(this.cryptoNet).processTxi(txi)
+                GeneralAccountManager.getAccountManager(this.cryptoNet)!!.processTxi(txi)
             }
 
         } else {

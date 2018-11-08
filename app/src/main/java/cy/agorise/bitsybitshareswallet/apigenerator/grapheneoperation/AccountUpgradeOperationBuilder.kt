@@ -33,9 +33,9 @@ class AccountUpgradeOperationBuilder : BaseOperationBuilder() {
         }
 
         if (fee != null) {
-            accountUpgrade = AccountUpgradeOperation(accountToUpgrade, isUpgrade, fee)
+            accountUpgrade = AccountUpgradeOperation(accountToUpgrade!!, isUpgrade, fee!!)
         } else {
-            accountUpgrade = AccountUpgradeOperation(accountToUpgrade, isUpgrade)
+            accountUpgrade = AccountUpgradeOperation(accountToUpgrade!!, isUpgrade)
         }
         return accountUpgrade
     }
