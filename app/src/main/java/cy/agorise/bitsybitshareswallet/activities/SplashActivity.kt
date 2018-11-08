@@ -17,9 +17,15 @@ class SplashActivity : Activity() {
 
     private fun checkWhereToGo() {
 
-        openMainScreen()
+        openLicenceScreen()
 
         finish()
+    }
+
+    private fun openLicenceScreen(){
+
+        val myIntent = Intent(this, LicenseActivity::class.java)
+        startActivity(myIntent)
     }
 
     private fun openMainScreen(){

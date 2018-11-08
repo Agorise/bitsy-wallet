@@ -9,7 +9,6 @@ import org.bitcoinj.crypto.HDKeyDerivation
 import org.bitcoinj.crypto.MnemonicCode
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import java.util.*
 import kotlin.experimental.and
 
 class BIP39 : AccountSeed {
