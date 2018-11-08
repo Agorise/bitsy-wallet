@@ -1,10 +1,11 @@
 package cy.agorise.bitsybitshareswallet.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import cy.agorise.bitsybitshareswallet.models.Contact
 import cy.agorise.bitsybitshareswallet.models.ContactAddress
-import javax.sql.DataSource
+
 
 @Dao
 interface ContactDao {
