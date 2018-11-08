@@ -25,7 +25,7 @@ class CryptoNetEvents {
     }
 
     companion object {
-        private var instance: CryptoNetEvents? = null
+        var instance: CryptoNetEvents? = null
 
         /**
          * Gets an instance of this manager

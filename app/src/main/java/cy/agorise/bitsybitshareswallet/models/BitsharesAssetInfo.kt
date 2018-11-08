@@ -6,11 +6,12 @@ import androidx.room.ForeignKey
 import androidx.room.TypeConverters
 import cy.agorise.bitsybitshareswallet.dao.Converters
 
-/*@Entity(
+@Entity(
     tableName = "bitshares_asset",
-    primaryKeys = { "crypto_curreny_id" },
-    foreignKeys = ForeignKey(entity = CryptoCurrency::class, parentColumns = "id", childColumns = "crypto_curreny_id")
-)*/
+    primaryKeys = arrayOf("crypto_curreny_id"),
+    foreignKeys = arrayOf(
+        ForeignKey(entity = CryptoCurrency::class, parentColumns = arrayOf("id"), childColumns = arrayOf("crypto_curreny_id")))
+)
 class BitsharesAssetInfo {
     //The crypto Currency representing this bitshares asset
     @ColumnInfo(name = "crypto_curreny_id")

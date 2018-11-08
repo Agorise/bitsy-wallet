@@ -8,12 +8,11 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 
-/*@Entity(
+@Entity(
     tableName = "contact_address",
-    indices = { @Index(value = { "id" },
+    indices = arrayOf(Index(value = arrayOf("id"),
         unique = true),
-        @Index(value = { "contact_id", "crypto_net" }, unique = true)
-    })*/
+        Index(value = arrayOf("contact_id", "crypto_net"), unique = true)))
 class ContactAddress {
 
     /**

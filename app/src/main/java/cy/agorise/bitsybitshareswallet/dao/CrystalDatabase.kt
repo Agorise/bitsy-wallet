@@ -22,6 +22,7 @@ import cy.agorise.bitsybitshareswallet.models.*
         BitsharesAssetInfo.class,
         BitsharesAccountNameCache.class,
         CryptoCurrencyEquivalence.class,
+        GeneralSetting.class,
         BitcoinTransaction.class,
         BitcoinTransactionGTxIO.class,
         BitcoinAddress.class
@@ -41,8 +42,9 @@ abstract fun bitsharesAccountNameCacheDao():BitsharesAccountNameCacheDao
 abstract fun cryptoCurrencyEquivalenceDao():CryptoCurrencyEquivalenceDao
 abstract fun bitcoinTransactionDao():BitcoinTransactionDao
 abstract fun bitcoinAddressDao():BitcoinAddressDao
+ abstract fun generalSettingDao(): GeneralSettingDao
 
-companion object {
+ companion object {
 
 private var instance:CrystalDatabase? = null
 

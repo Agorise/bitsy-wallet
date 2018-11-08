@@ -5,15 +5,15 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 
-/*@Entity(
+@Entity(
     tableName = "graphene_account",
-    primaryKeys = { "crypto_net_account_id" },
-    foreignKeys = ForeignKey(
+    primaryKeys = arrayOf("crypto_net_account_id"),
+    foreignKeys = arrayOf(ForeignKey(
         entity = CryptoNetAccount::class,
-        parentColumns = "id",
-        childColumns = "crypto_net_account_id"
-    )
-)*/
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("crypto_net_account_id")
+    ))
+)
 class GrapheneAccountInfo {
 
     /**

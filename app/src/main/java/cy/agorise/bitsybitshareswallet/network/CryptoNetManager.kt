@@ -1,6 +1,5 @@
 package cy.agorise.bitsybitshareswallet.network
 
-import androidx.annotation.NonNull
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import java.util.*
 
@@ -59,7 +58,7 @@ abstract class CryptoNetManager {
 
     companion object {
 
-        fun addCryptoNetURL(crypto: CryptoNet, url: String) {
+        fun addCryptoNetURL(crypto: CryptoNet, url: Array<String>) {
             if (!CryptoNetURLs.containsKey(crypto)) {
                 CryptoNetURLs[crypto] = HashSet()
             }

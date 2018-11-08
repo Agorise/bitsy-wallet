@@ -6,7 +6,10 @@ import androidx.room.*
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import java.util.ArrayList
 
-//@Entity(tableName = "contact", indices = { @Index("id"), @Index(value = { "name" }, unique = true), @Index("email") })
+@Entity(tableName = "contact", indices = arrayOf(
+    Index("id"),
+    Index(value = arrayOf("name"), unique = true),
+    Index("email")))
 class Contact {
 
     /**

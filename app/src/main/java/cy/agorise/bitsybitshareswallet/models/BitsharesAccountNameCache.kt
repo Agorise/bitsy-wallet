@@ -3,10 +3,9 @@ package cy.agorise.bitsybitshareswallet.models
 import androidx.annotation.NonNull
 import androidx.room.*
 
-/*@Entity(tableName = "bitshares_account_name_cache", indices = {
-    @Index("id"),
-    @Index(value = { "account_id" }, unique = true)
-})*/
+@Entity(tableName = "bitshares_account_name_cache", indices = arrayOf(
+    Index("id"),
+    Index(value = arrayOf("account_id"), unique = true)))
 class BitsharesAccountNameCache {
 
     /**

@@ -5,11 +5,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.room.*
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 
-/*@Entity(
+@Entity(
     tableName = "crypto_coin_balance",
-    indices = { @Index("id"), @Index("account_id"), @Index(value = { "account_id", "crypto_currency_id" }, unique = true) },
-    foreignKeys = ForeignKey(entity = CryptoNetAccount::class, parentColumns = "id", childColumns = "account_id")
-)*/
+    indices = arrayOf(Index("id"), Index("account_id"), Index(value = arrayOf("account_id", "crypto_currency_id"), unique = true)),
+    foreignKeys = arrayOf(ForeignKey(entity = CryptoNetAccount::class, parentColumns = arrayOf("id"), childColumns = arrayOf("account_id")))
+)
 class CryptoCoinBalance {
 
     /**

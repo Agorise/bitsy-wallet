@@ -4,16 +4,18 @@ import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.ForeignKey.CASCADE
+import androidx.room.PrimaryKey
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 
-/*@Entity(tableName = "bitcoin_address", primaryKeys = { "account_id", "address_index" }, foreignKeys = {
-    @ForeignKey(
-        entity = CryptoNetAccount.class,
-                parentColumns = " id",
-    childColumns = "account_id",
-    onDelete = ForeignKey.CASCADE
-    )
-})*/
+@Entity(tableName = "bitcoin_address",
+    foreignKeys =  arrayOf(
+        ForeignKey(entity = CryptoNetAccount::class,
+            parentColumns = arrayOf("id"),
+            childColumns = arrayOf("account_id"),
+            onDelete = CASCADE)),
+    primaryKeys = arrayOf("account_id", "address_index"))
+
 class BitcoinAddress {
 
     /**

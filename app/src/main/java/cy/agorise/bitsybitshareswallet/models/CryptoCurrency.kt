@@ -4,7 +4,7 @@ import androidx.room.*
 import cy.agorise.bitsybitshareswallet.dao.Converters
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 
-//@Entity(tableName = "crypto_currency", indices = { @Index(value = { "crypto_net", "name" }, unique = true) })
+@Entity(tableName = "crypto_currency", indices = arrayOf(Index(value = arrayOf("crypto_net", "name"), unique = true)))
 open class CryptoCurrency {
 
     /**

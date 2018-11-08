@@ -11,7 +11,7 @@ abstract class CryptoNetInfoRequest protected constructor(coin: CryptoCoin) {
     /**
      * The listener for the answer of this petition
      */
-    protected var listener: CryptoNetInfoRequestListener? = null
+    var listener: CryptoNetInfoRequestListener? = null
 
     init {
         this.coin = coin

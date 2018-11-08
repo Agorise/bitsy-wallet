@@ -4,17 +4,16 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-/*@Entity(
+@Entity(
     tableName = "bitcoin_transaction_gt_io",
-    primaryKeys = { "bitcoin_transaction_id", "io_index", "is_output" },
-    foreignKeys = {
-        @ForeignKey(
-            entity = BitcoinTransaction.class,
-                    parentColumns = " crypto_coin_transaction_id",
-        childColumns = "bitcoin_transaction_id",
-        onDelete = ForeignKey.CASCADE
-        )
-    })*/
+    primaryKeys = arrayOf("bitcoin_transaction_id", "io_index", "is_output"),
+    foreignKeys = arrayOf(
+        ForeignKey(
+        entity = BitcoinTransaction::class,
+                parentColumns = arrayOf("crypto_coin_transaction_id"),
+    childColumns = arrayOf("bitcoin_transaction_id"),
+    onDelete = ForeignKey.CASCADE
+)))
 class BitcoinTransactionGTxIO {
 
     /**

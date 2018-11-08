@@ -6,23 +6,20 @@ import androidx.room.*
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import java.util.*
 
-/*@Entity(tableName = "crypto_coin_transaction", indices = {
-    @Index(value = { "account_id" }),
-    @Index(value = { "id_currency" })
-}, foreignKeys = {
-    @ForeignKey(
-        entity = CryptoNetAccount.class,
-                parentColumns = " id",
-    childColumns = "account_id",
+@Entity(tableName = "crypto_coin_transaction", indices = arrayOf(
+    Index(value = arrayOf("account_id")),
+    Index(value = arrayOf("id_currency"))), foreignKeys = arrayOf(ForeignKey(
+    entity = CryptoNetAccount::class,
+    parentColumns = arrayOf("id"),
+    childColumns = arrayOf("account_id"),
     onDelete = ForeignKey.CASCADE
-    ),
-    @ForeignKey(
-        entity = CryptoCurrency.class,
-                parentColumns = " id",
-    childColumns = "id_currency",
-    onDelete = ForeignKey.CASCADE
-    )
-})*/
+),
+    ForeignKey(
+        entity = CryptoCurrency::class,
+                parentColumns = arrayOf("id"),
+childColumns = arrayOf("id_currency"),
+onDelete = ForeignKey.CASCADE
+)))
 class CryptoCoinTransaction {
 
     /**
