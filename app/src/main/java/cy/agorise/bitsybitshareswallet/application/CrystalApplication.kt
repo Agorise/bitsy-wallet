@@ -55,7 +55,7 @@ class CrystalApplication : Application() {
 
         //The crystal notifier is initialized
         val crystalWalletNotifier = CrystalWalletNotifier(this)
-        CryptoNetEvents.instance!!.addListener(crystalWalletNotifier)
+        CryptoNetEvents.getInstance()!!.addListener(crystalWalletNotifier)
 
         //Next line is for use the bitshares main net
         // TODO fix, the following line accepts one string not an array it needs to accept an arrey

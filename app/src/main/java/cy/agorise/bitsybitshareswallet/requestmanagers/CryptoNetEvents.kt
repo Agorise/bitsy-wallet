@@ -25,19 +25,19 @@ class CryptoNetEvents {
     }
 
     companion object {
-        var instance: CryptoNetEvents? = null
+        var instance_: CryptoNetEvents? = null
 
         /**
-         * Gets an instance of this manager
-         * @return the instance to manage the cryptonetinforequest
+         * Gets an instance_ of this manager
+         * @return the instance_ to manage the cryptonetinforequest
          */
         fun getInstance(): CryptoNetEvents? {
-            if (CryptoNetEvents.instance == null) {
-                CryptoNetEvents.instance = CryptoNetEvents()
-                CryptoNetEvents.instance!!.listeners = ArrayList<CryptoNetEventsListener>()
+            if (CryptoNetEvents.instance_ == null) {
+                CryptoNetEvents.instance_ = CryptoNetEvents()
+                CryptoNetEvents.instance_!!.listeners = ArrayList<CryptoNetEventsListener>()
             }
 
-            return CryptoNetEvents.instance
+            return CryptoNetEvents.instance_
         }
     }
 }

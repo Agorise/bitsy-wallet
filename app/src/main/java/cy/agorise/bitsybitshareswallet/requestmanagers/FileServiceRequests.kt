@@ -35,8 +35,8 @@ private constructor() {
         private var instance: FileServiceRequests? = null
 
         /**
-         * Gets an instance of this manager
-         * @return the instance to manage the cryptonetinforequest
+         * Gets an instance_ of this manager
+         * @return the instance_ to manage the cryptonetinforequest
          */
         fun getInstance(): FileServiceRequests? {
             if (FileServiceRequests.instance == null) {

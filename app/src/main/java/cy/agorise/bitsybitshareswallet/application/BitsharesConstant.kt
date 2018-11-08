@@ -47,18 +47,6 @@ object BitsharesConstant {
         BitsharesAsset("SGD", 4, "1.3.108", BitsharesAsset.Type.SMART_COIN)
     )
 
-    fun addMainNetUrls() {
-        for (url in BITSHARES_URL) {
-            CryptoNetManager.addCryptoNetURL(CryptoNet.BITSHARES, url)
-        }
-    }
-
-    fun addTestNetUrls() {
-        for (url in BITSHARES_TESTNET_URL) {
-            CryptoNetManager.addCryptoNetURL(CryptoNet.BITSHARES, url)
-        }
-    }
-
     fun addSmartCoins(context: Context) {
         val db = CrystalDatabase.getAppDatabase(context)
         for (smartcoin in SMARTCOINS) {

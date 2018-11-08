@@ -3,6 +3,8 @@ package cy.agorise.bitsybitshareswallet.network
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import java.util.*
 
+
+
 abstract class CryptoNetManager {
 
     /*
@@ -58,16 +60,36 @@ abstract class CryptoNetManager {
 
     companion object {
 
-        fun addCryptoNetURL(crypto: CryptoNet, url: Array<String>) {
+        fun addCryptoNetURL(crypto: CryptoNet, url: String) {
             if (!CryptoNetURLs.containsKey(crypto)) {
                 CryptoNetURLs[crypto] = HashSet()
             }
 
-            CryptoNetURLs[crypto]!!.add(url)
+            CryptoNetURLs.put(crypto,HashSet<String>())
             val verifier = CryptoNetVerifier.getNetworkVerify(crypto)
             verifier?.checkURL(url)
         }
 
+        /*
+    * Utility for above methods
+    *
+    * */
+        fun addCryptoNetURL(
+            crypto: CryptoNet,
+            urls: Array<String>
+        ) {
+
+            if (!CryptoNetURLs.containsKey(crypto)) {
+                CryptoNetURLs[crypto] = HashSet()
+            }
+
+            val verifier = CryptoNetVerifier.getNetworkVerify(crypto)
+            for (url in urls) {
+                CryptoNetURLs.get(crypto)!!.add(url);
+                verifier?.checkURL(url)
+            }
+
+        }
         fun getChaindId(crypto: CryptoNet): String? {
             val verifier = CryptoNetVerifier.getNetworkVerify(crypto)
             return verifier?.chainId

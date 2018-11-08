@@ -160,7 +160,7 @@ class CrystalWalletService : LifecycleService() {
 
     override fun onCreate() {
         super.onCreate()
-        //Creates a instance for the cryptoNetInfoRequest and the managers
+        //Creates a instance_ for the cryptoNetInfoRequest and the managers
         this.cryptoNetInfoRequests = CryptoNetInfoRequests.getInstance()
         this.fileServiceRequests = FileServiceRequests.getInstance()
         this.bitsharesAccountManager = BitsharesAccountManager()

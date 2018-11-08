@@ -32,20 +32,20 @@ class CryptoNetInfoRequests {
     }
 
     companion object {
-        var instance: CryptoNetInfoRequests? = null
+        var instance_: CryptoNetInfoRequests? = null
 
         /**
-         * Gets an instance of this manager
-         * @return the instance to manage the cryptonetinforequest
+         * Gets an instance_ of this manager
+         * @return the instance_ to manage the cryptonetinforequest
          */
         fun getInstance(): CryptoNetInfoRequests? {
-            if (CryptoNetInfoRequests.instance == null) {
-                CryptoNetInfoRequests.instance = CryptoNetInfoRequests()
-                CryptoNetInfoRequests.instance!!.requests = ArrayList()
-                CryptoNetInfoRequests.instance!!.listeners = ArrayList()
+            if (CryptoNetInfoRequests.instance_ == null) {
+                CryptoNetInfoRequests.instance_ = CryptoNetInfoRequests()
+                CryptoNetInfoRequests.instance_!!.requests = ArrayList()
+                CryptoNetInfoRequests.instance_!!.listeners = ArrayList()
             }
 
-            return CryptoNetInfoRequests.instance
+            return CryptoNetInfoRequests.instance_
         }
     }
 }

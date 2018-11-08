@@ -21,6 +21,6 @@ abstract class CryptoNetInfoRequest protected constructor(coin: CryptoCoin) {
         if (listener != null) {
             listener!!.onCarryOut()
         }
-        //CryptoNetInfoRequests.getInstance()!!.removeRequest(this)
+        //CryptoNetInfoRequests.getInstance_()!!.removeRequest(this)
     }
 }

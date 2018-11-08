@@ -13,14 +13,14 @@ class GeneralSettingListViewModel(application: Application) : AndroidViewModel(a
 
     init {
         this.db = CrystalDatabase.getAppDatabase(application.applicationContext)!!
-        generalSettingList = this.db.generalSettingDao().getAll()
+        generalSettingList = this.db.generalSettingDao().all
     }
 
     fun saveGeneralSetting(generalSetting: GeneralSetting) {
         this.db.generalSettingDao().insertGeneralSetting(generalSetting)
     }
 
-    fun saveGeneralSettings(vararg generalSettings: GeneralSetting) {
+    fun saveGeneralSettings(generalSettings: GeneralSetting) {
         this.db.generalSettingDao().insertGeneralSettings(generalSettings)
     }
 
@@ -32,7 +32,7 @@ class GeneralSettingListViewModel(application: Application) : AndroidViewModel(a
         return this.db.generalSettingDao().getByName(name)
     }
 
-    fun deleteGeneralSettings(vararg generalSettings: GeneralSetting) {
+    fun deleteGeneralSettings(generalSettings: GeneralSetting) {
         this.db.generalSettingDao().deleteGeneralSettings(generalSettings)
     }
 

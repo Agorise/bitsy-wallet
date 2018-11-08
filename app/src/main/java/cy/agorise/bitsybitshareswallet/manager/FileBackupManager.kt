@@ -205,7 +205,7 @@ class FileBackupManager : FileServiceRequestsListener {
                         }
                     }
                 }
-                CryptoNetInfoRequests.instance!!.addRequest(validatorRequest)
+                CryptoNetInfoRequests.instance_!!.addRequest(validatorRequest)
             }
         } catch (e: Exception) {
             e.printStackTrace()
