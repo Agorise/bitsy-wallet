@@ -26,6 +26,7 @@ import com.google.zxing.common.BitMatrix
 
 import cy.agorise.bitsybitshareswallet.utils.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.activities.CustomActivity
 import cy.agorise.bitsybitshareswallet.activities.RequestActivity
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.graphenej.Invoice
@@ -38,7 +39,7 @@ import java.util.HashMap
 
 import java.util.UUID
 
-class ReceiveTransactionActivity : AppCompatActivity() {
+class ReceiveTransactionActivity : CustomActivity() {
 
     // Storage Permissions
     private val REQUEST_EXTERNAL_STORAGE = 1

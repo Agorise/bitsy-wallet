@@ -7,7 +7,7 @@ import android.os.Handler
 import cy.agorise.bitsybitshareswallet.R
 
 
-class SplashActivity : Activity() {
+class SplashActivity : CustomActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

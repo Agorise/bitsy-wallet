@@ -18,7 +18,7 @@ import java.text.NumberFormat
 import java.text.ParseException
 import java.util.*
 
-class RequestActivity : AppCompatActivity() , View.OnClickListener {
+class RequestActivity : CustomActivity() , View.OnClickListener {
 
     internal lateinit var locale: Locale
     internal lateinit var format: NumberFormat

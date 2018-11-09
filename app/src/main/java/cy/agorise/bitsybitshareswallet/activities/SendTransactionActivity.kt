@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_send_transaction.*
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.utils.Constants
 
-class SendTransactionActivity : AppCompatActivity(){
+class SendTransactionActivity : CustomActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

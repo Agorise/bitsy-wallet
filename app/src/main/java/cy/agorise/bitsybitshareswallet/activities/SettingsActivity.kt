@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_setting.*
 /**
  * A simple activity for the user to select his preferences
  */
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : CustomActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

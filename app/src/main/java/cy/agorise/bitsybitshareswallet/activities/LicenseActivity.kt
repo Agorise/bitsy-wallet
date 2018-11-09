@@ -12,7 +12,7 @@ import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_license.*
 
-class LicenseActivity : AppCompatActivity(){
+class LicenseActivity : CustomActivity(){
 
     internal lateinit var db: CrystalDatabase
 
