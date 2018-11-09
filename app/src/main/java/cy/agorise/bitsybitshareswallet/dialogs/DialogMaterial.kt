@@ -119,7 +119,7 @@ open abstract class DialogMaterial{
     * Close the dialog
     * */
     fun dismiss() {
-        this.materialDialog.dismiss()
+        this.builder.dismiss()
     }
 
     /*
