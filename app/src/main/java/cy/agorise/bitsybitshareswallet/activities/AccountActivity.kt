@@ -184,7 +184,7 @@ class AccountActivity: CustomActivity(){
                 override fun onPositive() {
 
                     // Make request to create a bitshare account
-                    var accountName: String = etAccountName?.getText().toString().trim()
+                    /*var accountName: String = etAccountName?.getText().toString().trim()
                     val request = ValidateCreateBitsharesAccountRequest(accountName, activity as Activity)
 
                     //DTVV: Friday 27 July 2018
@@ -225,7 +225,10 @@ class AccountActivity: CustomActivity(){
                             * Run thread*/
                             CryptoNetInfoRequests.getInstance()!!.addRequest(request)
                         }
-                    }).start()
+                    }).start()*/
+
+                    var intent:Intent = Intent(activity,MainActivity::class.java)
+                    startActivity(intent)
                 }
             })
             questionDialog.show()
