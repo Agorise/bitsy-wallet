@@ -30,7 +30,7 @@
             android:layout_marginTop="40dp"
             android:text="@string/txt_account_name"
             android:textStyle="bold"/>
-        <EditText
+        <cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
             android:id="@+id/etAccountName"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -50,7 +50,7 @@
             android:id="@+id/tvPin"
             android:text="@string/txt_6_digits_pin"
             android:textStyle="bold"/>
-        <EditText
+        <cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
             android:id="@+id/etPin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -67,7 +67,7 @@
             android:text="@string/txt_6_digits_pin_confirm"
             android:textStyle="bold"/>
 
-        <EditText
+        <cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
             android:id="@+id/etPinConfirmation"
             android:layout_width="match_parent"
             android:layout_height="40dp"

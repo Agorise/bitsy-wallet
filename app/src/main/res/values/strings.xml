@@ -19,6 +19,16 @@
 
     <string name="pref_language">language</string>
 
+    <string name="create_account_window_err_account_empty" translatable="false">Account Name is emtpy</string>
+
+    <string name="account_name_already_exist">Account Name already exist</string>
+
+    <string name="create_account_window_err_at_least_one_script" translatable="false">The Account Name should contain at least one \'-\'</string>
+    <string name="create_account_window_err_at_least_one_number" translatable="false">The Account Name should contains at least one number</string>
+    <string name="create_account_window_err_at_least_one_character" translatable="false">The Account Name should contains at least one character</string>
+    <string name="create_account_window_err_min_account_name_len" translatable="false">The Account Name should contains at least 10 characters length</string>
+    <string name="mismatch_pin">mismatch pin</string>
+    <string name="create_account_window_err_at_least_pin_characters" translatable="false">The PIN should contains at least 6 digits</string>
     <string name="disagree">Disagree</string>
     <string name="agree">Agree</string>
     <string name="rcv_screen_name">Receive</string>

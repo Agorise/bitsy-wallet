@@ -17,7 +17,7 @@ enum class CryptoCoin private constructor(
     LITECOIN(CryptoNet.LITECOIN, "LTC", 8, 2, null),
     DASH(CryptoNet.DASH, "DASH", 8, 5, null),
     DOGECOIN(CryptoNet.DOGECOIN, "DOGE", 8, 3, null),
-    BITSHARES(CryptoNet.BITSHARES, "BTS", 5, 0, null);
+    BITSHARES(CryptoNet.BITSHARES, "BTS", 5, 0, NetworkParameters.fromID(NetworkParameters.ID_TESTNET)!!);
 
     var cryptoNet: CryptoNet
         protected set

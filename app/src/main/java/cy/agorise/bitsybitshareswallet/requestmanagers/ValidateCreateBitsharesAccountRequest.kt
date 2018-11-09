@@ -4,12 +4,7 @@ import android.content.Context
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.models.GrapheneAccount
 
-class ValidateCreateBitsharesAccountRequest(
-    /**
-     * The name of the account
-     */
-    var accountName: String?, val context: Context
-) : CryptoNetInfoRequest(CryptoCoin.BITSHARES) {
+class ValidateCreateBitsharesAccountRequest(var accountName: String?, val context: Context) : CryptoNetInfoRequest(CryptoCoin.BITSHARES) {
 
 
     // The state of this request
