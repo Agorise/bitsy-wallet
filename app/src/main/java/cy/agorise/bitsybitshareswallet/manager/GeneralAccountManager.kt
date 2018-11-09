@@ -298,7 +298,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
             val idBalance = db!!.cryptoCoinBalanceDao().insertCryptoCoinBalance(balance)[0]
             balance.id = idBalance
         }
-        balance.balance = balance.balance + amount
+        balance.balance = balance.balance!! + amount
         db!!.cryptoCoinBalanceDao().insertCryptoCoinBalance(balance)
     }
 

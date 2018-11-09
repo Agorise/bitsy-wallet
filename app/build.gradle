@@ -3,6 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+kapt {
+    generateStubs = true
+    javacOptions {
+        option("-Xmaxerrs", 500)
+    }
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -14,7 +21,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // Enabling multidex support.
-        //multiDexEnabled true
+        multiDexEnabled true
+
+
     }
     buildTypes {
         release {
@@ -29,12 +38,11 @@ android {
     }
 }
 
+
 dependencies {
-    def lifecycle_version = "2.0.0"
-    def room_version = "2.1.0-alpha02"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':graphenejlib:graphenej')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
@@ -43,12 +51,11 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.1'
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation 'com.afollestad.material-dialogs:core:2.0.0-beta4'
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.0.0-alpha1"
-    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation 'org.bitcoinj:bitcoinj-core:0.14.3'
     implementation 'com.neovisionaries:nv-websocket-client:1.30'
     implementation 'android.arch.paging:runtime:1.0.0'
+    implementation 'com.github.bilthon:graphenej:0.4.6'
     implementation 'org.tukaani:xz:1.6'
     //implementation 'com.idescout.sql:sqlscout-server:2.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
@@ -59,13 +66,22 @@ dependencies {
     }
     //implementation 'com.android.support:multidex:1.0.0'
 
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+
+    implementation 'android.arch.persistence.room:runtime:1.1.0'
+    kapt 'android.arch.persistence.room:runtime:1.1.0'
+    kapt 'android.arch.persistence.room:compiler:1.1.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.0'
+
+
+    implementation 'android.arch.lifecycle:runtime:1.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
+    kapt 'android.arch.lifecycle:compiler:1.1.1'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
+
 
 //    TODO enable and make proper testing
 //    testImplementation 'junit:junit:4.12'

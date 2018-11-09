@@ -10,23 +10,21 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.models.*
 
-/*@Database(entities = {
-        AccountSeed.class,
-        CryptoNetAccount.class,
-        CryptoCoinTransaction.class,
-        Contact.class,
-        ContactAddress.class,
-        CryptoCurrency.class,
-        CryptoCoinBalance.class,
-        GrapheneAccountInfo.class,
-        BitsharesAssetInfo.class,
-        BitsharesAccountNameCache.class,
-        CryptoCurrencyEquivalence.class,
-        GeneralSetting.class,
-        BitcoinTransaction.class,
-        BitcoinTransactionGTxIO.class,
-        BitcoinAddress.class
-}, version = 6, exportSchema = false)*/
+@Database(entities = arrayOf(AccountSeed::class,
+        CryptoNetAccount::class,
+ CryptoCoinTransaction::class,
+         Contact::class,
+ContactAddress::class,
+CryptoCurrency::class,
+CryptoCoinBalance::class,
+GrapheneAccountInfo::class,
+BitsharesAssetInfo::class,
+BitsharesAccountNameCache::class,
+CryptoCurrencyEquivalence::class,
+GeneralSetting::class,
+BitcoinTransaction::class,
+BitcoinTransactionGTxIO::class,
+BitcoinAddress::class), version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class CrystalDatabase: RoomDatabase() {
 

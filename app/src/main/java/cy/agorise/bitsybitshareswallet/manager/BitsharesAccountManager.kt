@@ -7,6 +7,7 @@ import cy.agorise.bitsybitshareswallet.apigenerator.ApiRequest
 import cy.agorise.bitsybitshareswallet.apigenerator.ApiRequestListener
 import cy.agorise.bitsybitshareswallet.apigenerator.BitsharesFaucetApiGenerator
 import cy.agorise.bitsybitshareswallet.apigenerator.GrapheneApiGenerator
+import cy.agorise.bitsybitshareswallet.apigenerator.grapheneoperation.AccountUpgradeOperationBuilder
 import cy.agorise.bitsybitshareswallet.apigenerator.insightapi.models.HistoricalTransfer
 import cy.agorise.bitsybitshareswallet.application.constant.BitsharesConstant
 import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
@@ -23,7 +24,6 @@ import cy.agorise.bitsybitshareswallet.requestmanagers.*
 import cy.agorise.graphenej.*
 import cy.agorise.graphenej.models.AccountProperties
 import cy.agorise.graphenej.models.BlockHeader
-import cy.agorise.graphenej.operations.AccountUpgradeOperationBuilder
 import cy.agorise.graphenej.operations.TransferOperationBuilder
 import org.bitcoinj.core.ECKey
 import java.text.ParseException

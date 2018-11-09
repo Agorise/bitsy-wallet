@@ -8,15 +8,21 @@ import android.view.ContextMenu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_license.*
 
 class LicenseActivity : AppCompatActivity(){
 
+    internal lateinit var db: CrystalDatabase
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_license)
+
+        db = CrystalDatabase.getAppDatabase(this.applicationContext)!!
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {

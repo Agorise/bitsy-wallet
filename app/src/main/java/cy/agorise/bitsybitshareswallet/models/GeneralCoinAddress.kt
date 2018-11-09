@@ -346,9 +346,9 @@ class GeneralCoinAddress(
         result = 31 * result + (mAccount?.hashCode() ?: 0)
         result = 31 * result + if (mIsChange) 1 else 0
         result = 31 * result + mIndex
-        result = 31 * result + if (mKey != null) mKey.hashCode() else 0
-        result = 31 * result + if (mTransactionInput != null) mTransactionInput.hashCode() else 0
-        result = 31 * result + if (mTransactionOutput != null) mTransactionOutput.hashCode() else 0
+        result = 31 * result + if (mKey != null) mKey!!.hashCode() else 0
+        result = 31 * result + if (mTransactionInput != null) mTransactionInput!!.hashCode() else 0
+        result = 31 * result + if (mTransactionOutput != null) mTransactionOutput!!.hashCode() else 0
         return result
     }
 

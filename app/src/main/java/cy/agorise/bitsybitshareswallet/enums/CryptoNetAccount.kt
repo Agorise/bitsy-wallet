@@ -3,12 +3,13 @@ package cy.agorise.bitsybitshareswallet.enums
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
 import androidx.room.*
+import cy.agorise.bitsybitshareswallet.models.AccountSeed
 
-/*@Entity(
+@Entity(
     tableName = "crypto_net_account",
-    indices = { @Index("id"), @Index("seed_id"), @Index(value = { "seed_id", "crypto_net", "account_index" }, unique = true) },
-    foreignKeys = ForeignKey(entity = AccountSeed::class, parentColumns = "id", childColumns = "seed_id")
-)*/
+    indices = arrayOf(Index("id"), Index("seed_id"), Index(value = arrayOf("seed_id", "crypto_net", "account_index"), unique = true)),
+    foreignKeys = arrayOf(ForeignKey(entity = AccountSeed::class, parentColumns = arrayOf("id"), childColumns = arrayOf("seed_id")))
+)
 open class CryptoNetAccount {
 
     /**
