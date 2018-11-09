@@ -65,7 +65,7 @@ open class CustomActivity : AppCompatActivity() {
             )
             val time = Calendar.getInstance()
             time.setTimeInMillis(System.currentTimeMillis())
-            time.add(Calendar.SECOND, 5)
+            time.add(Calendar.MINUTE, 3)
             val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
             alarmManager.set(AlarmManager.RTC, time.timeInMillis, pendingIntent)
         }
