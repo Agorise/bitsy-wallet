@@ -5,11 +5,6 @@ import android.util.AttributeSet
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
 
-/**
- * Created by xd on 1/24/18.
- * ImageView which adjusts its size to always create a square
- */
-
 class SquaredImageView : AppCompatImageView {
 
     constructor(context: Context) : super(context)
