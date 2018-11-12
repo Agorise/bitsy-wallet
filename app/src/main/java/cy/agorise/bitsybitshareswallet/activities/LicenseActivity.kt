@@ -27,7 +27,7 @@ class LicenseActivity : CustomActivity(){
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {
 
-            val intent = Intent(this, AccountActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
