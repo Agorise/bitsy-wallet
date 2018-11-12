@@ -139,7 +139,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="@string/block_number"/>
+            android:text=""/>
 
             <ImageView
                 android:id="@+id/ivSocketConnected_brain_key_activity"
