@@ -102,6 +102,10 @@
     <string name="create_wallet">CREATE WALLET</string>
     <string name="txt_brain_key">Brainkey</string>
     <string name="window_seed_copy">Copy</string>
+
+    <string name="copy">Copy</string>
+    <string name="pref_wallet_accounts">wallet_accounts</string>
+
     <string name="Account_already_exists">Account already exists</string>
     <string name="existing_account">Existing Account</string>
     <string name="import_brainkey">Import from BrainKey</string>

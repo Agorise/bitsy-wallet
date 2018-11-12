@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature android:name="android.hardware.sensor.camera" android:required="false"/>
 
@@ -22,7 +23,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".activities.LicenseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -41,8 +42,6 @@
         </activity>
         <activity android:name=".activities.BackupSeedActivity">
         </activity>
-        <activity android:name=".activities.LicenseActivity">
-        </activity>
         <activity android:name=".activities.AccountActivity">
         </activity>
         <activity android:name=".activities.MainActivity"
@@ -56,6 +55,10 @@
                 android:name=".activities.RequestActivity"
                 android:screenOrientation="portrait"
                 android:theme="@style/AppTheme" />
+
+        <meta-data android:name="com.google.android.maps.v2.API_KEY"
+                   android:value="AIzaSyDIYbjdkZqbLUINQXrAzNSjNwep5jGNjKA" />
+
     </application>
 
 </manifest>
