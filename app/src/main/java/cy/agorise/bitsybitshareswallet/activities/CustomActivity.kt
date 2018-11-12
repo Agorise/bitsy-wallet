@@ -46,6 +46,12 @@ open class CustomActivity : AppCompatActivity() {
                 System.exit(0)
             }
         }
+
+        try{
+            unregisterReceiver(receiver)
+        }catch(e: Exception){
+
+        }
         registerReceiver(receiver, intentFilter)
     }
 
