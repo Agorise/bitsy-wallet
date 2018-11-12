@@ -8,6 +8,8 @@
 
     <!-- Settings -->
     <string name="title_settings">Settings</string>
+    <string name="copy">Copy</string>
+    <string name="pref_wallet_accounts">wallet_accounts</string>
     <string name="night_mode">Night mode</string>
 
     <string name="cancel">CANCEL</string>
