@@ -19,17 +19,20 @@ import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNam
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
 import cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
+import android.widget.EditText
+
+
 
 
 class AccountActivity: CustomActivity(){
 
     var activity:Activity? = null
+
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_account)
-
         activity = this
 
         /*
@@ -107,7 +110,7 @@ class AccountActivity: CustomActivity(){
         /*
         * Set the focus on the fisrt field and show keyboard
         * */
-        etPin?.requestFocus()
+        etAccountName?.requestFocus()
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(etPinConfirmation, InputMethodManager.SHOW_IMPLICIT)
 
