@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".activities.BrainkeyActivity">
         </activity>
+        <activity android:name=".activities.CopyBrainkey">
+        </activity>
         <activity android:name=".activities.BackupSeedActivity">
         </activity>
         <activity android:name=".activities.AccountActivity">

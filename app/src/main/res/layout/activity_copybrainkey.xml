@@ -21,15 +21,15 @@
         android:textSize="21sp"
         android:textAlignment="textStart" />
     <EditText
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:id="@+id/etBrainKey"
-        android:layout_width="match_parent"
-        android:inputType="none"
-        android:background="@drawable/edittext_bg"
-        android:layout_height="200dp"
-        android:textIsSelectable="true"
-        android:gravity="top"/>
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:id="@+id/textfieldBrainkey"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:background="@drawable/edittext_bg"
+            android:layout_height="200dp"
+            android:textIsSelectable="true"
+            android:gravity="top"/>
 
     <TextView
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -49,24 +49,33 @@
         android:layout_marginTop="10dp"
         android:gravity="center">
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@color/pink"
-            android:textColor="@color/white"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:id="@+id/btnCancel"
-            android:text="@string/cancel"/>
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/pink"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/btnCancel"
+                android:text="@string/close"/>
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@color/green"
-            android:textColor="@color/white"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:id="@+id/btnCopy"
-            android:text="@string/copy"/>
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/green"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/btnCopy"
+                android:text="@string/copy"/>
+        <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/pink"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/btnOK"
+                android:text="@string/ok"/>
 
     </LinearLayout>
 

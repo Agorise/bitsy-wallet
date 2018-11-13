@@ -114,6 +114,7 @@
 
     <string name="question_continue">¿Are you sure to continue?</string>
 
+    <string name="window_seed_toast_clipboard">Brainkey copied to clipboard!</string>
     <string name="pin_number_warning">The pin number must be at least 6 digits</string>
     <string name="NO_SERVER_CONNECTION">There was an error with the connection. Try again later</string>
     <string name="Account_already_exists">Account already exists</string>

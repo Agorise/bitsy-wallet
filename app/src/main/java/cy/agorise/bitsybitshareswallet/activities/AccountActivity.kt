@@ -226,7 +226,10 @@ class AccountActivity: CustomActivity(){
 
                     finish()
 
-                    var intent:Intent = Intent(activity,MainActivity::class.java)
+                    var intent:Intent = Intent(activity,CopyBrainkey::class.java)
+                    intent.putExtra("newAccount",true)
+                    intent.putExtra("SEED_ID",1.toLong())
+                    intent.putExtra("SEED_ID_TMP","allow clutch exhibit group citizen poverty draw help wage mail program safe")
                     startActivity(intent)
                 }
             })
