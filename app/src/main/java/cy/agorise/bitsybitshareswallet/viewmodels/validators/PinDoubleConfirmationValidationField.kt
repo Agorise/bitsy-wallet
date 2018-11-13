@@ -39,7 +39,7 @@ class PinDoubleConfirmationValidationField : CustomValidationField, UIValidator 
         /*
             Check if the two fields are equals theme selfs
         * */
-        if (pin.length < 5) {
+        if (pin.length <= 5) {
 
             /*
              *
