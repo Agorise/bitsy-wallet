@@ -11,7 +11,15 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
 
         val accounts = db!!.accountSeedDao().allNoLiveData
         val account: AccountSeed = accounts[0]
+        account.masterSeed = AESUtils.decrypt(account.masterSeed!!)
         return account
+    }
+
+    fun getMasterSeed() : String{
+
+        val accounts = db!!.accountSeedDao().allNoLiveData
+        val account: AccountSeed = accounts[0]
+        return AESUtils.decrypt(account.masterSeed!!)
     }
 
     fun getTotalAccounts() : Int {
@@ -29,7 +37,7 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
         var accountSeed: AccountSeed = AccountSeed()
         accountSeed.id = id
         accountSeed.name = name
-        accountSeed.masterSeed = masterSeeed
+        accountSeed.masterSeed = AESUtils.encrypt(masterSeeed)
         db!!.accountSeedDao().insertAccountSeed(accountSeed)
     }
 
