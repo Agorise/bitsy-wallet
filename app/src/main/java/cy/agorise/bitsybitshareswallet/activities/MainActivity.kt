@@ -108,11 +108,4 @@ class MainActivity : CustomActivity() {
             }
         }
     }
-
-    private inner class LogOutTimerTask : TimerTask() {
-
-        override fun run() {
-            System.exit(0);
-        }
-    }
 }

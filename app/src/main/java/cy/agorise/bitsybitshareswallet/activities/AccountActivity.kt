@@ -224,6 +224,8 @@ class AccountActivity: CustomActivity(){
                         }
                     }).start()*/
 
+                    finish()
+
                     var intent:Intent = Intent(activity,MainActivity::class.java)
                     startActivity(intent)
                 }
