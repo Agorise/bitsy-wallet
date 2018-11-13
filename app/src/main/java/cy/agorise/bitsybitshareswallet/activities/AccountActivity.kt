@@ -9,19 +9,13 @@ import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dialogs.*
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
-import cy.agorise.bitsybitshareswallet.requestmanagers.ValidateCreateBitsharesAccountRequest
 import kotlinx.android.synthetic.main.activity_account.*
 import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
 import cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
-import android.widget.EditText
-
-
 
 
 class AccountActivity: CustomActivity(){
@@ -39,7 +33,7 @@ class AccountActivity: CustomActivity(){
          * Add the controls to the validator
          * */
         this.fieldsValidator.add(etAccountName)
-        this.fieldsValidator.add(etPin)
+        this.fieldsValidator.add(etPin_)
         this.fieldsValidator.add(etPinConfirmation)
 
         /*
@@ -81,12 +75,12 @@ class AccountActivity: CustomActivity(){
         /*
         * Create the pin double validation
         * */
-        val pinDoubleConfirmationValidationField = PinDoubleConfirmationValidationField(this, etPin, etPinConfirmation, uiValidatorListener)
+        val pinDoubleConfirmationValidationField = PinDoubleConfirmationValidationField(this, etPin_, etPinConfirmation, uiValidatorListener)
 
         /*
         * Listener for the validation for success or fail
         * */
-        etPin?.setUiValidator(pinDoubleConfirmationValidationField) //Validator for the field
+        etPin_?.setUiValidator(pinDoubleConfirmationValidationField) //Validator for the field
         etPinConfirmation?.setUiValidator(pinDoubleConfirmationValidationField) //Validator for the field
 
         /*
@@ -120,7 +114,7 @@ class AccountActivity: CustomActivity(){
             startActivity(intent)
         }
 
-        etPin.addTextChangedListener(object : TextWatcher {
+        etPin_.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
                 fieldsValidator.validate()
 
@@ -243,7 +237,7 @@ class AccountActivity: CustomActivity(){
 
         var result = false //Contains the final result
 
-        val pinValid: Boolean? = this.etPin?.fieldValidatorModel?.isValid
+        val pinValid: Boolean? = this.etPin_?.fieldValidatorModel?.isValid
         val pinConfirmationValid = this.etPinConfirmation?.fieldValidatorModel?.isValid
         val pinAccountNameValid = this.etAccountName?.fieldValidatorModel?.isValid
 

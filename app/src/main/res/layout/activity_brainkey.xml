@@ -20,14 +20,14 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:id="@+id/etPin"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:background="@drawable/edittext_bg"
-        android:maxLines="1"
-        android:layout_height="40dp"/>
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:id="@+id/etPin__"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:background="@drawable/edittext_bg"
+            android:maxLines="1"
+            android:layout_height="40dp"/>
     <TextView
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -39,16 +39,27 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:id="@+id/etPinConfirmation"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:background="@drawable/edittext_bg"
-        android:singleLine="true"
-        android:maxLines="1"
-        android:layout_height="40dp" />
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:id="@+id/etPinConfirmation__"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:background="@drawable/edittext_bg"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_height="40dp"/>
 
+    <TextView
+            android:id="@+id/txtErrorPIN__"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPinConfirmation__"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:text="@string/mismatch_pin"
+            android:layout_marginLeft="30dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"/>
 
     <TextView
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -59,14 +70,26 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/etBrainKey"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:background="@drawable/edittext_bg"
-        android:gravity="top"
-        android:inputType="textMultiLine" />
+            android:id="@+id/etSeedWords__"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/edittext_bg"
+            android:gravity="top"
+            android:inputType="textMultiLine"/>
+
+    <TextView
+            android:id="@+id/txtErrorAccount__"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etSeedWords__"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:text=""
+            android:layout_marginLeft="30dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"/>
 
     <TextView
         android:visibility="gone"
@@ -96,15 +119,15 @@
             android:id="@+id/btnCancel"
             android:text="@string/cancel"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/green"
-            android:textColor="@color/white"
-            android:layout_margin="10dp"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:id="@+id/btnWallet"
-            android:text="@string/create_wallet"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/btnImport"
+                android:text="@string/create_wallet"/>
 
     </LinearLayout>
 

@@ -105,8 +105,17 @@
     <string name="txt_brain_key">Brainkey</string>
     <string name="window_seed_copy">Copy</string>
 
+    <string name="ERROR_UNRECOGNIZABLE">An error ocurred attempting to import the account</string>
+    <string name="NO_ACCOUNT_DATA">The account does not have any data</string>
+    <string name="BAD_SEED">The seed is not valid</string>
+    <string name="ACCOUNT_DOESNT_EXIST">The account does not exists</string>
+
     <string name="permission_denied_map">Permission Denied. You cannot use this map. Please allow this permission in App Settings.</string>
 
+    <string name="question_continue">¿Are you sure to continue?</string>
+
+    <string name="pin_number_warning">The pin number must be at least 6 digits</string>
+    <string name="NO_SERVER_CONNECTION">There was an error with the connection. Try again later</string>
     <string name="Account_already_exists">Account already exists</string>
     <string name="existing_account">Existing Account</string>
     <string name="import_brainkey">Import from BrainKey</string>
