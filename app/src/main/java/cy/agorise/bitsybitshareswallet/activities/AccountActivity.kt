@@ -14,6 +14,7 @@ import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
@@ -226,12 +227,7 @@ class AccountActivity: CustomActivity(){
                         }
                     }).start()*/
 
-                    var accountSeed: AccountSeed = AccountSeed()
-                    accountSeed.id = 1
-                    accountSeed.name = "dtvv-123456"
-                    accountSeed.masterSeed = "allow clutch exhibit group citizen poverty draw help wage mail program safe"
-                    var db: BitsyDatabase = BitsyDatabase.getAppDatabase(globalActivity)!!
-                    db.accountSeedDao().insertAccountSeed(accountSeed)
+                    RepositoryManager.getAccountsRepository(globalActivity).addAccount(1,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
 
                     finish()
 
