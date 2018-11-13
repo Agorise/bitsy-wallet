@@ -1,7 +1,7 @@
 package cy.agorise.bitsybitshareswallet.apigenerator
 
 import android.content.Context
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.models.*
 import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
@@ -319,7 +319,7 @@ object GrapheneApiGenerator {
         context: Context
     ) {
         if (!currentBitsharesListener.containsKey(accountId)) {
-            val db = CrystalDatabase.getAppDatabase(context)
+            val db = BitsyDatabase.getAppDatabase(context)
             val bitsharesAssetDao = db!!.bitsharesAssetDao()
             val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
             val balanceListener = object : SubscriptionListener {
@@ -440,7 +440,7 @@ object GrapheneApiGenerator {
         transaction.input = tOperation.from.objectId != accountBitsharesId
         transaction.to = tOperation.to.objectId
         transaction.date = Date()
-        CrystalDatabase.getAppDatabase(context)!!.transactionDao().insertTransaction(transaction)
+        BitsyDatabase.getAppDatabase(context)!!.transactionDao().insertTransaction(transaction)
         if (transaction.input) {
             CryptoNetEvents.getInstance()!!.fireEvent(ReceivedFundsCryptoNetEvent(transaction.account, currency, transaction.amount))
         }
@@ -465,7 +465,7 @@ object GrapheneApiGenerator {
         context: Context
     ) {
 
-        val db = CrystalDatabase.getAppDatabase(context)
+        val db = BitsyDatabase.getAppDatabase(context)
         val balanceDao = db!!.cryptoCoinBalanceDao()
         val bitsharesAssetDao = db!!.bitsharesAssetDao()
         val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
@@ -626,7 +626,7 @@ object GrapheneApiGenerator {
      * @param context The Context of this Application
      */
     fun getEquivalentValue(baseAssetName: String, quoteAssets: List<BitsharesAsset>, context: Context) {
-        val db = CrystalDatabase.getAppDatabase(context)
+        val db = BitsyDatabase.getAppDatabase(context)
         val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
         val bitsharesAssetDao = db!!.bitsharesAssetDao()
         val baseCurrency = cryptoCurrencyDao.getByName(baseAssetName, CryptoNet.BITSHARES.name)
@@ -720,7 +720,7 @@ object GrapheneApiGenerator {
                         (Math.pow(10.0, baseAsset.precision.toDouble()) * equiValue).toInt(),
                         Date()
                     )
-                    CrystalDatabase.getAppDatabase(context)!!.cryptoCurrencyEquivalenceDao()
+                    BitsyDatabase.getAppDatabase(context)!!.cryptoCurrencyEquivalenceDao()
                         .insertCryptoCurrencyEquivalence(equivalence)
                     break
                     //}

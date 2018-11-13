@@ -2,7 +2,7 @@ package cy.agorise.bitsybitshareswallet.application
 
 import android.app.Application
 import android.content.Intent
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.models.BitsharesAsset
 import cy.agorise.bitsybitshareswallet.models.BitsharesAssetInfo
@@ -21,7 +21,7 @@ class CrystalApplication : Application() {
         super.onCreate()
 
         //initialize the database
-        val db = CrystalDatabase.getAppDatabase(this.applicationContext)
+        val db = BitsyDatabase.getAppDatabase(this.applicationContext)
         //SqlScoutServer.create(this, packageName)
 
         //Using Bitshares Agorise Testnet

@@ -7,11 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.Nullable
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.viewmodels.AccountSeedViewModel

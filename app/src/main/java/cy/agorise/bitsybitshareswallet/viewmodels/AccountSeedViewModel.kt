@@ -3,17 +3,17 @@ package cy.agorise.bitsybitshareswallet.viewmodels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
 
 class AccountSeedViewModel(application: Application) : AndroidViewModel(application) {
 
     private var accountSeed: LiveData<AccountSeed>? = null
-    private val db: CrystalDatabase
+    private val db: BitsyDatabase
     private val app: Application = application
 
     init{
-        this.db = CrystalDatabase.getAppDatabase(this.app.getApplicationContext())!!;
+        this.db = BitsyDatabase.getAppDatabase(this.app.getApplicationContext())!!;
     }
 
     fun loadSeed(seedId: Long) {

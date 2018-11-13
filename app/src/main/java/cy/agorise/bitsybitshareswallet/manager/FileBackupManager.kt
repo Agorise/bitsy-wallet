@@ -3,7 +3,7 @@ package cy.agorise.bitsybitshareswallet.manager
 import android.os.Environment
 import com.google.common.primitives.Bytes
 import com.google.gson.GsonBuilder
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.*
@@ -38,7 +38,7 @@ class FileBackupManager : FileServiceRequestsListener {
     }
 
     private fun createBackupBinFile(request: CreateBackupRequest) {
-        val db = CrystalDatabase.getAppDatabase(request.context)
+        val db = BitsyDatabase.getAppDatabase(request.context)
         val seedNames = ArrayList<BitsharesSeedName>()
         val seeds = db!!.accountSeedDao().allNoLiveData
         for (seed in seeds) {
@@ -170,7 +170,7 @@ class FileBackupManager : FileServiceRequestsListener {
                 seedNames.add(BitsharesSeedName(accountName, brainKey))
             }
             //TODO handle more than one account
-            val db = CrystalDatabase.getAppDatabase(request.context)
+            val db = BitsyDatabase.getAppDatabase(request.context)
             val accountSeedDao = db!!.accountSeedDao()
             for (seedName in seedNames) {
                 val validatorRequest = ValidateImportBitsharesAccountRequest(

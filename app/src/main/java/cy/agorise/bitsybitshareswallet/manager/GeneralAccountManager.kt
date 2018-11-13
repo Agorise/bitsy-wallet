@@ -6,7 +6,7 @@ import cy.agorise.bitsybitshareswallet.apigenerator.ApiRequestListener
 import cy.agorise.bitsybitshareswallet.apigenerator.InsightApiGenerator
 import cy.agorise.bitsybitshareswallet.apigenerator.insightapi.models.Txi
 import cy.agorise.bitsybitshareswallet.dao.BitcoinAddressDao
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.models.*
@@ -38,7 +38,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
     }
 
     override fun loadAccountFromDB(account: CryptoNetAccount, context: Context) {
-        val db = CrystalDatabase.getAppDatabase(context)
+        val db = BitsyDatabase.getAppDatabase(context)
 
         val seed = db!!.accountSeedDao().findById(account.seedId)
         val purposeKey = HDKeyDerivation.deriveChildKey(
@@ -127,7 +127,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
      * @param txi
      */
     fun processTxi(txi: Txi) {
-        val db = CrystalDatabase.getAppDatabase(this.context)
+        val db = BitsyDatabase.getAppDatabase(this.context)
         val btTransactions = db!!.bitcoinTransactionDao().getTransactionsByTxid(txi.txid!!)
         if (!btTransactions.isEmpty()) {
             for (btTransaction in btTransactions) {
@@ -264,7 +264,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
     }
 
     private fun createGeneralAccount(request: CreateBitcoinAccountRequest) {
-        val db = CrystalDatabase.getAppDatabase(this.context)
+        val db = BitsyDatabase.getAppDatabase(this.context)
         val account = CryptoNetAccount()
         account.accountIndex = 0
         account.cryptoNet = this.cryptoCoin.cryptoNet
@@ -278,7 +278,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
 
     }
 
-    private fun updateBalance(ccTransaction: CryptoCoinTransaction, amount: Long, db: CrystalDatabase) {
+    private fun updateBalance(ccTransaction: CryptoCoinTransaction, amount: Long, db: BitsyDatabase) {
         var currency =
             db!!.cryptoCurrencyDao().getByNameAndCryptoNet(this.cryptoCoin.name, this.cryptoCoin.cryptoNet.name)
         if (currency == null) {
@@ -315,7 +315,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
                 val feeRate = answer as Long
                 fee = 226 * feeRate
 
-                val db = CrystalDatabase.getAppDatabase(request.context)
+                val db = BitsyDatabase.getAppDatabase(request.context)
                 db!!.bitcoinTransactionDao()
 
                 val utxos = getUtxos(request.sourceAccount.id, db)
@@ -439,7 +439,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
     }
 
     private fun getNextAddress(request: NextBitcoinAccountAddressRequest) {
-        val db = CrystalDatabase.getAppDatabase(request.context)
+        val db = BitsyDatabase.getAppDatabase(request.context)
         var index = db!!.bitcoinAddressDao().getLastExternalAddress(request.account.id)
         index++
         val seed = db!!.accountSeedDao().findById(request.account.seedId)
@@ -473,7 +473,7 @@ class GeneralAccountManager(internal val cryptoCoin: CryptoCoin, internal val co
         request.status = NextBitcoinAccountAddressRequest.StatusCode.SUCCEEDED
     }
 
-    private fun getUtxos(accountId: Long, db: CrystalDatabase): List<BitcoinTransactionGTxIO> {
+    private fun getUtxos(accountId: Long, db: BitsyDatabase): List<BitcoinTransactionGTxIO> {
         val answer = ArrayList<BitcoinTransactionGTxIO>()
         val bTGTxI = ArrayList<BitcoinTransactionGTxIO>()
         val bTGTxO = ArrayList<BitcoinTransactionGTxIO>()

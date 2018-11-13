@@ -26,7 +26,7 @@ BitcoinTransaction::class,
 BitcoinTransactionGTxIO::class,
 BitcoinAddress::class), version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
-abstract class CrystalDatabase: RoomDatabase() {
+abstract class BitsyDatabase: RoomDatabase() {
 
 abstract fun accountSeedDao():AccountSeedDao
 abstract fun cryptoNetAccountDao():CryptoNetAccountDao
@@ -44,13 +44,13 @@ abstract fun bitcoinAddressDao():BitcoinAddressDao
 
  companion object {
 
-private var instance:CrystalDatabase? = null
+private var instance:BitsyDatabase? = null
 
- fun getAppDatabase(context: Context):CrystalDatabase? {
+ fun getAppDatabase(context: Context):BitsyDatabase? {
 if (instance == null)
 {
 instance = Room.databaseBuilder(context,
-CrystalDatabase::class.java, "CrystalWallet.db")
+BitsyDatabase::class.java, "CrystalWallet.db")
 .allowMainThreadQueries()
 .addMigrations(MIGRATION_2_3)
 .addMigrations(MIGRATION_3_4)

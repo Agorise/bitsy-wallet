@@ -10,14 +10,13 @@ import cy.agorise.bitsybitshareswallet.apigenerator.GrapheneApiGenerator
 import cy.agorise.bitsybitshareswallet.apigenerator.grapheneoperation.AccountUpgradeOperationBuilder
 import cy.agorise.bitsybitshareswallet.apigenerator.insightapi.models.HistoricalTransfer
 import cy.agorise.bitsybitshareswallet.application.constant.BitsharesConstant
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.dao.TransactionDao
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.bitsybitshareswallet.models.*
-import cy.agorise.bitsybitshareswallet.models.seed.*
 import cy.agorise.bitsybitshareswallet.models.seed.BIP39
 import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.*
@@ -45,7 +44,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                             fetch.cryptoNet = grapheneAccount.cryptoNet
                             fetch.accountIndex = grapheneAccount.accountIndex
 
-                            val db = CrystalDatabase.getAppDatabase(context)
+                            val db = BitsyDatabase.getAppDatabase(context)
                             val idAccount = db!!.cryptoNetAccountDao().insertCryptoNetAccount(fetch)[0]
                             fetch.id = idAccount
                             db!!.grapheneAccountInfoDao().insertGrapheneAccountInfo(GrapheneAccountInfo(fetch))
@@ -83,7 +82,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                     override fun success(answer: Any) {
                         val fetch = answer as GrapheneAccount
                         grapheneAccount.accountId = fetch.accountId
-                        val db = CrystalDatabase.getAppDatabase(context)
+                        val db = BitsyDatabase.getAppDatabase(context)
                         val idAccount = db!!.cryptoNetAccountDao().insertCryptoNetAccount(grapheneAccount)
                         grapheneAccount.id = idAccount[0]
                         db.grapheneAccountInfoDao().insertGrapheneAccountInfo(GrapheneAccountInfo(grapheneAccount))
@@ -100,7 +99,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                     override fun success(answer: Any) {
                         val fetch = answer as GrapheneAccount
                         grapheneAccount.name = fetch.name
-                        val db = CrystalDatabase.getAppDatabase(context)
+                        val db = BitsyDatabase.getAppDatabase(context)
                         db!!.cryptoNetAccountDao().insertCryptoNetAccount(grapheneAccount)
                         db.grapheneAccountInfoDao().insertGrapheneAccountInfo(GrapheneAccountInfo(grapheneAccount))
                         subscribeBitsharesAccount(grapheneAccount.id, grapheneAccount.accountId, context)
@@ -111,7 +110,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                     }
                 })
             } else {
-                val db = CrystalDatabase.getAppDatabase(context)
+                val db = BitsyDatabase.getAppDatabase(context)
                 db!!.cryptoNetAccountDao().insertCryptoNetAccount(grapheneAccount)
                 db.grapheneAccountInfoDao().insertGrapheneAccountInfo(GrapheneAccountInfo(grapheneAccount))
                 subscribeBitsharesAccount(grapheneAccount.id, grapheneAccount.accountId, context)
@@ -122,7 +121,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
     override fun loadAccountFromDB(account: CryptoNetAccount, context: Context) {
         if (account is GrapheneAccount) {
             val grapheneAccount = account as GrapheneAccount
-            val db = CrystalDatabase.getAppDatabase(context)
+            val db = BitsyDatabase.getAppDatabase(context)
             val info = db!!.grapheneAccountInfoDao().getByAccountId(account.id)
             grapheneAccount.loadInfo(info)
             if (grapheneAccount.accountId == null) {
@@ -196,7 +195,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
     }
 
     private fun importAccount(importRequest: ImportBitsharesAccountRequest) {
-        val db = CrystalDatabase.getAppDatabase(importRequest.context!!)
+        val db = BitsyDatabase.getAppDatabase(importRequest.context!!)
         val accountSeedDao = db!!.accountSeedDao()
         val getAccountNamesBK = ApiRequest(0, object : ApiRequestListener {
             override fun success(answer: Any?, idPetition: Int) {
@@ -268,7 +267,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
      */
     private fun validateImportAccount(importRequest: ValidateImportBitsharesAccountRequest) {
         //TODO check internet and server status
-        val db = CrystalDatabase.getAppDatabase(importRequest.context!!)
+        val db = BitsyDatabase.getAppDatabase(importRequest.context!!)
         val accountSeedDao = db!!.accountSeedDao()
 
         val checkAccountName = ApiRequest(0, object : ApiRequestListener {
@@ -346,7 +345,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
         // Generate seed or find key
         val context = createRequest.context
         val seed = AccountSeed.getAccountSeed(SeedType.BIP39, context)
-        val db = CrystalDatabase.getAppDatabase(context)
+        val db = BitsyDatabase.getAppDatabase(context)
         val idSeed = db!!.accountSeedDao().insertAccountSeed(seed!!)
         assert(seed != null)
         seed!!.id = idSeed
@@ -398,7 +397,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
     private fun validateSendRequest(sendRequest: ValidateBitsharesSendRequest) {
         //TODO check internet, server connection
         //TODO feeAsset
-        val db = CrystalDatabase.getAppDatabase(sendRequest.context)
+        val db = BitsyDatabase.getAppDatabase(sendRequest.context)
         val currency = db!!.cryptoCurrencyDao().getByNameAndCryptoNet(sendRequest.asset, CryptoNet.BITSHARES.name)
         if (currency == null) {
             getAssetInfoByName(sendRequest.asset, object : ManagerRequest {
@@ -437,7 +436,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
         val feeAsset = Asset(idAsset)
         val fromUserAccount = UserAccount(sendRequest.sourceAccount.accountId)
 
-        val db = CrystalDatabase.getAppDatabase(sendRequest.context)
+        val db = BitsyDatabase.getAppDatabase(sendRequest.context)
         val cacheAccount = db!!.bitsharesAccountNameCacheDao().getByAccountName(sendRequest.toAccount)
         if (cacheAccount == null) {
             this.getAccountInfoByName(sendRequest.toAccount, object : ManagerRequest {
@@ -518,7 +517,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
         val feeAsset = Asset(sendRequest.idAsset)
         val fromUserAccount = UserAccount(sendRequest.sourceAccount.accountId)
 
-        val db = CrystalDatabase.getAppDatabase(sendRequest.context)
+        val db = BitsyDatabase.getAppDatabase(sendRequest.context)
 
         val builder = AccountUpgradeOperationBuilder()
             .setAccountToUpgrade(fromUserAccount)
@@ -546,7 +545,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
     }
 
     private fun getBitsharesAccountNameCacheRequest(request: GetBitsharesAccountNameCacheRequest) {
-        val db = CrystalDatabase.getAppDatabase(request.context)
+        val db = BitsyDatabase.getAppDatabase(request.context)
         val cacheAccount = db!!.bitsharesAccountNameCacheDao().getByAccountId(request.accountId)
         if (cacheAccount == null) {
             this.getAccountInfoById(request.accountId, object : ManagerRequest {
@@ -634,7 +633,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
         /**
          * The database
          */
-        internal var db: CrystalDatabase
+        internal var db: BitsyDatabase
     ) : ApiRequestListener {
 
         /**
@@ -855,7 +854,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
          * @param context The android context of this application
          */
         private fun refreshAccountTransactions(idAccount: Long, context: Context) {
-            val db = CrystalDatabase.getAppDatabase(context)
+            val db = BitsyDatabase.getAppDatabase(context)
             val transactions = db!!.transactionDao().getByIdAccount(idAccount)
             val account = db.cryptoNetAccountDao().getById(idAccount)
             if (account.cryptoNet === CryptoNet.BITSHARES) {

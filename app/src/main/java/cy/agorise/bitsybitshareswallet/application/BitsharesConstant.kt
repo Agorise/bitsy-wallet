@@ -1,11 +1,10 @@
 package cy.agorise.bitsybitshareswallet.application.constant
 
 import android.content.Context
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.models.BitsharesAsset
 import cy.agorise.bitsybitshareswallet.models.BitsharesAssetInfo
-import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
 
 object BitsharesConstant {
     val BITSHARES_URL = arrayOf(
@@ -48,7 +47,7 @@ object BitsharesConstant {
     )
 
     fun addSmartCoins(context: Context) {
-        val db = CrystalDatabase.getAppDatabase(context)
+        val db = BitsyDatabase.getAppDatabase(context)
         for (smartcoin in SMARTCOINS) {
             if (db!!.cryptoCurrencyDao().getByName(smartcoin.name!!, CryptoNet.BITSHARES.name) == null) {
                 db!!.cryptoCurrencyDao().insertCryptoCurrency(smartcoin)

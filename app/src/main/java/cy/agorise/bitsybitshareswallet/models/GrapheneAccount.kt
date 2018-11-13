@@ -1,7 +1,7 @@
 package cy.agorise.bitsybitshareswallet.models
 
 import android.content.Context
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.graphenej.BrainKey
@@ -40,7 +40,7 @@ class GrapheneAccount : CryptoNetAccount {
      * Return the owner key, generates from the seed if it has not been generated. null if it can't be generated
      */
     fun getOwnerKey(context: Context): ECKey? {
-        val seed = CrystalDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId)
+        val seed = BitsyDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId)
         if (seed == null) {
             System.out.println("Error: Seed null " + this.seedId)
             return null
@@ -79,7 +79,7 @@ class GrapheneAccount : CryptoNetAccount {
      * Return the active key, generates from the seed if it has not been generated. null if it can't be generated
      */
     fun getActiveKey(context: Context): ECKey? {
-        val seed = CrystalDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId) ?: return null
+        val seed = BitsyDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId) ?: return null
         if (seed.type!!.equals(SeedType.BRAINKEY)) {
             return BrainKey(seed.masterSeed, 0).privateKey
         } else {
@@ -113,7 +113,7 @@ class GrapheneAccount : CryptoNetAccount {
      * Return the memo key, generates from the seed if it has not been generated. null if it can't be generated
      */
     fun getMemoKey(context: Context): ECKey? {
-        val seed = CrystalDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId) ?: return null
+        val seed = BitsyDatabase.getAppDatabase(context)!!.accountSeedDao().findById(this.seedId) ?: return null
         if (seed.type!!.equals(SeedType.BRAINKEY)) {
             return BrainKey(seed.masterSeed, 0).privateKey
         } else {

@@ -3,16 +3,16 @@ package cy.agorise.bitsybitshareswallet.viewmodels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.models.GeneralSetting
 
 class GeneralSettingListViewModel(application: Application) : AndroidViewModel(application) {
 
     val generalSettingList: LiveData<List<GeneralSetting>>
-    private val db: CrystalDatabase
+    private val db: BitsyDatabase
 
     init {
-        this.db = CrystalDatabase.getAppDatabase(application.applicationContext)!!
+        this.db = BitsyDatabase.getAppDatabase(application.applicationContext)!!
         generalSettingList = this.db.generalSettingDao().all
     }
 

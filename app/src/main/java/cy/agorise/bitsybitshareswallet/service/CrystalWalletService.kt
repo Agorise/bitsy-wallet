@@ -9,7 +9,7 @@ import android.util.Log
 import androidx.annotation.Nullable
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.Observer
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.manager.BitsharesAccountManager
 import cy.agorise.bitsybitshareswallet.manager.FileBackupManager
@@ -49,7 +49,7 @@ class CrystalWalletService : LifecycleService() {
     fun loadBitsharesAccountNames() {
         val service = this
         val uncachedBitsharesAccountNames =
-            CrystalDatabase.getAppDatabase(service)!!.bitsharesAccountNameCacheDao().uncachedBitsharesAccountName
+            BitsyDatabase.getAppDatabase(service)!!.bitsharesAccountNameCacheDao().uncachedBitsharesAccountName
 
         uncachedBitsharesAccountNames.observe(service, object : Observer<List<BitsharesAccountNameCache>> {
             override fun onChanged(@Nullable bitsharesAccountNameCacheList: List<BitsharesAccountNameCache>) {
@@ -67,17 +67,17 @@ class CrystalWalletService : LifecycleService() {
         val service = this
 
         //getting the preferred currency of the user
-        val preferredCurrencySetting = CrystalDatabase.getAppDatabase(service)!!.generalSettingDao()
+        val preferredCurrencySetting = BitsyDatabase.getAppDatabase(service)!!.generalSettingDao()
             .getByName(GeneralSetting.SETTING_NAME_PREFERRED_CURRENCY)
 
         preferredCurrencySetting.observe(service, object : Observer<GeneralSetting> {
             override fun onChanged(@Nullable generalSetting: GeneralSetting?) {
                 if (generalSetting != null) {
-                    val preferredCurrency = CrystalDatabase.getAppDatabase(service)!!.cryptoCurrencyDao()
+                    val preferredCurrency = BitsyDatabase.getAppDatabase(service)!!.cryptoCurrencyDao()
                         .getByNameAndCryptoNet("EUR", CryptoNet.BITSHARES.name)
 
                     if (preferredCurrency != null) {
-                        val preferredCurrencyBitsharesInfo = CrystalDatabase.getAppDatabase(service)!!.bitsharesAssetDao()
+                        val preferredCurrencyBitsharesInfo = BitsyDatabase.getAppDatabase(service)!!.bitsharesAssetDao()
                             .getBitsharesAssetInfoFromCurrencyId(preferredCurrency!!.id)
 
                         if (preferredCurrencyBitsharesInfo != null) {
@@ -86,7 +86,7 @@ class CrystalWalletService : LifecycleService() {
 
                             //Loading "from" currencies
                             val bitsharesAssetInfo =
-                                CrystalDatabase.getAppDatabase(service)!!.bitsharesAssetDao().all
+                                BitsyDatabase.getAppDatabase(service)!!.bitsharesAssetDao().all
 
                             bitsharesAssetInfo.observe(service, object : Observer<List<BitsharesAssetInfo>> {
                                 override fun onChanged(@Nullable bitsharesAssetInfos: List<BitsharesAssetInfo>) {
@@ -96,7 +96,7 @@ class CrystalWalletService : LifecycleService() {
                                         currenciesIds.add(bitsharesAssetInfo.cryptoCurrencyId)
                                     }
                                     val bitsharesCurrencies =
-                                        CrystalDatabase.getAppDatabase(service)!!.cryptoCurrencyDao()
+                                        BitsyDatabase.getAppDatabase(service)!!.cryptoCurrencyDao()
                                             .getByIds(currenciesIds)
 
                                     var nextAsset: BitsharesAsset
@@ -127,7 +127,7 @@ class CrystalWalletService : LifecycleService() {
         this.keepLoadingAccountTransactions = true
         val thisService = this
 
-        val db = CrystalDatabase.getAppDatabase(this)
+        val db = BitsyDatabase.getAppDatabase(this)
         //final LiveData<List<CryptoNetAccount>> cryptoNetAccountList = db.cryptoNetAccountDao().all;
         val grapheneAccountInfoList = db!!.grapheneAccountInfoDao().all
         grapheneAccountInfoList.observe(this, object : Observer<List<GrapheneAccountInfo>> {

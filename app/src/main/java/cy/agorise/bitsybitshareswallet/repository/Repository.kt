@@ -1,7 +1,7 @@
 package cy.agorise.bitsybitshareswallet.repository
 
 import android.app.Activity
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 
 open class Repository{
 
@@ -12,12 +12,12 @@ open class Repository{
     constructor(activity:Activity?){
         this.activity = activity
         if(db == null){
-            db = CrystalDatabase.getAppDatabase(activity!!)!!
+            db = BitsyDatabase.getAppDatabase(activity!!)!!
         }
     }
 
     companion object {
 
-        var db: CrystalDatabase? = null
+        var db: BitsyDatabase? = null
     }
 }

@@ -11,7 +11,7 @@ import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dialogs.*
 import kotlinx.android.synthetic.main.activity_account.*
 import android.widget.Toast
-import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
@@ -230,7 +230,7 @@ class AccountActivity: CustomActivity(){
                     accountSeed.id = 1
                     accountSeed.name = "dtvv-123456"
                     accountSeed.masterSeed = "allow clutch exhibit group citizen poverty draw help wage mail program safe"
-                    var db: CrystalDatabase = CrystalDatabase.getAppDatabase(globalActivity)!!
+                    var db: BitsyDatabase = BitsyDatabase.getAppDatabase(globalActivity)!!
                     db.accountSeedDao().insertAccountSeed(accountSeed)
 
                     finish()
