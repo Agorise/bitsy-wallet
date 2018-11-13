@@ -76,7 +76,7 @@ class MainActivity : CustomActivity() {
         tvBuildVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
         // Show block number in bottom bar
-        tvBlockNumber.text = getString(R.string.block_number_bottom_bar, "-----")
+        //tvBlockNumber.text = getString(R.string.block_number_bottom_bar, "-----")
 
         // TODO add listener to update block number
     }
