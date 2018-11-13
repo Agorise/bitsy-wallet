@@ -6,6 +6,7 @@ import android.os.PersistableBundle
 import android.preference.PreferenceManager
 import android.view.ContextMenu
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
@@ -24,12 +25,21 @@ class LicenseActivity : CustomActivity(){
 
         db = CrystalDatabase.getAppDatabase(this.applicationContext)!!
 
+        val acounts = db.accountSeedDao().countAccountSeeds()
+
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {
 
-            val intent = Intent(this, AccountActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(acounts > 0) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else{
+                val intent = Intent(this, AccountActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
         else{
 
