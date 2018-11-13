@@ -38,8 +38,6 @@ class SettingsActivity : CustomActivity() {
 
             var intent: Intent = Intent(globalActivity,CopyBrainkey::class.java)
             intent.putExtra("newAccount",false)
-            intent.putExtra("SEED_ID",1.toLong())
-            intent.putExtra("SEED_ID_TMP","allow clutch exhibit group citizen poverty draw help wage mail program safe")
             startActivity(intent)
         }
     }
