@@ -23,17 +23,7 @@ class QuestionDialog : CrystalDialog {
         /*
         * Create the buttons needed
         * */
-        this.builder.positiveButton(R.string.ok){
-
-            if(positiveResponse != null){
-                positiveResponse!!.onPositive()
-            }
-        }
-        this.builder.negativeButton(R.string.cancel){
-
-            if(negativeResponse != null){
-                negativeResponse!!.onNegative(dialogMaterial)
-            }
-        }
+        this.builder.positiveButton(R.string.ok)
+        this.builder.negativeButton(R.string.cancel)
     }
 }

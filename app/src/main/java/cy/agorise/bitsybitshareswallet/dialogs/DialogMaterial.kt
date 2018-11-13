@@ -92,7 +92,7 @@ open abstract class DialogMaterial{
         /*
         * If user wants positive button
         * */
-        if(positiveResponse != null){
+        else if(positiveResponse != null){
             builder.positiveButton(R.string.ok){ dialog ->
 
                 /*
