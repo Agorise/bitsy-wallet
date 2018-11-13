@@ -11,7 +11,9 @@ import androidx.annotation.Nullable
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.viewmodels.AccountSeedViewModel
 import kotlinx.android.synthetic.main.activity_copybrainkey.*
 
@@ -43,20 +45,9 @@ class CopyBrainkey:CustomActivity(){
             layout?.removeView(btnCancel)
         }
 
-        val seedId = intent.getLongExtra("SEED_ID", -1)
+        val account:AccountSeed = RepositoryManager.getAccountsRepository(globalActivity).getLocalAccount()
 
-        if (seedId > -1) {
-            /*accountSeedViewModel = ViewModelProviders.of(this).get(AccountSeedViewModel::class.java)
-            accountSeedViewModel.loadSeed(seedId)
-            val liveDataAccountSeed = accountSeedViewModel.getAccountSeed()
-            liveDataAccountSeed!!.observe(this, object : Observer<AccountSeed> {
-                override fun onChanged(@Nullable accountSeed: AccountSeed) {
-                    textfieldBrainkey.setText(accountSeed.masterSeed)
-                }
-            })*/
-
-            textfieldBrainkey.setText(intent.getStringExtra("SEED_ID_TMP")) //testing only
-        }
+        textfieldBrainkey.setText(account.masterSeed) //testing only
 
         btnCancel.setOnClickListener(){
 

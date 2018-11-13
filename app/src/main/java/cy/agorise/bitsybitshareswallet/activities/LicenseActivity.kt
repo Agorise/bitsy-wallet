@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dao.CrystalDatabase
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_license.*
 
@@ -23,9 +24,7 @@ class LicenseActivity : CustomActivity(){
 
         setContentView(R.layout.activity_license)
 
-        db = CrystalDatabase.getAppDatabase(this.applicationContext)!!
-
-        val acounts = db.accountSeedDao().countAccountSeeds()
+        val acounts  = RepositoryManager.getAccountsRepository(this).getTotalAccounts()
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {
