@@ -1,5 +1,6 @@
 package cy.agorise.bitsybitshareswallet.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.MenuItem
@@ -32,6 +33,15 @@ class SettingsActivity : CustomActivity() {
         initMinutesClose()
 
         txtAccount.text = "dtvvdtvv-123456"
+
+        brainkey_ic.setOnClickListener(){
+
+            var intent: Intent = Intent(globalActivity,CopyBrainkey::class.java)
+            intent.putExtra("newAccount",false)
+            intent.putExtra("SEED_ID",1.toLong())
+            intent.putExtra("SEED_ID_TMP","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+            startActivity(intent)
+        }
     }
 
     /**

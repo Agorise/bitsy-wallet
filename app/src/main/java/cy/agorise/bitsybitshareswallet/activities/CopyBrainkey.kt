@@ -38,6 +38,10 @@ class CopyBrainkey:CustomActivity(){
             layout?.removeView(btnOK)
             //btnOk.setVisibility(View.INVISIBLE);
         }
+        else{
+            val layout= btnOK.getParent() as ViewGroup
+            layout?.removeView(btnCancel)
+        }
 
         val seedId = intent.getLongExtra("SEED_ID", -1)
 
