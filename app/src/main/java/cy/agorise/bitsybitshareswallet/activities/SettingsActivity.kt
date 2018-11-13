@@ -1,11 +1,19 @@
 package cy.agorise.bitsybitshareswallet.activities
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.dialogs.DialogMaterial
+import cy.agorise.bitsybitshareswallet.dialogs.NegativeResponse
+import cy.agorise.bitsybitshareswallet.dialogs.PositiveResponse
+import cy.agorise.bitsybitshareswallet.dialogs.QuestionDialog
+import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_setting.*
 
@@ -39,6 +47,30 @@ class SettingsActivity : CustomActivity() {
             var intent: Intent = Intent(globalActivity,CopyBrainkey::class.java)
             intent.putExtra("newAccount",false)
             startActivity(intent)
+        }
+
+        remove_account.setOnClickListener(){
+
+            var questionDialog: QuestionDialog = QuestionDialog(globalActivity)
+            questionDialog.setText(R.string.continue_question)
+            questionDialog.setOnNegative(object : NegativeResponse {
+                override fun onNegative(dialogMaterial: DialogMaterial) {
+                    dialogMaterial.dismiss()
+                }
+            })
+            questionDialog.setOnPositive(object : PositiveResponse {
+                override fun onPositive() {
+
+                    RepositoryManager.getAccountsRepository(globalActivity).removeAccount()
+
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("finish", true)
+                    setResult(Activity.RESULT_OK, resultIntent)
+                    finish()
+                }
+            })
+            questionDialog.show()
+
         }
     }
 

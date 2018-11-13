@@ -17,4 +17,8 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
         val accounts = db!!.accountSeedDao().countAccountSeeds()
         return accounts
     }
+
+    fun removeAccount(){
+        db!!.accountSeedDao().nukeTable()
+    }
 }

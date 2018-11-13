@@ -16,6 +16,9 @@ import cy.agorise.bitsybitshareswallet.utils.Constants
 
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import android.app.Activity
+
+
 
 class MainActivity : CustomActivity() {
 
@@ -65,8 +68,18 @@ class MainActivity : CustomActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == SETTINGS_SELECTED){
-            recreate()
+        when (requestCode) {
+            SETTINGS_SELECTED -> {
+                if (resultCode === Activity.RESULT_OK) {
+                    val returnValue = data!!.getBooleanExtra("finish",false)
+                    if(returnValue){
+                        finish()
+                    }
+                    else{
+                        recreate()
+                    }
+                }
+            }
         }
     }
 

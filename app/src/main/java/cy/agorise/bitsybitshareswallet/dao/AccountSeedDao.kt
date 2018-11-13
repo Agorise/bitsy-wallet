@@ -30,4 +30,7 @@ interface AccountSeedDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAccountSeed(seed: AccountSeed): Long
+
+    @Query("DELETE FROM account_seed")
+    fun nukeTable()
 }
