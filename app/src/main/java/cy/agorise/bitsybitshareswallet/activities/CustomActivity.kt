@@ -23,6 +23,7 @@ open class CustomActivity : AppCompatActivity() {
     * Contains the validator for general fields
     * */
     @JvmField protected var fieldsValidator = FieldsValidator()
+    val intentFilter = IntentFilter()
 
     /*
     * Contains the global activity
@@ -37,7 +38,6 @@ open class CustomActivity : AppCompatActivity() {
         * */
         this.globalActivity = this
 
-        val intentFilter = IntentFilter()
         intentFilter.addAction("com.package.ACTION_CLOSE")
         receiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
@@ -46,18 +46,15 @@ open class CustomActivity : AppCompatActivity() {
                 System.exit(0)
             }
         }
-
-        try{
-            unregisterReceiver(receiver)
-        }catch(e: Exception){
-
-        }
-        registerReceiver(receiver, intentFilter)
     }
 
 
     override fun onPause() {
         super.onPause()
+
+        if(receiver != null){
+            unregisterReceiver(receiver)
+        }
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_MINUTES_CLOSE_MODE_ACTIVATED, false)
@@ -81,6 +78,9 @@ open class CustomActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        if(receiver != null){
+            registerReceiver(receiver, intentFilter)
+        }
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_MINUTES_CLOSE_MODE_ACTIVATED, false)
