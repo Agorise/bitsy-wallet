@@ -1,6 +1,7 @@
 package cy.agorise.bitsybitshareswallet.repository
 
 import android.app.Activity
+import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 
 class RepositoryManager{
 
@@ -8,6 +9,10 @@ class RepositoryManager{
 
         fun getAccountsRepository(acivity:Activity) : AccountRepository {
             return AccountRepository(acivity)
+        }
+
+        fun getDB(activity: Activity):BitsyDatabase{
+            return BitsyDatabase.getAppDatabase(activity!!)!!
         }
     }
 }
