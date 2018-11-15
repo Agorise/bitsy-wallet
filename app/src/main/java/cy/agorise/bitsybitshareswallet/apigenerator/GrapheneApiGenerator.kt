@@ -78,26 +78,16 @@ object GrapheneApiGenerator {
         val thread = WebSocketThread(GetKeyReferences(address, true,
             object : WitnessResponseListener {
                 override fun onSuccess(response: WitnessResponse<*>) {
-                    try {
-                        val resp = response.result as List<List<UserAccount>>
-                        if (resp.size > 0) {
-                            val accounts = resp[0]
-                            if (accounts.size > 0) {
-                                for (account in accounts) {
-                                    request.listener.success(account, request.id)
-                                    break
-                                }
-                            } else {
-                                request.listener.fail(request.id)
+                    val resp = response.result as List<List<UserAccount>>
+                    if (resp.size > 0) {
+                        val accounts = resp[0]
+                        if (accounts.size > 0) {
+                            for (account in accounts) {
+                                request.listener.success(account, request.id)
                             }
-                        } else {
-                            request.listener.fail(request.id)
                         }
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                        request.listener.fail(request.id)
                     }
-
+                    request.listener.fail(request.id)
                 }
 
                 override fun onError(error: BaseResponse.Error) {
@@ -320,8 +310,8 @@ object GrapheneApiGenerator {
     ) {
         if (!currentBitsharesListener.containsKey(accountId)) {
             val db = BitsyDatabase.getAppDatabase(context)
-            val bitsharesAssetDao = db!!.bitsharesAssetDao()
-            val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
+            val bitsharesAssetDao = db?.bitsharesAssetDao()
+            val cryptoCurrencyDao = db?.cryptoCurrencyDao()
             val balanceListener = object : SubscriptionListener {
                 override fun getInterestObjectType(): ObjectType {
                     return ObjectType.TRANSACTION_OBJECT
@@ -335,7 +325,7 @@ object GrapheneApiGenerator {
                                 for (operation in update.transaction.operations) {
                                     if (operation is TransferOperation) {
                                         if (operation.from.objectId == accountBitsharesId || operation.to.objectId == accountBitsharesId) {
-                                            getAccountBalance(
+                                            GrapheneApiGenerator.getAccountBalance(
                                                 accountId,
                                                 accountBitsharesId,
                                                 context
@@ -344,57 +334,55 @@ object GrapheneApiGenerator {
                                             transaction.accountId = accountId
                                             transaction.amount = operation.assetAmount.amount.toLong()
                                             val info =
-                                                bitsharesAssetDao.getBitsharesAssetInfoById(operation.assetAmount.asset.objectId)
+                                                bitsharesAssetDao?.getBitsharesAssetInfoById(operation.assetAmount.asset.objectId)
                                             if (info == null) {
                                                 //The cryptoCurrency is not in the database, queringfor its data
                                                 val assetRequest = ApiRequest(0, object : ApiRequestListener {
+                                                    
                                                     override fun success(answer: Any?, idPetition: Int) {
                                                         val assets = answer as ArrayList<BitsharesAsset>
                                                         for (asset in assets) {
 
                                                             var currencyId: Long = -1
                                                             val cryptoCurrencyDb =
-                                                                cryptoCurrencyDao.getByNameAndCryptoNet(
+                                                                cryptoCurrencyDao?.getByNameAndCryptoNet(
                                                                     (answer as BitsharesAsset).name!!,
-                                                                    (answer as BitsharesAsset).cryptoNet!!.name
+                                                                    (answer as BitsharesAsset).cryptoNet?.name!!
                                                                 )
 
                                                             if (cryptoCurrencyDb != null) {
                                                                 currencyId = cryptoCurrencyDb!!.id
                                                             } else {
                                                                 val idCryptoCurrency =
-                                                                    cryptoCurrencyDao.insertCryptoCurrency(asset)[0]
+                                                                    cryptoCurrencyDao?.insertCryptoCurrency(asset)!![0]
                                                                 currencyId = idCryptoCurrency
                                                             }
 
                                                             val info = BitsharesAssetInfo(asset)
                                                             info.cryptoCurrencyId = currencyId
                                                             asset.id = currencyId.toInt().toLong()
-                                                            bitsharesAssetDao.insertBitsharesAssetInfo(info)
+                                                            bitsharesAssetDao?.insertBitsharesAssetInfo(info)
                                                             saveTransaction(
                                                                 transaction,
-                                                                cryptoCurrencyDao.getById(info.cryptoCurrencyId),
+                                                                cryptoCurrencyDao?.getById(info.cryptoCurrencyId),
                                                                 accountBitsharesId,
                                                                 operation,
                                                                 context
                                                             )
                                                         }
                                                     }
-
+                                                    
                                                     override fun fail(idPetition: Int) {
                                                         //TODO error retrieving asset
                                                     }
                                                 })
                                                 val assets = ArrayList<String>()
                                                 assets.add(operation.assetAmount.asset.objectId)
-                                                getAssetById(
-                                                    assets,
-                                                    assetRequest
-                                                )
+                                                GrapheneApiGenerator.getAssetById(assets, assetRequest)
                                             } else {
                                                 saveTransaction(
                                                     transaction,
-                                                    cryptoCurrencyDao.getById(info!!.cryptoCurrencyId),
+                                                    cryptoCurrencyDao?.getById(info!!.cryptoCurrencyId)!!,
                                                     accountBitsharesId,
                                                     operation,
                                                     context
@@ -437,7 +425,7 @@ object GrapheneApiGenerator {
         transaction.idCurrency = currency.id as Int
         transaction.isConfirmed = true //graphene transaction are always confirmed
         transaction.from = tOperation.from.objectId
-        transaction.input = tOperation.from.objectId != accountBitsharesId
+        transaction.input  =tOperation.from.objectId != accountBitsharesId
         transaction.to = tOperation.to.objectId
         transaction.date = Date()
         BitsyDatabase.getAppDatabase(context)!!.transactionDao().insertTransaction(transaction)
@@ -466,9 +454,9 @@ object GrapheneApiGenerator {
     ) {
 
         val db = BitsyDatabase.getAppDatabase(context)
-        val balanceDao = db!!.cryptoCoinBalanceDao()
-        val bitsharesAssetDao = db!!.bitsharesAssetDao()
-        val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
+        val balanceDao = db?.cryptoCoinBalanceDao()
+        val bitsharesAssetDao = db?.bitsharesAssetDao()
+        val cryptoCurrencyDao = db?.cryptoCurrencyDao()
         val thread = WebSocketThread(GetAccountBalances(UserAccount(accountGrapheneId),
             ArrayList(), object : WitnessResponseListener {
                 override fun onSuccess(response: WitnessResponse<*>) {
@@ -476,8 +464,8 @@ object GrapheneApiGenerator {
                     for (balance in balances) {
                         val ccBalance = CryptoCoinBalance()
                         ccBalance.accountId = accountId
-                        ccBalance.balance  = balance.amount.toLong()
-                        val assetInfo = bitsharesAssetDao.getBitsharesAssetInfoById(balance.asset.objectId)
+                        ccBalance.balance = balance.amount.toLong()
+                        val assetInfo = bitsharesAssetDao?.getBitsharesAssetInfoById(balance.asset.objectId)
                         if (assetInfo == null) {
                             val idAssets = ArrayList<String>()
                             idAssets.add(balance.asset.objectId)
@@ -488,36 +476,33 @@ object GrapheneApiGenerator {
                                         val info = BitsharesAssetInfo(asset)
 
                                         var currencyId: Long = -1
-                                        val cryptoCurrencyDb = cryptoCurrencyDao.getByNameAndCryptoNet(
+                                        val cryptoCurrencyDb = cryptoCurrencyDao?.getByNameAndCryptoNet(
                                             asset.name!!,
-                                            asset.cryptoNet!!.name
+                                            asset.cryptoNet?.name!!
                                         )
 
                                         if (cryptoCurrencyDb != null) {
                                             currencyId = cryptoCurrencyDb!!.id
                                         } else {
                                             val cryptoCurrencyId =
-                                                cryptoCurrencyDao.insertCryptoCurrency(asset as CryptoCurrency)
-                                            currencyId = cryptoCurrencyId[0]
+                                                cryptoCurrencyDao?.insertCryptoCurrency(asset as CryptoCurrency)
+                                            currencyId = cryptoCurrencyId!![0]
                                         }
                                         info.cryptoCurrencyId = currencyId
-                                        bitsharesAssetDao.insertBitsharesAssetInfo(info)
+                                        bitsharesAssetDao?.insertBitsharesAssetInfo(info)
                                         ccBalance.cryptoCurrencyId = currencyId
-                                        balanceDao.insertCryptoCoinBalance(ccBalance)
+                                        balanceDao?.insertCryptoCoinBalance(ccBalance)
                                     }
                                 }
 
                                 override fun fail(idPetition: Int) {}
                             })
-                            getAssetById(
-                                idAssets,
-                                getAssetRequest
-                            )
+                            getAssetById(idAssets, getAssetRequest)
 
                         } else {
 
                             ccBalance.cryptoCurrencyId = assetInfo!!.cryptoCurrencyId
-                            balanceDao.insertCryptoCoinBalance(ccBalance)
+                            balanceDao?.insertCryptoCoinBalance(ccBalance)
                         }
                     }
                 }
@@ -607,8 +592,7 @@ object GrapheneApiGenerator {
             val thread = WebSocketThread(
                 GetLimitOrders(
                     baseAsset.bitsharesId,
-                    quoteAsset.bitsharesId, 10,
-                    EquivalentValueListener(
+                    quoteAsset.bitsharesId, 10, EquivalentValueListener(
                         baseAsset,
                         quoteAsset, context
                     )
@@ -627,39 +611,33 @@ object GrapheneApiGenerator {
      */
     fun getEquivalentValue(baseAssetName: String, quoteAssets: List<BitsharesAsset>, context: Context) {
         val db = BitsyDatabase.getAppDatabase(context)
-        val cryptoCurrencyDao = db!!.cryptoCurrencyDao()
-        val bitsharesAssetDao = db!!.bitsharesAssetDao()
-        val baseCurrency = cryptoCurrencyDao.getByName(baseAssetName, CryptoNet.BITSHARES.name)
+        val cryptoCurrencyDao = db?.cryptoCurrencyDao()
+        val bitsharesAssetDao = db?.bitsharesAssetDao()
+        val baseCurrency = cryptoCurrencyDao?.getByName(baseAssetName, CryptoNet.BITSHARES.name)
         var info: BitsharesAssetInfo? = null
         if (baseCurrency != null) {
-            info = db!!.bitsharesAssetDao().getBitsharesAssetInfo(baseCurrency!!.id)
+            info = db?.bitsharesAssetDao().getBitsharesAssetInfo(baseCurrency!!.id)
         }
         if (baseCurrency == null || info == null) {
             val getAssetRequest = ApiRequest(1, object : ApiRequestListener {
                 override fun success(answer: Any?, idPetition: Int) {
                     if (answer is BitsharesAsset) {
-                        val info = BitsharesAssetInfo(answer as BitsharesAsset)
+                        val info = BitsharesAssetInfo(answer)
 
                         var currencyId: Long = -1
-                        val cryptoCurrencyDb = cryptoCurrencyDao.getByNameAndCryptoNet(
-                            (answer as BitsharesAsset).name!!,
-                            (answer as BitsharesAsset).cryptoNet!!.name
-                        )
+                        val cryptoCurrencyDb =
+                            cryptoCurrencyDao?.getByNameAndCryptoNet(answer.name!!, answer.cryptoNet?.name!!)
 
                         if (cryptoCurrencyDb != null) {
                             currencyId = cryptoCurrencyDb!!.id
                         } else {
-                            val cryptoCurrencyId = cryptoCurrencyDao.insertCryptoCurrency(answer as CryptoCurrency)[0]
+                            val cryptoCurrencyId = cryptoCurrencyDao?.insertCryptoCurrency(answer as CryptoCurrency)!![0]
                             currencyId = cryptoCurrencyId
                         }
 
                         info.cryptoCurrencyId = currencyId
-                        bitsharesAssetDao.insertBitsharesAssetInfo(info)
-                        getEquivalentValue(
-                            answer as BitsharesAsset,
-                            quoteAssets,
-                            context
-                        )
+                        bitsharesAssetDao?.insertBitsharesAssetInfo(info)
+                        GrapheneApiGenerator.getEquivalentValue(answer, quoteAssets, context)
                     }
                 }
 
@@ -669,16 +647,12 @@ object GrapheneApiGenerator {
             })
             val names = ArrayList<String>()
             names.add(baseAssetName)
-            getAssetByName(names, getAssetRequest)
+            GrapheneApiGenerator.getAssetByName(names, getAssetRequest)
 
         } else {
             val baseAsset = BitsharesAsset(baseCurrency)
             baseAsset.loadInfo(info)
-            getEquivalentValue(
-                baseAsset,
-                quoteAssets,
-                context
-            )
+            getEquivalentValue(baseAsset, quoteAssets, context)
         }
 
 
@@ -709,7 +683,7 @@ object GrapheneApiGenerator {
             }
             for (order in orders) {
                 try {
-                    //if (order.getSellPrice().base.getAsset().getBitassetId().equals(baseAsset.getBitsharesId())) {
+                    //if (order.getSellPrice().base.getAsset().getBitassetId().equals(baseAsset.bitsharesId)) {
                     val converter = Converter()
                     order.sellPrice.base.asset.precision = baseAsset.precision
                     order.sellPrice.quote.asset.precision = quoteAsset.precision
