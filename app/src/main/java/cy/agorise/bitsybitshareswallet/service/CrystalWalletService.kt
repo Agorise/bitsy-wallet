@@ -51,7 +51,7 @@ class CrystalWalletService : LifecycleService() {
         val uncachedBitsharesAccountNames =
             BitsyDatabase.getAppDatabase(service)!!.bitsharesAccountNameCacheDao().uncachedBitsharesAccountName
 
-        uncachedBitsharesAccountNames.observe(service, object : Observer<List<BitsharesAccountNameCache>> {
+        /*uncachedBitsharesAccountNames.observe(service, object : Observer<List<BitsharesAccountNameCache>> {
             override fun onChanged(@Nullable bitsharesAccountNameCacheList: List<BitsharesAccountNameCache>) {
                 for (nextAccountId in bitsharesAccountNameCacheList) {
                     val request = GetBitsharesAccountNameCacheRequest(service, nextAccountId.accountId!!)
@@ -59,7 +59,7 @@ class CrystalWalletService : LifecycleService() {
                     CryptoNetInfoRequests.getInstance()!!.addRequest(request)
                 }
             }
-        })
+        })*/
     }
 
     fun loadEquivalentsValues() {
@@ -130,7 +130,7 @@ class CrystalWalletService : LifecycleService() {
         val db = BitsyDatabase.getAppDatabase(this)
         //final LiveData<List<CryptoNetAccount>> cryptoNetAccountList = db.cryptoNetAccountDao().all;
         val grapheneAccountInfoList = db!!.grapheneAccountInfoDao().all
-        grapheneAccountInfoList.observe(this, object : Observer<List<GrapheneAccountInfo>> {
+        /*grapheneAccountInfoList.observe(this, object : Observer<List<GrapheneAccountInfo>> {
             override fun onChanged(@Nullable grapheneAccountInfos: List<GrapheneAccountInfo>) {
                 var nextGrapheneAccount: GrapheneAccount
                 for (nextGrapheneAccountInfo in grapheneAccountInfos) {
@@ -143,7 +143,7 @@ class CrystalWalletService : LifecycleService() {
                     bitsharesAccountManager!!.loadAccountFromDB(nextGrapheneAccount, thisService)
                 }
             }
-        })
+        })*/
 
 
         /*while(this.keepLoadingAccountTransactions){
