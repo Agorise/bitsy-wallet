@@ -21,7 +21,7 @@ class CryptoNetInfoRequests {
         this.requests!!.remove(request)
     }
 
-    fun addListener(listener: CryptoNetInfoRequestsListener) {
+    open fun addListener(listener: CryptoNetInfoRequestsListener) {
         this.listeners!!.add(listener)
     }
 

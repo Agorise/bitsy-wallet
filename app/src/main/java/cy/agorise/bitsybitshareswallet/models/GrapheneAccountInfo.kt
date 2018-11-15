@@ -3,7 +3,6 @@ package cy.agorise.bitsybitshareswallet.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 
 @Entity(
     tableName = "graphene_account",

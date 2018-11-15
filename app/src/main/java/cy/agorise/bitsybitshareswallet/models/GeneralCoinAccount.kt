@@ -4,7 +4,6 @@ import android.content.Context
 import com.google.gson.JsonObject
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import org.bitcoinj.core.NetworkParameters
 import org.bitcoinj.crypto.ChildNumber
 import org.bitcoinj.crypto.DeterministicKey

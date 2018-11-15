@@ -1,7 +1,7 @@
 package cy.agorise.bitsybitshareswallet.manager
 
 import android.content.Context
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 
 interface CryptoAccountManager {
 

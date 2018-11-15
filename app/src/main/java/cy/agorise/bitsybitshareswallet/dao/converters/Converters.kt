@@ -3,9 +3,9 @@ package cy.agorise.bitsybitshareswallet.dao.converters
 import androidx.room.TypeConverter
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.bitsybitshareswallet.models.BitsharesAsset
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 import java.util.*
 
 class Converters {

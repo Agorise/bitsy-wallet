@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import java.util.*
 
 @Entity

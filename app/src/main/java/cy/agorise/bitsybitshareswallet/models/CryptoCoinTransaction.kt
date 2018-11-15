@@ -3,7 +3,6 @@ package cy.agorise.bitsybitshareswallet.models
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
 import androidx.room.*
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import java.util.*
 
 @Entity(tableName = "crypto_coin_transaction", indices = arrayOf(

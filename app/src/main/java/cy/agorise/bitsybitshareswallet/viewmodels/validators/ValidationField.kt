@@ -5,7 +5,7 @@ import android.view.View
 abstract class ValidationField(var view: View) {
 
     protected lateinit var lastValue: String
-    protected lateinit var message: String
+    lateinit var message: String
     protected var validating: Boolean = false
     protected var valid: Boolean? = null
     lateinit var validator: UIValidator

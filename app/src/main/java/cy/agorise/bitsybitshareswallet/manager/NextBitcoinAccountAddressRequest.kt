@@ -2,7 +2,7 @@ package cy.agorise.bitsybitshareswallet.manager
 
 import android.content.Context
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequest
 
 class NextBitcoinAccountAddressRequest(

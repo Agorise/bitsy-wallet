@@ -27,7 +27,7 @@ enum class CryptoCoin private constructor(
         protected set
     var coinNumber: Int = 0
         protected set
-    var parameters: NetworkParameters
+    lateinit var parameters: NetworkParameters
         protected set
 
     init {
@@ -35,7 +35,7 @@ enum class CryptoCoin private constructor(
         this.label = label
         this.precision = precision
         this.coinNumber = coinNumber
-        this.parameters = parameters!!
+        //this.parameters = parameters!!
 
     }
 

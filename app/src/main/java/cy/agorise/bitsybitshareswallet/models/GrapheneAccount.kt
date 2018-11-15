@@ -2,7 +2,6 @@ package cy.agorise.bitsybitshareswallet.models
 
 import android.content.Context
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.graphenej.BrainKey
 import org.bitcoinj.core.ECKey

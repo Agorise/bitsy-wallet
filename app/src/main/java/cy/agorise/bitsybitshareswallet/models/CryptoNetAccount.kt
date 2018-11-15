@@ -10,7 +10,7 @@ import cy.agorise.bitsybitshareswallet.enums.CryptoNet
     indices = arrayOf(Index("id"), Index("seed_id"), Index(value = arrayOf("seed_id", "crypto_net", "account_index"), unique = true)),
     foreignKeys = arrayOf(ForeignKey(entity = AccountSeed::class, parentColumns = arrayOf("id"), childColumns = arrayOf("seed_id")))
 )
-class CryptoNetAccount {
+open class CryptoNetAccount {
 
     /**
      * The id on the database

@@ -8,7 +8,6 @@ import cy.agorise.bitsybitshareswallet.apigenerator.insightapi.models.Txi
 import cy.agorise.bitsybitshareswallet.dao.BitcoinAddressDao
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.models.*
 import cy.agorise.bitsybitshareswallet.requestmanagers.BitcoinSendRequest
 import cy.agorise.bitsybitshareswallet.requestmanagers.CreateBitcoinAccountRequest

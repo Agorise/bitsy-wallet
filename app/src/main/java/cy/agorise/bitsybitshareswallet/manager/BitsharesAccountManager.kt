@@ -1,6 +1,7 @@
 package cy.agorise.bitsybitshareswallet.manager
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import com.google.common.primitives.UnsignedLong
 import cy.agorise.bitsybitshareswallet.apigenerator.ApiRequest
@@ -14,11 +15,11 @@ import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.dao.TransactionDao
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.enums.SeedType
 import cy.agorise.bitsybitshareswallet.models.*
 import cy.agorise.bitsybitshareswallet.models.seed.BIP39
 import cy.agorise.bitsybitshareswallet.network.CryptoNetManager
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.*
 import cy.agorise.graphenej.*
 import cy.agorise.graphenej.models.AccountProperties
@@ -226,7 +227,7 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
                     override fun success(answer: Any?, idPetition: Int) {
                         if (answer != null && importRequest.status.equals(ImportBitsharesAccountRequest.StatusCode.NOT_STARTED)) {
                             val userAccount = answer as UserAccount?
-                            importRequest.seedType = SeedType.BIP39
+                            importRequest.seedType = SeedType.BRAINKEY
                             importRequest.status = ImportBitsharesAccountRequest.StatusCode.SUCCEEDED
 
                             val seed = AccountSeed()
@@ -341,12 +342,11 @@ class BitsharesAccountManager : CryptoAccountManager, CryptoNetInfoRequestsListe
     }
 
     private fun validateCreateAccount(createRequest: ValidateCreateBitsharesAccountRequest) {
-        //TODO test for internet and server connection
-        // Generate seed or find key
         val context = createRequest.context
-        val seed = AccountSeed.getAccountSeed(SeedType.BIP39, context)
+        val seed = AccountSeed.getAccountSeed(SeedType.BRAINKEY, context)
         val db = BitsyDatabase.getAppDatabase(context)
-        val idSeed = db!!.accountSeedDao().insertAccountSeed(seed!!)
+        val idSeed =RepositoryManager.getAccountsRepository(context as Activity).addAccount(seed!!)
+        //val idSeed = db!!.accountSeedDao().insertAccountSeed(seed!!)
         assert(seed != null)
         seed!!.id = idSeed
         seed!!.name = createRequest.accountName

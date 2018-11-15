@@ -2,7 +2,7 @@ package cy.agorise.bitsybitshareswallet.requestmanagers
 
 import android.content.Context
 import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
-import cy.agorise.bitsybitshareswallet.enums.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.models.GrapheneAccount
 
 class BitcoinSendRequest(// The app context
