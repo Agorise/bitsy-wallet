@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.activities.QRCodeActivity
 import cy.agorise.bitsybitshareswallet.activities.SendTransactionActivity
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.BalancesViewModel
 import de.bitshares_munich.smartcoinswallet.ReceiveTransactionActivity
@@ -58,6 +60,8 @@ class BalancesFragment : Fragment() {
 
         btnSend.setOnClickListener {
             val intent = Intent(view.context, SendTransactionActivity::class.java)
+            var cryptoNetAccount:CryptoNetAccount = RepositoryManager.getAccountsRepository(this!!.activity!!).getCryptoNetLocalAcount()!!
+            intent.putExtra("CRYPTO_NET_ACCOUNT_ID",cryptoNetAccount.id)
             startActivity(intent)
         }
 
