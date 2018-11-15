@@ -17,7 +17,12 @@
     <string name="to">to</string>
     <string name="from">from</string>
 
+    <string name="warning_msg_same_account">You can\'t send funds to the same account</string>
+    <string name="account_name_not_exist">Account Name %s does not exist</string>
     <string name="account_id">accountId</string>
+    <string name="insufficient_amount">Insufficient Amount</string>
+    <string name="amount_should_be_greater_than_zero">Amount should be greater than zero</string>
+    <string name="send_assets_error_invalid_cypto_coin_selected" translatable="false">Invalid crypto coin selected</string>
 
     <string name="pref_language">language</string>
 
