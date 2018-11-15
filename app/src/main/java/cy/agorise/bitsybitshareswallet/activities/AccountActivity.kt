@@ -14,7 +14,11 @@ import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
+import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
+import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
+import cy.agorise.bitsybitshareswallet.requestmanagers.ValidateCreateBitsharesAccountRequest
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
@@ -173,7 +177,7 @@ class AccountActivity: CustomActivity(){
             /*
         * Question if continue or not
         * */
-            var questionDialog: QuestionDialog = QuestionDialog(activity as Activity)
+            /*var questionDialog: QuestionDialog = QuestionDialog(globalActivity)
             questionDialog.setText(R.string.continue_question)
             questionDialog.setOnNegative(object : NegativeResponse {
                 override fun onNegative(dialogMaterial: DialogMaterial) {
@@ -184,7 +188,7 @@ class AccountActivity: CustomActivity(){
                 override fun onPositive() {
 
                     // Make request to create a bitshare account
-                    /*var accountName: String = etAccountName?.getText().toString().trim()
+                    var accountName: String = etAccountName?.getText().toString().trim()
                     val request = ValidateCreateBitsharesAccountRequest(accountName, activity as Activity)
 
                     //DTVV: Friday 27 July 2018
@@ -200,18 +204,21 @@ class AccountActivity: CustomActivity(){
                             creatingAccountMaterialDialog.dismiss()
                             if (request.status == ValidateCreateBitsharesAccountRequest.StatusCode.SUCCEEDED) {
                                 val accountSeed = request.account
-                                val intent = Intent(activity as Activity, BackupSeedActivity::class.java)
+                                val intent = Intent(activity as Activity, CopyBrainkey::class.java)
                                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                intent.putExtra("SEED_ID", accountSeed!!.id)
                                 intent.putExtra("newAccount", true)
                                 startActivity(intent)
                             } else if (request.status == ValidateCreateBitsharesAccountRequest.StatusCode.ACCOUNT_EXIST) {
-                                Toast.makeText(
-                                    activity,
-                                    (activity as Activity).getString(R.string.Account_already_exists),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                disableCreate()
+
+                                globalActivity.runOnUiThread(){
+                                    Toast.makeText(
+                                        activity,
+                                        (activity as Activity).getString(R.string.Account_already_exists),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    disableCreate()
+
+                                }
                             } else {
                                 //fieldsValidator.validate()
                             }
@@ -225,18 +232,27 @@ class AccountActivity: CustomActivity(){
                             * Run thread*/
                             CryptoNetInfoRequests.getInstance()!!.addRequest(request)
                         }
-                    }).start()*/
+                    }).start()
 
-                    RepositoryManager.getAccountsRepository(globalActivity).addAccount(1,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
 
-                    finish()
-
-                    var intent:Intent = Intent(activity,CopyBrainkey::class.java)
-                    intent.putExtra("newAccount",true)
-                    startActivity(intent)
                 }
             })
-            questionDialog.show()
+            questionDialog.show()*/
+
+            var cryptoNetActivity:CryptoNetAccount = CryptoNetAccount()
+            cryptoNetActivity.name = "dtvv-123456"
+            cryptoNetActivity.accountIndex = 0
+            cryptoNetActivity.id = 0
+            cryptoNetActivity.seedId = 0
+            RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetActivity)
+
+            RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+
+                   finish()
+
+                   var intent:Intent = Intent(activity,CopyBrainkey::class.java)
+                   intent.putExtra("newAccount",true)
+                   startActivity(intent)
         }
     }
 
