@@ -12,12 +12,16 @@ import kotlinx.android.synthetic.main.activity_account.*
 import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
+import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.models.CryptoCurrency
 import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.Repository
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
 import cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
+import java.util.*
 
 
 class AccountActivity: CustomActivity(){
@@ -244,6 +248,28 @@ class AccountActivity: CustomActivity(){
             cryptoNetAccount.seedId = idAccount
             cryptoNetAccount.cryptoNet = CryptoNet.BITSHARES
             var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetAccount)
+
+
+
+
+            /*var accountSeed: AccountSeed = RepositoryManager.getAccountsRepository(this).getLocalAccount()
+            var cryptoCurrency: CryptoCurrency? = null
+            var cryptos = Repository.db!!.cryptoCurrencyDao().all
+            for(crypto in cryptos){
+                if(crypto.name!!.compareTo("BTC")==0){
+                    cryptoCurrency = crypto
+                }
+
+            }
+            RepositoryManager.getTransacionRepository(this).insertTransaction(0, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(1, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(2, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(3, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")*/
+
 
                    finish()
 

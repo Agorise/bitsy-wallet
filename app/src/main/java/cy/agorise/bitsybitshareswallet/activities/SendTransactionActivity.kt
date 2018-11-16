@@ -27,6 +27,7 @@ import cy.agorise.bitsybitshareswallet.enums.CryptoCoin
 import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.interfaces.OnResponse
 import cy.agorise.bitsybitshareswallet.models.*
+import cy.agorise.bitsybitshareswallet.repository.Repository
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
 import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
@@ -213,7 +214,7 @@ class SendTransactionActivity : CustomActivity(), ZXingScannerView.ResultHandler
 
             if (valid) {
 
-                val request = ValidateExistBitsharesAccountRequest(toAccount)
+                /*val request = ValidateExistBitsharesAccountRequest(toAccount)
                 request.listener = object : CryptoNetInfoRequestListener {
                     override fun onCarryOut() {
                         if (!request.getAccountExists()) {
@@ -269,7 +270,21 @@ class SendTransactionActivity : CustomActivity(), ZXingScannerView.ResultHandler
                         }
                     }
                 }
-                CryptoNetInfoRequests.getInstance()!!.addRequest(request)
+                CryptoNetInfoRequests.getInstance()!!.addRequest(request)*/
+
+                var accountSeed: AccountSeed = RepositoryManager.getAccountsRepository(this).getLocalAccount()
+                var cryptoCurrency: CryptoCurrency? = null
+                var cryptos = Repository.db!!.cryptoCurrencyDao().all
+                for(crypto in cryptos){
+                    if(crypto.name!!.compareTo("BTC")==0){
+                        cryptoCurrency = crypto
+                    }
+
+                }
+                RepositoryManager.getTransacionRepository(this).insertTransaction(0, Date(),true,accountSeed.id, amount.toLong(),
+                    cryptoCurrency!!.id.toInt(), true, accountSeed.name!!, toAccount)
+
+                finish()
             }
             
         }
@@ -312,7 +327,7 @@ class SendTransactionActivity : CustomActivity(), ZXingScannerView.ResultHandler
                 balanceDouble = balance!!.balance!!.toDouble()
             }
 
-            if (newAmountValue > balanceDouble) {
+            /*if (newAmountValue > balanceDouble) {
 
                 etAmountError.setText(globalActivity.getString(R.string.insufficient_amount))
                 return false
@@ -324,7 +339,10 @@ class SendTransactionActivity : CustomActivity(), ZXingScannerView.ResultHandler
 
             } else {
                return true
-            }
+            }*/
+
+            return true
+
         } catch (e: NumberFormatException) {
 
             etAmountError.setText(globalActivity.getString(R.string.please_enter_valid_amount))

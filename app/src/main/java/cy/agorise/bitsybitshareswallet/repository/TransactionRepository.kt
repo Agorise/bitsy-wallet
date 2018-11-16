@@ -4,9 +4,12 @@ import android.app.Activity
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.paging.PagedList
+import cy.agorise.bitsybitshareswallet.enums.CryptoNet
+import cy.agorise.bitsybitshareswallet.models.BitsharesAsset
 import cy.agorise.bitsybitshareswallet.models.CryptoCoinTransaction
 import cy.agorise.bitsybitshareswallet.models.CryptoCoinTransactionExtended
 import cy.agorise.bitsybitshareswallet.utils.AESUtils
+import cy.agorise.graphenej.Chains
 import java.util.*
 
 class TransactionRepository(activity: Activity) : Repository(activity) {
@@ -38,8 +41,9 @@ class TransactionRepository(activity: Activity) : Repository(activity) {
 
     fun insertTransaction(id:Long,date:Date, input:Boolean, accountId:Long, amount: Long, idCurrency:Int, isConfirmed:Boolean, from:String, to:String){
 
+
             var cryptoCoinTransaction: CryptoCoinTransaction = CryptoCoinTransaction()
-            cryptoCoinTransaction.id = id
+            //cryptoCoinTransaction.id = id
             cryptoCoinTransaction.date = date
             cryptoCoinTransaction.input = input
             cryptoCoinTransaction.accountId = accountId

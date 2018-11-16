@@ -1,14 +1,21 @@
 package cy.agorise.bitsybitshareswallet.activities
 
+import android.accounts.Account
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
+import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.models.CryptoCurrency
 import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.Repository
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_license.*
+import java.util.*
 
 class LicenseActivity : CustomActivity(){
 
