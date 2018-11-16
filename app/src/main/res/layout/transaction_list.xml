@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlTransactionToolsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                    android:id="@+id/etTransactionSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/btnTransactionsFilterDisplay"/>
+
+            <Button
+                android:id="@+id/btnTransactionsFilterDisplay"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/spTransactionsOrder"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/spTransactionsOrder"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/sort_transactions_icon"
+                android:text="order" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/transactionListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rlTransactionToolsHeader"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="-1dp"/>
+
+    </RelativeLayout>
+</LinearLayout>
