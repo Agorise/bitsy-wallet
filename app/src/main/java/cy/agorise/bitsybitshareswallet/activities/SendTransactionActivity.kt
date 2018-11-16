@@ -89,7 +89,7 @@ class SendTransactionActivity : CustomActivity(), UIValidatorListener, ZXingScan
 
         if (this.cryptoNetAccountId != -1.toLong()) {
             db = BitsyDatabase.getAppDatabase(this)
-            this.cryptoNetAccount = db!!.cryptoNetAccountDao().getById(cryptoNetAccountId)
+            this.cryptoNetAccount = RepositoryManager.getAccountsRepository(globalActivity).getCryptoNetLocalAcount()
 
             /*
              * this is only for graphene accounts.

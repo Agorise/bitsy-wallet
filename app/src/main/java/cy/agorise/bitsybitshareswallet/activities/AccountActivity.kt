@@ -8,17 +8,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.dialogs.*
 import kotlinx.android.synthetic.main.activity_account.*
 import android.widget.Toast
-import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
-import cy.agorise.bitsybitshareswallet.models.AccountSeed
 import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
-import cy.agorise.bitsybitshareswallet.requestmanagers.ValidateCreateBitsharesAccountRequest
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
@@ -242,12 +237,13 @@ class AccountActivity: CustomActivity(){
             var idAccount:Long = RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
 
 
-            var cryptoNetActivity:CryptoNetAccount = CryptoNetAccount()
-            cryptoNetActivity.name = "dtvv-123456"
-            cryptoNetActivity.accountIndex = 0
-            cryptoNetActivity.id = 0
-            cryptoNetActivity.seedId = idAccount
-            var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetActivity)
+            var cryptoNetAccount:CryptoNetAccount = CryptoNetAccount()
+            cryptoNetAccount.name = "dtvv-123456"
+            cryptoNetAccount.accountIndex = 0
+            cryptoNetAccount.id = 0
+            cryptoNetAccount.seedId = idAccount
+            cryptoNetAccount.cryptoNet = CryptoNet.BITSHARES
+            var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetAccount)
 
                    finish()
 
