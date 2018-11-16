@@ -13,6 +13,8 @@
     <string name="night_mode">Night mode</string>
 
     <string name="cancel">CANCEL</string>
+    <string name="unable_to_send_amount">Unable to send the Amount.</string>
+    <string name="send">Send</string>
 
     <string name="to">to</string>
     <string name="from">from</string>
