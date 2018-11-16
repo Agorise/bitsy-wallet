@@ -10,6 +10,9 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dialogs.*
+import cy.agorise.bitsybitshareswallet.enums.CryptoNet
+import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
 import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
 import cy.agorise.bitsybitshareswallet.requestmanagers.ImportBitsharesAccountRequest
@@ -320,6 +323,17 @@ class BrainkeyActivity: CustomActivity(), UIValidatorListener {
 
         CryptoNetInfoRequests.getInstance()!!.addRequest(validatorRequest)*/
 
+        var idAccount:Long = RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+
+
+        var cryptoNetAccount: CryptoNetAccount = CryptoNetAccount()
+        cryptoNetAccount.name = "dtvv-123456"
+        cryptoNetAccount.accountIndex = 0
+        cryptoNetAccount.id = 0
+        cryptoNetAccount.seedId = idAccount
+        cryptoNetAccount.cryptoNet = CryptoNet.BITSHARES
+        var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetAccount)
+        
         finish()
 
         val intent = Intent(thisActivity, MainActivity::class.java)
