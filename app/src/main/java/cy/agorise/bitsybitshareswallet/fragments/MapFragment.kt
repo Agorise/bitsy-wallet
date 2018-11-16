@@ -84,16 +84,6 @@ class MapFragment: retrofit2.Callback<FeathersResponse<Merchant>>, SupportMapFra
 
         mMap = p0
         
-        // Posicionar el mapa en una localización y con un nivel de zoom
-        val latLng = LatLng(36.679582, -5.444791)
-        // Un zoom mayor que 13 hace que el emulador falle, pero un valor deseado para
-        // callejero es 17 aprox.
-        val zoom = 13f
-        p0!!.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom))
-
-        // Colocar un marcador en la misma posición
-        p0.addMarker(MarkerOptions().position(latLng))
-
         val gson = GsonBuilder()
             .setLenient()
             .create()
