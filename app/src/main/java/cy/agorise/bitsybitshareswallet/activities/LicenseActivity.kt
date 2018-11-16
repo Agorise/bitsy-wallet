@@ -20,7 +20,7 @@ class LicenseActivity : CustomActivity(){
 
         setContentView(R.layout.activity_license)
 
-        val cryptoNetAccount: CryptoNetAccount  = RepositoryManager.getAccountsRepository(this).getCryptoNetLocalAcount()!!
+        val cryptoNetAccount: CryptoNetAccount?  = RepositoryManager.getAccountsRepository(this).getCryptoNetLocalAcount()
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {

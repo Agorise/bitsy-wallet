@@ -8,21 +8,20 @@ import cy.agorise.bitsybitshareswallet.models.BitsharesAssetInfo
 
 object BitsharesConstant {
     val BITSHARES_URL = arrayOf(
-        "wss://de.palmpay.io/ws", // Custom node
-        "wss://bitshares.nu/ws", "wss://dexnode.net/ws", // Dallas, USA
-        "wss://bitshares.crypto.fans/ws", // Munich, Germany
-        "wss://bitshares.openledger.info/ws", // Openledger node
-        "ws://185.208.208.147:8090"                   // Custom node
+            "wss://de.palmpay.io/ws",
+            "wss://nl.palmpay.io/ws",
+            "wss://mx.palmpay.io/ws",
+            "wss://us.nodes.bitshares.ws/ws",
+            "wss://eu.nodes.bitshares.ws/ws",
+            "wss://sg.nodes.bitshares.ws/ws",
+            "wss://dallas.bitshares.apasia.tech/ws"
     )
 
-    val BITSHARES_TESTNET_URL = arrayOf("http://185.208.208.147:11012")// Openledger node
 
-    //testnet faucet
-    //public final static String FAUCET_URL = "http://185.208.208.147:5010";
     val FAUCET_URL = "https://faucet.palmpay.io"
-    val EQUIVALENT_URL = "wss://bitshares.openledger.info/ws"
 
     val SMARTCOINS = arrayOf<BitsharesAsset>(
+            BitsharesAsset("BTS", 5, "1.3.0", BitsharesAsset.Type.UIA),
         BitsharesAsset("USD", 4, "1.3.121", BitsharesAsset.Type.SMART_COIN),
         BitsharesAsset("EUR", 4, "1.3.120", BitsharesAsset.Type.SMART_COIN),
         BitsharesAsset("CNY", 4, "1.3.113", BitsharesAsset.Type.SMART_COIN),

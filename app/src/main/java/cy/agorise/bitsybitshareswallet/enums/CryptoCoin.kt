@@ -12,11 +12,6 @@ enum class CryptoCoin private constructor(
     parameters: NetworkParameters?
 ) :
     Serializable {
-    BITCOIN(CryptoNet.BITCOIN, "BTC", 8, 0, NetworkParameters.fromID(NetworkParameters.ID_MAINNET)!!),
-    BITCOIN_TEST(CryptoNet.BITCOIN_TEST, "BTC", 8, 1, NetworkParameters.fromID(NetworkParameters.ID_TESTNET)!!),
-    LITECOIN(CryptoNet.LITECOIN, "LTC", 8, 2, null),
-    DASH(CryptoNet.DASH, "DASH", 8, 5, null),
-    DOGECOIN(CryptoNet.DOGECOIN, "DOGE", 8, 3, null),
     BITSHARES(CryptoNet.BITSHARES, "BTS", 5, 0, NetworkParameters.fromID(NetworkParameters.ID_TESTNET)!!);
 
     var cryptoNet: CryptoNet

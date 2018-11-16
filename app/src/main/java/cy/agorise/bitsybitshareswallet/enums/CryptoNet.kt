@@ -8,12 +8,7 @@ import java.util.HashMap
 
 
 enum class CryptoNet private constructor(label: String, confirmationsNeeded: Int, bip44Index: Int) : Serializable {
-    UNKNOWN("UNKNOWN", 6, -1), BITCOIN("BITCOIN", 6, 1), BITCOIN_TEST("BITCOIN(TEST)", 6, 2), LITECOIN(
-        "LITECOIN",
-        6,
-        3
-    ),
-    DASH("DASH", 6, 5), DOGECOIN("DOGECOIN", 6, 4), BITSHARES("BITSHARES", 1, 6), STEEM("STEEM", 1, 7);
+    UNKNOWN("UNKNOWN", 6, -1), BITSHARES("BITSHARES", 1, 6);
 
     var label: String
         protected set
