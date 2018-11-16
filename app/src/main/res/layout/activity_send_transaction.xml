@@ -114,6 +114,18 @@
                         </LinearLayout>
 
                         <TextView
+                                android:id="@+id/etToError"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5sp"
+                                android:layout_marginRight="5sp"
+                                android:maxLines="1"
+                                android:layout_below="@id/etTo"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/red"
+                                android:textSize="16sp"/>
+
+                        <TextView
                             android:id="@+id/tvErrorRecieverAccount"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -170,7 +182,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:background="@null"
-                            android:gravity="center|end"
+                            android:gravity="center|start"
                             android:inputType="numberDecimal"
                             android:maxLines="1"
                             android:paddingRight="5dp"
@@ -186,6 +198,19 @@
                             android:visibility="invisible"
                             android:dropDownWidth="wrap_content"></Spinner>
                     </LinearLayout>
+
+                    <TextView
+                            android:id="@+id/etAmountError"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginRight="5sp"
+                            android:maxLines="1"
+                            android:layout_below="@+id/etAmount"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/red"
+                            android:textSize="16sp"/>
+
                 </LinearLayout>
 
                 <TextView
@@ -264,6 +289,7 @@
                         </LinearLayout>
                     </RelativeLayout>
                 </LinearLayout>
+
 
                 <TextView
                     android:id="@+id/tvLoyaltyStatus"
@@ -351,6 +377,7 @@
                         android:textSize="15dp" />
                 </LinearLayout>
 
+
                 <TextView
                     android:id="@+id/StatusThree"
                     android:layout_width="match_parent"
@@ -417,7 +444,22 @@
                             android:textSize="15sp"
 
                             />
+
+
                     </RelativeLayout>
+
+                    <TextView
+                            android:id="@+id/etMemoError"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginRight="5sp"
+                            android:maxLines="1"
+                            android:layout_below="@+id/etMemo"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/red"
+                            android:textSize="16sp"/>
+
                 </LinearLayout>
 
                 <Button
