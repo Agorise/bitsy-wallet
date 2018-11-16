@@ -239,14 +239,15 @@ class AccountActivity: CustomActivity(){
             })
             questionDialog.show()*/
 
+            var idAccount:Long = RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+
+
             var cryptoNetActivity:CryptoNetAccount = CryptoNetAccount()
             cryptoNetActivity.name = "dtvv-123456"
             cryptoNetActivity.accountIndex = 0
             cryptoNetActivity.id = 0
-            cryptoNetActivity.seedId = 0
-            RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetActivity)
-
-            RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+            cryptoNetActivity.seedId = idAccount
+            var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetActivity)
 
                    finish()
 
