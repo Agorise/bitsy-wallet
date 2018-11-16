@@ -53,6 +53,9 @@ interface TransactionDao {
     @Query("DELETE FROM crypto_coin_transaction")
     fun deleteAllTransactions()
 
+    @Query("DELETE FROM crypto_coin_transaction")
+    fun nukeTable()
+
     companion object {
 
         const val transactionsQuery =

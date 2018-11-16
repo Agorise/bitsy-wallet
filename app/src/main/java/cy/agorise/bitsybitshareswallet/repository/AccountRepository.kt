@@ -30,7 +30,9 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
     }
 
     fun removeAccount(){
+        db!!.cryptoNetAccountDao().nukeTable()
         db!!.accountSeedDao().nukeTable()
+        db!!.transactionDao().nukeTable()
     }
 
     fun addAccount(id:Long, name:String, masterSeeed:String):Long{
