@@ -11,6 +11,10 @@ class RepositoryManager{
             return AccountRepository(acivity)
         }
 
+        fun getTransacionRepository(acivity:Activity) : TransactionRepository {
+            return TransactionRepository(acivity)
+        }
+
         fun getDB(activity: Activity):BitsyDatabase{
             return BitsyDatabase.getAppDatabase(activity!!)!!
         }
