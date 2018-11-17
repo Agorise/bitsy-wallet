@@ -30,4 +30,7 @@ interface CryptoNetAccountDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCryptoNetAccount(vararg accounts: CryptoNetAccount): LongArray
+
+    @Query("DELETE FROM crypto_net_account")
+    fun nukeTable()
 }

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp">
+
+    <RelativeLayout
+        android:id="@+id/rlTransactionItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/transaction_list_item_background">
+
+        <TextView
+            android:id="@+id/fromText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toStartOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:inputType="text"
+            android:text="from" />
+
+        <ImageView
+            android:id="@+id/ivArrowFromTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:tint="@color/black"
+            app:srcCompat="@drawable/ic_arrow_forward" />
+
+        <TextView
+            android:id="@+id/toText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:inputType="text"
+            android:text="to"
+            android:textAlignment="textEnd" />
+
+        <Space
+            android:id="@+id/sAfterFromTo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fromText"/>
+
+        <TextView
+            android:id="@+id/tvTransactionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sAfterFromTo"
+            android:layout_marginLeft="5dp"
+            android:layout_toStartOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:text="02 Oct"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTransactionHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTransactionDate"
+            android:layout_marginLeft="5dp"
+            android:layout_toStartOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:text="15:01:18 CET" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_below="@id/sAfterFromTo"
+            android:layout_toEndOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:inputType="text"
+            android:text="+ 1 BTS"
+            android:textAlignment="textEnd"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEquivalent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_below="@id/tvAmount"
+            android:layout_toEndOf="@+id/ivArrowFromTo"
+            android:ems="10"
+            android:inputType="text"
+            android:text="0.005€"
+            android:textAlignment="textEnd" />
+
+
+
+    </RelativeLayout>
+</LinearLayout>

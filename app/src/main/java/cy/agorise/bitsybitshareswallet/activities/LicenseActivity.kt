@@ -1,14 +1,21 @@
 package cy.agorise.bitsybitshareswallet.activities
 
+import android.accounts.Account
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
+import android.widget.Toast
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.models.CryptoCurrency
 import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.Repository
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import kotlinx.android.synthetic.main.activity_license.*
+import java.util.*
 
 class LicenseActivity : CustomActivity(){
 
@@ -20,7 +27,10 @@ class LicenseActivity : CustomActivity(){
 
         setContentView(R.layout.activity_license)
 
-        val cryptoNetAccount: CryptoNetAccount?  = RepositoryManager.getAccountsRepository(this).getCryptoNetLocalAcount()
+        var cryptoNetAccount: CryptoNetAccount? = null
+        if(RepositoryManager.getAccountsRepository(this).getTotalCryptoNetAccounts()>0){
+            cryptoNetAccount = RepositoryManager.getAccountsRepository(this).getCryptoNetLocalAcount()!!
+        }
 
         if (PreferenceManager.getDefaultSharedPreferences(this)
                 .getBoolean(Constants.KEY_LICENCE_AGREED, false)) {

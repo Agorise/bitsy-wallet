@@ -8,21 +8,20 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.dialogs.*
 import kotlinx.android.synthetic.main.activity_account.*
 import android.widget.Toast
-import cy.agorise.bitsybitshareswallet.dao.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.enums.CryptoNet
 import cy.agorise.bitsybitshareswallet.interfaces.UIValidatorListener
 import cy.agorise.bitsybitshareswallet.models.AccountSeed
+import cy.agorise.bitsybitshareswallet.models.CryptoCurrency
 import cy.agorise.bitsybitshareswallet.models.CryptoNetAccount
+import cy.agorise.bitsybitshareswallet.repository.Repository
 import cy.agorise.bitsybitshareswallet.repository.RepositoryManager
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequestListener
-import cy.agorise.bitsybitshareswallet.requestmanagers.CryptoNetInfoRequests
-import cy.agorise.bitsybitshareswallet.requestmanagers.ValidateCreateBitsharesAccountRequest
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.BitsharesAccountNameValidation
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.CustomValidationField
 import cy.agorise.bitsybitshareswallet.viewmodels.validators.PinDoubleConfirmationValidationField
 import cy.agorise.bitsybitshareswallet.views.natives.CustomTextInputEditText
+import java.util.*
 
 
 class AccountActivity: CustomActivity(){
@@ -239,14 +238,38 @@ class AccountActivity: CustomActivity(){
             })
             questionDialog.show()*/
 
-            var cryptoNetActivity:CryptoNetAccount = CryptoNetAccount()
-            cryptoNetActivity.name = "dtvv-123456"
-            cryptoNetActivity.accountIndex = 0
-            cryptoNetActivity.id = 0
-            cryptoNetActivity.seedId = 0
-            RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetActivity)
+            var idAccount:Long = RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
 
-            RepositoryManager.getAccountsRepository(globalActivity).addAccount(0,"dtvv-123456","allow clutch exhibit group citizen poverty draw help wage mail program safe")
+
+            var cryptoNetAccount:CryptoNetAccount = CryptoNetAccount()
+            cryptoNetAccount.name = "dtvv-123456"
+            cryptoNetAccount.accountIndex = 0
+            cryptoNetAccount.id = 0
+            cryptoNetAccount.seedId = idAccount
+            cryptoNetAccount.cryptoNet = CryptoNet.BITSHARES
+            var id:Long = RepositoryManager.getAccountsRepository(globalActivity).addCryptoNetAcount(cryptoNetAccount)
+
+
+
+
+            /*var accountSeed: AccountSeed = RepositoryManager.getAccountsRepository(this).getLocalAccount()
+            var cryptoCurrency: CryptoCurrency? = null
+            var cryptos = Repository.db!!.cryptoCurrencyDao().all
+            for(crypto in cryptos){
+                if(crypto.name!!.compareTo("BTC")==0){
+                    cryptoCurrency = crypto
+                }
+
+            }
+            RepositoryManager.getTransacionRepository(this).insertTransaction(0, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(1, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(2, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")
+            RepositoryManager.getTransacionRepository(this).insertTransaction(3, Date(),true,accountSeed.id, 1,
+                cryptoCurrency!!.id.toInt(), true,"alex123456", "dtvv-123456")*/
+
 
                    finish()
 

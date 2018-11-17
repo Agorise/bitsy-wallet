@@ -20,9 +20,9 @@ class SendTransactionValidator(
 
 
     init {
-        this.addField(ToValidationField(fromEdit, toEdit))
+        //this.addField(ToValidationField(fromEdit, toEdit))
         //this.addField(AssetValidationField(assetSpinner))
         //this.addField(AmountValidationField(amountEdit, assetSpinner, this.account))
-        this.addField(MemoValidationField(memoEdit))
+        //this.addField(MemoValidationField(memoEdit))
     }
 }

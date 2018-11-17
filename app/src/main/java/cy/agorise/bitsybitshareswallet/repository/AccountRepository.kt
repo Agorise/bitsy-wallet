@@ -30,21 +30,28 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
     }
 
     fun removeAccount(){
+        db!!.cryptoNetAccountDao().nukeTable()
         db!!.accountSeedDao().nukeTable()
+        db!!.transactionDao().nukeTable()
     }
 
-    fun addAccount(id:Long, name:String, masterSeeed:String){
+    fun addAccount(id:Long, name:String, masterSeeed:String):Long{
 
         var accountSeed: AccountSeed = AccountSeed()
         accountSeed.id = id
         accountSeed.name = name
         accountSeed.masterSeed = AESUtils.encrypt(masterSeeed)
-        db!!.accountSeedDao().insertAccountSeed(accountSeed)
+        return db!!.accountSeedDao().insertAccountSeed(accountSeed)
     }
 
 
     fun addAccount(accountSeed: AccountSeed) : Long{
         return db!!.accountSeedDao().insertAccountSeed(accountSeed)
+    }
+
+    fun getTotalCryptoNetAccounts() : Int {
+        var accounts:List<CryptoNetAccount> = db!!.cryptoNetAccountDao().allCryptoNetAccount
+        return accounts.size
     }
 
     fun getCryptoNetLocalAcount() : CryptoNetAccount? {
@@ -58,7 +65,7 @@ class AccountRepository(activity: Activity?) : Repository(activity) {
         }
     }
 
-    fun addCryptoNetAcount(cryptoNetAccount: CryptoNetAccount){
-        db!!.cryptoNetAccountDao().insertCryptoNetAccount(cryptoNetAccount)
+    fun addCryptoNetAcount(cryptoNetAccount: CryptoNetAccount): Long {
+        return db!!.cryptoNetAccountDao().insertCryptoNetAccount(cryptoNetAccount)[0]
     }
 }
