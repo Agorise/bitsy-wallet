@@ -40,7 +40,7 @@ class RequestActivity : CustomActivity() , View.OnClickListener {
         title = resources.getString(R.string.request_amount_screen_name)
         language = fetchStringSharePref(applicationContext, getString(R.string.pref_language))!!
 
-        locale = Locale("es_MX") //For testing porpuses only, fix
+        locale = resources.configuration.locale
         format = NumberFormat.getInstance(locale)
         fieldsReference()
 
