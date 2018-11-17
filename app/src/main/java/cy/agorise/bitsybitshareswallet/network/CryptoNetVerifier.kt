@@ -14,8 +14,6 @@ abstract class CryptoNetVerifier {
         internal fun getNetworkVerify(cryptoNet: CryptoNet): CryptoNetVerifier? {
             if (cryptoNet.label.equals(CryptoNet.BITSHARES.label)) {
                 return BitsharesCryptoNetVerifier()
-            } else if (cryptoNet.label.equals(CryptoNet.BITCOIN.label)) {
-                return BitcoinCryptoNetVerifier(CryptoCoin.BITCOIN)
             }
             return null
         }

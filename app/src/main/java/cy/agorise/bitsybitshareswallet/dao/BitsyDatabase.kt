@@ -20,10 +20,7 @@ GrapheneAccountInfo::class,
 BitsharesAssetInfo::class,
 BitsharesAccountNameCache::class,
 CryptoCurrencyEquivalence::class,
-GeneralSetting::class,
-BitcoinTransaction::class,
-BitcoinTransactionGTxIO::class,
-BitcoinAddress::class), version = 1, exportSchema = false)
+GeneralSetting::class), version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class BitsyDatabase: RoomDatabase() {
 
@@ -37,8 +34,6 @@ abstract fun cryptoCurrencyDao():CryptoCurrencyDao
 abstract fun bitsharesAssetDao():BitsharesAssetDao
 abstract fun bitsharesAccountNameCacheDao():BitsharesAccountNameCacheDao
 abstract fun cryptoCurrencyEquivalenceDao():CryptoCurrencyEquivalenceDao
-abstract fun bitcoinTransactionDao():BitcoinTransactionDao
-abstract fun bitcoinAddressDao():BitcoinAddressDao
  abstract fun generalSettingDao(): GeneralSettingDao
 
  companion object {
@@ -53,8 +48,6 @@ BitsyDatabase::class.java, "CrystalWallet.db")
 .allowMainThreadQueries()
 .addMigrations(MIGRATION_2_3)
 .addMigrations(MIGRATION_3_4)
-.addMigrations(MIGRATION_4_5)
-.addMigrations(MIGRATION_5_6)
 .build()
 }
 return instance
