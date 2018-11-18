@@ -35,9 +35,8 @@ import kotlinx.android.synthetic.main.activity_receive.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
-import java.util.HashMap
-
-import java.util.UUID
+import java.text.NumberFormat
+import java.util.*
 
 class ReceiveTransactionActivity : CustomActivity() {
 
@@ -98,9 +97,17 @@ class ReceiveTransactionActivity : CustomActivity() {
         if (price.isEmpty()) {
             notfound.text = getString(R.string.no_amount_requested)
         } else {
+
+            var local:Locale = resources.configuration.locale
+            var format:NumberFormat = NumberFormat.getInstance(local)
+
+            var number = format.parse(removeSpecialCharacters(price))
+
+            var numberLocaled = setLocaleNumberFormat(local,number)
+
             val concate =
-                this.getString(R.string.amount) + ": " + price + " " + currency + " " + this.getString(R.string.requested)
-            notfound.text = concate
+                this.getString(R.string.amount) + ": " + numberLocaled + " " + currency + " " + this.getString(R.string.requested)
+            notfound.text = numberLocaled
         }
 
         qrimage.post {
@@ -171,6 +178,33 @@ class ReceiveTransactionActivity : CustomActivity() {
         })
     }
 
+
+
+
+
+    private fun removeSpecialCharacters(inputNumber_:String): String {
+        //Farsi and arabic
+        val dot = "."
+        var inputNumber:String = inputNumber_.replace("٬", "")
+        inputNumber = inputNumber.replace(160.toChar().toString(), "")
+        if (dot == ",") {
+            inputNumber = inputNumber.replace(".", "")
+        } else if (dot == ".") {
+            inputNumber = inputNumber.replace(",", "")
+        }
+        return inputNumber
+    }
+
+
+
+    fun setLocaleNumberFormat(locale: Locale, number: Number): String {
+
+        val formatter = NumberFormat.getInstance(locale)
+        formatter.maximumFractionDigits = 4
+        var result:String = formatter.format(number)
+        return result
+
+    }
 
     private fun savebitmap(bmp: Bitmap): File? {
         val extStorageDirectory =
