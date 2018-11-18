@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.viewmodels.MerchantsViewModel
+import kotlinx.android.synthetic.main.fragment_merchants.*
 
 class MerchantsFragment : Fragment() {
 
@@ -38,7 +39,7 @@ class MerchantsFragment : Fragment() {
 
 
         /*
-         * Check for CAMERA permission
+         * Check for ACCESS_FINE_LOCATION permission
          * */
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkPermission()) {
@@ -81,16 +82,52 @@ class MerchantsFragment : Fragment() {
 
     private fun requestPermission() {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this!!.activity!!, Manifest.permission.CAMERA)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this!!.activity!!, Manifest.permission.ACCESS_FINE_LOCATION)) {
             Toast.makeText(activity, activity!!.getString(R.string.permission_denied_map), Toast.LENGTH_LONG).show()
 
             /*
-             * Disable the button of the camera visibility
+             * Disable the button of the ACCESS_FINE_LOCATION visibility
              * */
             //disableVisibilityCamera()
 
         } else {
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), REQUEST_LOCATION_PERMISSION)
+            requestPermissions(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_LOCATION_PERMISSION)
+        }
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == REQUEST_LOCATION_PERMISSION) {
+
+            /*
+                 * Check for ACCESS_FINE_LOCATION permission
+                 * */
+            if (Build.VERSION.SDK_INT >= 23) {
+                if (checkPermission()) {
+                    val ft = activity!!.getSupportFragmentManager().beginTransaction()
+                    var mapFragment:MapFragment = MapFragment()
+                    mapFragment.edtText = edtText
+                    ft.replace(R.id.map, mapFragment)
+                    ft.commit()
+
+                } else {
+                    requestPermission() // Code for permission
+                }
+            } else {
+
+                // Code for Below 23 API Oriented Device
+                // Do next code
+
+                val ft = activity!!.getSupportFragmentManager().beginTransaction()
+                var mapFragment:MapFragment = MapFragment()
+                mapFragment.edtText = edtText
+                ft.replace(R.id.map, mapFragment)
+                ft.commit()
+
+            }
+
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

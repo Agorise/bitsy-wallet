@@ -57,16 +57,18 @@ class MapFragment: retrofit2.Callback<FeathersResponse<Merchant>>, SupportMapFra
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
 
-                mMap!!.clear()
-                for (mer in merchants!!) {
-                    if (mer.name!!.contains(charSequence)) {
-                        location = LatLng(mer.lat.toDouble(), mer.lon.toDouble())
-                        mMap!!.addMarker(
-                            MarkerOptions().position(location!!).title(mer.name).snippet(mer.address).icon(
-                                BitmapDescriptorFactory.fromResource(R.drawable.star)
+                if(merchants != null){
+                    mMap!!.clear()
+                    for (mer in merchants!!) {
+                        if (mer.name!!.contains(charSequence)) {
+                            location = LatLng(mer.lat.toDouble(), mer.lon.toDouble())
+                            mMap!!.addMarker(
+                                MarkerOptions().position(location!!).title(mer.name).snippet(mer.address).icon(
+                                    BitmapDescriptorFactory.fromResource(R.drawable.star)
+                                )
                             )
-                        )
-                        mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 2f))
+                            mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 2f))
+                        }
                     }
                 }
             }
