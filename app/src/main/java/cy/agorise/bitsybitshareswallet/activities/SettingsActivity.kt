@@ -76,13 +76,13 @@ class SettingsActivity : CustomActivity() {
 
 
     override fun onBackPressed() {
-        super.onBackPressed()
 
         val resultIntent = Intent()
         resultIntent.putExtra("finish", false)
         setResult(Activity.RESULT_OK, resultIntent)
         finish()
 
+        super.onBackPressed()
     }
 
     /**

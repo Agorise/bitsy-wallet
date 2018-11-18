@@ -72,8 +72,8 @@ class MainActivity : CustomActivity() {
             SETTINGS_SELECTED -> {
                 if (resultCode === Activity.RESULT_OK) {
                     val returnValue = data!!.getBooleanExtra("finish",false)
-                    if(returnValue){
-                        finish()
+                        if(returnValue){
+                            finish()
                     }
                     else{
                         recreate()

@@ -52,27 +52,6 @@ class TransactionsFragment : Fragment() {
         // Gets the Balance RecyclerView
         balanceRecyclerView = view.findViewById(R.id.transactionListView)
 
-        // TODO move this listener to the activity, to make this fragment reusable
-        // Adds listener to the RecyclerView to show and hide buttons at the bottom of the screen
-        balanceRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-
-                // Scroll Down
-                /*if (dy > 0) {
-                    if (fabSend.isShown())
-                        fabSend.hide()
-                    if (fabReceive.isShown())
-                        fabReceive.hide()
-                } else if (dy < 0) {
-                    if (!fabSend.isShown())
-                        fabSend.show()
-                    if (!fabReceive.isShown())
-                        fabReceive.show()
-                }// Scroll Up*/
-            }
-        })
-
         transactionListViewModel = ViewModelProviders.of(this).get(TransactionListViewModel::class.java)
 
         etTransactionSearch = view.findViewById(R.id.etTransactionSearch)
@@ -89,27 +68,31 @@ class TransactionsFragment : Fragment() {
             }
         })
         spTransactionsOrder = view!!.findViewById(R.id.spTransactionsOrder)
-        initTransactionsOrderSpinner()
-        changeTransactionList()
+        //initTransactionsOrderSpinner()
+        //changeTransactionList()
         return view
     }
 
     fun changeTransactionList() {
-        val orderSelected =
-            spTransactionsOrder!!.selectedItem as TransactionOrderSpinnerAdapter.TransactionOrderSpinnerItem
 
-        if (transactionsLiveData != null) {
-            transactionsLiveData!!.removeObservers(this)
-        }
-        transactionListViewModel.initTransactionList(orderSelected.field, etTransactionSearch!!.text.toString())
-        transactionsLiveData = transactionListViewModel.transactionList
+        if(spTransactionsOrder!!.selectedItem != null){
 
-        val fragment = this
-        transactionsLiveData!!.observe(this, object : Observer<PagedList<CryptoCoinTransactionExtended>> {
-            override fun onChanged(@Nullable cryptoCoinTransactions: PagedList<CryptoCoinTransactionExtended>) {
-                vTransactionListView.setData(cryptoCoinTransactions, fragment)
+            val orderSelected =
+                spTransactionsOrder!!.selectedItem as TransactionOrderSpinnerAdapter.TransactionOrderSpinnerItem
+
+            if (transactionsLiveData != null) {
+                transactionsLiveData!!.removeObservers(this)
             }
-        })
+            transactionListViewModel.initTransactionList(orderSelected.field, etTransactionSearch!!.text.toString())
+            transactionsLiveData = transactionListViewModel.transactionList
+
+            val fragment = this
+            transactionsLiveData!!.observe(this, object : Observer<PagedList<CryptoCoinTransactionExtended>> {
+                override fun onChanged(@Nullable cryptoCoinTransactions: PagedList<CryptoCoinTransactionExtended>) {
+                    vTransactionListView.setData(cryptoCoinTransactions, fragment)
+                }
+            })
+        }
     }
 
     private fun initTransactionsOrderSpinner() {
