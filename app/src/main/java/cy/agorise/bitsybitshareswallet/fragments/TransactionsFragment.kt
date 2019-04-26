@@ -21,8 +21,9 @@ import com.jakewharton.rxbinding3.appcompat.queryTextChangeEvents
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.TransfersDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
+import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.*
-import cy.agorise.bitsybitshareswallet.viewmodels.TransferDetailViewModel
+import cy.agorise.bitsybitshareswallet.viewmodels.TransactionsViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_transactions.*
@@ -31,6 +32,10 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
 
+/**
+ * Shows the list of transactions as well as options to filter and export those transactions
+ * to PDF and CSV files
+ */
 class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSelectedListener {
 
     companion object {
@@ -39,7 +44,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         private const val REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 100
     }
 
-    private lateinit var mTransferDetailViewModel: TransferDetailViewModel
+    private lateinit var mTransactionsViewModel: TransactionsViewModel
 
     private lateinit var transfersDetailsAdapter: TransfersDetailsAdapter
 
@@ -47,17 +52,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     private val filteredTransfersDetails = ArrayList<TransferDetail>()
 
     /** Variables used to filter the transaction items  */
-    private var filterQuery = ""
-    private var filterTransactionsDirection = 0
-    private var filterDateRangeAll = true
-    private var filterStartDate = 0L
-    private var filterEndDate = 0L
-    private var filterAssetAll = true
-    private var filterAsset = "BTS"
-    private var filterEquivalentValueAll = true
-    private var filterFromEquivalentValue = 0L
-    private var filterToEquivalentValue = 5000L
-    private var filterAgoriseFees = true
+    private var mFilterOptions = FilterOptions()
 
     private var mDisposables = CompositeDisposable()
 
@@ -79,10 +74,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         rvTransactions.adapter = transfersDetailsAdapter
         rvTransactions.layoutManager = LinearLayoutManager(context)
 
-        // Configure TransferDetailViewModel to fetch the transaction history
-        mTransferDetailViewModel = ViewModelProviders.of(this).get(TransferDetailViewModel::class.java)
+        // Configure TransactionsViewModel to fetch the transaction history
+        mTransactionsViewModel = ViewModelProviders.of(this).get(TransactionsViewModel::class.java)
 
-        mTransferDetailViewModel.getAll(userId).observe(this, Observer<List<TransferDetail>> { transfersDetails ->
+        mTransactionsViewModel.getAll(userId).observe(this, Observer<List<TransferDetail>> { transfersDetails ->
             this.transfersDetails.clear()
             this.transfersDetails.addAll(transfersDetails)
             applyFilterOptions(false)
@@ -102,9 +97,9 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
 
         // Initialize filter options
         val calendar = Calendar.getInstance()
-        filterEndDate = calendar.timeInMillis / 1000
+        mFilterOptions.endDate = calendar.timeInMillis
         calendar.add(Calendar.MONTH, -2)
-        filterStartDate = calendar.timeInMillis / 1000
+        mFilterOptions.startDate = calendar.timeInMillis
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -120,7 +115,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 .map { it.queryText.toString().toLowerCase() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    filterQuery = it
+                    mFilterOptions.query = it
                     applyFilterOptions()
                 }
         )
@@ -132,11 +127,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_filter -> {
-                val filterOptionsDialog = FilterOptionsDialog.newInstance(
-                    filterTransactionsDirection, filterDateRangeAll, filterStartDate * 1000,
-                    filterEndDate * 1000, filterAssetAll, filterAsset,
-                    filterEquivalentValueAll, filterFromEquivalentValue, filterToEquivalentValue, filterAgoriseFees
-                )
+                val filterOptionsDialog = FilterOptionsDialog()
+                val args = Bundle()
+                args.putParcelable(FilterOptionsDialog.KEY_FILTER_OPTIONS, mFilterOptions)
+                filterOptionsDialog.arguments = args
                 filterOptionsDialog.show(childFragmentManager, "filter-options-tag")
                 true
             }
@@ -168,38 +162,43 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         // Clean the filtered list
         filteredTransfersDetails.clear()
 
+        // Make sure the filter dates use the same format as the transactions' dates
+        val startDate = mFilterOptions.startDate / 1000
+        val endDate = mFilterOptions.endDate / 1000
+
         for (transferDetail in transfersDetails) {
             // Filter by transfer direction
             if (transferDetail.direction) { // Transfer sent
-                if (filterTransactionsDirection == 1)
+                if (mFilterOptions.transactionsDirection == 1)
                 // Looking for received transfers only
                     continue
             } else { // Transfer received
-                if (filterTransactionsDirection == 2)
+                if (mFilterOptions.transactionsDirection == 2)
                 // Looking for sent transactions only
                     continue
             }
 
             // Filter by date range
-            if (!filterDateRangeAll && (transferDetail.date < filterStartDate || transferDetail.date > filterEndDate))
+            if (!mFilterOptions.dateRangeAll && (transferDetail.date < startDate ||
+                        transferDetail.date > endDate))
                 continue
 
             // Filter by asset
-            if (!filterAssetAll && transferDetail.assetSymbol != filterAsset)
+            if (!mFilterOptions.assetAll && transferDetail.assetSymbol != mFilterOptions.asset)
                 continue
 
             // Filter by equivalent value
-            if (!filterEquivalentValueAll && ((transferDetail.fiatAmount ?: -1 ) < filterFromEquivalentValue
-                        || (transferDetail.fiatAmount ?: -1) > filterToEquivalentValue))
+            if (!mFilterOptions.equivalentValueAll && ((transferDetail.fiatAmount ?: -1 ) < mFilterOptions.fromEquivalentValue
+                        || (transferDetail.fiatAmount ?: -1) > mFilterOptions.toEquivalentValue))
                 continue
 
             // Filter transactions sent to agorise
-            if (filterAgoriseFees && transferDetail.to.equals("agorise"))
+            if (mFilterOptions.agoriseFees && transferDetail.to.equals("agorise"))
                 continue
 
             // Filter by search query
             val text = (transferDetail.from ?: "").toLowerCase() + (transferDetail.to ?: "").toLowerCase()
-            if (text.contains(filterQuery, ignoreCase = true)) {
+            if (text.contains(mFilterOptions.query, ignoreCase = true)) {
                 filteredTransfersDetails.add(transferDetail)
             }
         }
@@ -214,28 +213,8 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     /**
      * Gets called when the user selects some filter options in the [FilterOptionsDialog] and wants to apply them.
      */
-    override fun onFilterOptionsSelected(
-        filterTransactionsDirection: Int,
-        filterDateRangeAll: Boolean,
-        filterStartDate: Long,
-        filterEndDate: Long,
-        filterAssetAll: Boolean,
-        filterAsset: String,
-        filterEquivalentValueAll: Boolean,
-        filterFromEquivalentValue: Long,
-        filterToEquivalentValue: Long,
-        filterAgoriseFees: Boolean
-    ) {
-        this.filterTransactionsDirection = filterTransactionsDirection
-        this.filterDateRangeAll = filterDateRangeAll
-        this.filterStartDate = filterStartDate / 1000
-        this.filterEndDate = filterEndDate / 1000
-        this.filterAssetAll = filterAssetAll
-        this.filterAsset = filterAsset
-        this.filterEquivalentValueAll = filterEquivalentValueAll
-        this.filterFromEquivalentValue = filterFromEquivalentValue
-        this.filterToEquivalentValue = filterToEquivalentValue
-        this.filterAgoriseFees = filterAgoriseFees
+    override fun onFilterOptionsSelected(filterOptions: FilterOptions) {
+        mFilterOptions = filterOptions
         applyFilterOptions(true)
     }
 
@@ -244,7 +223,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED) {
             // Permission is not already granted
-            requestPermissions(arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION)
         } else {
             // Permission is already granted

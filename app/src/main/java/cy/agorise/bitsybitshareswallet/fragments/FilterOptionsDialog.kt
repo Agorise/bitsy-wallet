@@ -18,6 +18,7 @@ import com.crashlytics.android.Crashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
+import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 import cy.agorise.bitsybitshareswallet.views.DatePickerFragment
@@ -36,43 +37,15 @@ class FilterOptionsDialog : DialogFragment() {
     companion object {
         private const val TAG = "FilterOptionsDialog"
 
-        const val KEY_FILTER_TRANSACTION_DIRECTION = "key_filter_transaction_direction"
-        const val KEY_FILTER_DATE_RANGE_ALL = "key_filter_date_range_all"
-        const val KEY_FILTER_START_DATE = "key_filter_start_date"
-        const val KEY_FILTER_END_DATE = "key_filter_end_date"
-        const val KEY_FILTER_ASSET_ALL = "key_filter_asset_all"
-        const val KEY_FILTER_ASSET = "key_filter_asset"
-        const val KEY_FILTER_EQUIVALENT_VALUE_ALL = "key_filter_equivalent_value_all"
-        const val KEY_FILTER_FROM_EQUIVALENT_VALUE = "key_filter_from_equivalent_value"
-        const val KEY_FILTER_TO_EQUIVALENT_VALUE = "key_filter_to_equivalent_value"
-        const val KEY_FILTER_AGORISE_FEES = "key_filter_agorise_fees"
+        const val KEY_FILTER_OPTIONS = "key_filter_options"
 
         const val KEY_TIMESTAMP = "key_timestamp"
 
         const val START_DATE_PICKER = 0
         const val END_DATE_PICKER = 1
-
-        fun newInstance(filterTransactionsDirection: Int, filterDateRangeAll: Boolean,
-                        filterStartDate: Long, filterEndDate: Long, filterAssetAll: Boolean,
-                        filterAsset: String, filterEquivalentValueAll: Boolean, filterFromEquivalentValue: Long,
-                        filterToEquivalentValue: Long, filterAgoriseFees: Boolean): FilterOptionsDialog {
-            val frag = FilterOptionsDialog()
-            val args = Bundle()
-            args.putInt(KEY_FILTER_TRANSACTION_DIRECTION, filterTransactionsDirection)
-            args.putBoolean(KEY_FILTER_DATE_RANGE_ALL, filterDateRangeAll)
-            args.putLong(KEY_FILTER_START_DATE, filterStartDate)
-            args.putLong(KEY_FILTER_END_DATE, filterEndDate)
-            args.putBoolean(KEY_FILTER_ASSET_ALL, filterAssetAll)
-            args.putString(KEY_FILTER_ASSET, filterAsset)
-            args.putBoolean(KEY_FILTER_EQUIVALENT_VALUE_ALL, filterEquivalentValueAll)
-            args.putLong(KEY_FILTER_FROM_EQUIVALENT_VALUE, filterFromEquivalentValue)
-            args.putLong(KEY_FILTER_TO_EQUIVALENT_VALUE, filterToEquivalentValue)
-            args.putBoolean(KEY_FILTER_AGORISE_FEES, filterAgoriseFees)
-            frag.arguments = args
-            return frag
-        }
-
     }
+
+    private lateinit var mFilterOptions: FilterOptions
 
     // Widgets TODO use android-kotlin-extensions {onViewCreated}
     private lateinit var rbTransactionAll: RadioButton
@@ -98,9 +71,6 @@ class FilterOptionsDialog : DialogFragment() {
     private var dateFormat: SimpleDateFormat = SimpleDateFormat("d/MMM/yyyy",
         ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0])
 
-    private var startDate: Long = 0
-    private var endDate: Long = 0
-
     private var mBalanceDetails = ArrayList<BalanceDetail>()
 
     private lateinit var mBalanceDetailViewModel: BalanceDetailViewModel
@@ -121,22 +91,22 @@ class FilterOptionsDialog : DialogFragment() {
             //Log.d(TAG, "timestamp: $timestamp")
             when (msg.arg1) {
                 START_DATE_PICKER -> {
-                    startDate = timestamp
+                    mFilterOptions.startDate = timestamp
 
                     updateDateTextViews()
                 }
                 END_DATE_PICKER -> {
-                    endDate = timestamp
+                    mFilterOptions.endDate = timestamp
 
                     // Make sure there is at least one moth difference between start and end time
                     val calendar = Calendar.getInstance()
-                    calendar.timeInMillis = endDate
+                    calendar.timeInMillis = mFilterOptions.endDate
                     calendar.add(Calendar.MONTH, -1)
 
                     val tmpTime = calendar.timeInMillis
 
-                    if (tmpTime < startDate)
-                        startDate = tmpTime
+                    if (tmpTime < mFilterOptions.startDate)
+                        mFilterOptions.startDate = tmpTime
 
                     updateDateTextViews()
                 }
@@ -145,25 +115,16 @@ class FilterOptionsDialog : DialogFragment() {
     }
 
     private fun updateDateTextViews() {
-        var date = Date(startDate)
+        var date = Date(mFilterOptions.startDate)
         tvStartDate.text = dateFormat.format(date)
 
-        date = Date(endDate)
+        date = Date(mFilterOptions.endDate)
         tvEndDate.text = dateFormat.format(date)
     }
 
     // Container Fragment must implement this interface
     interface OnFilterOptionsSelectedListener {
-        fun onFilterOptionsSelected(filterTransactionsDirection: Int,
-                                    filterDateRangeAll: Boolean,
-                                    filterStartDate: Long,
-                                    filterEndDate: Long,
-                                    filterAssetAll: Boolean,
-                                    filterAsset: String,
-                                    filterEquivalentValueAll: Boolean,
-                                    filterFromEquivalentValue: Long,
-                                    filterToEquivalentValue: Long,
-                                    filterAgoriseFees: Boolean)
+        fun onFilterOptionsSelected(filterOptions: FilterOptions)
     }
 
 
@@ -171,6 +132,8 @@ class FilterOptionsDialog : DialogFragment() {
         onAttachToParentFragment(parentFragment!!)
 
         Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+
+        mFilterOptions = arguments?.getParcelable(KEY_FILTER_OPTIONS)!!
 
         // Initialize handler for communication with the DatePicker
         mDatePickerHandler = DatePickerHandler()
@@ -188,8 +151,7 @@ class FilterOptionsDialog : DialogFragment() {
         rbTransactionAll = view.findViewById(R.id.rbTransactionAll)
         rbTransactionSent = view.findViewById(R.id.rbTransactionSent)
         rbTransactionReceived = view.findViewById(R.id.rbTransactionReceived)
-        val radioButtonChecked = arguments!!.getInt(KEY_FILTER_TRANSACTION_DIRECTION, 0)
-        when (radioButtonChecked) {
+        when (mFilterOptions.transactionsDirection) {
             0 -> rbTransactionAll.isChecked = true
             1 -> rbTransactionSent.isChecked = true
             2 -> rbTransactionReceived.isChecked = true
@@ -200,15 +162,13 @@ class FilterOptionsDialog : DialogFragment() {
         llDateRange = view.findViewById(R.id.llDateRange)
         cbDateRange.setOnCheckedChangeListener { _, isChecked ->
             llDateRange.visibility = if(isChecked) View.GONE else View.VISIBLE }
-        cbDateRange.isChecked = arguments!!.getBoolean(KEY_FILTER_DATE_RANGE_ALL, true)
+        cbDateRange.isChecked = mFilterOptions.dateRangeAll
 
         tvStartDate = view.findViewById(R.id.tvStartDate)
         tvEndDate = view.findViewById(R.id.tvEndDate)
 
-        startDate = arguments!!.getLong(KEY_FILTER_START_DATE, 0)
         tvStartDate.setOnClickListener(mDateClickListener)
 
-        endDate = arguments!!.getLong(KEY_FILTER_END_DATE, 0)
         tvEndDate.setOnClickListener(mDateClickListener)
 
         updateDateTextViews()
@@ -219,7 +179,7 @@ class FilterOptionsDialog : DialogFragment() {
         cbAsset.setOnCheckedChangeListener { _, isChecked ->
             sAsset.visibility = if(isChecked) View.GONE else View.VISIBLE
         }
-        cbAsset.isChecked = arguments!!.getBoolean(KEY_FILTER_ASSET_ALL, true)
+        cbAsset.isChecked = mFilterOptions.assetAll
 
         // Configure BalanceDetailViewModel to obtain the user's Balances
         mBalanceDetailViewModel = ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
@@ -233,11 +193,9 @@ class FilterOptionsDialog : DialogFragment() {
             mBalancesDetailsAdapter = BalancesDetailsAdapter(context!!, android.R.layout.simple_spinner_item, mBalanceDetails)
             sAsset.adapter = mBalancesDetailsAdapter
 
-            val assetSelected = arguments!!.getString(KEY_FILTER_ASSET)
-
             // Try to select the selectedAssetSymbol
             for (i in 0 until mBalancesDetailsAdapter!!.count) {
-                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == assetSelected) {
+                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == mFilterOptions.asset) {
                     sAsset.setSelection(i)
                     break
                 }
@@ -249,19 +207,19 @@ class FilterOptionsDialog : DialogFragment() {
         llEquivalentValue = view.findViewById(R.id.llEquivalentValue)
         cbEquivalentValue.setOnCheckedChangeListener { _, isChecked ->
             llEquivalentValue.visibility = if(isChecked) View.GONE else View.VISIBLE }
-        cbEquivalentValue.isChecked = arguments!!.getBoolean(KEY_FILTER_EQUIVALENT_VALUE_ALL, true)
+        cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
 
         // TODO obtain user selected currency
         val currencySymbol = "usd"
         mCurrency = Currency.getInstance(currencySymbol)
 
         etFromEquivalentValue = view.findViewById(R.id.etFromEquivalentValue)
-        val fromEquivalentValue = arguments!!.getLong(KEY_FILTER_FROM_EQUIVALENT_VALUE, 0) /
+        val fromEquivalentValue = mFilterOptions.fromEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
         etFromEquivalentValue.setText("$fromEquivalentValue", TextView.BufferType.EDITABLE)
 
         etToEquivalentValue = view.findViewById(R.id.etToEquivalentValue)
-        val toEquivalentValue = arguments!!.getLong(KEY_FILTER_TO_EQUIVALENT_VALUE, 0) /
+        val toEquivalentValue = mFilterOptions.toEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
         etToEquivalentValue.setText("$toEquivalentValue", TextView.BufferType.EDITABLE)
 
@@ -270,7 +228,7 @@ class FilterOptionsDialog : DialogFragment() {
 
         // Initialize transaction network fees
         switchAgoriseFees = view.findViewById(R.id.switchAgoriseFees)
-        switchAgoriseFees.isChecked = arguments!!.getBoolean(KEY_FILTER_AGORISE_FEES, true)
+        switchAgoriseFees.isChecked = mFilterOptions.agoriseFees
 
         builder.setView(view)
 
@@ -299,13 +257,13 @@ class FilterOptionsDialog : DialogFragment() {
         var which = -1
         if (v.id == R.id.tvStartDate) {
             which = START_DATE_PICKER
-            currentTime = startDate
-            calendar.timeInMillis = endDate
+            currentTime = mFilterOptions.startDate
+            calendar.timeInMillis = mFilterOptions.endDate
             calendar.add(Calendar.MONTH, -1)
             maxTime = calendar.timeInMillis
         } else if (v.id == R.id.tvEndDate) {
             which = END_DATE_PICKER
-            currentTime = endDate
+            currentTime = mFilterOptions.endDate
         }
 
         val datePickerFragment = DatePickerFragment.newInstance(which, currentTime,
@@ -314,36 +272,33 @@ class FilterOptionsDialog : DialogFragment() {
     }
 
     private fun validateFields() {
-        val filterTransactionsDirection =  when {
+        mFilterOptions.transactionsDirection =  when {
             rbTransactionAll.isChecked -> 0
             rbTransactionSent.isChecked -> 1
             rbTransactionReceived.isChecked -> 2
             else -> { 0 }
         }
 
-        val filterDateRangeAll = cbDateRange.isChecked
+        mFilterOptions.dateRangeAll = cbDateRange.isChecked
 
-        val filterAssetAll = cbAsset.isChecked
+        mFilterOptions.assetAll = cbAsset.isChecked
 
-        val filterAsset = (sAsset.selectedItem as BalanceDetail).symbol
+        mFilterOptions.asset = (sAsset.selectedItem as BalanceDetail).symbol
 
-        val filterEquivalentValueAll = cbEquivalentValue.isChecked
+        mFilterOptions.equivalentValueAll = cbEquivalentValue.isChecked
 
-        val filterFromEquivalentValue = etFromEquivalentValue.text.toString().toLong() *
+        mFilterOptions.fromEquivalentValue = etFromEquivalentValue.text.toString().toLong() *
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
 
-        var filterToEquivalentValue = etToEquivalentValue.text.toString().toLong() *
+        mFilterOptions.toEquivalentValue = etToEquivalentValue.text.toString().toLong() *
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
 
         // Make sure ToEquivalentValue is at least 50 units bigger than FromEquivalentValue
-        if (!filterEquivalentValueAll && filterToEquivalentValue < filterFromEquivalentValue + 50) {
-            filterToEquivalentValue = filterFromEquivalentValue + 50
-        }
+        mFilterOptions.toEquivalentValue =
+            Math.max(mFilterOptions.toEquivalentValue, mFilterOptions.fromEquivalentValue + 50)
 
-        val filterAgoriseFees = switchAgoriseFees.isChecked
+        mFilterOptions.agoriseFees = switchAgoriseFees.isChecked
 
-        mCallback!!.onFilterOptionsSelected(filterTransactionsDirection, filterDateRangeAll,
-            startDate, endDate, filterAssetAll, filterAsset, filterEquivalentValueAll,
-            filterFromEquivalentValue, filterToEquivalentValue, filterAgoriseFees)
+        mCallback!!.onFilterOptionsSelected(mFilterOptions)
     }
 }

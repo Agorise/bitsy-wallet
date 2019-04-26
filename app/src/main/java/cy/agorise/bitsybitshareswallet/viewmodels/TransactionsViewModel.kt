@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
 import cy.agorise.bitsybitshareswallet.repositories.TransferDetailRepository
 
-class TransferDetailViewModel(application: Application) : AndroidViewModel(application) {
+class TransactionsViewModel(application: Application) : AndroidViewModel(application) {
     private var mRepository = TransferDetailRepository(application)
 
     internal fun getAll(userId: String): LiveData<List<TransferDetail>> {
