@@ -11,12 +11,21 @@
     android:paddingBottom="@dimen/spacing_same_topic">
 
     <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_filter_options"
+            android:textAppearance="@style/TextAppearance.Bitsy.Headline5"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
         android:id="@+id/tvTransactionDirection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_different_topic"
         android:text="@string/title_transactions"
         android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
 
     <RadioGroup
         android:id="@+id/rgTransactionDirection"
@@ -207,5 +216,26 @@
                 tools:text="USD"/>
 
     </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFilter"
+            style="@style/Widget.Bitsy.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_same_topic"
+            android:text="@string/button__filter"
+            app:layout_constraintTop_toBottomOf="@id/llEquivalentValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            style="@style/Widget.Bitsy.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"
+            app:layout_constraintTop_toTopOf="@id/btnFilter"
+            app:layout_constraintEnd_toStartOf="@id/btnFilter"
+            android:textColor="@color/colorPrimary"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

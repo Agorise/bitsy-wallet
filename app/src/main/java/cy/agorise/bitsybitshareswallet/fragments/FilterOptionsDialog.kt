@@ -1,13 +1,13 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 
-import android.app.Dialog
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -20,6 +20,7 @@ import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 import cy.agorise.bitsybitshareswallet.views.DatePickerFragment
+import kotlinx.android.synthetic.main.dialog_filter_options.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.ClassCastException
@@ -42,23 +43,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     }
 
     private lateinit var mFilterOptions: FilterOptions
-
-    // Widgets TODO use android-kotlin-extensions {onViewCreated}
-    private lateinit var rbTransactionAll: RadioButton
-    private lateinit var rbTransactionSent: RadioButton
-    private lateinit var rbTransactionReceived: RadioButton
-    private lateinit var cbDateRange: CheckBox
-    private lateinit var llDateRange: LinearLayout
-    private lateinit var tvStartDate: TextView
-    private lateinit var tvEndDate: TextView
-    private lateinit var cbAsset: CheckBox
-    private lateinit var sAsset: Spinner
-    private lateinit var cbEquivalentValue: CheckBox
-    private lateinit var llEquivalentValue: LinearLayout
-    private lateinit var etFromEquivalentValue: EditText
-    private lateinit var etToEquivalentValue: EditText
-    private lateinit var tvEquivalentValueSymbol: TextView
-    private lateinit var switchAgoriseFees: Switch
 
     private var mCallback: OnFilterOptionsSelectedListener? = null
 
@@ -111,27 +95,20 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         fun onFilterOptionsSelected(filterOptions: FilterOptions)
     }
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.dialog_filter_options, container, false)
+    }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         onAttachToParentFragment(parentFragment!!)
 
         Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         mFilterOptions = arguments?.getParcelable(KEY_FILTER_OPTIONS)!!
 
-        val builder = AlertDialog.Builder(context!!)
-            .setTitle(getString(R.string.title_filter_options))
-            .setPositiveButton(getString(R.string.button__filter)) { _, _ ->  validateFields() }
-            .setNegativeButton(getString(android.R.string.cancel)) { _, _ ->  dismiss() }
-
-        // Inflate layout
-        val inflater = activity!!.layoutInflater
-        val view = inflater.inflate(R.layout.dialog_filter_options, null)
-
         // Initialize Transactions direction
-        rbTransactionAll = view.findViewById(R.id.rbTransactionAll)
-        rbTransactionSent = view.findViewById(R.id.rbTransactionSent)
-        rbTransactionReceived = view.findViewById(R.id.rbTransactionReceived)
         when (mFilterOptions.transactionsDirection) {
             0 -> rbTransactionAll.isChecked = true
             1 -> rbTransactionSent.isChecked = true
@@ -139,14 +116,9 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         }
 
         // Initialize Date range
-        cbDateRange = view.findViewById(R.id.cbDateRange)
-        llDateRange = view.findViewById(R.id.llDateRange)
         cbDateRange.setOnCheckedChangeListener { _, isChecked ->
             llDateRange.visibility = if(isChecked) View.GONE else View.VISIBLE }
         cbDateRange.isChecked = mFilterOptions.dateRangeAll
-
-        tvStartDate = view.findViewById(R.id.tvStartDate)
-        tvEndDate = view.findViewById(R.id.tvEndDate)
 
         tvStartDate.setOnClickListener(mDateClickListener)
 
@@ -155,8 +127,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         updateDateTextViews()
 
         // Initialize Asset
-        cbAsset = view.findViewById(R.id.cbAsset)
-        sAsset = view.findViewById(R.id.sAsset)
         cbAsset.setOnCheckedChangeListener { _, isChecked ->
             sAsset.visibility = if(isChecked) View.GONE else View.VISIBLE
         }
@@ -184,8 +154,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         })
 
         // Initialize Equivalent Value
-        cbEquivalentValue = view.findViewById(R.id.cbEquivalentValue)
-        llEquivalentValue = view.findViewById(R.id.llEquivalentValue)
         cbEquivalentValue.setOnCheckedChangeListener { _, isChecked ->
             llEquivalentValue.visibility = if(isChecked) View.GONE else View.VISIBLE }
         cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
@@ -194,26 +162,31 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         val currencySymbol = "usd"
         mCurrency = Currency.getInstance(currencySymbol)
 
-        etFromEquivalentValue = view.findViewById(R.id.etFromEquivalentValue)
         val fromEquivalentValue = mFilterOptions.fromEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
         etFromEquivalentValue.setText("$fromEquivalentValue", TextView.BufferType.EDITABLE)
 
-        etToEquivalentValue = view.findViewById(R.id.etToEquivalentValue)
         val toEquivalentValue = mFilterOptions.toEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
         etToEquivalentValue.setText("$toEquivalentValue", TextView.BufferType.EDITABLE)
 
-        tvEquivalentValueSymbol = view.findViewById(R.id.tvEquivalentValueSymbol)
         tvEquivalentValueSymbol.text = currencySymbol.toUpperCase()
 
         // Initialize transaction network fees
-        switchAgoriseFees = view.findViewById(R.id.switchAgoriseFees)
         switchAgoriseFees.isChecked = mFilterOptions.agoriseFees
 
-        builder.setView(view)
+        // Setup cancel and filter buttons
+        btnCancel.setOnClickListener { dismiss() }
+        btnFilter.setOnClickListener { validateFields() }
+    }
 
-        return builder.create()
+    override fun onResume() {
+        super.onResume()
+
+        // Force dialog fragment to use the full width of the screen
+        // TODO use the same width as standard fragments
+        val dialogWindow = dialog?.window
+        dialogWindow?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 
     /**
@@ -280,5 +253,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         mFilterOptions.agoriseFees = switchAgoriseFees.isChecked
 
         mCallback!!.onFilterOptionsSelected(mFilterOptions)
+        dismiss()
     }
 }
