@@ -3,13 +3,16 @@ package cy.agorise.bitsybitshareswallet.views
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.os.Message
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.google.android.material.picker.MaterialDatePickerDialog
-import cy.agorise.bitsybitshareswallet.fragments.FilterOptionsDialog
 import java.util.*
 
+/**
+ * Lets the user select a Date and communicates the selection back to the parent fragment
+ * using the OnDateSetListener interface, which has to be implemented by the parent.
+ */
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     companion object {
@@ -19,27 +22,23 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         const val KEY_CURRENT = "key_current"
         const val KEY_MAX = "key_max"
 
-        fun newInstance(
-            which: Int, currentTime: Long, maxTime: Long,
-            handler: FilterOptionsDialog.DatePickerHandler
-        ): DatePickerFragment {
+        fun newInstance(which: Int, currentTime: Long, maxTime: Long): DatePickerFragment {
             val f = DatePickerFragment()
             val bundle = Bundle()
             bundle.putInt(KEY_WHICH, which)
             bundle.putLong(KEY_CURRENT, currentTime)
             bundle.putLong(KEY_MAX, maxTime)
             f.arguments = bundle
-            f.setHandler(handler)
             return f
         }
     }
 
-    private var which: Int = 0
-    private var mHandler: FilterOptionsDialog.DatePickerHandler? = null
+    /**
+     * Callback used to communicate the date selection back to the parent
+     */
+    private var mCallback: OnDateSetListener? = null
 
-    fun setHandler(handler: FilterOptionsDialog.DatePickerHandler) {
-        mHandler = handler
-    }
+    private var which: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +46,8 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        onAttachToParentFragment(parentFragment)
+
         val currentTime = arguments!!.getLong(KEY_CURRENT)
         val maxTime = arguments!!.getLong(KEY_MAX)
 
@@ -68,13 +69,25 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
     }
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
-        val msg = Message.obtain()
-        msg.arg1 = which
         val calendar = GregorianCalendar()
         calendar.set(year, month, day)
-        val bundle = Bundle()
-        bundle.putLong(FilterOptionsDialog.KEY_TIMESTAMP, calendar.time.time)
-        msg.data = bundle
-        mHandler!!.sendMessage(msg)
+        mCallback?.onDateSet(which, calendar.time.time)
+    }
+
+    /**
+     * Attaches the current [DialogFragment] to its [Fragment] parent, to initialize the
+     * [OnDateSetListener] interface
+     */
+    private fun onAttachToParentFragment(fragment: Fragment?) {
+        try {
+            mCallback = fragment as OnDateSetListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$fragment must implement OnDateSetListener")
+        }
+    }
+
+    // Container Activity must implement this interface
+    interface OnDateSetListener {
+        fun onDateSet(which: Int, timestamp: Long)
     }
 }

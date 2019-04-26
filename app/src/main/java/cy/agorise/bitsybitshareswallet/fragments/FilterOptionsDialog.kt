@@ -4,8 +4,6 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.app.Dialog
 import android.content.res.Resources
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
 import android.view.View
 import androidx.fragment.app.DialogFragment
 import android.widget.*
@@ -32,14 +30,12 @@ import kotlin.collections.ArrayList
  * Creates a Dialog that communicates with {@link TransactionsActivity} to give it parameters about
  * how to filter the list of Transactions
  */
-class FilterOptionsDialog : DialogFragment() {
+class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListener {
 
     companion object {
         private const val TAG = "FilterOptionsDialog"
 
         const val KEY_FILTER_OPTIONS = "key_filter_options"
-
-        const val KEY_TIMESTAMP = "key_timestamp"
 
         const val START_DATE_PICKER = 0
         const val END_DATE_PICKER = 1
@@ -66,8 +62,6 @@ class FilterOptionsDialog : DialogFragment() {
 
     private var mCallback: OnFilterOptionsSelectedListener? = null
 
-    private lateinit var mDatePickerHandler: DatePickerHandler
-
     private var dateFormat: SimpleDateFormat = SimpleDateFormat("d/MMM/yyyy",
         ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0])
 
@@ -79,37 +73,27 @@ class FilterOptionsDialog : DialogFragment() {
 
     private lateinit var mCurrency: Currency
 
-    /**
-     * DatePicker message handler.
-     */
-    inner class DatePickerHandler : Handler() {
+    override fun onDateSet(which: Int, timestamp: Long) {
+        when(which) {
+            START_DATE_PICKER -> {
+                mFilterOptions.startDate = timestamp
 
-        override fun handleMessage(msg: Message) {
-            super.handleMessage(msg)
-            val bundle = msg.data
-            val timestamp = bundle.get(KEY_TIMESTAMP) as Long
-            //Log.d(TAG, "timestamp: $timestamp")
-            when (msg.arg1) {
-                START_DATE_PICKER -> {
-                    mFilterOptions.startDate = timestamp
+                updateDateTextViews()
+            }
+            END_DATE_PICKER -> {
+                mFilterOptions.endDate = timestamp
 
-                    updateDateTextViews()
-                }
-                END_DATE_PICKER -> {
-                    mFilterOptions.endDate = timestamp
+                // Make sure there is at least one moth difference between start and end time
+                val calendar = Calendar.getInstance()
+                calendar.timeInMillis = mFilterOptions.endDate
+                calendar.add(Calendar.MONTH, -1)
 
-                    // Make sure there is at least one moth difference between start and end time
-                    val calendar = Calendar.getInstance()
-                    calendar.timeInMillis = mFilterOptions.endDate
-                    calendar.add(Calendar.MONTH, -1)
+                val tmpTime = calendar.timeInMillis
 
-                    val tmpTime = calendar.timeInMillis
+                if (tmpTime < mFilterOptions.startDate)
+                    mFilterOptions.startDate = tmpTime
 
-                    if (tmpTime < mFilterOptions.startDate)
-                        mFilterOptions.startDate = tmpTime
-
-                    updateDateTextViews()
-                }
+                updateDateTextViews()
             }
         }
     }
@@ -134,9 +118,6 @@ class FilterOptionsDialog : DialogFragment() {
         Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         mFilterOptions = arguments?.getParcelable(KEY_FILTER_OPTIONS)!!
-
-        // Initialize handler for communication with the DatePicker
-        mDatePickerHandler = DatePickerHandler()
 
         val builder = AlertDialog.Builder(context!!)
             .setTitle(getString(R.string.title_filter_options))
@@ -266,9 +247,8 @@ class FilterOptionsDialog : DialogFragment() {
             currentTime = mFilterOptions.endDate
         }
 
-        val datePickerFragment = DatePickerFragment.newInstance(which, currentTime,
-            maxTime, mDatePickerHandler)
-        datePickerFragment.show(activity!!.supportFragmentManager, "date-picker")
+        val datePickerFragment = DatePickerFragment.newInstance(which, currentTime, maxTime)
+        datePickerFragment.show(childFragmentManager, "date-picker")
     }
 
     private fun validateFields() {
