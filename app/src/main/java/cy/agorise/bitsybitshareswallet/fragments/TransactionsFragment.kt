@@ -28,9 +28,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_transactions.*
 import java.io.File
-import java.util.*
 import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 
 /**
  * Shows the list of transactions as well as options to filter and export those transactions
@@ -44,15 +42,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         private const val REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 100
     }
 
-    private lateinit var mTransactionsViewModel: TransactionsViewModel
-
-    private lateinit var transfersDetailsAdapter: TransfersDetailsAdapter
-
-    private val transfersDetails = ArrayList<TransferDetail>()
-    private val filteredTransfersDetails = ArrayList<TransferDetail>()
-
-    /** Variables used to filter the transaction items  */
-    private var mFilterOptions = FilterOptions()
+    private lateinit var mViewModel: TransactionsViewModel
 
     private var mDisposables = CompositeDisposable()
 
@@ -70,36 +60,29 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
 
-        transfersDetailsAdapter = TransfersDetailsAdapter(context!!)
+        val transfersDetailsAdapter = TransfersDetailsAdapter(context!!)
         rvTransactions.adapter = transfersDetailsAdapter
         rvTransactions.layoutManager = LinearLayoutManager(context)
 
         // Configure TransactionsViewModel to fetch the transaction history
-        mTransactionsViewModel = ViewModelProviders.of(this).get(TransactionsViewModel::class.java)
+        mViewModel = ViewModelProviders.of(this).get(TransactionsViewModel::class.java)
 
-        mTransactionsViewModel.getAll(userId).observe(this, Observer<List<TransferDetail>> { transfersDetails ->
-            this.transfersDetails.clear()
-            this.transfersDetails.addAll(transfersDetails)
-            applyFilterOptions(false)
+        mViewModel.getFilteredTransactions(userId).observe(this,
+            Observer<List<TransferDetail>> { transactions ->
+                if (transactions.isEmpty()) {
+                    rvTransactions.visibility = View.GONE
+                    tvEmpty.visibility = View.VISIBLE
+                } else {
+                    rvTransactions.visibility = View.VISIBLE
+                    tvEmpty.visibility = View.GONE
 
-            if (transfersDetails.isEmpty()) {
-                rvTransactions.visibility = View.GONE
-                tvEmpty.visibility = View.VISIBLE
-            } else {
-                rvTransactions.visibility = View.VISIBLE
-                tvEmpty.visibility = View.GONE
-            }
+                    transfersDetailsAdapter.replaceAll(transactions)
+                }
         })
 
         // Set custom touch listener to handle bounce/stretch effect
         val bounceTouchListener = BounceTouchListener(rvTransactions)
         rvTransactions.setOnTouchListener(bounceTouchListener)
-
-        // Initialize filter options
-        val calendar = Calendar.getInstance()
-        mFilterOptions.endDate = calendar.timeInMillis
-        calendar.add(Calendar.MONTH, -2)
-        mFilterOptions.startDate = calendar.timeInMillis
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -115,8 +98,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 .map { it.queryText.toString().toLowerCase() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    mFilterOptions.query = it
-                    applyFilterOptions()
+                    mViewModel.setFilterQuery(it)
                 }
         )
 
@@ -129,7 +111,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
             R.id.menu_filter -> {
                 val filterOptionsDialog = FilterOptionsDialog()
                 val args = Bundle()
-                args.putParcelable(FilterOptionsDialog.KEY_FILTER_OPTIONS, mFilterOptions)
+                args.putParcelable(FilterOptionsDialog.KEY_FILTER_OPTIONS, mViewModel.getFilterOptions())
                 filterOptionsDialog.arguments = args
                 filterOptionsDialog.show(childFragmentManager, "filter-options-tag")
                 true
@@ -155,67 +137,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     }
 
     /**
-     * Filters the TransferDetail list given the user selected filter options.
-     * TODO move this to a background thread
-     */
-    private fun applyFilterOptions(scrollToTop: Boolean = true) {
-        // Clean the filtered list
-        filteredTransfersDetails.clear()
-
-        // Make sure the filter dates use the same format as the transactions' dates
-        val startDate = mFilterOptions.startDate / 1000
-        val endDate = mFilterOptions.endDate / 1000
-
-        for (transferDetail in transfersDetails) {
-            // Filter by transfer direction
-            if (transferDetail.direction) { // Transfer sent
-                if (mFilterOptions.transactionsDirection == 1)
-                // Looking for received transfers only
-                    continue
-            } else { // Transfer received
-                if (mFilterOptions.transactionsDirection == 2)
-                // Looking for sent transactions only
-                    continue
-            }
-
-            // Filter by date range
-            if (!mFilterOptions.dateRangeAll && (transferDetail.date < startDate ||
-                        transferDetail.date > endDate))
-                continue
-
-            // Filter by asset
-            if (!mFilterOptions.assetAll && transferDetail.assetSymbol != mFilterOptions.asset)
-                continue
-
-            // Filter by equivalent value
-            if (!mFilterOptions.equivalentValueAll && ((transferDetail.fiatAmount ?: -1 ) < mFilterOptions.fromEquivalentValue
-                        || (transferDetail.fiatAmount ?: -1) > mFilterOptions.toEquivalentValue))
-                continue
-
-            // Filter transactions sent to agorise
-            if (mFilterOptions.agoriseFees && transferDetail.to.equals("agorise"))
-                continue
-
-            // Filter by search query
-            val text = (transferDetail.from ?: "").toLowerCase() + (transferDetail.to ?: "").toLowerCase()
-            if (text.contains(mFilterOptions.query, ignoreCase = true)) {
-                filteredTransfersDetails.add(transferDetail)
-            }
-        }
-
-        // Replaces the list of TransferDetail items with the new filtered list
-        transfersDetailsAdapter.replaceAll(filteredTransfersDetails)
-
-        if (scrollToTop)
-            rvTransactions.scrollToPosition(0)
-    }
-
-    /**
      * Gets called when the user selects some filter options in the [FilterOptionsDialog] and wants to apply them.
      */
     override fun onFilterOptionsSelected(filterOptions: FilterOptions) {
-        mFilterOptions = filterOptions
-        applyFilterOptions(true)
+        mViewModel.applyFilterOptions(filterOptions)
     }
 
     /** Verifies that the storage permission has been granted before attempting to generate the export options */
@@ -267,12 +192,13 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 return
         }
 
-        if (exportPDF)
-            activity?.let { PDFGeneratorTask(it).execute(filteredTransfersDetails) }
+        mViewModel.getFilteredTransactionsOnce()?.let { filteredTransactions ->
+            if (exportPDF)
+                activity?.let { PDFGeneratorTask(it).execute(filteredTransactions) }
 
-        if (exportCSV)
-            activity?.let { CSVGenerationTask(it).execute(filteredTransfersDetails) }
-
+            if (exportCSV)
+                activity?.let { CSVGenerationTask(it).execute(filteredTransactions) }
+        }
     }
 
     override fun onDestroy() {
