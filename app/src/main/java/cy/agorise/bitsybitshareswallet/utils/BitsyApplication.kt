@@ -15,6 +15,7 @@ class BitsyApplication : Application() {
             "wss://nl.palmpay.io/ws",
 
             // Other public nodes
+            "wss://kc-us-dex.xeldal.com/ws",            // missouri, usa
 //            "wss://bitshares.nu/ws",                   // Stockholm, Sweden
             "wss://bitshares.openledger.info/ws"      // Openledger node
 //            "wss://dallas.bitshares.apasia.tech/ws",	// Dallas, USA
