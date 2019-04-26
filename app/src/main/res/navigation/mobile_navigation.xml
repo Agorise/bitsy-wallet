@@ -115,7 +115,7 @@
             android:name="memo"
             android:defaultValue=" " />
 
-        <deepLink app:uri="go.payit.now/bitshares/{to}/{amount}/{asset}/{memo}" />
+        <deepLink app:uri="go.pay.now/bitshares/{to}/{amount}/{asset}/{memo}" />
     </fragment>
 
     <fragment
