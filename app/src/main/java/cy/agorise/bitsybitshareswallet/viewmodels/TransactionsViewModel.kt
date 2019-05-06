@@ -110,7 +110,7 @@ class TransactionsViewModel(application: Application) : AndroidViewModel(applica
                     continue
 
                 // Filter by search query
-                val text = (transaction.from ?: "").toLowerCase() + (transaction.to ?: "").toLowerCase()
+                val text = "${transaction.from ?: ""} ${transaction.to ?: ""} ${transaction.memo}"
                 if (text.contains(filterOptions.query, ignoreCase = true)) {
                     filteredTransactions.add(transaction)
                 }
