@@ -112,7 +112,7 @@ class HomeFragment : Fragment() {
         }
 
         // Configure ViewPager with PagerAdapter and TabLayout to display the Balances/NetWorth section
-        val pagerAdapter = PagerAdapter(fragmentManager!!)
+        val pagerAdapter = PagerAdapter(childFragmentManager)
         viewPager.adapter = pagerAdapter
         tabLayout.setupWithViewPager(viewPager)
         // Set the pie chart icon for the third tab
