@@ -236,7 +236,13 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
 
         mFilterOptions.assetAll = cbAsset.isChecked
 
-        mFilterOptions.asset = (sAsset.selectedItem as BalanceDetail).symbol
+        val symbol = (sAsset.selectedItem as BalanceDetail?)?.symbol
+        // If there are no assets in the spinner (the account has 0 balances or the app has not yet
+        // fetched the account balances) symbol will be null, make sure that does not create a crash.
+        if (symbol != null)
+            mFilterOptions.asset = symbol
+        else
+            mFilterOptions.assetAll = true
 
         mFilterOptions.equivalentValueAll = cbEquivalentValue.isChecked
 
