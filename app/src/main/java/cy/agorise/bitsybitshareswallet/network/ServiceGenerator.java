@@ -5,53 +5,34 @@ import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import cy.agorise.bitsybitshareswallet.models.coingecko.MarketData;
 import cy.agorise.bitsybitshareswallet.models.coingecko.MarketDataDeserializer;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 public class ServiceGenerator{
-    public static String API_BASE_URL;
-    private static HttpLoggingInterceptor logging;
     private static OkHttpClient.Builder httpClient;
     private static Retrofit.Builder builder;
 
-    private static HashMap<Class<?>, Object> Services;
+    private static HashMap<Class<?>, Object> Services = new HashMap<>();
 
-    public ServiceGenerator(String apiBaseUrl, Gson gson) {
-        API_BASE_URL= apiBaseUrl;
-        logging = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+    private ServiceGenerator(String apiBaseUrl, Gson gson) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
         httpClient = new OkHttpClient.Builder().addInterceptor(logging);
         builder = new Retrofit.Builder()
-                .baseUrl(API_BASE_URL)
+                .baseUrl(apiBaseUrl)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
-        Services = new HashMap<Class<?>, Object>();
     }
 
     public ServiceGenerator(String apiBaseUrl){
         this(apiBaseUrl, new Gson());
     }
 
-    /**
-     * Customizes the Gson instance with specific de-serialization logic
-     */
-    private Gson getGson(){
-        GsonBuilder builder = new GsonBuilder();
-        return builder.create();
-    }
-
-    public void setCallbackExecutor(Executor executor){
-        builder.callbackExecutor(executor);
-    }
-
-    public static <T> void setService(Class<T> klass, T thing) {
+    private static <T> void setService(Class<T> klass, T thing) {
         Services.put(klass, thing);
     }
 
@@ -65,21 +46,9 @@ public class ServiceGenerator{
         return service;
     }
 
-    public static <S> S createService(Class<S> serviceClass) {
-
-        httpClient.interceptors().add(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Interceptor.Chain chain) throws IOException {
-                okhttp3.Request original = chain.request();
-                // Request customization: add request headers
-                okhttp3.Request.Builder requestBuilder = original.newBuilder().method(original.method(), original.body());
-
-                okhttp3.Request request = requestBuilder.build();
-                return chain.proceed(request);
-            }
-        });
-        httpClient.readTimeout(5, TimeUnit.MINUTES);
-        httpClient.connectTimeout(5, TimeUnit.MINUTES);
+    private static <S> S createService(Class<S> serviceClass) {
+        httpClient.readTimeout(15, TimeUnit.SECONDS);
+        httpClient.connectTimeout(15, TimeUnit.SECONDS);
         OkHttpClient client = httpClient.build();
         if(serviceClass == CoingeckoService.class){
             // The MarketData class needs a custom de-serializer
