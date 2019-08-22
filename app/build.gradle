@@ -6,6 +6,11 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 
+// Needed for Kotlin's @Parcelize annotation
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
