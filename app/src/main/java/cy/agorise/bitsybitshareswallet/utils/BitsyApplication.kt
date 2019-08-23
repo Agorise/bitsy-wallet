@@ -7,6 +7,7 @@ import cy.agorise.graphenej.api.android.NetworkServiceManager
 import io.reactivex.plugins.RxJavaPlugins
 
 
+@Suppress("unused")
 class BitsyApplication : Application() {
 
     companion object {
