@@ -108,7 +108,7 @@ object Constants {
     /** Key used to store the night mode setting into the shared preferences */
     const val KEY_NIGHT_MODE_ACTIVATED = "key_night_mode_activated"
 
-    const val MERCHANTS_WEBSERVICE_URL = "https://websvc.palmpay.io/"
+    const val BITSY_WEBSERVICE_URL = "https://websvc.palmpay.io/"
 
     /** Key used to store the last time in millis that the merchants info was refreshed */
     const val KEY_MERCHANTS_LAST_UPDATE = "key_merchants_last_update"
@@ -124,6 +124,9 @@ object Constants {
 
     /** Constant used to check if the current connected node is out of sync */
     const val CHECK_NODE_OUT_OF_SYNC = 10 // 10 seconds
+
+    /** Minimum time period in seconds between BitShares nodes list updates */
+    const val NODES_UPDATE_PERIOD = (60 * 60).toLong() // 1 hour
 
 
     /////////////////////// Crashlytics custom keys ///////////////////////

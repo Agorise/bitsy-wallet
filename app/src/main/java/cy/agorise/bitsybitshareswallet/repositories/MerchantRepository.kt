@@ -9,7 +9,7 @@ import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.database.daos.MerchantDao
 import cy.agorise.bitsybitshareswallet.database.entities.Merchant
 import cy.agorise.bitsybitshareswallet.network.FeathersResponse
-import cy.agorise.bitsybitshareswallet.network.MerchantsWebservice
+import cy.agorise.bitsybitshareswallet.network.BitsyWebservice
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import io.reactivex.Single
 import retrofit2.Call
@@ -47,12 +47,12 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
             Log.d(TAG, "Updating merchants from webservice")
             // TODO make sure it works when there are more merchants than those sent back in the first response
             val retrofit = Retrofit.Builder()
-                .baseUrl(Constants.MERCHANTS_WEBSERVICE_URL)
+                .baseUrl(Constants.BITSY_WEBSERVICE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            val ambassadorService = retrofit.create<MerchantsWebservice>(MerchantsWebservice::class.java)
-            val call = ambassadorService.getMerchants(0)
+            val bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
+            val call = bitsyWebservice.getMerchants(0)
             call.enqueue(this)
         }
     }

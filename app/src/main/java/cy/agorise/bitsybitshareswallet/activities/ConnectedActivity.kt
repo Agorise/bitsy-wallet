@@ -35,6 +35,7 @@ import cy.agorise.graphenej.api.android.NetworkService
 import cy.agorise.graphenej.api.android.RxBus
 import cy.agorise.graphenej.api.calls.*
 import cy.agorise.graphenej.models.*
+import cy.agorise.graphenej.network.FullNode
 import io.fabric.sdk.android.Fabric
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -279,7 +280,7 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
         if (latestOpCount == 0L) {
             Log.d(TAG, "The node returned 0 total_ops for current account and may not have installed the history plugin. " +
                     "\nAsk the NetworkService to remove the node from the list and connect to another one.")
-            mNetworkService?.removeCurrentNodeAndReconnect()
+            mNetworkService?.reconnectNode()
         } else if (storedOpCount == -1L) {
             // Initial case when the app starts
             storedOpCount = latestOpCount
@@ -478,10 +479,15 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
 
     override fun onPause() {
         super.onPause()
+        mNetworkService?.nodeLatencyVerifier?.nodeList?.let { nodes ->
+            mConnectedActivityViewModel.updateNodeLatencies(nodes as List<FullNode>)
+        }
+
         // Unbinding from network service
         if (mShouldUnbindNetwork) {
             unbindService(this)
             mShouldUnbindNetwork = false
+            mNetworkService = null
         }
         mHandler.removeCallbacks(mCheckMissingPaymentsTask)
         mHandler.removeCallbacks(mRequestMissingUserAccountsTask)
