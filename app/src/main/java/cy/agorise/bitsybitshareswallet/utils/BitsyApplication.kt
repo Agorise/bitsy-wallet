@@ -58,12 +58,16 @@ class BitsyApplication : Application() {
             .setAutoConnect(autoConnect)
             .setNodeLatencyVerification(true)
             .build(this)
-
         /*
         * Registering this class as a listener to all activity's callback cycle events, in order to
         * better estimate when the user has left the app and it is safe to disconnect the websocket connection
         */
         registerActivityLifecycleCallbacks(networkManager)
+
+        // Fake call to onActivityResumed, because BiTSy is using a single activity and at the moment
+        // onActivityResumed is called the first time the app starts, the NetworkServiceManager has not
+        // been configured yet, thus causing the NetworkService to never connect.
+        networkManager.onActivityResumed(null)
     }
 
     override fun onTerminate() {
