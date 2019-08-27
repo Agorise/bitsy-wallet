@@ -29,8 +29,7 @@ import cy.agorise.bitsybitshareswallet.adapters.AutoSuggestAssetAdapter
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.utils.toast
-import cy.agorise.bitsybitshareswallet.viewmodels.AssetViewModel
-import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
+import cy.agorise.bitsybitshareswallet.viewmodels.ReceiveTransactionViewModel
 import cy.agorise.graphenej.*
 import cy.agorise.graphenej.api.ConnectionStatusUpdate
 import cy.agorise.graphenej.api.calls.ListAssets
@@ -59,8 +58,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         private const val OTHER_ASSET = "other_asset"
     }
 
-    private lateinit var mUserAccountViewModel: UserAccountViewModel
-    private lateinit var mAssetViewModel: AssetViewModel
+    private lateinit var mViewModel: ReceiveTransactionViewModel
 
     /** Current user account */
     private var mUserAccount: UserAccount? = null
@@ -109,21 +107,18 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
-        // Configure UserAccountViewModel to show the current account
-        mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
+        // Configure ViewModel
+        mViewModel = ViewModelProviders.of(this).get(ReceiveTransactionViewModel::class.java)
 
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "")
 
-        mUserAccountViewModel.getUserAccount(userId!!).observe(this,
+        mViewModel.getUserAccount(userId!!).observe(this,
             Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>{ user ->
                 mUserAccount = UserAccount(user.id, user.name)
         })
 
-        // Configure Assets spinner to show Assets already saved into the db
-        mAssetViewModel = ViewModelProviders.of(this).get(AssetViewModel::class.java)
-
-        mAssetViewModel.getAllNonZero().observe(this,
+        mViewModel.getAllNonZero().observe(this,
             Observer<List<cy.agorise.bitsybitshareswallet.database.entities.Asset>> { assets ->
                 mAssets.clear()
                 mAssets.addAll(assets)
