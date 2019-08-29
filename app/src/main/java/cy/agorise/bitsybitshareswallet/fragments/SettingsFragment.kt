@@ -170,17 +170,16 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     }
                 )
 
-            mNodesDialog = MaterialDialog(v.context)
-                .title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
-                .message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
-                .customListAdapter(nodesAdapter as FullNodesAdapter)
-                .negativeButton(android.R.string.ok)
-                .onDismiss {
+            mNodesDialog = MaterialDialog(v.context).show {
+                title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
+                customListAdapter(nodesAdapter as FullNodesAdapter)
+                negativeButton(android.R.string.ok)
+                onDismiss {
                     mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask)
                     nodesDisposable.dispose()
                 }
-
-            mNodesDialog?.show()
+            }
 
             // Registering a recurrent task used to poll for dynamic global properties requests
             mHandler.post(mRequestDynamicGlobalPropertiesTask)

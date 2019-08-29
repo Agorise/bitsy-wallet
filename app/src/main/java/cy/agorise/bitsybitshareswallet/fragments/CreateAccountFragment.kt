@@ -272,11 +272,11 @@ class CreateAccountFragment : BaseAccountFragment() {
             override fun onFailure(call: Call<FaucetResponse>, t: Throwable) {
                 // the network call was a failure
                 context?.let { context ->
-                    MaterialDialog(context)
-                        .title(R.string.title_error)
-                        .message(cy.agorise.bitsybitshareswallet.R.string.error__faucet)
-                        .negativeButton(android.R.string.ok)
-                        .show()
+                    MaterialDialog(context).show {
+                        title(R.string.title_error)
+                        message(R.string.error__faucet)
+                        negativeButton(android.R.string.ok)
+                    }
                 }
 
                 setStateError()
