@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
 import com.afollestad.materialdialogs.list.customListAdapter
+import com.afollestad.materialdialogs.list.getRecyclerView
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.crashlytics.android.Crashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -65,6 +67,9 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
 
     /** Adapter that holds the FullNode list used in the Bitshares nodes modal */
     private var nodesAdapter: FullNodesAdapter? = null
+
+    // NodesDialog's RecyclerView LayoutManager used to always keep showing the first node of the list.
+    private var mNodesDialogLinearLayoutManager: LinearLayoutManager? = null
 
     /** Handler that will be used to make recurrent calls to get the latest BitShares block number*/
     private val mHandler = Handler()
@@ -144,6 +149,8 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { fullNode ->
+                        mNodesDialogLinearLayoutManager?.scrollToPositionWithOffset(0, 0)
+
                         if (!fullNode.isRemoved)
                             nodesAdapter?.add(fullNode)
                         else
@@ -163,6 +170,8 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                     nodesDisposable.dispose()
                 }
             }
+
+            mNodesDialogLinearLayoutManager = (mNodesDialog?.getRecyclerView()?.layoutManager as LinearLayoutManager)
 
             // Registering a recurrent task used to poll for dynamic global properties requests
             mHandler.post(mRequestDynamicGlobalPropertiesTask)
