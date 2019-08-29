@@ -10,62 +10,54 @@ import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.SortedListAdapterCallback
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.graphenej.network.FullNode
-import java.util.*
 
 
 /**
  * Adapter used to populate the elements of the Bitshares nodes dialog in order to show a list of
  * nodes with their latency.
  */
-class FullNodesAdapter(private val context: Context) : RecyclerView.Adapter<FullNodesAdapter.ViewHolder>() {
-    val TAG: String = this.javaClass.name
+class FullNodesAdapter(private val context: Context) :
+    RecyclerView.Adapter<FullNodesAdapter.ViewHolder>() {
 
-    private val mComparator =
-        Comparator<FullNode> { a, b -> java.lang.Double.compare(a.latencyValue, b.latencyValue) }
+    companion object {
+        private const val TAG = "FullNodesAdapter"
+
+        private const val MAX_LATENCY = 9999
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvNodeName: TextView = itemView.findViewById(R.id.tvNodeName)
         val ivNodeStatus: ImageView = itemView.findViewById(R.id.ivNodeStatus)
     }
 
-    private val mSortedList = SortedList(FullNode::class.java, object : SortedList.Callback<FullNode>() {
-        override fun onInserted(position: Int, count: Int) {
-            notifyItemRangeInserted(position, count)
-        }
+    private val mSortedList = SortedList(FullNode::class.java,
+        object : SortedListAdapterCallback<FullNode>(this) {
 
-        override fun onRemoved(position: Int, count: Int) {
-            notifyItemRangeRemoved(position, count)
-        }
+            override fun compare(a: FullNode, b: FullNode): Int {
+                return a.latencyValue.compareTo(b.latencyValue)
+            }
 
-        override fun onMoved(fromPosition: Int, toPosition: Int) {
-            notifyItemMoved(fromPosition, toPosition)
-        }
+            override fun areContentsTheSame(oldItem: FullNode, newItem: FullNode): Boolean {
+                return oldItem.latencyValue == newItem.latencyValue &&
+                        oldItem.isConnected == oldItem.isConnected &&
+                        oldItem.isRemoved == oldItem.isRemoved
+            }
 
-        override fun onChanged(position: Int, count: Int) {
-            notifyItemRangeChanged(position, count)
-        }
+            override fun areItemsTheSame(oldItem: FullNode, newItem: FullNode): Boolean {
+                return oldItem.url == newItem.url
+            }
+        })
 
-        override fun compare(a: FullNode, b: FullNode): Int {
-            return mComparator.compare(a, b)
-        }
-
-        override fun areContentsTheSame(oldItem: FullNode, newItem: FullNode): Boolean {
-            return oldItem.latencyValue == newItem.latencyValue
-        }
-
-        override fun areItemsTheSame(item1: FullNode, item2: FullNode): Boolean {
-            return item1.url == item2.url
-        }
-    })
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FullNodesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
 
         val transactionView = inflater.inflate(R.layout.item_node, parent, false)
@@ -96,9 +88,8 @@ class FullNodesAdapter(private val context: Context) : RecyclerView.Adapter<Full
         ssb.append(fullNode.url.replace("wss://", ""), StyleSpan(Typeface.BOLD), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         ssb.append(" (")
 
-        // 2000 ms is the timeout of the websocket used to calculate the latency, therefore if the
-        // received latency is greater than such value we can assume the node was not reachable.
-        val ms = if(latency < 2000) "%.0f ms".format(latency) else "??"
+        // Make sure that the latency shown is no greater than MAX_LATENCY
+        val ms = if(latency <= MAX_LATENCY) "%.0fms".format(latency) else ">%dms".format(MAX_LATENCY)
 
         ssb.append(ms, colorSpan, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         ssb.append(")")
@@ -109,28 +100,36 @@ class FullNodesAdapter(private val context: Context) : RecyclerView.Adapter<Full
     /**
      * Functions that adds/updates a FullNode to the SortedList
      */
-    fun add(fullNode: FullNode) {
-        // Remove the old instance of the FullNode before adding a new one. My understanding is that
-        // the sorted list should be able to automatically find repeated elements and update them
-        // instead of adding duplicates but it wasn't working so I opted for manually removing old
-        // instances of FullNodes before adding the updated ones.
-        var removed = 0
-        for (i in 0 until mSortedList.size())
-            if (mSortedList[i-removed].url == (fullNode.url))
-                mSortedList.removeItemAt(i-removed++)
+    @Synchronized fun add(fullNode: FullNode) {
+        var index = -1
+        for (i in 0 until mSortedList.size()) {
+            if (mSortedList[i].url == fullNode.url) {
+                index = i
+                break
+            }
+        }
 
-        mSortedList.add(fullNode)
+        if (index == -1) {
+            Log.d(TAG , "Adding node: ${fullNode.url}")
+            mSortedList.add(fullNode) // Add it if it does not exist
+        } else {
+            Log.d(TAG , "Updating node: ${fullNode.url}")
+            mSortedList.updateItemAt(index, fullNode) // Update it if it does exist
+        }
     }
 
     /**
      * Function that adds a whole list of nodes to the SortedList. It should only be used at the
      * moment of populating the SortedList for the first time.
      */
-    fun add(fullNodes: List<FullNode>) {
-        mSortedList.addAll(fullNodes)
+    fun add(fullNodes: List<FullNode>) = fullNodes.forEach { fullNode ->
+        // Make sure we are not adding duplicate nodes when the app returns from another activity
+        if (fullNode.latencyValue < Long.MAX_VALUE-1)
+            add(fullNode)
     }
 
     fun remove(fullNode: FullNode) {
+        Log.d(TAG , "Removing node: ${fullNode.url}")
         mSortedList.remove(fullNode)
     }
 

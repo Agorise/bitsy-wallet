@@ -32,11 +32,8 @@ import cy.agorise.graphenej.api.calls.GetAccounts
 import cy.agorise.graphenej.api.calls.GetDynamicGlobalProperties
 import cy.agorise.graphenej.models.DynamicGlobalProperties
 import cy.agorise.graphenej.models.JsonRpcResponse
-import cy.agorise.graphenej.network.FullNode
 import cy.agorise.graphenej.operations.AccountUpgradeOperationBuilder
-import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_settings.*
 import org.bitcoinj.core.DumpedPrivateKey
@@ -129,30 +126,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         initNightModeSwitch()
 
-        tvNetworkStatus.setOnClickListener { v ->
-            if (mNetworkService != null) {
-                // PublishSubject used to announce full node latencies updates
-                val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable
-                fullNodePublishSubject?.observeOn(AndroidSchedulers.mainThread())?.subscribe(nodeLatencyObserver)
-
-                val fullNodes = mNetworkService!!.nodes
-
-                nodesAdapter = FullNodesAdapter(v.context)
-                nodesAdapter?.add(fullNodes)
-
-                mNodesDialog = MaterialDialog(v.context)
-                    .title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
-                    .message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
-                    .customListAdapter(nodesAdapter as FullNodesAdapter)
-                    .negativeButton(android.R.string.ok)
-                    .onDismiss { mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask) }
-
-                mNodesDialog?.show()
-
-                // Registering a recurrent task used to poll for dynamic global properties requests
-                mHandler.post(mRequestDynamicGlobalPropertiesTask)
-            }
-        }
+        tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
 
         // Obtain the current Security Lock Option selected and display it in the screen
         val securityLockSelected = PreferenceManager.getDefaultSharedPreferences(context)
@@ -172,26 +146,45 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
     }
 
-    /**
-     * Observer used to be notified about node latency measurement updates.
-     */
-    private val nodeLatencyObserver = object : Observer<FullNode> {
-        override fun onSubscribe(d: Disposable) {
-            mDisposables.add(d)
-        }
+    private fun showNodesDialog(v: View) {
+        if (mNetworkService != null) {
+            val fullNodes = mNetworkService!!.nodes
 
-        override fun onNext(fullNode: FullNode) {
-            if (!fullNode.isRemoved)
-                nodesAdapter?.add(fullNode)
-            else
-                nodesAdapter?.remove(fullNode)
-        }
+            nodesAdapter = FullNodesAdapter(v.context)
+            nodesAdapter?.add(fullNodes)
 
-        override fun onError(e: Throwable) {
-            Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + e.message)
-        }
+            // PublishSubject used to announce full node latencies updates
+            val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable ?: return
 
-        override fun onComplete() {}
+            val nodesDisposable = fullNodePublishSubject
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    { fullNode ->
+                        if (!fullNode.isRemoved)
+                            nodesAdapter?.add(fullNode)
+                        else
+                            nodesAdapter?.remove(fullNode)
+                    }, {
+                        Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + it.message)
+                    }
+                )
+
+            mNodesDialog = MaterialDialog(v.context)
+                .title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                .message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
+                .customListAdapter(nodesAdapter as FullNodesAdapter)
+                .negativeButton(android.R.string.ok)
+                .onDismiss {
+                    mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask)
+                    nodesDisposable.dispose()
+                }
+
+            mNodesDialog?.show()
+
+            // Registering a recurrent task used to poll for dynamic global properties requests
+            mHandler.post(mRequestDynamicGlobalPropertiesTask)
+        }
     }
 
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
