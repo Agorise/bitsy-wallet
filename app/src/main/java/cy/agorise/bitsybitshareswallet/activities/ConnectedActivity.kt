@@ -58,6 +58,12 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
     companion object {
         private const val TAG = "ConnectedActivity"
 
+        // Delay between best node connection verifications
+        private const val NODE_CHECK_DELAY = 60000L   // 60 seconds
+
+        // Worst acceptable position of the node the app is currently connected to
+        private const val BEST_NODE_THRESHOLD = 1
+
         private const val RESPONSE_GET_FULL_ACCOUNTS = 1
         private const val RESPONSE_GET_ACCOUNTS = 2
         private const val RESPONSE_GET_ACCOUNT_BALANCES = 3
@@ -400,6 +406,31 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
     }
 
     /**
+     * Task used to verify that the app is currently connected to one of the best nodes,
+     * and ask for a reconnection if it is not the case.
+     */
+    private val verifyConnectionToSuitableNodeTask = object : Runnable {
+        override fun run() {
+            Log.d(TAG, "Verifying app is connected to one of the best nodes")
+            mNetworkService?.nodes?.let { nodes ->
+                for ((counter, node) in nodes.withIndex()) {
+                    if (counter >= BEST_NODE_THRESHOLD) {
+                        // Forcing reconnection to a better node
+                        mNetworkService?.reconnectNode()
+                        break
+                    }
+                    if (node.isConnected) {
+                        // App is connected to one of the best nodes
+                        break
+                    }
+                }
+            }
+
+            mHandler.postDelayed(this, NODE_CHECK_DELAY)
+        }
+    }
+
+    /**
      * Task used to obtain the missing UserAccounts from Graphenej's NetworkService.
      */
     private val mRequestMissingUserAccountsTask = object : Runnable {
@@ -477,6 +508,19 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
 
     override fun onServiceDisconnected(name: ComponentName?) { }
 
+    override fun onResume() {
+        super.onResume()
+
+        val intent = Intent(this, NetworkService::class.java)
+        if (bindService(intent, this, Context.BIND_AUTO_CREATE)) {
+            mShouldUnbindNetwork = true
+        } else {
+            Log.e(TAG, "Binding to the network service failed.")
+        }
+        mHandler.postDelayed(mCheckMissingPaymentsTask, Constants.MISSING_PAYMENT_CHECK_PERIOD)
+        mHandler.postDelayed(verifyConnectionToSuitableNodeTask, NODE_CHECK_DELAY)
+    }
+
     override fun onPause() {
         super.onPause()
         mNetworkService?.nodeLatencyVerifier?.nodeList?.let { nodes ->
@@ -493,18 +537,6 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
         mHandler.removeCallbacks(mRequestMissingUserAccountsTask)
         mHandler.removeCallbacks(mRequestMissingAssetsTask)
         mHandler.removeCallbacks(mRequestBlockMissingTimeTask)
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        val intent = Intent(this, NetworkService::class.java)
-        if (bindService(intent, this, Context.BIND_AUTO_CREATE)) {
-            mShouldUnbindNetwork = true
-        } else {
-            Log.e(TAG, "Binding to the network service failed.")
-        }
-        mHandler.postDelayed(mCheckMissingPaymentsTask, Constants.MISSING_PAYMENT_CHECK_PERIOD)
     }
 
     override fun onDestroy() {
