@@ -142,7 +142,7 @@
     <string name="msg__account_upgraded">¡Felicidades! Tu cuenta ahora se ha actualizado a la membresía de por vida (LTM).</string>
     <string name="title__upgrade_account_error">Error al intentar actualizar la cuenta</string>
     <string name="msg__upgrade_account_error">Por favor, asegúrate de que tu cuenta tenga un balance suficiente para cubrir los costos.</string>
-    <string name="msg__remove_current_account">Eliminar cuenta actual. Elimina la cuenta actual de éste dispositivo y crea o importa una diferente.</string>
+    <string name="msg__remove_current_account">Elimina la cuenta actual de éste dispositivo y crea o importa una diferente.</string>
     <string name="button__remove">Eliminar</string>
     <string name="title__remove_account">Eliminar Cuenta</string>
     <string name="msg__remove_account_confirmation">¿Estás seguro de que deseas eliminar la cuenta actual de este dispositivo?</string>
