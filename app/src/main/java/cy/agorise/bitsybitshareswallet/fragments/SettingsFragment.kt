@@ -9,7 +9,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.collection.LongSparseArray
 import androidx.lifecycle.ViewModelProviders
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
@@ -50,6 +52,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         private const val ACTION_CHANGE_SECURITY_LOCK = 1
         private const val ACTION_SHOW_BRAINKEY = 2
         private const val ACTION_UPGRADE_TO_LTM = 3
+        private const val ACTION_REMOVE_ACCOUNT = 4
 
         // Constants used to organize NetworkService requests
         private const val RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES = 1
@@ -70,7 +73,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     private var nodesAdapter: FullNodesAdapter? = null
 
     // Map used to keep track of request and response id pairs
-    private val responseMap = HashMap<Long, Int>()
+    private val responseMap = LongSparseArray<Int>()
 
     /** Transaction to upgrade to LTM */
     private var ltmTransaction: Transaction? = null
@@ -144,6 +147,8 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         btnViewBrainKey.setOnClickListener { onShowBrainKeyButtonSelected() }
 
         btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
+
+        btnRemoveAccount.setOnClickListener { onRemoveAccountButtonSelected() }
     }
 
     private fun showNodesDialog(v: View) {
@@ -188,8 +193,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
-            val responseType = responseMap[response.id]
-            when (responseType) {
+            when (responseMap[response.id]) {
                 RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES    -> handleDynamicGlobalPropertiesNodes(response.result)
                 RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM      -> handleDynamicGlobalPropertiesLTM(response.result)
                 RESPONSE_BROADCAST_TRANSACTION                  -> handleBroadcastTransaction(response)
@@ -220,7 +224,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             ltmTransaction?.blockData = BlockData(headBlockNumber, headBlockId, expirationTime)
 
             val id = mNetworkService?.sendMessage(BroadcastTransaction(ltmTransaction), BroadcastTransaction.REQUIRED_API)
-            if (id != null) responseMap[id] = RESPONSE_BROADCAST_TRANSACTION
+            if (id != null) responseMap.append(id, RESPONSE_BROADCAST_TRANSACTION)
 
             // TODO use an indicator to show that a transaction is in progress
         }
@@ -259,7 +263,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     private val mRequestDynamicGlobalPropertiesTask = object : Runnable {
         override fun run() {
             val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
-            if (id != null) responseMap[id] = RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES
+            if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES)
 
             mHandler.postDelayed(this, Constants.BLOCK_PERIOD)
         }
@@ -352,6 +356,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             ACTION_CHANGE_SECURITY_LOCK -> showChooseSecurityLockDialog()
             ACTION_SHOW_BRAINKEY        -> getBrainkey()
             ACTION_UPGRADE_TO_LTM       -> showUpgradeToLTMDialog()
+            ACTION_REMOVE_ACCOUNT       -> showRemoveAccountDialog()
         }
     }
 
@@ -423,6 +428,11 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             showUpgradeToLTMDialog()
     }
 
+    private fun onRemoveAccountButtonSelected() {
+        if (!verifySecurityLock(ACTION_REMOVE_ACCOUNT))
+            showRemoveAccountDialog()
+    }
+
     /**
      * Obtains the brainKey from the authorities db table for the current user account and if it is not null it passes
      * the brainKey to a method to show it in a nice MaterialDialog
@@ -485,7 +495,20 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     ltmTransaction = Transaction(currentPrivateKey, null, operations)
 
                     val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
-                    if (id != null) responseMap[id] = RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM
+                    if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM)
+                }
+            }
+        }
+    }
+
+    private fun showRemoveAccountDialog() {
+        context?.let { context ->
+            MaterialDialog(context).show {
+                title(R.string.title__remove_account)
+                message(R.string.msg__remove_account_confirmation)
+                negativeButton(android.R.string.cancel)
+                positiveButton(android.R.string.ok) {
+                    Toast.makeText(it.context, "Removing Account", Toast.LENGTH_SHORT).show()
                 }
             }
         }
