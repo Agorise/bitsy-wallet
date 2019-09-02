@@ -143,6 +143,8 @@
     <string name="msg__account_upgraded">Congratulations! Your account has now been upgraded to the Lifetime Membership.</string>
     <string name="title__upgrade_account_error">Error while trying to upgrade account</string>
     <string name="msg__upgrade_account_error">Please make sure your account has enough balance to cover the costs.</string>
+    <string name="msg__remove_current_account">Remove the current Account. Remove the current Account from this device and create or import a different one.</string>
+    <string name="button__remove">Remove</string>
     <string name="title__bugs_or_ideas">Bugs or Ideas?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise\nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Block: %1$s</string>

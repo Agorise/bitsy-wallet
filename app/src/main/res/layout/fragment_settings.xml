@@ -201,6 +201,22 @@
                     android:layout_marginTop="@dimen/spacing_same_topic"
                     android:text="@string/button__upgrade_to_ltm"/>
 
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_different_topic"
+                        android:text="@string/msg__remove_current_account"
+                        android:textAppearance="@style/TextAppearance.Bitsy.Body1"/>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRemoveAccount"
+                        style="@style/Widget.Bitsy.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_same_topic"
+                        android:backgroundTint="@color/red"
+                        android:text="@string/button__remove"/>
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
