@@ -115,6 +115,13 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             Observer<List<cy.agorise.bitsybitshareswallet.database.entities.Asset>> { assets ->
                 mAssets.clear()
                 mAssets.addAll(assets)
+
+                // Add BTS to always show a QR
+                if (mAssets.isEmpty())
+                    mAssets.add(cy.agorise.bitsybitshareswallet.database.entities.Asset(
+                        "1.3.0", "BTS", 5, "", "")
+                    )
+
                 mAssets.sortWith(
                     Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
                 )
