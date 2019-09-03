@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.lifecycle.ViewModelProviders
@@ -508,10 +507,29 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                 message(R.string.msg__remove_account_confirmation)
                 negativeButton(android.R.string.cancel)
                 positiveButton(android.R.string.ok) {
-                    Toast.makeText(it.context, "Removing Account", Toast.LENGTH_SHORT).show()
+                    removeAccount(it.context)
                 }
             }
         }
+    }
+
+    private fun removeAccount(context: Context) {
+        // Clears the database.
+        mViewModel.clearDatabase(context)
+
+        // Clears the shared preferences.
+        val pref = PreferenceManager.getDefaultSharedPreferences(context)
+        pref.edit().clear().apply()
+
+        // Marks the license as agreed, so that it is not shown to the user again.
+        pref.edit().putInt(
+            Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION).apply()
+
+        // Restarts the activity, which will restart the whole application since it uses a
+        // single activity architecture.
+        val intent = activity?.intent
+        activity?.finish()
+        activity?.startActivity(intent)
     }
 
     override fun onServiceDisconnected(name: ComponentName?) {
