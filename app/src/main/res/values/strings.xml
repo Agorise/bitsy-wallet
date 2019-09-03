@@ -24,9 +24,11 @@
     <!-- Create Account -->
     <string name="text__bitshares_account_name">BitShares account name</string>
     <string name="error__read_dict_file">Error reading dictionary file</string>
-    <string name="error__invalid_account_name">The account name has to either have more than 8 characters, contain a number or have no vowels. The underscore character is also not allowed. </string>
+    <string name="error__invalid_account_length">Account name should be 3 to 16 characters.</string>
+    <string name="error__invalid_account_start">Account name should start with a letter.</string>
+    <string name="error__invalid_account_name">Please enter a regular name containing at least one dash, a number, or no vowels.</string>
     <string name="text__verifying_account_availability">Verifying account availability…</string>
-    <string name="error__account_not_available">Account not available</string>
+    <string name="error__account_not_available">That account name is already taken.</string>
     <string name="text__account_is_available">Account is available</string>
     <string name="title_error">Error</string>
     <string name="error__faucet">The server returned an error. This might be due to a limitation purposefully set in place to disallow frequent requests coming from the same IP address in a short time lapse. Please wait 5 minutes and try again, or switch to a different network, for example from wifi to cell.</string>

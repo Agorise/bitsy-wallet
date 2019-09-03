@@ -44,7 +44,8 @@ class CreateAccountFragment : BaseAccountFragment() {
         private const val TAG = "CreateAccountFragment"
 
         private const val BRAINKEY_FILE = "brainkeydict.txt"
-        private const val MIN_ACCOUNT_NAME_LENGTH = 8
+        private const val MIN_ACCOUNT_NAME_LENGTH = 3
+        private const val MAX_ACCOUNT_NAME_LENGTH = 16
 
         // Used when trying to validate that the account name is available
         private const val RESPONSE_GET_ACCOUNT_BY_NAME_VALIDATION = 1
@@ -121,7 +122,13 @@ class CreateAccountFragment : BaseAccountFragment() {
     private fun validateAccountName(accountName: String) {
         isAccountValidAndAvailable = false
 
-        if ( !isAccountNameValid(accountName) ) {
+        if ( !isAccountLengthValid(accountName) ) {
+            tilAccountName.helperText = ""
+            tilAccountName.error = getString(R.string.error__invalid_account_length)
+        } else if ( !isAccountStartValid(accountName) ) {
+            tilAccountName.helperText = ""
+            tilAccountName.error = getString(R.string.error__invalid_account_start)
+        } else if ( !isAccountNameValid(accountName) ) {
             tilAccountName.helperText = ""
             tilAccountName.error = getString(R.string.error__invalid_account_name)
         } else {
@@ -137,14 +144,28 @@ class CreateAccountFragment : BaseAccountFragment() {
     }
 
     /**
+     * Verifies if the account length is valid, so that the faucet does not pay for a premium account.
+     */
+    private fun isAccountLengthValid(accountName: String): Boolean {
+        return accountName.length in MIN_ACCOUNT_NAME_LENGTH..MAX_ACCOUNT_NAME_LENGTH
+    }
+
+    /**
+     * Verifies if the account start is valid, the account name should start with a letter.
+     */
+    private fun isAccountStartValid(accountName: String): Boolean {
+        return accountName[0].isLetter()
+    }
+
+    /**
      * Method used to determine if the account name entered by the user is valid
      * @param accountName   The proposed account name
      * @return              True if the name is valid, false otherwise
      */
     private fun isAccountNameValid(accountName: String): Boolean {
-        return accountName.length >= MIN_ACCOUNT_NAME_LENGTH &&
-                (accountName.containsDigits() || !accountName.containsVowels()) &&
-                !accountName.contains("_")
+        return accountName.contains("-") ||
+                accountName.containsDigits() ||
+                !accountName.containsVowels()
     }
 
     private fun validatePIN() {
@@ -181,8 +202,7 @@ class CreateAccountFragment : BaseAccountFragment() {
 
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
-            val responseType = responseMap[response.id]
-            when (responseType) {
+            when (responseMap[response.id]) {
                 RESPONSE_GET_ACCOUNT_BY_NAME_VALIDATION -> handleAccountNameValidation(response.result)
                 RESPONSE_GET_ACCOUNT_BY_NAME_CREATED    -> handleAccountNameCreated(response.result)
             }

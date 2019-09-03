@@ -24,9 +24,11 @@
     <!-- Create Account -->
     <string name="text__bitshares_account_name">Cuenta de BitShares</string>
     <string name="error__read_dict_file">Error al leer el archivo de diccionario</string>
-    <string name="error__invalid_account_name">La cuenta debe de tener más de 8 caracteres, contener un número o no contener vocales. El guion bajo no es permitido. </string>
+    <string name="error__invalid_account_length">La cuenta debe tener entre 3 y 16 caracteres.</string>
+    <string name="error__invalid_account_start">La cuenta debe empezar con una letra.</string>
+    <string name="error__invalid_account_name">Por favor ingresa un nombre regular que contenga al menos un guion, un número, o ninguna vocal.</string>
     <string name="text__verifying_account_availability">Verificando disponibilidad de cuenta…</string>
-    <string name="error__account_not_available">Cuenta no disponible</string>
+    <string name="error__account_not_available">Esta cuenta ya ha sido tomada.</string>
     <string name="text__account_is_available">Cuenta disponible</string>
     <string name="title_error">Error</string>
     <string name="error__faucet">El servidor regresó un error. Puede ser causado por una limitación a propósito para rechazar peticiones frecuentes provenientes de la misma dirección IP en un periodo corto de tiempo. Por favor espera 5 minutos e intenta de nuevo, o cambia a una red diferente, por ejemplo de WiFi a celular.</string>
