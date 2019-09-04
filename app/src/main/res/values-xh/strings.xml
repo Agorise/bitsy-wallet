@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">Imvume yekhamera iyimfuneko yokufunda iikhowudi zeQR.</string>
     <string name="text__transaction_sent">Intengiselwano ithunyelwe!</string>
     <string name="msg__transaction_not_sent">Ayikwazi ukuthumela intengiselwano</string>
-    <string name="error__you_dont_own_asset">Awunayo nayiphi na impahla __1</string>
+    <string name="error__you_dont_own_asset">Awunayo nayiphi na impahla %1$s</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Chwetheza kwi-akhawunti yeBitshares igama lomntu ofuna ukuthumela kuye imali. __Umzekelo ongumzekelo: i-agorise-faucet</string>

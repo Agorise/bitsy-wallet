@@ -77,9 +77,9 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">മൂല്യം</string>
-    <string name="template__memo">മെമ്മോ: __1 സെ__</string>
-    <string name="template__date">തീയതി: __1 സെ__</string>
-    <string name="template__tx">Tx: __1 സെ__</string>
+    <string name="template__memo">മെമ്മോ: %1$s</string>
+    <string name="template__date">തീയതി: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
 
 
     <!-- Merchants & Tellers -->
@@ -118,7 +118,7 @@
     <string name="text__other">മറ്റുള്ളവ…</string>
     <string name="template__please_send">ദയവായി അയയ്‌ക്കുക: %1$s %2$s</string>
     <string name="text__any_amount">ഏതെങ്കിലും തുക</string>
-    <string name="template__to">സ്വീകർത്താവ്: __1 സെ__</string>
+    <string name="template__to">സ്വീകർത്താവ്: %1$s</string>
     <string name="msg__invoice_subject">%1$s ൽ നിന്നുള്ള BiTSy ഇൻവോയ്സ്</string>
     <string name="title_share">പങ്കിടുക</string>
     <string name="text__share_with">പങ്കിടുക</string>
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">ഈ ഉപകരണത്തിൽ നിന്ന് നിലവിലെ അക്കൗണ്ട് നീക്കംചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?</string>
     <string name="title__bugs_or_ideas">ബഗുകളോ ആശയങ്ങളോ?</string>
     <string name="msg__bugs_or_ideas">ടെലിഗ്രാം: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">തടയുക: __1 സെ__</string>
+    <string name="title__bitshares_nodes_dialog">തടയുക: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">സുരക്ഷ</string>

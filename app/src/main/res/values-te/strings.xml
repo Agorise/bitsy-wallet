@@ -30,7 +30,7 @@
     <string name="text__account_is_available">ఖాతా అందుబాటులో ఉంది</string>
     <string name="title_error">లోపం</string>
     <string name="error__faucet">సర్వర్ లోపం ఇచ్చింది. ఒకే ఐపి చిరునామా నుండి వచ్చే అభ్యర్థనలను తక్కువ సమయం లోపు అనుమతించకుండా ఉద్దేశపూర్వకంగా సెట్ చేయబడిన పరిమితి దీనికి కారణం కావచ్చు. దయచేసి 5 నిమిషాలు వేచి ఉండి, మళ్లీ ప్రయత్నించండి, లేదా వేరే నెట్‌వర్క్‌కు మారండి, ఉదాహరణకు వైఫై నుండి సెల్ వరకు.</string>
-    <string name="error__faucet_template">పీపాలో నుంచి నీళ్లు బయిటికి రావడమునకు వేసివుండే చిన్న గొట్టము లోపం తిరిగి ఇచ్చింది. Msg: __1 సె__</string>
+    <string name="error__faucet_template">పీపాలో నుంచి నీళ్లు బయిటికి రావడమునకు వేసివుండే చిన్న గొట్టము లోపం తిరిగి ఇచ్చింది. Msg: %1$s</string>
     <string name="error__created_account_not_found">అనువర్తనం కొత్తగా సృష్టించిన ఖాతా గురించి సమాచారాన్ని తిరిగి పొందలేకపోయింది</string>
     <string name="button__create">సృష్టించు</string>
 
@@ -77,9 +77,9 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">విలువ</string>
-    <string name="template__memo">మెమో: __1 సె__</string>
-    <string name="template__date">తేదీ: __1 సె__</string>
-    <string name="template__tx">Tx: __1 సె__</string>
+    <string name="template__memo">మెమో: %1$s</string>
+    <string name="template__date">తేదీ: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
 
 
     <!-- Merchants & Tellers -->
@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">QR కోడ్‌లను చదవడానికి కెమెరా అనుమతి అవసరం.</string>
     <string name="text__transaction_sent">లావాదేవీ పంపబడింది!</string>
     <string name="msg__transaction_not_sent">లావాదేవీని పంపడం సాధ్యం కాలేదు</string>
-    <string name="error__you_dont_own_asset">మీకు ఏ __1 సె__ స్వంతం కాదు</string>
+    <string name="error__you_dont_own_asset">మీకు ఏ %1$s స్వంతం కాదు</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">మీరు నిధులు పంపాలనుకునే వ్యక్తి యొక్క బిట్‌షేర్స్ ఖాతా పేరును టైప్ చేయండి. \n ఉదాహరణకు: అగోరైస్-పీపాలో నుంచి నీళ్లు బయిటికి రావడమునకు వేసివుండే చిన్న గొట్టము</string>
@@ -116,9 +116,9 @@
     <!-- Receive Transaction -->
     <string name="text__asset">ఆస్తి</string>
     <string name="text__other">ఇతర…</string>
-    <string name="template__please_send">దయచేసి పంపండి: __1 సె__ __2 సె__</string>
+    <string name="template__please_send">దయచేసి పంపండి: %1$s %2$s</string>
     <string name="text__any_amount">ఏదైనా మొత్తం</string>
-    <string name="template__to">దీనికి: __1 సె__</string>
+    <string name="template__to">దీనికి: %1$s</string>
     <string name="msg__invoice_subject">%1$s నుండి BiTSy ఇన్వాయిస్</string>
     <string name="title_share">Share</string>
     <string name="text__share_with">తో పంచు</string>
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">మీరు ఖచ్చితంగా ఈ పరికరం నుండి ప్రస్తుత ఖాతాను తొలగించాలనుకుంటున్నారా?</string>
     <string name="title__bugs_or_ideas">దోషాలు లేదా ఆలోచనలు?</string>
     <string name="msg__bugs_or_ideas">టెలిగ్రామ్: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">బ్లాక్: __1 సె__</string>
+    <string name="title__bitshares_nodes_dialog">బ్లాక్: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">సెక్యూరిటీ</string>

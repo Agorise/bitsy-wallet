@@ -138,7 +138,7 @@
     <string name="title__accounts">Maakaunti</string>
     <string name="msg__upgrade_to_ltm">Simudzira kune LifeTime Nhengo (LTM). MaBitshares \ \'LTM account anobhadhara pedyo-zero zero, tora 80% kudzoserwa mari uye mabhonasi ekutumira.</string>
     <string name="button__upgrade_to_ltm">Simudzira kuLMA</string>
-    <string name="msg__account_upgrade_dialog">Hupenyu Nguva yeVenhengo inokubvumidza kuti utengese nehure rakaderedzwa remadhipatimendi etiweki. __n ....... \n \nKuna chokwadi kuti unoda kuenda?</string>
+    <string name="msg__account_upgrade_dialog">Hupenyu Nguva yeVenhengo inokubvumidza kuti utengese nehure rakaderedzwa remadhipatimendi etiweki. %1$s\n \nKuna chokwadi kuti unoda kuenda?</string>
     <string name="title__account_upgraded">Akaunti Yakakwira</string>
     <string name="msg__account_upgraded">Makorokoto! Akaunti yako zvino yasimudzirwa kune Hupenyu hweHupenyu Hwese.</string>
     <string name="title__upgrade_account_error">Kukanganisa paunenge uchiedza kusimudzira account</string>

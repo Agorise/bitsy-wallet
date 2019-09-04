@@ -136,7 +136,7 @@
     <string name="button__copied">複製</string>
     <string name="button__view_and_copy">查看和復制</string>
     <string name="title__accounts">帳號</string>
-    <string name="msg__upgrade_to_ltm">升級到LifeTime會員（LTM）。 Bitshares \\'LTM賬戶支付接近零的費用，獲得80％的現金返還和轉介獎金。</string>
+    <string name="msg__upgrade_to_ltm">升級到LifeTime會員（LTM）。 Bitshares \'LTM賬戶支付接近零的費用，獲得80％的現金返還和轉介獎金。</string>
     <string name="button__upgrade_to_ltm">升級到LTM</string>
     <string name="msg__account_upgrade_dialog">終身會員資格允許您使用減少的網絡費用進行交易。 \n \n它將對當前帳戶生效“%1$s”\n \n但是在Bitshares支付的費用約為100美元。 \n \n你確定要繼續嗎？</string>
     <string name="title__account_upgraded">帳戶已升級</string>

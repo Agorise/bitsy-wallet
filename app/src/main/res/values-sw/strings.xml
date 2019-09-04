@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">Ruhusa ya kamera inahitajika kusoma nambari za QR.</string>
     <string name="text__transaction_sent">Ununuzi umetumwa!</string>
     <string name="msg__transaction_not_sent">Imeshindwa kutuma shughuli</string>
-    <string name="error__you_dont_own_asset">Haujamiliki __1s yoyote</string>
+    <string name="error__you_dont_own_asset">Haujamiliki %1$s yoyote</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Andika jina la akaunti ya Bitshares ya mtu ambaye unataka kumtumia pesa. Mfano wa \n Mfano: agorise-bomba</string>

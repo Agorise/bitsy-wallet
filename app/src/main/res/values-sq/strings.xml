@@ -138,7 +138,7 @@
     <string name="title__accounts">llogaritë</string>
     <string name="msg__upgrade_to_ltm">Përditësoni në Anëtarësimin në LifeTime (LTM). Llogaritë LTM të Bitshares paguajnë tarifa afro zero, marrin 80% kthim parash dhe shpërblime për referime.</string>
     <string name="button__upgrade_to_ltm">Përditësoni në LTM</string>
-    <string name="msg__account_upgrade_dialog">Anëtarësimi në Jetën e Jetës ju lejon të tregtoni me një grup të reduktuar tarifash të rrjetit. ____ \n \n A jeni i sigurt se doni të vazhdoni?</string>
+    <string name="msg__account_upgrade_dialog">Anëtarësimi në Jetën e Jetës ju lejon të tregtoni me një grup të reduktuar tarifash të rrjetit. %1$s \n \n A jeni i sigurt se doni të vazhdoni?</string>
     <string name="title__account_upgraded">Llogari e azhurnuar</string>
     <string name="msg__account_upgraded">Urime! Llogaria juaj tani është azhurnuar në Anëtarësimin Lifetime.</string>
     <string name="title__upgrade_account_error">Gabim gjatë përpjekjes për të përmirësuar llogarinë</string>

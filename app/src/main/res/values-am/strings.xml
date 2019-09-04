@@ -30,7 +30,7 @@
     <string name="text__account_is_available">መለያ ይገኛል።</string>
     <string name="title_error">ስህተት።</string>
     <string name="error__faucet">አገልጋዩ አንድ ስህተት መልሷል። ይህ በአጭር ጊዜ ውስጥ ከአንድ ተመሳሳይ የአይፒ አድራሻ የሚመጡ ተደጋጋሚ ጥያቄዎችን ለመከልከል በዝግጅት ላይ ባለ ቦታ ላይ ሊሆን ይችላል። እባክዎ 5 ደቂቃዎች ይጠብቁ እና እንደገና ይሞክሩ ፣ ወይም ወደ ተለየ አውታረ መረብ ለምሳሌ ከ wifi ወደ ሕዋስ ይቀይሩ።</string>
-    <string name="error__faucet_template">የጀልባው መሳሪያው ስህተት ተመለሰ ፡፡ ሚሲግ _ _ ሴ ሴ__</string>
+    <string name="error__faucet_template">የጀልባው መሳሪያው ስህተት ተመለሰ ፡፡ ሚሲግ %1$s</string>
     <string name="error__created_account_not_found">መተግበሪያው ስለአዲሱ የተፈጠረው መለያ መረጃን ማምጣት አልቻለም።</string>
     <string name="button__create">ፍጠር።</string>
 
@@ -77,8 +77,8 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">እሴት።</string>
-    <string name="template__memo">ማስታወሻ: __1 ሴ__</string>
-    <string name="template__date">ቀን: __1 ሴ__</string>
+    <string name="template__memo">ማስታወሻ: %1$s</string>
+    <string name="template__date">ቀን: %1$s</string>
     <string name="template__tx">Tx: %1$s</string>
 
 
@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">የ QR ኮዶችን ለማንበብ የካሜራ ፈቃድ አስፈላጊ ነው።</string>
     <string name="text__transaction_sent">ግብይት ተልኳል!</string>
     <string name="msg__transaction_not_sent">ግብይት መላክ አልተቻለም።</string>
-    <string name="error__you_dont_own_asset">ምንም __1 ሴ__ ባለቤት የለህም ፡፡</string>
+    <string name="error__you_dont_own_asset">ምንም %1$s ባለቤት የለህም ፡፡</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ገንዘብ እንዲልኩለት የሚፈልጉትን ሰው የ Bitshares መለያ ስም ይተይቡ። \n ለምሳሌ-agorise-faucet።</string>
@@ -118,8 +118,8 @@
     <string name="text__other">ሌላ…</string>
     <string name="template__please_send">እባክዎ ይላኩ: %1$s %2$s</string>
     <string name="text__any_amount">ማንኛውም መጠን።</string>
-    <string name="template__to">ለ: __1 ሴ__</string>
-    <string name="msg__invoice_subject">የቢስኪ ደረሰኝ ከ __1 ሰ__</string>
+    <string name="template__to">ለ: %1$s</string>
+    <string name="msg__invoice_subject">የቢስኪ ደረሰኝ ከ %1$s</string>
     <string name="title_share">ያጋሩ።</string>
     <string name="text__share_with">ተካፈል</string>
     <string name="msg__storage_permission_necessary_share">ምስሎችን ለማጋራት የማከማቻ ፈቃድ አስፈላጊ ነው።</string>
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">እርግጠኛ ነዎት የአሁኑን መለያ ከዚህ መሣሪያ ላይ ለማስወገድ ይፈልጋሉ?</string>
     <string name="title__bugs_or_ideas">ሳንካዎች ወይም ሀሳቦች?</string>
     <string name="msg__bugs_or_ideas">ቴሌግራም-https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">አግድ: __1 ሴ__</string>
+    <string name="title__bitshares_nodes_dialog">አግድ: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">ደህንነት</string>

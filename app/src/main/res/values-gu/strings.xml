@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">ક્યૂઆર કોડ્સ વાંચવા માટે ક Cameraમેરાની પરવાનગી આવશ્યક છે.</string>
     <string name="text__transaction_sent">ટ્રાન્ઝેક્શન મોકલ્યું!</string>
     <string name="msg__transaction_not_sent">વ્યવહાર મોકલવામાં અસમર્થ</string>
-    <string name="error__you_dont_own_asset">તમે કોઈપણ __1 માલિક નથી</string>
+    <string name="error__you_dont_own_asset">તમે કોઈપણ %1$s માલિક નથી</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">તમે જે વ્યક્તિને ભંડોળ મોકલવા માંગો છો તેના બીટશેર્સ એકાઉન્ટ નામ લખો. \n ઉદાહરણ તરીકે: એગોરિઝ-પ્રવાહી વહેવાનો હરકોઈ જાતનો નળ</string>

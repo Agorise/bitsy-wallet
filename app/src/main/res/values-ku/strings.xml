@@ -138,7 +138,7 @@
     <string name="title__accounts">Hesaban</string>
     <string name="msg__upgrade_to_ltm">Ji Endamtiya LifeTime nûve bikin (LTM). Hesabên LTM-ê yên Bitshares nêzî nîv-heqê drav didin, ji% 80% paşîn û berdêl ji bo referansan distînin.</string>
     <string name="button__upgrade_to_ltm">Ji LTM-ê nûve bikin</string>
-    <string name="msg__account_upgrade_dialog">Endametiya Jiyana We dihêle hûn danûstendinek bi dravdana torgilokê ya kêm kêm bikin. \n \n Ew ê hesabê heyî yê "%1$s" \n ____ \n \n Hûn bi xwe bawer in ku hûn pêşve dixwazin?</string>
+    <string name="msg__account_upgrade_dialog">Endametiya Jiyana We dihêle hûn danûstendinek bi dravdana torgilokê ya kêm kêm bikin. \n \n Ew ê hesabê heyî yê %1$s  \n \n Hûn bi xwe bawer in ku hûn pêşve dixwazin?</string>
     <string name="title__account_upgraded">Hesab hatî nûve kirin</string>
     <string name="msg__account_upgraded">Xwezî! Hesabê we nuha ji Endamtiya Lifetime hatî nûve kirin.</string>
     <string name="title__upgrade_account_error">Tryingewtî dema ku hûn hewl didin nûvekirinê bigirin</string>

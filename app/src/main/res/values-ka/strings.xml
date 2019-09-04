@@ -138,7 +138,7 @@
     <string name="title__accounts">ანგარიშები</string>
     <string name="msg__upgrade_to_ltm">განახლება LifeTime წევრობაზე (LTM). Bitshares- ის LTM ანგარიშები იხდიან უახლოეს ნულოვან გადასახადს, მიიღებენ 80% ნაღდი ანგარიშსწორებას და გადასახადების მიღებას.</string>
     <string name="button__upgrade_to_ltm">განახლება LTM- ზე</string>
-    <string name="msg__account_upgrade_dialog">Life Time წევრობა საშუალებას გაძლევთ გქონდეთ ვაჭრობა ქსელური გადასახადების შემცირებული ნაკრებით. ____ __ნ__ __ნ__ დარწმუნებული ხართ, რომ გსურთ გაგრძელება?</string>
+    <string name="msg__account_upgrade_dialog">Life Time წევრობა საშუალებას გაძლევთ გქონდეთ ვაჭრობა ქსელური გადასახადების შემცირებული ნაკრებით. %1$s დარწმუნებული ხართ, რომ გსურთ გაგრძელება?</string>
     <string name="title__account_upgraded">ანგარიში განახლებული</string>
     <string name="msg__account_upgraded">გილოცავთ! თქვენი ანგარიში განახლებულია Lifetime წევრობაში.</string>
     <string name="title__upgrade_account_error">შეცდომა ანგარიშის განახლების დროს</string>

@@ -77,9 +77,9 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">ಮೌಲ್ಯ</string>
-    <string name="template__memo">ಮೆಮೊ: __1 ಸೆ__</string>
-    <string name="template__date">ದಿನಾಂಕ: __1 ಸೆ__</string>
-    <string name="template__tx">Tx: __1 ಸೆ__</string>
+    <string name="template__memo">ಮೆಮೊ: %1$s</string>
+    <string name="template__date">ದಿನಾಂಕ: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
 
 
     <!-- Merchants & Tellers -->
@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">ಕ್ಯೂಆರ್ ಕೋಡ್‌ಗಳನ್ನು ಓದಲು ಕ್ಯಾಮೆರಾ ಅನುಮತಿ ಅಗತ್ಯ.</string>
     <string name="text__transaction_sent">ವಹಿವಾಟು ಕಳುಹಿಸಲಾಗಿದೆ!</string>
     <string name="msg__transaction_not_sent">ವಹಿವಾಟು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
-    <string name="error__you_dont_own_asset">ನೀವು ಯಾವುದೇ __1 ಸೆ__ ಅನ್ನು ಹೊಂದಿಲ್ಲ</string>
+    <string name="error__you_dont_own_asset">ನೀವು ಯಾವುದೇ %1$s ಅನ್ನು ಹೊಂದಿಲ್ಲ</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ನೀವು ಹಣವನ್ನು ಕಳುಹಿಸಲು ಬಯಸುವ ವ್ಯಕ್ತಿಯ ಬಿಟ್‌ಶೇರ್ಸ್ ಖಾತೆಯ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ. \n ಉದಾಹರಣೆಗಾಗಿ: ಅಗೋರೈಸ್-ನಲ್ಲಿ</string>
@@ -116,9 +116,9 @@
     <!-- Receive Transaction -->
     <string name="text__asset">ಆಸ್ತಿ</string>
     <string name="text__other">ಇತರೆ…</string>
-    <string name="template__please_send">ದಯವಿಟ್ಟು ಕಳುಹಿಸಿ: __1 ಸೆ__ __2 ಸೆ__</string>
+    <string name="template__please_send">ದಯವಿಟ್ಟು ಕಳುಹಿಸಿ: %1$s %2$s</string>
     <string name="text__any_amount">ಯಾವುದೇ ಮೊತ್ತ</string>
-    <string name="template__to">ಗೆ: __1 ಸೆ__</string>
+    <string name="template__to">ಗೆ: %1$s</string>
     <string name="msg__invoice_subject">%1$s ನಿಂದ BiTSy ಸರಕುಪಟ್ಟಿ</string>
     <string name="title_share">ಹಂಚಿಕೊಳ್ಳಿ</string>
     <string name="text__share_with">ಜೊತೆ ಹಂಚಿಕೊ</string>
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">ಈ ಸಾಧನದಿಂದ ಪ್ರಸ್ತುತ ಖಾತೆಯನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>
     <string name="title__bugs_or_ideas">ದೋಷಗಳು ಅಥವಾ ಐಡಿಯಾಸ್?</string>
     <string name="msg__bugs_or_ideas">ಟೆಲಿಗ್ರಾಮ್: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">ನಿರ್ಬಂಧಿಸಿ: __1 ಸೆ__</string>
+    <string name="title__bitshares_nodes_dialog">ನಿರ್ಬಂಧಿಸಿ: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">ಭದ್ರತೆ</string>

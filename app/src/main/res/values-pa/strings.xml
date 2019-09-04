@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">ਕਿ Qਆਰ ਕੋਡਾਂ ਨੂੰ ਪੜ੍ਹਨ ਲਈ ਕੈਮਰੇ ਦੀ ਅਨੁਮਤੀ ਲਾਜ਼ਮੀ ਹੈ.</string>
     <string name="text__transaction_sent">ਲੈਣ-ਦੇਣ ਭੇਜਿਆ!</string>
     <string name="msg__transaction_not_sent">ਲੈਣਦੇਣ ਭੇਜਣ ਵਿੱਚ ਅਸਮਰੱਥ</string>
-    <string name="error__you_dont_own_asset">ਤੁਸੀਂ ਕਿਸੇ ਵੀ __1 ਦੇ ਨਹੀਂ ਹੋ __</string>
+    <string name="error__you_dont_own_asset">ਤੁਸੀਂ ਕਿਸੇ ਵੀ %1$s ਦੇ ਨਹੀਂ ਹੋ</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ਜਿਸ ਵਿਅਕਤੀ ਨੂੰ ਤੁਸੀਂ ਫੰਡ ਭੇਜਣਾ ਚਾਹੁੰਦੇ ਹੋ ਉਸ ਦਾ ਬਿਟਾਰਸ ਅਕਾਉਂਟ ਨਾਮ ਟਾਈਪ ਕਰੋ. \n ਉਦਾਹਰਣ ਲਈ: agorise-faucet</string>

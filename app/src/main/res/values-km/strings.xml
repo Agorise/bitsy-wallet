@@ -119,7 +119,7 @@
     <string name="template__please_send">សូមផ្ញើ៖ %1$s %2$s</string>
     <string name="text__any_amount">ចំនួនទឹកប្រាក់ណាមួយ។</string>
     <string name="template__to">ជូនចំពោះ៖ %1$s</string>
-    <string name="msg__invoice_subject">វិក័យប័ត្រជីវវិទ្យាពី __១ វិនាទី</string>
+    <string name="msg__invoice_subject">វិក័យប័ត្រជីវវិទ្យាពី __១ វិនាទី %1$s</string>
     <string name="title_share">ចែករំលែក។</string>
     <string name="text__share_with">ចែករំលែក​ជាមួយ</string>
     <string name="msg__storage_permission_necessary_share">ការអនុញ្ញាតការផ្ទុកគឺចាំបាច់ដើម្បីចែករំលែករូបភាព។</string>
@@ -138,7 +138,7 @@
     <string name="title__accounts">គណនី។</string>
     <string name="msg__upgrade_to_ltm">ធ្វើឱ្យប្រសើរឡើងទៅជាសមាជិកភាពពេលវេលា (LTM) ។ គណនី LTM របស់ Bitshares បង់ថ្លៃជិតសូន្យទទួលបានប្រាក់សំណង ៨០% និងប្រាក់រង្វាន់សំរាប់ការបញ្ជូន។</string>
     <string name="button__upgrade_to_ltm">ធ្វើបច្ចុប្បន្នភាពទៅអិលធីអិម។</string>
-    <string name="msg__account_upgrade_dialog">សមាជិកភាពពេលវេលានៃជីវិតអនុញ្ញាតឱ្យអ្នកធ្វើពាណិជ្ជកម្មជាមួយនឹងការកាត់បន្ថយបណ្តាញ។ \n \n វានឹងមានប្រសិទ្ធិភាពចំពោះគណនីចរន្ត“ %១$s” \n \n ទោះយ៉ាងណាវាមានតម្លៃប្រហែល ១០០ ដុល្លារដែលបានបង់នៅប៊ីធេរេស។ \n \n តើអ្នកប្រាកដជាចង់បន្តឬ?</string>
+    <string name="msg__account_upgrade_dialog">សមាជិកភាពពេលវេលានៃជីវិតអនុញ្ញាតឱ្យអ្នកធ្វើពាណិជ្ជកម្មជាមួយនឹងការកាត់បន្ថយបណ្តាញ។     វានឹងមានប្រសិទ្ធិភាពចំពោះគណនីចរន្ត“ %1$s”     ទោះយ៉ាងណាវាមានតម្លៃប្រហែល ១០០ ដុល្លារដែលបានបង់នៅប៊ីធេរេស។     តើអ្នកប្រាកដជាចង់បន្តឬ?</string>
     <string name="title__account_upgraded">បានធ្វើបច្ចុប្បន្នភាពគណនី។</string>
     <string name="msg__account_upgraded">សូមអបអរសាទរ! ឥឡូវគណនីរបស់អ្នកត្រូវបានតំឡើងជាសមាជិកភាពពេញមួយជីវិត។</string>
     <string name="title__upgrade_account_error">មានកំហុសខណៈពេលព្យាយាមតំឡើងគណនី។</string>

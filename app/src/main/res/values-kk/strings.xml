@@ -30,7 +30,7 @@
     <string name="text__account_is_available">Есептік жазба қол жетімді</string>
     <string name="title_error">Қате</string>
     <string name="error__faucet">Сервер қатені қайтарды. Бұл қысқа уақыттың ішінде бір IP мекенжайынан келетін жиі келетін сұрауларға тыйым салуға арнайы қойылған шектеумен байланысты болуы мүмкін. 5 минут күтіп, әрекетті қайталаңыз немесе басқа желіге ауысыңыз, мысалы Wi-Fi-дан ұяшыққа.</string>
-    <string name="error__faucet_template">Кран қате жіберді. Хл: __1с__</string>
+    <string name="error__faucet_template">Кран қате жіберді. Хл: %1$s</string>
     <string name="error__created_account_not_found">Қолданба жаңадан жасалған есептік жазба туралы ақпаратты ала алмады</string>
     <string name="button__create">Жасау</string>
 
@@ -77,9 +77,9 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">Мәні</string>
-    <string name="template__memo">Ескерту: __1с__</string>
-    <string name="template__date">Күні: __1с__</string>
-    <string name="template__tx">Тх: __1с__</string>
+    <string name="template__memo">Ескерту: %1$s</string>
+    <string name="template__date">Күні: %1$s</string>
+    <string name="template__tx">Тх: %1$s</string>
 
 
     <!-- Merchants & Tellers -->
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">Ағымдағы есептік жазбаны осы құрылғыдан алып тастағыңыз келе ме?</string>
     <string name="title__bugs_or_ideas">Қателер немесе идеялар?</string>
     <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">Блок: __1с__</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">Қауіпсіздік</string>

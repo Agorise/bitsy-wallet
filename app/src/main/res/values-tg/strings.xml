@@ -30,7 +30,7 @@
     <string name="text__account_is_available">Ҳисоб мавҷуд аст</string>
     <string name="title_error">Хатогӣ</string>
     <string name="error__faucet">Сервер хатогиро баргардонд. Ин метавонад сабаби маҳдудият бо ҳадафи маҳдуд кардани дархостҳои зуд аз як суроғаи IP дар фосилаи кӯтоҳ муқарраршуда бошад. Лутфан 5 дақиқа интизор шавед ва бори дигар кӯшиш кунед ё ба шабакаи дигар гузаред, масалан аз WiFi ба ячейка.</string>
-    <string name="error__faucet_template">Лӯлаи хато баргашт. Нишон: __1с__</string>
+    <string name="error__faucet_template">Лӯлаи хато баргашт. Нишон: %1$s</string>
     <string name="error__created_account_not_found">Барнома маълумотро дар бораи ҳисоби навбунёдшуда барқарор карда наметавонад</string>
     <string name="button__create">Эҷод</string>
 
@@ -77,8 +77,8 @@
     <!-- eReceipt -->
     <string name="title_e_receipt">eReceipt</string>
     <string name="text__value">Арзиш</string>
-    <string name="template__memo">Хотира: __1с__</string>
-    <string name="template__date">Сана: __1с__</string>
+    <string name="template__memo">Хотира: %1$s</string>
+    <string name="template__date">Сана: %1$s</string>
     <string name="template__tx">Tx: %1$s</string>
 
 
@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">Барои хондани рамзҳои QR иҷозати камера лозим аст.</string>
     <string name="text__transaction_sent">Амалиёт фиристода шуд!</string>
     <string name="msg__transaction_not_sent">Интиқоли муомилот ғайриимкон аст</string>
-    <string name="error__you_dont_own_asset">Шумо соҳиби __1с__ надоред</string>
+    <string name="error__you_dont_own_asset">Шумо соҳиби %1$s надоред</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Дар номи ҳисоби Bitshares шахсе нависед, ки мехоҳед ба он маблағ фиристед. \nМасалан: агориз-кран</string>
@@ -118,7 +118,7 @@
     <string name="text__other">Дигар…</string>
     <string name="template__please_send">Лутфан ирсол кунед: %1$s %2$s</string>
     <string name="text__any_amount">Ҳама маблағ</string>
-    <string name="template__to">Ба: __1с__</string>
+    <string name="template__to">Ба: %1$s</string>
     <string name="msg__invoice_subject">Ҳисобнома BiTSy аз %1$s</string>
     <string name="title_share">Ҳиссаи</string>
     <string name="text__share_with">Мубодила бо</string>
@@ -149,7 +149,7 @@
     <string name="msg__remove_account_confirmation">Шумо мутмаин ҳастед, ки ҳисоби ҷориро аз ин дастгоҳ нест кунед?</string>
     <string name="title__bugs_or_ideas">Хатогиҳо ё ғояҳо?</string>
     <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
-    <string name="title__bitshares_nodes_dialog">Блок: __1с__</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">Амният</string>

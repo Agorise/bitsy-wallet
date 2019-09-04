@@ -101,7 +101,7 @@
     <string name="msg__camera_permission_necessary">QR कोडहरू पढ्न क्यामेरा अनुमति आवश्यक छ।</string>
     <string name="text__transaction_sent">लेनदेन पठाइयो!</string>
     <string name="msg__transaction_not_sent">लेनदेन पठाउन असमर्थ</string>
-    <string name="error__you_dont_own_asset">तपाईं कुनै _ _s__ को मालिक हुनुहुन्न</string>
+    <string name="error__you_dont_own_asset">तपाईं कुनै %1$s को मालिक हुनुहुन्न</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Bitshares खाताको नाम टाइप गर्नुहोस् व्यक्तिको नाम तपाईंले फन्डहरू पठाउन चाहानुहुन्छ। \n उदाहरणका लागि: एगोरिज-नल</string>
