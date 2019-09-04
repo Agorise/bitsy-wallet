@@ -76,7 +76,13 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                     rvTransactions.visibility = View.VISIBLE
                     tvEmpty.visibility = View.GONE
 
+                    val shouldScrollUp = transactions.size - transfersDetailsAdapter.itemCount == 1
                     transfersDetailsAdapter.replaceAll(transactions)
+
+                    // Scroll to the top only if the difference between old and new items is 1
+                    // which most likely means a new transaction was received/sent.
+                    if (shouldScrollUp)
+                        rvTransactions.scrollToPosition(0)
                 }
         })
 
