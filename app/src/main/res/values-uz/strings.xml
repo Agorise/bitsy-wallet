@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Hisob nomi 3 dan 16 tagacha belgidan iborat bo\'lishi kerak.</string>
     <string name="error__invalid_account_start">Hisob nomi harf bilan boshlanishi kerak.</string>
     <string name="error__invalid_account_name">Kamida bitta tire, raqam yoki unli harflarsiz oddiy nomni kiriting.</string>
-    <string name="text__verifying_account_availability">Hisob qaydnomasi mavjudligi tekshirilmoqda ...</string>
+    <string name="text__verifying_account_availability">Hisob qaydnomasi mavjudligi tekshirilmoqda…</string>
     <string name="error__account_not_available">Ushbu hisob nomi allaqachon olingan.</string>
     <string name="text__account_is_available">Hisob mavjud</string>
     <string name="title_error">Xato</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Mulk</string>
-    <string name="text__other">Boshqalar ...</string>
+    <string name="text__other">Boshqalar…</string>
     <string name="template__please_send">Iltimos, yuboring: %1$s %2$s</string>
     <string name="text__any_amount">Har qanday miqdor</string>
     <string name="template__to">Kimga: %1$s</string>

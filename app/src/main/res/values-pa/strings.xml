@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">ਖਾਤੇ ਦਾ ਨਾਮ 3 ਤੋਂ 16 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ.</string>
     <string name="error__invalid_account_start">ਖਾਤੇ ਦਾ ਨਾਮ ਇੱਕ ਅੱਖਰ ਨਾਲ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ.</string>
     <string name="error__invalid_account_name">ਕਿਰਪਾ ਕਰਕੇ ਨਿਯਮਿਤ ਨਾਮ ਦਰਜ ਕਰੋ ਜਿਸ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਡੈਸ਼, ਇੱਕ ਨੰਬਰ, ਜਾਂ ਕੋਈ ਸਵਰ ਨਾ ਹੋਵੇ.</string>
-    <string name="text__verifying_account_availability">ਖਾਤੇ ਦੀ ਉਪਲਬਧਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰ ਰਿਹਾ ਹੈ ...</string>
+    <string name="text__verifying_account_availability">ਖਾਤੇ ਦੀ ਉਪਲਬਧਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰ ਰਿਹਾ ਹੈ…</string>
     <string name="error__account_not_available">ਉਹ ਖਾਤਾ ਨਾਮ ਪਹਿਲਾਂ ਹੀ ਲੈ ਲਿਆ ਗਿਆ ਹੈ.</string>
     <string name="text__account_is_available">ਖਾਤਾ ਉਪਲਬਧ ਹੈ</string>
     <string name="title_error">ਗਲਤੀ</string>

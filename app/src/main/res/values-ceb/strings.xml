@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Asset</string>
-    <string name="text__other">Uban pa ...</string>
+    <string name="text__other">Uban pa…</string>
     <string name="template__please_send">Palihug Ipadala: %1$s %2$s</string>
     <string name="text__any_amount">Bisan unsang Hunahuna</string>
     <string name="template__to">Sa: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Mga pulong sa pagbawi sa account nga mahimong makuha o makopya, apan wala gi-edit.</string>
     <string name="msg__brainkey_info">Isulat kini! Siguruha nga adunay ka 2 kopya sa kini nga BrainKey sa 2 luwas nga lokasyon kung adunay sunog o pagkawala. Una sa Seguridad! Bisan kinsa nga adunay access sa imong BrainKey mahimong maka-access sa mga pondo sa imong account!</string>
     <string name="button__copied">Gikopya</string>
-    <string name="button__view_and_copy">Pagtan-aw & Kopyaha</string>
+    <string name="button__view_and_copy">Pagtan-aw &amp; Kopyaha</string>
     <string name="title__accounts">Mga account</string>
     <string name="msg__upgrade_to_ltm">Pag-upgrade sa LifeTime Membership (LTM). Ang Bitshares \ \'LTM account nagbayad hapit-zero fees, pagkuha 80% cashback ug mga bonus alang sa mga referral.</string>
     <string name="button__upgrade_to_ltm">Pag-upgrade sa LTM</string>

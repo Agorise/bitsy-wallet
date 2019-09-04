@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Il nome dell\'account deve contenere da 3 a 16 caratteri.</string>
     <string name="error__invalid_account_start">Il nome dell\'account dovrebbe iniziare con una lettera.</string>
     <string name="error__invalid_account_name">Inserisci un nome normale contenente almeno un trattino, un numero o nessuna vocale.</string>
-    <string name="text__verifying_account_availability">Verifica disponibilità account ...</string>
+    <string name="text__verifying_account_availability">Verifica disponibilità account…</string>
     <string name="error__account_not_available">Il nome dell\'account è già stato utilizzato.</string>
     <string name="text__account_is_available">L\'account è disponibile</string>
     <string name="title_error">Errore</string>

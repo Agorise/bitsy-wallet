@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">အကောင့်အမည်ကို 3 16 ဇာတ်ကောင်ဖြစ်သင့်သည်။</string>
     <string name="error__invalid_account_start">အကောင့်အမည်ကိုစာတစ်စောင်နှင့်အတူစတင်သင့်ပါတယ်။</string>
     <string name="error__invalid_account_name">အနည်းဆုံး dash တဲ့အရေအတွက်, သို့မဟုတ်လုံးဝမရအက္ခရာင်တစ်ဦးကိုပုံမှန် name ကိုရိုက်ထည့်ပေးပါ။</string>
-    <string name="text__verifying_account_availability">အကောင့်ရရှိနိုင်မှုအတည်ပြု ...</string>
+    <string name="text__verifying_account_availability">အကောင့်ရရှိနိုင်မှုအတည်ပြု…</string>
     <string name="error__account_not_available">အဲဒီအကောင့်အမည်ကိုပြီးသားခေါ်ဆောင်သွားသည်။</string>
     <string name="text__account_is_available">အကောင့်ရရှိနိုင်ပါသည်</string>
     <string name="title_error">အမှား</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">အရောင်းအ</string>
-    <string name="title_merchants_and_tellers">ကုန်သည် & Teller</string>
+    <string name="title_merchants_and_tellers">ကုန်သည် &amp; Teller</string>
     <string name="title_receive">ခံယူ</string>
     <string name="title_balances">ချိန်ခွင်</string>
     <string name="title_send">ပေးပို့</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">ပိုင်ဆိုင်မှု</string>
-    <string name="text__other">အခြားအ ...</string>
+    <string name="text__other">အခြားအ…</string>
     <string name="template__please_send">Send ပေးပါ: %1$s %2$s</string>
     <string name="text__any_amount">မဆိုငွေပမာဏ</string>
     <string name="template__to">ရန်: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey ။ ဖမ်းဆီးရမိသို့မဟုတ်ကူးယူပေမယ် edited မဟုတ်နိုင်အကောင့်ပြန်လည်နာလန်ထူစကားလုံးများကို။</string>
     <string name="msg__brainkey_info">ဒီရေးချ! သငျသညျမီးသို့မဟုတ်အရှုံး၏အမှု၌ 2 လုံခြုံနေရာများ၌ဤ BrainKey 2 မိတ္တူများသေချာပါစေ။ လုံခြုံရေးပထမဦးစွာ! သင့်ရဲ့ BrainKey မှဝင်ရောက်ခွင့်နှင့်အတူမည်သူမဆိုသင့်အကောင့်အတွက်ရန်ပုံငွေရယူနိုငျပါသညျ!</string>
     <string name="button__copied">ကူးယူ</string>
-    <string name="button__view_and_copy">ကြည့်ရန် & Copy ကူး</string>
+    <string name="button__view_and_copy">ကြည့်ရန် &amp; Copy ကူး</string>
     <string name="title__accounts">accounts ကို</string>
     <string name="msg__upgrade_to_ltm">တစ်သက်တာအသင်းဝင် (LTM) အားအဆင့်မြှင့်တင်ရန်။ Bitshares \ \'\' LTM အကောင့်အနီး-သုညအခကြေးငွေပေးဆောင်, ရည်ညွှန်းအဘို့ 80% cashback နှင့်ဆုကြေးငွေရရှိမည်ဖြစ်သည်။</string>
     <string name="button__upgrade_to_ltm">LTM ဖို့ Upgrade</string>

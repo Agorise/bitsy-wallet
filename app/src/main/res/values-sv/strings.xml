@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Kontonamnet bör vara 3 till 16 tecken.</string>
     <string name="error__invalid_account_start">Kontonamn bör börja med en bokstav.</string>
     <string name="error__invalid_account_name">Ange ett vanligt namn som innehåller minst ett bindestreck, ett nummer eller inga vokaler.</string>
-    <string name="text__verifying_account_availability">Verifierar kontot tillgänglighet ...</string>
+    <string name="text__verifying_account_availability">Verifierar kontot tillgänglighet…</string>
     <string name="error__account_not_available">Det kontonamnet har redan tagits.</string>
     <string name="text__account_is_available">Kontot är tillgängligt</string>
     <string name="title_error">Fel</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">transaktioner</string>
-    <string name="title_merchants_and_tellers">Köpmän & Tellers</string>
+    <string name="title_merchants_and_tellers">Köpmän &amp; Tellers</string>
     <string name="title_receive">Motta</string>
     <string name="title_balances">saldon</string>
     <string name="title_send">Skicka</string>

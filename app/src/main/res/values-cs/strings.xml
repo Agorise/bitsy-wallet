@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Název účtu by měl mít 3 až 16 znaků.</string>
     <string name="error__invalid_account_start">Název účtu by měl začínat písmenem.</string>
     <string name="error__invalid_account_name">Zadejte běžný název obsahující alespoň jednu pomlčku, číslo nebo samohlásky.</string>
-    <string name="text__verifying_account_availability">Ověření dostupnosti účtu ...</string>
+    <string name="text__verifying_account_availability">Ověření dostupnosti účtu…</string>
     <string name="error__account_not_available">Tento název účtu je již zadán.</string>
     <string name="text__account_is_available">Účet je k dispozici</string>
     <string name="title_error">Chyba</string>

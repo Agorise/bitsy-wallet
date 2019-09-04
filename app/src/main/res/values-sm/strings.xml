@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">O le igoa tau tupe e tatau ona 3 i le 16 mataitusi.</string>
     <string name="error__invalid_account_start">E tatau ona amata le igoa o le tausitusi ile tusi.</string>
     <string name="error__invalid_account_name">Faʻamolemole tuʻu se igoa masani e aofia ai le itiiti ifo ma le tasi le faasee, se numera, poʻo le leai foi o falesa.</string>
-    <string name="text__verifying_account_availability">Faʻamaonia le maua o tupe ...</string>
+    <string name="text__verifying_account_availability">Faʻamaonia le maua o tupe…</string>
     <string name="error__account_not_available">Ua uma ona uma lena igoa.</string>
     <string name="text__account_is_available">Tala o loʻo maua</string>
     <string name="title_error">Laʻasaga</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Gaoioiga</string>
-    <string name="title_merchants_and_tellers">Faʻatauloa & Tellers</string>
+    <string name="title_merchants_and_tellers">Faʻatauloa &amp; Tellers</string>
     <string name="title_receive">Talia</string>
     <string name="title_balances">Paleni</string>
     <string name="title_send">Auina atu</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Aseta</string>
-    <string name="text__other">Isi ...</string>
+    <string name="text__other">Isi…</string>
     <string name="template__please_send">Faamolemole lafo mai: %1$s %2$s</string>
     <string name="text__any_amount">Soʻo se Aofai</string>
     <string name="template__to">I: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Talosaga mo le toe faʻaleleia o tala e mafai ona puʻeina pe kopi, ae le faʻamaonia.</string>
     <string name="msg__brainkey_info">Tusi i lalo! Ia mautinoa e lua kopi o lenei BrainKey i nofoaga e lua e malupuipuia i le tulaga o le afi poʻo le leiloa. Saogalemu muamua! Soʻo se tasi e mafai ona maua lau BrainKey e mafai ona maua tupe i lau teugatupe!</string>
     <string name="button__copied">Kopi</string>
-    <string name="button__view_and_copy">Vaʻai & Kopi</string>
+    <string name="button__view_and_copy">Vaʻai &amp; Kopi</string>
     <string name="title__accounts">Faʻamatalaga</string>
     <string name="msg__upgrade_to_ltm">Faaleleia i le LifeTime Membership (LTM). Bitshares \ \'LTM faʻamatalaga tupe totogia latalata-zero, maua le 80% cashback ma ponesi mo faʻalauiloa.</string>
     <string name="button__upgrade_to_ltm">Faaleleia i le LTM</string>

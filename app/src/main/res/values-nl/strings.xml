@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Accountnaam moet 3 tot 16 tekens bevatten.</string>
     <string name="error__invalid_account_start">Accountnaam moet beginnen met een letter.</string>
     <string name="error__invalid_account_name">Voer een normale naam in die ten minste één streepje, een cijfer of geen klinkers bevat.</string>
-    <string name="text__verifying_account_availability">Beschikbaarheid van account verifiëren ...</string>
+    <string name="text__verifying_account_availability">Beschikbaarheid van account verifiëren…</string>
     <string name="error__account_not_available">Die accountnaam is al in gebruik.</string>
     <string name="text__account_is_available">Account is beschikbaar</string>
     <string name="title_error">Fout</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">aanwinst</string>
-    <string name="text__other">Andere ...</string>
+    <string name="text__other">Andere…</string>
     <string name="template__please_send">Stuur alstublieft: %1$s %2$s</string>
     <string name="text__any_amount">Ieder bedrag</string>
     <string name="template__to">Aan: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Accountherstelwoorden die kunnen worden vastgelegd of gekopieerd, maar niet bewerkt.</string>
     <string name="msg__brainkey_info">Schrijf dit op! Zorg dat u 2 exemplaren van deze BrainKey op 2 veilige locaties hebt in geval van brand of verlies. Veiligheid eerst! Iedereen met toegang tot uw BrainKey heeft toegang tot het geld in uw account!</string>
     <string name="button__copied">gekopieerde</string>
-    <string name="button__view_and_copy">Bekijken & kopiëren</string>
+    <string name="button__view_and_copy">Bekijken &amp; kopiëren</string>
     <string name="title__accounts">accounts</string>
     <string name="msg__upgrade_to_ltm">Upgrade naar LifeTime-lidmaatschap (LTM). Bitshares LTM-accounts betalen bijna nul kosten, krijgen 80% cashback en bonussen voor verwijzingen.</string>
     <string name="button__upgrade_to_ltm">Upgrade naar LTM</string>

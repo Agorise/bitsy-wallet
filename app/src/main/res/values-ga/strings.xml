@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Idirbhearta</string>
-    <string name="title_merchants_and_tellers">Ceannaithe & Teilitheoirí</string>
+    <string name="title_merchants_and_tellers">Ceannaithe &amp; Teilitheoirí</string>
     <string name="title_receive">Faigh</string>
     <string name="title_balances">Iarmhéideanna</string>
     <string name="title_send">Seol</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Focail aisghabhála cuntais is féidir a ghabháil nó a chóipeáil, ach nach bhfuil in eagar.</string>
     <string name="msg__brainkey_info">Scríobh é seo síos! Bí cinnte go bhfuil 2 chóip agat den BrainKey seo in 2 ionad slán i gcás dóiteáin nó caillteanais. Slándáil An Chéad! Is féidir le duine ar bith a bhfuil rochtain agat ar do BrainKey teacht ar na cistí i do chuntas!</string>
     <string name="button__copied">Cóipeáladh</string>
-    <string name="button__view_and_copy">Amharc & Cóip</string>
+    <string name="button__view_and_copy">Amharc &amp; Cóip</string>
     <string name="title__accounts">Cuntais</string>
     <string name="msg__upgrade_to_ltm">Uasghrádú go Ballraíocht Am Saoil (LTM). Íocann na cuntais LTM táillí gar-nialas, faigheann siad 80% aisíocaíochtaí airgid agus bónais le haghaidh atreoruithe.</string>
     <string name="button__upgrade_to_ltm">Uasghrádú ar LTM</string>

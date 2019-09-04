@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Názov účtu by mal mať 3 až 16 znakov.</string>
     <string name="error__invalid_account_start">Názov účtu by mal začínať písmenom.</string>
     <string name="error__invalid_account_name">Zadajte regulárny názov obsahujúci aspoň jednu pomlčku, číslo alebo samohlásky.</string>
-    <string name="text__verifying_account_availability">Overuje sa dostupnosť účtu ...</string>
+    <string name="text__verifying_account_availability">Overuje sa dostupnosť účtu…</string>
     <string name="error__account_not_available">Tento názov účtu je už zadaný.</string>
     <string name="text__account_is_available">Účet je k dispozícii</string>
     <string name="title_error">Chyba</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">aktívum</string>
-    <string name="text__other">Ostatné ...</string>
+    <string name="text__other">Ostatné…</string>
     <string name="template__please_send">Pošlite: %1$s %2$s</string>
     <string name="text__any_amount">Akákoľvek suma</string>
     <string name="template__to">Do: %1$s</string>

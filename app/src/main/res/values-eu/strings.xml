@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Kontuaren izenak 3 eta 16 karaktere izan behar ditu.</string>
     <string name="error__invalid_account_start">Kontuaren izena hizki batekin hasi behar da.</string>
     <string name="error__invalid_account_name">Sartu gutxienez marratxo bat, zenbakia edo bokalik ez duen izen arrunta.</string>
-    <string name="text__verifying_account_availability">Kontuaren erabilgarritasuna egiaztatzea ...</string>
+    <string name="text__verifying_account_availability">Kontuaren erabilgarritasuna egiaztatzea…</string>
     <string name="error__account_not_available">Kontuen izena dagoeneko hartu da.</string>
     <string name="text__account_is_available">Kontua eskuragarri dago</string>
     <string name="title_error">Akatsa</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Asset</string>
-    <string name="text__other">Beste batzuk ...</string>
+    <string name="text__other">Beste batzuk…</string>
     <string name="template__please_send">Bidali: %1$s %2$s</string>
     <string name="text__any_amount">Edozein zenbatekoa</string>
     <string name="template__to">Nori: %1$s</string>

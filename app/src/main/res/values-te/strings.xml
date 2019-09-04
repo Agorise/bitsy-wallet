@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">ట్రాన్సాక్షన్స్</string>
-    <string name="title_merchants_and_tellers">వ్యాపారులు & చెప్పేవారు</string>
+    <string name="title_merchants_and_tellers">వ్యాపారులు &amp; చెప్పేవారు</string>
     <string name="title_receive">స్వీకరించండి</string>
     <string name="title_balances">నిల్వలను</string>
     <string name="title_send">పంపండి</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">ఆస్తి</string>
-    <string name="text__other">ఇతర ...</string>
+    <string name="text__other">ఇతర…</string>
     <string name="template__please_send">దయచేసి పంపండి: __1 సె__ __2 సె__</string>
     <string name="text__any_amount">ఏదైనా మొత్తం</string>
     <string name="template__to">దీనికి: __1 సె__</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. సంగ్రహించలేని లేదా కాపీ చేయగల ఖాతా పునరుద్ధరణ పదాలు, కానీ సవరించబడవు.</string>
     <string name="msg__brainkey_info">దీన్ని రాయండి! అగ్ని లేదా నష్టం జరిగితే 2 సురక్షితమైన ప్రదేశాలలో ఈ బ్రెయిన్ కీ యొక్క 2 కాపీలు మీ వద్ద ఉన్నాయని నిర్ధారించుకోండి. భద్రత మొదట! మీ బ్రెయిన్‌కేకి ప్రాప్యత ఉన్న ఎవరైనా మీ ఖాతాలోని నిధులను యాక్సెస్ చేయవచ్చు!</string>
     <string name="button__copied">కాపీ చెయ్యబడ్డాయి</string>
-    <string name="button__view_and_copy">వీక్షించండి & కాపీ చేయండి</string>
+    <string name="button__view_and_copy">వీక్షించండి &amp; కాపీ చేయండి</string>
     <string name="title__accounts">అకౌంట్స్</string>
     <string name="msg__upgrade_to_ltm">లైఫ్‌టైమ్ సభ్యత్వానికి (ఎల్‌టిఎం) అప్‌గ్రేడ్ చేయండి. బిట్‌షేర్‌ల LTM ఖాతాలు సున్నాకి దగ్గరగా ఫీజులు చెల్లిస్తాయి, 80% క్యాష్‌బ్యాక్ మరియు రిఫరల్‌ల కోసం బోనస్‌లను పొందుతాయి.</string>
     <string name="button__upgrade_to_ltm">LTM కి అప్‌గ్రేడ్ చేయండి</string>

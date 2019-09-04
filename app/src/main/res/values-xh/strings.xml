@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Asset</string>
-    <string name="text__other">Enye ...</string>
+    <string name="text__other">Enye…</string>
     <string name="template__please_send">Nceda uthumele: %1$s %2$s</string>
     <string name="text__any_amount">Nasiphi na isixa</string>
     <string name="template__to">Iya: %1$s</string>

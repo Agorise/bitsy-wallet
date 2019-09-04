@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Номи ҳисоб бояд аз 3 то 16 аломат дошта бошад.</string>
     <string name="error__invalid_account_start">Номи ҳисоб бояд бо ҳарф оғоз шавад.</string>
     <string name="error__invalid_account_name">Лутфан исми муқаррариро ворид кунед, ки ҳадди аққал як тире, рақам ё садонокро аз ҳарф иборат бошанд.</string>
-    <string name="text__verifying_account_availability">Санҷиши мавҷудияти ҳисоб ...</string>
+    <string name="text__verifying_account_availability">Санҷиши мавҷудияти ҳисоб…</string>
     <string name="error__account_not_available">Ин номи ҳисоб аллакай гирифта шудааст.</string>
     <string name="text__account_is_available">Ҳисоб мавҷуд аст</string>
     <string name="title_error">Хатогӣ</string>

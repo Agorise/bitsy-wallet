@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Xawaaladda</string>
-    <string name="title_merchants_and_tellers">Ganacsato & Dukaan iibiya</string>
+    <string name="title_merchants_and_tellers">Ganacsato &amp; Dukaan iibiya</string>
     <string name="title_receive">Hesho</string>
     <string name="title_balances">Miisaaniyada</string>
     <string name="title_send">Dir</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Erayada soo-kabashada xisaabta ee la soo qaban karo ama la koobiyeyn karo, laakiin aan la sixin.</string>
     <string name="msg__brainkey_info">Qor tan! Hubso inaad haysato 2 koobi oo ah BrainKeydan 2 meel oo aamin ah haddii ay dhacdo dab ama khasaare. Amniga marka hore! Qof kasta oo marin u heli kara BrainKey wuu heli karaa lacagta ku jirta koontadaada!</string>
     <string name="button__copied">Nuqul</string>
-    <string name="button__view_and_copy">Muuqaal & Nuqul</string>
+    <string name="button__view_and_copy">Muuqaal &amp; Nuqul</string>
     <string name="title__accounts">Akoonada</string>
     <string name="msg__upgrade_to_ltm">Kordhinta xubinnimada LifeTime (LTM). Xisaabaadka Bitshares \ \'LTM waxay bixiyaan ajuuro u dhow eber, waxay helayaan 80% lacag celinno iyo gunnooyin loogu talagalay gudbinta.</string>
     <string name="button__upgrade_to_ltm">Kordhinta LTM</string>

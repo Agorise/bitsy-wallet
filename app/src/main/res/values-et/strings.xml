@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Konto nimi peaks olema 3 kuni 16 tähemärki.</string>
     <string name="error__invalid_account_start">Konto nimi peaks algama tähega.</string>
     <string name="error__invalid_account_name">Sisestage tavaline nimi, mis sisaldab vähemalt ühte kriipsu, numbrit või täishäälikuteta.</string>
-    <string name="text__verifying_account_availability">Konto saadavuse kontrollimine ...</string>
+    <string name="text__verifying_account_availability">Konto saadavuse kontrollimine…</string>
     <string name="error__account_not_available">See konto nimi on juba võetud.</string>
     <string name="text__account_is_available">Konto on saadaval</string>
     <string name="title_error">Viga</string>

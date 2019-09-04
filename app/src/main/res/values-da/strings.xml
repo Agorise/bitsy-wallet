@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Kontonavnet skal være 3 til 16 tegn.</string>
     <string name="error__invalid_account_start">Kontonavn skal starte med et bogstav.</string>
     <string name="error__invalid_account_name">Indtast et almindeligt navn, der indeholder mindst et bindestreg, et nummer eller ingen vokaler.</string>
-    <string name="text__verifying_account_availability">Verificerer kontotilgængelighed ...</string>
+    <string name="text__verifying_account_availability">Verificerer kontotilgængelighed…</string>
     <string name="error__account_not_available">Dette kontonavn er allerede taget.</string>
     <string name="text__account_is_available">Konto er tilgængelig</string>
     <string name="title_error">Fejl</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Kontogendannelsesord, der kan fanges eller kopieres, men ikke redigeres.</string>
     <string name="msg__brainkey_info">Skriv dette ned! Sørg for, at du har 2 kopier af denne BrainKey på 2 sikre steder i tilfælde af brand eller tab. Sikkerhed først! Alle med adgang til din BrainKey kan få adgang til pengene på din konto!</string>
     <string name="button__copied">kopieret</string>
-    <string name="button__view_and_copy">Vis & kopier</string>
+    <string name="button__view_and_copy">Vis &amp; kopier</string>
     <string name="title__accounts">Konti</string>
     <string name="msg__upgrade_to_ltm">Opgrader til LifeTime-medlemskab (LTM). Bitshares \ \'LTM-konti betaler gebyrer nær nul, får 80% cashback og bonusser for henvisninger.</string>
     <string name="button__upgrade_to_ltm">Opgrader til LTM</string>

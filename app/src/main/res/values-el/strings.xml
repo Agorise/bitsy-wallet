@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Το όνομα του λογαριασμού πρέπει να είναι από 3 έως 16 χαρακτήρες.</string>
     <string name="error__invalid_account_start">Το όνομα λογαριασμού πρέπει να ξεκινά με ένα γράμμα.</string>
     <string name="error__invalid_account_name">Εισαγάγετε ένα κανονικό όνομα που περιέχει τουλάχιστον μια παύλα, έναν αριθμό ή κανένα φωνήεν.</string>
-    <string name="text__verifying_account_availability">Επαλήθευση διαθεσιμότητας λογαριασμού ...</string>
+    <string name="text__verifying_account_availability">Επαλήθευση διαθεσιμότητας λογαριασμού…</string>
     <string name="error__account_not_available">Το όνομα του λογαριασμού έχει ήδη ληφθεί.</string>
     <string name="text__account_is_available">Ο λογαριασμός είναι διαθέσιμος</string>
     <string name="title_error">Λάθος</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Λίστες ανάκτησης λογαριασμού που μπορούν να ληφθούν ή να αντιγραφούν, αλλά δεν έχουν επεξεργαστεί.</string>
     <string name="msg__brainkey_info">Γράψτε αυτό κάτω! Βεβαιωθείτε ότι έχετε 2 αντίγραφα αυτού του BrainKey σε 2 ασφαλείς θέσεις σε περίπτωση πυρκαγιάς ή απώλειας. Ασφάλεια πρώτα! Όποιος έχει πρόσβαση στο BrainKey μπορεί να έχει πρόσβαση στα χρήματα του λογαριασμού σας!</string>
     <string name="button__copied">Αντιγραφή</string>
-    <string name="button__view_and_copy">Προβολή & Αντιγραφή</string>
+    <string name="button__view_and_copy">Προβολή &amp; Αντιγραφή</string>
     <string name="title__accounts">Λογαριασμοί</string>
     <string name="msg__upgrade_to_ltm">Αναβαθμίστε τη Μέλη LifeTime (LTM). Οι λογαριασμοί LTM του Bitshares πληρώνουν σχεδόν μηδενικά τέλη, λαμβάνουν 80% επιστροφή χρημάτων και μπόνους για παραπομπές.</string>
     <string name="button__upgrade_to_ltm">Αναβάθμιση σε LTM</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Dylai enw\'r cyfrif fod rhwng 3 ac 16 nod.</string>
     <string name="error__invalid_account_start">Dylai enw\'r cyfrif ddechrau gyda llythyr.</string>
     <string name="error__invalid_account_name">Rhowch enw rheolaidd sy\'n cynnwys o leiaf un dash, rhif, neu ddim llafariaid.</string>
-    <string name="text__verifying_account_availability">Gwirio argaeledd cyfrifon ...</string>
+    <string name="text__verifying_account_availability">Gwirio argaeledd cyfrifon…</string>
     <string name="error__account_not_available">Mae\'r enw cyfrif hwnnw eisoes wedi\'i gymryd.</string>
     <string name="text__account_is_available">Mae cyfrif ar gael</string>
     <string name="title_error">Gwall</string>

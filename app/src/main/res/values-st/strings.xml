@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Lebitso la akhaonto le lokela ho ba litlhaku tse 3 ho isa ho tse 16.</string>
     <string name="error__invalid_account_start">Lebitso la akhaonto le lokela ho qala ka lengolo.</string>
     <string name="error__invalid_account_name">Ka kopo kenya lebitso le tloaelehileng le nang le bonyane idash e le \'ngoe, nomoro, kapa ho se na liluma-nosi.</string>
-    <string name="text__verifying_account_availability">Ho netefatsa phumaneho ea ak\'haonte ...</string>
+    <string name="text__verifying_account_availability">Ho netefatsa phumaneho ea ak\'haonte…</string>
     <string name="error__account_not_available">Lebitso leo la akhaonto le se le nkiloe.</string>
     <string name="text__account_is_available">Ak\'haonte ea fumaneha</string>
     <string name="title_error">Phoso</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Mantsoe a ho fumana akhaonto a ka hapiloeng kapa a qopitsoa, empa a sa hlophisoe.</string>
     <string name="msg__brainkey_info">Ngola sena fatše! Etsa bonnete ba hore u na le likopi tse peli tsa BrainKey tsena libakeng tse 2 tse sireletsehileng haeba u ka cha kapa oa lahleha. Tšireletseho Pele! Mang kapa mang ea nang le phihlello ho BrainKey ea hau a ka kena licheleteng tsa hau!</string>
     <string name="button__copied">E kopitsoe</string>
-    <string name="button__view_and_copy">Sheba & Kopitsa</string>
+    <string name="button__view_and_copy">Sheba &amp; Kopitsa</string>
     <string name="title__accounts">Litefiso</string>
     <string name="msg__upgrade_to_ltm">Ntlafatsa hore u be setho sa LifeTime (LTM). Litefiso tsa Bitshares \ \'LTM li lefa litefiso tse haufi le zero, fumana chelete ea 80% le libonase bakeng sa ho fetisoa.</string>
     <string name="button__upgrade_to_ltm">Ntlafatsa ho LTM</string>

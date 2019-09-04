@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Der Kontoname sollte 3 bis 16 Zeichen lang sein.</string>
     <string name="error__invalid_account_start">Der Kontoname sollte mit einem Buchstaben beginnen.</string>
     <string name="error__invalid_account_name">Bitte geben Sie einen regulären Namen ein, der mindestens einen Bindestrich, eine Zahl oder keine Vokale enthält.</string>
-    <string name="text__verifying_account_availability">Verfügbarkeit des Kontos wird überprüft ...</string>
+    <string name="text__verifying_account_availability">Verfügbarkeit des Kontos wird überprüft…</string>
     <string name="error__account_not_available">Dieser Kontoname ist schon vergeben.</string>
     <string name="text__account_is_available">Konto ist verfügbar</string>
     <string name="title_error">Error</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Transaktionen</string>
-    <string name="title_merchants_and_tellers">Händler & Kassierer</string>
+    <string name="title_merchants_and_tellers">Händler &amp; Kassierer</string>
     <string name="title_receive">Erhalten</string>
     <string name="title_balances">Guthaben</string>
     <string name="title_send">Senden</string>

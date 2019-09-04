@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Актив</string>
-    <string name="text__other">Други ...</string>
+    <string name="text__other">Други…</string>
     <string name="template__please_send">Моля, изпратете: %1$s %2$s</string>
     <string name="text__any_amount">Всяка сума</string>
     <string name="template__to">До: %1$s</string>

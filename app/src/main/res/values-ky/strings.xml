@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Каттоо аты 3 16 белгиге чейин болушу керек.</string>
     <string name="error__invalid_account_start">Каттоо аты-жөнү тамга менен башталышы керек.</string>
     <string name="error__invalid_account_name">жок дегенде бир тире камтыган үзгүлтүксүз атын киргизгиле, бир катар, же анда үндүү тамгалар жок.</string>
-    <string name="text__verifying_account_availability">эсеп бар текшерилүүдө ...</string>
+    <string name="text__verifying_account_availability">эсеп бар текшерилүүдө…</string>
     <string name="error__account_not_available">Бул эсеп аты буга чейин кабыл алынат.</string>
     <string name="text__account_is_available">Каттоо бар</string>
     <string name="title_error">ката</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">бүтүмдөр</string>
-    <string name="title_merchants_and_tellers">Соодагерлери & кайлоо</string>
+    <string name="title_merchants_and_tellers">Соодагерлери &amp; кайлоо</string>
     <string name="title_receive">кабыл алуу</string>
     <string name="title_balances">баланс</string>
     <string name="title_send">жиберүү</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Мүлк</string>
-    <string name="text__other">Башка ...</string>
+    <string name="text__other">Башка…</string>
     <string name="template__please_send">Сураныч жөнөтүү: %1$s %2$s</string>
     <string name="text__any_amount">Ар бир суммасы</string>
     <string name="template__to">Үчүн: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Каттоо эсебин калыбына келтирүү сөздөрү басып же көчүрүлүп алышы мүмкүн, бирок, түзөтүлдү эмес.</string>
     <string name="msg__brainkey_info">Бул жаз! силер оттон же жоголгон учурда 2 коопсуз жерлерде бул BrainKey 2 көчүрмөсүн керек. Коопсуздук биринчи! Сиздин BrainKey жетүү менен эч кимди эсепке акча каражаттарын колдоно аласыз!</string>
     <string name="button__copied">көчүрүлдү</string>
-    <string name="button__view_and_copy">ЖМКнын & Көчүрүү</string>
+    <string name="button__view_and_copy">ЖМКнын &amp; Көчүрүү</string>
     <string name="title__accounts">Каттоо</string>
     <string name="msg__upgrade_to_ltm">Өмүр бою мүчөлүк (LTM) жогорулатуу. Bitshares \ \'LTM эсептери, жакын-нөл жыйымдарды төлөөгө багыттоо үчүн 80% кешбек жана бонустарды.</string>
     <string name="button__upgrade_to_ltm">LTM көтөрүү</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Nama akaun mestilah 3 hingga 16 aksara.</string>
     <string name="error__invalid_account_start">Nama akaun hendaklah bermula dengan huruf.</string>
     <string name="error__invalid_account_name">Sila masukkan nama tetap yang mengandungi sekurang-kurangnya satu dash, nombor, atau tiada vokal.</string>
-    <string name="text__verifying_account_availability">Mengesahkan ketersediaan akaun ...</string>
+    <string name="text__verifying_account_availability">Mengesahkan ketersediaan akaun…</string>
     <string name="error__account_not_available">Nama akaun itu sudah diambil.</string>
     <string name="text__account_is_available">Akaun boleh didapati</string>
     <string name="title_error">Ralat</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Urus niaga</string>
-    <string name="title_merchants_and_tellers">Peniaga & Peniaga</string>
+    <string name="title_merchants_and_tellers">Peniaga &amp; Peniaga</string>
     <string name="title_receive">Terima</string>
     <string name="title_balances">Baki</string>
     <string name="title_send">Hantar</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Aset</string>
-    <string name="text__other">Lain ...</string>
+    <string name="text__other">Lain…</string>
     <string name="template__please_send">Sila hantar: %1$s %2$s</string>
     <string name="text__any_amount">Apa-apa jumlah</string>
     <string name="template__to">Kepada: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Kata-kata pemulihan akaun yang boleh ditangkap atau disalin, tetapi tidak diedit.</string>
     <string name="msg__brainkey_info">Tuliskan ini! Pastikan anda mempunyai 2 salinan BrainKey ini di 2 lokasi selamat sekiranya berlaku kebakaran atau kerugian. Keselamatan Pertama! Sesiapa sahaja yang mempunyai akses kepada BrainKey anda boleh mengakses dana dalam akaun anda!</string>
     <string name="button__copied">Disalin</string>
-    <string name="button__view_and_copy">Lihat & Salin</string>
+    <string name="button__view_and_copy">Lihat &amp; Salin</string>
     <string name="title__accounts">Akaun</string>
     <string name="msg__upgrade_to_ltm">Menaik taraf ke Keahlian LifeTime (LTM). Bitshares \ \'akaun LTM membayar yuran hampir-sifar, mendapatkan rebat tunai 80% dan bonus untuk rujukan.</string>
     <string name="button__upgrade_to_ltm">Naik taraf ke LTM</string>

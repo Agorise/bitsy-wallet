@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">खाता नाम 3 से 16 वर्णों का होना चाहिए।</string>
     <string name="error__invalid_account_start">खाते का नाम एक पत्र से शुरू होना चाहिए।</string>
     <string name="error__invalid_account_name">कृपया एक नियमित नाम दर्ज करें जिसमें कम से कम एक डैश, एक संख्या, या कोई स्वर न हो।</string>
-    <string name="text__verifying_account_availability">खाता उपलब्धता सत्यापित की जा रही है ...</string>
+    <string name="text__verifying_account_availability">खाता उपलब्धता सत्यापित की जा रही है…</string>
     <string name="error__account_not_available">उस खाते का नाम पहले से ही लिया जाता है।</string>
     <string name="text__account_is_available">खाता उपलब्ध है</string>
     <string name="title_error">त्रुटि</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">एसेट</string>
-    <string name="text__other">अन्य ...</string>
+    <string name="text__other">अन्य…</string>
     <string name="template__please_send">कृपया भेजें: %1$s %2$s</string>
     <string name="text__any_amount">कोई भी राशि</string>
     <string name="template__to">को: %1$s</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Jina la akaunti inapaswa kuwa herufi 3 hadi 16.</string>
     <string name="error__invalid_account_start">Jina la akaunti inapaswa kuanza na barua.</string>
     <string name="error__invalid_account_name">Tafadhali ingiza jina la kawaida lenye angalau dashi moja, nambari, au vokali hakuna.</string>
-    <string name="text__verifying_account_availability">Inathibitisha kupatikana kwa akaunti ...</string>
+    <string name="text__verifying_account_availability">Inathibitisha kupatikana kwa akaunti…</string>
     <string name="error__account_not_available">Jina la akaunti tayari limechukuliwa.</string>
     <string name="text__account_is_available">Akaunti inapatikana</string>
     <string name="title_error">Kosa</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Uuzaji</string>
-    <string name="title_merchants_and_tellers">Wauzaji & Wauzaji</string>
+    <string name="title_merchants_and_tellers">Wauzaji &amp; Wauzaji</string>
     <string name="title_receive">Pokea</string>
     <string name="title_balances">Mizani</string>
     <string name="title_send">Tuma</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Mali</string>
-    <string name="text__other">Nyingine ...</string>
+    <string name="text__other">Nyingine…</string>
     <string name="template__please_send">Tafadhali Tuma: %1$s %2$s</string>
     <string name="text__any_amount">Kiasi chochote</string>
     <string name="template__to">Kwa: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Maneno ya urejeshaji wa akaunti ambayo yanaweza kutekwa au kunakiliwa, lakini hayakuhaririwa.</string>
     <string name="msg__brainkey_info">Andika hii! Hakikisha una nakala mbili za BrainKey hii katika maeneo 2 salama ikiwa moto au upotezaji. Usalama Kwanza! Mtu yeyote anayepata BrainKey yako anaweza kupata pesa katika akaunti yako!</string>
     <string name="button__copied">Imenakiliwa</string>
-    <string name="button__view_and_copy">Angalia & Nakala</string>
+    <string name="button__view_and_copy">Angalia &amp; Nakala</string>
     <string name="title__accounts">Akaunti</string>
     <string name="msg__upgrade_to_ltm">Boresha kwa Umiliki wa Maisha ya Maisha (LTM). Akaunti za Bitshares \ \'LTM hulipa ada ya karibu na sifuri, pata pesa taslimu 80% na mafao ya rufaa.</string>
     <string name="button__upgrade_to_ltm">Boresha kwa LTM</string>

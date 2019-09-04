@@ -22,10 +22,10 @@
     <!-- Create Account -->
     <string name="text__bitshares_account_name">BitShares-tilin nimi</string>
     <string name="error__read_dict_file">Virhe sanakirjatiedoston lukemisessa</string>
-    <string name="error__invalid_account_length">Tilin nimen on oltava 3-16 merkkiä.</string>
+    <string name="error__invalid_account_length">Tilin nimen on oltava 3–16 merkkiä.</string>
     <string name="error__invalid_account_start">Tilin nimen tulisi alkaa kirjaimella.</string>
     <string name="error__invalid_account_name">Anna tavallinen nimi, joka sisältää vähintään yhden viivan, numeron tai ei mitään vokaalia.</string>
-    <string name="text__verifying_account_availability">Vahvistetaan tilin saatavuus ...</string>
+    <string name="text__verifying_account_availability">Vahvistetaan tilin saatavuus…</string>
     <string name="error__account_not_available">Tilin nimi on jo otettu.</string>
     <string name="text__account_is_available">Tili on saatavilla</string>
     <string name="title_error">Virhe</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">etu</string>
-    <string name="text__other">Muut ...</string>
+    <string name="text__other">Muut…</string>
     <string name="template__please_send">Ole hyvä ja lähetä: %1$s %2$s</string>
     <string name="text__any_amount">Mikä tahansa määrä</string>
     <string name="template__to">Vastaanottaja: %1$s</string>

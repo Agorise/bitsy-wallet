@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Імя ўліковага запісу павінна складаць ад 3 да 16 знакаў.</string>
     <string name="error__invalid_account_start">Імя ўліковага запісу павінна пачынацца з літары.</string>
     <string name="error__invalid_account_name">Калі ласка, увядзіце звычайную назву, якая змяшчае па меншай меры адзін працяжнік, лік альбо галосныя гукі.</string>
-    <string name="text__verifying_account_availability">Пацверджанне наяўнасці ўліковага запісу ...</string>
+    <string name="text__verifying_account_availability">Пацверджанне наяўнасці ўліковага запісу…</string>
     <string name="error__account_not_available">Імя гэтага ўліковага запісу ўжо прынята.</string>
     <string name="text__account_is_available">Уліковы запіс даступны</string>
     <string name="title_error">Памылка</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Актыў</string>
-    <string name="text__other">Іншае ...</string>
+    <string name="text__other">Іншае…</string>
     <string name="template__please_send">Дашліце, калі ласка: %1$s %2$s</string>
     <string name="text__any_amount">Любая сума</string>
     <string name="template__to">Для: %1$s</string>

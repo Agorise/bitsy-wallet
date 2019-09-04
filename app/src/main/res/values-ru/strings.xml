@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Имя учетной записи должно быть от 3 до 16 символов.</string>
     <string name="error__invalid_account_start">Имя учетной записи должно начинаться с буквы.</string>
     <string name="error__invalid_account_name">Пожалуйста, введите обычное имя, содержащее хотя бы одну черту, число или без гласных.</string>
-    <string name="text__verifying_account_availability">Проверка доступности аккаунта ...</string>
+    <string name="text__verifying_account_availability">Проверка доступности аккаунта…</string>
     <string name="error__account_not_available">Это имя аккаунта уже занято.</string>
     <string name="text__account_is_available">Аккаунт доступен</string>
     <string name="title_error">ошибка</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Ko nga ingoa putea kia 3 ki te 16 nga kiripuaki.</string>
     <string name="error__invalid_account_start">Ko te ingoa putea me timata i tetahi reta.</string>
     <string name="error__invalid_account_name">Tomo koa ki tetahi ingoa auau e mau ana i te iti noa iho i te kotahi papatohu, he tau, kaore ranei he kupu taurangi.</string>
-    <string name="text__verifying_account_availability">Te whakamana i te waatea pūkete ...</string>
+    <string name="text__verifying_account_availability">Te whakamana i te waatea pūkete…</string>
     <string name="error__account_not_available">Kua tangohia kē taua ingoa pūkete.</string>
     <string name="text__account_is_available">Kei te waatea te kaute</string>
     <string name="title_error">Kei te Hapa</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Te Whakawhiti</string>
-    <string name="title_merchants_and_tellers">Kaihoko & Kaihoko</string>
+    <string name="title_merchants_and_tellers">Kaihoko &amp; Kaihoko</string>
     <string name="title_receive">Whiwhi</string>
     <string name="title_balances">Te Rautau</string>
     <string name="title_send">Tukua</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Ko nga kupu whakaora i nga kaute ka taea te hopu, te kape ranei, engari kaore i whakatika.</string>
     <string name="msg__brainkey_info">Tuhia tenei! Kia mahara kia rua nga kape o tenei BrainKey i nga waahi e 2 e noho ana hei ahi, he ngaro ranei. Haumarutanga Tuatahi! Ko te tangata e uru ana ki to BrainKey ka taea te uru atu ki nga putea kei roto i o putea!</string>
     <string name="button__copied">Kua kape</string>
-    <string name="button__view_and_copy">Tirohia & Tāruatia</string>
+    <string name="button__view_and_copy">Tirohia &amp; Tāruatia</string>
     <string name="title__accounts">Pūkete</string>
     <string name="msg__upgrade_to_ltm">Te Whakahoutanga ki te Taha Mema Ora (LTM). Ka utua e nga putea BEShares \ \'LTM nga utu kore-kore, whiwhi 80% moni moni me nga putea mo nga tohutao.</string>
     <string name="button__upgrade_to_ltm">Te Whakahoutanga ki te LTM</string>

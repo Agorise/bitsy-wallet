@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">III ut sit nomen XVI Ratio ingenia.</string>
     <string name="error__invalid_account_start">Propter nomen should satus per litteras.</string>
     <string name="error__invalid_account_name">Quo nomine iusti intrabunt saltem impetu velit numerus necne vocales.</string>
-    <string name="text__verifying_account_availability">Availability Add probari possit ratio ...</string>
+    <string name="text__verifying_account_availability">Availability Add probari possit ratio…</string>
     <string name="error__account_not_available">Quod is iam propter nomen tuum.</string>
     <string name="text__account_is_available">Ratio est available</string>
     <string name="title_error">Error</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">transactions</string>
-    <string name="title_merchants_and_tellers">Mercatores & Thy Majestie</string>
+    <string name="title_merchants_and_tellers">Mercatores &amp; Thy Majestie</string>
     <string name="title_receive">accipite</string>
     <string name="title_balances">iustificabo stateram impiam</string>
     <string name="title_send">Mitte</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">dignissim</string>
-    <string name="text__other">Alii ...</string>
+    <string name="text__other">Alii…</string>
     <string name="template__please_send">Mitte quaeso, %1$s %2$s</string>
     <string name="text__any_amount">Pecuniae</string>
     <string name="template__to">Ad: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Ratio recuperatio potest capi nec copied verbis, sed factis.</string>
     <string name="msg__brainkey_info">Scribe hoc? Vide II exemplaria istiusmodi habere vos in II BrainKey secure locus ignis et si damnum. Securitatis prima? Quis est obvius ut vestri BrainKey accedere possunt, cum pecunia in ratione vestra?</string>
     <string name="button__copied">copied</string>
-    <string name="button__view_and_copy">View & Copy</string>
+    <string name="button__view_and_copy">View &amp; Copy</string>
     <string name="title__accounts">Rationibus</string>
     <string name="msg__upgrade_to_ltm">Sodalitas ad upgrade LifeTime (LTM). Bitshares \ \'LTM rationes reddere, nullus apud feodis suis ut LXXX% cashback et bonuses pro referrals.</string>
     <string name="button__upgrade_to_ltm">Phasellus ut LTM</string>

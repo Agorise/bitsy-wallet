@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Numele contului trebuie să fie de 3 până la 16 caractere.</string>
     <string name="error__invalid_account_start">Numele contului ar trebui să înceapă cu o literă.</string>
     <string name="error__invalid_account_name">Vă rugăm să introduceți un nume obișnuit care să conțină cel puțin o liniuță, un număr sau fără vocale.</string>
-    <string name="text__verifying_account_availability">Verificarea disponibilității contului ...</string>
+    <string name="text__verifying_account_availability">Verificarea disponibilității contului…</string>
     <string name="error__account_not_available">Numele contului este deja luat.</string>
     <string name="text__account_is_available">Contul este disponibil</string>
     <string name="title_error">Eroare</string>

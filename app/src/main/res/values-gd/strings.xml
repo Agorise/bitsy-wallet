@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Gnìomhan</string>
-    <string name="title_merchants_and_tellers">Ceannaichean & Luchd-glacaidh</string>
+    <string name="title_merchants_and_tellers">Ceannaichean &amp; Luchd-glacaidh</string>
     <string name="title_receive">Faighinn</string>
     <string name="title_balances">Cothroman</string>
     <string name="title_send">Cuir</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Faclan faighinn air ais cunntas a ghabhas glacadh no a chopaigeadh, ach nach deach a dheasachadh.</string>
     <string name="msg__brainkey_info">Sgrìobh seo sìos! Dèan cinnteach gu bheil 2 leth-bhreac den BrainKey seo agad ann an 2 àite tèarainte air eagal teine no call. Tèarainteachd an toiseach! Faodaidh duine sam bith aig a bheil cothrom air do BrainKey faighinn chun mhaoin sa chunntas agad!</string>
     <string name="button__copied">Leth-bhreac</string>
-    <string name="button__view_and_copy">Faic & Leth-bhreac</string>
+    <string name="button__view_and_copy">Faic &amp; Leth-bhreac</string>
     <string name="title__accounts">Cunntasan</string>
     <string name="msg__upgrade_to_ltm">Ùrachadh air Ballrachd LifeTime (LTM). Bidh cunntasan Bitshares \ ’LTM a’ pàigheadh chìsean faisg air neoni, a ’faighinn airgead air ais 80% agus bònasan airson iomraidhean.</string>
     <string name="button__upgrade_to_ltm">Ùrachadh gu LTM</string>

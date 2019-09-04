@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">De Kontnumm soll 3 bis 16 Zeeche sinn.</string>
     <string name="error__invalid_account_start">Kontnumm sollt mat engem Bréif ufänken.</string>
     <string name="error__invalid_account_name">Gitt e reguläre Numm mat op d\'mannst ee Bindestrich, eng Nummer oder keng Vokaler.</string>
-    <string name="text__verifying_account_availability">Verifizéiert Disponibilitéit vun de Kont ...</string>
+    <string name="text__verifying_account_availability">Verifizéiert Disponibilitéit vun de Kont…</string>
     <string name="error__account_not_available">Dee Benotzernumm ass scho geholl.</string>
     <string name="text__account_is_available">Kont ass verfügbar</string>
     <string name="title_error">Feeler</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Transaktiounen</string>
-    <string name="title_merchants_and_tellers">Händler & Teller</string>
+    <string name="title_merchants_and_tellers">Händler &amp; Teller</string>
     <string name="title_receive">Empfang</string>
     <string name="title_balances">Gläichgewiicht</string>
     <string name="title_send">Schécken</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Kont Erhuelung Wierder déi kënnen gefaang oder kopéiert ginn, awer net geännert ginn.</string>
     <string name="msg__brainkey_info">Schreift dëst erof! Gitt sécher datt Dir 2 Exemplare vun dësem BrainKey op 2 sécher Plazen am Fall vu Feier oder Verloscht hutt. Sécherheet Éischt! Jiddereen mat Zougang zu Ärem BrainKey kënnen Zougang zu de Fongen op Ärem Kont kréien!</string>
     <string name="button__copied">Kopéiert</string>
-    <string name="button__view_and_copy">Gesinn & Kopie</string>
+    <string name="button__view_and_copy">Gesinn &amp; Kopie</string>
     <string name="title__accounts">Konten</string>
     <string name="msg__upgrade_to_ltm">Upgrade op LifeTime Membership (LTM). Bitshares \ \'LTM Konten bezuele bal null Käschten, kréien 80% Cashback a Bonus fir Referratiounen.</string>
     <string name="button__upgrade_to_ltm">Upgrade op LTM</string>

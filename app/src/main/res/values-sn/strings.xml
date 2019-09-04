@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Shanduko</string>
-    <string name="title_merchants_and_tellers">Vatengesi & Vatengesi</string>
+    <string name="title_merchants_and_tellers">Vatengesi &amp; Vatengesi</string>
     <string name="title_receive">Gamuchirwa</string>
     <string name="title_balances">Zviyero</string>
     <string name="title_send">Tumira</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Akaunti mazwi ekudzoreredza anogona kubatwa kana kutevedzwa, asi asina kurongeka.</string>
     <string name="msg__brainkey_info">Nyora izvi pasi! Ive neshuwa iwe uine maviri kopi eBrainKey munzvimbo mbiri dzakachengetedzeka kana moto kana kurasikirwa. Chengetedza Kutanga! Chero ani anokwanisa kuwana BrainKey yako anokwanisa kuwana iyo mari muaccount yako!</string>
     <string name="button__copied">Takopihwa</string>
-    <string name="button__view_and_copy">Tarisa & Copy</string>
+    <string name="button__view_and_copy">Tarisa &amp; Copy</string>
     <string name="title__accounts">Maakaunti</string>
     <string name="msg__upgrade_to_ltm">Simudzira kune LifeTime Nhengo (LTM). MaBitshares \ \'LTM account anobhadhara pedyo-zero zero, tora 80% kudzoserwa mari uye mabhonasi ekutumira.</string>
     <string name="button__upgrade_to_ltm">Simudzira kuLMA</string>

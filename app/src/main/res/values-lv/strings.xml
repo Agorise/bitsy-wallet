@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Konta nosaukumam jābūt no 3 līdz 16 rakstzīmēm.</string>
     <string name="error__invalid_account_start">Konta nosaukumam jāsākas ar burtu.</string>
     <string name="error__invalid_account_name">Lūdzu, ievadiet parasto vārdu, kurā ir vismaz viena domuzīme, cipars vai nav patskaņu.</string>
-    <string name="text__verifying_account_availability">Notiek konta pieejamības pārbaude ...</string>
+    <string name="text__verifying_account_availability">Notiek konta pieejamības pārbaude…</string>
     <string name="error__account_not_available">Šis konta nosaukums jau ir ņemts.</string>
     <string name="text__account_is_available">Konts ir pieejams</string>
     <string name="title_error">Kļūda</string>

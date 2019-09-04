@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Non kont yo ta dwe 3 a 16 karaktè.</string>
     <string name="error__invalid_account_start">Non kont yo ta dwe kòmanse avèk yon lèt.</string>
     <string name="error__invalid_account_name">Tanpri antre yon non regilye ki gen omwen yon priz, yon nimewo, oswa pa gen vwayèl.</string>
-    <string name="text__verifying_account_availability">Verifye disponiblite kont ...</string>
+    <string name="text__verifying_account_availability">Verifye disponiblite kont…</string>
     <string name="error__account_not_available">Non kont sa a deja pran.</string>
     <string name="text__account_is_available">Kont disponib</string>
     <string name="title_error">Erè</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Tranzaksyon yo</string>
-    <string name="title_merchants_and_tellers">Merchants & Tellers</string>
+    <string name="title_merchants_and_tellers">Merchants &amp; Tellers</string>
     <string name="title_receive">Resevwa</string>
     <string name="title_balances">Balans</string>
     <string name="title_send">Voye</string>
@@ -67,7 +67,7 @@
     <string name="text__csv">CSV</string>
     <string name="msg__storage_permission_necessary_export">Depo pèmisyon nesesè pou ekspòtasyon dosye PDF / CSV.</string>
     <string name="title_from">Soti nan</string>
-    <string name="title_to">Pou ...</string>
+    <string name="title_to">Pou…</string>
     <string name="title_memo">Memo</string>
     <string name="title_date">Dat</string>
     <string name="title_time">Tan</string>
@@ -92,7 +92,7 @@
 
     <!-- Send Transaction -->
     <string name="title_info">Info</string>
-    <string name="text__to">Pou ...</string>
+    <string name="text__to">Pou…</string>
     <string name="text__amount">Kantite lajan</string>
     <string name="text__memo">Memo</string>
     <string name="text__scan_qr">Fè enspeksyon QR</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Byen</string>
-    <string name="text__other">Lòt ...</string>
+    <string name="text__other">Lòt…</string>
     <string name="template__please_send">Tanpri voye: %1$s %2$s</string>
     <string name="text__any_amount">Nenpòt kantite</string>
     <string name="template__to">Pou: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Kont rekiperasyon mo ki ka kaptire oswa kopye, men se pa edited.</string>
     <string name="msg__brainkey_info">Ekri sa a desann! Asire ou ke ou gen 2 kopi sa a BrainKey nan 2 kote ki an sekirite nan ka ta gen dife oswa pèt. Sekirite Sosyal Premye! Nenpòt moun ki gen aksè nan BrainKey ou ka jwenn aksè nan lajan yo nan kont ou!</string>
     <string name="button__copied">Kopi</string>
-    <string name="button__view_and_copy">View & Kopi</string>
+    <string name="button__view_and_copy">View &amp; Kopi</string>
     <string name="title__accounts">Kont</string>
     <string name="msg__upgrade_to_ltm">Ajou a LifeTime Manm (LTM). Bitshares \'LTM kont peye frè prèske zewo, jwenn 80% kachbak ak bonis pou referans.</string>
     <string name="button__upgrade_to_ltm">Ajou LTM</string>

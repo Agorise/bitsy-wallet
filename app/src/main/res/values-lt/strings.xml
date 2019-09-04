@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Sąskaitos pavadinimas turėtų būti nuo 3 iki 16 simbolių.</string>
     <string name="error__invalid_account_start">Sąskaitos pavadinimas turėtų prasidėti raide.</string>
     <string name="error__invalid_account_name">Įveskite įprastą pavadinimą, kuriame yra bent vienas brūkšnys, skaičius arba nėra balsių.</string>
-    <string name="text__verifying_account_availability">Tikrinama paskyros prieinamumas ...</string>
+    <string name="text__verifying_account_availability">Tikrinama paskyros prieinamumas…</string>
     <string name="error__account_not_available">Tas paskyros pavadinimas jau paimtas.</string>
     <string name="text__account_is_available">Paskyra yra</string>
     <string name="title_error">Klaida</string>

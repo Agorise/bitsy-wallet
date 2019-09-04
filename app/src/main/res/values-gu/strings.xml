@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">એકાઉન્ટનું નામ 3 થી 16 અક્ષરોનું હોવું જોઈએ.</string>
     <string name="error__invalid_account_start">ખાતાનું નામ પત્રથી શરૂ થવું જોઈએ.</string>
     <string name="error__invalid_account_name">કૃપા કરી નિયમિત નામ દાખલ કરો જેમાં ઓછામાં ઓછું એક આડંબર, સંખ્યા અથવા કોઈ સ્વર ન હોય.</string>
-    <string name="text__verifying_account_availability">ખાતાની ઉપલબ્ધતા ચકાસી રહી છે ...</string>
+    <string name="text__verifying_account_availability">ખાતાની ઉપલબ્ધતા ચકાસી રહી છે…</string>
     <string name="error__account_not_available">તે એકાઉન્ટનું નામ પહેલેથી જ લેવામાં આવ્યું છે.</string>
     <string name="text__account_is_available">એકાઉન્ટ ઉપલબ્ધ છે</string>
     <string name="title_error">ભૂલ</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">L-isem tal-kont għandu jkun ta \'3 sa 16-il karattru.</string>
     <string name="error__invalid_account_start">L-isem tal-kont għandu jibda b\'ittra.</string>
     <string name="error__invalid_account_name">Jekk jogħġbok ikteb isem regolari li jkun fih tal-inqas sing, numru, jew l-ebda vokali.</string>
-    <string name="text__verifying_account_availability">Tivverifika d-disponibbiltà tal-kont ...</string>
+    <string name="text__verifying_account_availability">Tivverifika d-disponibbiltà tal-kont…</string>
     <string name="error__account_not_available">Dak l-isem tal-kont diġà ttieħed.</string>
     <string name="text__account_is_available">Kont huwa disponibbli</string>
     <string name="title_error">Żball</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Assi</string>
-    <string name="text__other">Oħrajn ...</string>
+    <string name="text__other">Oħrajn…</string>
     <string name="template__please_send">Jekk jogħġbok Ibgħat: %1$s %2$s</string>
     <string name="text__any_amount">Kull Ammont</string>
     <string name="template__to">Lil: %1$s</string>

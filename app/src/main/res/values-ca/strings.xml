@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">El nom del compte hauria de tenir entre 3 i 16 caràcters.</string>
     <string name="error__invalid_account_start">El nom del compte hauria de començar amb una lletra.</string>
     <string name="error__invalid_account_name">Introduïu un nom habitual que contingui almenys un guionet, un número o cap vocal.</string>
-    <string name="text__verifying_account_availability">Verificació de la disponibilitat del compte ...</string>
+    <string name="text__verifying_account_availability">Verificació de la disponibilitat del compte…</string>
     <string name="error__account_not_available">Aquest nom del compte ja està pres.</string>
     <string name="text__account_is_available">El compte està disponible</string>
     <string name="title_error">Error</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Actiu</string>
-    <string name="text__other">Un altre ...</string>
+    <string name="text__other">Un altre…</string>
     <string name="template__please_send">Envieu: %1$s %2$s</string>
     <string name="text__any_amount">Qualsevol quantitat</string>
     <string name="template__to">A: %1$s</string>

@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Transactions</string>
-    <string name="title_merchants_and_tellers">Bazirgan & Firoşyar</string>
+    <string name="title_merchants_and_tellers">Bazirgan &amp; Firoşyar</string>
     <string name="title_receive">Wergirtin</string>
     <string name="title_balances">Balîfan</string>
     <string name="title_send">Şandin</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Peyvên nûvekirinê yên hesabê ku dikare were girtin an kopîkirin, lê nehatiye sererast kirin.</string>
     <string name="msg__brainkey_info">Vê binivîsin! Bawer bikin ku di 2 bûyerên agir an zirarê de ji we re 2 kopiyên vê BrainKey hene. Yekem Ewlekarî! Kesê ku gihîştina BrainKey-a we dikare fonan li hesabê we têkeve!</string>
     <string name="button__copied">Kopî kirin</string>
-    <string name="button__view_and_copy">Dîtin & kopî kirin</string>
+    <string name="button__view_and_copy">Dîtin &amp; kopî kirin</string>
     <string name="title__accounts">Hesaban</string>
     <string name="msg__upgrade_to_ltm">Ji Endamtiya LifeTime nûve bikin (LTM). Hesabên LTM-ê yên Bitshares nêzî nîv-heqê drav didin, ji% 80% paşîn û berdêl ji bo referansan distînin.</string>
     <string name="button__upgrade_to_ltm">Ji LTM-ê nûve bikin</string>

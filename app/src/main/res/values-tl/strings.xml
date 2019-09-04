@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Ang pangalan ng account ay dapat na 3 hanggang 16 na character.</string>
     <string name="error__invalid_account_start">Ang pangalan ng account ay dapat magsimula sa isang liham.</string>
     <string name="error__invalid_account_name">Mangyaring magpasok ng isang regular na pangalan na naglalaman ng hindi bababa sa isang dash, isang numero, o walang mga patinig.</string>
-    <string name="text__verifying_account_availability">Pag-verify ng pagkakaroon ng account ...</string>
+    <string name="text__verifying_account_availability">Pag-verify ng pagkakaroon ng account…</string>
     <string name="error__account_not_available">Nakuha na ang account name na iyan.</string>
     <string name="text__account_is_available">Magagamit ang account</string>
     <string name="title_error">Error</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Asset</string>
-    <string name="text__other">Iba pa ...</string>
+    <string name="text__other">Iba pa…</string>
     <string name="template__please_send">Mangyaring Ipadala: %1$s %2$s</string>
     <string name="text__any_amount">Anumang halaga</string>
     <string name="template__to">Sa: %1$s</string>

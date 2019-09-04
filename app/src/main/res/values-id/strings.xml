@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Nama akun harus 3 hingga 16 karakter.</string>
     <string name="error__invalid_account_start">Nama akun harus dimulai dengan surat.</string>
     <string name="error__invalid_account_name">Silakan masukkan nama reguler yang mengandung setidaknya satu tanda hubung, angka, atau tanpa vokal.</string>
-    <string name="text__verifying_account_availability">Memverifikasi ketersediaan akun ...</string>
+    <string name="text__verifying_account_availability">Memverifikasi ketersediaan akun…</string>
     <string name="error__account_not_available">Nama akun itu sudah diambil.</string>
     <string name="text__account_is_available">Akun tersedia</string>
     <string name="title_error">Kesalahan</string>
@@ -36,7 +36,7 @@
 
     <!-- Home -->
     <string name="title_transactions">Transaksi</string>
-    <string name="title_merchants_and_tellers">Pedagang & Teller</string>
+    <string name="title_merchants_and_tellers">Pedagang &amp; Teller</string>
     <string name="title_receive">Menerima</string>
     <string name="title_balances">Saldo</string>
     <string name="title_send">Kirim</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Kata-kata pemulihan akun yang dapat ditangkap atau disalin, tetapi tidak diedit.</string>
     <string name="msg__brainkey_info">Tulis ini! Pastikan Anda memiliki 2 salinan BrainKey ini di 2 lokasi aman jika terjadi kebakaran atau kehilangan. Keamanan Pertama! Siapa pun yang memiliki akses ke BrainKey Anda dapat mengakses dana di akun Anda!</string>
     <string name="button__copied">Disalin</string>
-    <string name="button__view_and_copy">Lihat & Salin</string>
+    <string name="button__view_and_copy">Lihat &amp; Salin</string>
     <string name="title__accounts">Akun</string>
     <string name="msg__upgrade_to_ltm">Tingkatkan ke Keanggotaan LifeTime (LTM). Akun LTM Bitshares membayar biaya hampir nol, dapatkan cashback 80% dan bonus untuk referensi.</string>
     <string name="button__upgrade_to_ltm">Tingkatkan ke LTM</string>

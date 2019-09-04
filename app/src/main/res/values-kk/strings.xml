@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Тіркелгі атауы 3-тен 16 таңбаға дейін болуы керек.</string>
     <string name="error__invalid_account_start">Шот атауы әріптен басталуы керек.</string>
     <string name="error__invalid_account_name">Кемінде бір сызықша, сан немесе дауысты дыбыстардан тұратын тұрақты атауды енгізіңіз.</string>
-    <string name="text__verifying_account_availability">Есептік жазбаның қол жетімділігі тексерілуде ...</string>
+    <string name="text__verifying_account_availability">Есептік жазбаның қол жетімділігі тексерілуде…</string>
     <string name="error__account_not_available">Бұл есептік жазба атауы алынған.</string>
     <string name="text__account_is_available">Есептік жазба қол жетімді</string>
     <string name="title_error">Қате</string>

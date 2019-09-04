@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Die rekeningnaam moet 3 tot 16 karakters bevat.</string>
     <string name="error__invalid_account_start">Rekeningnaam moet met \'n letter begin.</string>
     <string name="error__invalid_account_name">Voer \'n gewone naam in wat ten minste een streep, \'n nommer of geen vokale bevat nie.</string>
-    <string name="text__verifying_account_availability">Verifieer rekeningbeskikbaarheid ...</string>
+    <string name="text__verifying_account_availability">Verifieer rekeningbeskikbaarheid…</string>
     <string name="error__account_not_available">Die rekeningnaam is reeds geneem.</string>
     <string name="text__account_is_available">Rekening is beskikbaar</string>
     <string name="title_error">fout</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">bate</string>
-    <string name="text__other">Ander ...</string>
+    <string name="text__other">Ander…</string>
     <string name="template__please_send">Stuur asb: %1$s %2$s</string>
     <string name="text__any_amount">Enige bedrag</string>
     <string name="template__to">Aan: %1$s</string>

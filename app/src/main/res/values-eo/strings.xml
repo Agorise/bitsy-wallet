@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Konto nomo devas esti inter 3 kaj 16 signoj.</string>
     <string name="error__invalid_account_start">Konto nomo devas komenci per letero.</string>
     <string name="error__invalid_account_name">Bonvolu enigi regulan nomon enhavantan almenaŭ unu strekon, nombron, aŭ neniujn vokalojn.</string>
-    <string name="text__verifying_account_availability">Konfirmu la haveblecon de kontoj ...</string>
+    <string name="text__verifying_account_availability">Konfirmu la haveblecon de kontoj…</string>
     <string name="error__account_not_available">Tiu konto-nomo estas jam prenita.</string>
     <string name="text__account_is_available">Konto haveblas</string>
     <string name="title_error">Eraro</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Rakontaj vortoj pri konto, kiuj povas esti kaptitaj aŭ kopiitaj, sed ne redaktitaj.</string>
     <string name="msg__brainkey_info">Skribu ĉi tion! Certigu, ke vi havas 2 kopiojn de ĉi tiu BrainKey en 2 sekuraj lokoj en kazo de fajro aŭ perdo. Sekureco Unue! Ĉiu kun aliro al via BrainKey povas aliri la financojn en via konto!</string>
     <string name="button__copied">Kopiado</string>
-    <string name="button__view_and_copy">Vidi & Kopii</string>
+    <string name="button__view_and_copy">Vidi &amp; Kopii</string>
     <string name="title__accounts">Raportoj</string>
     <string name="msg__upgrade_to_ltm">Ĝisdatigu al LifeTime Membership (LTM). Bitshares \ \'LTM-kontoj pagas preskaŭ nulajn kotizojn, ricevas 80% monŝrankon kaj gratifikojn por aludoj.</string>
     <string name="button__upgrade_to_ltm">Ĝisdatigu al LTM</string>

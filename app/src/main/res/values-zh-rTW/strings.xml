@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">帳戶名稱應為3到16個字符。</string>
     <string name="error__invalid_account_start">帳戶名稱應以字母開頭。</string>
     <string name="error__invalid_account_name">請輸入包含至少一個短劃線，數字或無元音的常規名稱。</string>
-    <string name="text__verifying_account_availability">驗證帳戶可用性...</string>
+    <string name="text__verifying_account_availability">驗證帳戶可用性…</string>
     <string name="error__account_not_available">用戶名已被使用。</string>
     <string name="text__account_is_available">帳戶可用</string>
     <string name="title_error">錯誤</string>

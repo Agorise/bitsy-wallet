@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">pasuri</string>
-    <string name="text__other">Të tjera ...</string>
+    <string name="text__other">Të tjera…</string>
     <string name="template__please_send">Ju lutemi dërgoni: %1$s %2$s</string>
     <string name="text__any_amount">Do shumë</string>
     <string name="template__to">Tek: %1$s</string>

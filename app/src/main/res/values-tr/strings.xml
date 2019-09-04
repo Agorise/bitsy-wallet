@@ -29,7 +29,7 @@
     <string name="error__account_not_available">Bu hesap adı zaten alınmış.</string>
     <string name="text__account_is_available">Hesap mevcut</string>
     <string name="title_error">Hata</string>
-    <string name="error__faucet">Sunucu bir hata döndürdü. Bunun nedeni, aynı IP adresinden gelen sık sık isteklerin kısa sürede atılmasına izin vermeyecek şekilde belirlenmiş bir sınırlama olabilir. Lütfen 5 dakika bekleyin ve tekrar deneyin veya örneğin wifi\'ten hücreye farklı bir ağa geçin.</string>
+    <string name="error__faucet">Sunucu bir hata döndürdü. Bunun nedeni, aynı IP adresinden gelen sık isteklerin kısa sürede atılmasına izin vermeyecek şekilde belirlenmiş bir sınırlama olabilir. Lütfen 5 dakika bekleyin ve tekrar deneyin veya örneğin wifi\'ten hücreye farklı bir ağa geçin.</string>
     <string name="error__faucet_template">Musluk bir hata verdi. Mesaj: %1$s</string>
     <string name="error__created_account_not_found">Uygulama, yeni oluşturulan hesapla ilgili bilgileri alamadı</string>
     <string name="button__create">yaratmak</string>
@@ -51,7 +51,7 @@
 
     <!-- Transactions filter options -->
     <string name="title_filter_options">Filtre seçenekleri</string>
-    <string name="text__all">Herşey</string>
+    <string name="text__all">Her şey</string>
     <string name="text__sent">Gönderilen</string>
     <string name="text__received">Alınan</string>
     <string name="text__date_range">Tarih aralığı</string>

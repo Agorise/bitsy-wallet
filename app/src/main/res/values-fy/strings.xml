@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">Accountnamme moat 3 oant 16 tekens wêze.</string>
     <string name="error__invalid_account_start">Accountnamme moat begjinne mei in letter.</string>
     <string name="error__invalid_account_name">Fier in reguliere namme yn dy\'t teminsten ien streepke, in nûmer as gjin lûden befettet.</string>
-    <string name="text__verifying_account_availability">Ferifiearje akkount beskikberens ...</string>
+    <string name="text__verifying_account_availability">Ferifiearje akkount beskikberens…</string>
     <string name="error__account_not_available">Dy akkountnamme is al nommen.</string>
     <string name="text__account_is_available">Akkount is beskikber</string>
     <string name="title_error">Fersin</string>

@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Imovina</string>
-    <string name="text__other">Ostali ...</string>
+    <string name="text__other">Ostali…</string>
     <string name="template__please_send">Molimo pošaljite: %1$s %2$s</string>
     <string name="text__any_amount">Bilo koji iznos</string>
     <string name="template__to">Za: %1$s</string>

@@ -25,7 +25,7 @@
     <string name="error__invalid_account_length">U nome di contu deve esse da 3 à 16 caratteri.</string>
     <string name="error__invalid_account_start">U nome di u contu duverebbe cumincià cù una lettera.</string>
     <string name="error__invalid_account_name">Scrivite un nome regulare chì cuntene almenu un trattino, un numaru, o nimu vocali.</string>
-    <string name="text__verifying_account_availability">Verificà a dispunibilità di u contu ...</string>
+    <string name="text__verifying_account_availability">Verificà a dispunibilità di u contu…</string>
     <string name="error__account_not_available">Stu nome di contu hè digià pigliatu.</string>
     <string name="text__account_is_available">U contu hè dispunibule</string>
     <string name="title_error">Errore</string>
@@ -115,7 +115,7 @@
 
     <!-- Receive Transaction -->
     <string name="text__asset">Asset</string>
-    <string name="text__other">Altru ...</string>
+    <string name="text__other">Altru…</string>
     <string name="template__please_send">Inviate: %1$s %2$s</string>
     <string name="text__any_amount">Ogni Ammontu</string>
     <string name="template__to">À: %1$s</string>
@@ -134,7 +134,7 @@
     <string name="msg__brainkey_description">BrainKey. Parolle di ricuperazione di u cuntu chì pò esse captu o copiatu, ma micca editatu.</string>
     <string name="msg__brainkey_info">Scrivite questu! Assicuratevi chì avete 2 copie di questu BrainKey in 2 posti sicuri in casu di focu o perdita. Sicurità Prima! Qualchese chì hà accessu à u vostru BrainKey pò accede à i fondi in u vostru contu!</string>
     <string name="button__copied">Copiati</string>
-    <string name="button__view_and_copy">Vede & Copia</string>
+    <string name="button__view_and_copy">Vede &amp; Copia</string>
     <string name="title__accounts">U Accounts</string>
     <string name="msg__upgrade_to_ltm">Avanzate à adesione LifeTime (LTM). I cunti Bitshares \ \'LTM paganu tariffu vicinu à u zero, uttene un 80% di rimborsu è bonuses per riferimenti.</string>
     <string name="button__upgrade_to_ltm">Avanzate à LTM</string>

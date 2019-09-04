@@ -22,10 +22,10 @@
     <!-- Create Account -->
     <string name="text__bitshares_account_name">BitShares fiók neve</string>
     <string name="error__read_dict_file">Hiba a szótárfájl olvasásakor</string>
-    <string name="error__invalid_account_length">A fióknévnek 3-16 karakter hosszúnak kell lennie.</string>
+    <string name="error__invalid_account_length">A fióknévnek 3–16 karakter hosszúnak kell lennie.</string>
     <string name="error__invalid_account_start">A számla nevének betűvel kell kezdődnie.</string>
     <string name="error__invalid_account_name">Adjon meg egy rendes nevet, amely legalább egy kötőjelet, számot vagy magánhangzót nem tartalmaz.</string>
-    <string name="text__verifying_account_availability">Fiók rendelkezésre állásának ellenőrzése ...</string>
+    <string name="text__verifying_account_availability">Fiók rendelkezésre állásának ellenőrzése…</string>
     <string name="error__account_not_available">Az a fiók név már foglalt.</string>
     <string name="text__account_is_available">Fiók elérhető</string>
     <string name="title_error">Hiba</string>
