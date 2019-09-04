@@ -185,6 +185,9 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
         if (userId != "")
             mCurrentAccount = UserAccount(userId)
+
+        // Make sure crashlytics reports contains the account ID
+        Crashlytics.setString(Constants.CRASHLYTICS_KEY_ACCOUNT_ID, userId)
     }
 
     /**

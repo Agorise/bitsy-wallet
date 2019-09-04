@@ -136,4 +136,7 @@ object Constants {
 
     /** Key used to add the device language to the Crashlytics report */
     const val CRASHLYTICS_KEY_LANGUAGE = "crashlytics_key_language"
+
+    /** Key used to add the account ID to the Crashlytics report*/
+    const val CRASHLYTICS_KEY_ACCOUNT_ID = "crashlytics_key_account_id"
 }
