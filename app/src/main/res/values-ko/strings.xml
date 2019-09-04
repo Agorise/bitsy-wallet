@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">동의하다</string>
+    <string name="button__disagree">동의하지 않는다</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 자리 숫자 PIN</string>
+    <string name="error__pin_too_short">PIN이 너무 짧습니다</string>
+    <string name="text_field__confirm_pin">PIN 확인</string>
+    <string name="error__pin_mismatch">PIN 불일치</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">올바른 브레인 키를 입력하십시오. 12 ~ 16 개의 단어가 있어야합니다.</string>
+    <string name="button__import_existing_account">기존 계정 가져 오기</string>
+    <string name="text__or">또는</string>
+    <string name="button__create_new_account">새 계정을 만들</string>
+    <string name="error__invalid_brainkey">지정된 브레인 키에 의해 제어되는 계정이없는 경우 브레인 키에서 입력 오류를 확인하십시오.</string>
+    <string name="error__try_again">5 분 후에 다시 시도하십시오</string>
+    <string name="dialog__account_candidates_title">계정을 선택하십시오</string>
+    <string name="dialog__account_candidates_content">이 Brainkey에서 파생 된 키는 둘 이상의 계정을 제어하는 데 사용되는 것 같습니다. 가져올 계정을 선택하십시오</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares 계정 이름</string>
+    <string name="error__read_dict_file">사전 파일을 읽는 중 오류</string>
+    <string name="error__invalid_account_length">계정 이름은 3 ~ 16 자 여야합니다.</string>
+    <string name="error__invalid_account_start">계정 이름은 문자로 시작해야합니다.</string>
+    <string name="error__invalid_account_name">하나 이상의 대시, 숫자 또는 모음이없는 일반 이름을 입력하십시오.</string>
+    <string name="text__verifying_account_availability">계정 가용성 확인 중…</string>
+    <string name="error__account_not_available">해당 계정 이름이 이미 사용 중입니다.</string>
+    <string name="text__account_is_available">계정을 사용할 수 있습니다</string>
+    <string name="title_error">오류</string>
+    <string name="error__faucet">서버가 오류를 반환했습니다. 이는 단기간에 동일한 IP 주소에서 자주 오는 요청이 허용되지 않도록 의도적으로 설정된 제한 때문일 수 있습니다. 5 분 정도 기다렸다가 다시 시도하거나 다른 네트워크 (예 : wifi에서 셀로)로 전환하십시오.</string>
+    <string name="error__faucet_template">수도꼭지가 오류를 반환했습니다. 메시지 : %1$s</string>
+    <string name="error__created_account_not_found">앱에서 새로 만든 계정에 대한 정보를 검색 할 수 없습니다</string>
+    <string name="button__create">몹시 떠들어 대다</string>
+
+    <!-- Home -->
+    <string name="title_transactions">업무</string>
+    <string name="title_merchants_and_tellers">가맹점 및 출납원</string>
+    <string name="title_receive">받다</string>
+    <string name="title_balances">잔액</string>
+    <string name="title_send">보내다</string>
+    <string name="title_net_worth">순 가치</string>
+    <string name="text__coming_soon">출시 예정</string>
+
+    <!-- Transactions -->
+    <string name="title_search">수색</string>
+    <string name="title_filter">필터</string>
+    <string name="title_export">수출</string>
+    <string name="text__no_transactions">거래 없음</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">필터 옵션</string>
+    <string name="text__all">모든</string>
+    <string name="text__sent">보냄</string>
+    <string name="text__received">받았습니다</string>
+    <string name="text__date_range">날짜 범위</string>
+    <string name="text__equivalent_value">동등한 가치</string>
+    <string name="text__ignore_network_fees">네트워크 수수료 무시</string>
+    <string name="text__between">중에서</string>
+    <string name="text__and">과</string>
+    <string name="button__filter">필터</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">필터링 된 거래 내보내기</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV 파일을 내보내려면 저장 권한이 필요합니다.</string>
+    <string name="title_from">에서</string>
+    <string name="title_to">에</string>
+    <string name="title_memo">메모</string>
+    <string name="title_date">날짜</string>
+    <string name="title_time">시각</string>
+    <string name="title_amount">양</string>
+    <string name="title_equivalent_value">동등한 가치</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">e 영수증</string>
+    <string name="text__value">값</string>
+    <string name="template__memo">메모 : %1$s</string>
+    <string name="template__date">날짜 : %1$s</string>
+    <string name="template__tx">Tx : %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">가맹점</string>
+    <string name="title_tellers">출납원</string>
+    <string name="title_about">약</string>
+    <string name="msg__merchants_description">PalmPay 판매자는 새로운 Crypto Economy의 중추입니다. Cryptocurrency를 수락 할 업체를 찾고 있다면 아래의 검색 및지도 데이터 만 사용하십시오. PalmPay 앰배서더가 알려 주시면 더 많은 판매자가 여기에 추가됩니다.</string>
+    <string name="msg__tellers_description">텔러는 화폐 통화를 암호 화폐로 교환하거나 그 반대로 교환하는 사람들입니다. 또한 가맹점 결제로 판매자를 지원합니다.</string>
+    <string name="msg__location_permission_necessary">지도에 현재 위치를 표시하려면 위치 권한이 필요합니다.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">정보</string>
+    <string name="text__to">에</string>
+    <string name="text__amount">양</string>
+    <string name="text__memo">메모</string>
+    <string name="text__scan_qr">QR 스캔</string>
+    <string name="error__invalid_account">잘못된 계정</string>
+    <string name="error__not_enough_funds">자금이 충분하지 않습니다</string>
+    <string name="msg__camera_permission_necessary">QR 코드를 읽으려면 카메라 권한이 필요합니다.</string>
+    <string name="text__transaction_sent">거래가 발송되었습니다!</string>
+    <string name="msg__transaction_not_sent">거래를 보낼 수 없습니다</string>
+    <string name="error__you_dont_own_asset">%1$s을 (를) 소유하고 있지 않습니다.</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">자금을 송금하려는 사람의 Bitshares 계정 이름을 입력하십시오. \n 예 : agorise-faucet</string>
+    <string name="text__asset_balance">자산 균형</string>
+    <string name="msg__asset_balance_explanation">표시된 잔액을 탭하여 해당 자산을 모두 보낼 수 있습니다. 그렇게하면 금액 필드가 채워집니다.</string>
+    <string name="msg__memo_explanation">메모를 입력 할 필요는 없지만 자금을 보낸 이유를 메모하는 것은 나중에 참조하기에 좋습니다. 메모는 귀하와 귀하가 자금을 송금 한 사람에게만 보입니다.</string>
+    <string name="text__network_fee">네트워크 요금</string>
+    <string name="msg__network_fee_explanation">네트워크 요금은 송금하려는 금액에 포함되어 있습니다. 예를 들어, BTS 50 개를 보내려면 BiTSy는 실제로 ~ 50.21 BTS를 보냅니다. 이 예에서 추가 된 0.21은 비트 쉐어 거래 수수료에 BiTSy 개발자 팀에 0.01 %를 더한 금액입니다 (일반적으로 ~ 1 %).</string>
+    <string name="text__qr_code">QR 코드</string>
+    <string name="msg__qr_code_explanation">자금을 보내기 위해 다른 사람의 QR을 스캔 할 필요는 없지만 실수를 피하는 데 도움이됩니다. 귀하의 계좌에서 자금을 송금하면 그 자금은 영원히 사라 지므로 항상 "받는 사람"필드의 계좌 이름이 올바른지 확인하십시오.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">유산</string>
+    <string name="text__other">다른…</string>
+    <string name="template__please_send">보내주세요 : %1$s %2$s</string>
+    <string name="text__any_amount">아무 용량이나</string>
+    <string name="template__to">받는 사람 : %1$s</string>
+    <string name="msg__invoice_subject">%1$s의 BiTSy 송장</string>
+    <string name="title_share">몫</string>
+    <string name="text__share_with">와 주</string>
+    <string name="msg__storage_permission_necessary_share">이미지를 공유하려면 저장 권한이 필요합니다.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">설정</string>
+    <string name="title__general">일반</string>
+    <string name="msg__close_timer">3 분 동안 활동이 없으면 BiTSy 자동 종료</string>
+    <string name="msg__night_mode">야간 모드</string>
+    <string name="text__view_network_status">네트워크 상태보기</string>
+    <string name="title__backup">지원</string>
+    <string name="msg__brainkey_description">BrainKey. 캡처하거나 복사 할 수는 있지만 편집 할 수없는 계정 복구 단어</string>
+    <string name="msg__brainkey_info">적어! 화재 나 분실의 경우 안전한 장소 2 곳에이 BrainKey를 2 부 보관하십시오. 보안 우선! BrainKey에 액세스 할 수있는 사람은 누구나 계정의 자금에 액세스 할 수 있습니다!</string>
+    <string name="button__copied">복사</string>
+    <string name="button__view_and_copy">보기 및 복사</string>
+    <string name="title__accounts">계정</string>
+    <string name="msg__upgrade_to_ltm">LTM (LifeTime Membership)으로 업그레이드하십시오. 비트 쉐어의 LTM 계정은 거의 제로 수수료를 지불하고 80 %의 캐쉬백과 추천에 대한 보너스를받습니다.</string>
+    <string name="button__upgrade_to_ltm">LTM으로 업그레이드</string>
+    <string name="msg__account_upgrade_dialog">Life Time Membership을 통해 할인 된 네트워크 요금으로 거래 할 수 있습니다. \n \n 현재 계정 "%1$s"에 적용됩니다. \n \n 그러나 Bitshares에서 약 100 USD의 비용이 청구됩니다. \n \n 계속하겠습니까?</string>
+    <string name="title__account_upgraded">계정 업그레이드</string>
+    <string name="msg__account_upgraded">축하합니다! 귀하의 계정이 이제 평생 회원으로 업그레이드되었습니다.</string>
+    <string name="title__upgrade_account_error">계정을 업그레이드하는 중 오류</string>
+    <string name="msg__upgrade_account_error">비용을 충당하기에 계정 잔액이 충분한 지 확인하십시오.</string>
+    <string name="msg__remove_current_account">이 장치에서 현재 계정을 제거하고 다른 계정을 만들거나 가져옵니다.</string>
+    <string name="button__remove">풀다</string>
+    <string name="title__remove_account">계정 삭제</string>
+    <string name="msg__remove_account_confirmation">이 기기에서 현재 계정을 삭제 하시겠습니까?</string>
+    <string name="title__bugs_or_ideas">버그 또는 아이디어?</string>
+    <string name="msg__bugs_or_ideas">전보 : https://t.me/Agorise \n 키베이스 : https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">블록 : %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">보안</string>
+    <string name="text__security_lock">보안 잠금</string>
+    <string name="title__security_dialog">보안 잠금 장치를 선택하십시오</string>
+    <string name="text__pin">핀</string>
+    <string name="text__pattern">무늬</string>
+    <string name="text__none">없음</string>
+    <string name="button__choose">고르다</string>
+    <string name="title__re_enter_your_pin">PIN을 다시 입력하십시오</string>
+    <string name="msg__enter_your_pin">계속하려면 BiTSy PIN을 입력하십시오</string>
+    <string name="error__wrong_pin">잘못된 PIN</string>
+    <string name="title__set_bitsy_security_lock">BiTSy 보안 설정</string>
+    <string name="msg__set_a_pin">보안을 위해 PIN을 설정하십시오.</string>
+    <string name="msg__min_pin_length">PIN은 6 자리 이상이어야합니다</string>
+    <string name="title__pins_dont_match">PIN이 일치하지 않습니다</string>
+    <string name="title__re_enter_your_pattern">패턴을 다시 입력하십시오</string>
+    <string name="msg__enter_your_pattern">계속하려면 BiTSy 패턴을 입력하십시오</string>
+    <string name="msg__set_a_pattern">보안을 위해 패턴을 설정하십시오.</string>
+    <string name="msg__release_finger">완료되면 손가락을니다</string>
+    <string name="button__clear">명확한</string>
+    <string name="button__next">다음 것</string>
+    <string name="text__draw_an_unlock_pattern">잠금 해제 패턴 그리기</string>
+    <string name="msg__draw_pattern_confirm">패턴을 다시 그려 확인</string>
+    <string name="button__confirm">확인</string>
+    <string name="msg__your_new_unlock_pattern">새로운 잠금 해제 패턴</string>
+    <string name="error__wront_pattern">잘못된 패턴</string>
+    <string name="text__pattern_recorded">기록 된 패턴</string>
+    <string name="error__connect_at_least_4_dots">4 개 이상의 점을 연결하십시오. 다시 시도하십시오.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">잘못된 시도가 너무 많습니다. %1$d 분 후에 다시 시도하십시오.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">잘못된 시도가 너무 많습니다. %1$d 초 후에 다시 시도하십시오.</string>
+
+</resources>

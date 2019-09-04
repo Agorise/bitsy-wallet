@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Đồng ý</string>
+    <string name="button__disagree">Không đồng ý</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN hơn 6 chữ số</string>
+    <string name="error__pin_too_short">PIN quá ngắn</string>
+    <string name="text_field__confirm_pin">Xác nhận mã PIN</string>
+    <string name="error__pin_mismatch">Mã PIN không khớp</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Vui lòng nhập chính xác, nó nên có 12 hoặc 16 từ.</string>
+    <string name="button__import_existing_account">Nhập tài khoản hiện có</string>
+    <string name="text__or">Hoặc là</string>
+    <string name="button__create_new_account">Tạo tài khoản mới</string>
+    <string name="error__invalid_brainkey">Không có tài khoản nào được kiểm soát bởi bộ não đã cho ở nơi tìm thấy, vui lòng kiểm tra bộ não của bạn để biết lỗi đánh máy</string>
+    <string name="error__try_again">Vui lòng thử lại sau 5 phút</string>
+    <string name="dialog__account_candidates_title">Vui lòng chọn một tài khoản</string>
+    <string name="dialog__account_candidates_content">Các khóa có nguồn gốc từ bộ não này dường như được sử dụng để kiểm soát nhiều tài khoản, vui lòng chọn tài khoản bạn muốn nhập</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Tên tài khoản BitShares</string>
+    <string name="error__read_dict_file">Lỗi đọc tập tin từ điển</string>
+    <string name="error__invalid_account_length">Tên tài khoản nên có 3 đến 16 ký tự.</string>
+    <string name="error__invalid_account_start">Tên tài khoản nên bắt đầu bằng một chữ cái.</string>
+    <string name="error__invalid_account_name">Vui lòng nhập một tên thông thường có chứa ít nhất một dấu gạch ngang, một số hoặc không có nguyên âm.</string>
+    <string name="text__verifying_account_availability">Xác minh tính khả dụng của tài khoản</string>
+    <string name="error__account_not_available">Tên tài khoản đó đã được sử dụng.</string>
+    <string name="text__account_is_available">Tài khoản có sẵn</string>
+    <string name="title_error">lỗi</string>
+    <string name="error__faucet">Máy chủ trả về một lỗi. Điều này có thể là do một giới hạn được đặt ra một cách có chủ đích để không cho phép các yêu cầu thường xuyên đến từ cùng một địa chỉ IP trong một khoảng thời gian ngắn. Vui lòng đợi 5 phút và thử lại hoặc chuyển sang một mạng khác, ví dụ từ wifi sang di động.</string>
+    <string name="error__faucet_template">Vòi trả lại một lỗi. Thưa: %1$s</string>
+    <string name="error__created_account_not_found">Ứng dụng không thể truy xuất thông tin về tài khoản mới được tạo</string>
+    <string name="button__create">Tạo nên</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Giao dịch</string>
+    <string name="title_merchants_and_tellers">Thương nhân và giao dịch viên</string>
+    <string name="title_receive">Nhận được</string>
+    <string name="title_balances">Số dư</string>
+    <string name="title_send">Gửi</string>
+    <string name="title_net_worth">Giá trị ròng</string>
+    <string name="text__coming_soon">Sắp có</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Tìm kiếm</string>
+    <string name="title_filter">Bộ lọc</string>
+    <string name="title_export">Xuất khẩu</string>
+    <string name="text__no_transactions">Không có giao dịch</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Tùy chọn bộ lọc</string>
+    <string name="text__all">Tất cả các</string>
+    <string name="text__sent">Gởi</string>
+    <string name="text__received">Nhận</string>
+    <string name="text__date_range">Phạm vi ngày</string>
+    <string name="text__equivalent_value">Giá trị tương đương</string>
+    <string name="text__ignore_network_fees">Bỏ qua phí mạng</string>
+    <string name="text__between">Giữa</string>
+    <string name="text__and">và</string>
+    <string name="button__filter">Bộ lọc</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Xuất các giao dịch được lọc</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Cần có quyền lưu trữ để xuất các tệp PDF / CSV.</string>
+    <string name="title_from">Từ</string>
+    <string name="title_to">Đến</string>
+    <string name="title_memo">Ghi nhớ</string>
+    <string name="title_date">Ngày</string>
+    <string name="title_time">Thời gian</string>
+    <string name="title_amount">Số tiền</string>
+    <string name="title_equivalent_value">Giá trị tương đương</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">điện tử</string>
+    <string name="text__value">Giá trị</string>
+    <string name="template__memo">Ghi nhớ: %1$s</string>
+    <string name="template__date">Ngày: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Thương gia</string>
+    <string name="title_tellers">Giao dịch viên</string>
+    <string name="title_about">Trong khoảng</string>
+    <string name="msg__merchants_description">Các thương nhân PalmPay là xương sống của Nền kinh tế tiền điện tử mới. Nếu bạn đang tìm kiếm các doanh nghiệp sẽ chấp nhận Tiền điện tử của bạn, thì chỉ cần sử dụng dữ liệu Tìm kiếm và Bản đồ bên dưới. Nhiều thương nhân sẽ được thêm vào đây khi Đại sứ PalmPay thông báo cho chúng tôi.</string>
+    <string name="msg__tellers_description">Giao dịch viên là những người sẽ trao đổi tiền tệ fiat của bạn với tiền điện tử và ngược lại. Họ cũng hỗ trợ Thương gia giải quyết fiat.</string>
+    <string name="msg__location_permission_necessary">Sự cho phép vị trí là cần thiết để hiển thị vị trí hiện tại của bạn trên bản đồ.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Thông tin</string>
+    <string name="text__to">Đến</string>
+    <string name="text__amount">Số tiền</string>
+    <string name="text__memo">Ghi nhớ</string>
+    <string name="text__scan_qr">Quét QR</string>
+    <string name="error__invalid_account">Tài khoản không hợp lệ</string>
+    <string name="error__not_enough_funds">Không đủ tiền</string>
+    <string name="msg__camera_permission_necessary">Sự cho phép của máy ảnh là cần thiết để đọc mã QR.</string>
+    <string name="text__transaction_sent">Giao dịch đã được gửi!</string>
+    <string name="msg__transaction_not_sent">Không thể gửi giao dịch</string>
+    <string name="error__you_dont_own_asset">Bạn không sở hữu bất kỳ %1$s nào</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Nhập tên tài khoản Bitshares của người bạn muốn gửi tiền. \n Ví dụ: vòi agorise</string>
+    <string name="text__asset_balance">Số dư tài sản</string>
+    <string name="msg__asset_balance_explanation">Bạn có thể nhấn vào số dư được hiển thị để gửi tất cả tài sản đó. Làm như vậy sẽ điền vào trường Số tiền cho bạn.</string>
+    <string name="msg__memo_explanation">Không cần nhập Ghi nhớ, nhưng ghi chú lý do tại sao bạn gửi tiền là tốt để tham khảo trong tương lai. Bản ghi nhớ chỉ hiển thị cho bạn và người mà bạn đã gửi tiền đến.</string>
+    <string name="text__network_fee">Phí mạng</string>
+    <string name="msg__network_fee_explanation">Phí mạng được bao gồm trong số tiền bạn muốn gửi. Ví dụ: nếu bạn muốn gửi 50 BTS, BiTSy thực sự sẽ gửi ~ 50,21 BTS. 0,21 được thêm vào trong ví dụ này là phí giao dịch Bitshares cộng thêm 0,01% cho Nhóm nhà phát triển BiTSy (thường là ~ 1 xu).</string>
+    <string name="text__qr_code">Mã QR</string>
+    <string name="msg__qr_code_explanation">Bạn không cần quét QR của ai đó để gửi tiền, nhưng nó giúp bạn tránh được những sai lầm. Khi bạn gửi tiền từ tài khoản của mình, chúng sẽ biến mất vĩnh viễn, vì vậy hãy luôn đảm bảo tên tài khoản trong trường Cấm To là chính xác.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Tài sản</string>
+    <string name="text__other">Khác</string>
+    <string name="template__please_send">Vui lòng gửi: %1$s %2$s</string>
+    <string name="text__any_amount">Số lượng bất kỳ</string>
+    <string name="template__to">Tới: %1$s</string>
+    <string name="msg__invoice_subject">Hóa đơn BiTSy từ %1$s</string>
+    <string name="title_share">Chia sẻ</string>
+    <string name="text__share_with">Chia sẽ với</string>
+    <string name="msg__storage_permission_necessary_share">Sự cho phép lưu trữ là cần thiết để chia sẻ hình ảnh.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Cài đặt</string>
+    <string name="title__general">Chung</string>
+    <string name="msg__close_timer">Tự động đóng BiTSy sau 3 phút không hoạt động</string>
+    <string name="msg__night_mode">Chế độ ban đêm</string>
+    <string name="text__view_network_status">Xem trạng thái mạng</string>
+    <string name="title__backup">Sao lưu</string>
+    <string name="msg__brainkey_description">BrainKey. Từ khôi phục tài khoản có thể bị bắt hoặc sao chép, nhưng không được chỉnh sửa.</string>
+    <string name="msg__brainkey_info">Viết cái này vào! Hãy chắc chắn rằng bạn có 2 bản sao BrainKey này ở 2 vị trí an toàn trong trường hợp hỏa hoạn hoặc mất mát. Bảo mật đầu tiên! Bất cứ ai có quyền truy cập vào BrainKey của bạn đều có thể truy cập vào tiền trong tài khoản của bạn!</string>
+    <string name="button__copied">Sao chép</string>
+    <string name="button__view_and_copy">Xem và sao chép</string>
+    <string name="title__accounts">Tài khoản</string>
+    <string name="msg__upgrade_to_ltm">Nâng cấp lên Thành viên LifeTime (LTM). Các tài khoản LTM của Bitshares trả các khoản phí gần như bằng không, được hoàn tiền 80% và tiền thưởng cho các lượt giới thiệu.</string>
+    <string name="button__upgrade_to_ltm">Nâng cấp lên LTM</string>
+    <string name="msg__account_upgrade_dialog">Tư cách thành viên Life Time cho phép bạn giao dịch với một bộ phí mạng giảm. \n \n Nó sẽ có hiệu lực đối với tài khoản hiện tại "%1$s" \n \n Tuy nhiên, nó đi kèm với chi phí khoảng 100 USD được trả bằng Bitshares. \n \n Bạn có chắc chắn muốn tiếp tục không?</string>
+    <string name="title__account_upgraded">Tài khoản được nâng cấp</string>
+    <string name="msg__account_upgraded">Xin chúc mừng! Tài khoản của bạn hiện đã được nâng cấp thành Thành viên trọn đời.</string>
+    <string name="title__upgrade_account_error">Lỗi trong khi cố gắng nâng cấp tài khoản</string>
+    <string name="msg__upgrade_account_error">Vui lòng đảm bảo tài khoản của bạn có đủ số dư để trang trải chi phí.</string>
+    <string name="msg__remove_current_account">Xóa Tài khoản hiện tại khỏi thiết bị này và tạo hoặc nhập một tài khoản khác.</string>
+    <string name="button__remove">Tẩy</string>
+    <string name="title__remove_account">Xoá tài khoản</string>
+    <string name="msg__remove_account_confirmation">Bạn có chắc chắn muốn xóa tài khoản hiện tại khỏi thiết bị này?</string>
+    <string name="title__bugs_or_ideas">Lỗi hay ý tưởng?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Chặn: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Bảo vệ</string>
+    <string name="text__security_lock">Khóa bảo mật</string>
+    <string name="title__security_dialog">Chọn một khóa bảo mật</string>
+    <string name="text__pin">GHIM</string>
+    <string name="text__pattern">Mẫu</string>
+    <string name="text__none">không ai</string>
+    <string name="button__choose">Chọn</string>
+    <string name="title__re_enter_your_pin">Nhập lại mã PIN của bạn</string>
+    <string name="msg__enter_your_pin">Nhập mã PIN BiTSy của bạn để tiếp tục</string>
+    <string name="error__wrong_pin">Pin sai</string>
+    <string name="title__set_bitsy_security_lock">Đặt bảo mật BiTSy</string>
+    <string name="msg__set_a_pin">Để bảo mật, hãy đặt mã PIN</string>
+    <string name="msg__min_pin_length">PIN phải có ít nhất 6 chữ số</string>
+    <string name="title__pins_dont_match">Mã PIN không khớp</string>
+    <string name="title__re_enter_your_pattern">Nhập lại mẫu của bạn</string>
+    <string name="msg__enter_your_pattern">Nhập mẫu BiTSy của bạn để tiếp tục</string>
+    <string name="msg__set_a_pattern">Để bảo mật, hãy đặt Mẫu</string>
+    <string name="msg__release_finger">Thả ngón tay ra khi hoàn thành</string>
+    <string name="button__clear">Thông thoáng</string>
+    <string name="button__next">Kế tiếp</string>
+    <string name="text__draw_an_unlock_pattern">Vẽ một mẫu mở khóa</string>
+    <string name="msg__draw_pattern_confirm">Vẽ lại mẫu để xác nhận</string>
+    <string name="button__confirm">Xác nhận</string>
+    <string name="msg__your_new_unlock_pattern">Mẫu mở khóa mới của bạn</string>
+    <string name="error__wront_pattern">Mẫu sai</string>
+    <string name="text__pattern_recorded">Mẫu đã ghi</string>
+    <string name="error__connect_at_least_4_dots">Kết nối ít nhất 4 điểm. Thử lại.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Quá nhiều lần thử sai. Hãy thử lại sau %1$d phút.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Quá nhiều lần thử sai. Hãy thử lại sau %1$d giây.</string>
+
+</resources>

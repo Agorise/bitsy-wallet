@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">同意する</string>
+    <string name="button__disagree">同意しない</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6桁以上のPIN</string>
+    <string name="error__pin_too_short">PINが短すぎます</string>
+    <string name="text_field__confirm_pin">PINを確認</string>
+    <string name="error__pin_mismatch">PINの不一致</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">正しいブレインキーを入力してください。12または16語が必要です。</string>
+    <string name="button__import_existing_account">既存のアカウントをインポートする</string>
+    <string name="text__or">または</string>
+    <string name="button__create_new_account">新しいアカウントを作成する</string>
+    <string name="error__invalid_brainkey">指定されたブレインキーによって制御されるアカウントが見つからない場合、入力エラーについてブレインキーを確認してください</string>
+    <string name="error__try_again">5分後にもう一度お試しください</string>
+    <string name="dialog__account_candidates_title">アカウントを選択してください</string>
+    <string name="dialog__account_candidates_content">このブレインキーから派生したキーは、複数のアカウントを制御するために使用されているようです。インポートするアカウントを選択してください</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitSharesアカウント名</string>
+    <string name="error__read_dict_file">辞書ファイルの読み取りエラー</string>
+    <string name="error__invalid_account_length">アカウント名は3〜16文字にする必要があります。</string>
+    <string name="error__invalid_account_start">アカウント名は文字で始まる必要があります。</string>
+    <string name="error__invalid_account_name">少なくとも1つのダッシュ、数字、または母音を含まない通常の名前を入力してください。</string>
+    <string name="text__verifying_account_availability">アカウントの可用性を確認しています…</string>
+    <string name="error__account_not_available">そのアカウント名はすでに使用されています。</string>
+    <string name="text__account_is_available">アカウントが利用可能です</string>
+    <string name="title_error">エラー</string>
+    <string name="error__faucet">サーバーがエラーを返しました。これは、短時間で同じIPアドレスから頻繁に送信される要求を許可しないように意図的に設定された制限が原因である可能性があります。 5分待ってからもう一度試すか、Wi-Fiから携帯電話などの別のネットワークに切り替えてください。</string>
+    <string name="error__faucet_template">蛇口からエラーが返されました。メッセージ：%1$s</string>
+    <string name="error__created_account_not_found">アプリは新しく作成されたアカウントに関する情報を取得できませんでした</string>
+    <string name="button__create">作成する</string>
+
+    <!-- Home -->
+    <string name="title_transactions">取引</string>
+    <string name="title_merchants_and_tellers">商人と窓口係</string>
+    <string name="title_receive">受け取る</string>
+    <string name="title_balances">残高</string>
+    <string name="title_send">送る</string>
+    <string name="title_net_worth">純資産</string>
+    <string name="text__coming_soon">近日公開</string>
+
+    <!-- Transactions -->
+    <string name="title_search">サーチ</string>
+    <string name="title_filter">フィルタ</string>
+    <string name="title_export">輸出する</string>
+    <string name="text__no_transactions">取引なし</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">フィルターオプション</string>
+    <string name="text__all">すべて</string>
+    <string name="text__sent">送信済み</string>
+    <string name="text__received">受け取った</string>
+    <string name="text__date_range">期間</string>
+    <string name="text__equivalent_value">等価値</string>
+    <string name="text__ignore_network_fees">ネットワーク料金を無視</string>
+    <string name="text__between">の間に</string>
+    <string name="text__and">そして</string>
+    <string name="button__filter">フィルタ</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">フィルタリングされたトランザクションをエクスポートする</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSVファイルをエクスポートするには、ストレージ許可が必要です。</string>
+    <string name="title_from">から</string>
+    <string name="title_to">に</string>
+    <string name="title_memo">メモ</string>
+    <string name="title_date">日付</string>
+    <string name="title_time">時間</string>
+    <string name="title_amount">量</string>
+    <string name="title_equivalent_value">等価値</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">電子領収書</string>
+    <string name="text__value">値</string>
+    <string name="template__memo">メモ：%1$s</string>
+    <string name="template__date">日付：%1$s</string>
+    <string name="template__tx">Tx：%1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">商人</string>
+    <string name="title_tellers">窓口係</string>
+    <string name="title_about">約</string>
+    <string name="msg__merchants_description">PalmPayの商人は、新しい暗号経済のバックボーンです。暗号通貨を受け入れる企業を探している場合は、以下の検索および地図データを使用してください。 PalmPayアンバサダーからのお知らせに応じて、ここにさらに商人が追加されます。</string>
+    <string name="msg__tellers_description">窓口係は、あなたの法定通貨を暗号通貨と交換する人、またはその逆の人です。彼らはまた、商人の法定解決を支援します。</string>
+    <string name="msg__location_permission_necessary">現在地を地図上に表示するには、場所の許可が必要です。</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">情報</string>
+    <string name="text__to">に</string>
+    <string name="text__amount">量</string>
+    <string name="text__memo">メモ</string>
+    <string name="text__scan_qr">QRをスキャン</string>
+    <string name="error__invalid_account">無効なアカウント</string>
+    <string name="error__not_enough_funds">資金不足</string>
+    <string name="msg__camera_permission_necessary">QRコードを読み取るにはカメラの許可が必要です。</string>
+    <string name="text__transaction_sent">トランザクションが送信されました！</string>
+    <string name="msg__transaction_not_sent">トランザクションを送信できません</string>
+    <string name="error__you_dont_own_asset">%1$sを所有していない</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">資金を送りたい相手のBitsharesアカウント名を入力します。 \n例：agorise-faucet</string>
+    <string name="text__asset_balance">資産残高</string>
+    <string name="msg__asset_balance_explanation">表示された残高をタップして、そのアセットをすべて送信できます。これにより、[金額]フィールドに入力されます。</string>
+    <string name="msg__memo_explanation">メモの入力は必須ではありませんが、資金を送った理由をメモしておくと、今後の参考になります。メモは、あなたとあなたが資金を送った人にのみ表示されます。</string>
+    <string name="text__network_fee">ネットワーク料金</string>
+    <string name="msg__network_fee_explanation">ネットワーク料金は、送信する金額に含まれています。たとえば、50 BTSを送信する場合、BiTSyは実際に〜50.21 BTSを送信します。この例で追加された0.21は、Bitsharesの取引手数料にBiTSy開発者チームへの0.01％を加えたものです（通常は約1セント）。</string>
+    <string name="text__qr_code">QRコード</string>
+    <string name="msg__qr_code_explanation">資金を送るために誰かのQRをスキャンする必要はありませんが、間違いを避けるのに役立ちます。アカウントから資金を送信すると、資金は永久に失われるため、[To]フィールドのアカウント名が正しいことを常に確認してください。</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">資産</string>
+    <string name="text__other">その他…</string>
+    <string name="template__please_send">送信してください：%1$s %2$s</string>
+    <string name="text__any_amount">任意の量</string>
+    <string name="template__to">宛先：%1$s</string>
+    <string name="msg__invoice_subject">%1$sからのBiTSy請求書</string>
+    <string name="title_share">シェア</string>
+    <string name="text__share_with">と共有する</string>
+    <string name="msg__storage_permission_necessary_share">画像を共有するには保存許可が必要です。</string>
+
+    <!-- Settings -->
+    <string name="title_settings">設定</string>
+    <string name="title__general">全般</string>
+    <string name="msg__close_timer">3分間何も操作しないとBiTSyを自動的に閉じます</string>
+    <string name="msg__night_mode">ナイトモード</string>
+    <string name="text__view_network_status">ネットワークステータスの表示</string>
+    <string name="title__backup">バックアップ</string>
+    <string name="msg__brainkey_description">BrainKey。キャプチャまたはコピーできるが、編集できないアカウント復旧ワード。</string>
+    <string name="msg__brainkey_info">これを書き留めてください！火災や紛失の場合に備えて、このBrainKeyの2つのコピーを2つの安全な場所に保管してください。セキュリティ第一！ BrainKeyにアクセスできる人は誰でも、アカウントの資金にアクセスできます！</string>
+    <string name="button__copied">コピー済み</string>
+    <string name="button__view_and_copy">表示とコピー</string>
+    <string name="title__accounts">アカウント</string>
+    <string name="msg__upgrade_to_ltm">LifeTime Membership（LTM）にアップグレードします。 Bitshares \ \'LTMアカウントはほぼゼロの料金を支払い、紹介の80％のキャッシュバックとボーナスを獲得します。</string>
+    <string name="button__upgrade_to_ltm">LTMへのアップグレード</string>
+    <string name="msg__account_upgrade_dialog">Life Time Membershipを使用すると、ネットワーク料金のセットを減らして取引することができます。 \n \n現在のアカウント "%1$s"から有効になります\n \nBitsharesで約100米ドルの費用がかかります。 \n \n続行してもよろしいですか？</string>
+    <string name="title__account_upgraded">アカウントがアップグレードされました</string>
+    <string name="msg__account_upgraded">おめでとうございます！これで、アカウントはLifetime Membershipにアップグレードされました。</string>
+    <string name="title__upgrade_account_error">アカウントのアップグレード中にエラーが発生しました</string>
+    <string name="msg__upgrade_account_error">アカウントに費用をまかなう十分な残高があることを確認してください。</string>
+    <string name="msg__remove_current_account">このデバイスから現在のアカウントを削除し、別のアカウントを作成またはインポートします。</string>
+    <string name="button__remove">削除する</string>
+    <string name="title__remove_account">アカウントを削除</string>
+    <string name="msg__remove_account_confirmation">このデバイスから現在のアカウントを削除してもよろしいですか？</string>
+    <string name="title__bugs_or_ideas">バグまたはアイデア？</string>
+    <string name="msg__bugs_or_ideas">電報：https://t.me/Agorise \nKeybase：https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">ブロック：%1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">セキュリティ</string>
+    <string name="text__security_lock">セキュリティロック</string>
+    <string name="title__security_dialog">セキュリティロックを選択する</string>
+    <string name="text__pin">ピン</string>
+    <string name="text__pattern">パターン</string>
+    <string name="text__none">無し</string>
+    <string name="button__choose">選ぶ</string>
+    <string name="title__re_enter_your_pin">PINを再入力してください</string>
+    <string name="msg__enter_your_pin">続行するにはBiTSy PINを入力してください</string>
+    <string name="error__wrong_pin">間違ったPIN</string>
+    <string name="title__set_bitsy_security_lock">BiTSyセキュリティを設定する</string>
+    <string name="msg__set_a_pin">セキュリティのために、PINを設定します</string>
+    <string name="msg__min_pin_length">PINは6桁以上である必要があります</string>
+    <string name="title__pins_dont_match">PINが一致しません</string>
+    <string name="title__re_enter_your_pattern">パターンを再入力してください</string>
+    <string name="msg__enter_your_pattern">BiTSyパターンを入力して続行します</string>
+    <string name="msg__set_a_pattern">セキュリティのために、パターンを設定します</string>
+    <string name="msg__release_finger">完了したら指を離します</string>
+    <string name="button__clear">クリア</string>
+    <string name="button__next">次</string>
+    <string name="text__draw_an_unlock_pattern">ロック解除パターンを描く</string>
+    <string name="msg__draw_pattern_confirm">もう一度パターンを描いて確認します</string>
+    <string name="button__confirm">確認する</string>
+    <string name="msg__your_new_unlock_pattern">新しいロック解除パターン</string>
+    <string name="error__wront_pattern">間違ったパターン</string>
+    <string name="text__pattern_recorded">記録されたパターン</string>
+    <string name="error__connect_at_least_4_dots">少なくとも4つのドットを接続します。再試行する。</string>
+    <string name="error__security_lock_too_many_attempts_minutes">誤った試行が多すぎます。 %1$d分後にもう一度お試しください。</string>
+    <string name="error__security_lock_too_many_attempts_seconds">誤った試行が多すぎます。 %1$d秒後に再試行してください。</string>
+
+</resources>

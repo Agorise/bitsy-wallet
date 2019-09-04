@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">mifanaraka</string>
+    <string name="button__disagree">tsy miombon-kevitra</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ isa PIN</string>
+    <string name="error__pin_too_short">Fohy loatra ny PIN</string>
+    <string name="text_field__confirm_pin">Hamarino ny PIN</string>
+    <string name="error__pin_mismatch">Fandrindran\'ny PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Ampidiro azafady ny brainkey marina, tokony hanana teny 12 na 16 io.</string>
+    <string name="button__import_existing_account">Ampidiro ny kaonty misy</string>
+    <string name="text__or">na</string>
+    <string name="button__create_new_account">Mamorona kaonty vaovao</string>
+    <string name="error__invalid_brainkey">Tsy misy kaonty voafehin\'ny brainkey nomena izay hita, azafady mba jereo ny brainkey anao amin\'ny fisafidianana ireo lesoka</string>
+    <string name="error__try_again">Manandrama indray azafady rehefa afaka 5 minitra</string>
+    <string name="dialog__account_candidates_title">Safidio azafady ny kaonty</string>
+    <string name="dialog__account_candidates_content">Ny fanalahidy nalaina avy amin\'ity brainkey ity dia toa nampiasaina hanaraha-maso mihoatra ny kaonty iray, azafady, fidio ny kaonty tianao hotaterina</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Anaran\'ny kaonty BitShares</string>
+    <string name="error__read_dict_file">Hadisoana famakiana rakitra rakibolana</string>
+    <string name="error__invalid_account_length">Ny anarana kaonty dia tokony ho 3 na 16 endri-tsoratra.</string>
+    <string name="error__invalid_account_start">Tokony hanomboka amin\'ny taratasy ny anaran-kaonty.</string>
+    <string name="error__invalid_account_name">Azafady azafady azafady ny anarana mahazatra misy dikanteny iray, na isa, na fady tsy misy dikany.</string>
+    <string name="text__verifying_account_availability">Manamarina ny fisian\'ny kaonty…</string>
+    <string name="error__account_not_available">Ny anaran\'ny kaonty dia efa raisina.</string>
+    <string name="text__account_is_available">Azo alaina ny kaonty</string>
+    <string name="title_error">Error</string>
+    <string name="error__faucet">Namerina ny fahadisoana ny mpizara. Izany dia mety noho ny fetra voafetra natao amin\'ny toerana natao mba tsy hanafoana ny fangatahana matetika avy amin\'ny adiresy IP iray ao anatin\'ny fotoana fohy. Miandrasa 5 minitra ary andramo indray, na mitodiha any anaty tamba-jotra hafa, ohatra avy amin\'ny wifi mankany sela.</string>
+    <string name="error__faucet_template">Niverina fahadisoana ny gropy. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Tsy afaka nahazo fampahalalana momba ny kaonty vao noforonina ny fampiharana</string>
+    <string name="button__create">mamorona</string>
+
+    <!-- Home -->
+    <string name="title_transactions">varotra</string>
+    <string name="title_merchants_and_tellers">Mpivarotra sy mpitatitra</string>
+    <string name="title_receive">Raiso</string>
+    <string name="title_balances">mizana</string>
+    <string name="title_send">Send</string>
+    <string name="title_net_worth">Net Worth</string>
+    <string name="text__coming_soon">Ho avy tsy ho ela</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Search</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Tsy misy famindrana</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Safidy sivana</string>
+    <string name="text__all">rehetra</string>
+    <string name="text__sent">Sent</string>
+    <string name="text__received">Received</string>
+    <string name="text__date_range">Andraikitra daty</string>
+    <string name="text__equivalent_value">Mitovy lanja</string>
+    <string name="text__ignore_network_fees">Aza hadino ny saram-tambajotra</string>
+    <string name="text__between">Teo anelanelan\'ny</string>
+    <string name="text__and">ary</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Ny fifanakalozana azo sivana</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Ilaina ny fahazoan-dàlana hitehirizana rakitra PDF / CSV.</string>
+    <string name="title_from">From</string>
+    <string name="title_to">To</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Date</string>
+    <string name="title_time">Time</string>
+    <string name="title_amount">vola</string>
+    <string name="title_equivalent_value">Mitovy lanja</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">sarobidy</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Daty: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">mpivarotra</string>
+    <string name="title_tellers">mpilaza ny hoavy</string>
+    <string name="title_about">About</string>
+    <string name="msg__merchants_description">Ny mpivarotra PalmPay no ivon\'ny fidiram-bolan\'ny Crypto vaovao. Raha mitady orinasa izay hanaiky ny Cryptocurrency ianao, dia ampiasao fotsiny ny angon-draharahan\'ny Fikarohana sy Sarintany eto ambany. Mpivarotra bebe kokoa no hampiana eto raha ny fanazavan\'ny ekipa PalmPay Ambassadors anay.</string>
+    <string name="msg__tellers_description">Ny mpitati-baovao dia olona mifanakalo ny volanao fiatrehana ny cryptocurrency, ary ny mifamadika amin\'izany. Manampy ireo mpivarotra fanamboarana fiatrehana koa izy ireo.</string>
+    <string name="msg__location_permission_necessary">Ilaina ny fahazoan-toerana mba hampisehoana ny toerana misy anao eo amin\'ny sarintany.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">To</string>
+    <string name="text__amount">vola</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Kaonty tsy diso</string>
+    <string name="error__not_enough_funds">Tsy ampy ny vola</string>
+    <string name="msg__camera_permission_necessary">Ny fahazoan-dàlana fakantsary dia ilaina ny mamaky ireo kaody QR.</string>
+    <string name="text__transaction_sent">Transaction sent!</string>
+    <string name="msg__transaction_not_sent">Tsy afaka nandefa fifanakalozana</string>
+    <string name="error__you_dont_own_asset">Tsy manana %1$s ianao</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Ampidiro amin\'ny anaran\'ny kaonty Bitshares olona tianao handefasana vola. \nManampy: agorise-faucet</string>
+    <string name="text__asset_balance">Balance Asset</string>
+    <string name="msg__asset_balance_explanation">Afaka manantona ny fifandanjana aseho ianao handefasana izany fananana rehetra izany. Ny fanaovana izany dia hameno ny saha Soa ho anao.</string>
+    <string name="msg__memo_explanation">Ny fampidirana memo dia tsy takiana, fa ny fandraisana an-tsoratra ny antony nandefasanao ny vola dia tsara ho an\'ny fanoratana ho avy. Ny memo dia tsy hita afa-tsy aminao sy ilay olona nandefasanao vola.</string>
+    <string name="text__network_fee">Vola amin\'ny tambajotra</string>
+    <string name="msg__network_fee_explanation">Ny saram-tambajotra dia tafiditra ao amin\'ny vola tianao halefa. Raha te handefa 50 BTS ianao, dia mandefa ~ 50.21 BTS ny BiTSy. 0.21 fanampiny ity ohatra ity dia ny vidin\'ny fifanakalozana Bitshares miampy 0,01% amin\'ny BiTSy Developer Team (mazàna ~ 1 cent).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Tsy mila manadihady ny QR ny olona handefa vola ianao, fa manampy anao hisoroka ny lesoka. Vantany vao mandefa vola ao amin\'ny kaontinao ianao dia nanjary mandrakizay, koa ataovy azo antoka fa marina ny anaran\'ilay kaonty ao amin\'ny sehatry ny "To".</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">-pananana</string>
+    <string name="text__other">Hafa…</string>
+    <string name="template__please_send">Alefaso: %1$s %2$s</string>
+    <string name="text__any_amount">Izay rehetra misy</string>
+    <string name="template__to">Ho: %1$s</string>
+    <string name="msg__invoice_subject">Invoice BiTSy amin\'ny %1$s</string>
+    <string name="title_share">Share</string>
+    <string name="text__share_with">Mizarà</string>
+    <string name="msg__storage_permission_necessary_share">Ilaina ny fahazoan-dàlana amin\'ny fizarana sary.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">Manakatona ho azy avy hatrany ny BiTSy aorian\'ny 3 minitra tsy hihetsika</string>
+    <string name="msg__night_mode">Mode mode</string>
+    <string name="text__view_network_status">Hijery ny toeran\'ny tambajotra</string>
+    <string name="title__backup">nomaniny ho solon\'izay</string>
+    <string name="msg__brainkey_description">BrainKey. Teny fanarenana ny kaonty izay azo raisina na azo adika, fa tsy ovaina.</string>
+    <string name="msg__brainkey_info">Soraty eto io! Aza adino fa manana kopia 2 amin\'ity BrainKey ity ianao amin\'ny toerana 2 azo antoka raha misy ny fahamaizana na fatiantoka. Fiarovana aloha! Izay rehetra miditra amin\'ny BrainKey dia afaka miditra ao amin\'ny kaontinao!</string>
+    <string name="button__copied">dika</string>
+    <string name="button__view_and_copy">Hijery sy handika</string>
+    <string name="title__accounts">Kaonty</string>
+    <string name="msg__upgrade_to_ltm">Fanavaozana ho an\'ny mpikambanaTime Membership (LTM). Ny kaonty Bitshares \ \'LTM dia mandoa vidin\'oliva be dia be, mahazo vola mitentina 80% sy bonus ho an\'ny répertoire.</string>
+    <string name="button__upgrade_to_ltm">Fiakarana amin\'ny LTM</string>
+    <string name="msg__account_upgrade_dialog">Ny Fandraisana anjara amin\'ny Fotoam-piainana dia mamela anao hanana varotra miaraka amin\'ny andrana fihenan\'ny saram-tambajotra. \n \nHampiasa amin\'ny kaonty ankehitriny "%1$s" \n \nNefa na izany aza dia tonga amin\'ny vidiny manodidina ny 10000 $ vidiny ao Bitshares. \n \nNanao ve ny tianao hitohy?</string>
+    <string name="title__account_upgraded">Nampitombo ny kaonty</string>
+    <string name="msg__account_upgraded">Arahabaina! Ny kaontinao izao dia nohavaozina ho amin\'ny Fiainana maharitra.</string>
+    <string name="title__upgrade_account_error">Hadisoana raha manandrana manavao ny kaonty</string>
+    <string name="msg__upgrade_account_error">Azafady azonao antoka fa manana ny fifandanjana ampy amin\'ny kaontinao ny kaontinao.</string>
+    <string name="msg__remove_current_account">Esory ny kaonty ankehitriny misy anao ary manamboatra na manafatra hafa.</string>
+    <string name="button__remove">Esory</string>
+    <string name="title__remove_account">Esory ny kaonty</string>
+    <string name="msg__remove_account_confirmation">Azo antoka ve fa te hanaisotra ny kaontinao ankehitriny amin\'ity fitaovana ity ianao?</string>
+    <string name="title__bugs_or_ideas">Baitra na hevitra?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Sakana: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Security</string>
+    <string name="text__security_lock">Fanidiana fiarovana</string>
+    <string name="title__security_dialog">Safidio ny hidin-trano fiarovana</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Pattern</string>
+    <string name="text__none">tsy misy</string>
+    <string name="button__choose">Mifidiana</string>
+    <string name="title__re_enter_your_pin">Ampidiro indray ny biraonao</string>
+    <string name="msg__enter_your_pin">Ampidiro ny BiTSy PIN hanohizanao</string>
+    <string name="error__wrong_pin">Diso PIN</string>
+    <string name="title__set_bitsy_security_lock">Ataovy antoka ny BiTSy Security</string>
+    <string name="msg__set_a_pin">Ho an\'ny fiarovana, mametraha PIN</string>
+    <string name="msg__min_pin_length">Tsy maintsy isa ny farafahakeliny 6</string>
+    <string name="title__pins_dont_match">Lalao amboara PIN</string>
+    <string name="title__re_enter_your_pattern">Ampidiro indray ny maodelinao</string>
+    <string name="msg__enter_your_pattern">Ampidiro ny laminasa BiTSy hanohizanao</string>
+    <string name="msg__set_a_pattern">Ho fiarovana, manisy modely</string>
+    <string name="msg__release_finger">Avoahy ny rantsantanana rehefa vita</string>
+    <string name="button__clear">Clear</string>
+    <string name="button__next">Manaraka</string>
+    <string name="text__draw_an_unlock_pattern">Manaova sary modely fanala</string>
+    <string name="msg__draw_pattern_confirm">Manaova modely indray hanamafisana</string>
+    <string name="button__confirm">Hamarino</string>
+    <string name="msg__your_new_unlock_pattern">Ny laminasa fanokafana vaovao nataonao</string>
+    <string name="error__wront_pattern">Làlan-diso</string>
+    <string name="text__pattern_recorded">Modely voarakitra</string>
+    <string name="error__connect_at_least_4_dots">Mifandraisa fatra 4 farafahakeliny. Andramo indray mandeha.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Fanandramana diso be loatra. Manandrama indray ao anatin\'ny %1$d minitra.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Fanandramana diso be loatra. Andramo indray amin\'ny %1$d segondra.</string>
+
+</resources>
