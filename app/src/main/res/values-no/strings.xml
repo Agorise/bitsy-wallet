@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Bli enige</string>
+    <string name="button__disagree">Være uenig</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ siffer PIN-kode</string>
+    <string name="error__pin_too_short">PIN-koden er for kort</string>
+    <string name="text_field__confirm_pin">Bekreft PIN-koden</string>
+    <string name="error__pin_mismatch">PIN-samsvar</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Angi riktig hjernetast, den skal ha 12 eller 16 ord.</string>
+    <string name="button__import_existing_account">Importer eksisterende konto</string>
+    <string name="text__or">Eller</string>
+    <string name="button__create_new_account">Opprette ny konto</string>
+    <string name="error__invalid_brainkey">Ingen kontoer som er kontrollert av den gitte hjernetasten ble funnet, vennligst sjekk hjernetasten for skrivefeil</string>
+    <string name="error__try_again">Vennligst prøv igjen etter 5 minutter</string>
+    <string name="dialog__account_candidates_title">Velg en konto</string>
+    <string name="dialog__account_candidates_content">Nøklene hentet fra denne hjernetasten ser ut til å brukes til å kontrollere mer enn en konto. Velg hvilken konto du vil importere</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares-kontonavn</string>
+    <string name="error__read_dict_file">Feil ved lesing av ordboksfil</string>
+    <string name="error__invalid_account_length">Kontonavnet skal være 3 til 16 tegn.</string>
+    <string name="error__invalid_account_start">Kontonavn skal starte med et brev.</string>
+    <string name="error__invalid_account_name">Skriv inn et vanlig navn som inneholder minst ett bindestrek, et nummer eller ingen vokaler.</string>
+    <string name="text__verifying_account_availability">Bekrefter tilgjengeligheten av kontoen…</string>
+    <string name="error__account_not_available">Det kontonavnet er allerede tatt.</string>
+    <string name="text__account_is_available">Kontoen er tilgjengelig</string>
+    <string name="title_error">Feil</string>
+    <string name="error__faucet">Serveren returnerte en feil. Dette kan skyldes en begrensning som er satt målrettet for å ikke tillate hyppige forespørsler som kommer fra samme IP-adresse i løpet av kort tid. Vent 5 minutter og prøv igjen, eller bytt til et annet nettverk, for eksempel fra wifi til celle.</string>
+    <string name="error__faucet_template">Kranen returnerte en feil. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Appen kunne ikke hente informasjon om den nyopprettede kontoen</string>
+    <string name="button__create">Skape</string>
+
+    <!-- Home -->
+    <string name="title_transactions">transaksjoner</string>
+    <string name="title_merchants_and_tellers">Kjøpmenn og tellers</string>
+    <string name="title_receive">Motta</string>
+    <string name="title_balances">balanserer</string>
+    <string name="title_send">Sende</string>
+    <string name="title_net_worth">Nettoformue</string>
+    <string name="text__coming_soon">Kommer snart</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Søke</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Eksport</string>
+    <string name="text__no_transactions">Ingen transaksjoner</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filteralternativer</string>
+    <string name="text__all">Alle</string>
+    <string name="text__sent">Sendt</string>
+    <string name="text__received">Mottatt</string>
+    <string name="text__date_range">Datointervall</string>
+    <string name="text__equivalent_value">Tilsvarende verdi</string>
+    <string name="text__ignore_network_fees">Ignorer nettverksavgifter</string>
+    <string name="text__between">Mellom</string>
+    <string name="text__and">og</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Eksporter filtrerte transaksjoner</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Lagringstillatelse er nødvendig for å eksportere PDF / CSV-filer.</string>
+    <string name="title_from">Fra</string>
+    <string name="title_to">Til</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Dato</string>
+    <string name="title_time">Tid</string>
+    <string name="title_amount">Beløp</string>
+    <string name="title_equivalent_value">Tilsvarende verdi</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Verdi</string>
+    <string name="template__memo">Notat: %1$s</string>
+    <string name="template__date">Dato: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Merchants</string>
+    <string name="title_tellers">tellers</string>
+    <string name="title_about">Handle om</string>
+    <string name="msg__merchants_description">PalmPay-selgere er ryggraden i den nye Crypto Economy. Hvis du er ute etter virksomheter som vil godta Cryptocurrency, er det bare å bruke søke- og kartdataene nedenfor. Flere selgere vil bli lagt til her når PalmPay-ambassadørene informerer oss.</string>
+    <string name="msg__tellers_description">Tellers er mennesker som vil bytte fiat-valutaene dine med cryptocurrencies, og omvendt. De hjelper også selgere med fiatoppgjør.</string>
+    <string name="msg__location_permission_necessary">Posisjonstillatelse er nødvendig for å vise din nåværende plassering på kartet.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">info</string>
+    <string name="text__to">Til</string>
+    <string name="text__amount">Beløp</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Skann QR</string>
+    <string name="error__invalid_account">Ugyldig konto</string>
+    <string name="error__not_enough_funds">Ikke nok midler</string>
+    <string name="msg__camera_permission_necessary">Kameratillatelse er nødvendig for å lese QR-koder.</string>
+    <string name="text__transaction_sent">Transaksjonen er sendt!</string>
+    <string name="msg__transaction_not_sent">Kan ikke sende transaksjonen</string>
+    <string name="error__you_dont_own_asset">Du eier ikke noen %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Skriv inn Bitshares-kontonavnet til personen du vil sende midler til. \nFor eksempel: armaturkran</string>
+    <string name="text__asset_balance">Eiendomsbalanse</string>
+    <string name="msg__asset_balance_explanation">Du kan trykke på saldoen som vises for å sende alle eiendelene. Hvis du gjør det, fyller du beløpet-feltet for deg.</string>
+    <string name="msg__memo_explanation">Det er ikke nødvendig å legge inn et notat, men det er fint å ta notater om hvorfor du sendte midlene. Notater er bare synlige for deg og personen du sendte midler til.</string>
+    <string name="text__network_fee">Nettverksgebyr</string>
+    <string name="msg__network_fee_explanation">Nettverksgebyret er inkludert i beløpet du vil sende. Hvis du for eksempel vil sende 50 BTS, vil BiTSy faktisk sende ~ 50,21 BTS. Den tilførte 0,21 i dette eksemplet er Bitshares transaksjonsgebyr pluss 0,01% til BiTSy Developer Team (vanligvis ~ 1 cent).</string>
+    <string name="text__qr_code">QR kode</string>
+    <string name="msg__qr_code_explanation">Du trenger ikke skanne noens QR for å sende midler, men det hjelper deg å unngå feil. Når du har sendt midler fra kontoen din, er de borte for alltid, så sørg alltid for at kontonavnet i "Til" -feltet er riktig.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">ressurs</string>
+    <string name="text__other">Annen…</string>
+    <string name="template__please_send">Send: %1$s %2$s</string>
+    <string name="text__any_amount">Hvilken som helst mengde</string>
+    <string name="template__to">Til: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy-faktura fra %1$s</string>
+    <string name="title_share">Dele</string>
+    <string name="text__share_with">Del med</string>
+    <string name="msg__storage_permission_necessary_share">Lagringstillatelse er nødvendig for å dele bilder.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">innstillinger</string>
+    <string name="title__general">Generell</string>
+    <string name="msg__close_timer">Lukk BiTSy automatisk etter 3 minutters inaktivitet</string>
+    <string name="msg__night_mode">Nattmodus</string>
+    <string name="text__view_network_status">Vis nettverksstatus</string>
+    <string name="title__backup">backup</string>
+    <string name="msg__brainkey_description">BrainKey. Kontogjenopprettingsord som kan fanges eller kopieres, men ikke redigeres.</string>
+    <string name="msg__brainkey_info">Skriv dette ned! Sørg for at du har to eksemplarer av denne BrainKey på 2 sikre steder i tilfelle brann eller tap. Sikkerhet først! Alle som har tilgang til din BrainKey, kan få tilgang til midlene på kontoen din!</string>
+    <string name="button__copied">kopiert</string>
+    <string name="button__view_and_copy">Vis &amp; kopier</string>
+    <string name="title__accounts">kontoer</string>
+    <string name="msg__upgrade_to_ltm">Oppgrader til LifeTime-medlemskap (LTM). Bitshares LTM-kontoer betaler nesten null gebyrer, får 80% cashback og bonuser for henvisninger.</string>
+    <string name="button__upgrade_to_ltm">Oppgrader til LTM</string>
+    <string name="msg__account_upgrade_dialog">Med Life Time-medlemskap kan du handle med et redusert sett med nettverksavgifter. \n \nDet vil tre i kraft til nåværende konto "%1$s" \n \nDet kommer imidlertid med en kostnad på rundt 100 dollar betalt i Bitshares. \n \nEr du sikker på at du vil fortsette?</string>
+    <string name="title__account_upgraded">Konto oppgradert</string>
+    <string name="msg__account_upgraded">Gratulerer! Kontoen din er nå oppgradert til Lifetime-medlemskap.</string>
+    <string name="title__upgrade_account_error">Feil under forsøk på å oppgradere kontoen</string>
+    <string name="msg__upgrade_account_error">Forsikre deg om at kontoen din har tilstrekkelig saldo til å dekke kostnadene.</string>
+    <string name="msg__remove_current_account">Fjern den gjeldende kontoen fra denne enheten, og opprett eller importer en annen.</string>
+    <string name="button__remove">Fjerne</string>
+    <string name="title__remove_account">Fjern konto</string>
+    <string name="msg__remove_account_confirmation">Er du sikker på at du vil fjerne gjeldende konto fra denne enheten?</string>
+    <string name="title__bugs_or_ideas">Bugs eller ideer?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokk: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sikkerhet</string>
+    <string name="text__security_lock">Sikkerhetslås</string>
+    <string name="title__security_dialog">Velg en sikkerhetslås</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Mønster</string>
+    <string name="text__none">Ingen</string>
+    <string name="button__choose">Velge</string>
+    <string name="title__re_enter_your_pin">Skriv inn PIN-koden din på nytt</string>
+    <string name="msg__enter_your_pin">Skriv inn BiTSy-PIN-koden din for å fortsette</string>
+    <string name="error__wrong_pin">Feil PIN-kode</string>
+    <string name="title__set_bitsy_security_lock">Still BiTSy Security</string>
+    <string name="msg__set_a_pin">Angi en PIN-kode for sikkerhet</string>
+    <string name="msg__min_pin_length">PIN-koden må være minst 6 sifre</string>
+    <string name="title__pins_dont_match">PIN-koder stemmer ikke overens</string>
+    <string name="title__re_enter_your_pattern">Legg inn mønsteret ditt på nytt</string>
+    <string name="msg__enter_your_pattern">Skriv inn BiTSy-mønsteret ditt for å fortsette</string>
+    <string name="msg__set_a_pattern">Angi et mønster for sikkerhet</string>
+    <string name="msg__release_finger">Slipp fingeren når du er ferdig</string>
+    <string name="button__clear">Klar</string>
+    <string name="button__next">neste</string>
+    <string name="text__draw_an_unlock_pattern">Tegn et opplåsningsmønster</string>
+    <string name="msg__draw_pattern_confirm">Tegn mønster igjen for å bekrefte</string>
+    <string name="button__confirm">Bekrefte</string>
+    <string name="msg__your_new_unlock_pattern">Det nye opplåsingsmønsteret ditt</string>
+    <string name="error__wront_pattern">Feil mønster</string>
+    <string name="text__pattern_recorded">Opptegnet mønster</string>
+    <string name="error__connect_at_least_4_dots">Koble til minst 4 prikker. Prøv igjen.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">For mange uriktige forsøk. Prøv igjen om %1$d minutter.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">For mange uriktige forsøk. Prøv igjen om %1$d sekunder.</string>
+
+</resources>

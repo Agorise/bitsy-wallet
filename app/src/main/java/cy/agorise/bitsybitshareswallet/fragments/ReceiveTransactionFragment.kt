@@ -1,10 +1,7 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
-import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
@@ -17,11 +14,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.crashlytics.android.Crashlytics
 import com.google.common.primitives.UnsignedLong
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.EncodeHintType
-import com.google.zxing.MultiFormatWriter
-import com.google.zxing.WriterException
-import com.google.zxing.common.BitMatrix
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.AssetsAdapter
@@ -29,8 +21,7 @@ import cy.agorise.bitsybitshareswallet.adapters.AutoSuggestAssetAdapter
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.utils.toast
-import cy.agorise.bitsybitshareswallet.viewmodels.AssetViewModel
-import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
+import cy.agorise.bitsybitshareswallet.viewmodels.ReceiveTransactionViewModel
 import cy.agorise.graphenej.*
 import cy.agorise.graphenej.api.ConnectionStatusUpdate
 import cy.agorise.graphenej.api.calls.ListAssets
@@ -44,6 +35,7 @@ import java.text.DecimalFormatSymbols
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
+import kotlin.math.min
 
 class ReceiveTransactionFragment : ConnectedFragment() {
 
@@ -59,8 +51,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         private const val OTHER_ASSET = "other_asset"
     }
 
-    private lateinit var mUserAccountViewModel: UserAccountViewModel
-    private lateinit var mAssetViewModel: AssetViewModel
+    private lateinit var mViewModel: ReceiveTransactionViewModel
 
     /** Current user account */
     private var mUserAccount: UserAccount? = null
@@ -109,24 +100,28 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
-        // Configure UserAccountViewModel to show the current account
-        mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
+        // Configure ViewModel
+        mViewModel = ViewModelProviders.of(this).get(ReceiveTransactionViewModel::class.java)
 
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "")
 
-        mUserAccountViewModel.getUserAccount(userId!!).observe(this,
+        mViewModel.getUserAccount(userId!!).observe(this,
             Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>{ user ->
                 mUserAccount = UserAccount(user.id, user.name)
         })
 
-        // Configure Assets spinner to show Assets already saved into the db
-        mAssetViewModel = ViewModelProviders.of(this).get(AssetViewModel::class.java)
-
-        mAssetViewModel.getAllNonZero().observe(this,
+        mViewModel.getAllNonZero().observe(this,
             Observer<List<cy.agorise.bitsybitshareswallet.database.entities.Asset>> { assets ->
                 mAssets.clear()
                 mAssets.addAll(assets)
+
+                // Add BTS to always show a QR
+                if (mAssets.isEmpty())
+                    mAssets.add(cy.agorise.bitsybitshareswallet.database.entities.Asset(
+                        "1.3.0", "BTS", 5, "", "")
+                    )
+
                 mAssets.sortWith(
                     Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
                 )
@@ -147,6 +142,10 @@ class ReceiveTransactionFragment : ConnectedFragment() {
                         break
                     }
                 }
+        })
+
+        mViewModel.qrCodeBitmap.observe(this, Observer { bitmap ->
+            ivQR.setImageBitmap(bitmap)
         })
 
         spAsset.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -256,7 +255,6 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         }
     }
 
-    // TODO use coroutines to move this process to a background thread
     private fun updateQR() {
         if (mAsset == null) {
             ivQR.setImageDrawable(null)
@@ -281,61 +279,11 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             asset.symbol.replaceFirst("bit", ""), items, "", "")
         Log.d(TAG, "invoice: " + invoice.toJsonString())
         try {
-            val bitmap = encodeAsBitmap(Invoice.toQrCode(invoice), "#139657") // PalmPay green
-            ivQR.setImageBitmap(bitmap)
+            mViewModel.updateInvoice(invoice, min(ivQR.width, ivQR.height))
             updateAmountAddressUI(amount, asset.symbol, asset.precision, mUserAccount!!.name)
-        } catch (e: WriterException) {
-            Log.e(TAG, "WriterException. Msg: " + e.message)
-            Crashlytics.logException(e)
         } catch (e: NullPointerException) {
             Log.e(TAG, "NullPointerException. Msg: " + e.message)
             Crashlytics.logException(e)
-        }
-    }
-
-    /**
-     * Encodes the provided data as a QR-code. Used to provide payment requests.
-     * @param data: Data containing payment request data as the recipient's address and the requested amount.
-     * @param color: The color used for the QR-code
-     * @return Bitmap with the QR-code encoded data
-     * @throws WriterException if QR Code cannot be generated
-     */
-    @Throws(WriterException::class)
-    internal fun encodeAsBitmap(data: String, color: String): Bitmap? {
-        val result: BitMatrix
-
-        // Get measured width and height of the ImageView where the QR code will be placed and make sure
-        // the final QR code has a squared shape
-        val w = Math.min(ivQR.width, ivQR.height)
-        val h = w
-
-        try {
-            val hints = HashMap<EncodeHintType, Any>()
-            hints[EncodeHintType.MARGIN] = 0
-            result = MultiFormatWriter().encode(
-                data,
-                BarcodeFormat.QR_CODE, w, h, hints
-            )
-        } catch (iae: IllegalArgumentException) {
-            // Unsupported format
-            return null
-        }
-
-        val pixels = IntArray(w * h)
-        for (y in 0 until h) {
-            val offset = y * w
-            for (x in 0 until w) {
-                pixels[offset + x] = if (result.get(x, y)) Color.parseColor(color) else Color.WHITE
-            }
-        }
-
-        return try {
-            val bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
-            bitmap.setPixels(pixels, 0, w, 0, 0, w, h)
-            bitmap
-        } catch (e: IllegalArgumentException) {
-            Crashlytics.logException(e)
-            null
         }
     }
 
@@ -374,7 +322,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
     }
 
     private fun verifyStoragePermission() {
-        if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (ContextCompat.checkSelfPermission(activity!!, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED) {
             // Permission is not already granted
             requestPermissions(arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),

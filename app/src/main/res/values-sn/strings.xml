@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Bvumirana</string>
+    <string name="button__disagree">Kubvumirana</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ digit PIN</string>
+    <string name="error__pin_too_short">Pini ipfupi zvikuru</string>
+    <string name="text_field__confirm_pin">Simbisa Pini</string>
+    <string name="error__pin_mismatch">Pini mismatch</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Ndokumbira utore sahihi brainkey, inofanira kunge iine gumi nemaviri kana 16 mazwi.</string>
+    <string name="button__import_existing_account">Ngenisa iripo account</string>
+    <string name="text__or">Kana</string>
+    <string name="button__create_new_account">Gadzira account nyowani</string>
+    <string name="error__invalid_brainkey">Hapana maakaunti anodzorwa neiyo yakapihwa brainkey kuti yakawanikwa kupi, ndapota tarisa brainkey yako yekukanganisa zvikanganiso</string>
+    <string name="error__try_again">Ndokumbirawo kuti muedze zvakare mushure memaminitsi mashanu</string>
+    <string name="dialog__account_candidates_title">Ndokumbira usarudze account</string>
+    <string name="dialog__account_candidates_content">Makiyi anobva pane ino brainkey anoita seanoshandiswa kudzora anopfuura account imwe, ndapota sarudza iyo account yaunoda kuendesa</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares zita reakaundi</string>
+    <string name="error__read_dict_file">Kusaverenga kuverenga duramazwi</string>
+    <string name="error__invalid_account_length">Zita reaccount rinofanira kuve matatu kusvika gumi nematanhatu.</string>
+    <string name="error__invalid_account_start">Zita reaccount rinofanira kutanga nebhii.</string>
+    <string name="error__invalid_account_name">Ndokumbira utore zita rinowanzove neinenge kamwe dash, nhamba, kana pasina mavhawero.</string>
+    <string name="text__verifying_account_availability">Kuratidza kuwanikwa kweakaunti…</string>
+    <string name="error__account_not_available">Iro zita reaccount rakatotorwa.</string>
+    <string name="text__account_is_available">Akaunti inowanikwa</string>
+    <string name="title_error">Kukanganisa</string>
+    <string name="error__faucet">Seva yakadzosa chikanganiso. Izvi zvinogona kunge zvichikonzerwa neganhuriro yakarongedzwa munzvimbo yekusabvumidza zvikumbiro zvinowanzoitika zvinobva kune imwecheteyo IP kero munguva pfupi yapfupika. Ndokumbira umirire maminetsi mashanu uye edza zvakare, kana kushandura kune imwe network, semuenzaniso kubva kune wifi kuenda kuchitokisi.</string>
+    <string name="error__faucet_template">Faucet yakadzosa kukanganisa. Msg: %1$s</string>
+    <string name="error__created_account_not_found">App haina kukwanisa kutora ruzivo nezve account ichangogadzirwa</string>
+    <string name="button__create">Gadzira</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Shanduko</string>
+    <string name="title_merchants_and_tellers">Vatengesi &amp; Vatengesi</string>
+    <string name="title_receive">Gamuchirwa</string>
+    <string name="title_balances">Zviyero</string>
+    <string name="title_send">Tumira</string>
+    <string name="title_net_worth">Kukosha Kwe Net</string>
+    <string name="text__coming_soon">Kuuya manje</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Tsvaga</string>
+    <string name="title_filter">Sefa</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Hapana Maturakiti</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Sarudza tsvina</string>
+    <string name="text__all">Zvese</string>
+    <string name="text__sent">Kutumwa</string>
+    <string name="text__received">Takatambirwa</string>
+    <string name="text__date_range">Zuva Range</string>
+    <string name="text__equivalent_value">Kukosha Kwakaenzana</string>
+    <string name="text__ignore_network_fees">Regedza Network muripo</string>
+    <string name="text__between">Pakati</string>
+    <string name="text__and">uye</string>
+    <string name="button__filter">Sefa</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Kunze kwakasvibiswa kutenderera</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Mvumo yekuchengetedza ino fanirwa kuendesa mafaera ePDP / CSV.</string>
+    <string name="title_from">Kubva</string>
+    <string name="title_to">To</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Zuva</string>
+    <string name="title_time">Nguva</string>
+    <string name="title_amount">Mari</string>
+    <string name="title_equivalent_value">Kukosha Kwakaenzana</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Kukosha</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Zuva: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Vatengesi</string>
+    <string name="title_tellers">Vatengesi</string>
+    <string name="title_about">Nezve</string>
+    <string name="msg__merchants_description">PalmPay vatengesi ndiyo musana weiyo itsva Crypto Economy. Kana iwe uri kutsvaga mabhizinesi anozobvuma yako Cryptocurrency, saka ingoshandisa iyo yekutsvaga uye Mepu data pazasi. Vazhinji vatengesi vanozowedzerwa pano sePalmPay Ambassadors inotizivisa isu.</string>
+    <string name="msg__tellers_description">Vatengesi vanhu vanozochinjanisa mari yako yehupfumi ne cryptocurrencies, uye zvinopesana. Ivo zvakare vanobatsira Vatengesi nezve fiat inogadzirisa.</string>
+    <string name="msg__location_permission_necessary">Mvumo yenzvimbo inofanirwa kuratidza nzvimbo yako yazvino pamepu.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">To</string>
+    <string name="text__amount">Mari</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Akaundi isiriyo</string>
+    <string name="error__not_enough_funds">Hapana mari yakakwana</string>
+    <string name="msg__camera_permission_necessary">Mvumo yekamera inofanirwa kuverenga QR macode.</string>
+    <string name="text__transaction_sent">Shanduko yakatumirwa!</string>
+    <string name="msg__transaction_not_sent">Kutadza kutumira chinjana</string>
+    <string name="error__you_dont_own_asset">Haufanani kuva neyako %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Nyora muBitshares account zita remunhu wauri kutumira mari kwaari. \nMuenzaniso: agorise-faucet</string>
+    <string name="text__asset_balance">Asset Balance</string>
+    <string name="msg__asset_balance_explanation">Iwe unogona kupeta pane chiyero chakaratidzwa kutumira zvese zveasset izvozvo. Kuita izvi kunozadza iyo Amount shamba kwauri.</string>
+    <string name="msg__memo_explanation">Kupinda Memo hakudiwi, asi kutora zvinyorwa kuti nei watumira mari yacho kwakanakira ramangwana. Memos anongoonekwa chete newe nemunhu wawakatumira mari kwaari.</string>
+    <string name="text__network_fee">Mari yeNetwork</string>
+    <string name="msg__network_fee_explanation">Mari yeNetwork inosanganisirwa muhuwandu hwaunoda kutumira. Semuenzaniso, kana iwe uchida kutumira makumi mashanu BTS, BiTSy ichave inotumira ~ 50.21 BTS. Iyo yakawedzerwa 0.21 mumuenzaniso uyu ndeye Bitshares transaction ada pamwe ne 0.01% kune BiTSy Dhivha Yakasimukira Team (kazhinji ~ 1 cent).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Haufanire kuongorora scan yemumwe munhu QR kuti utumire mari, asi zvinokubatsira iwe kudzivirira kukanganisa. Ukangotumira mari kubva kuaccount yako, yaenda zvachose, saka gara uine chokwadi chekuti zita re account mu "To" munda rakarurama.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Zvimwe…</string>
+    <string name="template__please_send">Ndokumbira Tumira: %1$s %2$s</string>
+    <string name="text__any_amount">Chero Mari</string>
+    <string name="template__to">Ku: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy invoice kubva %1$s</string>
+    <string name="title_share">Govera</string>
+    <string name="text__share_with">Goverana na</string>
+    <string name="msg__storage_permission_necessary_share">Mvumo yekuchengetedza inofanirwa kugovana mifananidzo.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Zvirongwa</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">Izvivharire otomatiki BiTSy mushure memaminitsi matatu yekusaita basa</string>
+    <string name="msg__night_mode">Husiku maitiro</string>
+    <string name="text__view_network_status">Wona Network Status</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Akaunti mazwi ekudzoreredza anogona kubatwa kana kutevedzwa, asi asina kurongeka.</string>
+    <string name="msg__brainkey_info">Nyora izvi pasi! Ive neshuwa iwe uine maviri kopi eBrainKey munzvimbo mbiri dzakachengetedzeka kana moto kana kurasikirwa. Chengetedza Kutanga! Chero ani anokwanisa kuwana BrainKey yako anokwanisa kuwana iyo mari muaccount yako!</string>
+    <string name="button__copied">Takopihwa</string>
+    <string name="button__view_and_copy">Tarisa &amp; Copy</string>
+    <string name="title__accounts">Maakaunti</string>
+    <string name="msg__upgrade_to_ltm">Simudzira kune LifeTime Nhengo (LTM). MaBitshares \ \'LTM account anobhadhara pedyo-zero zero, tora 80% kudzoserwa mari uye mabhonasi ekutumira.</string>
+    <string name="button__upgrade_to_ltm">Simudzira kuLMA</string>
+    <string name="msg__account_upgrade_dialog">Hupenyu Nguva yeVenhengo inokubvumidza kuti utengese nehure rakaderedzwa remadhipatimendi etiweki. %1$s\n \nKuna chokwadi kuti unoda kuenda?</string>
+    <string name="title__account_upgraded">Akaunti Yakakwira</string>
+    <string name="msg__account_upgraded">Makorokoto! Akaunti yako zvino yasimudzirwa kune Hupenyu hweHupenyu Hwese.</string>
+    <string name="title__upgrade_account_error">Kukanganisa paunenge uchiedza kusimudzira account</string>
+    <string name="msg__upgrade_account_error">Ndapota ita shuwa kuti account yako ine bhaaa yakakwana kubhadhara mutengo.</string>
+    <string name="msg__remove_current_account">Bvisa iyozvino Akaunti kubva pane iyi kifaa uye gadzira kana kuunza imwe yakasarudzika.</string>
+    <string name="button__remove">Bvisa</string>
+    <string name="title__remove_account">Bvisa Akaunti</string>
+    <string name="msg__remove_account_confirmation">Une chokwadi here kuti iwe unoda kubvisa yazvino account kubva pane ino kifaa?</string>
+    <string name="title__bugs_or_ideas">Madhigi kana mazano?</string>
+    <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Vharira: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Chengetedzo</string>
+    <string name="text__security_lock">Chengetedzo Kiya</string>
+    <string name="title__security_dialog">Sarudza Kuchengeteka Kiya</string>
+    <string name="text__pin">Pini</string>
+    <string name="text__pattern">Sekai</string>
+    <string name="text__none">Hapana</string>
+    <string name="button__choose">Sarudza</string>
+    <string name="title__re_enter_your_pin">Nyora zvakare Chipinha chako</string>
+    <string name="msg__enter_your_pin">Pinda yako BiTSy PIN kuti uenderere mberi</string>
+    <string name="error__wrong_pin">Chikamu chisina kunaka</string>
+    <string name="title__set_bitsy_security_lock">Gadza BiTSy Chengetedza</string>
+    <string name="msg__set_a_pin">Nekuchengetedza, isa PIN</string>
+    <string name="msg__min_pin_length">Pini inofanirwa kuve inosvika matanhatu manhamba</string>
+    <string name="title__pins_dont_match">MaPini haaite \'match</string>
+    <string name="title__re_enter_your_pattern">Nyorazve yako pateni</string>
+    <string name="msg__enter_your_pattern">Isa yako BiTSy pateni kuti uenderere mberi</string>
+    <string name="msg__set_a_pattern">Nekuchengetedzeka, isa muenzaniso</string>
+    <string name="msg__release_finger">Sunungura chigunwe kana waita</string>
+    <string name="button__clear">Kujeka</string>
+    <string name="button__next">Tevere</string>
+    <string name="text__draw_an_unlock_pattern">Dhirowa fomu yekuvhura</string>
+    <string name="msg__draw_pattern_confirm">Dhirowa pepa zvakare kuratidza</string>
+    <string name="button__confirm">Simbisa</string>
+    <string name="msg__your_new_unlock_pattern">Yako itsva yekuvula nzira</string>
+    <string name="error__wront_pattern">Wakaipa maitiro</string>
+    <string name="text__pattern_recorded">Muenzaniso wakanyorwa</string>
+    <string name="error__connect_at_least_4_dots">Batanidza kanenge 4 madhesi. Edza zvakare.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Kuedzwa kwakawanda kwakawanda. Edza zvakare mu %1$d maminitsi.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Kuedzwa kwakawanda kwakawanda. Edza zvakare mumasekondi %1$d.</string>
+
+</resources>

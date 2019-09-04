@@ -153,6 +153,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                         wifKey = CryptoUtils.decrypt(it, encryptedWIF)
                     } catch (e: AEADBadTagException) {
                         Log.e(TAG, "AEADBadTagException. Class: " + e.javaClass + ", Msg: " + e.message)
+                    } catch (e: IllegalStateException) {
+                        Crashlytics.logException(e)
                     }
                 }
             })

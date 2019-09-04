@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">súhlasiť</string>
+    <string name="button__disagree">nesúhlasiť</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ číselný kód PIN</string>
+    <string name="error__pin_too_short">PIN je príliš krátky</string>
+    <string name="text_field__confirm_pin">Potvrďte PIN</string>
+    <string name="error__pin_mismatch">Nesúlad kódu PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Zadajte správny znak Brainkey, mal by mať 12 alebo 16 slov.</string>
+    <string name="button__import_existing_account">Importovať existujúci účet</string>
+    <string name="text__or">alebo</string>
+    <string name="button__create_new_account">Vytvoriť nový účet</string>
+    <string name="error__invalid_brainkey">Ak ste nenašli žiadne účty kontrolované daným brainkeyom, skontrolujte, či sa v brainkey nenachádzajú chyby pri písaní</string>
+    <string name="error__try_again">Skúste to znova po 5 minútach</string>
+    <string name="dialog__account_candidates_title">Vyberte účet</string>
+    <string name="dialog__account_candidates_content">Zdá sa, že kľúče odvodené z tohto brainkey sa používajú na ovládanie viac ako jedného účtu. Vyberte účet, ktorý chcete importovať</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Názov účtu BitShares</string>
+    <string name="error__read_dict_file">Chyba pri čítaní súboru slovníka</string>
+    <string name="error__invalid_account_length">Názov účtu by mal mať 3 až 16 znakov.</string>
+    <string name="error__invalid_account_start">Názov účtu by mal začínať písmenom.</string>
+    <string name="error__invalid_account_name">Zadajte regulárny názov obsahujúci aspoň jednu pomlčku, číslo alebo samohlásky.</string>
+    <string name="text__verifying_account_availability">Overuje sa dostupnosť účtu…</string>
+    <string name="error__account_not_available">Tento názov účtu je už zadaný.</string>
+    <string name="text__account_is_available">Účet je k dispozícii</string>
+    <string name="title_error">Chyba</string>
+    <string name="error__faucet">Server vrátil chybu. Dôvodom môže byť zámerne stanovené obmedzenie na zamietnutie častých požiadaviek prichádzajúcich z tej istej adresy IP v krátkom časovom odstupe. Počkajte 5 minút a skúste to znova alebo prepnite na inú sieť, napríklad z wifi na bunku.</string>
+    <string name="error__faucet_template">Faucet vrátil chybu. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Aplikácia nemohla načítať informácie o novo vytvorenom účte</string>
+    <string name="button__create">vytvoriť</string>
+
+    <!-- Home -->
+    <string name="title_transactions">transakcie</string>
+    <string name="title_merchants_and_tellers">Obchodníci a pokladníčky</string>
+    <string name="title_receive">obdržať</string>
+    <string name="title_balances">zostatky</string>
+    <string name="title_send">odoslať</string>
+    <string name="title_net_worth">Čistá hodnota</string>
+    <string name="text__coming_soon">Už čoskoro</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Vyhľadávanie</string>
+    <string name="title_filter">filter</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Žiadne transakcie</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Možnosti filtra</string>
+    <string name="text__all">všetko</string>
+    <string name="text__sent">odoslané</string>
+    <string name="text__received">obdržané</string>
+    <string name="text__date_range">Rozsah dátumov</string>
+    <string name="text__equivalent_value">Ekvivalentná hodnota</string>
+    <string name="text__ignore_network_fees">Ignorovať poplatky za sieť</string>
+    <string name="text__between">medzi</string>
+    <string name="text__and">a</string>
+    <string name="button__filter">filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Exportujte filtrované transakcie</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Na export súborov PDF / CSV je potrebné povolenie na ukladanie.</string>
+    <string name="title_from">z</string>
+    <string name="title_to">na</string>
+    <string name="title_memo">memorandum</string>
+    <string name="title_date">dátum</string>
+    <string name="title_time">čas</string>
+    <string name="title_amount">čiastka</string>
+    <string name="title_equivalent_value">Ekvivalentná hodnota</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">hodnota</string>
+    <string name="template__memo">Poznámka: %1$s</string>
+    <string name="template__date">Dátum: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">obchodníci</string>
+    <string name="title_tellers">overovateľmi</string>
+    <string name="title_about">o</string>
+    <string name="msg__merchants_description">Obchodníci spoločnosti PalmPay sú chrbtovou kosťou novej ekonomiky Crypto Economy. Ak hľadáte firmy, ktoré budú akceptovať vašu kryptomenu, použite nižšie uvedené údaje Vyhľadávanie a Mapy. Keď nás veľvyslanci PalmPay informujú, pribudnú tu ďalší obchodníci.</string>
+    <string name="msg__tellers_description">Tellers sú ľudia, ktorí si budú vymieňať svoje fiatové meny s kryptomenami a naopak. Pomáhajú tiež obchodníkom s vyrovnaním fiat.</string>
+    <string name="msg__location_permission_necessary">Na zobrazenie vašej aktuálnej polohy na mape je potrebné povolenie polohy.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">na</string>
+    <string name="text__amount">čiastka</string>
+    <string name="text__memo">memorandum</string>
+    <string name="text__scan_qr">Naskenujte QR</string>
+    <string name="error__invalid_account">Nesprávny účet</string>
+    <string name="error__not_enough_funds">Nedostatok finančných prostriedkov</string>
+    <string name="msg__camera_permission_necessary">Na čítanie QR kódov je potrebné povolenie kamery.</string>
+    <string name="text__transaction_sent">Transakcia bola odoslaná!</string>
+    <string name="msg__transaction_not_sent">Transakciu nie je možné odoslať</string>
+    <string name="error__you_dont_own_asset">Nevlastníte žiadne %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Zadajte meno účtu Bitshares osoby, ktorej chcete poslať prostriedky. \n Napríklad: agorise-faucet</string>
+    <string name="text__asset_balance">Zostatok aktív</string>
+    <string name="msg__asset_balance_explanation">Klepnutím na zobrazený zostatok odošlete všetku danú položku. Týmto vyplníte pole Suma.</string>
+    <string name="msg__memo_explanation">Zadanie poznámky nie je potrebné, ale zapisovanie poznámok o dôvodoch, prečo ste finančné prostriedky odoslali, je dobré pre budúce použitie. Poznámky sú viditeľné iba pre vás a pre osobu, ktorej ste poslali prostriedky.</string>
+    <string name="text__network_fee">Poplatok za sieť</string>
+    <string name="msg__network_fee_explanation">Sieťový poplatok je zahrnutý vo výške, ktorú chcete poslať. Napríklad, ak chcete poslať 50 BTS, BiTSy skutočne pošle ~ 50,21 BTS. Pridaným 0,21 v tomto príklade je transakčný poplatok za Bitshares plus 0,01% pre vývojový tím BiTSy (zvyčajne ~ 1 cent).</string>
+    <string name="text__qr_code">QR kód</string>
+    <string name="msg__qr_code_explanation">Ak chcete posielať prostriedky, nie je potrebné naskenovať QR používateľa, ale pomôže vám vyhnúť sa chybám. Keď odošlete prostriedky z účtu, sú navždy preč, takže vždy skontrolujte, či je názov účtu v poli Komu správny.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">aktívum</string>
+    <string name="text__other">Ostatné…</string>
+    <string name="template__please_send">Pošlite: %1$s %2$s</string>
+    <string name="text__any_amount">Akákoľvek suma</string>
+    <string name="template__to">Do: %1$s</string>
+    <string name="msg__invoice_subject">Faktúra BiTSy od %1$s</string>
+    <string name="title_share">zdieľam</string>
+    <string name="text__share_with">Zdieľať s</string>
+    <string name="msg__storage_permission_necessary_share">Na zdieľanie obrázkov je potrebné povolenie na ukladanie.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">nastavenie</string>
+    <string name="title__general">všeobecný</string>
+    <string name="msg__close_timer">Automaticky zatvorte BiTSy po 3 minútach nečinnosti</string>
+    <string name="msg__night_mode">Nočný mód</string>
+    <string name="text__view_network_status">Zobraziť stav siete</string>
+    <string name="title__backup">zálohovanie</string>
+    <string name="msg__brainkey_description">BrainKey. Slová na obnovenie účtu, ktoré je možné zachytiť alebo skopírovať, ale nie upravovať.</string>
+    <string name="msg__brainkey_info">Napíšte to! Uistite sa, že máte 2 kópie tohto BrainKey na 2 bezpečných miestach v prípade požiaru alebo straty. Bezpečnosť na prvom mieste! K finančným prostriedkom na vašom účte má prístup každý, kto má prístup k vášmu BrainKey!</string>
+    <string name="button__copied">skopírované</string>
+    <string name="button__view_and_copy">Zobraziť a kopírovať</string>
+    <string name="title__accounts">účty</string>
+    <string name="msg__upgrade_to_ltm">Inovácia na členstvo v LifeTime (LTM). Účty LTM Bitshares platia takmer nulové poplatky, získavajú 80% cashback a bonusy za sprostredkovanie.</string>
+    <string name="button__upgrade_to_ltm">Inovujte na LTM</string>
+    <string name="msg__account_upgrade_dialog">Životné členstvo vám umožňuje obchodovať so zníženou sadou sieťových poplatkov. \n \nNadobudne účinnosť na bežný účet „%1$s“ \n \n. Príde však s nákladmi približne 100 USD zaplatenými v Bitshares. \n \n Naozaj chcete pokračovať?</string>
+    <string name="title__account_upgraded">Účet bol aktualizovaný</string>
+    <string name="msg__account_upgraded">Blahoželáme! Váš účet bol teraz inovovaný na celoživotné členstvo.</string>
+    <string name="title__upgrade_account_error">Pri pokuse o inováciu účtu došlo k chybe</string>
+    <string name="msg__upgrade_account_error">Uistite sa, že váš účet má dostatočný zostatok na pokrytie nákladov.</string>
+    <string name="msg__remove_current_account">Z tohto zariadenia odstráňte aktuálny účet a vytvorte alebo importujte iný účet.</string>
+    <string name="button__remove">odstrániť</string>
+    <string name="title__remove_account">Odstrániť účet</string>
+    <string name="msg__remove_account_confirmation">Naozaj chcete z tohto zariadenia odstrániť aktuálny účet?</string>
+    <string name="title__bugs_or_ideas">Chyby alebo nápady?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">zabezpečenia</string>
+    <string name="text__security_lock">Bezpečnostný zámok</string>
+    <string name="title__security_dialog">Vyberte bezpečnostný zámok</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">vzor</string>
+    <string name="text__none">nikto</string>
+    <string name="button__choose">zvoliť</string>
+    <string name="title__re_enter_your_pin">Znova zadajte svoj kód PIN</string>
+    <string name="msg__enter_your_pin">Pokračujte zadaním kódu PIN BiTSy</string>
+    <string name="error__wrong_pin">Chybný kód PIN</string>
+    <string name="title__set_bitsy_security_lock">Nastavte zabezpečenie BiTSy</string>
+    <string name="msg__set_a_pin">Z bezpečnostných dôvodov nastavte kód PIN</string>
+    <string name="msg__min_pin_length">PIN musí mať najmenej 6 číslic</string>
+    <string name="title__pins_dont_match">PIN sa nezhodujú</string>
+    <string name="title__re_enter_your_pattern">Znova zadajte svoj vzor</string>
+    <string name="msg__enter_your_pattern">Pokračujte zadaním vzoru BiTSy</string>
+    <string name="msg__set_a_pattern">Z bezpečnostných dôvodov nastavte vzor</string>
+    <string name="msg__release_finger">Po dokončení uvoľnite prst</string>
+    <string name="button__clear">jasný</string>
+    <string name="button__next">Ďalšie</string>
+    <string name="text__draw_an_unlock_pattern">Nakreslite vzor odomknutia</string>
+    <string name="msg__draw_pattern_confirm">Potvrďte opätovným nakreslením vzoru</string>
+    <string name="button__confirm">potvrdiť</string>
+    <string name="msg__your_new_unlock_pattern">Váš nový vzorec odomknutia</string>
+    <string name="error__wront_pattern">Nesprávny vzor</string>
+    <string name="text__pattern_recorded">Vzor bol zaznamenaný</string>
+    <string name="error__connect_at_least_4_dots">Pripojte najmenej 4 bodky. Skúste to znova.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Príliš veľa nesprávnych pokusov. Skúste to znova o %1$d minút.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Príliš veľa nesprávnych pokusov. Skúste to znova o %1$d sekúnd.</string>
+
+</resources>

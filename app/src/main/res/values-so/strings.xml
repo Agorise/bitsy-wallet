@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Ogolow</string>
+    <string name="button__disagree">Khilaaf</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 + nambar nambar PIN</string>
+    <string name="error__pin_too_short">PIN aad u gaaban</string>
+    <string name="text_field__confirm_pin">Xaqiiji PIN</string>
+    <string name="error__pin_mismatch">Isku dheellitirka PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Fadlan gali saxanka maskaxda, waa inuu lahaadaa 12 ama 16 eray.</string>
+    <string name="button__import_existing_account">Soo gal akoonkii hore</string>
+    <string name="text__or">Ama</string>
+    <string name="button__create_new_account">Abuur koonto cusub</string>
+    <string name="error__invalid_brainkey">Ma jiraan koonto ay maamusho maskaxda yar ee la siiyay halka laga helay, fadlan ka hubi maskaxdaada wax ku qoritaanka khaladaadka</string>
+    <string name="error__try_again">Fadlan isku day mar kale 5 daqiiqo ka dib</string>
+    <string name="dialog__account_candidates_title">Fadlan xulo koonto</string>
+    <string name="dialog__account_candidates_content">Furayaasha laga soo saaray maskaxda ayaa u muuqda kuwa loo adeegsado in lagu xakameeyo in ka badan hal akoon, fadlan xulo koontada aad rabto inaad soo dejiso</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Magaca koontada BitShares</string>
+    <string name="error__read_dict_file">Cilad ayaa akhrisa faylka qaamuuska</string>
+    <string name="error__invalid_account_length">Magaca koontada waa inuu ahaadaa 3 illaa 16 xaraf.</string>
+    <string name="error__invalid_account_start">Magaca koontada waa inuu ku bilowdaa warqad.</string>
+    <string name="error__invalid_account_name">Fadlan gali magac caadi ah oo ay ku jiraan ugu yaraan hal dash, tiro, ama dhaar la\'aan.</string>
+    <string name="text__verifying_account_availability">Xaqiijinta helitaanka koontada…</string>
+    <string name="error__account_not_available">Magaca koontadaas horey ayaa loo qaatay.</string>
+    <string name="text__account_is_available">Koonto ayaa la heli karaa</string>
+    <string name="title_error">Cilad</string>
+    <string name="error__faucet">Adeegga ayaa soo celiyey cilad. Tan waxaa laga yaabaa inay sabab u tahay xaddidan si ula kac ah loo dejiyay si loogu diido codsiyada soo noqnoqda ee ka imanaya isla cinwaanka IP-ga waqti gaaban kadib. Fadlan sug 5 daqiiqo oo markale iskuday, ama u gudub shabakad kale, tusaale ahaan wifi ilaa qol.</string>
+    <string name="error__faucet_template">Qasabaddu waxay soo celisay cilad. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Barnaamijku ma uusan soo ceshan karin macluumaadka ku saabsan koontada cusub ee la abuuray</string>
+    <string name="button__create">Abuur</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Xawaaladda</string>
+    <string name="title_merchants_and_tellers">Ganacsato &amp; Dukaan iibiya</string>
+    <string name="title_receive">Hesho</string>
+    <string name="title_balances">Miisaaniyada</string>
+    <string name="title_send">Dir</string>
+    <string name="title_net_worth">Net Worth</string>
+    <string name="text__coming_soon">Soo dhowaada</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Raadin</string>
+    <string name="title_filter">Kalasooc</string>
+    <string name="title_export">Dhoofinta</string>
+    <string name="text__no_transactions">Wax Macaamil Ma Leh</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Kala xulasho miiraha</string>
+    <string name="text__all">Dhamaan</string>
+    <string name="text__sent">Diray</string>
+    <string name="text__received">Helay</string>
+    <string name="text__date_range">Taariikhda Range</string>
+    <string name="text__equivalent_value">U dhigma Qiimaha</string>
+    <string name="text__ignore_network_fees">Iska indha indhee ajuurada Shabakada</string>
+    <string name="text__between">Inta u dhaxaysa</string>
+    <string name="text__and">iyo</string>
+    <string name="button__filter">Kalasooc</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Dhoofinta lacagaha la xareeyay</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Oggolaanshaha kaydinta ayaa lama huraan u ah dhoofinta faylasha loo yaqaan \'PDF / CSV\'.</string>
+    <string name="title_from">Laga soo bilaabo</string>
+    <string name="title_to">Ku</string>
+    <string name="title_memo">Xusuus</string>
+    <string name="title_date">Taariikh</string>
+    <string name="title_time">Waqtiga</string>
+    <string name="title_amount">Tirada</string>
+    <string name="title_equivalent_value">U dhigma Qiimaha</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Qiimaha</string>
+    <string name="template__memo">Xusuus: %1$s</string>
+    <string name="template__date">Taariikh: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Ganacsato</string>
+    <string name="title_tellers">Iibiyaasha</string>
+    <string name="title_about">Ku saabsan</string>
+    <string name="msg__merchants_description">Ganacsatada PalmPay waa laf dhabarta dhaqaalaha cusub ee loo yaqaan \'Crypto Economy\'. Haddii aad raadineyso ganacsi aqbali doona Cryptocurrency-kaaga, markaa kaliya adeegso xogta Raadinta iyo Khariidada hoosta. Ganacsato badan ayaa lagu dari doonaa halkaan sida Safiirada PalmPay ay noo sheegeen.</string>
+    <string name="msg__tellers_description">Iibiyeyaashu waa dad ku beddeli doona lacagahaaga fiisooyinka cryptocurrencies, iyo dhanka kale. Waxay kaloo ka caawiyaan Ganacsato dejinta guryaha.</string>
+    <string name="msg__location_permission_necessary">Oggolaanshaha goobta ayaa muhiim ah si loo muujiyo meesha aad hadda ku taal khariidada.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Macluumaad</string>
+    <string name="text__to">Ku</string>
+    <string name="text__amount">Tirada</string>
+    <string name="text__memo">Xusuus</string>
+    <string name="text__scan_qr">Sawirka QR</string>
+    <string name="error__invalid_account">Koonto aan sax ahayn</string>
+    <string name="error__not_enough_funds">Lacag aan ku filnayn</string>
+    <string name="msg__camera_permission_necessary">Oggolaanshaha kaameeradu waa lagama maarmaan in la akhriyo lambarrada QR.</string>
+    <string name="text__transaction_sent">Macaamiladi waa la diray!</string>
+    <string name="msg__transaction_not_sent">Ma awoodin in la diro macaamil ganacsi</string>
+    <string name="error__you_dont_own_asset">Ma lihid wax %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Ku qor magaca koontada \'Bitshares\' ee qofka aad rabto inaad lacag ugu dirto. \n Tusaale ahaan: agorise-faucet</string>
+    <string name="text__asset_balance">Hadhaagga Hantida</string>
+    <string name="msg__asset_balance_explanation">Waad dhagsii kartaa isku-dheelitirka la muujiyey si aad u dirto dhammaan hantidaas. Markaad sidaa sameyso waxay kaa buuxin doontaa qeybta lacagta adiga.</string>
+    <string name="msg__memo_explanation">Gelida xusuusinta looma baahna, laakiin qorista sababta aad u soo dirtay lacagta waxay ku fiicantahay tixraaca mustaqbalka. Memos waa la arki karaa oo keliya adiga iyo qofka aad lacagta ugu dirtay.</string>
+    <string name="text__network_fee">Shabakada khidmadaha</string>
+    <string name="msg__network_fee_explanation">Khidmadda shabakadda waxaa lagu soo darayaa cadadka aad rabto inaad dirto. Tusaale ahaan, haddii aad rabto inaad dirto 50 BTS, BiTSy runti waxay diri doontaa ~ 50.21 BTS. Ku darista 0.21 ee tusaalahan ayaa ah khidmadaha macaashka ee Bitshares oo lagu daray 0.01% kooxda BiTSy Developmenter (caadiyan ~ 1 boqolkiiba).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Uma baahnid inaad iska sawirto QR qof si aad lacag ugu dirto, laakiin waxay kaa caawinaysaa inaad ka fogaato khaladaadka. Markaad lacag ka soo dirto koontadaada, weligood way sii socdaan, marka marwalba iska hubi in magaca koontada ku yaal “To” garoonka ay sax tahay.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Hanti</string>
+    <string name="text__other">Wax kale…</string>
+    <string name="template__please_send">Fadlan dir: %1$s %2$s</string>
+    <string name="text__any_amount">Lacag kasta</string>
+    <string name="template__to">Ku: %1$s</string>
+    <string name="msg__invoice_subject">Qaansheeg BiTSy ka socota%1$s</string>
+    <string name="title_share">La Wadaag</string>
+    <string name="text__share_with">La wadaag</string>
+    <string name="msg__storage_permission_necessary_share">Oggolaanshaha kaydinta ayaa muhiim ah si loo wadaago sawirrada.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Dejinta</string>
+    <string name="title__general">Guud</string>
+    <string name="msg__close_timer">Si otomaatig ah u xir BiTSy ka dib 3 daqiiqo oo dhaqdhaqaaq la\'aan ah</string>
+    <string name="msg__night_mode">Habeenki Habeenki</string>
+    <string name="text__view_network_status">Muuqaal Shabakad</string>
+    <string name="title__backup">Soo celinta</string>
+    <string name="msg__brainkey_description">BrainKey. Erayada soo-kabashada xisaabta ee la soo qaban karo ama la koobiyeyn karo, laakiin aan la sixin.</string>
+    <string name="msg__brainkey_info">Qor tan! Hubso inaad haysato 2 koobi oo ah BrainKeydan 2 meel oo aamin ah haddii ay dhacdo dab ama khasaare. Amniga marka hore! Qof kasta oo marin u heli kara BrainKey wuu heli karaa lacagta ku jirta koontadaada!</string>
+    <string name="button__copied">Nuqul</string>
+    <string name="button__view_and_copy">Muuqaal &amp; Nuqul</string>
+    <string name="title__accounts">Akoonada</string>
+    <string name="msg__upgrade_to_ltm">Kordhinta xubinnimada LifeTime (LTM). Xisaabaadka Bitshares \ \'LTM waxay bixiyaan ajuuro u dhow eber, waxay helayaan 80% lacag celinno iyo gunnooyin loogu talagalay gudbinta.</string>
+    <string name="button__upgrade_to_ltm">Kordhinta LTM</string>
+    <string name="msg__account_upgrade_dialog">Xubinnimada Noloshu waxay kuu oggolaaneysaa inaad ku ganacsato iyadoo laga dhimayo khidmooyinka shabakadda. \n \nWaxaa lagu dabaqi doonaa koontada hadda ah "%1$s" \n \nHa yeeshee si kastaba ha noqotee waxaa ku kacaya ku dhawaad 100 Doolar oo lagu bixiyay Bitshares. \n \nMiyaad hubtaa inaad rabto inaad sii waddo?</string>
+    <string name="title__account_upgraded">Koontada ayaa La Ballaariyey</string>
+    <string name="msg__account_upgraded">Hambalyo! Koontadaada hadda waa la cusboonaysiiyay xubinnimada Nolosha.</string>
+    <string name="title__upgrade_account_error">Cilad marka aad iskudayeyso inaad cusbooneysiiso koontada</string>
+    <string name="msg__upgrade_account_error">Fadlan hubso in koontadaadu leedahay isku-dheelitir ku filan oo daboolaya kharashyada.</string>
+    <string name="msg__remove_current_account">Ka saar Xisaabta hadda jirta aaladan oo samee ama soo dejiso mid kale.</string>
+    <string name="button__remove">Ka saar</string>
+    <string name="title__remove_account">Ka saar Koontada</string>
+    <string name="msg__remove_account_confirmation">Ma hubtaa inaad rabto inaad ka qaaddo xisaabta hadda jirta aaladda?</string>
+    <string name="title__bugs_or_ideas">Dhiqlaha ama fikradaha?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Hakad: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Amniga</string>
+    <string name="text__security_lock">Qufulka Amniga</string>
+    <string name="title__security_dialog">Xullo Qufulka Amniga</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Qaab</string>
+    <string name="text__none">Midkoodna</string>
+    <string name="button__choose">Xullo</string>
+    <string name="title__re_enter_your_pin">Mar labaad geli lambarkaaga PIN</string>
+    <string name="msg__enter_your_pin">Gali lambarkaaga BiTSy PIN si aad u sii wadato</string>
+    <string name="error__wrong_pin">PIN qaldama</string>
+    <string name="title__set_bitsy_security_lock">Samee BiTSy Security</string>
+    <string name="msg__set_a_pin">Amniga awgood, dhig PIN</string>
+    <string name="msg__min_pin_length">PIN waa inuu ahaadaa ugu yaraan 6 nambar</string>
+    <string name="title__pins_dont_match">PINs ma isbarbar dhigo</string>
+    <string name="title__re_enter_your_pattern">Dib-u-gali qaabkaaga</string>
+    <string name="msg__enter_your_pattern">Gali qaabkaaga BiTSy si aad usii wado</string>
+    <string name="msg__set_a_pattern">Ammaan, u dejiso Qaab</string>
+    <string name="msg__release_finger">Fasaxa sii daaya markii la dhammeeyo</string>
+    <string name="button__clear">Nadiifi</string>
+    <string name="button__next">Xiga</string>
+    <string name="text__draw_an_unlock_pattern">Sawir fur fur</string>
+    <string name="msg__draw_pattern_confirm">Sawir mar labaad si aad u xaqiijiso</string>
+    <string name="button__confirm">Xaqiiji</string>
+    <string name="msg__your_new_unlock_pattern">Qaabkaaga furitaanka cusub</string>
+    <string name="error__wront_pattern">Qaab qaldan</string>
+    <string name="text__pattern_recorded">Qaab loo duubay</string>
+    <string name="error__connect_at_least_4_dots">Ku xir ugu yaraan 4 dhibic. Mar kale isku day.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Iskudayo badan oo khaldan oo aad u badan. Isku day mar labaad %1$d daqiiqadood.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Iskudayo badan oo khaldan oo aad u badan. Isku day mar labaad %1$d sekan.</string>
+
+</resources>

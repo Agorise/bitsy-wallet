@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">එකඟ වන්න</string>
+    <string name="button__disagree">එකඟ නොවන්න</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ ඉලක්කම් PIN</string>
+    <string name="error__pin_too_short">PIN ඉතා කෙටි ය</string>
+    <string name="text_field__confirm_pin">PIN තහවුරු කරන්න</string>
+    <string name="error__pin_mismatch">PIN නොගැලපීම</string>
+    <string name="text__brain_key">මොළය</string>
+    <string name="error__enter_correct_brainkey">කරුණාකර නිවැරදි මොළයක් ඇතුළත් කරන්න, එයට වචන 12 ක් හෝ 16 ක් තිබිය යුතුය.</string>
+    <string name="button__import_existing_account">පවතින ගිණුම ආයාත කරන්න</string>
+    <string name="text__or">හෝ</string>
+    <string name="button__create_new_account">නව ගිණුමක් සාදන්න</string>
+    <string name="error__invalid_brainkey">ලබා දී ඇති මොළය පාලනය කරන ගිණුම් කිසිවක් නොමැත, කරුණාකර යතුරු ලියනය කිරීමේ දෝෂ සඳහා ඔබේ මොළය පරීක්ෂා කරන්න</string>
+    <string name="error__try_again">කරුණාකර විනාඩි 5 කට පසු නැවත උත්සාහ කරන්න</string>
+    <string name="dialog__account_candidates_title">කරුණාකර ගිණුමක් තෝරන්න</string>
+    <string name="dialog__account_candidates_content">මෙම මොළයෙන් ලබාගත් යතුරු එකකට වඩා පාලනය කිරීමට භාවිතා කරන බව පෙනේ, කරුණාකර ඔබ ආනයනය කිරීමට කැමති ගිණුම තෝරන්න</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares ගිණුමේ නම</string>
+    <string name="error__read_dict_file">ශබ්ද කෝෂ ගොනුව කියවීමේ දෝෂයකි</string>
+    <string name="error__invalid_account_length">ගිණුමේ නම අක්ෂර 3 සිට 16 දක්වා විය යුතුය.</string>
+    <string name="error__invalid_account_start">ගිණුමේ නම ලිපියකින් ආරම්භ විය යුතුය.</string>
+    <string name="error__invalid_account_name">කරුණාකර අවම වශයෙන් එක් ඉරක්, අංකයක් හෝ ස්වර නොමැති සාමාන්‍ය නමක් ඇතුළත් කරන්න.</string>
+    <string name="text__verifying_account_availability">ගිණුම් ලබා ගැනීමේ හැකියාව සත්‍යාපනය…</string>
+    <string name="error__account_not_available">එම ගිණුමේ නම දැනටමත් ගෙන ඇත.</string>
+    <string name="text__account_is_available">ගිණුම තිබේ</string>
+    <string name="title_error">දෝෂයකි</string>
+    <string name="error__faucet">සේවාදායකය දෝෂයක් ලබා දුන්නේය. කෙටි කාලීනව එකම IP ලිපිනයෙන් එන ඉල්ලීම් තහනම් කිරීම සඳහා හිතාමතාම සකසා ඇති සීමාවක් මෙයට හේතුව විය හැකිය. කරුණාකර මිනිත්තු 5 ක් බලා නැවත උත්සාහ කරන්න, නැතහොත් වෙනත් ජාලයකට මාරුවන්න, උදාහරණයක් ලෙස වයිෆයි සිට කොටුව දක්වා.</string>
+    <string name="error__faucet_template">ෆියුස් එක දෝෂයක් දුන්නා. Msg: %1$s</string>
+    <string name="error__created_account_not_found">අලුතින් සාදන ලද ගිණුම පිළිබඳ තොරතුරු ලබා ගැනීමට යෙදුමට නොහැකි විය</string>
+    <string name="button__create">සාදන්න</string>
+
+    <!-- Home -->
+    <string name="title_transactions">ගනුදෙනු</string>
+    <string name="title_merchants_and_tellers">වෙළඳුන් සහ පවසන්නන්</string>
+    <string name="title_receive">ලැබෙන්න</string>
+    <string name="title_balances">ශේෂයන්</string>
+    <string name="title_send">යවන්න</string>
+    <string name="title_net_worth">ශුද්ධ වටිනාකම</string>
+    <string name="text__coming_soon">ඉක්මණින් පැමිණෙන</string>
+
+    <!-- Transactions -->
+    <string name="title_search">සෙවීම</string>
+    <string name="title_filter">පෙරහන</string>
+    <string name="title_export">අපනයන</string>
+    <string name="text__no_transactions">ගනුදෙනු නොමැත</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">පෙරහන් විකල්ප</string>
+    <string name="text__all">සියලු</string>
+    <string name="text__sent">යවන ලදි</string>
+    <string name="text__received">ලැබුණි</string>
+    <string name="text__date_range">දිනය පරාසය</string>
+    <string name="text__equivalent_value">සමාන අගය</string>
+    <string name="text__ignore_network_fees">ජාල ගාස්තු නොසලකා හරින්න</string>
+    <string name="text__between">අතර</string>
+    <string name="text__and">සහ</string>
+    <string name="button__filter">පෙරහන</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">පෙරහන් කළ ගනුදෙනු අපනයනය කරන්න</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV ගොනු අපනයනය කිරීමට ගබඩා අවසරය අවශ්‍ය වේ.</string>
+    <string name="title_from">සිට</string>
+    <string name="title_to">වෙත</string>
+    <string name="title_memo">මේමෝ</string>
+    <string name="title_date">දිනය</string>
+    <string name="title_time">වේලාව</string>
+    <string name="title_amount">ප්රමාණය</string>
+    <string name="title_equivalent_value">සමාන අගය</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">වටිනාකම</string>
+    <string name="template__memo">මතක සටහන: %1$s</string>
+    <string name="template__date">දිනය: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">වෙළඳුන්</string>
+    <string name="title_tellers">කියන්නන්</string>
+    <string name="title_about">ගැන</string>
+    <string name="msg__merchants_description">පාම්පේ වෙළෙන්දෝ නව ක්‍රිප්ටෝ ආර්ථිකයේ කොඳු නාරටියයි. ඔබ ඔබේ Cryptocurrency පිළිගන්නා ව්‍යාපාර සොයන්නේ නම්, පහත සෙවුම් සහ සිතියම් දත්ත භාවිතා කරන්න. පාම්පේ තානාපතිවරුන් අපට දන්වන පරිදි තවත් වෙළඳුන් මෙහි එක් කරනු ඇත.</string>
+    <string name="msg__tellers_description">ටෙලර්ස් යනු ඔබේ ෆියට් මුදල් ගුප්තකේතන මුදල් සමඟ හුවමාරු කරන පුද්ගලයින් වන අතර අනෙක් අතට. ඔවුන් වෙළෙන්දන්ට ෆියට් බේරුම්කරණයට සහාය වේ.</string>
+    <string name="msg__location_permission_necessary">සිතියමේ ඔබගේ වර්තමාන ස්ථානය පෙන්වීමට ස්ථාන අවසරය අවශ්‍ය වේ.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">තොරතුරු</string>
+    <string name="text__to">වෙත</string>
+    <string name="text__amount">ප්රමාණය</string>
+    <string name="text__memo">මේමෝ</string>
+    <string name="text__scan_qr">QR පරිලෝකනය කරන්න</string>
+    <string name="error__invalid_account">අවලංගු ගිණුමක්</string>
+    <string name="error__not_enough_funds">ප්‍රමාණවත් අරමුදල් නොමැත</string>
+    <string name="msg__camera_permission_necessary">QR කේත කියවීමට කැමරා අවසරය අවශ්‍ය වේ.</string>
+    <string name="text__transaction_sent">ගනුදෙනුව යවන ලදි!</string>
+    <string name="msg__transaction_not_sent">ගනුදෙනුව යැවිය නොහැක</string>
+    <string name="error__you_dont_own_asset">ඔබට කිසිදු %1$s අයිති නැත</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">ඔබට අරමුදල් යැවීමට අවශ්‍ය පුද්ගලයාගේ බිට්ෂෙයාර් ගිණුමේ නම ටයිප් කරන්න. \n උදාහරණයක් ලෙස: agorise-faucet</string>
+    <string name="text__asset_balance">වත්කම් ශේෂය</string>
+    <string name="msg__asset_balance_explanation">එම වත්කම් සියල්ලම යැවීමට ඔබට පෙන්වන ශේෂය මත තට්ටු කළ හැකිය. එසේ කිරීමෙන් ඔබ සඳහා වන මුදල ක්ෂේත්‍රය පුරවනු ඇත.</string>
+    <string name="msg__memo_explanation">මතක සටහනක් ඇතුළත් කිරීම අවශ්‍ය නොවේ, නමුත් ඔබ අරමුදල් එව්වේ ඇයිද යන්න සටහන් කිරීම අනාගත යොමු කිරීම සඳහා හොඳයි. මතක සටහන් දෘශ්‍යමාන වන්නේ ඔබට සහ ඔබ අරමුදල් එවූ පුද්ගලයාට පමණි.</string>
+    <string name="text__network_fee">ජාල ගාස්තු</string>
+    <string name="msg__network_fee_explanation">ඔබට යැවීමට අවශ්‍ය ප්‍රමාණයට ජාල ගාස්තුව ඇතුළත් වේ. උදාහරණයක් ලෙස, ඔබට BTS 50 ක් යැවීමට අවශ්‍ය නම්, BiTSy ඇත්ත වශයෙන්ම ඩොලර් 50.21 BTS යවනු ඇත. මෙම උදාහරණයේ එකතු කරන ලද 0.21 වන්නේ බිට්ෂෙයාර් ගනුදෙනු ගාස්තුව සහ 0.01% බිට්සි සංවර්ධක කණ්ඩායමට (සාමාන්‍යයෙන් ~ 1).</string>
+    <string name="text__qr_code">QR කේතය</string>
+    <string name="msg__qr_code_explanation">අරමුදල් යැවීම සඳහා යමෙකුගේ QR පරිලෝකනය කිරීමට ඔබට අවශ්‍ය නැත, නමුත් එය වැරදි මඟහරවා ගැනීමට උපකාරී වේ. ඔබ ඔබගේ ගිණුමෙන් අරමුදල් යැවූ පසු, ඒවා සදහටම නැති වී යයි, එබැවින් “වෙත” ක්ෂේත්‍රයේ ගිණුමේ නම නිවැරදි බවට වග බලා ගන්න.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">වත්කම</string>
+    <string name="text__other">වෙනත්…</string>
+    <string name="template__please_send">කරුණාකර යවන්න: %1$s %2$s</string>
+    <string name="text__any_amount">ඕනෑම මුදලක්</string>
+    <string name="template__to">වෙත: %1$s</string>
+    <string name="msg__invoice_subject">%1$s වෙතින් BiTSy ඉන්වොයිසිය</string>
+    <string name="title_share">බෙදාගන්න</string>
+    <string name="text__share_with">සමඟ බෙදා ගන්න</string>
+    <string name="msg__storage_permission_necessary_share">පින්තූර බෙදා ගැනීමට ගබඩා අවසරය අවශ්‍ය වේ.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">සැකසුම්</string>
+    <string name="title__general">ජනරාල්</string>
+    <string name="msg__close_timer">මිනිත්තු 3 ක අක්‍රිය වීමෙන් පසු BiTSy ස්වයංක්‍රීයව වසා දමන්න</string>
+    <string name="msg__night_mode">රාත්‍රී මාදිලිය</string>
+    <string name="text__view_network_status">ජාල තත්වය බලන්න</string>
+    <string name="title__backup">උපස්ථය</string>
+    <string name="msg__brainkey_description">මොළය. ග්‍රහණය කර ගැනීමට හෝ පිටපත් කිරීමට, නමුත් සංස්කරණය කිරීමට නොහැකි ගිණුම් ප්‍රතිසාධන වචන.</string>
+    <string name="msg__brainkey_info">මෙය ලියන්න! ගින්නක් හෝ අලාභයක් සිදුවුවහොත් මෙම බ්‍රේන්කේහි පිටපත් 2 ක් ආරක්ෂිත ස්ථාන 2 ක ඇති බවට වග බලා ගන්න. ආරක්ෂාව පළමුව! ඔබගේ BrainKey වෙත ප්‍රවේශය ඇති ඕනෑම කෙනෙකුට ඔබගේ ගිණුමේ ඇති අරමුදල් වෙත පිවිසිය හැකිය!</string>
+    <string name="button__copied">පිටපත් කරන ලදි</string>
+    <string name="button__view_and_copy">බලන්න සහ පිටපත් කරන්න</string>
+    <string name="title__accounts">ගිණුම්</string>
+    <string name="msg__upgrade_to_ltm">ලයිෆ් ටයිම් සාමාජිකත්වය (LTM) දක්වා උසස් කරන්න. Bitshares LT \'LTM ගිණුම් ශුන්‍යයට ආසන්න ගාස්තු ගෙවන අතර 80% මුදල් ආපසු ලබා ගැනීම සහ යොමු කිරීම් සඳහා ප්‍රසාද දීමනා ලබා ගනී.</string>
+    <string name="button__upgrade_to_ltm">LTM වෙත යාවත්කාලීන කරන්න</string>
+    <string name="msg__account_upgrade_dialog">ජීවිත කාල සාමාජිකත්වය මඟින් ඔබට අඩු ජාල ගාස්තු සමඟ වෙළඳාම් කිරීමට ඉඩ ලබා දේ. \n \n එය ජංගම ගිණුමට බලපැවැත්වෙනු ඇත "%1$s" \n \n කෙසේ වෙතත් එය බිට්‌ෂෙයාර්ස් හි ගෙවන ඇමරිකානු ඩොලර් 100 ක පමණ පිරිවැයක් දරයි. \n \n ඔබට ඉදිරියට යාමට අවශ්‍ය බව ඔබට විශ්වාසද?</string>
+    <string name="title__account_upgraded">ගිණුම වැඩි දියුණු කරන ලදි</string>
+    <string name="msg__account_upgraded">සුභ පැතුම්! ඔබගේ ගිණුම දැන් ජීවිත කාලය පුරාම සාමාජිකත්වයට උසස් කර ඇත.</string>
+    <string name="title__upgrade_account_error">ගිණුම උත්ශ්‍රේණි කිරීමට උත්සාහ කිරීමේදී දෝෂයකි</string>
+    <string name="msg__upgrade_account_error">කරුණාකර ඔබගේ ගිණුමට පිරිවැය පියවා ගැනීමට ප්‍රමාණවත් ශේෂයක් ඇති බවට වග බලා ගන්න.</string>
+    <string name="msg__remove_current_account">මෙම උපාංගයෙන් වත්මන් ගිණුම ඉවත් කර වෙනත් එකක් සාදන්න හෝ ආයාත කරන්න.</string>
+    <string name="button__remove">ඉවත් කරන්න</string>
+    <string name="title__remove_account">ගිණුම ඉවත් කරන්න</string>
+    <string name="msg__remove_account_confirmation">මෙම උපාංගයෙන් ජංගම ගිණුම ඉවත් කිරීමට ඔබට අවශ්‍යද?</string>
+    <string name="title__bugs_or_ideas">දෝෂ හෝ අදහස්?</string>
+    <string name="msg__bugs_or_ideas">විදුලි පණිවුඩය: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">වාරණය: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">ආරක්ෂාව</string>
+    <string name="text__security_lock">ආරක්ෂක අගුල</string>
+    <string name="title__security_dialog">ආරක්ෂක අගුලක් තෝරන්න</string>
+    <string name="text__pin">PIN අංකය</string>
+    <string name="text__pattern">රටාව</string>
+    <string name="text__none">කිසිවක් නැත</string>
+    <string name="button__choose">තෝරා</string>
+    <string name="title__re_enter_your_pin">ඔබගේ PIN අංකය නැවත ඇතුළත් කරන්න</string>
+    <string name="msg__enter_your_pin">ඉදිරියට යාමට ඔබගේ BiTSy PIN අංකය ඇතුළත් කරන්න</string>
+    <string name="error__wrong_pin">වැරදි PIN</string>
+    <string name="title__set_bitsy_security_lock">BiTSy ආරක්ෂාව සකසන්න</string>
+    <string name="msg__set_a_pin">ආරක්ෂාව සඳහා, PIN එකක් සකසන්න</string>
+    <string name="msg__min_pin_length">PIN අවම වශයෙන් ඉලක්කම් 6 ක් විය යුතුය</string>
+    <string name="title__pins_dont_match">PINs නොගැලපේ</string>
+    <string name="title__re_enter_your_pattern">ඔබේ රටාව නැවත ඇතුළත් කරන්න</string>
+    <string name="msg__enter_your_pattern">ඉදිරියට යාමට ඔබේ BiTSy රටාව ඇතුළත් කරන්න</string>
+    <string name="msg__set_a_pattern">ආරක්ෂාව සඳහා, රටාවක් සකසන්න</string>
+    <string name="msg__release_finger">සිදු වූ විට ඇඟිල්ල නිදහස් කරන්න</string>
+    <string name="button__clear">පැහැදිලිව</string>
+    <string name="button__next">ඊළඟ</string>
+    <string name="text__draw_an_unlock_pattern">අගුළු හැරීමේ රටාවක් අඳින්න</string>
+    <string name="msg__draw_pattern_confirm">තහවුරු කිරීම සඳහා නැවත රටාව අඳින්න</string>
+    <string name="button__confirm">තහවුරු කරන්න</string>
+    <string name="msg__your_new_unlock_pattern">ඔබගේ නව අගුළු හැරීමේ රටාව</string>
+    <string name="error__wront_pattern">වැරදි රටාව</string>
+    <string name="text__pattern_recorded">රටාව සටහන් කර ඇත</string>
+    <string name="error__connect_at_least_4_dots">අවම වශයෙන් තිත් 4 ක් සම්බන්ධ කරන්න. නැවත උත්සහා කරන්න.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">වැරදි උත්සාහයන් ඕනෑවට වඩා. %1$d මිනිත්තු වලින් නැවත උත්සාහ කරන්න.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">වැරදි උත්සාහයන් ඕනෑවට වඩා. තත්පර %1$d තත්පරයකින් නැවත උත්සාහ කරන්න.</string>
+
+</resources>

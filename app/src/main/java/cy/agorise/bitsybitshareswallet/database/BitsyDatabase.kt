@@ -19,9 +19,10 @@ import cy.agorise.bitsybitshareswallet.database.joins.TransferDetailDao
         Transfer::class,
         UserAccount::class,
         Merchant::class,
-        Teller::class
+        Teller::class,
+        Node::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = true)
 abstract class BitsyDatabase : RoomDatabase() {
     abstract fun assetDao(): AssetDao
@@ -34,6 +35,7 @@ abstract class BitsyDatabase : RoomDatabase() {
     abstract fun transferDetailDao(): TransferDetailDao
     abstract fun merchantDao(): MerchantDao
     abstract fun tellerDao(): TellerDao
+    abstract fun nodeDao(): NodeDao
 
     companion object {
 
@@ -50,6 +52,7 @@ abstract class BitsyDatabase : RoomDatabase() {
                     ).addMigrations(MIGRATION_1_2)
                     .addMigrations(MIGRATION_2_3)
                     .addMigrations(MIGRATION_3_4)
+                    .addMigrations(MIGRATION_4_5)
                     .build()
                 }
             }
@@ -57,7 +60,7 @@ abstract class BitsyDatabase : RoomDatabase() {
             return INSTANCE
         }
 
-        val MIGRATION_1_2 = object : Migration(1, 2) {
+        private val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL("CREATE TABLE IF NOT EXISTS 'merchants' ('id' TEXT NOT NULL PRIMARY KEY, 'name' TEXT NOT NULL, 'address' TEXT, 'lat' REAL NOT NULL, 'lon' REAL NOT NULL, 'phone' TEXT, 'telegram' TEXT, 'website' TEXT)")
                 database.execSQL("CREATE TABLE IF NOT EXISTS 'tellers' ('id' TEXT NOT NULL PRIMARY KEY, 'name' TEXT NOT NULL, 'address' TEXT, 'lat' REAL NOT NULL, 'lon' REAL NOT NULL, 'phone' TEXT, 'telegram' TEXT, 'website' TEXT)")
@@ -78,10 +81,16 @@ abstract class BitsyDatabase : RoomDatabase() {
             }
         }
 
-        val MIGRATION_3_4 = object : Migration(3,4) {
+        private val MIGRATION_3_4 = object : Migration(3,4) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL("DROP TABLE tellers")
                 database.execSQL("CREATE TABLE IF NOT EXISTS tellers (id TEXT NOT NULL PRIMARY KEY, name TEXT NOT NULL, address TEXT, lat REAL NOT NULL, lon REAL NOT NULL, phone TEXT, telegram TEXT, keybase TEXT, whatsapp TEXT, viber TEXT, email TEXT, website TEXT)")
+            }
+        }
+
+        private val MIGRATION_4_5 = object : Migration(4,5) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("CREATE TABLE IF NOT EXISTS nodes (url TEXT NOT NULL PRIMARY KEY, latency INTEGER NOT NULL, last_update INTEGER NOT NULL)")
             }
         }
     }

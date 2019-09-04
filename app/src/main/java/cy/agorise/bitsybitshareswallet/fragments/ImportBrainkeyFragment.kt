@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
 import com.afollestad.materialdialogs.list.customListAdapter
+import com.afollestad.materialdialogs.list.getRecyclerView
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.crashlytics.android.Crashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -29,10 +31,7 @@ import cy.agorise.graphenej.api.calls.GetKeyReferences
 import cy.agorise.graphenej.models.AccountProperties
 import cy.agorise.graphenej.models.DynamicGlobalProperties
 import cy.agorise.graphenej.models.JsonRpcResponse
-import cy.agorise.graphenej.network.FullNode
-import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_import_brainkey.*
 import org.bitcoinj.core.ECKey
 import java.text.NumberFormat
@@ -67,7 +66,10 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     private var mNodesDialog: MaterialDialog? = null
 
     /** Adapter that holds the FullNode list used in the Bitshares nodes modal */
-    private var mNodesAdapter: FullNodesAdapter? = null
+    private var nodesAdapter: FullNodesAdapter? = null
+
+    // NodesDialog's RecyclerView LayoutManager used to always keep showing the first node of the list.
+    private var mNodesDialogLinearLayoutManager: LinearLayoutManager? = null
 
     /** Handler that will be used to make recurrent calls to get the latest BitShares block number*/
     private val mHandler = Handler()
@@ -129,29 +131,50 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
             Navigation.createNavigateOnClickListener(R.id.create_account_action)
         )
 
-        tvNetworkStatus.setOnClickListener { v ->
-            if (mNetworkService != null) {
-                // PublishSubject used to announce full node latencies updates
-                val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable
-                fullNodePublishSubject?.observeOn(AndroidSchedulers.mainThread())?.subscribe(nodeLatencyObserver)
+        tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
+    }
 
-                val fullNodes = mNetworkService!!.nodes
+    private fun showNodesDialog(v: View) {
+        if (mNetworkService != null) {
+            val fullNodes = mNetworkService!!.nodes
 
-                mNodesAdapter = FullNodesAdapter(v.context)
-                mNodesAdapter?.add(fullNodes)
+            nodesAdapter = FullNodesAdapter(v.context)
+            nodesAdapter?.add(fullNodes)
 
-                mNodesDialog = MaterialDialog(v.context)
-                    .title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
-                    .message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
-                    .customListAdapter(mNodesAdapter as FullNodesAdapter)
-                    .negativeButton(android.R.string.ok)
-                    .onDismiss { mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask) }
+            // PublishSubject used to announce full node latencies updates
+            val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable ?: return
 
-                mNodesDialog?.show()
+            val nodesDisposable = fullNodePublishSubject
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    { fullNode ->
+                        mNodesDialogLinearLayoutManager?.scrollToPositionWithOffset(0, 0)
 
-                // Registering a recurrent task used to poll for dynamic global properties requests
-                mHandler.post(mRequestDynamicGlobalPropertiesTask)
+                        if (!fullNode.isRemoved)
+                            nodesAdapter?.add(fullNode)
+                        else
+                            nodesAdapter?.remove(fullNode)
+                    }, {
+                        Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + it.message)
+                    }
+                )
+
+            mNodesDialog = MaterialDialog(v.context).show {
+                title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
+                customListAdapter(nodesAdapter as FullNodesAdapter)
+                negativeButton(android.R.string.ok)
+                onDismiss {
+                    mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask)
+                    nodesDisposable.dispose()
+                }
             }
+
+            mNodesDialogLinearLayoutManager = (mNodesDialog?.getRecyclerView()?.layoutManager as LinearLayoutManager)
+
+            // Registering a recurrent task used to poll for dynamic global properties requests
+            mHandler.post(mRequestDynamicGlobalPropertiesTask)
         }
     }
 
@@ -343,28 +366,6 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 context?.toast(getString(R.string.error__try_again))
             }
         }
-    }
-
-    /**
-     * Observer used to be notified about node latency measurement updates.
-     */
-    private val nodeLatencyObserver = object : Observer<FullNode> {
-        override fun onSubscribe(d: Disposable) {
-            mDisposables.add(d)
-        }
-
-        override fun onNext(fullNode: FullNode) {
-            if (!fullNode.isRemoved)
-                mNodesAdapter?.add(fullNode)
-            else
-                mNodesAdapter?.remove(fullNode)
-        }
-
-        override fun onError(e: Throwable) {
-            Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + e.message)
-        }
-
-        override fun onComplete() {}
     }
 
     /**

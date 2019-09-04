@@ -141,7 +141,7 @@ class EReceiptFragment : Fragment() {
         if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED) {
             // Permission is not already granted
-            requestPermissions(arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION)
         } else {
             // Permission is already granted

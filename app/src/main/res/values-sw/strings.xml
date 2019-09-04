@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Kubali</string>
+    <string name="button__disagree">Kutokubali</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">Nambari 6+ za siri</string>
+    <string name="error__pin_too_short">Pini ni fupi sana</string>
+    <string name="text_field__confirm_pin">Thibitisha PIN</string>
+    <string name="error__pin_mismatch">Usumbufu wa siri</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Tafadhali ingiza akili sahihi, inapaswa kuwa na maneno 12 au 16.</string>
+    <string name="button__import_existing_account">Ingiza akaunti iliyopo</string>
+    <string name="text__or">Au</string>
+    <string name="button__create_new_account">Unda akaunti mpya</string>
+    <string name="error__invalid_brainkey">Hakuna akaunti zinazodhibitiwa na ubongo uliopewa ambapo hupatikana, tafadhali angalia ubongo wako kwa makosa ya kuchapa</string>
+    <string name="error__try_again">Tafadhali jaribu tena baada ya dakika 5</string>
+    <string name="dialog__account_candidates_title">Tafadhali chagua akaunti</string>
+    <string name="dialog__account_candidates_content">Funguo zinazotokana na akili hii zinaonekana kutumika kudhibiti akaunti zaidi ya moja, tafadhali chagua akaunti gani unayetaka kuingiza</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Jina la akaunti ya BitShares</string>
+    <string name="error__read_dict_file">Hitilafu wakati wa kusoma faili ya kamusi</string>
+    <string name="error__invalid_account_length">Jina la akaunti inapaswa kuwa herufi 3 hadi 16.</string>
+    <string name="error__invalid_account_start">Jina la akaunti inapaswa kuanza na barua.</string>
+    <string name="error__invalid_account_name">Tafadhali ingiza jina la kawaida lenye angalau dashi moja, nambari, au vokali hakuna.</string>
+    <string name="text__verifying_account_availability">Inathibitisha kupatikana kwa akaunti…</string>
+    <string name="error__account_not_available">Jina la akaunti tayari limechukuliwa.</string>
+    <string name="text__account_is_available">Akaunti inapatikana</string>
+    <string name="title_error">Kosa</string>
+    <string name="error__faucet">Seva ilirudisha kosa. Hii inaweza kuwa kwa sababu ya kiwango cha juu kinachokusudiwa mahali pa kutoruhusu maombi ya mara kwa mara yanayokuja kutoka kwa anwani ile ile ya IP kwa muda mfupi. Tafadhali subiri dakika 5 na ujaribu tena, au ubadilishe kwa mtandao tofauti, kwa mfano kutoka kwa wifi hadi kiini.</string>
+    <string name="error__faucet_template">Tupu ilirudisha kosa. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Programu haikuweza kupata tena habari kuhusu akaunti mpya iliyoundwa</string>
+    <string name="button__create">Unda</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Uuzaji</string>
+    <string name="title_merchants_and_tellers">Wauzaji &amp; Wauzaji</string>
+    <string name="title_receive">Pokea</string>
+    <string name="title_balances">Mizani</string>
+    <string name="title_send">Tuma</string>
+    <string name="title_net_worth">Thamani ya Net</string>
+    <string name="text__coming_soon">Inakuja hivi karibuni</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Tafuta</string>
+    <string name="title_filter">Kichungi</string>
+    <string name="title_export">Uuzaji nje</string>
+    <string name="text__no_transactions">Hakuna shughuli</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Chaguzi za vichungi</string>
+    <string name="text__all">Wote</string>
+    <string name="text__sent">Imetumwa</string>
+    <string name="text__received">Imepokelewa</string>
+    <string name="text__date_range">Rangi ya tarehe</string>
+    <string name="text__equivalent_value">Thamani sawa</string>
+    <string name="text__ignore_network_fees">Puuza ada ya Mtandao</string>
+    <string name="text__between">Kati ya</string>
+    <string name="text__and">na</string>
+    <string name="button__filter">Kichungi</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Usafirishaji uliochujwa nje</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Ruhusa ya kuhifadhi ni muhimu kusafirisha faili za PDF / CSV.</string>
+    <string name="title_from">Kutoka</string>
+    <string name="title_to">Kwa</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Tarehe</string>
+    <string name="title_time">Wakati</string>
+    <string name="title_amount">Kiasi</string>
+    <string name="title_equivalent_value">Thamani sawa</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">Jalada</string>
+    <string name="text__value">Thamani</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Tarehe: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Wafanyabiashara</string>
+    <string name="title_tellers">Wauzaji</string>
+    <string name="title_about">Kuhusu</string>
+    <string name="msg__merchants_description">Wauzaji wa PalmPay ndio uti wa mgongo wa Uchumi mpya wa Crypto. Ikiwa unatafuta biashara ambazo zitakubali Crystalcurrency yako, basi tu tumia data ya Utafutaji na Ramani chini. Wafanyabiashara zaidi wataongezwa hapa wakati Balozi za PalmPay zinatuarifu.</string>
+    <string name="msg__tellers_description">Wauzaji ni watu ambao watabadilishana sarafu zako za fedha na fedha, na kinyume chake. Pia wanasaidia Wafanyabiashara na makazi ya moto.</string>
+    <string name="msg__location_permission_necessary">Ruhusa ya eneo ni muhimu kuonyesha eneo lako la sasa kwenye ramani.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Habari</string>
+    <string name="text__to">Kwa</string>
+    <string name="text__amount">Kiasi</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Akaunti batili</string>
+    <string name="error__not_enough_funds">Hazina fedha za kutosha</string>
+    <string name="msg__camera_permission_necessary">Ruhusa ya kamera inahitajika kusoma nambari za QR.</string>
+    <string name="text__transaction_sent">Ununuzi umetumwa!</string>
+    <string name="msg__transaction_not_sent">Imeshindwa kutuma shughuli</string>
+    <string name="error__you_dont_own_asset">Haujamiliki %1$s yoyote</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Andika jina la akaunti ya Bitshares ya mtu ambaye unataka kumtumia pesa. Mfano wa \n Mfano: agorise-bomba</string>
+    <string name="text__asset_balance">Mizani ya Mali</string>
+    <string name="msg__asset_balance_explanation">Unaweza kugonga kwenye mizani iliyoonyeshwa kutuma mali yote hiyo. Kufanya hivyo kutajaza uwanja wa Kiasi kwako.</string>
+    <string name="msg__memo_explanation">Kuingia kwa Memo haihitajiki, lakini kuchukua maelezo kwa nini ulituma pesa ni nzuri kwa kumbukumbu ya baadaye. Memos zinaonekana kwako tu na kwa mtu ambaye umemtumia pesa.</string>
+    <string name="text__network_fee">Ada ya Mtandao</string>
+    <string name="msg__network_fee_explanation">Ada ya Mtandao imejumuishwa kwa kiasi ambacho unataka kutuma. Kwa mfano, ikiwa unataka kutuma BTS 50, kwa kweli BiTSy itatuma ~ 50.21 BTS. Iliyoongezwa 0.21 katika mfano huu ni ada ya manunuzi ya Bitshares pamoja na 0.01% kwa Timu ya Wasanidi wa BiTSy (kawaida ~ 1 asilimia).</string>
+    <string name="text__qr_code">Nambari ya QR</string>
+    <string name="msg__qr_code_explanation">Huna haja ya kuchambua QR ya mtu kutuma pesa, lakini inakusaidia Epuka makosa. Mara tu unapotuma pesa kutoka kwa akaunti yako, zinaenda milele, kwa hivyo hakikisha jina la akaunti kwenye uwanja wa "To" ni sawa.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Mali</string>
+    <string name="text__other">Nyingine…</string>
+    <string name="template__please_send">Tafadhali Tuma: %1$s %2$s</string>
+    <string name="text__any_amount">Kiasi chochote</string>
+    <string name="template__to">Kwa: %1$s</string>
+    <string name="msg__invoice_subject">Ankara ya biTSy kutoka %1$s</string>
+    <string name="title_share">Shiriki</string>
+    <string name="text__share_with">Shiriki na</string>
+    <string name="msg__storage_permission_necessary_share">Ruhusa ya kuhifadhi ni muhimu kushiriki picha.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Mipangilio</string>
+    <string name="title__general">Jumla</string>
+    <string name="msg__close_timer">Funga moja kwa moja BiTSy baada ya dakika 3 ya kutofanya kazi</string>
+    <string name="msg__night_mode">Hali ya usiku</string>
+    <string name="text__view_network_status">Angalia Hali ya Mtandao</string>
+    <string name="title__backup">Hifadhi</string>
+    <string name="msg__brainkey_description">BrainKey. Maneno ya urejeshaji wa akaunti ambayo yanaweza kutekwa au kunakiliwa, lakini hayakuhaririwa.</string>
+    <string name="msg__brainkey_info">Andika hii! Hakikisha una nakala mbili za BrainKey hii katika maeneo 2 salama ikiwa moto au upotezaji. Usalama Kwanza! Mtu yeyote anayepata BrainKey yako anaweza kupata pesa katika akaunti yako!</string>
+    <string name="button__copied">Imenakiliwa</string>
+    <string name="button__view_and_copy">Angalia &amp; Nakala</string>
+    <string name="title__accounts">Akaunti</string>
+    <string name="msg__upgrade_to_ltm">Boresha kwa Umiliki wa Maisha ya Maisha (LTM). Akaunti za Bitshares \ \'LTM hulipa ada ya karibu na sifuri, pata pesa taslimu 80% na mafao ya rufaa.</string>
+    <string name="button__upgrade_to_ltm">Boresha kwa LTM</string>
+    <string name="msg__account_upgrade_dialog">Uungu wa Wakati wa Maisha hukuruhusu kufanya biashara na seti iliyopunguzwa ya ada ya mtandao. \n \n Itachukua athari kwa akaunti ya sasa "%1$s" \n \nLakini inakuja na gharama ya karibu dola 100 zilizolipwa huko Bitshares. \n \n Je una uhakika unataka kuendelea?</string>
+    <string name="title__account_upgraded">Akaunti Imesasishwa</string>
+    <string name="msg__account_upgraded">Hongera! Akaunti yako sasa imesasishwa kuwa Umiliki wa Maisha yote.</string>
+    <string name="title__upgrade_account_error">Kosa wakati wa kujaribu kuboresha akaunti</string>
+    <string name="msg__upgrade_account_error">Tafadhali hakikisha akaunti yako ina usawa wa kutosha kufidia gharama.</string>
+    <string name="msg__remove_current_account">Ondoa Akaunti ya sasa kutoka kwa kifaa hiki na uunda au uingize tofauti nyingine.</string>
+    <string name="button__remove">Ondoa</string>
+    <string name="title__remove_account">Ondoa Akaunti</string>
+    <string name="msg__remove_account_confirmation">Una uhakika unataka kuondoa akaunti ya sasa kutoka kwa kifaa hiki?</string>
+    <string name="title__bugs_or_ideas">Mdudu au Mawazo?</string>
+    <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Zuia: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Usalama</string>
+    <string name="text__security_lock">Usalama Lock</string>
+    <string name="title__security_dialog">Chagua Lock ya Usalama</string>
+    <string name="text__pin">Pini</string>
+    <string name="text__pattern">Mfano</string>
+    <string name="text__none">Hakuna</string>
+    <string name="button__choose">Chagua</string>
+    <string name="title__re_enter_your_pin">Ingiza tena PIN yako</string>
+    <string name="msg__enter_your_pin">Ingiza PIN yako ya BiTSy kuendelea</string>
+    <string name="error__wrong_pin">Pini mbaya</string>
+    <string name="title__set_bitsy_security_lock">Weka Usalama wa BiTSy</string>
+    <string name="msg__set_a_pin">Kwa usalama, weka PIN</string>
+    <string name="msg__min_pin_length">Pini lazima iwe na nambari 6</string>
+    <string name="title__pins_dont_match">Pini hazifanani</string>
+    <string name="title__re_enter_your_pattern">Ingiza tena muundo wako</string>
+    <string name="msg__enter_your_pattern">Ingiza muundo wako wa BiTSy kuendelea</string>
+    <string name="msg__set_a_pattern">Kwa usalama, weka Mfano</string>
+    <string name="msg__release_finger">Toa kidole wakati umekamilika</string>
+    <string name="button__clear">Wazi</string>
+    <string name="button__next">Ifuatayo</string>
+    <string name="text__draw_an_unlock_pattern">Chora muundo wa kufungua</string>
+    <string name="msg__draw_pattern_confirm">Chora muundo tena ili uthibitishe</string>
+    <string name="button__confirm">Thibitisha</string>
+    <string name="msg__your_new_unlock_pattern">Njia yako mpya ya kufungua</string>
+    <string name="error__wront_pattern">Mfano mbaya</string>
+    <string name="text__pattern_recorded">Mfano uliorekodiwa</string>
+    <string name="error__connect_at_least_4_dots">Unganisha angalau dots 4. Jaribu tena.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Jaribio nyingi nyingi sio sahihi. Jaribu tena katika dakika %1$d.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Jaribio nyingi nyingi sio sahihi. Jaribu tena katika sekunde %1$d.</string>
+
+</resources>

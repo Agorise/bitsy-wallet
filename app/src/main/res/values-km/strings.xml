@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">យល់ព្រម។</string>
+    <string name="button__disagree">មិនយល់ស្រប។</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">កូដ PIN ៦+ ខ្ទង់។</string>
+    <string name="error__pin_too_short">កូដ PIN ខ្លីពេក។</string>
+    <string name="text_field__confirm_pin">បញ្ជាក់លេខសម្ងាត់។</string>
+    <string name="error__pin_mismatch">លេខសម្ងាត់មិនត្រូវគ្នា។</string>
+    <string name="text__brain_key">BrainKey ។</string>
+    <string name="error__enter_correct_brainkey">សូមបញ្ចូលខួរក្បាលត្រឹមត្រូវវាគួរតែមាន ១២ ឬ ១៦ ពាក្យ។</string>
+    <string name="button__import_existing_account">នាំចូលគណនីដែលមានស្រាប់។</string>
+    <string name="text__or">ឬ។</string>
+    <string name="button__create_new_account">បង្កើត​គណនី​ថ្មី</string>
+    <string name="error__invalid_brainkey">មិនមានគណនីគ្រប់គ្រងដោយខួរក្បាលដែលបានរកឃើញទេសូមពិនិត្យមើលខួរក្បាលរបស់អ្នកសម្រាប់ការវាយបញ្ចូលកំហុស។</string>
+    <string name="error__try_again">សូមព្យាយាមម្តងទៀតបន្ទាប់ពី ៥ នាទី។</string>
+    <string name="dialog__account_candidates_title">សូមជ្រើសរើសគណនីមួយ។</string>
+    <string name="dialog__account_candidates_content">កូនសោទទួលបានពីខួរក្បាលនេះហាក់ដូចជាត្រូវបានប្រើដើម្បីគ្រប់គ្រងគណនីលើសពីមួយសូមជ្រើសរើសគណនីដែលអ្នកចង់នាំចូល។</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">ឈ្មោះគណនីប៊ីប៊ីសា។</string>
+    <string name="error__read_dict_file">កំហុសក្នុងការអានឯកសារវចនានុក្រម។</string>
+    <string name="error__invalid_account_length">ឈ្មោះគណនីគួរតែមានពី ៣ ទៅ ១៦ តួអក្សរ។</string>
+    <string name="error__invalid_account_start">ឈ្មោះគណនីគួរតែចាប់ផ្តើមដោយអក្សរ។</string>
+    <string name="error__invalid_account_name">សូមបញ្ចូលឈ្មោះធម្មតាដែលមានយ៉ាងហោចមួយសញ្ញាដាច់មួយលេខឬគ្មានស្រៈ។</string>
+    <string name="text__verifying_account_availability">កំពុងផ្ទៀងផ្ទាត់ភាពអាចរកបានគណនី…</string>
+    <string name="error__account_not_available">ឈ្មោះគណនីនោះត្រូវបានយករួចហើយ។</string>
+    <string name="text__account_is_available">មានគណនី។</string>
+    <string name="title_error">កំហុស។</string>
+    <string name="error__faucet">ម៉ាស៊ីនមេបានត្រឡប់កំហុសមួយ។ នេះអាចបណ្តាលមកពីដែនកំណត់មួយដែលកំណត់គោលបំណងដើម្បីមិនអនុញ្ញាតឱ្យមានការស្នើសុំញឹកញាប់ពីអាសយដ្ឋាន IP តែមួយក្នុងរយៈពេលខ្លី។ សូមរង់ចាំ ៥ នាទីហើយព្យាយាមម្តងទៀតឬប្តូរទៅបណ្តាញផ្សេងឧទាហរណ៍ពីវ៉ាយហ្វាយទៅក្រឡា។</string>
+    <string name="error__faucet_template">ក្បាលម៉ាសីនតឹកបានត្រឡប់កំហុសមួយ។ Msg: %1$s</string>
+    <string name="error__created_account_not_found">កម្មវិធីមិនអាចទាញយកព័ត៌មានអំពីគណនីដែលបានបង្កើតថ្មីទេ។</string>
+    <string name="button__create">បង្កើត</string>
+
+    <!-- Home -->
+    <string name="title_transactions">ប្រតិបត្តិការ។</string>
+    <string name="title_merchants_and_tellers">ឈ្មួញនិងអ្នកប្រាប់។</string>
+    <string name="title_receive">ទទួល។</string>
+    <string name="title_balances">តុល្យភាព។</string>
+    <string name="title_send">ផ្ញើ។</string>
+    <string name="title_net_worth">តម្លៃសុទ្ធ។</string>
+    <string name="text__coming_soon">នឹងមកដល់ឆាប់ៗនេះ។</string>
+
+    <!-- Transactions -->
+    <string name="title_search">ស្វែងរក</string>
+    <string name="title_filter">ត្រង។</string>
+    <string name="title_export">នាំចេញ។</string>
+    <string name="text__no_transactions">គ្មានប្រតិបត្តិការ។</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">ជម្រើសតម្រង។</string>
+    <string name="text__all">ទាំងអស់។</string>
+    <string name="text__sent">បានផ្ញើ។</string>
+    <string name="text__received">បានទទួល។</string>
+    <string name="text__date_range">ជួរកាលបរិច្ឆេទ។</string>
+    <string name="text__equivalent_value">តម្លៃសមមូល។</string>
+    <string name="text__ignore_network_fees">មិនអើពើថ្លៃបណ្តាញ។</string>
+    <string name="text__between">រវាង។</string>
+    <string name="text__and">និង។</string>
+    <string name="button__filter">ត្រង។</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">នាំចេញប្រតិបត្តិការត្រង។</string>
+    <string name="text__pdf">PDF ។</string>
+    <string name="text__csv">ស៊ីអេសអេស។</string>
+    <string name="msg__storage_permission_necessary_export">ការអនុញ្ញាតការផ្ទុកគឺចាំបាច់ដើម្បីនាំចេញឯកសារ PDF / CSV ។</string>
+    <string name="title_from">ពី។</string>
+    <string name="title_to">ទៅ។</string>
+    <string name="title_memo">អនុសរណៈ។</string>
+    <string name="title_date">កាលបរិច្ឆេទ</string>
+    <string name="title_time">ពេលវេលា។</string>
+    <string name="title_amount">ចំនួនទឹកប្រាក់។</string>
+    <string name="title_equivalent_value">តម្លៃសមមូល។</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt ។</string>
+    <string name="text__value">តម្លៃ។</string>
+    <string name="template__memo">អនុសរណៈ៖ %1$s</string>
+    <string name="template__date">កាលបរិច្ឆេទ៖ %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">ឈ្មួញ។</string>
+    <string name="title_tellers">អ្នកប្រាប់។</string>
+    <string name="title_about">អំពី។</string>
+    <string name="msg__merchants_description">ឈ្មួញដូងផាយគឺជាឆ្អឹងខ្នងនៃគ្រីបថូដូសេដ្ឋកិច្ចថ្មី។ ប្រសិនបើអ្នកកំពុងស្វែងរកអាជីវកម្មដែលនឹងទទួលយក Cryptocurrency របស់អ្នកបន្ទាប់មកគ្រាន់តែប្រើទិន្នន័យស្វែងរកនិងផែនទីខាងក្រោម។ ពាណិជ្ជករកាន់តែច្រើននឹងត្រូវបានបន្ថែមនៅទីនេះនៅពេលដែលឯកអគ្គរដ្ឋទូតផាមផាយប្រាប់យើង។</string>
+    <string name="msg__tellers_description">អ្នកប្រាប់គឺជាមនុស្សដែលនឹងប្តូររូបិយប័ណ្ណយិនតារបស់អ្នកជាមួយគ្រីបគ្រីបនិងច្រាសមកវិញ។ ពួកគេក៏ជួយដល់ឈ្មួញផងដែរជាមួយនឹងការដោះស្រាយតាមបែប fiat ។</string>
+    <string name="msg__location_permission_necessary">ការអនុញ្ញាតទីតាំងគឺចាំបាច់ដើម្បីបង្ហាញទីតាំងបច្ចុប្បន្នរបស់អ្នកនៅលើផែនទី។</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">ព័ត៌មាន</string>
+    <string name="text__to">ទៅ។</string>
+    <string name="text__amount">ចំនួនទឹកប្រាក់។</string>
+    <string name="text__memo">អនុសរណៈ។</string>
+    <string name="text__scan_qr">ស្កេន QR ។</string>
+    <string name="error__invalid_account">គណនីមិនត្រឹមត្រូវ។</string>
+    <string name="error__not_enough_funds">មិនមានថវិកាគ្រប់គ្រាន់។</string>
+    <string name="msg__camera_permission_necessary">ការអនុញ្ញាតកាមេរ៉ាគឺចាំបាច់ដើម្បីអានលេខកូដ QR ។</string>
+    <string name="text__transaction_sent">ប្រតិបត្តិការបានផ្ញើ!</string>
+    <string name="msg__transaction_not_sent">មិនអាចផ្ញើប្រតិបត្តិការបានទេ។</string>
+    <string name="error__you_dont_own_asset">អ្នកមិនមែនជាម្ចាស់ %1$s ទេ</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">វាយបញ្ចូលឈ្មោះគណនី Bitshares របស់មនុស្សដែលអ្នកចង់ផ្ញើប្រាក់ទៅ។ ឧទាហរណ៍ឧទាហរណ៍៖ ក្បាលម៉ាសីនតឹក។</string>
+    <string name="text__asset_balance">សមតុល្យទ្រព្យ។</string>
+    <string name="msg__asset_balance_explanation">អ្នកអាចប៉ះលើសមតុល្យដែលបានបង្ហាញដើម្បីផ្ញើទ្រព្យសម្បត្តិទាំងអស់នោះ។ ការធ្វើដូច្នេះនឹងបំពេញក្នុងចំនួនទឹកប្រាក់សម្រាប់អ្នក។</string>
+    <string name="msg__memo_explanation">ការបញ្ចូលអនុសរណៈមិនចាំបាច់ទេប៉ុន្តែការកត់ចំណាំអំពីមូលហេតុដែលអ្នកផ្ញើថវិកាគឺល្អសម្រាប់សេចក្តីយោងនាពេលអនាគត។ អនុស្សរណៈគឺអាចមើលឃើញតែអ្នកនិងអ្នកដែលអ្នកបានផ្ញើប្រាក់ទៅ។</string>
+    <string name="text__network_fee">ថ្លៃសេវាបណ្តាញ។</string>
+    <string name="msg__network_fee_explanation">ថ្លៃសេវាបណ្តាញត្រូវបានរាប់បញ្ចូលក្នុងចំនួនទឹកប្រាក់ដែលអ្នកចង់ផ្ញើ។ ឧទាហរណ៍ប្រសិនបើអ្នកចង់ផ្ញើ 50 ប៊ីធីធីធីធីធីពិតជានឹងផ្ញើ ~ 50.21 BTS ។ ការបន្ថែម ០,២១ ក្នុងឧទាហរណ៍នេះគឺថ្លៃសេវាប្រតិបត្តិការ Bitshares បូកនឹង ០.០១% ដល់ក្រុមអ្នកអភិវឌ្ឍជីវវិទ្យា (ជាធម្មតា ~ ១ សេន) ។</string>
+    <string name="text__qr_code">QR កូដ។</string>
+    <string name="msg__qr_code_explanation">អ្នកមិនចាំបាច់ស្កេន QR របស់នរណាម្នាក់ដើម្បីផ្ញើប្រាក់ទេប៉ុន្តែវាពិតជាជួយអ្នកឱ្យជៀសវាងពីកំហុស។ នៅពេលដែលអ្នកផ្ញើប្រាក់ពីគណនីរបស់អ្នកវានឹងបាត់ជារៀងរហូតដូច្នេះត្រូវប្រាកដថាឈ្មោះគណនីនៅក្នុងវាល“ ទៅ” គឺត្រឹមត្រូវ។</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">ទ្រព្យ។</string>
+    <string name="text__other">ផ្សេងទៀត…</string>
+    <string name="template__please_send">សូមផ្ញើ៖ %1$s %2$s</string>
+    <string name="text__any_amount">ចំនួនទឹកប្រាក់ណាមួយ។</string>
+    <string name="template__to">ជូនចំពោះ៖ %1$s</string>
+    <string name="msg__invoice_subject">វិក័យប័ត្រជីវវិទ្យាពី __១ វិនាទី %1$s</string>
+    <string name="title_share">ចែករំលែក។</string>
+    <string name="text__share_with">ចែករំលែក​ជាមួយ</string>
+    <string name="msg__storage_permission_necessary_share">ការអនុញ្ញាតការផ្ទុកគឺចាំបាច់ដើម្បីចែករំលែករូបភាព។</string>
+
+    <!-- Settings -->
+    <string name="title_settings">ការកំណត់។</string>
+    <string name="title__general">ទូទៅ។</string>
+    <string name="msg__close_timer">បិទជីវវិទ្យាដោយស្វ័យប្រវត្តិបន្ទាប់ពីអសកម្ម ៣ នាទី។</string>
+    <string name="msg__night_mode">របៀបរាត្រី។</string>
+    <string name="text__view_network_status">មើលស្ថានភាពបណ្តាញ។</string>
+    <string name="title__backup">បម្រុងទុក។</string>
+    <string name="msg__brainkey_description">BrainKey ។ ពាក្យសង្គ្រោះគណនីដែលអាចចាប់យកឬថតចម្លងប៉ុន្តែមិនបានកែទេ។</string>
+    <string name="msg__brainkey_info">សរសេរនេះចុះ! ត្រូវប្រាកដថាអ្នកមាន BrainKey ចំនួន ២ ច្បាប់នៅក្នុងទីតាំងមានសុវត្ថិភាព ២ ក្នុងករណីអគ្គិភ័យឬការបាត់បង់។ សុវត្ថិភាពជាមុនសិន! អ្នកដែលមានសិទ្ធិប្រើប្រាស់ BrainKey របស់អ្នកអាចទទួលបានមូលនិធិនៅក្នុងគណនីរបស់អ្នក!</string>
+    <string name="button__copied">បានចំលង។</string>
+    <string name="button__view_and_copy">មើលនិងចម្លង។</string>
+    <string name="title__accounts">គណនី។</string>
+    <string name="msg__upgrade_to_ltm">ធ្វើឱ្យប្រសើរឡើងទៅជាសមាជិកភាពពេលវេលា (LTM) ។ គណនី LTM របស់ Bitshares បង់ថ្លៃជិតសូន្យទទួលបានប្រាក់សំណង ៨០% និងប្រាក់រង្វាន់សំរាប់ការបញ្ជូន។</string>
+    <string name="button__upgrade_to_ltm">ធ្វើបច្ចុប្បន្នភាពទៅអិលធីអិម។</string>
+    <string name="msg__account_upgrade_dialog">សមាជិកភាពពេលវេលានៃជីវិតអនុញ្ញាតឱ្យអ្នកធ្វើពាណិជ្ជកម្មជាមួយនឹងការកាត់បន្ថយបណ្តាញ។     វានឹងមានប្រសិទ្ធិភាពចំពោះគណនីចរន្ត“ %1$s”     ទោះយ៉ាងណាវាមានតម្លៃប្រហែល ១០០ ដុល្លារដែលបានបង់នៅប៊ីធេរេស។     តើអ្នកប្រាកដជាចង់បន្តឬ?</string>
+    <string name="title__account_upgraded">បានធ្វើបច្ចុប្បន្នភាពគណនី។</string>
+    <string name="msg__account_upgraded">សូមអបអរសាទរ! ឥឡូវគណនីរបស់អ្នកត្រូវបានតំឡើងជាសមាជិកភាពពេញមួយជីវិត។</string>
+    <string name="title__upgrade_account_error">មានកំហុសខណៈពេលព្យាយាមតំឡើងគណនី។</string>
+    <string name="msg__upgrade_account_error">សូមប្រាកដថាគណនីរបស់អ្នកមានតុល្យភាពគ្រប់គ្រាន់ដើម្បីចំណាយលើថ្លៃដើម។</string>
+    <string name="msg__remove_current_account">យកគណនីបច្ចុប្បន្នចេញពីឧបករណ៍នេះហើយបង្កើតឬនាំចូលគណនីមួយផ្សេងទៀត។</string>
+    <string name="button__remove">យកចេញ។</string>
+    <string name="title__remove_account">យកគណនីចេញ។</string>
+    <string name="msg__remove_account_confirmation">តើអ្នកប្រាកដថាចង់យកគណនីបច្ចុប្បន្នចេញពីឧបករណ៍នេះទេ?</string>
+    <string name="title__bugs_or_ideas">កំហុសឬគំនិត?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">ប្លុក៖ %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">សន្តិសុខ។</string>
+    <string name="text__security_lock">សោសុវត្ថិភាព។</string>
+    <string name="title__security_dialog">ជ្រើសរើសសោសុវត្ថិភាព។</string>
+    <string name="text__pin">លេខសម្ងាត់។</string>
+    <string name="text__pattern">លំនាំ។</string>
+    <string name="text__none">គ្មាន។</string>
+    <string name="button__choose">ជ្រើសរើស។</string>
+    <string name="title__re_enter_your_pin">បញ្ចូលកូដ PIN របស់អ្នកម្តងទៀត។</string>
+    <string name="msg__enter_your_pin">បញ្ចូលលេខកូដជីវវិទ្យារបស់អ្នកដើម្បីបន្ត។</string>
+    <string name="error__wrong_pin">លេខសម្ងាត់មិនត្រឹមត្រូវ។</string>
+    <string name="title__set_bitsy_security_lock">កំណត់សុវត្ថិភាពធីវីធី។</string>
+    <string name="msg__set_a_pin">ដើម្បីសុវត្ថិភាពកំណត់កូដ PIN ។</string>
+    <string name="msg__min_pin_length">កូដ PIN ត្រូវតែមានយ៉ាងតិច ៦ ខ្ទង់។</string>
+    <string name="title__pins_dont_match">លេខសម្ងាត់មិនត្រូវគ្នាទេ។</string>
+    <string name="title__re_enter_your_pattern">បញ្ចូលលំនាំរបស់អ្នកម្តងទៀត។</string>
+    <string name="msg__enter_your_pattern">បញ្ចូលលំនាំជីវរបស់អ្នកដើម្បីបន្ត។</string>
+    <string name="msg__set_a_pattern">ដើម្បីសុវត្ថិភាពកំណត់គំរូ។</string>
+    <string name="msg__release_finger">លែងម្រាមដៃពេលរួចរាល់។</string>
+    <string name="button__clear">ច្បាស់។</string>
+    <string name="button__next">បន្ទាប់។</string>
+    <string name="text__draw_an_unlock_pattern">គូរលំនាំដោះសោ។</string>
+    <string name="msg__draw_pattern_confirm">គូរលំនាំម្តងទៀតដើម្បីបញ្ជាក់។</string>
+    <string name="button__confirm">បញ្ជាក់។</string>
+    <string name="msg__your_new_unlock_pattern">លំនាំដោះសោថ្មីរបស់អ្នក។</string>
+    <string name="error__wront_pattern">លំនាំខុស។</string>
+    <string name="text__pattern_recorded">បានកត់ត្រាលំនាំ។</string>
+    <string name="error__connect_at_least_4_dots">ភ្ជាប់យ៉ាងហោចណាស់ ៤ ចំនុច។ ព្យាយាម​ម្តង​ទៀត។</string>
+    <string name="error__security_lock_too_many_attempts_minutes">ការប៉ុនប៉ងមិនត្រឹមត្រូវច្រើនពេក។ ព្យាយាមម្តងទៀតក្នុងរយៈពេល %1$d នាទី។</string>
+    <string name="error__security_lock_too_many_attempts_seconds">ការប៉ុនប៉ងមិនត្រឹមត្រូវច្រើនពេក។ ព្យាយាមម្តងទៀតក្នុងរយៈពេល %1$d វិនាទី។</string>
+
+</resources>

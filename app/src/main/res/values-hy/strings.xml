@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Համաձայնվել</string>
+    <string name="button__disagree">Համաձայն չեմ</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ թվանշան PIN</string>
+    <string name="error__pin_too_short">PIN- ը շատ կարճ է</string>
+    <string name="text_field__confirm_pin">Հաստատեք PIN- ը</string>
+    <string name="error__pin_mismatch">PIN անհամապատասխանություն</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Խնդրում ենք մուտքագրել ճիշտ ուղեղը, այն պետք է ունենա 12 կամ 16 բառ:</string>
+    <string name="button__import_existing_account">Ներմուծեք գոյություն ունեցող հաշիվը</string>
+    <string name="text__or">Կամ</string>
+    <string name="button__create_new_account">Ստեղծեք նոր հաշիվ</string>
+    <string name="error__invalid_brainkey">Ոչ մի հաշիվ, որը վերահսկվում է տվյալ ուղեղի գլխամասում, որտեղ գտնվել է, խնդրում ենք ստուգեք ձեր ուղեղը սխալները մուտքագրելու համար</string>
+    <string name="error__try_again">Խնդրում ենք կրկին փորձել 5 րոպե հետո</string>
+    <string name="dialog__account_candidates_title">Խնդրում ենք ընտրել հաշիվ</string>
+    <string name="dialog__account_candidates_content">Այս ուղեղից ստացվող բանալիները, կարծես, օգտագործվում են մեկից ավելի հաշիվ կառավարելու համար, ընտրեք, թե որ հաշիվն եք ցանկանում ներմուծել</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares հաշվի անուն</string>
+    <string name="error__read_dict_file">Սխալ բառարան ֆայլը կարդալիս</string>
+    <string name="error__invalid_account_length">Հաշվի անունը պետք է լինի 3-ից 16 նիշ:</string>
+    <string name="error__invalid_account_start">Հաշվի անունը պետք է սկսվի տառով:</string>
+    <string name="error__invalid_account_name">Խնդրում ենք մուտքագրել սովորական անուն, որը պարունակում է առնվազն մեկ տող, համարը կամ ձայնավոր ձայնագրություններ:</string>
+    <string name="text__verifying_account_availability">Հաշվի առկայությունը հաստատող…</string>
+    <string name="error__account_not_available">Այդ հաշվի անունը արդեն վերցված է:</string>
+    <string name="text__account_is_available">Հաշիվը մատչելի է</string>
+    <string name="title_error">Սխալ</string>
+    <string name="error__faucet">Սերվերը վերադարձրեց սխալ: Դա կարող է պայմանավորված լինել այն սահմանափակումով, որը նպատակաուղղված է կիրառել կարճ ժամանակահատվածում նույն IP հասցեից եկող հաճախակի հարցումները թույլ չտալու համար: Խնդրում ենք սպասել 5 րոպե և կրկին փորձեք կամ անցեք այլ ցանցի, օրինակ `wifi- ից բջիջ:</string>
+    <string name="error__faucet_template">Ծորակը վերադարձավ սխալ: Msg: %1$s</string>
+    <string name="error__created_account_not_found">Հավելվածը չի կարողացել տեղեկություններ ստանալ նոր ստեղծված հաշվի մասին</string>
+    <string name="button__create">Ստեղծել</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Գործարքներ</string>
+    <string name="title_merchants_and_tellers">Առևտրականներ և վաճառողներ</string>
+    <string name="title_receive">Ստացեք</string>
+    <string name="title_balances">Մնացորդները</string>
+    <string name="title_send">Ուղարկել</string>
+    <string name="title_net_worth">Զուտ արժեք</string>
+    <string name="text__coming_soon">Շուտով</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Որոնել</string>
+    <string name="title_filter">Զտիչ</string>
+    <string name="title_export">Արտահանում</string>
+    <string name="text__no_transactions">Գործարքներ չկան</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Զտիչի ընտրանքներ</string>
+    <string name="text__all">Բոլորը</string>
+    <string name="text__sent">Ուղարկվել է</string>
+    <string name="text__received">Ստացվեց</string>
+    <string name="text__date_range">Ամսաթիվը</string>
+    <string name="text__equivalent_value">Համարժեք արժեք</string>
+    <string name="text__ignore_network_fees">Անտեսեք ցանցի վճարները</string>
+    <string name="text__between">Միջեւ</string>
+    <string name="text__and">և</string>
+    <string name="button__filter">Զտիչ</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Արտահանեք զտված գործարքներ</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV- ն</string>
+    <string name="msg__storage_permission_necessary_export">Պահպանման թույլտվությունը անհրաժեշտ է PDF / CSV ֆայլեր արտահանելու համար:</string>
+    <string name="title_from">Ից</string>
+    <string name="title_to">Դեպի</string>
+    <string name="title_memo">Հուշագիր</string>
+    <string name="title_date">Ամսաթիվ</string>
+    <string name="title_time">Ժամանակը</string>
+    <string name="title_amount">Գումարը</string>
+    <string name="title_equivalent_value">Համարժեք արժեք</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Արժեք</string>
+    <string name="template__memo">Հուշագիր. %1$s</string>
+    <string name="template__date">Ամսաթիվ ՝ %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Առևտրականներ</string>
+    <string name="title_tellers">Վաճառողներ</string>
+    <string name="title_about">Մասին</string>
+    <string name="msg__merchants_description">PalmPay վաճառականները նոր Crypto Economy- ի ողնաշարն են: Եթե փնտրում եք բիզնեսներ, որոնք կընդունեն ձեր Cryptocurrency- ը, ապա պարզապես օգտագործեք Ստորև որոնման և քարտեզի տվյալները: Այստեղ կավելացվեն ավելի շատ վաճառականներ, ինչպես մեզ տեղեկացնում են PalmPay- ի դեսպանները:</string>
+    <string name="msg__tellers_description">Վաճառողներն այն մարդիկ են, ովքեր փոխանակում են ձեր fiat արտարժույթները ծպտյալ արժույթներով և հակառակը: Նրանք նաև օգնում են առևտրականներին ֆիատ բնակավայրերում:</string>
+    <string name="msg__location_permission_necessary">Տեղադրության թույլտվությունը անհրաժեշտ է քարտեզի վրա ներկայիս գտնվելու վայրը ցույց տալու համար:</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Տեղեկատվություն</string>
+    <string name="text__to">Դեպի</string>
+    <string name="text__amount">Գումարը</string>
+    <string name="text__memo">Հուշագիր</string>
+    <string name="text__scan_qr">Սկան QR</string>
+    <string name="error__invalid_account">Անվավեր հաշիվ</string>
+    <string name="error__not_enough_funds">Ոչ բավարար միջոցներ</string>
+    <string name="msg__camera_permission_necessary">Խցիկի թույլտվությունը անհրաժեշտ է QR ծածկագրերը կարդալու համար:</string>
+    <string name="text__transaction_sent">Գործարքն ուղարկվեց:</string>
+    <string name="msg__transaction_not_sent">Անհնար է գործարքը ուղարկել</string>
+    <string name="error__you_dont_own_asset">Դուք չեք պատկանում որևէ %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Մուտքագրեք Bitshares հաշիվը այն անձի անունով, որին ցանկանում եք գումար ուղարկել: \n Օրինակի համար `ագորիս-ծորակ</string>
+    <string name="text__asset_balance">Ակտիվ հաշվեկշիռ</string>
+    <string name="msg__asset_balance_explanation">Կարող եք հպել ցուցադրված մնացորդի վրա այդ ամբողջ ակտիվը ուղարկելու համար: Այդպես վարվելը լրացնելու է գումարի դաշտը ձեզ համար:</string>
+    <string name="msg__memo_explanation">Հուշագիր մուտքագրելը պարտադիր չէ, բայց նշումներն այն մասին, թե ինչու եք ուղարկել այդ միջոցները, հաճելի է ապագա հղման համար: Հիշողությունները տեսանելի են միայն ձեզ և այն անձի համար, ում ուղարկել եք միջոցներ:</string>
+    <string name="text__network_fee">Անցային վճար</string>
+    <string name="msg__network_fee_explanation">Անցի վճարը ներառված է այն գումարի մեջ, որը ցանկանում եք ուղարկել: Օրինակ, եթե ցանկանում եք ուղարկել 50 BTS, BiTSy- ն իրականում կուղարկի 50.21 BTS ~: Այս օրինակում ավելացված 0.21-ը Bitshares գործարքի վճարն է, որը գումարվում է 0.01% -ը BiTSy- ի մշակողների թիմին (սովորաբար 1 ֆունտ ստեռլինգ):</string>
+    <string name="text__qr_code">QR ծածկագիր</string>
+    <string name="msg__qr_code_explanation">Ֆոնդեր ուղարկելու համար հարկավոր չէ ինչ-որ մեկի QR սկանավորել, բայց դա կօգնի ձեզ խուսափել սխալներից: Ձեր հաշվից միջոցներ ուղարկելուց հետո դրանք ընդմիշտ գնացել են, այնպես որ միշտ համոզվեք, որ «To» դաշտում հաշվի անվանումը ճիշտ է:</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Ակտիվ</string>
+    <string name="text__other">Այլ…</string>
+    <string name="template__please_send">Խնդրում ենք ուղարկել. %1$s %2$s</string>
+    <string name="text__any_amount">Anyանկացած գումար</string>
+    <string name="template__to">Դեպի ՝ %1$s</string>
+    <string name="msg__invoice_subject">BiTSy հաշիվը %1$s- ից</string>
+    <string name="title_share">Կիսվիր</string>
+    <string name="text__share_with">Համօգտագործեք</string>
+    <string name="msg__storage_permission_necessary_share">Պատկերները կիսելու համար անհրաժեշտ է պահպանել թույլտվությունը:</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Կարգավորումներ</string>
+    <string name="title__general">Գեներալ</string>
+    <string name="msg__close_timer">Ավտոմատ փակեք BiTSy- ը 3 րոպե անգործությունից հետո</string>
+    <string name="msg__night_mode">Գիշերային ռեժիմ</string>
+    <string name="text__view_network_status">Դիտեք ցանցի կարգավիճակը</string>
+    <string name="title__backup">Կրկնօրինակում</string>
+    <string name="msg__brainkey_description">BrainKey. Հաշվի վերականգնման բառերը, որոնք կարող են գրվել կամ պատճենվել, բայց չեն խմբագրվել:</string>
+    <string name="msg__brainkey_info">Գրիր սա: Համոզված եղեք, որ այս BrainKey- ի 2 օրինակ կա 2 անվտանգ վայրում `հրդեհի կամ կորստի դեպքում: Անվտանգություն նախ. Յուրաքանչյուր ոք, ով մուտք ունի ձեր BrainKey- ը, կարող է մուտք ունենալ ձեր հաշվին առկա միջոցները:</string>
+    <string name="button__copied">Պատճենվել է</string>
+    <string name="button__view_and_copy">Դիտեք և պատճենեք</string>
+    <string name="title__accounts">Հաշիվներ</string>
+    <string name="msg__upgrade_to_ltm">Թարմացրեք LifeTime- ի անդամությանը (LTM): Bitshares- ի LTM հաշիվները վճարում են մոտ զրոյական վճար, ստանում են 80% կանխիկացում և ուղարկում են ուղեկցորդների բոնուսներ:</string>
+    <string name="button__upgrade_to_ltm">Թարմացրեք LTM- ին</string>
+    <string name="msg__account_upgrade_dialog">Life Time- ի անդամակցությունը հնարավորություն է տալիս առևտուր ունենալ ցանցի վճարների իջեցված փաթեթի հետ: \n %1$s \n \n Համոզվա՞ծ եք, որ ցանկանում եք շարունակել:</string>
+    <string name="title__account_upgraded">Հաշիվը թարմացվել է</string>
+    <string name="msg__account_upgraded">Շնորհավոր Ձեր հաշիվն այժմ թարմացվել է մինչև կյանքի տևողությանը:</string>
+    <string name="title__upgrade_account_error">Սխալը թարմացնելիս փորձել է սխալ</string>
+    <string name="msg__upgrade_account_error">Համոզվեք, որ ձեր հաշիվը բավարար մնացորդ ունի ծախսերը հոգալու համար:</string>
+    <string name="msg__remove_current_account">Հեռացրեք ընթացիկ հաշիվն այս սարքից և ստեղծեք կամ ներմուծեք այլ:</string>
+    <string name="button__remove">Հեռացրեք</string>
+    <string name="title__remove_account">Հեռացրեք հաշիվը</string>
+    <string name="msg__remove_account_confirmation">Համոզվա՞ծ եք, որ ցանկանում եք հեռացնել ընթացիկ հաշիվն այս սարքից:</string>
+    <string name="title__bugs_or_ideas">Վրիպակներ կամ գաղափարներ:</string>
+    <string name="msg__bugs_or_ideas">Telegram ՝ https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Բլոկ ՝ %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Անվտանգություն</string>
+    <string name="text__security_lock">Անվտանգության կողպեք</string>
+    <string name="title__security_dialog">Ընտրեք անվտանգության կողպեք</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Օրինաչափություն</string>
+    <string name="text__none">Ոչ ոք</string>
+    <string name="button__choose">Ընտրեք</string>
+    <string name="title__re_enter_your_pin">Կրկին մուտքագրեք ձեր PIN- ը</string>
+    <string name="msg__enter_your_pin">Մուտքագրեք ձեր BiTSy PIN- ը `շարունակելու համար</string>
+    <string name="error__wrong_pin">Սխալ PIN</string>
+    <string name="title__set_bitsy_security_lock">Սահմանեք BiTSy Security- ը</string>
+    <string name="msg__set_a_pin">Անվտանգության համար սահմանեք PIN</string>
+    <string name="msg__min_pin_length">PIN- ը պետք է լինի առնվազն 6 նիշ</string>
+    <string name="title__pins_dont_match">PIN- ները չեն համընկնում</string>
+    <string name="title__re_enter_your_pattern">Կրկին մուտքագրեք ձեր օրինակը</string>
+    <string name="msg__enter_your_pattern">Մուտքագրեք ձեր BiTSy օրինակը ՝ շարունակելու համար</string>
+    <string name="msg__set_a_pattern">Անվտանգության համար նախադրեք նախշը</string>
+    <string name="msg__release_finger">Ազատեք մատը, երբ ավարտվում է</string>
+    <string name="button__clear">Մաքրել</string>
+    <string name="button__next">Հաջորդը</string>
+    <string name="text__draw_an_unlock_pattern">Նկարել բացելու ձևը</string>
+    <string name="msg__draw_pattern_confirm">Նորից նկարեք օրինակը `հաստատելու համար</string>
+    <string name="button__confirm">Հաստատել</string>
+    <string name="msg__your_new_unlock_pattern">Բացման ձեր նոր օրինակը</string>
+    <string name="error__wront_pattern">Սխալ օրինաչափություն</string>
+    <string name="text__pattern_recorded">Արձանագրվել է</string>
+    <string name="error__connect_at_least_4_dots">Միացրեք առնվազն 4 կետ: Կրկին փորձեք:</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Չափազանց սխալ փորձեր: Կրկին փորձեք %1$d րոպեում:</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Չափազանց սխալ փորձեր: Կրկին փորձեք %1$d վայրկյանում:</string>
+
+</resources>

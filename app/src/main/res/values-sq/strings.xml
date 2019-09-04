@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">bie dakord</string>
+    <string name="button__disagree">Nuk bie dakort</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN me 6 shifra</string>
+    <string name="error__pin_too_short">PIN shumë i shkurtër</string>
+    <string name="text_field__confirm_pin">Konfirmoni PIN-in</string>
+    <string name="error__pin_mismatch">Mospërputhja PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Ju lutemi shkruani trurin e saktë, duhet të ketë 12 ose 16 fjalë.</string>
+    <string name="button__import_existing_account">Importoni llogarinë ekzistuese</string>
+    <string name="text__or">ose</string>
+    <string name="button__create_new_account">Hapni një llogari të re</string>
+    <string name="error__invalid_brainkey">Asnjë llogari të kontrolluar nga trurin e dhënë kur është gjetur, ju lutemi kontrolloni trurin tuaj për gabime në shtypjen</string>
+    <string name="error__try_again">Ju lutemi provoni përsëri pas 5 minutash</string>
+    <string name="dialog__account_candidates_title">Ju lutemi zgjidhni një llogari</string>
+    <string name="dialog__account_candidates_content">Keyselësat që rrjedhin nga ky inteligjent duket se përdoren për të kontrolluar më shumë se një llogari, ju lutemi zgjidhni cilën llogari dëshironi të importoni</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Emri i llogarisë BitShares</string>
+    <string name="error__read_dict_file">Gabim në leximin e skedarit të fjalorit</string>
+    <string name="error__invalid_account_length">Emri i llogarisë duhet të jetë 3 deri në 16 karaktere.</string>
+    <string name="error__invalid_account_start">Emri i llogarisë duhet të fillojë me një letër.</string>
+    <string name="error__invalid_account_name">Ju lutemi shkruani një emër të rregullt që përmban të paktën një dash, një numër ose asnjë zanore.</string>
+    <string name="text__verifying_account_availability">Verifikimi i disponueshmërisë së llogarisë…</string>
+    <string name="error__account_not_available">Ai emër i llogarisë është marrë tashmë.</string>
+    <string name="text__account_is_available">Llogaria është në dispozicion</string>
+    <string name="title_error">gabim</string>
+    <string name="error__faucet">Serveri u kthye në një gabim. Kjo mund të jetë për shkak të një kufizimi të vendosur qëllimisht për të mos lejuar kërkesa të shpeshta që vijnë nga e njëjta adresë IP brenda një periudhe kohe të shkurtër. Ju lutemi prisni 5 minuta dhe provoni përsëri, ose kaloni në një rrjet tjetër, për shembull nga wifi në qelizë.</string>
+    <string name="error__faucet_template">Rubineti u kthye në një gabim. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Aplikacioni nuk mund të merrte informacione në lidhje me llogarinë e krijuar rishtazi</string>
+    <string name="button__create">krijoj</string>
+
+    <!-- Home -->
+    <string name="title_transactions">transaksionet</string>
+    <string name="title_merchants_and_tellers">Tregtarët dhe shitësit</string>
+    <string name="title_receive">marr</string>
+    <string name="title_balances">bilancet</string>
+    <string name="title_send">dërgoj</string>
+    <string name="title_net_worth">Te ardhura neto</string>
+    <string name="text__coming_soon">Vjen së shpejti</string>
+
+    <!-- Transactions -->
+    <string name="title_search">kërkim</string>
+    <string name="title_filter">filtër</string>
+    <string name="title_export">eksport</string>
+    <string name="text__no_transactions">Asnjë transaksion</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Opsionet e filtrit</string>
+    <string name="text__all">të gjithë</string>
+    <string name="text__sent">Sent</string>
+    <string name="text__received">marrë</string>
+    <string name="text__date_range">Gama e datave</string>
+    <string name="text__equivalent_value">Vlera ekuivalente</string>
+    <string name="text__ignore_network_fees">Injoroni tarifat e Rrjetit</string>
+    <string name="text__between">Ndërmjet</string>
+    <string name="text__and">dhe</string>
+    <string name="button__filter">filtër</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Eksportoni transaksione të filtruara</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Leja e ruajtjes është e nevojshme për të eksportuar skedarë PDF / CSV.</string>
+    <string name="title_from">nga</string>
+    <string name="title_to">në</string>
+    <string name="title_memo">memorandum</string>
+    <string name="title_date">data</string>
+    <string name="title_time">kohë</string>
+    <string name="title_amount">sasi</string>
+    <string name="title_equivalent_value">Vlera ekuivalente</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">vlerë</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Merchants</string>
+    <string name="title_tellers">tellers</string>
+    <string name="title_about">për</string>
+    <string name="msg__merchants_description">Tregtarët PalmPay janë shtylla kurrizore e ekonomisë së re Crypto. Nëse jeni duke kërkuar për biznese që do të pranojnë Cryptocurrency tuaj, atëherë thjesht përdorni të dhënat e Kërkimit dhe Hartës më poshtë. Këtu do të shtohen më shumë tregtarë ndërsa na informojnë Ambasadorët PalmPay.</string>
+    <string name="msg__tellers_description">Shitësit janë njerëz që do të shkëmbejnë monedhat tuaja fiat me cryptocurrency, dhe anasjelltas. Ata gjithashtu ndihmojnë Tregtarët me zgjidhjen e fiat.</string>
+    <string name="msg__location_permission_necessary">Leja e vendndodhjes është e nevojshme për të treguar vendndodhjen tuaj aktuale në hartë.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">në</string>
+    <string name="text__amount">sasi</string>
+    <string name="text__memo">memorandum</string>
+    <string name="text__scan_qr">Skanoni QR</string>
+    <string name="error__invalid_account">Llogari e pavlefshme</string>
+    <string name="error__not_enough_funds">Jo fonde të mjaftueshme</string>
+    <string name="msg__camera_permission_necessary">Leja e kamerës është e nevojshme për të lexuar kodet QR.</string>
+    <string name="text__transaction_sent">Transaksioni u dërgua!</string>
+    <string name="msg__transaction_not_sent">Në pamundësi për të dërguar transaksion</string>
+    <string name="error__you_dont_own_asset">Ju nuk zotëroni ndonjë %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Shkruani emrin e llogarisë Bitshares të personit që dëshironi të dërgoni fonde tek. \n Për shembull: rubinet agorise</string>
+    <string name="text__asset_balance">Bilanci i pasurisë</string>
+    <string name="msg__asset_balance_explanation">Mund të trokitni lehtë mbi bilancin e shfaqur për të dërguar tërë atë pasuri. Duke vepruar kështu do të plotësoni fushën e Shuma për ju.</string>
+    <string name="msg__memo_explanation">Hyrja e një Memo nuk kërkohet, por shënimi se pse i dërguat fondet është e këndshme për referencë në të ardhmen. Memo janë të dukshme vetëm për ju dhe personin të cilit i keni dërguar fonde.</string>
+    <string name="text__network_fee">Tarifa e rrjetit</string>
+    <string name="msg__network_fee_explanation">Tarifa e Rrjetit përfshihet në shumën që dëshironi të dërgoni. Për shembull, nëse doni të dërgoni 50 BTS, BiTSy në të vërtetë do të dërgojë 50,21 ~ BTS. 0.21 e shtuar në këtë shembull është tarifa e transaksionit Bitshares plus 0.01% për Ekipin e Zhvilluesve BiTSy (zakonisht 1 ~)).</string>
+    <string name="text__qr_code">Kodi QR</string>
+    <string name="msg__qr_code_explanation">Ju nuk keni nevojë të skanoni QR të dikujt për të dërguar fonde, por kjo ju ndihmon të shmangni gabimet. Pasi të dërgoni fonde nga llogaria juaj, ato janë zhdukur përgjithmonë, kështu që gjithmonë sigurohuni që emri i llogarisë në fushën "Për" të jetë i saktë.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">pasuri</string>
+    <string name="text__other">Të tjera…</string>
+    <string name="template__please_send">Ju lutemi dërgoni: %1$s %2$s</string>
+    <string name="text__any_amount">Do shumë</string>
+    <string name="template__to">Tek: %1$s</string>
+    <string name="msg__invoice_subject">Faturë BiTSy nga %1$s</string>
+    <string name="title_share">pjesë</string>
+    <string name="text__share_with">Ndaj me</string>
+    <string name="msg__storage_permission_necessary_share">Leja e ruajtjes është e nevojshme për të shkëmbyer imazhe.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Cilësimet</string>
+    <string name="title__general">i përgjithshëm</string>
+    <string name="msg__close_timer">Mbyll automatikisht BiTSy pas 3 minutash pasiviteti</string>
+    <string name="msg__night_mode">Modaliteti i natës</string>
+    <string name="text__view_network_status">Shikoni statusin e rrjetit</string>
+    <string name="title__backup">rezervë</string>
+    <string name="msg__brainkey_description">BrainKey. Fjalë për rikuperimin e llogarisë që mund të kapen ose kopjohen, por jo të redaktohen.</string>
+    <string name="msg__brainkey_info">Shkruajeni këtë! Sigurohuni që keni 2 kopje të këtij BrainKey në 2 vende të sigurta në rast zjarri ose humbjeje. Siguria e parë! Kushdo që ka qasje në BrainKey tuaj mund të hyjë në fondet në llogarinë tuaj!</string>
+    <string name="button__copied">kopjuar</string>
+    <string name="button__view_and_copy">Shikoni dhe kopjoni</string>
+    <string name="title__accounts">llogaritë</string>
+    <string name="msg__upgrade_to_ltm">Përditësoni në Anëtarësimin në LifeTime (LTM). Llogaritë LTM të Bitshares paguajnë tarifa afro zero, marrin 80% kthim parash dhe shpërblime për referime.</string>
+    <string name="button__upgrade_to_ltm">Përditësoni në LTM</string>
+    <string name="msg__account_upgrade_dialog">Anëtarësimi në Jetën e Jetës ju lejon të tregtoni me një grup të reduktuar tarifash të rrjetit. %1$s \n \n A jeni i sigurt se doni të vazhdoni?</string>
+    <string name="title__account_upgraded">Llogari e azhurnuar</string>
+    <string name="msg__account_upgraded">Urime! Llogaria juaj tani është azhurnuar në Anëtarësimin Lifetime.</string>
+    <string name="title__upgrade_account_error">Gabim gjatë përpjekjes për të përmirësuar llogarinë</string>
+    <string name="msg__upgrade_account_error">Ju lutemi sigurohuni që llogaria juaj të ketë ekuilibër të mjaftueshëm për të mbuluar kostot.</string>
+    <string name="msg__remove_current_account">Hiq Llogarinë e tanishme nga kjo pajisje dhe krijoni ose importoni një tjetër.</string>
+    <string name="button__remove">heq</string>
+    <string name="title__remove_account">Hiq Llogarinë</string>
+    <string name="msg__remove_account_confirmation">Jeni i sigurt që doni të hiqni llogarinë rrjedhëse nga kjo pajisje?</string>
+    <string name="title__bugs_or_ideas">Gabime apo ide?</string>
+    <string name="msg__bugs_or_ideas">Telegrafi: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blloku: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">siguri</string>
+    <string name="text__security_lock">Bllokimi i sigurisë</string>
+    <string name="title__security_dialog">Zgjidhni një Bllok të Sigurisë</string>
+    <string name="text__pin">GJILPERE</string>
+    <string name="text__pattern">model</string>
+    <string name="text__none">Asnje</string>
+    <string name="button__choose">zgjedh</string>
+    <string name="title__re_enter_your_pin">Ri-shkruani PIN-in tuaj</string>
+    <string name="msg__enter_your_pin">Futni kodin PIN për BiTSy për të vazhduar</string>
+    <string name="error__wrong_pin">PIN i gabuar</string>
+    <string name="title__set_bitsy_security_lock">Vendosni Sigurinë BiTSy</string>
+    <string name="msg__set_a_pin">Për sigurinë, vendosni një PIN</string>
+    <string name="msg__min_pin_length">PIN duhet të jetë së paku 6 shifra</string>
+    <string name="title__pins_dont_match">PIN-të nuk përputhen</string>
+    <string name="title__re_enter_your_pattern">Rishikoni modelin tuaj</string>
+    <string name="msg__enter_your_pattern">Vendosni modelin tuaj BiTSy për të vazhduar</string>
+    <string name="msg__set_a_pattern">Për sigurinë, vendosni një model</string>
+    <string name="msg__release_finger">Lëshoni gishtin kur të keni përfunduar</string>
+    <string name="button__clear">Qartë</string>
+    <string name="button__next">tjetër</string>
+    <string name="text__draw_an_unlock_pattern">Vizatoni një model zhbllokimi</string>
+    <string name="msg__draw_pattern_confirm">Vizato përsëri model për të konfirmuar</string>
+    <string name="button__confirm">konfirmoj</string>
+    <string name="msg__your_new_unlock_pattern">Modeli juaj i ri i zhbllokimit</string>
+    <string name="error__wront_pattern">Model i gabuar</string>
+    <string name="text__pattern_recorded">Modeli i regjistruar</string>
+    <string name="error__connect_at_least_4_dots">Lidhni të paktën 4 pika. Provo përsëri.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Shumë përpjekje të pasakta. Provoni përsëri në %1$d minuta.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Shumë përpjekje të pasakta. Provoni përsëri në %1$d sekonda.</string>
+
+</resources>

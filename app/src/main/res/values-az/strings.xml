@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Razılaşmaq</string>
+    <string name="button__disagree">Razı deyiləm</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ rəqəm PIN</string>
+    <string name="error__pin_too_short">PIN çox qısa</string>
+    <string name="text_field__confirm_pin">PİN kodu təsdiqləyin</string>
+    <string name="error__pin_mismatch">PİN uyğunsuzluğu</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Zəhmət olmasa düzgün beyin düyməsini daxil edin, 12 və ya 16 sözdən ibarət olmalıdır.</string>
+    <string name="button__import_existing_account">Mövcud hesabı idxal edin</string>
+    <string name="text__or">Və ya</string>
+    <string name="button__create_new_account">Yeni hesab yaratmaq</string>
+    <string name="error__invalid_brainkey">Tapılan yerdə verilən beyin düyməsini idarə edən hesab yoxdur, xahiş edirəm yazaraq səhv yazdığınız üçün beyin düyməsini yoxlayın</string>
+    <string name="error__try_again">Xahiş edirəm 5 dəqiqədən sonra yenidən cəhd edin</string>
+    <string name="dialog__account_candidates_title">Zəhmət olmasa bir hesab seçin</string>
+    <string name="dialog__account_candidates_content">Bu beyni düyməsindən əldə edilən düymələr birdən çox hesabı idarə etmək üçün istifadə edildiyi görünür, zəhmət olmasa hansı hesabı idxal etmək istədiyinizi seçin</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares hesab adı</string>
+    <string name="error__read_dict_file">Lüğət faylı oxumaqda səhv oldu</string>
+    <string name="error__invalid_account_length">Hesab adı 3 ilə 16 simvol arasında olmalıdır.</string>
+    <string name="error__invalid_account_start">Hesab adı bir hərf ilə başlamalıdır.</string>
+    <string name="error__invalid_account_name">Ən azı bir tire, bir sıra və ya sait olmayan müntəzəm bir ad daxil edin.</string>
+    <string name="text__verifying_account_availability">Hesab mövcudluğu təsdiqlənir…</string>
+    <string name="error__account_not_available">Bu hesab adı artıq alınmışdır.</string>
+    <string name="text__account_is_available">Hesab mövcuddur</string>
+    <string name="title_error">Xəta</string>
+    <string name="error__faucet">Server səhv verdi. Bu, qısa müddət ərzində eyni IP ünvanından gələn tez-tez müraciətlərin qəbul edilməməsi üçün məqsədyönlü şəkildə qoyulmuş məhdudiyyətlə bağlı ola bilər. Zəhmət olmasa 5 dəqiqə gözləyin və yenidən cəhd edin və ya başqa bir şəbəkəyə, məsələn wifi-dən hücrəyə keçin.</string>
+    <string name="error__faucet_template">Müslüm bir səhv verdi. Ms: %1$s</string>
+    <string name="error__created_account_not_found">Tətbiq yeni yaradılan hesab haqqında məlumat əldə edə bilmədi</string>
+    <string name="button__create">Yarat</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Əməliyyatlar</string>
+    <string name="title_merchants_and_tellers">Tacirlər və danışanlar</string>
+    <string name="title_receive">Alın</string>
+    <string name="title_balances">Qalıqlar</string>
+    <string name="title_send">Göndər</string>
+    <string name="title_net_worth">Xalis dəyər</string>
+    <string name="text__coming_soon">Tezliklə</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Axtarış</string>
+    <string name="title_filter">Süzgəc</string>
+    <string name="title_export">İxrac et</string>
+    <string name="text__no_transactions">Əməliyyatlar yoxdur</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtr seçimləri</string>
+    <string name="text__all">Hamısı</string>
+    <string name="text__sent">Göndərilib</string>
+    <string name="text__received">Alinib</string>
+    <string name="text__date_range">Tarix Menzil</string>
+    <string name="text__equivalent_value">Ekvivalent dəyər</string>
+    <string name="text__ignore_network_fees">Şəbəkə ödənişlərinə məhəl qoymayın</string>
+    <string name="text__between">Arasında</string>
+    <string name="text__and">və</string>
+    <string name="button__filter">Süzgəc</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">İxrac edilmiş filtrli əməliyyatlar</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV sənədlərini ixrac etmək üçün saxlama icazəsi lazımdır.</string>
+    <string name="title_from">Dən</string>
+    <string name="title_to">Üçün</string>
+    <string name="title_memo">Xatirə</string>
+    <string name="title_date">Tarix</string>
+    <string name="title_time">Vaxt</string>
+    <string name="title_amount">Miqdarı</string>
+    <string name="title_equivalent_value">Ekvivalent dəyər</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Dəyər</string>
+    <string name="template__memo">Xatirə: %1$s</string>
+    <string name="template__date">Tarix: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Tacirlər</string>
+    <string name="title_tellers">Danışanlar</string>
+    <string name="title_about">Haqqında</string>
+    <string name="msg__merchants_description">PalmPay tacirləri yeni Kripto İqtisadiyyatının dayağıdır. Cryptocurrency qəbul edəcək iş axtarırsınızsa, onda aşağıdakı Axtarış və Xəritə məlumatlarını istifadə edin. PalmPay Səfirləri bizə məlumat verdikləri üçün buraya daha çox tacir əlavə olunacaq.</string>
+    <string name="msg__tellers_description">Sayıcılar fiat pullarınızı cryptocurrencies və əksinə dəyişdirəcək insanlardır. Həm də satıcılara fiat həllində kömək edirlər.</string>
+    <string name="msg__location_permission_necessary">Cari yerinizi xəritədə göstərmək üçün məkan icazəsi lazımdır.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Məlumat</string>
+    <string name="text__to">Üçün</string>
+    <string name="text__amount">Miqdarı</string>
+    <string name="text__memo">Xatirə</string>
+    <string name="text__scan_qr">QR skan edin</string>
+    <string name="error__invalid_account">Yanlış hesab</string>
+    <string name="error__not_enough_funds">Vəsait çatmır</string>
+    <string name="msg__camera_permission_necessary">Kamera icazəsi QR kodlarını oxumaq üçün lazımdır.</string>
+    <string name="text__transaction_sent">Əməliyyat göndərildi!</string>
+    <string name="msg__transaction_not_sent">Əməliyyatı göndərmək olmur</string>
+    <string name="error__you_dont_own_asset">Hər hansı bir %1$s sahibi deyilsiniz</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Vəsait göndərmək istədiyiniz şəxsin Bitshares hesab adını yazın. \nMəsələn: agorise-musluk</string>
+    <string name="text__asset_balance">Aktiv balansı</string>
+    <string name="msg__asset_balance_explanation">Bütün bu aktivi göndərmək üçün göstərilən balansa vura bilərsiniz. Bunu etmək sizin üçün Məbləğ sahəsini dolduracaqdır.</string>
+    <string name="msg__memo_explanation">Xatirə daxil etmək tələb olunmur, ancaq vəsaitin niyə göndərildiyinə dair qeydlər aparmaq gələcək sened üçün xoşdur. Xatirələr yalnız sizin və pul göndərdiyiniz şəxs üçün görünür.</string>
+    <string name="text__network_fee">Şəbəkə haqqı</string>
+    <string name="msg__network_fee_explanation">Şəbəkə haqqı göndərmək istədiyiniz məbləğə daxil edilir. Məsələn, 50 BTS göndərmək istəyirsinizsə, BiTSy həqiqətən ~ 50.21 BTS göndərir. Bu nümunədəki əlavə edilən 0,21, Bitshares əməliyyat haqqı və BiTSy Developer Team-ə 0.01% (adətən ~ 1 sent) bərabərdir.</string>
+    <string name="text__qr_code">QR kodu</string>
+    <string name="msg__qr_code_explanation">Vəsait göndərmək üçün birinin QRini skan etməyinizə ehtiyac yoxdur, ancaq səhvlərdən qaçınmaq üçün kömək edir. Hesabınızdan vəsait göndərdikdən sonra onlar əbədi olaraq qaldı, buna görə də "To" sahəsindəki hesab adının düzgün olduğundan əmin olun.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Aktiv</string>
+    <string name="text__other">Digər…</string>
+    <string name="template__please_send">Xahiş edirəm göndərin: %1$s %2$s</string>
+    <string name="text__any_amount">İstənilən məbləğ</string>
+    <string name="template__to">Kimə: %1$s</string>
+    <string name="msg__invoice_subject">%1$s dən BiTSy faktura</string>
+    <string name="title_share">Paylaşın</string>
+    <string name="text__share_with">Paylaşın</string>
+    <string name="msg__storage_permission_necessary_share">Şəkilləri bölüşmək üçün saxlama icazəsi lazımdır.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Parametrlər</string>
+    <string name="title__general">Ümumi</string>
+    <string name="msg__close_timer">3 dəqiqəlik hərəkətsizlikdən sonra BiTSyi avtomatik bağlayın</string>
+    <string name="msg__night_mode">Gecə rejimi</string>
+    <string name="text__view_network_status">Şəbəkə vəziyyətinə baxın</string>
+    <string name="title__backup">Yedəkləmə</string>
+    <string name="msg__brainkey_description">BrainKey. Tutula bilən və ya kopyalana bilən, lakin redaktə olunmayan hesab bərpa sözləri.</string>
+    <string name="msg__brainkey_info">Bunu yaz! Yanğın və ya itki halında bu təhlükəsiz BraynKey-in 2 nüsxəsinin olduğundan əmin olun. Əvvəlcə təhlükəsizlik! BrainKey-ə daxil olan hər kəs hesabınızdakı vəsaitləri əldə edə bilər!</string>
+    <string name="button__copied">Kopyalandı</string>
+    <string name="button__view_and_copy">Görün və kopyalayın</string>
+    <string name="title__accounts">Hesablar</string>
+    <string name="msg__upgrade_to_ltm">LifeTime Üzvlüyünə (LTM) yüksəldin. Bitshares\'in LTM hesabları sıfır ödəniş ödəyir, 80% nağd pul və müraciət üçün bonus alır.</string>
+    <string name="button__upgrade_to_ltm">LTM-ə yüksəldin</string>
+    <string name="msg__account_upgrade_dialog">Həyat Vaxtı Üzvlük, azaldılmış şəbəkə haqları ilə ticarət etməyə imkan verir. \n \nBu cari hesabda qüvvəyə minəcək "%1$s" \n \nBelə ki, Bitshares-də ödənilən 100 ABŞ dolları dəyərində gəlir. \n \nSiz davam etmək istəyirsiniz?</string>
+    <string name="title__account_upgraded">Hesab təkmilləşdirildi</string>
+    <string name="msg__account_upgraded">Təbrik edirik! İndi hesabınız Ömür boyu Üzvlük səviyyəsinə yüksəldilib.</string>
+    <string name="title__upgrade_account_error">Hesabı yeniləmək istəyərkən səhv oldu</string>
+    <string name="msg__upgrade_account_error">Zəhmət olmasa hesabınızdakı xərcləri ödəmək üçün kifayət qədər balans olduğundan əmin olun.</string>
+    <string name="msg__remove_current_account">Cari Hesabı bu cihazdan çıxarın və başqa birisini yaradın və ya idxal edin.</string>
+    <string name="button__remove">Sil</string>
+    <string name="title__remove_account">Hesabı sil</string>
+    <string name="msg__remove_account_confirmation">Cari hesabı bu cihazdan silmək istədiyinizə əminsiniz?</string>
+    <string name="title__bugs_or_ideas">Hatalar və ya fikirlər?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Təhlükəsizlik</string>
+    <string name="text__security_lock">Təhlükəsizlik kilidi</string>
+    <string name="title__security_dialog">Təhlükəsizlik kilidi seçin</string>
+    <string name="text__pin">PİN</string>
+    <string name="text__pattern">Naxış</string>
+    <string name="text__none">Heç biri</string>
+    <string name="button__choose">Seçin</string>
+    <string name="title__re_enter_your_pin">PİN kodunuzu yenidən daxil edin</string>
+    <string name="msg__enter_your_pin">Davam etmək üçün BiTSy PIN kodunuzu daxil edin</string>
+    <string name="error__wrong_pin">Səhv PİN</string>
+    <string name="title__set_bitsy_security_lock">BiTSy Təhlükəsizlik qurun</string>
+    <string name="msg__set_a_pin">Təhlükəsizlik üçün, bir PIN seçin</string>
+    <string name="msg__min_pin_length">PİN kodu ən az 6 rəqəm olmalıdır</string>
+    <string name="title__pins_dont_match">PİN kodlar uyğun gəlmir</string>
+    <string name="title__re_enter_your_pattern">Naxışınızı yenidən daxil edin</string>
+    <string name="msg__enter_your_pattern">Davam etmək üçün BiTSy naxışınızı daxil edin</string>
+    <string name="msg__set_a_pattern">Təhlükəsizlik üçün Nümunə qurun</string>
+    <string name="msg__release_finger">Bitirdikdə barmağı buraxın</string>
+    <string name="button__clear">Aydındır</string>
+    <string name="button__next">Sonrakı</string>
+    <string name="text__draw_an_unlock_pattern">Kilidi açma nümunəsi çəkin</string>
+    <string name="msg__draw_pattern_confirm">Təsdiqləmək üçün yenidən nümunə çəkin</string>
+    <string name="button__confirm">Təsdiq edin</string>
+    <string name="msg__your_new_unlock_pattern">Yeni açma nümunəniz</string>
+    <string name="error__wront_pattern">Səhv nümunə</string>
+    <string name="text__pattern_recorded">Naxış qeyd edildi</string>
+    <string name="error__connect_at_least_4_dots">Ən azı 4 nöqtə bağlayın. Yenidən cəhd elə.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Yanlış cəhdlər çoxdur. %1$d dəqiqədən sonra yenidən cəhd edin.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Yanlış cəhdlər çoxdur. %1$d saniyədən sonra yenidən cəhd edin.</string>
+
+</resources>

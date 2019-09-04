@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Ados</string>
+    <string name="button__disagree">Ados</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ digitu PINa</string>
+    <string name="error__pin_too_short">PIN motza</string>
+    <string name="text_field__confirm_pin">PINa berretsi</string>
+    <string name="error__pin_mismatch">PIN ezadostasuna</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Idatzi brainkey zuzena, 12 edo 16 hitz izan beharko lituzke.</string>
+    <string name="button__import_existing_account">Inportatu lehendik dagoen kontua</string>
+    <string name="text__or">edo</string>
+    <string name="button__create_new_account">Sortu kontu berria</string>
+    <string name="error__invalid_brainkey">Aurkitutakoan ez dago inolako kontrol kontrolatutako teklarik. Mesedez, egiaztatu zure idazkera akatsak idatzita</string>
+    <string name="error__try_again">Saiatu berriro 5 minutu ondoren</string>
+    <string name="dialog__account_candidates_title">Mesedez, aukeratu kontu bat</string>
+    <string name="dialog__account_candidates_content">Buruko tekla honetatik eratorritako gakoak kontu bat baino gehiago kontrolatzeko erabiltzen direla dirudi. Mesedez, hautatu zein kontu inportatu nahi duzun</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares kontuaren izena</string>
+    <string name="error__read_dict_file">Errorea hiztegiaren fitxategia irakurtzean</string>
+    <string name="error__invalid_account_length">Kontuaren izenak 3 eta 16 karaktere izan behar ditu.</string>
+    <string name="error__invalid_account_start">Kontuaren izena hizki batekin hasi behar da.</string>
+    <string name="error__invalid_account_name">Sartu gutxienez marratxo bat, zenbakia edo bokalik ez duen izen arrunta.</string>
+    <string name="text__verifying_account_availability">Kontuaren erabilgarritasuna egiaztatzea…</string>
+    <string name="error__account_not_available">Kontuen izena dagoeneko hartu da.</string>
+    <string name="text__account_is_available">Kontua eskuragarri dago</string>
+    <string name="title_error">Akatsa</string>
+    <string name="error__faucet">Zerbitzariak errorea itzuli du. Baliteke hau epe laburrean IP helbide beretik maiz ez datozen eskaerak baztertzeko. Mesedez, itxaron 5 minutu eta saiatu berriro edo aldatu beste sare batera, adibidez wifi-tik gelaxkora.</string>
+    <string name="error__faucet_template">Txorrotak akats bat itzuli du. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Aplikazioak ezin du sortu berri den kontuari buruzko informazioa berreskuratu</string>
+    <string name="button__create">Sortu</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transactions</string>
+    <string name="title_merchants_and_tellers">Merkatariak eta kontalariak</string>
+    <string name="title_receive">Jaso</string>
+    <string name="title_balances">saldoak</string>
+    <string name="title_send">Bidali</string>
+    <string name="title_net_worth">Nabarmena</string>
+    <string name="text__coming_soon">Laister</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Search</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Transakziorik ez</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Iragazkiaren aukerak</string>
+    <string name="text__all">guztiak</string>
+    <string name="text__sent">bidalia</string>
+    <string name="text__received">Jaso</string>
+    <string name="text__date_range">Data-barrutia</string>
+    <string name="text__equivalent_value">Balio baliokidea</string>
+    <string name="text__ignore_network_fees">Ez ahaztu sareko kuotak</string>
+    <string name="text__between">Between</string>
+    <string name="text__and">eta</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Esportatutako iragazkien transakzioak</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Biltegiratzeko baimena beharrezkoa da PDF / CSV fitxategiak esportatzeko.</string>
+    <string name="title_from">aurrera</string>
+    <string name="title_to">to</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">data</string>
+    <string name="title_time">Ordua</string>
+    <string name="title_amount">Zenbateko</string>
+    <string name="title_equivalent_value">Balio baliokidea</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Balio</string>
+    <string name="template__memo">Oharra: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">merkatari</string>
+    <string name="title_tellers">kontalariak</string>
+    <string name="title_about">About</string>
+    <string name="msg__merchants_description">PalmPay merkatariak Crypto Economy berriaren ardatzak dira. Zure Cryptocurrency onartuko duten negozioak bilatzen ari bazara, erabili azpian bilaketa eta mapa datuak. Merkatari gehiago gehituko dira hemen PalmPay enbaxadoreek jakinarazten digutenez.</string>
+    <string name="msg__tellers_description">Kontalariak zure fiat moneta cryptocurrencies trukatuko duten pertsonak dira, eta alderantziz. Merkatariak fiat likidazioarekin ere laguntzen dute.</string>
+    <string name="msg__location_permission_necessary">Kokapen baimena beharrezkoa da uneko kokapena mapan erakusteko.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">info</string>
+    <string name="text__to">to</string>
+    <string name="text__amount">Zenbateko</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Eskaneatu QR</string>
+    <string name="error__invalid_account">Kontu baliogabea</string>
+    <string name="error__not_enough_funds">Ez da nahikoa funts</string>
+    <string name="msg__camera_permission_necessary">Kameraren baimena beharrezkoa da QR kodeak irakurtzeko.</string>
+    <string name="text__transaction_sent">Bidali den transakzioa!</string>
+    <string name="msg__transaction_not_sent">Ezin da transakzioa bidali</string>
+    <string name="error__you_dont_own_asset">Ez duzu %1$s jaberik</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Idatzi funtsak bidali nahi dituzun Bitshares kontuaren izena. \n Adibidez: agorise-txorrota</string>
+    <string name="text__asset_balance">Aktiboen saldoa</string>
+    <string name="msg__asset_balance_explanation">Bistaratutako saldoa ukitu dezakezu aktibo hori guztia bidaltzeko. Hori eginez gero, zure zenbatekoa eremua beteko duzu.</string>
+    <string name="msg__memo_explanation">Memo bat sartzea ez da beharrezkoa, baina fondoak zergatik bidali dituzun oharrak hartzea ondo dago etorkizuneko erreferentziatzat. Memos zure dirua eta dirua bidali zenuen pertsonarentzat bakarrik ikusgai dago.</string>
+    <string name="text__network_fee">Sarearen kuota</string>
+    <string name="msg__network_fee_explanation">Sarearen kuota bidali nahi duzun zenbatekoaren barruan sartzen da. Adibidez, 50 BTS bidali nahi badituzu, BiTSy-k benetan 50,21 BTS bidaliko ditu. Adibide honetako 0.21 gehigarria BTShares transakzioen kuota gehi% 0,01 da BiTSy Garatzaileen Taldearen (normalean ~ 1 ehuneko).</string>
+    <string name="text__qr_code">QR kodea</string>
+    <string name="msg__qr_code_explanation">Ez duzu norbait QRa eskaneatu behar funtsak bidaltzeko, baina akatsak ekiditen lagunduko dizu. Kontuko fondoak bidali ondoren, betiko desagertuko dira, beraz ziurtatu beti "To" eremuko kontuaren izena zuzena dela.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Beste batzuk…</string>
+    <string name="template__please_send">Bidali: %1$s %2$s</string>
+    <string name="text__any_amount">Edozein zenbatekoa</string>
+    <string name="template__to">Nori: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy-ren faktura %1$s-tik</string>
+    <string name="title_share">Share</string>
+    <string name="text__share_with">Partekatu honekin</string>
+    <string name="msg__storage_permission_necessary_share">Biltegiratzeko baimena beharrezkoa da irudiak partekatzeko.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">ezarpenak</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">BiTSy automatikoki itxi inaktibitatearen ondoren 3 minutu</string>
+    <string name="msg__night_mode">Gaueko modua</string>
+    <string name="text__view_network_status">Ikusi Sarearen egoera</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Kontu berreskuratzeko hitzak harrapatu edo kopiatu ditzaketen, baina editatu gabeak.</string>
+    <string name="msg__brainkey_info">Idatzi hau! Ziurtatu BrainKey honen kopia 2 leku segurutan 2 sute edo galera izanez gero. Segurtasuna Lehenik eta behin! Zure BrainKey-erako sarbidea duen edonork sar dezake zure konturako funtsak!</string>
+    <string name="button__copied">kopiatzen</string>
+    <string name="button__view_and_copy">Ikusi eta kopiatu</string>
+    <string name="title__accounts">kontuak</string>
+    <string name="msg__upgrade_to_ltm">Eguneratu LifeTime-ko kide izatera (LTM). Bitshares \ \'LTM kontuek ia zero tasak ordaintzen dituzte,% 80ko diru-itzulkina eta erreferentzien hobariak lortzeko.</string>
+    <string name="button__upgrade_to_ltm">Berritu LTMra</string>
+    <string name="msg__account_upgrade_dialog">Bizitza Denbora Bazkideak sareko kuota multzo murriztu batekin merkataritza egiteko aukera ematen du. \n \n Kontu korrontean sartuko da "%1$s" \n \n. Hala ere, Bitshares-en ordaindutako 100 dolar inguruko kostua dakar. \n \nZiurtatuta zaude jarraitu nahi duzula?</string>
+    <string name="title__account_upgraded">Kontua berritu du</string>
+    <string name="msg__account_upgraded">Zorionak! Zure kontua bizitza osorako bazkide eguneratu da.</string>
+    <string name="title__upgrade_account_error">Errorea gertatu da kontua berritzen saiatzean</string>
+    <string name="msg__upgrade_account_error">Egiaztatu kontuak kostuak estaltzeko saldo nahikoa duela.</string>
+    <string name="msg__remove_current_account">Kendu uneko kontua gailutik eta sortu edo inportatu beste bat.</string>
+    <string name="button__remove">Kendu</string>
+    <string name="title__remove_account">Kendu kontua</string>
+    <string name="msg__remove_account_confirmation">Ziur al zaude kontu korrontea gailutik kendu nahi duzula?</string>
+    <string name="title__bugs_or_ideas">Akatsak edo ideiak?</string>
+    <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokea: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Segurtasuna</string>
+    <string name="text__security_lock">Segurtasun blokeoa</string>
+    <string name="title__security_dialog">Aukeratu segurtasun blokeoa</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">eredua</string>
+    <string name="text__none">Bat ere ez</string>
+    <string name="button__choose">Aukeratu</string>
+    <string name="title__re_enter_your_pin">Idatzi berriro zure PINa</string>
+    <string name="msg__enter_your_pin">Sartu zure BiTSy PINa jarraitzeko</string>
+    <string name="error__wrong_pin">PIN okerra</string>
+    <string name="title__set_bitsy_security_lock">Ezarri biTSy segurtasuna</string>
+    <string name="msg__set_a_pin">Segurtasunerako, ezarri PIN bat</string>
+    <string name="msg__min_pin_length">PINak gutxienez 6 digitu izan behar ditu</string>
+    <string name="title__pins_dont_match">PINak ez datoz bat</string>
+    <string name="title__re_enter_your_pattern">Sartu berriro zure eredua</string>
+    <string name="msg__enter_your_pattern">Sartu zure BiTSy eredua jarraitzeko</string>
+    <string name="msg__set_a_pattern">Segurtasuna lortzeko, ezarri patroia</string>
+    <string name="msg__release_finger">Askatu hatza amaitutakoan</string>
+    <string name="button__clear">Garbitu</string>
+    <string name="button__next">hurrengo</string>
+    <string name="text__draw_an_unlock_pattern">Desblokeatzeko patroi bat marraztu</string>
+    <string name="msg__draw_pattern_confirm">Marraztu patroia berriro baieztatzeko</string>
+    <string name="button__confirm">Berretsi</string>
+    <string name="msg__your_new_unlock_pattern">Desblokeatzeko eredu berria</string>
+    <string name="error__wront_pattern">Eredu okerra</string>
+    <string name="text__pattern_recorded">Grabatutako patroia</string>
+    <string name="error__connect_at_least_4_dots">Lotu gutxienez 4 puntu. Saiatu berriro.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Saiakera oker gehiegi. Saiatu berriro %1$d minututan.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Saiakera oker gehiegi. Saiatu berriro %1$d segundotan.</string>
+
+</resources>

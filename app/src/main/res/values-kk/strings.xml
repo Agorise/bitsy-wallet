@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Келісіңіз</string>
+    <string name="button__disagree">Келіспеймін</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ цифрлық PIN коды</string>
+    <string name="error__pin_too_short">PIN тым қысқа</string>
+    <string name="text_field__confirm_pin">PIN кодын растаңыз</string>
+    <string name="error__pin_mismatch">PIN сәйкес емес</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Мәтінді дұрыс енгізіңіз, ол 12 немесе 16 сөзден тұруы керек.</string>
+    <string name="button__import_existing_account">Бар есептік жазбаны импорттаңыз</string>
+    <string name="text__or">Немесе</string>
+    <string name="button__create_new_account">Жаңа тіркелгі жасаңыз</string>
+    <string name="error__invalid_brainkey">Берілген ми кілтін басқаратын есептік жазбалар табылған жоқ, қате теру үшін ми кілтін тексеріңіз</string>
+    <string name="error__try_again">5 минуттан кейін әрекетті қайталаңыз</string>
+    <string name="dialog__account_candidates_title">Тіркелгіні таңдаңыз</string>
+    <string name="dialog__account_candidates_content">Берілген кілттерден алынған кілттер бірнеше тіркелгіні басқару үшін пайдаланылатын сияқты, қай есептік жазбаны импорттағыңыз келетінін таңдаңыз</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares есептік жазба атауы</string>
+    <string name="error__read_dict_file">Сөздік файлын оқу кезінде қате пайда болды</string>
+    <string name="error__invalid_account_length">Тіркелгі атауы 3-тен 16 таңбаға дейін болуы керек.</string>
+    <string name="error__invalid_account_start">Шот атауы әріптен басталуы керек.</string>
+    <string name="error__invalid_account_name">Кемінде бір сызықша, сан немесе дауысты дыбыстардан тұратын тұрақты атауды енгізіңіз.</string>
+    <string name="text__verifying_account_availability">Есептік жазбаның қол жетімділігі тексерілуде…</string>
+    <string name="error__account_not_available">Бұл есептік жазба атауы алынған.</string>
+    <string name="text__account_is_available">Есептік жазба қол жетімді</string>
+    <string name="title_error">Қате</string>
+    <string name="error__faucet">Сервер қатені қайтарды. Бұл қысқа уақыттың ішінде бір IP мекенжайынан келетін жиі келетін сұрауларға тыйым салуға арнайы қойылған шектеумен байланысты болуы мүмкін. 5 минут күтіп, әрекетті қайталаңыз немесе басқа желіге ауысыңыз, мысалы Wi-Fi-дан ұяшыққа.</string>
+    <string name="error__faucet_template">Кран қате жіберді. Хл: %1$s</string>
+    <string name="error__created_account_not_found">Қолданба жаңадан жасалған есептік жазба туралы ақпаратты ала алмады</string>
+    <string name="button__create">Жасау</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Мәмілелер</string>
+    <string name="title_merchants_and_tellers">Саудагерлер мен теллер</string>
+    <string name="title_receive">Қабылдау</string>
+    <string name="title_balances">Баланстар</string>
+    <string name="title_send">Жіберіңіз</string>
+    <string name="title_net_worth">Нақты құны</string>
+    <string name="text__coming_soon">Жақында шығады</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Іздеу</string>
+    <string name="title_filter">Сүзгі</string>
+    <string name="title_export">Экспорттау</string>
+    <string name="text__no_transactions">Мәмілелер жоқ</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Сүзгі параметрлері</string>
+    <string name="text__all">Барлық</string>
+    <string name="text__sent">Жіберілді</string>
+    <string name="text__received">Алынған</string>
+    <string name="text__date_range">Күн диапазоны</string>
+    <string name="text__equivalent_value">Балама мән</string>
+    <string name="text__ignore_network_fees">Желі ақысын елемеңіз</string>
+    <string name="text__between">Арасында</string>
+    <string name="text__and">және</string>
+    <string name="button__filter">Сүзгі</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Сүзілген транзакцияларды экспорттау</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV файлдарын экспорттау үшін сақтау рұқсаты қажет.</string>
+    <string name="title_from">Кімнен</string>
+    <string name="title_to">Кімге</string>
+    <string name="title_memo">Жазба</string>
+    <string name="title_date">Күні</string>
+    <string name="title_time">Уақыт</string>
+    <string name="title_amount">Сома</string>
+    <string name="title_equivalent_value">Балама мән</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Мәні</string>
+    <string name="template__memo">Ескерту: %1$s</string>
+    <string name="template__date">Күні: %1$s</string>
+    <string name="template__tx">Тх: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Саудагерлер</string>
+    <string name="title_tellers">Теллер</string>
+    <string name="title_about">Туралы</string>
+    <string name="msg__merchants_description">PalmPay саудагерлері жаңа крипто экономикасының негізі болып табылады. Егер сіз өзіңіздің Cryptocurrency-ні қабылдайтын бизнестерді іздесеңіз, онда төмендегі Іздеу және Карта деректерін пайдаланыңыз. PalmPay елшілері бізге хабарлағандай, мұнда көпестер қосылады.</string>
+    <string name="msg__tellers_description">Теллер - бұл сіздің фиат валюталарын cryptocurrencies-ге айырбастайтын адамдар және керісінше. Сондай-ақ, олар саудагерлерге қымбат емес есеп айырысуда көмектеседі.</string>
+    <string name="msg__location_permission_necessary">Картада ағымдағы орналасқан жеріңізді көрсету үшін орын рұқсаты қажет.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Ақпарат</string>
+    <string name="text__to">Кімге</string>
+    <string name="text__amount">Сома</string>
+    <string name="text__memo">Жазба</string>
+    <string name="text__scan_qr">QR сканерлеңіз</string>
+    <string name="error__invalid_account">Есептік жазба жарамсыз</string>
+    <string name="error__not_enough_funds">Қаражат жеткіліксіз</string>
+    <string name="msg__camera_permission_necessary">QR кодтарын оқу үшін камераның рұқсаты қажет.</string>
+    <string name="text__transaction_sent">Транзакция жіберілді!</string>
+    <string name="msg__transaction_not_sent">Транзакция жіберу мүмкін емес</string>
+    <string name="error__you_dont_own_asset">Сізде %1$s иесі жоқ</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Сіз ақша жібергіңіз келетін адамның Bitshares шотының атауын теріңіз. \nМысал: агориз-кран</string>
+    <string name="text__asset_balance">Активтер балансы</string>
+    <string name="msg__asset_balance_explanation">Барлық активті жіберу үшін көрсетілген балансты түртуге болады. Бұл сіз үшін соманы толтырады.</string>
+    <string name="msg__memo_explanation">Жадынама енгізу қажет емес, бірақ қаражаттың не үшін жіберілгендігі туралы ескертулер болашақта анықтама үшін жақсы. Жазбалар тек сізге және сіз ақша жіберген адамға көрінеді.</string>
+    <string name="text__network_fee">Желі ақысы</string>
+    <string name="msg__network_fee_explanation">Желі төлемі сіз жібергіңіз келетін мөлшерге кіреді. Мысалы, 50 BTS жібергіңіз келсе, BiTSy іс жүзінде ~ 50,21 BTS жібереді. Осы мысалда қосылған 0,21 - бұл Bitshares транзакциясының ақысы және BiTSy Developer Team-ке 0,01% (әдетте ~ 1 цент).</string>
+    <string name="text__qr_code">QR коды</string>
+    <string name="msg__qr_code_explanation">Сізге қаражат жіберу үшін біреудің QR-ді сканерлеудің қажеті жоқ, бірақ ол сізге қателіктер жібермеуге көмектеседі. Шоттан ақша жібергеннен кейін олар мәңгілікке жоғалады, сондықтан әрқашан «Кімге» өрісіндегі шот атауы дұрыс екенін тексеріңіз.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Актив</string>
+    <string name="text__other">Басқа ...</string>
+    <string name="template__please_send">Жіберіңіз: %1$s %2$s</string>
+    <string name="text__any_amount">Кез келген сома</string>
+    <string name="template__to">Кімге: %1$s</string>
+    <string name="msg__invoice_subject">%1$s ұсынған BiTSy шот-фактурасы</string>
+    <string name="title_share">Бөлісу</string>
+    <string name="text__share_with">Бөлісу</string>
+    <string name="msg__storage_permission_necessary_share">Суреттерді бөлісу үшін сақтау рұқсаты қажет.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Параметрлер</string>
+    <string name="title__general">Жалпы</string>
+    <string name="msg__close_timer">3 минут әрекетсіздіктен кейін BiTSy автоматты түрде жабыңыз</string>
+    <string name="msg__night_mode">Түнгі режим</string>
+    <string name="text__view_network_status">Желі күйін көру</string>
+    <string name="title__backup">Сақтық көшірме</string>
+    <string name="msg__brainkey_description">BrainKey. Түсіруге немесе көшіруге болатын, бірақ өңделмейтін есептік жазбаны қалпына келтіру сөздері.</string>
+    <string name="msg__brainkey_info">Осыны жаз! Өрт немесе жоғалу жағдайында қауіпсіз BrainKey-дің 2 көшірмесі бар екеніне көз жеткізіңіз. Біріншіден, қауіпсіздік! Сіздің BrainKey-ге кіру мүмкіндігі бар кез-келген адам шоттағы қаражатқа қол жеткізе алады!</string>
+    <string name="button__copied">Көшірілген</string>
+    <string name="button__view_and_copy">Көру және көшіру</string>
+    <string name="title__accounts">Шоттар</string>
+    <string name="msg__upgrade_to_ltm">LifeTime мүшелігіне (LTM) жаңартыңыз. Bitshares-тің LTM шоттары нөлге жақын комиссияны төлейді, 80% ақшалай қаражатты қайтарады және жолдама үшін бонустар алады.</string>
+    <string name="button__upgrade_to_ltm">LTM жүйесіне жаңартыңыз</string>
+    <string name="msg__account_upgrade_dialog">Өмірлік уақытқа мүшелік желі шығындарының азайтылған жиынтығымен сауда жасауға мүмкіндік береді. \n \nБұл «%1$s» \n \n ағымдағы шотына күшіне енеді, бірақ бұл Bitshares-те төленген шамамен 100 АҚШ долларын құрайды. \n \n Сіз шынымен жалғастырғыңыз келе ме?</string>
+    <string name="title__account_upgraded">Есептік жазба жаңартылды</string>
+    <string name="msg__account_upgraded">Құттықтаймыз! Тіркелгіңіз қазір Өмір бойы мүшелікке жаңартылды.</string>
+    <string name="title__upgrade_account_error">Есептік жазбаны жаңарту кезіндегі қате</string>
+    <string name="msg__upgrade_account_error">Шотта шығындарды жабуға жеткілікті баланс бар екеніне көз жеткізіңіз.</string>
+    <string name="msg__remove_current_account">Ағымдағы құрылғыдан осы есептік жазбаны жойыңыз және басқасын жасаңыз немесе импорттаңыз.</string>
+    <string name="button__remove">Алып тастаңыз</string>
+    <string name="title__remove_account">Тіркелгіні жою</string>
+    <string name="msg__remove_account_confirmation">Ағымдағы есептік жазбаны осы құрылғыдан алып тастағыңыз келе ме?</string>
+    <string name="title__bugs_or_ideas">Қателер немесе идеялар?</string>
+    <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Қауіпсіздік</string>
+    <string name="text__security_lock">Қауіпсіздік құлпы</string>
+    <string name="title__security_dialog">Қауіпсіздік құлпын таңдаңыз</string>
+    <string name="text__pin">PIN коды</string>
+    <string name="text__pattern">Үлгі</string>
+    <string name="text__none">Ешқайсысы жоқ</string>
+    <string name="button__choose">Таңдау</string>
+    <string name="title__re_enter_your_pin">PIN-кодты қайта енгізіңіз</string>
+    <string name="msg__enter_your_pin">Жалғастыру үшін BiTSy PIN кодын енгізіңіз</string>
+    <string name="error__wrong_pin">PIN коды дұрыс емес</string>
+    <string name="title__set_bitsy_security_lock">BiTSy қауіпсіздігін орнатыңыз</string>
+    <string name="msg__set_a_pin">Қауіпсіздік мақсатында PIN кодын орнатыңыз</string>
+    <string name="msg__min_pin_length">PIN-код кем дегенде 6 саннан тұруы керек</string>
+    <string name="title__pins_dont_match">PIN кодтары сәйкес келмейді</string>
+    <string name="title__re_enter_your_pattern">Үлгіңізді қайта енгізіңіз</string>
+    <string name="msg__enter_your_pattern">Жалғастыру үшін BiTSy үлгісін енгізіңіз</string>
+    <string name="msg__set_a_pattern">Қауіпсіздік мақсатында Үлгі орнатыңыз</string>
+    <string name="msg__release_finger">Аяқтаған кезде саусақты босатыңыз</string>
+    <string name="button__clear">Айқын</string>
+    <string name="button__next">Келесі</string>
+    <string name="text__draw_an_unlock_pattern">Құлпын ашу үлгісін салыңыз</string>
+    <string name="msg__draw_pattern_confirm">Растау үшін үлгіні қайтадан салыңыз</string>
+    <string name="button__confirm">Растау</string>
+    <string name="msg__your_new_unlock_pattern">Құлыпты ашудың жаңа үлгісі</string>
+    <string name="error__wront_pattern">Қате үлгі</string>
+    <string name="text__pattern_recorded">Үлгі жазылды</string>
+    <string name="error__connect_at_least_4_dots">Кемінде 4 нүктені қосыңыз. Қайтадан байқап көріңіз.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Қате әрекеттер өте көп. %1$d минуттан кейін әрекетті қайталаңыз.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Қате әрекеттер өте көп. %1$d секундтан кейін әрекетті қайталаңыз.</string>
+
+</resources>

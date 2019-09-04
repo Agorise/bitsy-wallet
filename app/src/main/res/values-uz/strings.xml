@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Qabul qilaman</string>
+    <string name="button__disagree">Rozi emasman</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ raqamli PIN</string>
+    <string name="error__pin_too_short">PIN kod juda qisqa</string>
+    <string name="text_field__confirm_pin">PIN-kodni tasdiqlang</string>
+    <string name="error__pin_mismatch">PIN kod mos kelmadi</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Iltimos, miya tugmachasini to\'g\'ri kiriting, unda 12 yoki 16 so\'z bo\'lishi kerak.</string>
+    <string name="button__import_existing_account">Mavjud hisob qaydnomasini import qiling</string>
+    <string name="text__or">Yoki</string>
+    <string name="button__create_new_account">Yangi hisob yarating</string>
+    <string name="error__invalid_brainkey">Berilgan miya tugmasi tomonidan boshqariladigan hech qanday hisob topilmadi, iltimos xato kiritish uchun miya kodingizni tekshiring</string>
+    <string name="error__try_again">Iltimos, 5 daqiqadan keyin yana urinib ko\'ring</string>
+    <string name="dialog__account_candidates_title">Hisobni tanlang</string>
+    <string name="dialog__account_candidates_content">Ushbu tugmachadan olingan kalitlar bir nechta hisoblarni boshqarish uchun ishlatilganga o\'xshaydi, iltimos, qaysi hisob qaydnomasini import qilishni tanlang</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares hisob qaydnomasi nomi</string>
+    <string name="error__read_dict_file">Lug\'at faylini o\'qishda xato</string>
+    <string name="error__invalid_account_length">Hisob nomi 3 dan 16 tagacha belgidan iborat bo\'lishi kerak.</string>
+    <string name="error__invalid_account_start">Hisob nomi harf bilan boshlanishi kerak.</string>
+    <string name="error__invalid_account_name">Kamida bitta tire, raqam yoki unli harflarsiz oddiy nomni kiriting.</string>
+    <string name="text__verifying_account_availability">Hisob qaydnomasi mavjudligi tekshirilmoqda…</string>
+    <string name="error__account_not_available">Ushbu hisob nomi allaqachon olingan.</string>
+    <string name="text__account_is_available">Hisob mavjud</string>
+    <string name="title_error">Xato</string>
+    <string name="error__faucet">Serverda xatolik yuz berdi. Buning sababi qisqa vaqt ichida bir xil IP-manzildan keladigan tez-tez so\'rovlarni rad etishga qaratilgan maqsadli cheklash bo\'lishi mumkin. 5 daqiqa kutib turing va qaytadan urining yoki boshqa tarmoqqa, masalan Wi-Fi-dan uyaga o\'ting.</string>
+    <string name="error__faucet_template">Müslüm xato qildi. Ms: %1$s</string>
+    <string name="error__created_account_not_found">Ilova yangi yaratilgan qayd hisobi to\'g\'risida ma\'lumot olib bo\'lmadi</string>
+    <string name="button__create">Yaratmoq</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Bitimlar</string>
+    <string name="title_merchants_and_tellers">Savdogarlar va telegrafchilar</string>
+    <string name="title_receive">Qabul qiling</string>
+    <string name="title_balances">Balanslar</string>
+    <string name="title_send">Yuborish</string>
+    <string name="title_net_worth">Sof qiymat</string>
+    <string name="text__coming_soon">Tez kunda</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Qidirmoq</string>
+    <string name="title_filter">Filtrlash</string>
+    <string name="title_export">Eksport qilish</string>
+    <string name="text__no_transactions">O\'tkazmalar yo\'q</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtrni sozlash</string>
+    <string name="text__all">Hammasi</string>
+    <string name="text__sent">Yuborildi</string>
+    <string name="text__received">Qabul qildi</string>
+    <string name="text__date_range">Sana oralig\'i</string>
+    <string name="text__equivalent_value">Ekvivalent qiymat</string>
+    <string name="text__ignore_network_fees">Tarmoq to\'lovlarini hisobga olmaslik</string>
+    <string name="text__between">Orasida</string>
+    <string name="text__and">va</string>
+    <string name="button__filter">Filtrlash</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Filtrlangan tranzaktsiyalarni eksport qilish</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV fayllarini eksport qilish uchun saqlash uchun ruxsat talab qilinadi.</string>
+    <string name="title_from">Qayerdan</string>
+    <string name="title_to">Kimga</string>
+    <string name="title_memo">Eslatma</string>
+    <string name="title_date">Sana</string>
+    <string name="title_time">Vaqt</string>
+    <string name="title_amount">Miqdor</string>
+    <string name="title_equivalent_value">Ekvivalent qiymat</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Qiymati</string>
+    <string name="template__memo">Eslatma: %1$s</string>
+    <string name="template__date">Sana: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Savdogarlar</string>
+    <string name="title_tellers">Saylovchilar</string>
+    <string name="title_about">Haqida</string>
+    <string name="msg__merchants_description">PalmPay savdogarlari yangi Kripto Iqtisodiyotining asosidir. Agar siz Cryptocurrency-ni qabul qiladigan biznesni izlayotgan bo\'lsangiz, unda quyidagi Qidirish va Xaritadagi ma\'lumotlarni ishlating. PalmPay elchilari bizga xabar berishicha, bu erga ko\'proq savdogarlar qo\'shiladi.</string>
+    <string name="msg__tellers_description">Saylovchilar - bu sizning fiat valyutalaringizni cryptocurrencies bilan almashtiradigan odamlar va aksincha. Shuningdek, ular savdogarlarga muammoni hal qilishda yordam berishadi.</string>
+    <string name="msg__location_permission_necessary">Xaritada joriy manzilingizni ko\'rsatish uchun joylashuv ruxsatnomasi zarur.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Ma\'lumot</string>
+    <string name="text__to">Kimga</string>
+    <string name="text__amount">Miqdor</string>
+    <string name="text__memo">Eslatma</string>
+    <string name="text__scan_qr">QR qidirish</string>
+    <string name="error__invalid_account">Hisob noto‘g‘ri</string>
+    <string name="error__not_enough_funds">Mablag \'yetarli emas</string>
+    <string name="msg__camera_permission_necessary">QR kodlarini o\'qish uchun kameradan ruxsat olish kerak.</string>
+    <string name="text__transaction_sent">Bitim yuborildi!</string>
+    <string name="msg__transaction_not_sent">O‘tkazma yuborilmadi</string>
+    <string name="error__you_dont_own_asset">Sizda %1$s mavjud emas</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Sizga pul yubormoqchi bo\'lgan odamning Bitshares hisob nomini kiriting. \nMasalan: agorise-musluk</string>
+    <string name="text__asset_balance">Aktivlar balansi</string>
+    <string name="msg__asset_balance_explanation">Siz ushbu aktivning barchasini yuborish uchun ko\'rsatilgan balansni bosishingiz mumkin. Buni amalga oshirish siz uchun "Miqdor" maydonini to\'ldiradi.</string>
+    <string name="msg__memo_explanation">Eslatmani kiritish shart emas, ammo mablag\'ni nima uchun yuborganingiz to\'g\'risida eslatma berish kelajakda foydalanish uchun yaxshi bo\'ladi. Eslatmalar faqat sizga va siz mablag\'ni yuborgan odamga ko\'rinadi.</string>
+    <string name="text__network_fee">Tarmoq haqi</string>
+    <string name="msg__network_fee_explanation">Tarmoq to\'lovi siz yubormoqchi bo\'lgan miqdorga kiritilgan. Masalan, agar siz 50 BTS-ni yubormoqchi bo\'lsangiz, BiTSy aslida ~ 50.21 BTS-ni yuboradi. Ushbu misolda qo\'shilgan 0,21 - Bitshares bitimining to\'lovi va BiTSy Developer Team-ga 0,01% (odatda ~ 1 tsent).</string>
+    <string name="text__qr_code">QR kodi</string>
+    <string name="msg__qr_code_explanation">Pul mablag\'larini yuborish uchun kimningdir QR-ni skanerlashingiz shart emas, lekin xato qilishdan saqlanishingizga yordam beradi. Hisobingizdan mablag \'yuborganingizdan so\'ng, ular butunlay yo\'q bo\'lib ketadi, shuning uchun har doim "Kimga" maydonidagi hisob nomining to\'g\'ri ekanligiga ishonch hosil qiling.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Mulk</string>
+    <string name="text__other">Boshqalar…</string>
+    <string name="template__please_send">Iltimos, yuboring: %1$s %2$s</string>
+    <string name="text__any_amount">Har qanday miqdor</string>
+    <string name="template__to">Kimga: %1$s</string>
+    <string name="msg__invoice_subject">%1$s dan BiTSy fakturasi</string>
+    <string name="title_share">Ulashish</string>
+    <string name="text__share_with">Ulashish</string>
+    <string name="msg__storage_permission_necessary_share">Rasmlarni ulashish uchun saqlash ruxsati zarur.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Sozlamalar</string>
+    <string name="title__general">Umumiy</string>
+    <string name="msg__close_timer">3 daqiqalik harakatsizlikdan keyin BiTSy-ni avtomatik ravishda yoping</string>
+    <string name="msg__night_mode">Kecha rejimi</string>
+    <string name="text__view_network_status">Tarmoq holatini ko\'rish</string>
+    <string name="title__backup">Zaxira</string>
+    <string name="msg__brainkey_description">BrainKey. Yozib olish yoki nusxalash mumkin, ammo tahrirlanmagan hisobni tiklash so\'zlari.</string>
+    <string name="msg__brainkey_info">Buni yozing! Yong\'in yoki yo\'qotish holatlarida ushbu xavfsiz BrainKey-ning 2 nusxasi borligiga ishonch hosil qiling. Birinchidan, xavfsizlik! Sizning BrainKey-ga kirgan har kim hisobingizdagi mablag\'lardan foydalanishi mumkin!</string>
+    <string name="button__copied">Nusxalangan</string>
+    <string name="button__view_and_copy">Ko\'rish va nusxalash</string>
+    <string name="title__accounts">Hisoblar</string>
+    <string name="msg__upgrade_to_ltm">LifeTime a\'zoligiga (LTM) yangilang. Bitshares\'ning LTM hisobvaraqlari nolga yaqin to\'lovlarni to\'laydi, yo\'llanmalar uchun 80% naqd pul va bonuslarni oladi.</string>
+    <string name="button__upgrade_to_ltm">LTM-ga yangilang</string>
+    <string name="msg__account_upgrade_dialog">Hayot vaqti a\'zoligi tarmoq to\'lovlarining kamaytirilgan to\'plami bilan savdo qilish imkoniyatini beradi. \n \nHozirgi "%1$s" \n \n joriy hisobvarag\'ida kuchga kiradi, ammo Bitshares-da to\'langan 100 AQSh dollariga teng mablag \'bo\'lmaydi. \n \n Haqiqatan ham davom etmoqchimisiz?</string>
+    <string name="title__account_upgraded">Hisob yangilandi</string>
+    <string name="msg__account_upgraded">Tabriklaymiz! Endi sizning hisobingiz umrbod a\'zolikka yangilandi.</string>
+    <string name="title__upgrade_account_error">Hisobni yangilash paytida xatolik yuz berdi</string>
+    <string name="msg__upgrade_account_error">Hisobingizda xarajatlarni qoplash uchun hisobingizda etarli mablag \'borligiga ishonch hosil qiling.</string>
+    <string name="msg__remove_current_account">Joriy qurilmadagi hisobni olib tashlang va boshqasini yarating yoki import qiling.</string>
+    <string name="button__remove">Olib tashlang</string>
+    <string name="title__remove_account">Hisobni o\'chirish</string>
+    <string name="msg__remove_account_confirmation">Haqiqatan ham ushbu hisob qaydnomasini ushbu qurilmadan o\'chirmoqchimisiz?</string>
+    <string name="title__bugs_or_ideas">Xatolar yoki fikrlar?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloklash: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Xavfsizlik</string>
+    <string name="text__security_lock">Xavfsizlik himoyasi</string>
+    <string name="title__security_dialog">Xavfsizlik qulfini tanlang</string>
+    <string name="text__pin">PIN-kod</string>
+    <string name="text__pattern">Chizma</string>
+    <string name="text__none">Yo\'q</string>
+    <string name="button__choose">Tanlang</string>
+    <string name="title__re_enter_your_pin">PIN-kodni qayta kiriting</string>
+    <string name="msg__enter_your_pin">Davom etish uchun BiTSy PIN kodini kiriting</string>
+    <string name="error__wrong_pin">PIN-kod noto‘g‘ri</string>
+    <string name="title__set_bitsy_security_lock">BiTSy havfsizligini o\'rnating</string>
+    <string name="msg__set_a_pin">Xavfsizlik uchun PIN-kodni o\'rnating</string>
+    <string name="msg__min_pin_length">PIN kod kamida 6 ta raqamdan iborat bo\'lishi kerak</string>
+    <string name="title__pins_dont_match">PIN-kodlar mos kelmadi</string>
+    <string name="title__re_enter_your_pattern">Chizmangizni qayta kiriting</string>
+    <string name="msg__enter_your_pattern">Davom etish uchun BiTSy chizmangizni kiriting</string>
+    <string name="msg__set_a_pattern">Xavfsizlik uchun namuna o\'rnating</string>
+    <string name="msg__release_finger">Tayyor bo\'lgach, barmog\'ingizni bo\'shating</string>
+    <string name="button__clear">Aniq</string>
+    <string name="button__next">Keyingi</string>
+    <string name="text__draw_an_unlock_pattern">Qulfni ochish chizmasini chizish</string>
+    <string name="msg__draw_pattern_confirm">Tasdiqlash uchun yana bir marta chizmali rasmni chizing</string>
+    <string name="button__confirm">Tasdiqlang</string>
+    <string name="msg__your_new_unlock_pattern">Qulfni ochish uchun yangi namunangiz</string>
+    <string name="error__wront_pattern">Chizma noto‘g‘ri</string>
+    <string name="text__pattern_recorded">Chizma qayd etildi</string>
+    <string name="error__connect_at_least_4_dots">Kamida 4 nuqtani ulang. Qayta urinib ko\'ring.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Noto\'g\'ri urinishlar soni juda ko\'p. %1$d daqiqadan so\'ng qayta urinib ko\'ring.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Noto\'g\'ri urinishlar soni juda ko\'p. %1$d soniyadan keyin qayta urinib ko\'ring.</string>
+
+</resources>

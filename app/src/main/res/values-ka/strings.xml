@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">ვეთანხმები</string>
+    <string name="button__disagree">Უარყოფა</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ ციფრი PIN</string>
+    <string name="error__pin_too_short">PIN ძალიან მოკლე</string>
+    <string name="text_field__confirm_pin">დაადასტურეთ PIN</string>
+    <string name="error__pin_mismatch">PIN შეუსაბამობა</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">გთხოვთ, მიუთითოთ სწორი ტვინი, მასში უნდა იყოს 12 ან 16 სიტყვა.</string>
+    <string name="button__import_existing_account">არსებული ანგარიშის იმპორტი</string>
+    <string name="text__or">ან</string>
+    <string name="button__create_new_account">შექმენით ახალი ანგარიში</string>
+    <string name="error__invalid_brainkey">სად არ არის ნაპოვნი მონაცემები, თუ ვერ აკონტროლებს მოცემული ტვინს, გთხოვთ, შეამოწმოთ თქვენი ტვინი, შეცდომების აკრეფისას</string>
+    <string name="error__try_again">გთხოვთ, სცადოთ 5 წუთის შემდეგ</string>
+    <string name="dialog__account_candidates_title">გთხოვთ, აირჩიოთ ანგარიში</string>
+    <string name="dialog__account_candidates_content">როგორც ჩანს, ამ brainkey- დან მიღებული კლავიშები გამოიყენება ერთზე მეტი ანგარიშის გასაკონტროლებლად, გთხოვთ შეარჩიოთ რომელი ანგარიშის შემოტანა გსურთ</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares ანგარიშის სახელი</string>
+    <string name="error__read_dict_file">შეცდომა ლექსიკონის ფაილის წაკითხვისას</string>
+    <string name="error__invalid_account_length">ანგარიშის სახელი უნდა იყოს 3 – დან 16 სიმბოლო.</string>
+    <string name="error__invalid_account_start">ანგარიშის სახელი უნდა დაიწყოს ასოებით.</string>
+    <string name="error__invalid_account_name">გთხოვთ, შეიყვანოთ რეგულარული სახელი, რომელიც შეიცავს მინიმუმ ერთი ტირის, რაოდენობას, ან არა ხმოვანთა.</string>
+    <string name="text__verifying_account_availability">ანგარიშის ხელმისაწვდომობის დადასტურება…</string>
+    <string name="error__account_not_available">ამ ანგარიშის სახელი უკვე არის აღებული.</string>
+    <string name="text__account_is_available">ანგარიში ხელმისაწვდომია</string>
+    <string name="title_error">შეცდომა</string>
+    <string name="error__faucet">სერვერმა დაუშვა შეცდომა. ეს შეიძლება გამოწვეული იყოს მიზანმიმართულად დაწესებული შეზღუდვით, მოკლე დროში იმავე IP მისამართიდან ხშირი თხოვნების უარი თქვას. გთხოვთ, დაელოდოთ 5 წუთი და სცადოთ კიდევ ერთხელ, ან გადახვიდეთ სხვა ქსელში, მაგალითად wifi- დან საკანში.</string>
+    <string name="error__faucet_template">ონკანმა შეცვალა. Msg: %1$s</string>
+    <string name="error__created_account_not_found">აპი ვერ შეძლო ინფორმაციის მოძიება ახლად შექმნილ ანგარიშზე</string>
+    <string name="button__create">Შექმნა</string>
+
+    <!-- Home -->
+    <string name="title_transactions">გარიგებები</string>
+    <string name="title_merchants_and_tellers">ვაჭრები და გამყიდველები</string>
+    <string name="title_receive">მიიღე</string>
+    <string name="title_balances">ნაშთები</string>
+    <string name="title_send">გაგზავნა</string>
+    <string name="title_net_worth">წმინდა ღირს</string>
+    <string name="text__coming_soon">Მალე</string>
+
+    <!-- Transactions -->
+    <string name="title_search">ძებნა</string>
+    <string name="title_filter">ფილტრი</string>
+    <string name="title_export">ექსპორტი</string>
+    <string name="text__no_transactions">არაა გარიგებები</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">ფილტრის პარამეტრები</string>
+    <string name="text__all">ყველა</string>
+    <string name="text__sent">Გაგზავნილი</string>
+    <string name="text__received">მიიღო</string>
+    <string name="text__date_range">თარიღის დიაპაზონი</string>
+    <string name="text__equivalent_value">ექვივალენტური ღირებულება</string>
+    <string name="text__ignore_network_fees">ქსელის საფასურის უგულებელყოფა</string>
+    <string name="text__between">Შორის</string>
+    <string name="text__and">და</string>
+    <string name="button__filter">ფილტრი</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">გაფილტრული გარიგებების ექსპორტი</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">შენახვის ნებართვა აუცილებელია PDF / CSV ფაილების ექსპორტისთვის.</string>
+    <string name="title_from">აქედან</string>
+    <string name="title_to">რომ</string>
+    <string name="title_memo">მოგონება</string>
+    <string name="title_date">თარიღი</string>
+    <string name="title_time">დრო</string>
+    <string name="title_amount">თანხა</string>
+    <string name="title_equivalent_value">ექვივალენტური ღირებულება</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">ღირებულება</string>
+    <string name="template__memo">მემორანდუმი: %1$s</string>
+    <string name="template__date">თარიღი: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">ვაჭრები</string>
+    <string name="title_tellers">გამყიდველები</string>
+    <string name="title_about">შესახებ</string>
+    <string name="msg__merchants_description">PalmPay- ის ვაჭრები არის ახალი კრიპტო ეკონომიკის ხერხემალი. თუ ეძებთ ბიზნესს, რომელიც მიიღებს თქვენს Cryptocurrency- ს, მაშინ გამოიყენეთ ქვემოთ მოცემული ძებნისა და რუკის მონაცემები. აქ უფრო მეტი ვაჭარი დაემატება, როგორც PalmPay ელჩები გვაცნობებენ.</string>
+    <string name="msg__tellers_description">გამყიდველები ის ხალხია, ვინც გაცვლით თქვენი ფიატის ვალუტას კრიპტოვალუტით და პირიქით. ისინი ასევე დახმარებას უწევენ ვაჭრებს ფიატის დასახლებაში.</string>
+    <string name="msg__location_permission_necessary">ადგილმდებარეობის ნებართვა აუცილებელია რუკაზე თქვენი ამჟამინდელი ადგილმდებარეობის საჩვენებლად.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">ინფორმაცია</string>
+    <string name="text__to">რომ</string>
+    <string name="text__amount">თანხა</string>
+    <string name="text__memo">მოგონება</string>
+    <string name="text__scan_qr">სკანირება QR</string>
+    <string name="error__invalid_account">Არასწორი ანგარიში</string>
+    <string name="error__not_enough_funds">არ არის საკმარისი თანხები</string>
+    <string name="msg__camera_permission_necessary">კამერის ნებართვა აუცილებელია QR კოდების წასაკითხად.</string>
+    <string name="text__transaction_sent">გარიგების გაგზავნა!</string>
+    <string name="msg__transaction_not_sent">გარიგების გაგზავნა შეუძლებელია</string>
+    <string name="error__you_dont_own_asset">თქვენ არ გაქვთ რაიმე %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">ჩაწერეთ Bitshares ანგარიშის სახელი იმ პირის მიმართ, რომელზეც გსურთ ფულის გაგზავნა. \n მაგალითად: აგორიზა-ონკანი</string>
+    <string name="text__asset_balance">აქტივების ბალანსი</string>
+    <string name="msg__asset_balance_explanation">თქვენ შეგიძლიათ დააჭიროთ ნაჩვენები ბალანსს, რომ გაგზავნოთ მთელი აქტივი. ამით შეავსებთ ოდენობის ველს თქვენთვის.</string>
+    <string name="msg__memo_explanation">მემუარების შეყვანა არ არის საჭირო, მაგრამ შენიშვნის გაკეთება იმის შესახებ, თუ რატომ გამოაგზავნეთ სახსრები სასიამოვნოა მომავალი მითითებისთვის. მოგონებები მხოლოდ თქვენთვის და იმ პირისათვის ჩანს, ვისთვისაც ფულის გაგზავნა.</string>
+    <string name="text__network_fee">ქსელის საფასური</string>
+    <string name="msg__network_fee_explanation">ქსელის საფასური შედის იმ თანხით, რომლის გაგზავნაც გსურთ. მაგალითად, თუ გსურთ გააგზავნოთ 50 BTS, BiTSy რეალურად გამოგიგზავნით .2 50,21 BTS. ამ მაგალითში დამატებული 0.21 არის Bitshares გარიგების საფასური, დამატებით 0.01% BiTSy დეველოპერის გუნდთან (ჩვეულებრივ ~ 1 პროცენტი).</string>
+    <string name="text__qr_code">Ქრ კოდი</string>
+    <string name="msg__qr_code_explanation">თქვენ არ გჭირდებათ ვინმეს QR სკანირება სახსრების გაგზავნისთვის, მაგრამ ეს დაგეხმარებათ შეცდომების თავიდან აცილებაში. თქვენი ანგარიშიდან თანხის გაგზავნის შემდეგ, ისინი სამუდამოდ გაქრა, ასე რომ ყოველთვის დარწმუნდით, რომ ანგარიშის სახელი "To" ველში სწორია.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">აქტივი</string>
+    <string name="text__other">სხვა…</string>
+    <string name="template__please_send">გთხოვთ გამოაგზავნოთ: %1$s %2$s</string>
+    <string name="text__any_amount">ნებისმიერი თანხა</string>
+    <string name="template__to">To: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy ინვოისი %1$s– დან</string>
+    <string name="title_share">გაზიარება</string>
+    <string name="text__share_with">გაზიარება</string>
+    <string name="msg__storage_permission_necessary_share">შენახვის ნებართვა აუცილებელია სურათების გასაზიარებლად.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">პარამეტრები</string>
+    <string name="title__general">გენერალი</string>
+    <string name="msg__close_timer">ავტომატურად დახურეთ BiTSy 3 წუთიანი უმოქმედობის შემდეგ</string>
+    <string name="msg__night_mode">Ღამის რეჟიმი</string>
+    <string name="text__view_network_status">იხილეთ ქსელის სტატუსი</string>
+    <string name="title__backup">სარეზერვო</string>
+    <string name="msg__brainkey_description">BrainKey. ანგარიშის აღდგენის სიტყვები, რომელთა გადაღება ან კოპირება შესაძლებელია, მაგრამ არა რედაქტირება.</string>
+    <string name="msg__brainkey_info">დაწერე ეს! დარწმუნდით, რომ თქვენ გაქვთ BrainKey- ის 2 ასლი 2 უსაფრთხო ადგილას ხანძრის ან დაზიანების შემთხვევაში. უსაფრთხოების პირველი! ყველას, ვისაც აქვს წვდომა თქვენს BrainKey- ს, შეუძლია შეხვიდეთ თქვენს ანგარიშში არსებული თანხები!</string>
+    <string name="button__copied">გადაწერა</string>
+    <string name="button__view_and_copy">ნახვა და კოპირება</string>
+    <string name="title__accounts">ანგარიშები</string>
+    <string name="msg__upgrade_to_ltm">განახლება LifeTime წევრობაზე (LTM). Bitshares- ის LTM ანგარიშები იხდიან უახლოეს ნულოვან გადასახადს, მიიღებენ 80% ნაღდი ანგარიშსწორებას და გადასახადების მიღებას.</string>
+    <string name="button__upgrade_to_ltm">განახლება LTM- ზე</string>
+    <string name="msg__account_upgrade_dialog">Life Time წევრობა საშუალებას გაძლევთ გქონდეთ ვაჭრობა ქსელური გადასახადების შემცირებული ნაკრებით. %1$s დარწმუნებული ხართ, რომ გსურთ გაგრძელება?</string>
+    <string name="title__account_upgraded">ანგარიში განახლებული</string>
+    <string name="msg__account_upgraded">გილოცავთ! თქვენი ანგარიში განახლებულია Lifetime წევრობაში.</string>
+    <string name="title__upgrade_account_error">შეცდომა ანგარიშის განახლების დროს</string>
+    <string name="msg__upgrade_account_error">გთხოვთ დარწმუნდეთ, რომ თქვენს ანგარიშს აქვს საკმარისი ბალანსი ხარჯების დასაფარად.</string>
+    <string name="msg__remove_current_account">ამ მოწყობილობიდან ამოიღეთ მიმდინარე ანგარიში და შექმენით ან შემოიტანეთ სხვა.</string>
+    <string name="button__remove">ამოიღეთ</string>
+    <string name="title__remove_account">ანგარიშის ამოღება</string>
+    <string name="msg__remove_account_confirmation">დარწმუნებული ხართ, რომ გსურთ წაშალოთ მიმდინარე ანგარიში ამ მოწყობილობიდან?</string>
+    <string name="title__bugs_or_ideas">შეცდომები თუ იდეები?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">ბლოკი: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">დაცვა</string>
+    <string name="text__security_lock">უსაფრთხოების ჩაკეტვა</string>
+    <string name="title__security_dialog">აირჩიეთ უსაფრთხოების საკეტი</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">შაბლონი</string>
+    <string name="text__none">არცერთი</string>
+    <string name="button__choose">არჩევა</string>
+    <string name="title__re_enter_your_pin">ხელახლა შეიყვანეთ თქვენი PIN</string>
+    <string name="msg__enter_your_pin">შეიყვანეთ თქვენი BiTSy PIN გასაგრძელებლად</string>
+    <string name="error__wrong_pin">არასწორი PIN</string>
+    <string name="title__set_bitsy_security_lock">დააყენეთ BiTSy Security</string>
+    <string name="msg__set_a_pin">უსაფრთხოებისთვის, დააყენეთ PIN</string>
+    <string name="msg__min_pin_length">PIN უნდა იყოს მინიმუმ 6 ციფრი</string>
+    <string name="title__pins_dont_match">PIN– ები არ ემთხვევა</string>
+    <string name="title__re_enter_your_pattern">ხელახლა შეიყვანეთ თქვენი ნიმუში</string>
+    <string name="msg__enter_your_pattern">შეიყვანეთ თქვენი BiTSy ნიმუში გასაგრძელებლად</string>
+    <string name="msg__set_a_pattern">უსაფრთხოებისთვის, დააყენეთ შაბლონი</string>
+    <string name="msg__release_finger">გაუშვით თითი, როდესაც დასრულდა</string>
+    <string name="button__clear">ნათელია</string>
+    <string name="button__next">შემდეგი</string>
+    <string name="text__draw_an_unlock_pattern">დახაზეთ განბლოკვის ნიმუში</string>
+    <string name="msg__draw_pattern_confirm">კვლავ დააჭირეთ ნიმუში, რომ დაადასტუროთ</string>
+    <string name="button__confirm">დაადასტუროს</string>
+    <string name="msg__your_new_unlock_pattern">თქვენი ზარალის ახალი ფორმა</string>
+    <string name="error__wront_pattern">არასწორი ნიმუში</string>
+    <string name="text__pattern_recorded">ჩაწერილი ნიმუში</string>
+    <string name="error__connect_at_least_4_dots">დაკავშირება მინიმუმ 4 წერტილით. Კიდევ სცადე.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">ძალიან ბევრი არასწორი მცდელობა. კვლავ სცადეთ %1$d წუთში.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">ძალიან ბევრი არასწორი მცდელობა. სცადეთ %1$d წამში.</string>
+
+</resources>

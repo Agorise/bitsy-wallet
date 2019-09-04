@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Συμφωνώ</string>
+    <string name="button__disagree">Διαφωνώ</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 + ψηφία PIN</string>
+    <string name="error__pin_too_short">Το PIN είναι πολύ μικρό</string>
+    <string name="text_field__confirm_pin">Επιβεβαιώστε το PIN</string>
+    <string name="error__pin_mismatch">Αναντιστοιχία PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Παρακαλούμε εισάγετε το σωστό brainkey, θα πρέπει να έχει 12 ή 16 λέξεις.</string>
+    <string name="button__import_existing_account">Εισαγωγή υπάρχοντος λογαριασμού</string>
+    <string name="text__or">Ή</string>
+    <string name="button__create_new_account">Δημιουργία νέου λογαριασμού</string>
+    <string name="error__invalid_brainkey">Δεν υπάρχουν λογαριασμοί που ελέγχονται από το συγκεκριμένο brainkey όπου βρέθηκαν, ελέγξτε το brainkey για τυπογραφικά σφάλματα</string>
+    <string name="error__try_again">Δοκιμάστε ξανά μετά από 5 λεπτά</string>
+    <string name="dialog__account_candidates_title">Επιλέξτε ένα λογαριασμό</string>
+    <string name="dialog__account_candidates_content">Τα κλειδιά που προέρχονται από αυτό το brainkey φαίνεται να χρησιμοποιούνται για τον έλεγχο περισσότερων από έναν λογαριασμών, επιλέξτε ποιο λογαριασμό θέλετε να εισαγάγετε</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Όνομα λογαριασμού BitShares</string>
+    <string name="error__read_dict_file">Σφάλμα κατά την ανάγνωση αρχείου λεξικού</string>
+    <string name="error__invalid_account_length">Το όνομα του λογαριασμού πρέπει να είναι από 3 έως 16 χαρακτήρες.</string>
+    <string name="error__invalid_account_start">Το όνομα λογαριασμού πρέπει να ξεκινά με ένα γράμμα.</string>
+    <string name="error__invalid_account_name">Εισαγάγετε ένα κανονικό όνομα που περιέχει τουλάχιστον μια παύλα, έναν αριθμό ή κανένα φωνήεν.</string>
+    <string name="text__verifying_account_availability">Επαλήθευση διαθεσιμότητας λογαριασμού…</string>
+    <string name="error__account_not_available">Το όνομα του λογαριασμού έχει ήδη ληφθεί.</string>
+    <string name="text__account_is_available">Ο λογαριασμός είναι διαθέσιμος</string>
+    <string name="title_error">Λάθος</string>
+    <string name="error__faucet">Ο διακομιστής επέστρεψε ένα σφάλμα. Αυτό μπορεί να οφείλεται σε έναν περιορισμό που έχει οριστεί σκόπιμα για να αποκλείσει συχνές αιτήσεις που προέρχονται από την ίδια διεύθυνση IP σε σύντομο χρονικό διάστημα. Περιμένετε 5 λεπτά και δοκιμάστε ξανά ή μεταβείτε σε ένα άλλο δίκτυο, για παράδειγμα από το wifi στο κελί.</string>
+    <string name="error__faucet_template">Η βρύση επέστρεψε σφάλμα. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Η εφαρμογή δεν μπορούσε να ανακτήσει πληροφορίες σχετικά με το νεοδημιουργούμενο λογαριασμό</string>
+    <string name="button__create">Δημιουργώ</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Συναλλαγές</string>
+    <string name="title_merchants_and_tellers">Εμπορικοί και Εξυπηρετητές</string>
+    <string name="title_receive">Λαμβάνω</string>
+    <string name="title_balances">Ισορροπίες</string>
+    <string name="title_send">Στείλετε</string>
+    <string name="title_net_worth">Καθαρά κέρδη</string>
+    <string name="text__coming_soon">Ερχομαι συντομα</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Ψάξιμο</string>
+    <string name="title_filter">Φίλτρο</string>
+    <string name="title_export">Εξαγωγή</string>
+    <string name="text__no_transactions">Δεν υπάρχουν συναλλαγές</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Επιλογές φίλτρου</string>
+    <string name="text__all">Ολα</string>
+    <string name="text__sent">Απεσταλμένα</string>
+    <string name="text__received">Λήψη</string>
+    <string name="text__date_range">Εύρος ημερομηνιών</string>
+    <string name="text__equivalent_value">Ισοδύναμη τιμή</string>
+    <string name="text__ignore_network_fees">Αγνοήστε τις αμοιβές δικτύου</string>
+    <string name="text__between">Μεταξύ</string>
+    <string name="text__and">και</string>
+    <string name="button__filter">Φίλτρο</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Εξαγωγή φιλτραρισμένων συναλλαγών</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Απαιτείται άδεια αποθήκευσης για την εξαγωγή αρχείων PDF / CSV.</string>
+    <string name="title_from">Από</string>
+    <string name="title_to">Προς το</string>
+    <string name="title_memo">Σημείωμα</string>
+    <string name="title_date">Ημερομηνία</string>
+    <string name="title_time">χρόνος</string>
+    <string name="title_amount">Ποσό</string>
+    <string name="title_equivalent_value">Ισοδύναμη τιμή</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">αξία</string>
+    <string name="template__memo">Σημείωση: %1$s</string>
+    <string name="template__date">Ημερομηνία: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Εμπόρους</string>
+    <string name="title_tellers">Tellers</string>
+    <string name="title_about">Σχετικά με</string>
+    <string name="msg__merchants_description">Οι έμποροι PalmPay αποτελούν τη ραχοκοκαλιά της νέας οικονομίας Crypto. Αν ψάχνετε για επιχειρήσεις που θα αποδεχθούν το Cryptocurrency σας, τότε απλά χρησιμοποιήστε τα δεδομένα αναζήτησης και χάρτη παρακάτω. Περισσότεροι έμποροι θα προστεθούν εδώ καθώς οι Πρεσβευτές της PalmPay μας ενημερώνουν.</string>
+    <string name="msg__tellers_description">Οι τηλεθεατές είναι άνθρωποι που θα ανταλλάξουν τα νομίσματα fiat σας με cryptocurrencies, και αντίστροφα. Βοηθά επίσης τους Εμπόρους με το διακανονισμό.</string>
+    <string name="msg__location_permission_necessary">Η άδεια τοποθεσίας είναι απαραίτητη για την εμφάνιση της τρέχουσας τοποθεσίας σας στο χάρτη.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Πληροφορίες</string>
+    <string name="text__to">Προς το</string>
+    <string name="text__amount">Ποσό</string>
+    <string name="text__memo">Σημείωμα</string>
+    <string name="text__scan_qr">Σάρωση QR</string>
+    <string name="error__invalid_account">Μη έγκυρος λογαριασμός</string>
+    <string name="error__not_enough_funds">Δεν υπάρχουν αρκετά χρήματα</string>
+    <string name="msg__camera_permission_necessary">Η άδεια κάμερας είναι απαραίτητη για την ανάγνωση QR κωδικών.</string>
+    <string name="text__transaction_sent">Η συναλλαγή στάλθηκε!</string>
+    <string name="msg__transaction_not_sent">Δεν είναι δυνατή η αποστολή συναλλαγής</string>
+    <string name="error__you_dont_own_asset">Δεν διαθέτετε κανένα %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Πληκτρολογήστε το όνομα του λογαριασμού Bitshares του ατόμου στο οποίο θέλετε να στείλετε χρήματα. \nΓια παράδειγμα: βύθιση-βρύση</string>
+    <string name="text__asset_balance">Ισοζύγιο ενεργητικού</string>
+    <string name="msg__asset_balance_explanation">Μπορείτε να αγγίξετε το υπόλοιπο που εμφανίζεται για να στείλετε όλο το στοιχείο. Με αυτόν τον τρόπο θα συμπληρώσετε το πεδίο Ποσό για εσάς.</string>
+    <string name="msg__memo_explanation">Δεν απαιτείται εγγραφή μνήμης, αλλά η λήψη σημειώσεων σχετικά με τους λόγους για τους οποίους έχετε στείλει τα χρήματα είναι καλός για μελλοντική αναφορά. Τα μηνύματα είναι ορατά μόνο σε εσάς και στο πρόσωπο στο οποίο στείλατε τα χρήματα.</string>
+    <string name="text__network_fee">Δικαίωμα Δικτύου</string>
+    <string name="msg__network_fee_explanation">Το τέλος δικτύου περιλαμβάνεται στο ποσό που θέλετε να στείλετε. Για παράδειγμα, αν θέλετε να στείλετε 50 BTS, η BiTSy θα στείλει πραγματικά ~ 50.21 BTS. Το προστιθέμενο 0,21 σε αυτό το παράδειγμα είναι το τέλος συναλλαγής Bitshares συν 0,01% στην BiTSy Developer Team (συνήθως ~ 1 λεπτό).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Δεν χρειάζεται να σαρώσετε κάποιον QR για να στείλετε χρήματα, αλλά σας βοηθά να αποφύγετε λάθη. Αφού στείλετε χρήματα από τον λογαριασμό σας, παραμένουν για πάντα, οπότε βεβαιωθείτε ότι το όνομα του λογαριασμού στο πεδίο "Προς" είναι σωστό.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Περιουσιακό στοιχείο</string>
+    <string name="text__other">Αλλα…</string>
+    <string name="template__please_send">Στείλτε: %1$s %2$s</string>
+    <string name="text__any_amount">Οποιαδήποτε ποσότητα</string>
+    <string name="template__to">Προς: %1$s</string>
+    <string name="msg__invoice_subject">Τιμολόγιο BiTSy από %1$s</string>
+    <string name="title_share">Μερίδιο</string>
+    <string name="text__share_with">Μοιραστείτε το με</string>
+    <string name="msg__storage_permission_necessary_share">Η άδεια αποθήκευσης είναι απαραίτητη για την κοινή χρήση εικόνων.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Ρυθμίσεις</string>
+    <string name="title__general">Γενικός</string>
+    <string name="msg__close_timer">Αυτόματη κλείσιμο του BiTSy μετά από 3 λεπτά αδράνειας</string>
+    <string name="msg__night_mode">Νυχτερινή λειτουργία</string>
+    <string name="text__view_network_status">Προβολή κατάστασης δικτύου</string>
+    <string name="title__backup">Αντιγράφων ασφαλείας</string>
+    <string name="msg__brainkey_description">BrainKey. Λίστες ανάκτησης λογαριασμού που μπορούν να ληφθούν ή να αντιγραφούν, αλλά δεν έχουν επεξεργαστεί.</string>
+    <string name="msg__brainkey_info">Γράψτε αυτό κάτω! Βεβαιωθείτε ότι έχετε 2 αντίγραφα αυτού του BrainKey σε 2 ασφαλείς θέσεις σε περίπτωση πυρκαγιάς ή απώλειας. Ασφάλεια πρώτα! Όποιος έχει πρόσβαση στο BrainKey μπορεί να έχει πρόσβαση στα χρήματα του λογαριασμού σας!</string>
+    <string name="button__copied">Αντιγραφή</string>
+    <string name="button__view_and_copy">Προβολή &amp; Αντιγραφή</string>
+    <string name="title__accounts">Λογαριασμοί</string>
+    <string name="msg__upgrade_to_ltm">Αναβαθμίστε τη Μέλη LifeTime (LTM). Οι λογαριασμοί LTM του Bitshares πληρώνουν σχεδόν μηδενικά τέλη, λαμβάνουν 80% επιστροφή χρημάτων και μπόνους για παραπομπές.</string>
+    <string name="button__upgrade_to_ltm">Αναβάθμιση σε LTM</string>
+    <string name="msg__account_upgrade_dialog">Η Μέλη Χρόνος Ζωής σας επιτρέπει να πραγματοποιείτε συναλλαγές με μειωμένο σύνολο αμοιβών δικτύου. \n \nΘα τεθεί σε ισχύ στον τρέχοντα λογαριασμό "%1$s" \n \nΕίναι ωστόσο έρχεται με κόστος περίπου 100 δολαρίων που καταβάλλεται στο Bitshares. \n \nΕίστε βέβαιοι ότι θέλετε να προχωρήσετε;</string>
+    <string name="title__account_upgraded">Ο λογαριασμός αναβαθμίστηκε</string>
+    <string name="msg__account_upgraded">Συγχαρητήρια! Ο λογαριασμός σας έχει πλέον αναβαθμιστεί στη διάρκεια της διάρκειας ζωής.</string>
+    <string name="title__upgrade_account_error">Σφάλμα κατά την προσπάθεια αναβάθμισης του λογαριασμού</string>
+    <string name="msg__upgrade_account_error">Βεβαιωθείτε ότι ο λογαριασμός σας έχει αρκετό υπόλοιπο για να καλύψει το κόστος.</string>
+    <string name="msg__remove_current_account">Καταργήστε τον τρέχοντα λογαριασμό από αυτήν τη συσκευή και δημιουργήστε ή εισαγάγετε διαφορετικό.</string>
+    <string name="button__remove">Αφαιρώ</string>
+    <string name="title__remove_account">Κατάργηση λογαριασμού</string>
+    <string name="msg__remove_account_confirmation">Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τρέχοντα λογαριασμό από αυτήν τη συσκευή;</string>
+    <string name="title__bugs_or_ideas">Σφάλματα ή ιδέες;</string>
+    <string name="msg__bugs_or_ideas">Τηλεγράφημα: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Αποκλεισμός: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Ασφάλεια</string>
+    <string name="text__security_lock">Κλείδωμα ασφαλείας</string>
+    <string name="title__security_dialog">Επιλέξτε ένα κλείδωμα ασφαλείας</string>
+    <string name="text__pin">ΚΑΡΦΙΤΣΑ</string>
+    <string name="text__pattern">Πρότυπο</string>
+    <string name="text__none">Κανένας</string>
+    <string name="button__choose">Επιλέγω</string>
+    <string name="title__re_enter_your_pin">Καταχωρίστε ξανά το PIN σας</string>
+    <string name="msg__enter_your_pin">Εισαγάγετε το PIN BiTSy για να συνεχίσετε</string>
+    <string name="error__wrong_pin">Λάθος κωδικό PIN</string>
+    <string name="title__set_bitsy_security_lock">Ορίστε την ασφάλεια BiTSy</string>
+    <string name="msg__set_a_pin">Για ασφάλεια, ορίστε ένα PIN</string>
+    <string name="msg__min_pin_length">Το PIN πρέπει να είναι τουλάχιστον 6 ψηφία</string>
+    <string name="title__pins_dont_match">Τα PIN δεν ταιριάζουν</string>
+    <string name="title__re_enter_your_pattern">Εισαγάγετε ξανά το μοτίβο σας</string>
+    <string name="msg__enter_your_pattern">Εισαγάγετε το μοτίβο BiTSy για να συνεχίσετε</string>
+    <string name="msg__set_a_pattern">Για ασφάλεια, ορίστε ένα μοτίβο</string>
+    <string name="msg__release_finger">Αφήστε το δάκτυλο όταν τελειώσετε</string>
+    <string name="button__clear">Σαφή</string>
+    <string name="button__next">Επόμενο</string>
+    <string name="text__draw_an_unlock_pattern">Σχεδιάστε ένα μοτίβο ξεκλειδώματος</string>
+    <string name="msg__draw_pattern_confirm">Σχεδιάστε ξανά το μοτίβο για επιβεβαίωση</string>
+    <string name="button__confirm">Επιβεβαιώνω</string>
+    <string name="msg__your_new_unlock_pattern">Το νέο μοτίβο ξεκλειδώματος</string>
+    <string name="error__wront_pattern">Λάθος μοτίβο</string>
+    <string name="text__pattern_recorded">Έγγραφο που καταγράφηκε</string>
+    <string name="error__connect_at_least_4_dots">Συνδέστε τουλάχιστον 4 κουκίδες. Προσπάθησε ξανά.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Πάρα πολλές λανθασμένες προσπάθειες. Δοκιμάστε ξανά σε %1$d λεπτά.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Πάρα πολλές λανθασμένες προσπάθειες. Δοκιμάστε ξανά σε %1$d δευτερόλεπτα.</string>
+
+</resources>

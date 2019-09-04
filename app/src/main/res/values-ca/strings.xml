@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Acordar</string>
+    <string name="button__disagree">Discrepar</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN de 6 dígits</string>
+    <string name="error__pin_too_short">PIN massa curt</string>
+    <string name="text_field__confirm_pin">Confirmeu el PIN</string>
+    <string name="error__pin_mismatch">Desajustament de PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Introduïu el cervell correcte, hauria de tenir 12 o 16 paraules.</string>
+    <string name="button__import_existing_account">Importa el compte existent</string>
+    <string name="text__or">O</string>
+    <string name="button__create_new_account">Crear un nou compte</string>
+    <string name="error__invalid_brainkey">Si no s\'ha trobat cap compte controlat per la clau de cervell donada, comproveu si hi ha errors d\'escriure</string>
+    <string name="error__try_again">Torneu-ho a provar al cap de 5 minuts</string>
+    <string name="dialog__account_candidates_title">Seleccioneu un compte</string>
+    <string name="dialog__account_candidates_content">Sembla que s\'utilitzen les claus derivades d\'aquest cervell per controlar més d\'un compte. Seleccioneu quin compte voleu importar</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Nom del compte BitShares</string>
+    <string name="error__read_dict_file">S\'ha produït un error en llegir el fitxer del diccionari</string>
+    <string name="error__invalid_account_length">El nom del compte hauria de tenir entre 3 i 16 caràcters.</string>
+    <string name="error__invalid_account_start">El nom del compte hauria de començar amb una lletra.</string>
+    <string name="error__invalid_account_name">Introduïu un nom habitual que contingui almenys un guionet, un número o cap vocal.</string>
+    <string name="text__verifying_account_availability">Verificació de la disponibilitat del compte…</string>
+    <string name="error__account_not_available">Aquest nom del compte ja està pres.</string>
+    <string name="text__account_is_available">El compte està disponible</string>
+    <string name="title_error">Error</string>
+    <string name="error__faucet">El servidor ha retornat un error. Això pot ser degut a una limitació establerta de manera específica per impedir les sol·licituds freqüents que provenen de la mateixa adreça IP en un lapse de temps. Espereu 5 minuts i torneu-ho a provar o canvieu a una altra xarxa, per exemple, de wifi a cel·la.</string>
+    <string name="error__faucet_template">L\'aixeta ha retornat un error. Missatge: %1$s</string>
+    <string name="error__created_account_not_found">L’aplicació no ha pogut recuperar informació sobre el compte de nova creació</string>
+    <string name="button__create">Crear</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transaccions</string>
+    <string name="title_merchants_and_tellers">Comerciants i comerciants</string>
+    <string name="title_receive">Rebre</string>
+    <string name="title_balances">Saldos</string>
+    <string name="title_send">Envia</string>
+    <string name="title_net_worth">Patrimoni net</string>
+    <string name="text__coming_soon">Pròximament</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Cerca</string>
+    <string name="title_filter">Filtre</string>
+    <string name="title_export">Exporta</string>
+    <string name="text__no_transactions">No hi ha transaccions</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Opcions de filtre</string>
+    <string name="text__all">Tots</string>
+    <string name="text__sent">Enviat</string>
+    <string name="text__received">Rebut</string>
+    <string name="text__date_range">Interval de dates</string>
+    <string name="text__equivalent_value">Valor equivalent</string>
+    <string name="text__ignore_network_fees">Ignora les tarifes de la xarxa</string>
+    <string name="text__between">Entre</string>
+    <string name="text__and">i</string>
+    <string name="button__filter">Filtre</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Exporta transaccions filtrades</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">És necessari el permís d’emmagatzematge per exportar fitxers PDF / CSV.</string>
+    <string name="title_from">Des de</string>
+    <string name="title_to">A</string>
+    <string name="title_memo">Memòria</string>
+    <string name="title_date">Data</string>
+    <string name="title_time">Temps</string>
+    <string name="title_amount">Import</string>
+    <string name="title_equivalent_value">Valor equivalent</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Valor</string>
+    <string name="template__memo">Nota: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Comerciants</string>
+    <string name="title_tellers">Comptadors</string>
+    <string name="title_about">Quant a</string>
+    <string name="msg__merchants_description">Els comerciants de PalmPay són la columna vertebral de la nova Crypto Economy. Si busqueu empreses que acceptin la vostra criptografia, només cal que utilitzeu les dades de cerca i mapa a continuació. Més comerciants s’afegiran aquí segons ens informen els ambaixadors de PalmPay.</string>
+    <string name="msg__tellers_description">Els narradors són persones que intercanviaran les vostres monedes amb criptomonedes i viceversa. També ajuden els comerciants amb la liquidació del fiat.</string>
+    <string name="msg__location_permission_necessary">El permís d’ubicació és necessari per mostrar la vostra ubicació actual al mapa.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Informació</string>
+    <string name="text__to">A</string>
+    <string name="text__amount">Import</string>
+    <string name="text__memo">Memòria</string>
+    <string name="text__scan_qr">Escanejar QR</string>
+    <string name="error__invalid_account">Compte no vàlid</string>
+    <string name="error__not_enough_funds">No hi ha prou fons</string>
+    <string name="msg__camera_permission_necessary">Per llegir els codis QR és necessari el permís de la càmera.</string>
+    <string name="text__transaction_sent">S\'ha enviat la transacció!</string>
+    <string name="msg__transaction_not_sent">No es pot enviar la transacció</string>
+    <string name="error__you_dont_own_asset">No teniu cap %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Escriviu el nom del compte de Bitshares de la persona a la qual voleu enviar fons. \nPer exemple: agorise-aixeta</string>
+    <string name="text__asset_balance">Saldo d’actius</string>
+    <string name="msg__asset_balance_explanation">Podeu tocar el saldo mostrat per enviar tot aquest recurs. En fer-ho, empleneu el camp Quantitat.</string>
+    <string name="msg__memo_explanation">No cal introduir una nota, però prendre notes sobre el motiu pel qual heu enviat els fons és bo per fer referència futura. Memos només és visible per a vostè i per a la persona amb qui has enviat fons.</string>
+    <string name="text__network_fee">Taxa de xarxa</string>
+    <string name="msg__network_fee_explanation">La quota de xarxa està inclosa en l\'import que voleu enviar. Per exemple, si voleu enviar 50 BTS, realment BiTSy enviarà ~ 50.21 BTS. El 0,21 afegit en aquest exemple és la taxa de transacció de Bitshares més un 0,01% a l\'equip de desenvolupadors de BiTSy (normalment ~ 1%).</string>
+    <string name="text__qr_code">Codi QR</string>
+    <string name="msg__qr_code_explanation">No cal escanejar els QR d’algú per enviar fons, però t’ajuda a evitar errors. Un cop envieu fons del vostre compte, seran desapareguts per sempre, així que sempre assegureu-vos que el nom del compte al camp "A" sigui correcte.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Actiu</string>
+    <string name="text__other">Un altre…</string>
+    <string name="template__please_send">Envieu: %1$s %2$s</string>
+    <string name="text__any_amount">Qualsevol quantitat</string>
+    <string name="template__to">A: %1$s</string>
+    <string name="msg__invoice_subject">Factura biTSy de %1$s</string>
+    <string name="title_share">Compartir</string>
+    <string name="text__share_with">Compartir amb</string>
+    <string name="msg__storage_permission_necessary_share">El permís d’emmagatzematge és necessari per compartir imatges.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Configuració</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">Tanca automàticament BiTSy després de 3 minuts d\'inactivitat</string>
+    <string name="msg__night_mode">Modalitat nocturna</string>
+    <string name="text__view_network_status">Veure l\'estat de la xarxa</string>
+    <string name="title__backup">Còpia de seguretat</string>
+    <string name="msg__brainkey_description">BrainKey Paraules de recuperació del compte que es poden capturar o copiar, però no es poden editar.</string>
+    <string name="msg__brainkey_info">Anoteu-ho! Assegureu-vos de tenir 2 còpies d’aquest BrainKey en 2 ubicacions segures en cas d’incendi o pèrdua. Seguretat primer! Qualsevol que tingui accés al vostre BrainKey pot accedir als fons del vostre compte.</string>
+    <string name="button__copied">Copiat</string>
+    <string name="button__view_and_copy">Veure i copiar</string>
+    <string name="title__accounts">Comptes</string>
+    <string name="msg__upgrade_to_ltm">Actualització a LifeTime Membership (LTM). Els comptes LTM de Bitshares paguen comissions gairebé nul·les, obtenen un 80% de devolució de diners i bonificacions per a derivacions.</string>
+    <string name="button__upgrade_to_ltm">Actualitza a LTM</string>
+    <string name="msg__account_upgrade_dialog">L’adhesió de Time Life us permet operar amb un conjunt reduït de tarifes de xarxa. \n \n Entrarà en vigor al compte corrent "%1$s" \n \n Tot i això, comporta un cost aproximat de 100 USD a Bitshares. \n \nEstà segur que voleu continuar?</string>
+    <string name="title__account_upgraded">Compte actualitzat</string>
+    <string name="msg__account_upgraded">Enhorabona! El vostre compte s\'ha actualitzat per a la subscripció a la vida.</string>
+    <string name="title__upgrade_account_error">S\'ha produït un error en intentar actualitzar el compte</string>
+    <string name="msg__upgrade_account_error">Assegureu-vos que el vostre compte té un saldo suficient per cobrir els costos.</string>
+    <string name="msg__remove_current_account">Elimineu el compte actual d\'aquest dispositiu i creeu-ne o importeu-ne un de diferent.</string>
+    <string name="button__remove">Elimina</string>
+    <string name="title__remove_account">Elimina el compte</string>
+    <string name="msg__remove_account_confirmation">Esteu segur que voleu eliminar el compte actual d’aquest dispositiu?</string>
+    <string name="title__bugs_or_ideas">Errors o idees?</string>
+    <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloqueig: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Seguretat</string>
+    <string name="text__security_lock">Bloqueig de seguretat</string>
+    <string name="title__security_dialog">Trieu un bloqueig de seguretat</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Patró</string>
+    <string name="text__none">Cap</string>
+    <string name="button__choose">Tria</string>
+    <string name="title__re_enter_your_pin">Torneu a introduir el PIN</string>
+    <string name="msg__enter_your_pin">Introduïu el PIN de BiTSy per continuar</string>
+    <string name="error__wrong_pin">PIN incorrecte</string>
+    <string name="title__set_bitsy_security_lock">Estableix BiTSy Security</string>
+    <string name="msg__set_a_pin">Per seguretat, establiu un PIN</string>
+    <string name="msg__min_pin_length">El PIN ha de tenir com a mínim 6 dígits</string>
+    <string name="title__pins_dont_match">Els PIN no coincideixen</string>
+    <string name="title__re_enter_your_pattern">Torneu a introduir el patró</string>
+    <string name="msg__enter_your_pattern">Per continuar, introduïu el patró de BiTSy</string>
+    <string name="msg__set_a_pattern">Per seguretat, configureu un patró</string>
+    <string name="msg__release_finger">Allibereu el dit quan hagueu acabat</string>
+    <string name="button__clear">Clar</string>
+    <string name="button__next">Pròxim</string>
+    <string name="text__draw_an_unlock_pattern">Dibuixa un patró de desbloqueig</string>
+    <string name="msg__draw_pattern_confirm">Dibuixa el patró de nou per confirmar</string>
+    <string name="button__confirm">Confirmeu</string>
+    <string name="msg__your_new_unlock_pattern">El vostre nou patró de desbloqueig</string>
+    <string name="error__wront_pattern">Patró incorrecte</string>
+    <string name="text__pattern_recorded">Patró gravat</string>
+    <string name="error__connect_at_least_4_dots">Connecteu almenys 4 punts. Torna-ho a provar.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Massa intents incorrectes. Torneu-ho a provar d\'aquí a %1$d minuts.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Massa intents incorrectes. Torneu-ho a provar en %1$d segons.</string>
+
+</resources>

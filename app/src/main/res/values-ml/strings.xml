@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">സമ്മതിക്കുന്നു</string>
+    <string name="button__disagree">വിയോജിക്കുന്നു</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ അക്ക PIN</string>
+    <string name="error__pin_too_short">പിൻ വളരെ ചെറുതാണ്</string>
+    <string name="text_field__confirm_pin">പിൻ സ്ഥിരീകരിക്കുക</string>
+    <string name="error__pin_mismatch">പിൻ പൊരുത്തക്കേട്</string>
+    <string name="text__brain_key">ബ്രെയിൻകെയ്</string>
+    <string name="error__enter_correct_brainkey">ശരിയായ ബ്രെയിങ്കി നൽകുക, അതിന് 12 അല്ലെങ്കിൽ 16 വാക്കുകൾ ഉണ്ടായിരിക്കണം.</string>
+    <string name="button__import_existing_account">നിലവിലുള്ള അക്കൗണ്ട് ഇറക്കുമതി ചെയ്യുക</string>
+    <string name="text__or">അഥവാ</string>
+    <string name="button__create_new_account">പുതിയ അക്കൗണ്ട് സൃഷ്ടിക്കുക</string>
+    <string name="error__invalid_brainkey">കണ്ടെത്തിയ ബ്രെയ്‌ങ്കി നിയന്ത്രിക്കുന്ന അക്കൗണ്ടുകളൊന്നുമില്ല, ടൈപ്പിംഗ് പിശകുകൾക്കായി ദയവായി നിങ്ങളുടെ ബ്രങ്കി പരിശോധിക്കുക</string>
+    <string name="error__try_again">5 മിനിറ്റിനുശേഷം വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="dialog__account_candidates_title">ഒരു അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക</string>
+    <string name="dialog__account_candidates_content">ഈ ബ്രെയിങ്കിയിൽ നിന്ന് ലഭിച്ച കീകൾ ഒന്നിലധികം അക്കൗണ്ടുകൾ നിയന്ത്രിക്കാൻ ഉപയോഗിച്ചതായി തോന്നുന്നു, നിങ്ങൾ ഏത് അക്കൗണ്ട് ഇറക്കുമതി ചെയ്യാൻ ആഗ്രഹിക്കുന്നുവെന്ന് തിരഞ്ഞെടുക്കുക</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">ബിറ്റ്ഷെയർ അക്കൗണ്ടിന്റെ പേര്</string>
+    <string name="error__read_dict_file">നിഘണ്ടു ഫയൽ വായിക്കുന്നതിൽ പിശക്</string>
+    <string name="error__invalid_account_length">അക്ക name ണ്ടിന്റെ പേര് 3 മുതൽ 16 പ്രതീകങ്ങൾ ആയിരിക്കണം.</string>
+    <string name="error__invalid_account_start">അക്ക name ണ്ട് നാമം ഒരു അക്ഷരത്തിൽ ആരംഭിക്കണം.</string>
+    <string name="error__invalid_account_name">കുറഞ്ഞത് ഒരു ഡാഷ്, ഒരു നമ്പർ അല്ലെങ്കിൽ സ്വരാക്ഷരങ്ങൾ അടങ്ങിയ ഒരു സാധാരണ പേര് നൽകുക.</string>
+    <string name="text__verifying_account_availability">അക്കൗണ്ട് ലഭ്യത പരിശോധിക്കുന്നു…</string>
+    <string name="error__account_not_available">ആ അക്ക name ണ്ട് നാമം ഇതിനകം എടുത്തിട്ടുണ്ട്.</string>
+    <string name="text__account_is_available">അക്കൗണ്ട് ലഭ്യമാണ്</string>
+    <string name="title_error">പിശക്</string>
+    <string name="error__faucet">സെർവർ ഒരു പിശക് നൽകി. ഒരേ ഐപി വിലാസത്തിൽ നിന്ന് പതിവായി വരുന്ന അഭ്യർത്ഥനകൾ ഹ്രസ്വ സമയത്തിനുള്ളിൽ അനുവദിക്കാതിരിക്കാൻ മന purpose പൂർവ്വം സജ്ജമാക്കിയിരിക്കുന്ന ഒരു പരിമിതി ഇതിന് കാരണമാകാം. ദയവായി 5 മിനിറ്റ് കാത്തിരുന്ന് വീണ്ടും ശ്രമിക്കുക, അല്ലെങ്കിൽ മറ്റൊരു നെറ്റ്‌വർക്കിലേക്ക് മാറുക, ഉദാഹരണത്തിന് വൈഫൈയിൽ നിന്ന് സെല്ലിലേക്ക്.</string>
+    <string name="error__faucet_template">Faucet ഒരു പിശക് നൽകി. Msg: %1$s</string>
+    <string name="error__created_account_not_found">അപ്ലിക്കേഷന് പുതുതായി സൃഷ്‌ടിച്ച അക്കൗണ്ടിനെക്കുറിച്ചുള്ള വിവരങ്ങൾ വീണ്ടെടുക്കാനായില്ല</string>
+    <string name="button__create">സൃഷ്ടിക്കാൻ</string>
+
+    <!-- Home -->
+    <string name="title_transactions">ഇടപാടുകൾ</string>
+    <string name="title_merchants_and_tellers">വ്യാപാരികളും പറയുന്നവരും</string>
+    <string name="title_receive">സ്വീകരിക്കുക</string>
+    <string name="title_balances">ബാലൻസ്</string>
+    <string name="title_send">അയയ്‌ക്കുക</string>
+    <string name="title_net_worth">നെറ്റ് വർത്ത്</string>
+    <string name="text__coming_soon">ഉടൻ വരുന്നു</string>
+
+    <!-- Transactions -->
+    <string name="title_search">തിരയുക</string>
+    <string name="title_filter">ഫിൽട്ടർ ചെയ്യുക</string>
+    <string name="title_export">കയറ്റുമതി</string>
+    <string name="text__no_transactions">ഇടപാടുകളൊന്നുമില്ല</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">ഓപ്ഷനുകൾ ഫിൽട്ടർ ചെയ്യുക</string>
+    <string name="text__all">എല്ലാം</string>
+    <string name="text__sent">അയച്ചു</string>
+    <string name="text__received">ലഭിച്ചു</string>
+    <string name="text__date_range">തീയതി പരിധി</string>
+    <string name="text__equivalent_value">തുല്യ മൂല്യം</string>
+    <string name="text__ignore_network_fees">നെറ്റ്‌വർക്ക് ഫീസ് അവഗണിക്കുക</string>
+    <string name="text__between">ഇടയിൽ</string>
+    <string name="text__and">ഒപ്പം</string>
+    <string name="button__filter">ഫിൽട്ടർ ചെയ്യുക</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">ഫിൽട്ടർ ചെയ്ത ഇടപാടുകൾ കയറ്റുമതി ചെയ്യുക</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV ഫയലുകൾ എക്‌സ്‌പോർട്ടുചെയ്യാൻ സംഭരണ അനുമതി ആവശ്യമാണ്.</string>
+    <string name="title_from">മുതൽ</string>
+    <string name="title_to">ടു</string>
+    <string name="title_memo">മെമ്മോ</string>
+    <string name="title_date">തീയതി</string>
+    <string name="title_time">സമയം</string>
+    <string name="title_amount">തുക</string>
+    <string name="title_equivalent_value">തുല്യ മൂല്യം</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">മൂല്യം</string>
+    <string name="template__memo">മെമ്മോ: %1$s</string>
+    <string name="template__date">തീയതി: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">വ്യാപാരികൾ</string>
+    <string name="title_tellers">പറയുന്നവർ</string>
+    <string name="title_about">കുറിച്ച്</string>
+    <string name="msg__merchants_description">പുതിയ ക്രിപ്റ്റോ സമ്പദ്‌വ്യവസ്ഥയുടെ നട്ടെല്ലാണ് പാംപേ വ്യാപാരികൾ. നിങ്ങളുടെ ക്രിപ്‌റ്റോകറൻസി സ്വീകരിക്കുന്ന ബിസിനസ്സുകൾക്കായി നിങ്ങൾ തിരയുകയാണെങ്കിൽ, ചുവടെയുള്ള തിരയൽ, മാപ്പ് ഡാറ്റ ഉപയോഗിക്കുക. പാംപേ അംബാസഡർമാർ ഞങ്ങളെ അറിയിക്കുന്നതിനാൽ കൂടുതൽ വ്യാപാരികളെ ഇവിടെ ചേർക്കും.</string>
+    <string name="msg__tellers_description">നിങ്ങളുടെ ഫിയറ്റ് കറൻസികൾ ക്രിപ്‌റ്റോകറൻസികളുമായി കൈമാറ്റം ചെയ്യുന്ന ആളുകളാണ് ടെല്ലർമാർ, തിരിച്ചും. ഫിയറ്റ് സെറ്റിൽമെന്റിന് അവർ വ്യാപാരികളെ സഹായിക്കുന്നു.</string>
+    <string name="msg__location_permission_necessary">മാപ്പിൽ നിങ്ങളുടെ നിലവിലെ സ്ഥാനം കാണിക്കുന്നതിന് ലൊക്കേഷൻ അനുമതി ആവശ്യമാണ്.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">വിവരം</string>
+    <string name="text__to">ടു</string>
+    <string name="text__amount">തുക</string>
+    <string name="text__memo">മെമ്മോ</string>
+    <string name="text__scan_qr">QR സ്കാൻ ചെയ്യുക</string>
+    <string name="error__invalid_account">അക്കൗണ്ട് അസാധുവാണ്</string>
+    <string name="error__not_enough_funds">ആവശ്യത്തിന് ഫണ്ടില്ല</string>
+    <string name="msg__camera_permission_necessary">QR കോഡുകൾ വായിക്കാൻ ക്യാമറ അനുമതി ആവശ്യമാണ്.</string>
+    <string name="text__transaction_sent">ഇടപാട് അയച്ചു!</string>
+    <string name="msg__transaction_not_sent">ഇടപാട് അയയ്‌ക്കാനായില്ല</string>
+    <string name="error__you_dont_own_asset">നിങ്ങൾക്ക് %1$s സ്വന്തമല്ല</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">നിങ്ങൾ‌ക്ക് ഫണ്ടുകൾ‌ അയയ്‌ക്കാൻ‌ താൽ‌പ്പര്യപ്പെടുന്ന വ്യക്തിയുടെ ബിറ്റ്‌ഷെയർ‌ അക്ക name ണ്ട് നാമം ടൈപ്പ് ചെയ്യുക. \n ഉദാഹരണത്തിന്: അഗോറൈസ്-ഫ്യൂസറ്റ്</string>
+    <string name="text__asset_balance">അസറ്റ് ബാലൻസ്</string>
+    <string name="msg__asset_balance_explanation">ആ അസറ്റുകളെല്ലാം അയയ്‌ക്കുന്നതിന് പ്രദർശിപ്പിച്ചിരിക്കുന്ന ബാലൻസിൽ നിങ്ങൾക്ക് ടാപ്പുചെയ്യാനാകും. അങ്ങനെ ചെയ്യുന്നത് നിങ്ങൾക്കുള്ള തുക ഫീൽഡിൽ പൂരിപ്പിക്കും.</string>
+    <string name="msg__memo_explanation">ഒരു മെമ്മോ നൽകുന്നത് ആവശ്യമില്ല, പക്ഷേ നിങ്ങൾ എന്തിനാണ് ഫണ്ട് അയച്ചതെന്നതിനെക്കുറിച്ചുള്ള കുറിപ്പുകൾ എടുക്കുന്നത് ഭാവി റഫറൻസിനായി നല്ലതാണ്. നിങ്ങൾക്കും നിങ്ങൾ ഫണ്ട് അയച്ച വ്യക്തിക്കും മാത്രമേ മെമ്മോകൾ ദൃശ്യമാകൂ.</string>
+    <string name="text__network_fee">നെറ്റ്‌വർക്ക് ഫീസ്</string>
+    <string name="msg__network_fee_explanation">നിങ്ങൾ അയയ്‌ക്കാൻ ആഗ്രഹിക്കുന്ന തുകയിൽ നെറ്റ്‌വർക്ക് ഫീസ് ഉൾപ്പെടുത്തിയിട്ടുണ്ട്. ഉദാഹരണത്തിന്, നിങ്ങൾക്ക് 50 BTS അയയ്ക്കണമെങ്കിൽ, BiTSy യഥാർത്ഥത്തിൽ. 50.21 BTS അയയ്ക്കും. ഈ ഉദാഹരണത്തിൽ‌ ചേർ‌ത്തിരിക്കുന്ന 0.21 ബിറ്റ്‌ഷെയർ‌ ഇടപാട് ഫീസും 0.01% ബിറ്റ്‌സി ഡെവലപ്പർ‌ ടീമിന് (സാധാരണ ~ 1 സെൻറ്).</string>
+    <string name="text__qr_code">QR കോഡ്</string>
+    <string name="msg__qr_code_explanation">ഫണ്ട് അയയ്‌ക്കാൻ നിങ്ങൾ ആരുടെയെങ്കിലും ക്യുആർ സ്കാൻ ചെയ്യേണ്ടതില്ല, പക്ഷേ തെറ്റുകൾ ഒഴിവാക്കാൻ ഇത് നിങ്ങളെ സഹായിക്കുന്നു. നിങ്ങളുടെ അക്ക from ണ്ടിൽ നിന്ന് ഫണ്ട് അയച്ചുകഴിഞ്ഞാൽ, അവ എന്നെന്നേക്കുമായി ഇല്ലാതാകും, അതിനാൽ “ടു” ഫീൽഡിലെ അക്ക name ണ്ട് നാമം ശരിയാണെന്ന് എല്ലായ്പ്പോഴും ഉറപ്പാക്കുക.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">അസറ്റ്</string>
+    <string name="text__other">മറ്റുള്ളവ…</string>
+    <string name="template__please_send">ദയവായി അയയ്‌ക്കുക: %1$s %2$s</string>
+    <string name="text__any_amount">ഏതെങ്കിലും തുക</string>
+    <string name="template__to">സ്വീകർത്താവ്: %1$s</string>
+    <string name="msg__invoice_subject">%1$s ൽ നിന്നുള്ള BiTSy ഇൻവോയ്സ്</string>
+    <string name="title_share">പങ്കിടുക</string>
+    <string name="text__share_with">പങ്കിടുക</string>
+    <string name="msg__storage_permission_necessary_share">ചിത്രങ്ങൾ പങ്കിടാൻ സംഭരണ അനുമതി ആവശ്യമാണ്.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">ക്രമീകരണങ്ങൾ</string>
+    <string name="title__general">ജനറൽ</string>
+    <string name="msg__close_timer">3 മിനിറ്റ് നിഷ്‌ക്രിയത്വത്തിന് ശേഷം BiTSy യാന്ത്രികമായി അടയ്‌ക്കുക</string>
+    <string name="msg__night_mode">രാത്രി മോഡ്</string>
+    <string name="text__view_network_status">നെറ്റ്‌വർക്ക് നില കാണുക</string>
+    <string name="title__backup">ബാക്കപ്പ്</string>
+    <string name="msg__brainkey_description">ബ്രെയിൻകെയ്. ക്യാപ്‌ചർ ചെയ്യാനോ പകർത്താനോ കഴിയുന്ന, എന്നാൽ എഡിറ്റുചെയ്യാനാകാത്ത അക്കൗണ്ട് വീണ്ടെടുക്കൽ വാക്കുകൾ.</string>
+    <string name="msg__brainkey_info">ഇത് എഴുതുക! തീയോ നഷ്ടമോ ഉണ്ടായാൽ 2 സുരക്ഷിതമായ സ്ഥലങ്ങളിൽ ഈ ബ്രെയിൻ‌കെയുടെ 2 പകർപ്പുകൾ നിങ്ങളുടെ പക്കലുണ്ടെന്ന് ഉറപ്പാക്കുക. സുരക്ഷ ആദ്യം! നിങ്ങളുടെ ബ്രെയിൻ‌കേയിലേക്ക് ആക്‌സസ് ഉള്ള ആർക്കും നിങ്ങളുടെ അക്ക in ണ്ടിലെ ഫണ്ടുകൾ‌ ആക്‌സസ് ചെയ്യാൻ‌ കഴിയും!</string>
+    <string name="button__copied">പകർത്തി</string>
+    <string name="button__view_and_copy">കാണുക &amp; പകർത്തുക</string>
+    <string name="title__accounts">അക്കൗണ്ടുകൾ</string>
+    <string name="msg__upgrade_to_ltm">ലൈഫ് ടൈം അംഗത്വത്തിലേക്ക് (LTM) അപ്‌ഗ്രേഡുചെയ്യുക. ബിറ്റ്ഷെയറിന്റെ LTM അക്ക accounts ണ്ടുകൾ പൂജ്യത്തിനടുത്ത് ഫീസ് അടയ്ക്കുകയും 80% ക്യാഷ്ബാക്കും റഫറലുകൾക്ക് ബോണസും നേടുകയും ചെയ്യുന്നു.</string>
+    <string name="button__upgrade_to_ltm">LTM- ലേക്ക് അപ്‌ഗ്രേഡുചെയ്യുക</string>
+    <string name="msg__account_upgrade_dialog">കുറഞ്ഞ നെറ്റ്‌വർക്ക് ഫീസ് ഉപയോഗിച്ച് വ്യാപാരം നടത്താൻ ലൈഫ് ടൈം അംഗത്വം നിങ്ങളെ അനുവദിക്കുന്നു. \n \n ഇത് നിലവിലെ അക്ക "ണ്ടിലേക്ക് പ്രാബല്യത്തിൽ വരും" %1$s "\n \n എന്നിരുന്നാലും ഇത് ബിറ്റ്ഷെയറുകളിൽ അടച്ച 100 യുഎസ് ഡോളർ ചിലവാണ് വരുന്നത്. \n \n നിങ്ങൾക്ക് തുടരണമെന്ന് ഉറപ്പാണോ?</string>
+    <string name="title__account_upgraded">അക്കൗണ്ട് അപ്‌ഗ്രേഡുചെയ്‌തു</string>
+    <string name="msg__account_upgraded">അഭിനന്ദനങ്ങൾ! നിങ്ങളുടെ അക്കൗണ്ട് ഇപ്പോൾ ആജീവനാന്ത അംഗത്വത്തിലേക്ക് അപ്‌ഗ്രേഡുചെയ്‌തു.</string>
+    <string name="title__upgrade_account_error">അക്കൗണ്ട് അപ്‌ഗ്രേഡുചെയ്യാൻ ശ്രമിക്കുമ്പോൾ പിശക്</string>
+    <string name="msg__upgrade_account_error">ചെലവുകൾ നികത്താൻ നിങ്ങളുടെ അക്കൗണ്ടിന് മതിയായ ബാലൻസ് ഉണ്ടെന്ന് ഉറപ്പാക്കുക.</string>
+    <string name="msg__remove_current_account">ഈ ഉപകരണത്തിൽ നിന്ന് നിലവിലെ അക്കൗണ്ട് നീക്കംചെയ്‌ത് മറ്റൊന്ന് സൃഷ്‌ടിക്കുക അല്ലെങ്കിൽ ഇറക്കുമതി ചെയ്യുക.</string>
+    <string name="button__remove">നീക്കംചെയ്യുക</string>
+    <string name="title__remove_account">അക്കൗണ്ട് നീക്കംചെയ്യുക</string>
+    <string name="msg__remove_account_confirmation">ഈ ഉപകരണത്തിൽ നിന്ന് നിലവിലെ അക്കൗണ്ട് നീക്കംചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?</string>
+    <string name="title__bugs_or_ideas">ബഗുകളോ ആശയങ്ങളോ?</string>
+    <string name="msg__bugs_or_ideas">ടെലിഗ്രാം: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">തടയുക: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">സുരക്ഷ</string>
+    <string name="text__security_lock">സുരക്ഷാ ലോക്ക്</string>
+    <string name="title__security_dialog">ഒരു സുരക്ഷാ ലോക്ക് തിരഞ്ഞെടുക്കുക</string>
+    <string name="text__pin">പിൻ</string>
+    <string name="text__pattern">പാറ്റേൺ</string>
+    <string name="text__none">ഒന്നുമില്ല</string>
+    <string name="button__choose">തിരഞ്ഞെടുക്കുക</string>
+    <string name="title__re_enter_your_pin">നിങ്ങളുടെ പിൻ വീണ്ടും നൽകുക</string>
+    <string name="msg__enter_your_pin">തുടരുന്നതിന് നിങ്ങളുടെ BiTSy PIN നൽകുക</string>
+    <string name="error__wrong_pin">തെറ്റായ പിൻ</string>
+    <string name="title__set_bitsy_security_lock">BiTSy സുരക്ഷ സജ്ജമാക്കുക</string>
+    <string name="msg__set_a_pin">സുരക്ഷയ്‌ക്കായി, ഒരു പിൻ സജ്ജമാക്കുക</string>
+    <string name="msg__min_pin_length">പിൻ കുറഞ്ഞത് 6 അക്കങ്ങളെങ്കിലും ആയിരിക്കണം</string>
+    <string name="title__pins_dont_match">PIN- കൾ പൊരുത്തപ്പെടുന്നില്ല</string>
+    <string name="title__re_enter_your_pattern">നിങ്ങളുടെ പാറ്റേൺ വീണ്ടും നൽകുക</string>
+    <string name="msg__enter_your_pattern">തുടരുന്നതിന് നിങ്ങളുടെ BiTSy പാറ്റേൺ നൽകുക</string>
+    <string name="msg__set_a_pattern">സുരക്ഷയ്‌ക്കായി, ഒരു പാറ്റേൺ സജ്ജമാക്കുക</string>
+    <string name="msg__release_finger">പൂർത്തിയാകുമ്പോൾ വിരൽ വിടുക</string>
+    <string name="button__clear">മായ്‌ക്കുക</string>
+    <string name="button__next">അടുത്തത്</string>
+    <string name="text__draw_an_unlock_pattern">ഒരു അൺലോക്ക് പാറ്റേൺ വരയ്‌ക്കുക</string>
+    <string name="msg__draw_pattern_confirm">സ്ഥിരീകരിക്കുന്നതിന് പാറ്റേൺ വീണ്ടും വരയ്‌ക്കുക</string>
+    <string name="button__confirm">സ്ഥിരീകരിക്കുക</string>
+    <string name="msg__your_new_unlock_pattern">നിങ്ങളുടെ പുതിയ അൺലോക്ക് പാറ്റേൺ</string>
+    <string name="error__wront_pattern">തെറ്റായ പാറ്റേൺ</string>
+    <string name="text__pattern_recorded">പാറ്റേൺ റെക്കോർഡുചെയ്‌തു</string>
+    <string name="error__connect_at_least_4_dots">കുറഞ്ഞത് 4 ഡോട്ടുകളെങ്കിലും ബന്ധിപ്പിക്കുക. വീണ്ടും ശ്രമിക്ക്.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">വളരെയധികം തെറ്റായ ശ്രമങ്ങൾ. %1$d മിനിറ്റിനുള്ളിൽ വീണ്ടും ശ്രമിക്കുക.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">വളരെയധികം തെറ്റായ ശ്രമങ്ങൾ. %1$d സെക്കൻഡിനുള്ളിൽ വീണ്ടും ശ്രമിക്കുക.</string>
+
+</resources>

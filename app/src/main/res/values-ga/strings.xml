@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Aontú</string>
+    <string name="button__disagree">Ní aontaím</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN PIN 6+</string>
+    <string name="error__pin_too_short">PIN ró-ghearr</string>
+    <string name="text_field__confirm_pin">Deimhnigh PIN</string>
+    <string name="error__pin_mismatch">Neamh-chomhoiriúnú PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Le do thoil, cuir isteach an brainkey ceart, ba chóir go mbeadh 12 nó 16 focal air.</string>
+    <string name="button__import_existing_account">Iompórtáil cuntas atá ann cheana</string>
+    <string name="text__or">Nó</string>
+    <string name="button__create_new_account">Cruthaigh cuntas nua</string>
+    <string name="error__invalid_brainkey">Ní cheadaítear aon chuntais a rialaíonn an brainse áirithe, nuair a aimsítear iad, seiceáil le do thoil go bhfuil tú ag iarraidh earráidí a chlóscríobh</string>
+    <string name="error__try_again">Déan iarracht arís tar éis 5 nóiméad</string>
+    <string name="dialog__account_candidates_title">Roghnaigh cuntas</string>
+    <string name="dialog__account_candidates_content">Is cosúil go n-úsáidtear na heochracha a fhaightear ón bhfuinneog seo chun níos mó ná cuntas amháin a rialú, roghnaigh an cuntas is mian leat a allmhairiú, le do thoil</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Ainm cuntais BitShares</string>
+    <string name="error__read_dict_file">Earráid agus comhad foclóra á léamh</string>
+    <string name="error__invalid_account_length">Ba chóir go mbeadh ainm an chuntais 3 go 16 charachtar.</string>
+    <string name="error__invalid_account_start">Ba chóir tús a chur le hainm an chuntais le litir.</string>
+    <string name="error__invalid_account_name">Cuir isteach ainm rialta ina bhfuil ar a laghad Fleasc amháin, uimhir, nó gan gutaí ar bith.</string>
+    <string name="text__verifying_account_availability">Fáil ar infhaighteacht cuntais a fhíorú…</string>
+    <string name="error__account_not_available">Glactar an t-ainm cuntais sin cheana féin.</string>
+    <string name="text__account_is_available">Tá cuntas ar fáil</string>
+    <string name="title_error">Earráid</string>
+    <string name="error__faucet">D\'fhill an freastalaí earráid. D’fhéadfadh sé seo a bheith mar gheall ar theorannú a bhí i bhfeidhm go sainráite chun iarrataí rialta a dhícheadú a tháinig ón seoladh IP céanna i dtréimhse ghearr. Le do thoil fan 5 nóiméad agus déan iarracht eile, nó téigh chuig líonra difriúil, mar shampla ó wifi go ceall.</string>
+    <string name="error__faucet_template">D\'fhill an faucet earráid. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Níorbh fhéidir leis an aip faisnéis a fháil faoin gcuntas nuachruthaithe</string>
+    <string name="button__create">Cruthaigh</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Idirbhearta</string>
+    <string name="title_merchants_and_tellers">Ceannaithe &amp; Teilitheoirí</string>
+    <string name="title_receive">Faigh</string>
+    <string name="title_balances">Iarmhéideanna</string>
+    <string name="title_send">Seol</string>
+    <string name="title_net_worth">Ghlanfhiúchas</string>
+    <string name="text__coming_soon">Ag teacht go luath</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Cuardaigh</string>
+    <string name="title_filter">Scagaire</string>
+    <string name="title_export">Easpórtáil</string>
+    <string name="text__no_transactions">Gan Idirbhearta</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Roghanna scagtha</string>
+    <string name="text__all">Gach</string>
+    <string name="text__sent">Seolta</string>
+    <string name="text__received">Faighte</string>
+    <string name="text__date_range">Raon Dáta</string>
+    <string name="text__equivalent_value">Luach Comhionann</string>
+    <string name="text__ignore_network_fees">Déan neamhaird de tháillí an Líonra</string>
+    <string name="text__between">Idir</string>
+    <string name="text__and">agus</string>
+    <string name="button__filter">Scagaire</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Onnmhairiú idirbhearta scagtha</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Tá cead stórála riachtanach chun comhaid PDF / CSV a onnmhairiú.</string>
+    <string name="title_from">Ón</string>
+    <string name="title_to">Chun</string>
+    <string name="title_memo">Meamram</string>
+    <string name="title_date">Dáta</string>
+    <string name="title_time">Am</string>
+    <string name="title_amount">Méid</string>
+    <string name="title_equivalent_value">Luach Comhionann</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">Sliocht</string>
+    <string name="text__value">Luach</string>
+    <string name="template__memo">Meamram: %1$s</string>
+    <string name="template__date">Dáta: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Ceannaithe</string>
+    <string name="title_tellers">Teilitheoirí</string>
+    <string name="title_about">Faoi</string>
+    <string name="msg__merchants_description">Is iad ceannaithe PalmPay cnámh droma an Gheilleagair Crypto nua. Má tá tú ag lorg gnólachtaí a ghlacfaidh le do Cryptocurrency, bain úsáid as na sonraí Cuardaigh agus Léarscáil thíos. Cuirfear níos mó ceannaithe leis seo mar go gcuireann Ambasadóirí PalmPay in iúl dúinn.</string>
+    <string name="msg__tellers_description">Is daoine iad na daoine a dhéanann airgeadraí a mhalartú le hairgeadraí airgeadraí, agus vice versa. Cabhraíonn siad freisin le Ceannaithe le lonnaíocht fiat.</string>
+    <string name="msg__location_permission_necessary">Tá cead suímh riachtanach chun do shuíomh reatha a thaispeáint ar an léarscáil.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Eolas</string>
+    <string name="text__to">Chun</string>
+    <string name="text__amount">Méid</string>
+    <string name="text__memo">Meamram</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Cuntas neamhbhailí</string>
+    <string name="error__not_enough_funds">Níl go leor airgid ann</string>
+    <string name="msg__camera_permission_necessary">Tá cead ceamara riachtanach chun cóid QR a léamh.</string>
+    <string name="text__transaction_sent">Idirbheart seolta!</string>
+    <string name="msg__transaction_not_sent">Ní féidir idirbheart a sheoladh</string>
+    <string name="error__you_dont_own_asset">Níl aon %1$s agat</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Clóscríobh in ainm cuntais Bitshares an duine ar mian leat cistí a sheoladh chuige. \nFor shampla: oscailt-faucet</string>
+    <string name="text__asset_balance">Cothromaíocht Sócmhainní</string>
+    <string name="msg__asset_balance_explanation">Is féidir leat leas a bhaint as an iarmhéid a thaispeántar chun an tsócmhainn sin go léir a sheoladh. Déanfaidh déanamh amhlaidh an réimse Méid duit.</string>
+    <string name="msg__memo_explanation">Ní gá Meabhrán a chur isteach, ach tá sé deas nótaí a bhreacadh síos ar cén fáth ar sheol tú na cistí. Ní féidir cuimhneamh ach ar na meabhráin agus ar an duine a sheol tú cistí chuige.</string>
+    <string name="text__network_fee">Táille Líonra</string>
+    <string name="msg__network_fee_explanation">Tá táille an Líonra san áireamh sa mhéid is mian leat a sheoladh. Mar shampla, más mian leat 50 BTS a sheoladh, seolfaidh BiTSy i ndáiríre ~ 50.21 BTS. Is é an 0.21 breise sa sampla seo an táille idirbhirt Bitshares móide 0.01% don Fhoireann Forbróirí BiTSy (~ 1 cent de ghnáth).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Ní gá duit QR duine a scanadh chun cistí a sheoladh, ach cabhraíonn sé leat botúin a sheachaint. Nuair a sheolann tú cistí ó do chuntas, tá siad imithe go deo, mar sin déan cinnte de go bhfuil ainm an chuntais sa réimse “To” ceart.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Sócmhainn</string>
+    <string name="text__other">Eile…</string>
+    <string name="template__please_send">Seol: %1$s %2$s</string>
+    <string name="text__any_amount">Méid ar bith</string>
+    <string name="template__to">Go: %1$s</string>
+    <string name="msg__invoice_subject">Sonrasc BiTSy ó %1$s</string>
+    <string name="title_share">Comhroinn</string>
+    <string name="text__share_with">Roinn leis</string>
+    <string name="msg__storage_permission_necessary_share">Tá cead stórála riachtanach chun íomhánna a roinnt.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Socruithe</string>
+    <string name="title__general">Ginearálta</string>
+    <string name="msg__close_timer">Dún an BiTSy go huathoibríoch tar éis 3 nóiméad neamhghníomhaíochta</string>
+    <string name="msg__night_mode">Modh oíche</string>
+    <string name="text__view_network_status">Féach ar Stádas an Líonra</string>
+    <string name="title__backup">Cúltaca</string>
+    <string name="msg__brainkey_description">BrainKey. Focail aisghabhála cuntais is féidir a ghabháil nó a chóipeáil, ach nach bhfuil in eagar.</string>
+    <string name="msg__brainkey_info">Scríobh é seo síos! Bí cinnte go bhfuil 2 chóip agat den BrainKey seo in 2 ionad slán i gcás dóiteáin nó caillteanais. Slándáil An Chéad! Is féidir le duine ar bith a bhfuil rochtain agat ar do BrainKey teacht ar na cistí i do chuntas!</string>
+    <string name="button__copied">Cóipeáladh</string>
+    <string name="button__view_and_copy">Amharc &amp; Cóip</string>
+    <string name="title__accounts">Cuntais</string>
+    <string name="msg__upgrade_to_ltm">Uasghrádú go Ballraíocht Am Saoil (LTM). Íocann na cuntais LTM táillí gar-nialas, faigheann siad 80% aisíocaíochtaí airgid agus bónais le haghaidh atreoruithe.</string>
+    <string name="button__upgrade_to_ltm">Uasghrádú ar LTM</string>
+    <string name="msg__account_upgrade_dialog">Ceadaíonn Ballraíocht Am Saoil duit trádáil a dhéanamh le sraith laghdaithe táillí líonra. \n \nI rachaidh sé i bhfeidhm ar an gcuntas reatha "%1$s" \n \nIt, áfach, agus costas de thart ar 100 USD íoctha i Bitshares. \n \nA bhfuil tú cinnte go dteastaíonn uait dul ar aghaidh?</string>
+    <string name="title__account_upgraded">Uasghrádú Cuntais</string>
+    <string name="msg__account_upgraded">Comhghairdeas! Tá do chuntas uasghrádaithe anois go dtí an Ballraíocht Saoil.</string>
+    <string name="title__upgrade_account_error">Earráid agus an cuntas á uasghrádú</string>
+    <string name="msg__upgrade_account_error">Déan cinnte go bhfuil go leor iarmhéid ag do chuntas chun na costais a chlúdach.</string>
+    <string name="msg__remove_current_account">Bain an Cuntas reatha as an bhfeiste seo agus cruthaigh nó allmhairigh ceann difriúil.</string>
+    <string name="button__remove">Bain amach</string>
+    <string name="title__remove_account">Bain an Cuntas</string>
+    <string name="msg__remove_account_confirmation">An bhfuil tú cinnte gur mian leat an cuntas reatha a bhaint as an ngléas seo?</string>
+    <string name="title__bugs_or_ideas">Bugs nó Smaointe?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Slándáil</string>
+    <string name="text__security_lock">Loc Slándála</string>
+    <string name="title__security_dialog">Roghnaigh Loc Slándála</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Patrún</string>
+    <string name="text__none">Dada</string>
+    <string name="button__choose">Roghnaigh</string>
+    <string name="title__re_enter_your_pin">Athiontráil do PIN</string>
+    <string name="msg__enter_your_pin">Cuir isteach do PIN BiTSy le leanúint ar aghaidh</string>
+    <string name="error__wrong_pin">UAP mícheart</string>
+    <string name="title__set_bitsy_security_lock">Socraigh BiTSy Security</string>
+    <string name="msg__set_a_pin">Le haghaidh slándála, socraigh PIN</string>
+    <string name="msg__min_pin_length">Ní mór PIN a bheith ar a laghad 6 dhigit</string>
+    <string name="title__pins_dont_match">Ní mheaitseálann PINanna</string>
+    <string name="title__re_enter_your_pattern">Athiontráil do phatrún</string>
+    <string name="msg__enter_your_pattern">Cuir isteach do phatrún BiTSy chun leanúint ar aghaidh</string>
+    <string name="msg__set_a_pattern">Le haghaidh slándála, socraigh Patrún</string>
+    <string name="msg__release_finger">Méar scaoilte nuair a dhéantar é</string>
+    <string name="button__clear">Glan</string>
+    <string name="button__next">Ar Aghaidh</string>
+    <string name="text__draw_an_unlock_pattern">Tarraing patrún díghlasála</string>
+    <string name="msg__draw_pattern_confirm">Tarraing patrún arís le deimhniú</string>
+    <string name="button__confirm">Deimhnigh</string>
+    <string name="msg__your_new_unlock_pattern">Do phatrún nua a dhíghlasáil</string>
+    <string name="error__wront_pattern">Patrún mícheart</string>
+    <string name="text__pattern_recorded">Patrún taifeadta</string>
+    <string name="error__connect_at_least_4_dots">Ceangail 4 phonc ar a laghad. Déan iarracht arís.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">An iomarca iarrachtaí míchearta. Bain triail as arís i %1$d nóiméad.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">An iomarca iarrachtaí míchearta. Bain triail as arís i %1$d soicind.</string>
+
+</resources>

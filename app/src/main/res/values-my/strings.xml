@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">သဘောတူ</string>
+    <string name="button__disagree">သဘောကှဲ</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ ဂဏန်း PIN ကို</string>
+    <string name="error__pin_too_short">PIN နံပါတ်ဟာသိပ်တိုတောင်းပါတယ်</string>
+    <string name="text_field__confirm_pin">PIN ကိုအတည်ပြုပါ</string>
+    <string name="error__pin_mismatch">PIN ကိုမတိုက်ဆိုင်</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">မှန်ကန်သော brainkey ရိုက်ထည့်ပေးပါ, က 12 သို့မဟုတ် 16 စကားလုံးများကိုရှိသင့်ပါတယ်။</string>
+    <string name="button__import_existing_account">သွင်းကုန်တည်ဆဲအကောင့်</string>
+    <string name="text__or">သို့မဟုတ်</string>
+    <string name="button__create_new_account">အကောင့်သစ်ကိုဖန်တီး</string>
+    <string name="error__invalid_brainkey">တွေ့အမှားအယွင်းများစာရိုက်အဘို့သင့် brainkey စစ်ဆေးကျေးဇူးပြုပြီးဘယ်မှာပေးထားသော brainkey ကထိန်းချုပ်ထားခြင်းမရှိပါအကောင့်အသစ်များ၏</string>
+    <string name="error__try_again">5 မိနစ်အကြာတွင်ထပ်ကြိုးစားပါ</string>
+    <string name="dialog__account_candidates_title">အကောင့်တစ်ခုကိုရွေးပါ ကျေးဇူးပြု.</string>
+    <string name="dialog__account_candidates_content">ဒီ brainkey ကနေဆင်းသက်လာသော့တစ်ဦးထက်ပိုအကောင့်ကိုထိန်းချုပ်အသုံးပြုရဟန်, သင်တင်သွင်းဖို့ဆန္ဒရှိသည့်အကောင့်ကို select ကျေးဇူးပြုပြီး</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares နာမကိုအမှီအကောင့်</string>
+    <string name="error__read_dict_file">မှားယွင်းနေသည်စာဖတ်ခြင်းအဘိဓါန်ဖိုင်</string>
+    <string name="error__invalid_account_length">အကောင့်အမည်ကို 3 16 ဇာတ်ကောင်ဖြစ်သင့်သည်။</string>
+    <string name="error__invalid_account_start">အကောင့်အမည်ကိုစာတစ်စောင်နှင့်အတူစတင်သင့်ပါတယ်။</string>
+    <string name="error__invalid_account_name">အနည်းဆုံး dash တဲ့အရေအတွက်, သို့မဟုတ်လုံးဝမရအက္ခရာင်တစ်ဦးကိုပုံမှန် name ကိုရိုက်ထည့်ပေးပါ။</string>
+    <string name="text__verifying_account_availability">အကောင့်ရရှိနိုင်မှုအတည်ပြု…</string>
+    <string name="error__account_not_available">အဲဒီအကောင့်အမည်ကိုပြီးသားခေါ်ဆောင်သွားသည်။</string>
+    <string name="text__account_is_available">အကောင့်ရရှိနိုင်ပါသည်</string>
+    <string name="title_error">အမှား</string>
+    <string name="error__faucet">ဆာဗာမှားယွင်းမှုတစ်ခုပြန်လေ၏။ ဒါဟာရည်ရွယ်ချက်အချိန်တိုအတွင်းချုံး၌တူညီသော IP လိပ်စာကနေလာမယ့်မကြာခဏတောင်းဆိုမှုများကိုမြစ်တားဖို့ရာအရပျထဲမှာ set တစ်န့်အသတ်များကြောင့်ဖြစ်လိမ့်မယ်။ 5 မိနစ်စောင့်ဆိုင်းပြီးထပ်မံကြိုးစား, ဒါမှမဟုတ်တစ်ဦးကွဲပြားခြားနားသော network သို့အကူးအပြောင်း, wifi ကနေဆဲလ်ဥပမာပေးပါ။</string>
+    <string name="error__faucet_template">အဆိုပါ faucet မှားယွင်းမှုတစ်ခုပြန်လေ၏။ msg: %1$s</string>
+    <string name="error__created_account_not_found">ဒီ app အသစ်ဖန်တီးအကောင့်အကြောင်းသတင်းအချက်အလက်ရယူနိုင်ဘူး</string>
+    <string name="button__create">ဖန်တီး</string>
+
+    <!-- Home -->
+    <string name="title_transactions">အရောင်းအ</string>
+    <string name="title_merchants_and_tellers">ကုန်သည် &amp; Teller</string>
+    <string name="title_receive">ခံယူ</string>
+    <string name="title_balances">ချိန်ခွင်</string>
+    <string name="title_send">ပေးပို့</string>
+    <string name="title_net_worth">ပိုင်ဆိုင်မှု</string>
+    <string name="text__coming_soon">မကြာမှီလာမည်</string>
+
+    <!-- Transactions -->
+    <string name="title_search">ရှာဖှေ</string>
+    <string name="title_filter">ရေစစ်</string>
+    <string name="title_export">ထုတ်ကုန်</string>
+    <string name="text__no_transactions">အဘယ်သူမျှမအရောင်းအဝယ်</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">filter options များ</string>
+    <string name="text__all">အားလုံး</string>
+    <string name="text__sent">Sent</string>
+    <string name="text__received">Received</string>
+    <string name="text__date_range">နေ့စွဲ Range</string>
+    <string name="text__equivalent_value">ညီမျှ Value ကို</string>
+    <string name="text__ignore_network_fees">ကွန်ယက်အခကြေးငွေလျစ်လျူရှု</string>
+    <string name="text__between">အကြား</string>
+    <string name="text__and">နှင့်</string>
+    <string name="button__filter">ရေစစ်</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">ပို့ကုန် filtered ငွေကြေးလွှဲပြောင်းမှုမှာ</string>
+    <string name="text__pdf">PDF ဖိုင်ရယူရန်</string>
+    <string name="text__csv">CSV ဖိုင်</string>
+    <string name="msg__storage_permission_necessary_export">သိုလှောင်မှုကိုခွင့်ပြုချက် PDF ဖိုင်ရယူရန် / CSV ဖိုင်များတင်ပို့ဖို့လိုအပ်ပေသည်။</string>
+    <string name="title_from">မှ</string>
+    <string name="title_to">သို့</string>
+    <string name="title_memo">မှတ်စုတို</string>
+    <string name="title_date">နေ့စှဲ</string>
+    <string name="title_time">အချိန်</string>
+    <string name="title_amount">ငွေပမာဏ</string>
+    <string name="title_equivalent_value">ညီမျှ Value ကို</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">အဘိုး</string>
+    <string name="template__memo">မှတ်စုတို: %1$s</string>
+    <string name="template__date">နေ့စွဲ: %1$s</string>
+    <string name="template__tx">TX: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">ကုန်သည်</string>
+    <string name="title_tellers">Teller</string>
+    <string name="title_about">အကွောငျး</string>
+    <string name="msg__merchants_description">PalmPay ကုန်သည်သစ်ကို Crypto စီးပွားရေး၏ကျောရိုးဖြစ်ကြသည်။ သင်သည်သင်၏ Cryptocurrency ကိုလက်ခံလိမ့်မည်ဟုစီးပွားရေးလုပ်ငန်းတွေအတွက်ရှာနေနေတယ်ဆိုရင်, ထို့နောက်ရုံအောက်က Search နဲ့မြေပုံအချက်အလက်ကိုအသုံးပြုပါ။ အဆိုပါ PalmPay သံအမတ်ကျွန်တော်တို့ကိုအကြောင်းကြားအဖြစ်ကိုပိုမိုကုန်သည်များကဒီမှာကဆက်ပြောသည်လိမ့်မည်။</string>
+    <string name="msg__tellers_description">Teller cryptocurrencies နှင့်အပြန်အလှန်နှင့်သင်၏ Fiat ငွေကြေးဖလှယ်ကြလိမ့်မည်သူတွေကိုဖြစ်ကြသည်။ သူတို့ကအစ Fiat အခြေချနှင့်အတူကုန်သည်များကူညီ။</string>
+    <string name="msg__location_permission_necessary">တည်နေရာခွင့်ပြုချက်ကိုမြေပုံပေါ်တွင်သင်၏လက်ရှိတည်နေရာကိုပြသရန်လိုအပ်ပေသည်။</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">info</string>
+    <string name="text__to">သို့</string>
+    <string name="text__amount">ငွေပမာဏ</string>
+    <string name="text__memo">မှတ်စုတို</string>
+    <string name="text__scan_qr">QR scan</string>
+    <string name="error__invalid_account">မှားနေသောအကောင့်</string>
+    <string name="error__not_enough_funds">မလုံလောကျရန်ပုံငွေများ</string>
+    <string name="msg__camera_permission_necessary">ကင်မရာခွင့်ပြုချက် QR codes တွေကိုဖတ်ရှုဖို့လိုအပ်ပေသည်။</string>
+    <string name="text__transaction_sent">ငွေသွင်းငွေထုတ်ကိုစလှေတျ!</string>
+    <string name="msg__transaction_not_sent">ငွေပေးငွေယူပေးပို့ဖို့မအောင်မြင်ဘူး</string>
+    <string name="error__you_dont_own_asset">သငျသညျ Don \ \'\' t ကိုမဆို %1$s ပိုင်ဆိုင်</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">အဆိုပါ Bitshares အတွက် type ကိုသင်ရန်ပုံငွေများပေးပို့ချင်သောလူတစ်ဦး၏နာမကိုအမှီအကောင့်။ \nFor ဥပမာ: agorise-faucet</string>
+    <string name="text__asset_balance">ပိုင်ဆိုင်မှု Balance</string>
+    <string name="msg__asset_balance_explanation">သင်သည်ထိုပိုင်ဆိုင်မှုအပေါငျးတို့သပေးပို့ဖို့ပြသချိန်ခွင်လျှာပေါ်တွင်သာပုတ်နိုင်သည်။ ဒါကြောင့်လုပ်နေတာသင်တို့အဘို့ငွေပမာဏလယ်ပြင်၌ဖြည့်ပါလိမ့်မယ်။</string>
+    <string name="msg__memo_explanation">တစ်ဦး Memo ထည့်သွင်းခြင်းမလိုအပ်ပါ, ဒါပေမယ့်သင်ရန်ပုံငွေများကိုစလှေတျဘယျကွောငျ့အပေါ်ရှိမှတ်စုများကိုယူပြီးအနာဂတ်ကိုးကားကောင်းတဲ့ဖြစ်ပါတယ်။ Memo သင်နှင့်သင်နှင့်ရန်ပုံငွေများကိုစလှေတျတျောမူသောပုဂ္ဂိုလ်တစ်ဦးသာမြင်နိုင်ဖြစ်ကြသည်။</string>
+    <string name="text__network_fee">Network မှကြေး</string>
+    <string name="msg__network_fee_explanation">အဆိုပါကွန်ယက်အခကြေးငွေသင်ပို့လိုသောငွေပမာဏများတွင်ပါဝင်သည်။ သငျသညျ 50 BTS ပို့ချင်လျှင်ဥပမာ, BiTSy အမှန်တကယ် ~ 50,21 BTS ပေးပို့ပါလိမ့်မယ်။ ဒီဥပမာထဲမှာထည့်သွင်း 0,21 အဆိုပါ Bitshares အရောင်းအဝယ်အခကြေးငွေပေါင်း BiTSy ရေးသားသူအဖွဲ့ (ပုံမှန်အားဖြင့် ~ 1 ရာခိုင်နှုန်း) ကို 0.01% ဖြစ်ပါတယ်။</string>
+    <string name="text__qr_code">QR Code ကို</string>
+    <string name="msg__qr_code_explanation">သငျသညျရန်ပုံငွေများကိုပေးပို့ဖို့တစ်စုံတစ်ယောက်ရဲ့ QR scan လုပ်ဖို့မလိုအပ်ပါဘူး, ဒါပေမယ့်သူကအမှားတွေကိုရှောင်ရှားရန်သင့်ကိုကူညီပါဘူး။ သင်သည်သင်၏အကောင့်မှရန်ပုံငွေပေးပို့ပြီးတာနဲ့သူတို့အစဉ်အမြဲသွားပြီဖြစ်ကြောင်း, ဒါကြောင့်အမြဲတမ်းအတွက်သေချာအကောင့်အမည်ကိုအောင်လယ်ပြင်မှန်ကန်သောသည် "ရန်" ။</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">ပိုင်ဆိုင်မှု</string>
+    <string name="text__other">အခြားအ…</string>
+    <string name="template__please_send">Send ပေးပါ: %1$s %2$s</string>
+    <string name="text__any_amount">မဆိုငွေပမာဏ</string>
+    <string name="template__to">ရန်: %1$s</string>
+    <string name="msg__invoice_subject">%1$s ထံမှ BiTSy ငွေတောင်းခံလွှာ</string>
+    <string name="title_share">ဝေစု</string>
+    <string name="text__share_with">ဝေမျှမယ်နှင့်အတူ</string>
+    <string name="msg__storage_permission_necessary_share">သိုလှောင်မှုကိုခွင့်ပြုချက်ပုံရိပ်တွေဝေမျှဖို့လိုအပ်ပေသည်။</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings များ</string>
+    <string name="title__general">ယေဘုယျ</string>
+    <string name="msg__close_timer">လှုပ်ရှားမှု၏ 3 မိနစ်အကြာတွင်အလိုအလျှောက်အနီးကပ် BiTSy</string>
+    <string name="msg__night_mode">ညဥ့် mode ကို</string>
+    <string name="text__view_network_status">ကြည့်ရန်ကွန်ယက်အခြေအနေ</string>
+    <string name="title__backup">Backup ကို</string>
+    <string name="msg__brainkey_description">BrainKey ။ ဖမ်းဆီးရမိသို့မဟုတ်ကူးယူပေမယ် edited မဟုတ်နိုင်အကောင့်ပြန်လည်နာလန်ထူစကားလုံးများကို။</string>
+    <string name="msg__brainkey_info">ဒီရေးချ! သငျသညျမီးသို့မဟုတ်အရှုံး၏အမှု၌ 2 လုံခြုံနေရာများ၌ဤ BrainKey 2 မိတ္တူများသေချာပါစေ။ လုံခြုံရေးပထမဦးစွာ! သင့်ရဲ့ BrainKey မှဝင်ရောက်ခွင့်နှင့်အတူမည်သူမဆိုသင့်အကောင့်အတွက်ရန်ပုံငွေရယူနိုငျပါသညျ!</string>
+    <string name="button__copied">ကူးယူ</string>
+    <string name="button__view_and_copy">ကြည့်ရန် &amp; Copy ကူး</string>
+    <string name="title__accounts">accounts ကို</string>
+    <string name="msg__upgrade_to_ltm">တစ်သက်တာအသင်းဝင် (LTM) အားအဆင့်မြှင့်တင်ရန်။ Bitshares \ \'\' LTM အကောင့်အနီး-သုညအခကြေးငွေပေးဆောင်, ရည်ညွှန်းအဘို့ 80% cashback နှင့်ဆုကြေးငွေရရှိမည်ဖြစ်သည်။</string>
+    <string name="button__upgrade_to_ltm">LTM ဖို့ Upgrade</string>
+    <string name="msg__account_upgrade_dialog">အဆိုပါအသက်တာအချိန်အသင်းဝင်သင်ကွန်ယက်ကိုအခကြေးငွေတစ်ဦးလျှော့ထားနှင့်အတူကုန်သွယ်ခွင့်ပြုထားသည်။ \nIt သို့သော် Bitshares အတွက်ပေးဆောင် 100 ခန့်အမေရိကန်ဒေါ်လာတစ်ကုန်ကျစရိတ်နှင့်အတူ လာ. ပါဘူး \n \n \nIt လက်ရှိအကောင့် "%1$s" ကိုအကျိုးသက်ရောက်ယူပါလိမ့်မယ်။ သငျသညျဆက်လက်ဆောင်ရွက်လိုသော \nAre \n သေချာပါသလား</string>
+    <string name="title__account_upgraded">အကောင့်အဆင့်မြှင့်</string>
+    <string name="msg__account_upgraded">ဂုဏ်ယူပါတယ်! သင့်အကောင့်ယခုတစ်သက်တာအသင်းဝင်ဖို့အဆင့်မြှင့်ခဲ့တာဖြစ်ပါတယ်။</string>
+    <string name="title__upgrade_account_error">အကောင့် upgrade ဖို့ကြိုးစားနေစဉ်မှားယွင်းနေသည်</string>
+    <string name="msg__upgrade_account_error">သင့်အကောင့်ကုန်ကျစရိတ်ကိုဖုံးလွှမ်းရန်လုံလောက်သောငွေလက်ကျန်ရှိပါတယ်သေချာပါစေ။</string>
+    <string name="msg__remove_current_account">ဤကိရိယာမှလက်ရှိအကောင့်ကို Remove နှင့်တစ်ဦးကွဲပြားခြားနားတဦးတည်းဖန်တီးသို့မဟုတ်တင်သွင်းရန်။</string>
+    <string name="button__remove">Remove</string>
+    <string name="title__remove_account">အကောင့် Remove</string>
+    <string name="msg__remove_account_confirmation">သင်ဤကိရိယာမှလက်ရှိအကောင့်ကိုဖယ်ရှားလိုတာသေချာလား?</string>
+    <string name="title__bugs_or_ideas">bugs သို့မဟုတ်အကြံပြုချက်များ?</string>
+    <string name="msg__bugs_or_ideas">ကြေးနန်း: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">block: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">လုံခွုံရေး</string>
+    <string name="text__security_lock">လုံခြုံရေး Lock ကို</string>
+    <string name="title__security_dialog">လုံခြုံရေး Lock ကိုရှေးခယျြပါ</string>
+    <string name="text__pin">PIN ကို</string>
+    <string name="text__pattern">ပုံစံ</string>
+    <string name="text__none">အဘယ်သူမျှမ</string>
+    <string name="button__choose">ရှေးခယျြ</string>
+    <string name="title__re_enter_your_pin">သင့်ရဲ့ PIN ကို re-ရိုက်ထည့်ပါ</string>
+    <string name="msg__enter_your_pin">ရှေ့ဆက်ရန်သင့် BiTSy PIN ကိုရိုက်ထည့်ပါ</string>
+    <string name="error__wrong_pin">မှားယွင်းသော PIN ကို</string>
+    <string name="title__set_bitsy_security_lock">BiTSy လုံခြုံရေး Set</string>
+    <string name="msg__set_a_pin">လုံခြုံရေးအတွက်, PIN ကိုသတ်မှတ်ထား</string>
+    <string name="msg__min_pin_length">PIN ကိုအနည်းဆုံး 6 ဂဏန်းဖြစ်ရပါမည်</string>
+    <string name="title__pins_dont_match">PIN များ Don \ \'t ပွဲ</string>
+    <string name="title__re_enter_your_pattern">သင့်ရဲ့ပုံစံကို re-ရိုက်ထည့်ပါ</string>
+    <string name="msg__enter_your_pattern">ရှေ့ဆက်ရန်သင့် BiTSy ပုံစံ Enter</string>
+    <string name="msg__set_a_pattern">လုံခြုံရေးတစ်ဦးစံနမူနာသတ်မှတ်ပြီး</string>
+    <string name="msg__release_finger">ပြုမိသည့်အခါလက်ချောင်းကိုလွှတ်</string>
+    <string name="button__clear">ရှင်းလင်းသော</string>
+    <string name="button__next">နောက်တစ်ခု</string>
+    <string name="text__draw_an_unlock_pattern">တစ်ခုသော့ဖွင့်ပုံစံကိုခပ်</string>
+    <string name="msg__draw_pattern_confirm">အတည်ပြုတဖန်ပုံစံဆွဲပါ</string>
+    <string name="button__confirm">အတည်ပြု</string>
+    <string name="msg__your_new_unlock_pattern">အသစ်ရဲ့သော့ဖွင့်ပုံစံ</string>
+    <string name="error__wront_pattern">မှားယွင်းတဲ့ပုံစံ</string>
+    <string name="text__pattern_recorded">pattern မှတျတမျးတငျထား</string>
+    <string name="error__connect_at_least_4_dots">အနည်းဆုံး 4 စက်ချိတ်ဆက်ပါ။ ထပ်ကြိုးစားပါ။</string>
+    <string name="error__security_lock_too_many_attempts_minutes">သိပ်အများကြီးမမှန်ကန်သောကြိုးစားမှု။ %1$d မိနစ်ထပ်ကြိုးစားပါ။</string>
+    <string name="error__security_lock_too_many_attempts_seconds">သိပ်အများကြီးမမှန်ကန်သောကြိုးစားမှု။ %1$d စက္ကန့်အတွင်းကိုထပ်ကြိုးစားကြည့်ပါ။</string>
+
+</resources>

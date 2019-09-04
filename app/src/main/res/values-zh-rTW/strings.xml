@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">同意</string>
+    <string name="button__disagree">不同意</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6位數的PIN碼</string>
+    <string name="error__pin_too_short">PIN太短</string>
+    <string name="text_field__confirm_pin">確認PIN碼</string>
+    <string name="error__pin_mismatch">PIN不匹配</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">請輸入正確的brainkey，它應該有12或16個單詞。</string>
+    <string name="button__import_existing_account">導入現有帳戶</string>
+    <string name="text__or">要么</string>
+    <string name="button__create_new_account">建立新帳戶</string>
+    <string name="error__invalid_brainkey">沒有找到由給定的Brainkey控制的帳戶，請檢查您的brainkey是否輸入錯誤</string>
+    <string name="error__try_again">請在5分鐘後再試一次</string>
+    <string name="dialog__account_candidates_title">請選擇一個帳戶</string>
+    <string name="dialog__account_candidates_content">從此Brainkey派生的密鑰似乎用於控制多個帳戶，請選擇您要導入的帳戶</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares帳戶名稱</string>
+    <string name="error__read_dict_file">讀取字典文件時出錯</string>
+    <string name="error__invalid_account_length">帳戶名稱應為3到16個字符。</string>
+    <string name="error__invalid_account_start">帳戶名稱應以字母開頭。</string>
+    <string name="error__invalid_account_name">請輸入包含至少一個短劃線，數字或無元音的常規名稱。</string>
+    <string name="text__verifying_account_availability">驗證帳戶可用性…</string>
+    <string name="error__account_not_available">用戶名已被使用。</string>
+    <string name="text__account_is_available">帳戶可用</string>
+    <string name="title_error">錯誤</string>
+    <string name="error__faucet">服務器返回錯誤。這可能是由於有目的地設置的限制，以便在短時間內不允許來自同一IP地址的頻繁請求。請等待5分鐘再試一次，或切換到其他網絡，例如從wifi到手機。</string>
+    <string name="error__faucet_template">水龍頭返回錯誤。消息：%1$s</string>
+    <string name="error__created_account_not_found">該應用無法檢索有關新創建的帳戶的信息</string>
+    <string name="button__create">創建</string>
+
+    <!-- Home -->
+    <string name="title_transactions">交易</string>
+    <string name="title_merchants_and_tellers">商人和泰勒</string>
+    <string name="title_receive">接收</string>
+    <string name="title_balances">餘額</string>
+    <string name="title_send">發送</string>
+    <string name="title_net_worth">淨值</string>
+    <string name="text__coming_soon">快來了</string>
+
+    <!-- Transactions -->
+    <string name="title_search">搜索</string>
+    <string name="title_filter">過濾</string>
+    <string name="title_export">出口</string>
+    <string name="text__no_transactions">沒有交易</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">過濾選項</string>
+    <string name="text__all">所有</string>
+    <string name="text__sent">發送</string>
+    <string name="text__received">收到</string>
+    <string name="text__date_range">日期範圍</string>
+    <string name="text__equivalent_value">等價值</string>
+    <string name="text__ignore_network_fees">忽略網絡費用</string>
+    <string name="text__between">之間</string>
+    <string name="text__and">和</string>
+    <string name="button__filter">過濾</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">導出已過濾的交易</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">導出PDF / CSV文件需要存儲權限。</string>
+    <string name="title_from">從</string>
+    <string name="title_to">至</string>
+    <string name="title_memo">備忘錄</string>
+    <string name="title_date">日期</string>
+    <string name="title_time">時間</string>
+    <string name="title_amount">量</string>
+    <string name="title_equivalent_value">等價值</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">值</string>
+    <string name="template__memo">備註：%1$s</string>
+    <string name="template__date">日期：%1$s</string>
+    <string name="template__tx">Tx：%1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">招商</string>
+    <string name="title_tellers">櫃員</string>
+    <string name="title_about">關於</string>
+    <string name="msg__merchants_description">PalmPay商家是新加密經濟的支柱。如果您正在尋找能夠接受您的加密貨幣的企業，那麼只需使用下面的搜索和地圖數據即可。 PalmPay大使將通知我們，此處將增加更多商家。</string>
+    <string name="msg__tellers_description">Tellers是將您的法定貨幣與加密貨幣進行交換的人，反之亦然。他們還協助商家進行法定結算。</string>
+    <string name="msg__location_permission_necessary">需要位置許可才能在地圖上顯示您當前的位置。</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">信息</string>
+    <string name="text__to">至</string>
+    <string name="text__amount">量</string>
+    <string name="text__memo">備忘錄</string>
+    <string name="text__scan_qr">掃描QR</string>
+    <string name="error__invalid_account">無效賬戶</string>
+    <string name="error__not_enough_funds">沒有足夠的資金</string>
+    <string name="msg__camera_permission_necessary">讀取QR碼需要相機許可。</string>
+    <string name="text__transaction_sent">交易已發送！</string>
+    <string name="msg__transaction_not_sent">無法發送交易</string>
+    <string name="error__you_dont_own_asset">你不擁有任何%1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">輸入您要向其匯款的人的Bitshares帳戶名稱。 \n例如：agorise-faucet</string>
+    <string name="text__asset_balance">資產餘額</string>
+    <string name="msg__asset_balance_explanation">您可以點擊顯示的餘額以發送所有該資產。這樣做會為您填寫金額字段。</string>
+    <string name="msg__memo_explanation">不需要輸入備忘錄，但記錄您發送資金的原因很好，以備將來參考。只有您和您向其匯款的人才能看到備忘錄。</string>
+    <string name="text__network_fee">網絡費</string>
+    <string name="msg__network_fee_explanation">網絡費用包含在您要發送的金額中。例如，如果你想發送50個BTS，BiTSy實際上會發送~50.21個BTS。在這個例子中增加的0.21是Bitshares交易費加上BiTSy開發團隊的0.01％（通常約1美分）。</string>
+    <string name="text__qr_code">二維碼</string>
+    <string name="msg__qr_code_explanation">您不需要掃描某人的QR來發送資金，但它確實可以幫助您避免錯誤。從您的帳戶發送資金後，它們將永遠消失，因此請務必確保“收件人”字段中的帳戶名稱正確無誤。</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">財富</string>
+    <string name="text__other">其他…</string>
+    <string name="template__please_send">請發送：%1$s %2$s</string>
+    <string name="text__any_amount">任何數量</string>
+    <string name="template__to">致：%1$s</string>
+    <string name="msg__invoice_subject">來自%1$s的BiTSy發票</string>
+    <string name="title_share">分享</string>
+    <string name="text__share_with">與某人分享</string>
+    <string name="msg__storage_permission_necessary_share">共享圖像需要存儲權限。</string>
+
+    <!-- Settings -->
+    <string name="title_settings">設置</string>
+    <string name="title__general">一般</string>
+    <string name="msg__close_timer">3分鐘不活動後自動關閉BiTSy</string>
+    <string name="msg__night_mode">夜間模式</string>
+    <string name="text__view_network_status">查看網絡狀態</string>
+    <string name="title__backup">備用</string>
+    <string name="msg__brainkey_description">BrainKey。帳戶恢復單詞，可以捕獲或複制，但不能編輯。</string>
+    <string name="msg__brainkey_info">寫下來！如果發生火災或丟失，請確保您在2個安全位置擁有2份此BrainKey副本。安全第一！有權訪問您的BrainKey的任何人都可以訪問您帳戶中的資金！</string>
+    <string name="button__copied">複製</string>
+    <string name="button__view_and_copy">查看和復制</string>
+    <string name="title__accounts">帳號</string>
+    <string name="msg__upgrade_to_ltm">升級到LifeTime會員（LTM）。 Bitshares \'LTM賬戶支付接近零的費用，獲得80％的現金返還和轉介獎金。</string>
+    <string name="button__upgrade_to_ltm">升級到LTM</string>
+    <string name="msg__account_upgrade_dialog">終身會員資格允許您使用減少的網絡費用進行交易。 \n \n它將對當前帳戶生效“%1$s”\n \n但是在Bitshares支付的費用約為100美元。 \n \n你確定要繼續嗎？</string>
+    <string name="title__account_upgraded">帳戶已升級</string>
+    <string name="msg__account_upgraded">恭喜！您的帳戶現已升級為終身會員資格。</string>
+    <string name="title__upgrade_account_error">嘗試升級帳戶時出錯</string>
+    <string name="msg__upgrade_account_error">請確保您的帳戶有足夠的餘額來支付費用。</string>
+    <string name="msg__remove_current_account">從此設備中刪除當前帳戶，然後創建或導入另一個帳戶。</string>
+    <string name="button__remove">去掉</string>
+    <string name="title__remove_account">刪除帳戶</string>
+    <string name="msg__remove_account_confirmation">您確定要從此設備中刪除當前帳戶嗎？</string>
+    <string name="title__bugs_or_ideas">錯誤或想法？</string>
+    <string name="msg__bugs_or_ideas">電報：https：//t.me/Agorise \nKeybase：https：//keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">阻止：%1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">安全</string>
+    <string name="text__security_lock">安全鎖</string>
+    <string name="title__security_dialog">選擇安全鎖</string>
+    <string name="text__pin">銷</string>
+    <string name="text__pattern">圖案</string>
+    <string name="text__none">沒有</string>
+    <string name="button__choose">選擇</string>
+    <string name="title__re_enter_your_pin">重新輸入您的PIN碼</string>
+    <string name="msg__enter_your_pin">輸入您的BiTSy PIN碼以繼續</string>
+    <string name="error__wrong_pin">密碼錯誤</string>
+    <string name="title__set_bitsy_security_lock">設置BiTSy安全性</string>
+    <string name="msg__set_a_pin">為安全起見，請設置PIN</string>
+    <string name="msg__min_pin_length">PIN碼必須至少為6位數</string>
+    <string name="title__pins_dont_match">個人識別碼不匹配</string>
+    <string name="title__re_enter_your_pattern">重新輸入您的模式</string>
+    <string name="msg__enter_your_pattern">輸入您的BiTSy模式以繼續</string>
+    <string name="msg__set_a_pattern">為安全起見，請設置模式</string>
+    <string name="msg__release_finger">完成後鬆開手指</string>
+    <string name="button__clear">明確</string>
+    <string name="button__next">下一個</string>
+    <string name="text__draw_an_unlock_pattern">繪製解鎖圖案</string>
+    <string name="msg__draw_pattern_confirm">再次繪製圖案以確認</string>
+    <string name="button__confirm">確認</string>
+    <string name="msg__your_new_unlock_pattern">你的新解鎖模式</string>
+    <string name="error__wront_pattern">錯誤的模式</string>
+    <string name="text__pattern_recorded">模式記錄</string>
+    <string name="error__connect_at_least_4_dots">連接至少4個點。再試一次。</string>
+    <string name="error__security_lock_too_many_attempts_minutes">太多不正確的嘗試。請在%1$d分鐘再試一次。</string>
+    <string name="error__security_lock_too_many_attempts_seconds">太多不正確的嘗試。請在%1$d秒再試一次。</string>
+
+</resources>

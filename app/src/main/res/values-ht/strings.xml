@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Dakò</string>
+    <string name="button__disagree">Dakò</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 + chif PIN</string>
+    <string name="error__pin_too_short">PIN twò kout</string>
+    <string name="text_field__confirm_pin">Konfime PIN</string>
+    <string name="error__pin_mismatch">Dezòd PIN yo</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Tanpri antre nan brainkey kòrèk, li ta dwe gen 12 oswa 16 mo.</string>
+    <string name="button__import_existing_account">Enpòte kont ki egziste deja</string>
+    <string name="text__or">Oswa</string>
+    <string name="button__create_new_account">Kreye nouvo kont</string>
+    <string name="error__invalid_brainkey">Pa gen kont ki kontwole pa brainkey yo bay la kote yo te jwenn, tanpri tcheke brainkey ou pou tape erè</string>
+    <string name="error__try_again">Tanpri eseye ankò apre 5 minit</string>
+    <string name="dialog__account_candidates_title">Tanpri chwazi yon kont</string>
+    <string name="dialog__account_candidates_content">Kle yo sòti nan brainkey sa a sanble yo te itilize yo kontwole plis pase yon kont, tanpri chwazi ki kont ou ta vle enpòte</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares kont non</string>
+    <string name="error__read_dict_file">Erè lekti dosye diksyonè</string>
+    <string name="error__invalid_account_length">Non kont yo ta dwe 3 a 16 karaktè.</string>
+    <string name="error__invalid_account_start">Non kont yo ta dwe kòmanse avèk yon lèt.</string>
+    <string name="error__invalid_account_name">Tanpri antre yon non regilye ki gen omwen yon priz, yon nimewo, oswa pa gen vwayèl.</string>
+    <string name="text__verifying_account_availability">Verifye disponiblite kont…</string>
+    <string name="error__account_not_available">Non kont sa a deja pran.</string>
+    <string name="text__account_is_available">Kont disponib</string>
+    <string name="title_error">Erè</string>
+    <string name="error__faucet">Sèvè a te retounen yon erè. Sa a ta dwe akòz yon limitasyon detèmine mete an plas désactivée demann souvan ki soti nan menm adrès la IP nan yon erè tan kout. Tanpri tann 5 minit epi eseye ankò, oswa chanje nan yon rezo diferan, pou egzanp nan wifi nan selil.</string>
+    <string name="error__faucet_template">Tiyo a retounen yon erè. Msg: %1$s</string>
+    <string name="error__created_account_not_found">App a pa t \'kapab rekipere enfòmasyon sou ki fèk kreye kont lan</string>
+    <string name="button__create">Kreye</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Tranzaksyon yo</string>
+    <string name="title_merchants_and_tellers">Merchants &amp; Tellers</string>
+    <string name="title_receive">Resevwa</string>
+    <string name="title_balances">Balans</string>
+    <string name="title_send">Voye</string>
+    <string name="title_net_worth">Net Worth</string>
+    <string name="text__coming_soon">Vini byento</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Rechèch</string>
+    <string name="title_filter">Filtre</string>
+    <string name="title_export">Ekspòtasyon</string>
+    <string name="text__no_transactions">Pa gen tranzaksyon</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtre opsyon</string>
+    <string name="text__all">Tout</string>
+    <string name="text__sent">Voye</string>
+    <string name="text__received">Resevwa</string>
+    <string name="text__date_range">Seri dat</string>
+    <string name="text__equivalent_value">Valè ekivalan</string>
+    <string name="text__ignore_network_fees">Ignore frè Rezo yo</string>
+    <string name="text__between">Ant</string>
+    <string name="text__and">ak</string>
+    <string name="button__filter">Filtre</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Ekspòtasyon tranzaksyon filtre</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Depo pèmisyon nesesè pou ekspòtasyon dosye PDF / CSV.</string>
+    <string name="title_from">Soti nan</string>
+    <string name="title_to">Pou…</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Dat</string>
+    <string name="title_time">Tan</string>
+    <string name="title_amount">Kantite lajan</string>
+    <string name="title_equivalent_value">Valè ekivalan</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Valè</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Dat: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Merchants</string>
+    <string name="title_tellers">Tellers</string>
+    <string name="title_about">About</string>
+    <string name="msg__merchants_description">Machann PalmPay yo se zo do a nan nouvo Crypto Ekonomi an. Si ou ap chèche pou biznis ki pral aksepte Cryptocurrency ou a, Lè sa a, jis itilize rechèch la ak done kat ki anba a. Plis machann yo pral ajoute isit la kòm anbasadè yo PalmPay enfòme nou.</string>
+    <string name="msg__tellers_description">Tellers se moun ki pral echanj lajan fiat ou ak cryptocurrencies, ak vis vèrsa. Yo menm tou yo ede machann ak règleman fiat.</string>
+    <string name="msg__location_permission_necessary">Kote pèmisyon nesesè pou montre kote ou ye kounye a sou kat la.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Pou…</string>
+    <string name="text__amount">Kantite lajan</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Fè enspeksyon QR</string>
+    <string name="error__invalid_account">Kont valab</string>
+    <string name="error__not_enough_funds">Pa ase lajan</string>
+    <string name="msg__camera_permission_necessary">Pèmisyon Kamera nesesè li kòd QR.</string>
+    <string name="text__transaction_sent">Tranzaksyon voye!</string>
+    <string name="msg__transaction_not_sent">Kapab voye tranzaksyon</string>
+    <string name="error__you_dont_own_asset">Ou pa posede okenn %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Tape nan non an kont Bitshares moun nan ou vle voye lajan nan. \nPou egzanp: agorise-tiyo</string>
+    <string name="text__asset_balance">Balans Byen</string>
+    <string name="msg__asset_balance_explanation">Ou ka tape sou balans lan parèt pou voye tout avantaj sa a. Fè sa ap ranpli nan jaden an Kantite lajan pou ou.</string>
+    <string name="msg__memo_explanation">Antre nan yon Memo pa obligatwa, men pran nòt sou poukisa ou te voye lajan yo se bèl pou referans nan lavni. Rememorasyon yo sèlman vizib pou ou ak pou moun ou te voye lajan pou ou.</string>
+    <string name="text__network_fee">Frè Rezo</string>
+    <string name="msg__network_fee_explanation">Frè Rezo a enkli nan kantite lajan ou vle voye a. Pou egzanp, si ou vle voye 50 BTS, BiTSy pral aktyèlman voye ~ 50.21 BTS. 0.21 te ajoute nan egzanp sa a se frè tranzaksyon Bitshares plis 0.01% pou ekip devlopè BiTSy (tipikman ~ 1 santim).</string>
+    <string name="text__qr_code">QR Kòd</string>
+    <string name="msg__qr_code_explanation">Ou pa bezwen eskane QR yon moun pou voye lajan, men li ede w evite erè. Yon fwa ou voye lajan nan kont ou yo, yo ale pou tout tan, kidonk toujou asire w ke non kont lan nan "Pou" jaden an se kòrèk.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Byen</string>
+    <string name="text__other">Lòt…</string>
+    <string name="template__please_send">Tanpri voye: %1$s %2$s</string>
+    <string name="text__any_amount">Nenpòt kantite</string>
+    <string name="template__to">Pou: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy fakti soti nan %1$s</string>
+    <string name="title_share">Pataje</string>
+    <string name="text__share_with">Pataje avèk yo</string>
+    <string name="msg__storage_permission_necessary_share">Depo pèmisyon nesesè pou pataje imaj.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Anviwònman</string>
+    <string name="title__general">Jeneral</string>
+    <string name="msg__close_timer">Otomatikman fèmen BiTSy apre 3 minit inaktivite</string>
+    <string name="msg__night_mode">Mòd lannwit</string>
+    <string name="text__view_network_status">View Rezo Status</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Kont rekiperasyon mo ki ka kaptire oswa kopye, men se pa edited.</string>
+    <string name="msg__brainkey_info">Ekri sa a desann! Asire ou ke ou gen 2 kopi sa a BrainKey nan 2 kote ki an sekirite nan ka ta gen dife oswa pèt. Sekirite Sosyal Premye! Nenpòt moun ki gen aksè nan BrainKey ou ka jwenn aksè nan lajan yo nan kont ou!</string>
+    <string name="button__copied">Kopi</string>
+    <string name="button__view_and_copy">View &amp; Kopi</string>
+    <string name="title__accounts">Kont</string>
+    <string name="msg__upgrade_to_ltm">Ajou a LifeTime Manm (LTM). Bitshares \'LTM kont peye frè prèske zewo, jwenn 80% kachbak ak bonis pou referans.</string>
+    <string name="button__upgrade_to_ltm">Ajou LTM</string>
+    <string name="msg__account_upgrade_dialog">Manm nan Tan lavi pèmèt ou komès ak yon seri pri redwi redwi. \n \nLi pral pran efè nan kont aktyèl la "%1$s" \n \nLi sepandan vini ak yon pri nan apeprè 100 USD peye nan Bitshares. \n \nÈske w sèten ou vle kontinye?</string>
+    <string name="title__account_upgraded">Kont modènize</string>
+    <string name="msg__account_upgraded">Konpliman! Te kont ou an kounye a te modènize manm nan tout lavi.</string>
+    <string name="title__upgrade_account_error">Erè pandan w ap eseye mete ajou kont</string>
+    <string name="msg__upgrade_account_error">Tanpri asire w ke kont ou gen ase balans yo kouvri depans sa yo.</string>
+    <string name="msg__remove_current_account">Retire kont aktyèl la nan aparèy sa a ak kreye oswa enpòte yon yon sèl diferan.</string>
+    <string name="button__remove">Retire</string>
+    <string name="title__remove_account">Retire Kont</string>
+    <string name="msg__remove_account_confirmation">Èske ou sèten ou vle retire kont aktyèl la nan aparèy sa a?</string>
+    <string name="title__bugs_or_ideas">Pinèz oswa Lide?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blòk: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sekirite Sosyal</string>
+    <string name="text__security_lock">Sekirite Sosyal</string>
+    <string name="title__security_dialog">Chwazi yon seri sekirite</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Modèl</string>
+    <string name="text__none">Okenn</string>
+    <string name="button__choose">Chwazi</string>
+    <string name="title__re_enter_your_pin">Re-antre PIN ou an</string>
+    <string name="msg__enter_your_pin">Antre PIN BiTSy ou pou kontinye</string>
+    <string name="error__wrong_pin">Move PIN</string>
+    <string name="title__set_bitsy_security_lock">Mete BiTSy Sekirite Sosyal</string>
+    <string name="msg__set_a_pin">Pou sekirite, mete yon PIN</string>
+    <string name="msg__min_pin_length">PIN yo dwe omwen 6 chif</string>
+    <string name="title__pins_dont_match">PIN yo pa matche</string>
+    <string name="title__re_enter_your_pattern">Re-antre modèl ou</string>
+    <string name="msg__enter_your_pattern">Mete modèl BiTSy ou pou kontinye</string>
+    <string name="msg__set_a_pattern">Pou sekirite, mete yon Modèl</string>
+    <string name="msg__release_finger">Lage dwèt li lè fini</string>
+    <string name="button__clear">Klè</string>
+    <string name="button__next">Next</string>
+    <string name="text__draw_an_unlock_pattern">Trase yon modèl degaje</string>
+    <string name="msg__draw_pattern_confirm">Trase modèl ankò nan konfime</string>
+    <string name="button__confirm">Konfime</string>
+    <string name="msg__your_new_unlock_pattern">Nouvo modèl degaje ou</string>
+    <string name="error__wront_pattern">Move modèl</string>
+    <string name="text__pattern_recorded">Modèl anrejistre</string>
+    <string name="error__connect_at_least_4_dots">Konekte omwen 4 pwen. Eseye anko.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Twòp tantativ kòrèk. Eseye ankò nan %1$d minit.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Twòp tantativ kòrèk. Eseye ankò nan %1$d segonn.</string>
+
+</resources>

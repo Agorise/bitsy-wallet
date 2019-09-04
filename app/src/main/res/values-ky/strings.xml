@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Макулмун</string>
+    <string name="button__disagree">макул</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ орундуу PIN</string>
+    <string name="error__pin_too_short">PIN өтө кыска</string>
+    <string name="text_field__confirm_pin">Ырастоо PIN</string>
+    <string name="error__pin_mismatch">PIN дал келбейт</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Туура brainkey киргизгиле, 12 же 16 сөз болушу керек.</string>
+    <string name="button__import_existing_account">Import учурдагы эсеп</string>
+    <string name="text__or">же</string>
+    <string name="button__create_new_account">жаңы каттоо эсебин түзүү</string>
+    <string name="error__invalid_brainkey">жазуу каталарын табылган берген brainkey тарабынан көзөмөлдөнөт каттоо эсептери жок, сенин brainkey суранам текшерүү</string>
+    <string name="error__try_again">Сураныч, 5 мүнөттөн кийин кайра аракет</string>
+    <string name="dialog__account_candidates_title">Сураныч, эсеп тандоо</string>
+    <string name="dialog__account_candidates_content">Бул brainkey алынган ачкычтар бир эмес, бир нече каттоо жазуусун башкаруу үчүн колдонулат окшойт, сен импорттоого каалайм түшүндүрө турган сураныч тандоо</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares аты эсеп</string>
+    <string name="error__read_dict_file">Окуу катасы сөздүк билэ</string>
+    <string name="error__invalid_account_length">Каттоо аты 3 16 белгиге чейин болушу керек.</string>
+    <string name="error__invalid_account_start">Каттоо аты-жөнү тамга менен башталышы керек.</string>
+    <string name="error__invalid_account_name">жок дегенде бир тире камтыган үзгүлтүксүз атын киргизгиле, бир катар, же анда үндүү тамгалар жок.</string>
+    <string name="text__verifying_account_availability">эсеп бар текшерилүүдө…</string>
+    <string name="error__account_not_available">Бул эсеп аты буга чейин кабыл алынат.</string>
+    <string name="text__account_is_available">Каттоо бар</string>
+    <string name="title_error">ката</string>
+    <string name="error__faucet">Server ката кайтты. Бул максаттуу кыска убакыт аралыгында эле IP даректен келе жаткан көп суроо салдык жерге коюлган чектөөлөргө байланыштуу болушу мүмкүн. Сураныч 5 мүнөт күтө туруп, дагы бир жолу аракет кылып, же болбосо, мисалы, клеткага WiFi тартып, башка тармакка жайгаштырат.</string>
+    <string name="error__faucet_template">дааратканасынын ката кайтты. Кабар: %1$s</string>
+    <string name="error__created_account_not_found">Колдонмого кайрадан түзүлгөн эсеби тууралуу маалымат алуу мүмкүн эмес</string>
+    <string name="button__create">түзүү</string>
+
+    <!-- Home -->
+    <string name="title_transactions">бүтүмдөр</string>
+    <string name="title_merchants_and_tellers">Соодагерлери &amp; кайлоо</string>
+    <string name="title_receive">кабыл алуу</string>
+    <string name="title_balances">баланс</string>
+    <string name="title_send">жиберүү</string>
+    <string name="title_net_worth">таза Worth</string>
+    <string name="text__coming_soon">Келе жакында</string>
+
+    <!-- Transactions -->
+    <string name="title_search">издөө</string>
+    <string name="title_filter">чыпка</string>
+    <string name="title_export">экспорттоо</string>
+    <string name="text__no_transactions">эч кандай бүтүмдөр</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filter параметрлери</string>
+    <string name="text__all">бардык</string>
+    <string name="text__sent">жөнөтүлдү</string>
+    <string name="text__received">кабыл алынган</string>
+    <string name="text__date_range">Date Range</string>
+    <string name="text__equivalent_value">бирдей баасы</string>
+    <string name="text__ignore_network_fees">Бурбоо Network акы</string>
+    <string name="text__between">ортосунда</string>
+    <string name="text__and">жана</string>
+    <string name="button__filter">чыпка</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Экспорт чыпкаланган бүтүмдөр</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">PDF / CSV билэлэри сактоо уруксат экспорттоо керек.</string>
+    <string name="title_from">From</string>
+    <string name="title_to">үчүн</string>
+    <string name="title_memo">эскертме</string>
+    <string name="title_date">дата</string>
+    <string name="title_time">убакыт</string>
+    <string name="title_amount">суммасы</string>
+    <string name="title_equivalent_value">бирдей баасы</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">мааниси</string>
+    <string name="template__memo">Маалымат үчүн: %1$s</string>
+    <string name="template__date">Date: %1$s</string>
+    <string name="template__tx">TX: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Merchants</string>
+    <string name="title_tellers">алдын ала</string>
+    <string name="title_about">жөнүндө</string>
+    <string name="msg__merchants_description">PalmPay соодагерлер жаңы крипто түзгөн экономиканын негизи болуп саналат. Эгер сиз Cryptocurrency, анда жөн эле төмөнкү издөө жана Карта маалыматтарды пайдаланууга кабыл турган бизнес үчүн болуп жатат. More соодагерлер PalmPay элчилер бизге маалымат бул жерде кошулат.</string>
+    <string name="msg__tellers_description">Алдын ала тескерисинче cryptocurrencies менен кагаз акча алмашуу, ошондой эле болушат. Ошондой эле, кагаз жөнгө салуу менен соодагерлер жардам.</string>
+    <string name="msg__location_permission_necessary">Жайгашкан жери уруксат картадан учурдагы жайгашууну көрсөтүү үчүн зарыл.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">үчүн</string>
+    <string name="text__amount">суммасы</string>
+    <string name="text__memo">эскертме</string>
+    <string name="text__scan_qr">издөө QR</string>
+    <string name="error__invalid_account">Жараксыз каттоо эсеби</string>
+    <string name="error__not_enough_funds">Жетиштүү эмес каражаттар</string>
+    <string name="msg__camera_permission_necessary">Камера уруксат QR коддору окуу зарыл.</string>
+    <string name="text__transaction_sent">Бүтүм жиберди!</string>
+    <string name="msg__transaction_not_sent">бүтүм жөнөтө албайт</string>
+    <string name="error__you_dont_own_asset">Сиз: "Т кандай %1$s ээ \ дон</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Bitshares түрү Сиз акча каражаттарын жөнөтүү үчүн каалаган адамдын аты-жөнү туура келет. \nFor мисал: agorise-дааратканасынын</string>
+    <string name="text__asset_balance">Мүлк балансы</string>
+    <string name="msg__asset_balance_explanation">Сиз бул объекттин Баарын жибере көрсөтүлө балансында кошула алышат. Ошентсек, силер үчүн суммасы жаатындагы толтурат.</string>
+    <string name="msg__memo_explanation">бир эскертме талап кылынбайт киргизүү, ал эми каражаттарды жиберип, эмне үчүн жазып алуу шилтеме жакшы. Маалымкатка сага жана каражаттарды жиберген адамга гана көрүнүп турат.</string>
+    <string name="text__network_fee">Network комиссия</string>
+    <string name="msg__network_fee_explanation">Network алым жиберүүгө каалаган өлчөмдө кошулат. Мисалы, 50 BTS жөнөтүү үчүн келсе, битси чынында ~ 50.21 BTS жиберем. Бул кошо 0,21 Мисалы Bitshares бүтүм төлөм кошуу битси Иштеп тобунун 0,01% га чейин (адатта ~ 1 пайыз) болуп саналат.</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Сиз акча каражаттарын жөнөтүү үчүн, кимдир бирөөнүн QR арытып, кереги жок, бирок сиз ката качууга жардам берет. Эгер эсебинен акча каражаттарын жөнөтүү кийин, алар ар дайым "үчүн" тармагында сөзсүз түрдө аталышы туура эмес, түбөлүккө жок болот.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Мүлк</string>
+    <string name="text__other">Башка…</string>
+    <string name="template__please_send">Сураныч жөнөтүү: %1$s %2$s</string>
+    <string name="text__any_amount">Ар бир суммасы</string>
+    <string name="template__to">Үчүн: %1$s</string>
+    <string name="msg__invoice_subject">%1$s тартып битси эсеп-дүмүрчөк</string>
+    <string name="title_share">Бөлүшүү</string>
+    <string name="text__share_with">менен бөлүшүү</string>
+    <string name="msg__storage_permission_necessary_share">Сактоо уруксат сүрөттөрдү бөлүшүү керек.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Орнотуулар</string>
+    <string name="title__general">жалпы</string>
+    <string name="msg__close_timer">аракетсиз 3 мүнөттөн кийин жазуусу жакын битси</string>
+    <string name="msg__night_mode">Түнкү режим</string>
+    <string name="text__view_network_status">ЖМКнын Network Status</string>
+    <string name="title__backup">камдык</string>
+    <string name="msg__brainkey_description">BrainKey. Каттоо эсебин калыбына келтирүү сөздөрү басып же көчүрүлүп алышы мүмкүн, бирок, түзөтүлдү эмес.</string>
+    <string name="msg__brainkey_info">Бул жаз! силер оттон же жоголгон учурда 2 коопсуз жерлерде бул BrainKey 2 көчүрмөсүн керек. Коопсуздук биринчи! Сиздин BrainKey жетүү менен эч кимди эсепке акча каражаттарын колдоно аласыз!</string>
+    <string name="button__copied">көчүрүлдү</string>
+    <string name="button__view_and_copy">ЖМКнын &amp; Көчүрүү</string>
+    <string name="title__accounts">Каттоо</string>
+    <string name="msg__upgrade_to_ltm">Өмүр бою мүчөлүк (LTM) жогорулатуу. Bitshares \ \'LTM эсептери, жакын-нөл жыйымдарды төлөөгө багыттоо үчүн 80% кешбек жана бонустарды.</string>
+    <string name="button__upgrade_to_ltm">LTM көтөрүү</string>
+    <string name="msg__account_upgrade_dialog">Life убакыт Катышуучу тармак алымдардын төмөндөшү топтому менен соода мүмкүнчүлүк берет. \n \nIt \nIt Бирок Bitshares төлөнгөн 100 АКШ доллары баасы менен келип жатат \n утурумдук эсеп "%1$s" үчүн күчүнө кирет. \n \nAre чын уланта келеби?</string>
+    <string name="title__account_upgraded">каттоо жогорулатылды</string>
+    <string name="msg__account_upgraded">Куттуктайбыз! Сиздин аккаунт Өмүр мүчөлүк наамы берилген.</string>
+    <string name="title__upgrade_account_error">Error эсебин жогорулатуу үчүн аракет кылып жатканда,</string>
+    <string name="msg__upgrade_account_error">Эсепке чыгымдарды жабуу үчүн жетиштүү каражат бар болушу керек.</string>
+    <string name="msg__remove_current_account">Бул аппарат учурдагы эсебин алып салуу жана түзүү же башка бир импорттоо.</string>
+    <string name="button__remove">жок кылуу</string>
+    <string name="title__remove_account">каттоо эсебин алып салуу</string>
+    <string name="msg__remove_account_confirmation">Чын эле бул түзмөккө учурдагы эсебин алып келеби?</string>
+    <string name="title__bugs_or_ideas">Bugs же Ideas?</string>
+    <string name="msg__bugs_or_ideas">Телеграммада: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">коопсуздук</string>
+    <string name="text__security_lock">Коопсуздук Lock</string>
+    <string name="title__security_dialog">Коопсуздук кулпуну тандоо</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Үлгү</string>
+    <string name="text__none">эч ким</string>
+    <string name="button__choose">тандоо</string>
+    <string name="title__re_enter_your_pin">Re-кире ПИН</string>
+    <string name="msg__enter_your_pin">Кириш улантуу үчүн битси PIN</string>
+    <string name="error__wrong_pin">PIN-код туура эмес</string>
+    <string name="title__set_bitsy_security_lock">Set битси коопсуздук</string>
+    <string name="msg__set_a_pin">коопсуздук үчүн PIN койду</string>
+    <string name="msg__min_pin_length">PIN кеминде 6 орундуу болуусу зарыл</string>
+    <string name="title__pins_dont_match">PINдер туура \ \'дер дал келүү</string>
+    <string name="title__re_enter_your_pattern">Re-кире үлгүнү</string>
+    <string name="msg__enter_your_pattern">Улантуу үчүн битси үлгү кириш</string>
+    <string name="msg__set_a_pattern">коопсуздук үчүн үлгү калтырган</string>
+    <string name="msg__release_finger">Бүткөндө манжасын бошоткула</string>
+    <string name="button__clear">ачык</string>
+    <string name="button__next">кийинки</string>
+    <string name="text__draw_an_unlock_pattern">Кулпуну ачуу үлгүсүн жакындагыла</string>
+    <string name="msg__draw_pattern_confirm">ырастоо үчүн, үлгү ачкычты</string>
+    <string name="button__confirm">ырастоо</string>
+    <string name="msg__your_new_unlock_pattern">Сиздин жаңы үлгү</string>
+    <string name="error__wront_pattern">Үлгү туура эмес</string>
+    <string name="text__pattern_recorded">Үлгү жазылган</string>
+    <string name="error__connect_at_least_4_dots">жок эле дегенде 4 чекиттерди бириктире. Кайра аракет кыл.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Туура эмес аракеттер өтө көп. %1$d мүнөттөн кийин кайра аракет кыл.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Туура эмес аракеттер өтө көп. %1$d секундадан кийин дагы аракет кылып.</string>
+
+</resources>

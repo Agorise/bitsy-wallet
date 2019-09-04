@@ -28,6 +28,7 @@
 -dontobfuscate
 -verbose
 
+
 ##--------------- proguard configuration for ITextPDF  ----------
 -dontwarn com.itextpdf.**
 
@@ -88,6 +89,9 @@
 -if interface * { @retrofit2.http.* <methods>; }
 -keep,allowobfuscation interface <1>
 
+# Additional rules to avoid removing models
+-keep public class cy.agorise.bitsybitshareswallet.models.** { *; }
+
 
 ##--------------- proguard configuration for OkHttp  ----------
 # JSR 305 annotations are for embedding nullability information.
@@ -127,14 +131,27 @@
 
 
 ##--------------- proguard configuration for Crashlytics  ----------
-# source https://stackoverflow.com/a/34751033/5428997
--keep class com.crashlytics.** { *; }
--dontwarn com.crashlytics.**
--keepattributes SourceFile,LineNumberTable,*Annotation*
--keep class com.crashlytics.android.**
+# source https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=android
+-keepattributes *Annotation*                      # Keep Crashlytics annotations
+-keepattributes SourceFile,LineNumberTable        # Keep file names/line numbers
+-keep public class * extends java.lang.Exception  # Keep custom exceptions (opt)
+
+
+##--------------- proguard configuration for Coroutines  ----------
+# ServiceLoader support
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keepnames class kotlinx.coroutines.android.AndroidExceptionPreHandler {}
+-keepnames class kotlinx.coroutines.android.AndroidDispatcherFactory {}
+
+# Most of volatile fields are updated with AFU and should not be mangled
+-keepclassmembernames class kotlinx.** {
+    volatile <fields>;
+}
 
 
 ##--------------- other  ----------
 -dontwarn org.slf4j.LoggerFactory
 -dontwarn org.slf4j.MDC
 -dontwarn org.slf4j.MarkerFactory
+-keep public class cy.agorise.graphenej.** { *; }

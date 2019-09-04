@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Piekrītu</string>
+    <string name="button__disagree">Nepiekrītu</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 un vairāk cipari PIN</string>
+    <string name="error__pin_too_short">Pārāk īss PIN kods</string>
+    <string name="text_field__confirm_pin">Apstipriniet PIN</string>
+    <string name="error__pin_mismatch">PIN neatbilstība</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Lūdzu, ievadiet pareizo smadzeņu atslēgu, tai vajadzētu būt 12 vai 16 vārdiem.</string>
+    <string name="button__import_existing_account">Importēt esošo kontu</string>
+    <string name="text__or">Vai</string>
+    <string name="button__create_new_account">Izveidot jaunu kontu</string>
+    <string name="error__invalid_brainkey">Neviens konts, kuru dotās smadzenes nekontrolē, tiek atrasts. Lūdzu, pārbaudiet, vai jūsu smadzenēs nav drukas kļūdas</string>
+    <string name="error__try_again">Lūdzu, mēģiniet vēlreiz pēc 5 minūtēm</string>
+    <string name="dialog__account_candidates_title">Lūdzu, atlasiet kontu</string>
+    <string name="dialog__account_candidates_content">Atslēgas, kas iegūtas no šīm smadzenēm, šķiet, tiek izmantotas, lai kontrolētu vairākus kontus. Lūdzu, atlasiet, kuru kontu vēlaties importēt</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares konta nosaukums</string>
+    <string name="error__read_dict_file">Kļūda, lasot vārdnīcas failu</string>
+    <string name="error__invalid_account_length">Konta nosaukumam jābūt no 3 līdz 16 rakstzīmēm.</string>
+    <string name="error__invalid_account_start">Konta nosaukumam jāsākas ar burtu.</string>
+    <string name="error__invalid_account_name">Lūdzu, ievadiet parasto vārdu, kurā ir vismaz viena domuzīme, cipars vai nav patskaņu.</string>
+    <string name="text__verifying_account_availability">Notiek konta pieejamības pārbaude…</string>
+    <string name="error__account_not_available">Šis konta nosaukums jau ir ņemts.</string>
+    <string name="text__account_is_available">Konts ir pieejams</string>
+    <string name="title_error">Kļūda</string>
+    <string name="error__faucet">Serveris parādīja kļūdu. Tas varētu būt saistīts ar ierobežojumu, kas mērķtiecīgi noteikts, lai īsā laika posmā aizliegtu biežus pieprasījumus, kas nāk no vienas un tās pašas IP adreses. Lūdzu, pagaidiet 5 minūtes un mēģiniet vēlreiz vai pārslēdzieties uz citu tīklu, piemēram, no wifi uz šūnu.</string>
+    <string name="error__faucet_template">Jaucējkrāns parādīja kļūdu. Ziņojums: %1$s</string>
+    <string name="error__created_account_not_found">Lietotne nevarēja iegūt informāciju par jaunizveidoto kontu</string>
+    <string name="button__create">Izveidot</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Darījumi</string>
+    <string name="title_merchants_and_tellers">Tirgotāji un pārdevēji</string>
+    <string name="title_receive">Saņemt</string>
+    <string name="title_balances">Svari</string>
+    <string name="title_send">Sūtīt</string>
+    <string name="title_net_worth">Neto vērts</string>
+    <string name="text__coming_soon">Drīzumā</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Meklēt</string>
+    <string name="title_filter">Filtrēt</string>
+    <string name="title_export">Eksportēt</string>
+    <string name="text__no_transactions">Nav darījumu</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtrēšanas opcijas</string>
+    <string name="text__all">Visi</string>
+    <string name="text__sent">Nosūtīts</string>
+    <string name="text__received">Saņemts</string>
+    <string name="text__date_range">Datumu diapazons</string>
+    <string name="text__equivalent_value">Ekvivalenta vērtība</string>
+    <string name="text__ignore_network_fees">Ignorēt tīkla maksas</string>
+    <string name="text__between">Starp</string>
+    <string name="text__and">un</string>
+    <string name="button__filter">Filtrēt</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Eksportēt filtrētus darījumus</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Krātuves atļauja ir nepieciešama, lai eksportētu PDF / CSV failus.</string>
+    <string name="title_from">No plkst</string>
+    <string name="title_to">Uz</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Datums</string>
+    <string name="title_time">Laiks</string>
+    <string name="title_amount">Summa</string>
+    <string name="title_equivalent_value">Ekvivalenta vērtība</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Vērtība</string>
+    <string name="template__memo">Piezīme: %1$s</string>
+    <string name="template__date">Datums: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Tirgotāji</string>
+    <string name="title_tellers">Stāstītāji</string>
+    <string name="title_about">Par</string>
+    <string name="msg__merchants_description">PalmPay tirgotāji ir jaunās kriptonauda ekonomikas pamats. Ja jūs meklējat uzņēmumus, kas pieņems jūsu kriptovalūtu, izmantojiet tikai zemāk esošos meklēšanas un kartes datus. Šeit mūs pievienos vairāk tirgotāju, jo mūs informē PalmPay vēstnieki.</string>
+    <string name="msg__tellers_description">Tirgotāji ir cilvēki, kuri apmainās jūsu fiat valūtas ar kriptovalūtām un otrādi. Viņi arī palīdz tirgotājiem veikt fiat norēķinus.</string>
+    <string name="msg__location_permission_necessary">Vietnes atļauja ir nepieciešama, lai kartē parādītu jūsu pašreizējo atrašanās vietu.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Informācija</string>
+    <string name="text__to">Uz</string>
+    <string name="text__amount">Summa</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Skenēt QR</string>
+    <string name="error__invalid_account">Nederīgs konts</string>
+    <string name="error__not_enough_funds">Nepietiek līdzekļu</string>
+    <string name="msg__camera_permission_necessary">Lai lasītu QR kodus, nepieciešama kameras atļauja.</string>
+    <string name="text__transaction_sent">Darījums nosūtīts!</string>
+    <string name="msg__transaction_not_sent">Nevar nosūtīt darījumu</string>
+    <string name="error__you_dont_own_asset">Jums nepieder neviens %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Ierakstiet tās personas Bitshares konta vārdu, kurai vēlaties nosūtīt līdzekļus. \nPiemēram: jaucējkrāns</string>
+    <string name="text__asset_balance">Aktīvu bilance</string>
+    <string name="msg__asset_balance_explanation">Jūs varat pieskarties parādītajam atlikumam, lai nosūtītu visu šo aktīvu. To darot, aizpildīsit lauku Summa.</string>
+    <string name="msg__memo_explanation">Atgādinājuma ievadīšana nav nepieciešama, taču ir patīkami ņemt vērā piezīmes par to, kāpēc jūs nosūtījāt līdzekļus. Piezīmes ir redzamas tikai jums un personai, kurai jūs nosūtījāt līdzekļus.</string>
+    <string name="text__network_fee">Tīkla maksa</string>
+    <string name="msg__network_fee_explanation">Tīkla maksa ir iekļauta summā, kuru vēlaties nosūtīt. Piemēram, ja vēlaties nosūtīt 50 BTS, BiTSy faktiski nosūtīs ~ 50,21 BTS. Pievienotais 0,21 šajā piemērā ir Bitshares transakcijas maksa plus 0,01% BiTSy izstrādātāju komandai (parasti ~ 1 cents).</string>
+    <string name="text__qr_code">QR kods</string>
+    <string name="msg__qr_code_explanation">Lai nosūtītu līdzekļus, jums nav jāskenē kāda QR, taču tas palīdz izvairīties no kļūdām. Kad esat pārsūtījis līdzekļus no sava konta, tie vairs nav pieejami, tāpēc vienmēr pārliecinieties, vai konta nosaukums laukā “Kam” ir pareizs.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Aktīvs</string>
+    <string name="text__other">Cits…</string>
+    <string name="template__please_send">Lūdzu, sūtiet: %1$s %2$s</string>
+    <string name="text__any_amount">Jebkura summa</string>
+    <string name="template__to">Kam: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy rēķins no %1$s</string>
+    <string name="title_share">Dalies</string>
+    <string name="text__share_with">Dalīties ar</string>
+    <string name="msg__storage_permission_necessary_share">Attēlu kopīgošanai ir nepieciešama krātuves atļauja.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Iestatījumi</string>
+    <string name="title__general">Vispārīgi</string>
+    <string name="msg__close_timer">Automātiski aizveriet BiTSy pēc 3 minūšu neaktivitātes</string>
+    <string name="msg__night_mode">Nakts režīms</string>
+    <string name="text__view_network_status">Skatīt tīkla statusu</string>
+    <string name="title__backup">Rezerves</string>
+    <string name="msg__brainkey_description">Prāta atslēga. Konta atkopšanas vārdi, kurus var tvert vai kopēt, bet ne rediģēt.</string>
+    <string name="msg__brainkey_info">Pierakstiet šo! Pārliecinieties, ka jums ir 2 šīs BrainKey kopijas 2 drošās vietās ugunsgrēka vai nozaudēšanas gadījumā. Drošība vispirms! Ikviens, kam ir piekļuve jūsu BrainKey, var piekļūt jūsu konta līdzekļiem!</string>
+    <string name="button__copied">Kopēts</string>
+    <string name="button__view_and_copy">Skatīt un kopēt</string>
+    <string name="title__accounts">Konti</string>
+    <string name="msg__upgrade_to_ltm">Jaunināšana uz dalību LifeTime (LTM). Bitshares \ \'LTM konti maksā gandrīz nulles maksu, saņem 80% naudas atmaksu un prēmijas par nodošanu.</string>
+    <string name="button__upgrade_to_ltm">Jaunināt uz LTM</string>
+    <string name="msg__account_upgrade_dialog">Dalība dzīves laikā ļauj tirgoties ar samazinātu tīkla maksu komplektu. \n \nTas stāsies spēkā norēķinu kontā "%1$s" \n \nTomēr tas nozīmē, ka Bitshares maksā apmēram 100 USD. \n \nVai tiešām vēlaties turpināt?</string>
+    <string name="title__account_upgraded">Konts ir jaunināts</string>
+    <string name="msg__account_upgraded">Apsveicam! Jūsu konts tagad ir jaunināts uz dalību mūža garumā.</string>
+    <string name="title__upgrade_account_error">Mēģinot jaunināt kontu, radās kļūda</string>
+    <string name="msg__upgrade_account_error">Lūdzu, pārliecinieties, vai jūsu kontā ir pietiekams atlikums izmaksu segšanai.</string>
+    <string name="msg__remove_current_account">Noņemiet pašreizējo kontu no šīs ierīces un izveidojiet vai importējiet citu kontu.</string>
+    <string name="button__remove">Noņemt</string>
+    <string name="title__remove_account">Noņemt kontu</string>
+    <string name="msg__remove_account_confirmation">Vai tiešām vēlaties noņemt pašreizējo kontu no šīs ierīces?</string>
+    <string name="title__bugs_or_ideas">Kļūdas vai idejas?</string>
+    <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloķēt: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Drošība</string>
+    <string name="text__security_lock">Drošības atslēga</string>
+    <string name="title__security_dialog">Izvēlieties drošības atslēgu</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Raksts</string>
+    <string name="text__none">Nav</string>
+    <string name="button__choose">Izvēlieties</string>
+    <string name="title__re_enter_your_pin">Atkārtoti ievadiet savu PIN</string>
+    <string name="msg__enter_your_pin">Ievadiet savu BiTSy PIN kodu, lai turpinātu</string>
+    <string name="error__wrong_pin">Nepareizs PIN</string>
+    <string name="title__set_bitsy_security_lock">Iestatiet BiTSy drošību</string>
+    <string name="msg__set_a_pin">Drošības nolūkos iestatiet PIN</string>
+    <string name="msg__min_pin_length">PIN ir jābūt vismaz 6 cipariem</string>
+    <string name="title__pins_dont_match">PIN neatbilst</string>
+    <string name="title__re_enter_your_pattern">Atkārtoti ievadiet modeli</string>
+    <string name="msg__enter_your_pattern">Ievadiet savu BiTSy modeli, lai turpinātu</string>
+    <string name="msg__set_a_pattern">Drošības nolūkos iestatiet modeli</string>
+    <string name="msg__release_finger">Kad esat pabeidzis, atlaidiet pirkstu</string>
+    <string name="button__clear">Skaidrs</string>
+    <string name="button__next">Nākamais</string>
+    <string name="text__draw_an_unlock_pattern">Uzzīmējiet atbloķēšanas modeli</string>
+    <string name="msg__draw_pattern_confirm">Vēlreiz uzzīmējiet modeli, lai apstiprinātu</string>
+    <string name="button__confirm">Apstiprināt</string>
+    <string name="msg__your_new_unlock_pattern">Jūsu jaunais atbloķēšanas modelis</string>
+    <string name="error__wront_pattern">Nepareizs raksts</string>
+    <string name="text__pattern_recorded">Reģistrēts paraugs</string>
+    <string name="error__connect_at_least_4_dots">Pievienojiet vismaz 4 punktus. Mēģini vēlreiz.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Pārāk daudz nepareizu mēģinājumu. Mēģiniet vēlreiz pēc %1$d minūtēm.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Pārāk daudz nepareizu mēģinājumu. Mēģiniet vēlreiz pēc %1$d sekundēm.</string>
+
+</resources>

@@ -35,6 +35,7 @@ import cy.agorise.graphenej.api.android.NetworkService
 import cy.agorise.graphenej.api.android.RxBus
 import cy.agorise.graphenej.api.calls.*
 import cy.agorise.graphenej.models.*
+import cy.agorise.graphenej.network.FullNode
 import io.fabric.sdk.android.Fabric
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -56,6 +57,12 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
 
     companion object {
         private const val TAG = "ConnectedActivity"
+
+        // Delay between best node connection verifications
+        private const val NODE_CHECK_DELAY = 60000L   // 60 seconds
+
+        // Worst acceptable position of the node the app is currently connected to
+        private const val BEST_NODE_THRESHOLD = 1
 
         private const val RESPONSE_GET_FULL_ACCOUNTS = 1
         private const val RESPONSE_GET_ACCOUNTS = 2
@@ -178,6 +185,9 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
         if (userId != "")
             mCurrentAccount = UserAccount(userId)
+
+        // Make sure crashlytics reports contains the account ID
+        Crashlytics.setString(Constants.CRASHLYTICS_KEY_ACCOUNT_ID, userId)
     }
 
     /**
@@ -279,7 +289,7 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
         if (latestOpCount == 0L) {
             Log.d(TAG, "The node returned 0 total_ops for current account and may not have installed the history plugin. " +
                     "\nAsk the NetworkService to remove the node from the list and connect to another one.")
-            mNetworkService?.removeCurrentNodeAndReconnect()
+            mNetworkService?.reconnectNode()
         } else if (storedOpCount == -1L) {
             // Initial case when the app starts
             storedOpCount = latestOpCount
@@ -399,6 +409,31 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
     }
 
     /**
+     * Task used to verify that the app is currently connected to one of the best nodes,
+     * and ask for a reconnection if it is not the case.
+     */
+    private val verifyConnectionToSuitableNodeTask = object : Runnable {
+        override fun run() {
+            Log.d(TAG, "Verifying app is connected to one of the best nodes")
+            mNetworkService?.nodes?.let { nodes ->
+                for ((counter, node) in nodes.withIndex()) {
+                    if (counter >= BEST_NODE_THRESHOLD) {
+                        // Forcing reconnection to a better node
+                        mNetworkService?.reconnectNode()
+                        break
+                    }
+                    if (node.isConnected) {
+                        // App is connected to one of the best nodes
+                        break
+                    }
+                }
+            }
+
+            mHandler.postDelayed(this, NODE_CHECK_DELAY)
+        }
+    }
+
+    /**
      * Task used to obtain the missing UserAccounts from Graphenej's NetworkService.
      */
     private val mRequestMissingUserAccountsTask = object : Runnable {
@@ -476,19 +511,6 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
 
     override fun onServiceDisconnected(name: ComponentName?) { }
 
-    override fun onPause() {
-        super.onPause()
-        // Unbinding from network service
-        if (mShouldUnbindNetwork) {
-            unbindService(this)
-            mShouldUnbindNetwork = false
-        }
-        mHandler.removeCallbacks(mCheckMissingPaymentsTask)
-        mHandler.removeCallbacks(mRequestMissingUserAccountsTask)
-        mHandler.removeCallbacks(mRequestMissingAssetsTask)
-        mHandler.removeCallbacks(mRequestBlockMissingTimeTask)
-    }
-
     override fun onResume() {
         super.onResume()
 
@@ -499,6 +521,25 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
             Log.e(TAG, "Binding to the network service failed.")
         }
         mHandler.postDelayed(mCheckMissingPaymentsTask, Constants.MISSING_PAYMENT_CHECK_PERIOD)
+        mHandler.postDelayed(verifyConnectionToSuitableNodeTask, NODE_CHECK_DELAY)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mNetworkService?.nodeLatencyVerifier?.nodeList?.let { nodes ->
+            mConnectedActivityViewModel.updateNodeLatencies(nodes as List<FullNode>)
+        }
+
+        // Unbinding from network service
+        if (mShouldUnbindNetwork) {
+            unbindService(this)
+            mShouldUnbindNetwork = false
+            mNetworkService = null
+        }
+        mHandler.removeCallbacks(mCheckMissingPaymentsTask)
+        mHandler.removeCallbacks(mRequestMissingUserAccountsTask)
+        mHandler.removeCallbacks(mRequestMissingAssetsTask)
+        mHandler.removeCallbacks(mRequestBlockMissingTimeTask)
     }
 
     override fun onDestroy() {

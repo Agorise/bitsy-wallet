@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">ตกลง</string>
+    <string name="button__disagree">ไม่เห็นด้วย</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN มากกว่า 6 หลัก</string>
+    <string name="error__pin_too_short">PIN สั้นเกินไป</string>
+    <string name="text_field__confirm_pin">ยืนยัน PIN</string>
+    <string name="error__pin_mismatch">PIN ไม่ตรงกัน</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">โปรดป้อนสมองที่ถูกต้องมันควรมี 12 หรือ 16 คำ</string>
+    <string name="button__import_existing_account">นำเข้าบัญชีที่มีอยู่</string>
+    <string name="text__or">หรือ</string>
+    <string name="button__create_new_account">สร้างบัญชีใหม่</string>
+    <string name="error__invalid_brainkey">ไม่มีบัญชีที่ควบคุมโดย brainkey ที่พบโปรดตรวจสอบ brainkey ของคุณเพื่อพิมพ์ข้อผิดพลาด</string>
+    <string name="error__try_again">โปรดลองอีกครั้งหลังจาก 5 นาที</string>
+    <string name="dialog__account_candidates_title">กรุณาเลือกบัญชี</string>
+    <string name="dialog__account_candidates_content">ดูเหมือนว่าจะใช้คีย์ที่ได้จากสมองนี้เพื่อควบคุมมากกว่าหนึ่งบัญชีโปรดเลือกบัญชีที่คุณต้องการนำเข้า</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">ชื่อบัญชี BitShares</string>
+    <string name="error__read_dict_file">เกิดข้อผิดพลาดในการอ่านไฟล์พจนานุกรม</string>
+    <string name="error__invalid_account_length">ชื่อบัญชีควรมีความยาว 3 ถึง 16 ตัวอักษร</string>
+    <string name="error__invalid_account_start">ชื่อบัญชีควรเริ่มต้นด้วยตัวอักษร</string>
+    <string name="error__invalid_account_name">โปรดป้อนชื่อปกติที่มีขีดอย่างน้อยหนึ่งตัว, ตัวเลขหรือไม่มีเสียงสระ</string>
+    <string name="text__verifying_account_availability">กำลังยืนยันความพร้อมของบัญชี…</string>
+    <string name="error__account_not_available">ชื่อบัญชีนั้นถูกใช้ไปแล้ว</string>
+    <string name="text__account_is_available">บัญชีสามารถใช้ได้</string>
+    <string name="title_error">ความผิดพลาด</string>
+    <string name="error__faucet">เซิร์ฟเวอร์ส่งคืนข้อผิดพลาด นี่อาจเป็นเพราะข้อ จำกัด ที่ตั้งไว้อย่างตั้งใจที่จะไม่อนุญาตการร้องขอบ่อยครั้งที่มาจากที่อยู่ IP เดียวกันในช่วงเวลาสั้น ๆ โปรดรอ 5 นาทีแล้วลองอีกครั้งหรือเปลี่ยนไปใช้เครือข่ายอื่นเช่นจาก wifi ไปยังเซลล์</string>
+    <string name="error__faucet_template">faucet ส่งคืนข้อผิดพลาด ข่าวสารเกี่ยวกับ: %1$s</string>
+    <string name="error__created_account_not_found">แอปไม่สามารถดึงข้อมูลเกี่ยวกับบัญชีที่สร้างขึ้นใหม่</string>
+    <string name="button__create">สร้าง</string>
+
+    <!-- Home -->
+    <string name="title_transactions">การทำธุรกรรม</string>
+    <string name="title_merchants_and_tellers">พ่อค้าและนักเล่าเรื่อง</string>
+    <string name="title_receive">รับ</string>
+    <string name="title_balances">ยอดคงเหลือ</string>
+    <string name="title_send">ส่ง</string>
+    <string name="title_net_worth">รายได้สุทธิ</string>
+    <string name="text__coming_soon">เร็ว ๆ นี้</string>
+
+    <!-- Transactions -->
+    <string name="title_search">ค้นหา</string>
+    <string name="title_filter">กรอง</string>
+    <string name="title_export">ส่งออก</string>
+    <string name="text__no_transactions">ไม่มีธุรกรรม</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">ตัวเลือกตัวกรอง</string>
+    <string name="text__all">ทั้งหมด</string>
+    <string name="text__sent">ส่ง</string>
+    <string name="text__received">ที่ได้รับ</string>
+    <string name="text__date_range">ช่วงวันที่</string>
+    <string name="text__equivalent_value">มูลค่าที่เท่าเทียมกัน</string>
+    <string name="text__ignore_network_fees">เพิกเฉยค่าธรรมเนียมเครือข่าย</string>
+    <string name="text__between">ระหว่าง</string>
+    <string name="text__and">และ</string>
+    <string name="button__filter">กรอง</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">ส่งออกธุรกรรมที่ถูกกรอง</string>
+    <string name="text__pdf">รูปแบบไฟล์ PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">สิทธิ์ในการจัดเก็บข้อมูลเป็นสิ่งจำเป็นในการส่งออกไฟล์ PDF / CSV</string>
+    <string name="title_from">จาก</string>
+    <string name="title_to">ไปยัง</string>
+    <string name="title_memo">บันทึก</string>
+    <string name="title_date">วันที่</string>
+    <string name="title_time">เวลา</string>
+    <string name="title_amount">จำนวน</string>
+    <string name="title_equivalent_value">มูลค่าที่เท่าเทียมกัน</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">ราคา</string>
+    <string name="template__memo">ข้อควรจำ: %1$s</string>
+    <string name="template__date">วันที่: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">ร้านค้า</string>
+    <string name="title_tellers">หมอดู</string>
+    <string name="title_about">เกี่ยวกับ</string>
+    <string name="msg__merchants_description">พ่อค้า PalmPay เป็นกระดูกสันหลังของ Crypto Economy ใหม่ หากคุณกำลังมองหาธุรกิจที่จะรับ Cryptocurrency ของคุณเพียงใช้ข้อมูลการค้นหาและแผนที่ด้านล่าง ร้านค้าเพิ่มเติมจะถูกเพิ่มที่นี่เป็น PalmPay เอกอัครราชทูตแจ้งให้เราทราบ</string>
+    <string name="msg__tellers_description">Tellers คือคนที่จะแลกเปลี่ยนสกุลเงินของคุณด้วย cryptocurrencies และในทางกลับกัน พวกเขายังช่วยพ่อค้าด้วยการชำระ fiat</string>
+    <string name="msg__location_permission_necessary">การอนุญาตให้ใช้ตำแหน่งจำเป็นต้องแสดงตำแหน่งปัจจุบันของคุณบนแผนที่</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">ข้อมูล</string>
+    <string name="text__to">ไปยัง</string>
+    <string name="text__amount">จำนวน</string>
+    <string name="text__memo">บันทึก</string>
+    <string name="text__scan_qr">สแกน QR</string>
+    <string name="error__invalid_account">บัญชีไม่ถูกต้อง</string>
+    <string name="error__not_enough_funds">เงินทุนไม่เพียงพอ</string>
+    <string name="msg__camera_permission_necessary">จำเป็นต้องได้รับอนุญาตจากกล้องในการอ่านรหัส QR</string>
+    <string name="text__transaction_sent">ส่งธุรกรรมแล้ว!</string>
+    <string name="msg__transaction_not_sent">ไม่สามารถส่งธุรกรรม</string>
+    <string name="error__you_dont_own_asset">คุณไม่ได้เป็นเจ้าของ %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">พิมพ์ชื่อบัญชี Bitshares ของบุคคลที่คุณต้องการส่งเงินไปให้ \n ตัวอย่าง: agorise-faucet</string>
+    <string name="text__asset_balance">สินทรัพย์คงเหลือ</string>
+    <string name="msg__asset_balance_explanation">คุณสามารถแตะที่ยอดคงเหลือที่ปรากฏเพื่อส่งเนื้อหาทั้งหมดนั้น การทำเช่นนั้นจะเติมในฟิลด์จำนวนเงินให้คุณ</string>
+    <string name="msg__memo_explanation">ไม่จำเป็นต้องป้อนบันทึก แต่การจดบันทึกว่าทำไมคุณส่งเงินถึงดีสำหรับการอ้างอิงในอนาคต บันทึกช่วยจำจะปรากฏเฉพาะกับคุณและบุคคลที่คุณส่งเงินให้</string>
+    <string name="text__network_fee">ค่าธรรมเนียมเครือข่าย</string>
+    <string name="msg__network_fee_explanation">ค่าธรรมเนียมเครือข่ายรวมอยู่ในจำนวนเงินที่คุณต้องการส่ง ตัวอย่างเช่นถ้าคุณต้องการส่ง 50 BTS BiTSy จะส่ง ~ 50.21 BTS จริง ๆ การเพิ่ม 0.21 ในตัวอย่างนี้คือค่าธรรมเนียมธุรกรรม Bitshares บวก 0.01% ให้กับทีมนักพัฒนา BiTSy (โดยทั่วไปประมาณ 1 เซ็นต์)</string>
+    <string name="text__qr_code">คิวอาร์โค้ด</string>
+    <string name="msg__qr_code_explanation">คุณไม่จำเป็นต้องสแกน QR ของใครบางคนเพื่อส่งเงิน แต่ก็ช่วยให้คุณหลีกเลี่ยงข้อผิดพลาดได้ เมื่อคุณส่งเงินจากบัญชีของคุณพวกเขาจะหายไปตลอดกาลดังนั้นให้แน่ใจว่าชื่อบัญชีในช่อง“ ถึง” ถูกต้อง</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">สินทรัพย์</string>
+    <string name="text__other">อื่น ๆ…</string>
+    <string name="template__please_send">กรุณาส่ง: %1$s %2$s</string>
+    <string name="text__any_amount">จำนวนเงินใด ๆ</string>
+    <string name="template__to">ถึง: %1$s</string>
+    <string name="msg__invoice_subject">ใบแจ้งหนี้สองครั้งจาก %1$s</string>
+    <string name="title_share">หุ้น</string>
+    <string name="text__share_with">ร่วมกับ</string>
+    <string name="msg__storage_permission_necessary_share">สิทธิ์ในการจัดเก็บข้อมูลเป็นสิ่งจำเป็นสำหรับการแบ่งปันภาพ</string>
+
+    <!-- Settings -->
+    <string name="title_settings">การตั้งค่า</string>
+    <string name="title__general">ทั่วไป</string>
+    <string name="msg__close_timer">ปิด BiTSy โดยอัตโนมัติหลังจากไม่มีกิจกรรม 3 นาที</string>
+    <string name="msg__night_mode">โหมดกลางคืน</string>
+    <string name="text__view_network_status">ดูสถานะเครือข่าย</string>
+    <string name="title__backup">การสำรองข้อมูล</string>
+    <string name="msg__brainkey_description">BrainKey คำกู้คืนบัญชีที่สามารถบันทึกหรือคัดลอก แต่ไม่สามารถแก้ไขได้</string>
+    <string name="msg__brainkey_info">เขียนลงนี้! ต้องแน่ใจว่าคุณมี BrainKey นี้ 2 ชุดในที่ปลอดภัย 2 แห่งในกรณีที่ไฟไหม้หรือสูญหาย ปลอดภัยไว้ก่อน! ทุกคนที่สามารถเข้าถึง BrainKey ของคุณสามารถเข้าถึงเงินทุนในบัญชีของคุณ!</string>
+    <string name="button__copied">คัดลอก</string>
+    <string name="button__view_and_copy">ดูและคัดลอก</string>
+    <string name="title__accounts">บัญชี</string>
+    <string name="msg__upgrade_to_ltm">อัปเกรดเป็นสมาชิก LifeTime (LTM) บัญชี LTM ของ Bitshares จ่ายค่าธรรมเนียมเกือบเป็นศูนย์รับเงินคืน 80% และโบนัสสำหรับการอ้างอิง</string>
+    <string name="button__upgrade_to_ltm">อัปเกรดเป็น LTM</string>
+    <string name="msg__account_upgrade_dialog">การเป็นสมาชิก Life Time ช่วยให้คุณสามารถแลกเปลี่ยนกับค่าธรรมเนียมเครือข่ายที่ลดลง \n \n มันจะมีผลกับบัญชีปัจจุบัน "%1$s" \n \n มันมาพร้อมกับค่าใช้จ่ายประมาณ 100 USD ใน Bitshares \n \n คุณแน่ใจหรือว่าต้องการดำเนินการต่อ</string>
+    <string name="title__account_upgraded">อัปเกรดบัญชี</string>
+    <string name="msg__account_upgraded">ขอแสดงความยินดี! บัญชีของคุณได้รับการอัพเกรดเป็นสมาชิกตลอดชีพ</string>
+    <string name="title__upgrade_account_error">เกิดข้อผิดพลาดขณะพยายามอัปเกรดบัญชี</string>
+    <string name="msg__upgrade_account_error">โปรดตรวจสอบให้แน่ใจว่าบัญชีของคุณมียอดคงเหลือเพียงพอที่จะครอบคลุมค่าใช้จ่าย</string>
+    <string name="msg__remove_current_account">ลบบัญชีปัจจุบันออกจากอุปกรณ์นี้และสร้างหรือนำเข้าบัญชีอื่น</string>
+    <string name="button__remove">เอาออก</string>
+    <string name="title__remove_account">ปิดบัญชี</string>
+    <string name="msg__remove_account_confirmation">คุณแน่ใจหรือไม่ว่าต้องการลบบัญชีปัจจุบันออกจากอุปกรณ์นี้</string>
+    <string name="title__bugs_or_ideas">บักหรือไอเดีย</string>
+    <string name="msg__bugs_or_ideas">โทรเลข: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">บล็อก: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">ความปลอดภัย</string>
+    <string name="text__security_lock">ล็อคเพื่อความปลอดภัย</string>
+    <string name="title__security_dialog">เลือกล็อคเพื่อความปลอดภัย</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">แบบแผน</string>
+    <string name="text__none">ไม่มี</string>
+    <string name="button__choose">เลือก</string>
+    <string name="title__re_enter_your_pin">ป้อน PIN ของคุณอีกครั้ง</string>
+    <string name="msg__enter_your_pin">ป้อน PIN ของคุณเพื่อดำเนินการต่อ</string>
+    <string name="error__wrong_pin">PIN ไม่ถูกต้อง</string>
+    <string name="title__set_bitsy_security_lock">ตั้งค่าความปลอดภัย BiTSy</string>
+    <string name="msg__set_a_pin">เพื่อความปลอดภัยตั้งรหัส PIN</string>
+    <string name="msg__min_pin_length">PIN ต้องมีอย่างน้อย 6 หลัก</string>
+    <string name="title__pins_dont_match">PIN ไม่ตรงกัน</string>
+    <string name="title__re_enter_your_pattern">ป้อนรูปแบบของคุณอีกครั้ง</string>
+    <string name="msg__enter_your_pattern">ป้อนรูปแบบ BiTSy ของคุณเพื่อดำเนินการต่อ</string>
+    <string name="msg__set_a_pattern">เพื่อความปลอดภัยตั้งค่ารูปแบบ</string>
+    <string name="msg__release_finger">ปล่อยนิ้วเมื่อเสร็จแล้ว</string>
+    <string name="button__clear">ชัดเจน</string>
+    <string name="button__next">ต่อไป</string>
+    <string name="text__draw_an_unlock_pattern">วาดรูปแบบการปลดล็อก</string>
+    <string name="msg__draw_pattern_confirm">วาดรูปแบบอีกครั้งเพื่อยืนยัน</string>
+    <string name="button__confirm">ยืนยัน</string>
+    <string name="msg__your_new_unlock_pattern">รูปแบบการปลดล็อกใหม่ของคุณ</string>
+    <string name="error__wront_pattern">ลวดลายผิด</string>
+    <string name="text__pattern_recorded">บันทึกรูปแบบแล้ว</string>
+    <string name="error__connect_at_least_4_dots">เชื่อมต่ออย่างน้อย 4 จุด ลองอีกครั้ง.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">มีความพยายามที่ไม่ถูกต้องมากเกินไป ลองอีกครั้งในอีก %1$d นาที</string>
+    <string name="error__security_lock_too_many_attempts_seconds">มีความพยายามที่ไม่ถูกต้องมากเกินไป ลองอีกครั้งในอีก %1$d วินาที</string>
+
+</resources>

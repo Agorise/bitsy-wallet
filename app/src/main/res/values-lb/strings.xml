@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Averstanen</string>
+    <string name="button__disagree">Net averstanen</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ Zifferen PIN</string>
+    <string name="error__pin_too_short">PIN ze kuerz</string>
+    <string name="text_field__confirm_pin">Bestätegt PIN</string>
+    <string name="error__pin_mismatch">PIN Mësshandlung</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Gitt de richtege Gehirstipp un, et sollt 12 oder 16 Wierder hunn.</string>
+    <string name="button__import_existing_account">Import existente Konto</string>
+    <string name="text__or">Oder</string>
+    <string name="button__create_new_account">Neie Kont erstellen</string>
+    <string name="error__invalid_brainkey">Kéng Konten, déi vum uginnene Gehirkey kontrolléiert ginn, wou se fonnt goufen, kuckt w.e.g. Ären Gehirkey fir Tippenfeeler</string>
+    <string name="error__try_again">Probéiert w.e.g. nach eng Kéier 5 Minutten</string>
+    <string name="dialog__account_candidates_title">Wielt w.e.g. e Kont</string>
+    <string name="dialog__account_candidates_content">D \'Schlësselen, déi aus dësem Gehirnkey ofgeleet ginn, schéngt benotzt gi fir méi wéi ee Kont ze kontrolléieren, wielt w.e.g. e Konto Dir wëllt importéieren</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares Kontnumm</string>
+    <string name="error__read_dict_file">Feeler beim Liesen vun der Wierderbuch</string>
+    <string name="error__invalid_account_length">De Kontnumm soll 3 bis 16 Zeeche sinn.</string>
+    <string name="error__invalid_account_start">Kontnumm sollt mat engem Bréif ufänken.</string>
+    <string name="error__invalid_account_name">Gitt e reguläre Numm mat op d\'mannst ee Bindestrich, eng Nummer oder keng Vokaler.</string>
+    <string name="text__verifying_account_availability">Verifizéiert Disponibilitéit vun de Kont…</string>
+    <string name="error__account_not_available">Dee Benotzernumm ass scho geholl.</string>
+    <string name="text__account_is_available">Kont ass verfügbar</string>
+    <string name="title_error">Feeler</string>
+    <string name="error__faucet">De Server huet e Feeler zréckginn. Dëst kann duerch eng Begrenzung geziilt festgeluegt ginn fir dacks Ufroe vun der selwechter IP Adress an enger kuerzer Zäitlaang ze refuséieren. Waart 5 Minutten a probéiert et nach eng Kéier, oder schalt op en anert Netzwierk, zum Beispill vu Wifi bis Zell.</string>
+    <string name="error__faucet_template">D\'Band huet e Feeler zréckginn. Msg: %1$s</string>
+    <string name="error__created_account_not_found">D\'App konnt net Informatioun iwwer de nei geschaffene Kont kréien</string>
+    <string name="button__create">Erstellt</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transaktiounen</string>
+    <string name="title_merchants_and_tellers">Händler &amp; Teller</string>
+    <string name="title_receive">Empfang</string>
+    <string name="title_balances">Gläichgewiicht</string>
+    <string name="title_send">Schécken</string>
+    <string name="title_net_worth">Net Worth</string>
+    <string name="text__coming_soon">Kënnt geschwënn</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Sich</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Keng Transaktiounen</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filter Optiounen</string>
+    <string name="text__all">All</string>
+    <string name="text__sent">Geschéckt</string>
+    <string name="text__received">Krut</string>
+    <string name="text__date_range">Datum Range</string>
+    <string name="text__equivalent_value">Äquivalent Wäerter</string>
+    <string name="text__ignore_network_fees">Ignoréiert Netzwierkskäschten</string>
+    <string name="text__between">Tëscht</string>
+    <string name="text__and">an</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Exportfilteréiert Transaktiounen exportéieren</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Späichergenehmegung ass néideg fir PDF / CSV Dateien ze exportéieren.</string>
+    <string name="title_from">Vun</string>
+    <string name="title_to">Zu</string>
+    <string name="title_memo">Notiz</string>
+    <string name="title_date">Datum</string>
+    <string name="title_time">Zäit</string>
+    <string name="title_amount">Betrag</string>
+    <string name="title_equivalent_value">Äquivalent Wäerter</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Wäert</string>
+    <string name="template__memo">Notiz: %1$s</string>
+    <string name="template__date">Datum: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Händler</string>
+    <string name="title_tellers">Teller</string>
+    <string name="title_about">Iwwer</string>
+    <string name="msg__merchants_description">PalmPay Händler sinn de Pilier vun der neier Krypto-Wirtschaft. Wann Dir Geschäfter sicht déi Ären Cryptocurrency acceptéiere wëllen, da benotzt einfach d\'Sich- a Kaartdaten hei ënnen. Méi Händler ginn hei derbäi wéi d\'Palmay Botschafter eis informéieren.</string>
+    <string name="msg__tellers_description">Teller si Leit déi Är Fiat Währungen austauschen mat cryptocururrency, a vice versa. Si hëllefen och Händler mat Fiat Siidlung.</string>
+    <string name="msg__location_permission_necessary">Location Permis ass noutwendeg fir Är aktuell Positioun op der Kaart ze weisen.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Zu</string>
+    <string name="text__amount">Betrag</string>
+    <string name="text__memo">Notiz</string>
+    <string name="text__scan_qr">Scannen QR</string>
+    <string name="error__invalid_account">Ongeldege Kont</string>
+    <string name="error__not_enough_funds">Net genuch Fongen</string>
+    <string name="msg__camera_permission_necessary">Kamera Erlaabnes ass néideg fir QR Coden ze liesen.</string>
+    <string name="text__transaction_sent">Transaktioun geschéckt!</string>
+    <string name="msg__transaction_not_sent">Kann net Transaktioun schécken</string>
+    <string name="error__you_dont_own_asset">Dir hutt keen %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Gitt de Bitshares Kontnumm vun der Persoun op déi Dir Fongen schécke wëllt. \n Zum Beispill: agorise-faucet</string>
+    <string name="text__asset_balance">Asset Balance</string>
+    <string name="msg__asset_balance_explanation">Dir kënnt op d\'Gläichgewiicht tippen op datt Dir all dat Verméigen schéckt. Maachen dat fëllt de Betrag Feld fir Iech aus.</string>
+    <string name="msg__memo_explanation">En Memo aginn ass net erfuerderlech, awer Notize maache firwat Dir d\'Fongen geschéckt hutt, ass léif fir zukünfteg Referenz. Memos sinn nëmme fir Iech ze gesinn an d\'Persoun wiem Dir Fongen geschéckt hutt.</string>
+    <string name="text__network_fee">Network Fee</string>
+    <string name="msg__network_fee_explanation">D\'Netzgeld ass am Betrag abegraff deen Dir wëllt schécken. Zum Beispill, wann Dir 50 BTS wëllt schécken, da schéckt BiTSy tatsächlech ~ 50,21 BTS. Dee addéierten 0.21 an dësem Beispill ass de Bitshares Transaktiounsgebühr plus 0.01% an de BiTSy Entwéckler Team (normalerweis ~ 1 Cent).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Dir braucht keen QR\'s vun engem ze scannen fir Fongen ze schécken, awer et hëlleft Iech fir Feeler ze vermeiden. Wann Dir Fongen vun Ärem Kont verschéckt, gi se fir ëmmer fort, also gitt sécher datt de Numm vum Kont am "An" Feld richteg ass.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Aner…</string>
+    <string name="template__please_send">Schéckt w.e.g.: %1$s %2$s</string>
+    <string name="text__any_amount">All Betrag</string>
+    <string name="template__to">An: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy Rechnung vun %1$s</string>
+    <string name="title_share">Deelen</string>
+    <string name="text__share_with">Deelen mat</string>
+    <string name="msg__storage_permission_necessary_share">D\'Lagerungsgenehmegung ass noutwendeg fir Biller ze deelen.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Astellungen</string>
+    <string name="title__general">Allgemeng</string>
+    <string name="msg__close_timer">Automatesch zou BiTSy no 3 Minutten Inaktivitéit zoumaachen</string>
+    <string name="msg__night_mode">Nuetsmodus</string>
+    <string name="text__view_network_status">View Network Status</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Kont Erhuelung Wierder déi kënnen gefaang oder kopéiert ginn, awer net geännert ginn.</string>
+    <string name="msg__brainkey_info">Schreift dëst erof! Gitt sécher datt Dir 2 Exemplare vun dësem BrainKey op 2 sécher Plazen am Fall vu Feier oder Verloscht hutt. Sécherheet Éischt! Jiddereen mat Zougang zu Ärem BrainKey kënnen Zougang zu de Fongen op Ärem Kont kréien!</string>
+    <string name="button__copied">Kopéiert</string>
+    <string name="button__view_and_copy">Gesinn &amp; Kopie</string>
+    <string name="title__accounts">Konten</string>
+    <string name="msg__upgrade_to_ltm">Upgrade op LifeTime Membership (LTM). Bitshares \ \'LTM Konten bezuele bal null Käschten, kréien 80% Cashback a Bonus fir Referratiounen.</string>
+    <string name="button__upgrade_to_ltm">Upgrade op LTM</string>
+    <string name="msg__account_upgrade_dialog">Duerch d\'Life Time Membership kënnt Dir mat engem reduzéierte Satz Netzwierkskäschte handel hunn. \n \nIt wäert Effekt op den aktuelle Kont "%1$s" \n \nIt kënnt awer mat enger Käschte vun ongeféier 100 USD bezuelt an Bitshares. \n \nAnd Dir sécher, dass Dir weidergoe wëllt?</string>
+    <string name="title__account_upgraded">Kont Upgrade</string>
+    <string name="msg__account_upgraded">Gratulatioun! Äre Kont gouf elo op d\'Lifetime Membership Upgrade.</string>
+    <string name="title__upgrade_account_error">Feeler beim Versuch vun engem Upgrade Upgrade</string>
+    <string name="msg__upgrade_account_error">Gitt sécher datt Äre Kont genuch Gläichgewiicht huet fir d\'Käschten ze decken.</string>
+    <string name="msg__remove_current_account">Den aktuelle Kont vun dësem Apparat ewechhuelen an en aneren ze erstellen oder z\'importéieren.</string>
+    <string name="button__remove">Ewechzehuelen</string>
+    <string name="title__remove_account">Ewechzehuelen Kont</string>
+    <string name="msg__remove_account_confirmation">Sidd Dir sécher, dass Dir den aktuelle Kont vun dësem Apparat läsche wëllt?</string>
+    <string name="title__bugs_or_ideas">Bugs oder Iddien?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Spär: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sécherheet</string>
+    <string name="text__security_lock">Sécherheetssperre</string>
+    <string name="title__security_dialog">Wielt e Sécherheetssperre</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Muster</string>
+    <string name="text__none">Näischt</string>
+    <string name="button__choose">Wielt</string>
+    <string name="title__re_enter_your_pin">Gitt Ären PIN erëm an</string>
+    <string name="msg__enter_your_pin">Gitt Äre BiTSy PIN fir weider ze goen</string>
+    <string name="error__wrong_pin">Falsche PIN</string>
+    <string name="title__set_bitsy_security_lock">Set BiTSy Sécherheet</string>
+    <string name="msg__set_a_pin">Fir Sécherheet, set e PIN</string>
+    <string name="msg__min_pin_length">De PIN muss op d\'mannst 6 Zifferen sinn</string>
+    <string name="title__pins_dont_match">PINs sinn net passen</string>
+    <string name="title__re_enter_your_pattern">Gitt Är Muster zréck</string>
+    <string name="msg__enter_your_pattern">Gitt Äert BiTSy Muster fir weiderzekommen</string>
+    <string name="msg__set_a_pattern">Fir Sécherheet, set e Muster</string>
+    <string name="msg__release_finger">Fräisetzung Fanger wann Dir fäerdeg sidd</string>
+    <string name="button__clear">Kloer</string>
+    <string name="button__next">Nächst</string>
+    <string name="text__draw_an_unlock_pattern">Zeechnen e Spärmuster</string>
+    <string name="msg__draw_pattern_confirm">Zéien Muster erëm fir ze bestätegen</string>
+    <string name="button__confirm">Confirméieren</string>
+    <string name="msg__your_new_unlock_pattern">Ären neie Spärmuster</string>
+    <string name="error__wront_pattern">Falsch Muster</string>
+    <string name="text__pattern_recorded">Muster opgeholl</string>
+    <string name="error__connect_at_least_4_dots">Verbind op d\'mannst 4 Punkten. Versich et nach eng Kéier.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Ze vill falsch Versich. Probéiert nach eng Kéier an %1$d Minutten.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Ze vill falsch Versich. Probéiert nach eng Kéier an %1$d Sekonnen.</string>
+
+</resources>

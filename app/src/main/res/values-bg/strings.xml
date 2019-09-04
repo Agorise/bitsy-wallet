@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Съгласен</string>
+    <string name="button__disagree">не съм съгласен</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ цифри ПИН</string>
+    <string name="error__pin_too_short">ПИН кодът е твърде къс</string>
+    <string name="text_field__confirm_pin">Потвърдете ПИН</string>
+    <string name="error__pin_mismatch">Несъответствие с ПИН</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Моля, въведете правилния мозъчен ключ, трябва да има 12 или 16 думи.</string>
+    <string name="button__import_existing_account">Импортирайте съществуващия акаунт</string>
+    <string name="text__or">Или</string>
+    <string name="button__create_new_account">Създаване на нов акаунт</string>
+    <string name="error__invalid_brainkey">Няма намерени акаунти, контролирани от дадения мозъчен ключ, моля, проверете мозъчната си ключ за грешки при въвеждане</string>
+    <string name="error__try_again">Моля, опитайте отново след 5 минути</string>
+    <string name="dialog__account_candidates_title">Моля, изберете акаунт</string>
+    <string name="dialog__account_candidates_content">Ключовете, получени от този мозъчен ключ, изглежда се използват за контрол на повече от един акаунт. Моля, изберете кой акаунт искате да импортирате</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Име на акаунта в BitShares</string>
+    <string name="error__read_dict_file">Грешка при четене на речников файл</string>
+    <string name="error__invalid_account_length">Името на акаунта трябва да бъде от 3 до 16 знака.</string>
+    <string name="error__invalid_account_start">Името на акаунта трябва да започва с буква.</string>
+    <string name="error__invalid_account_name">Моля, въведете редовно име, съдържащо поне едно тире, число или без гласни.</string>
+    <string name="text__verifying_account_availability">Потвърждаване на наличността на акаунта…</string>
+    <string name="error__account_not_available">Името на този акаунт вече е взето.</string>
+    <string name="text__account_is_available">Сметката е налична</string>
+    <string name="title_error">грешка</string>
+    <string name="error__faucet">Сървърът върна грешка. Това може да се дължи на ограничение, целенасочено поставено за недопускане на чести заявки, идващи от един и същ IP адрес, за кратко време. Моля, изчакайте 5 минути и опитайте отново или преминете към друга мрежа, например от wifi към клетка.</string>
+    <string name="error__faucet_template">Кранът върна грешка. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Приложението не можа да извлече информация за новосъздадения акаунт</string>
+    <string name="button__create">създавам</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Сделки</string>
+    <string name="title_merchants_and_tellers">Търговци и продавачи</string>
+    <string name="title_receive">получавам</string>
+    <string name="title_balances">Салда</string>
+    <string name="title_send">изпращам</string>
+    <string name="title_net_worth">Нетна стойност</string>
+    <string name="text__coming_soon">Очаквайте скоро</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Търсене</string>
+    <string name="title_filter">филтър</string>
+    <string name="title_export">износ</string>
+    <string name="text__no_transactions">Без транзакции</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Опции за филтриране</string>
+    <string name="text__all">всичко</string>
+    <string name="text__sent">Изпратено</string>
+    <string name="text__received">приет</string>
+    <string name="text__date_range">Период от време</string>
+    <string name="text__equivalent_value">Еквивалентна стойност</string>
+    <string name="text__ignore_network_fees">Игнорирайте мрежовите такси</string>
+    <string name="text__between">между</string>
+    <string name="text__and">и</string>
+    <string name="button__filter">филтър</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Експорт на филтрирани транзакции</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Разрешението за съхранение е необходимо за експортиране на PDF / CSV файлове.</string>
+    <string name="title_from">от</string>
+    <string name="title_to">Да се</string>
+    <string name="title_memo">бележка</string>
+    <string name="title_date">Дата</string>
+    <string name="title_time">път</string>
+    <string name="title_amount">Количество</string>
+    <string name="title_equivalent_value">Еквивалентна стойност</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">стойност</string>
+    <string name="template__memo">Бележка: %1$s</string>
+    <string name="template__date">Дата: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">търговци</string>
+    <string name="title_tellers">преброители</string>
+    <string name="title_about">относно</string>
+    <string name="msg__merchants_description">Търговците на PalmPay са основата на новата криптовалута. Ако търсите фирми, които ще приемат вашата криптовалута, просто използвайте данните за търсене и карта по-долу. Тук ще бъдат добавени още търговци, след като ни уведомяват посланиците на PalmPay.</string>
+    <string name="msg__tellers_description">Търговците са хора, които ще обменят вашите фиат валути с криптовалути и обратно. Те също така помагат на търговците с уреждане на фиат.</string>
+    <string name="msg__location_permission_necessary">Разрешението за местоположение е необходимо, за да се покаже текущото ви местоположение на картата.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Информация</string>
+    <string name="text__to">Да се</string>
+    <string name="text__amount">Количество</string>
+    <string name="text__memo">бележка</string>
+    <string name="text__scan_qr">Сканиране на QR</string>
+    <string name="error__invalid_account">Невалиден акаунт</string>
+    <string name="error__not_enough_funds">Няма достатъчно средства</string>
+    <string name="msg__camera_permission_necessary">Разрешението на камерата е необходимо за четене на QR кодове.</string>
+    <string name="text__transaction_sent">Транзакцията е изпратена!</string>
+    <string name="msg__transaction_not_sent">Не може да се изпрати транзакция</string>
+    <string name="error__you_dont_own_asset">Не притежавате никакви %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Въведете името на акаунта в Bitshares на лицето, на което искате да изпратите средства. \n Например: agorise-кран</string>
+    <string name="text__asset_balance">Баланс на активите</string>
+    <string name="msg__asset_balance_explanation">Можете да докоснете показания баланс, за да изпратите целия този актив. Това ще попълни полето Сума за вас.</string>
+    <string name="msg__memo_explanation">Въвеждането на бележка не е задължително, но правенето на бележки защо сте изпратили средствата е хубаво за бъдеща справка. Бележките са видими само за вас и за лицето, на което сте изпратили средства.</string>
+    <string name="text__network_fee">Такса за мрежа</string>
+    <string name="msg__network_fee_explanation">Таксата на мрежата е включена в сумата, която искате да изпратите. Например, ако искате да изпратите 50 BTS, BiTSy всъщност ще изпрати ~ 50,21 BTS. Добавените 0,21 в този пример са таксата за транзакции на Bitshares плюс 0,01% за екипа на разработчиците на BiTSy (обикновено ~ 1 процент).</string>
+    <string name="text__qr_code">QR код</string>
+    <string name="msg__qr_code_explanation">Не е необходимо да сканирате нечий QR код, за да изпратите средства, но това ви помага да избегнете грешки. След като изпратите средства от сметката си, те няма да бъдат завинаги, така че винаги се уверете, че името на акаунта в полето „До“ е правилно.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Актив</string>
+    <string name="text__other">Други…</string>
+    <string name="template__please_send">Моля, изпратете: %1$s %2$s</string>
+    <string name="text__any_amount">Всяка сума</string>
+    <string name="template__to">До: %1$s</string>
+    <string name="msg__invoice_subject">Фактура за BiTSy от %1$s</string>
+    <string name="title_share">Дял</string>
+    <string name="text__share_with">Сподели с</string>
+    <string name="msg__storage_permission_necessary_share">Разрешението за съхранение е необходимо за споделяне на изображения.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Настройки</string>
+    <string name="title__general">Общ</string>
+    <string name="msg__close_timer">Автоматично затваряйте BiTSy след 3 минути бездействие</string>
+    <string name="msg__night_mode">Нощен режим</string>
+    <string name="text__view_network_status">Преглед на състоянието на мрежата</string>
+    <string name="title__backup">резервно копие</string>
+    <string name="msg__brainkey_description">BrainKey. Думи за възстановяване на акаунт, които могат да бъдат заснети или копирани, но не и редактирани.</string>
+    <string name="msg__brainkey_info">Напиши това! Уверете се, че имате 2 копия на този BrainKey на 2 сигурни места в случай на пожар или загуба. Сигурност на първо място! Всеки, който има достъп до вашия BrainKey, може да получи достъп до средствата във вашия акаунт!</string>
+    <string name="button__copied">Копирани</string>
+    <string name="button__view_and_copy">Преглед и копиране</string>
+    <string name="title__accounts">сметки</string>
+    <string name="msg__upgrade_to_ltm">Надграждане до LifeTime Membership (LTM). Bitshares \ \'LTM акаунти плащат почти нулеви такси, получават 80% кешбек и бонуси за реферали.</string>
+    <string name="button__upgrade_to_ltm">Надградете до LTM</string>
+    <string name="msg__account_upgrade_dialog">Членството в Life Time ви позволява да търгувате с намален набор от мрежови такси. \n \nТя ще влезе в сила по текущата сметка "%1$s" \n \nВъпреки това, тя идва с разходи от около 100 USD, платени в Bitshares. \n \n Сигурни ли сте, че искате да продължите?</string>
+    <string name="title__account_upgraded">Акаунтът е надстроен</string>
+    <string name="msg__account_upgraded">Честито! Вашият акаунт вече е надстроен до доживотното членство.</string>
+    <string name="title__upgrade_account_error">Грешка при опит за надграждане на акаунта</string>
+    <string name="msg__upgrade_account_error">Моля, уверете се, че в акаунта ви има достатъчно салдо, за да покрие разходите.</string>
+    <string name="msg__remove_current_account">Премахнете текущия акаунт от това устройство и създайте или импортирайте друг.</string>
+    <string name="button__remove">Премахване</string>
+    <string name="title__remove_account">Премахване на акаунта</string>
+    <string name="msg__remove_account_confirmation">Наистина ли искате да премахнете текущия акаунт от това устройство?</string>
+    <string name="title__bugs_or_ideas">Грешки или идеи?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Сигурност</string>
+    <string name="text__security_lock">Заключване на сигурността</string>
+    <string name="title__security_dialog">Изберете заключване за сигурност</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">модел</string>
+    <string name="text__none">Нито един</string>
+    <string name="button__choose">Избирам</string>
+    <string name="title__re_enter_your_pin">Въведете отново своя ПИН код</string>
+    <string name="msg__enter_your_pin">Въведете своя ПИН код на BiTSy, за да продължите</string>
+    <string name="error__wrong_pin">Грешен ПИН код</string>
+    <string name="title__set_bitsy_security_lock">Задайте BiTSy Security</string>
+    <string name="msg__set_a_pin">За сигурност задайте ПИН код</string>
+    <string name="msg__min_pin_length">ПИН кодът трябва да е поне 6 цифри</string>
+    <string name="title__pins_dont_match">ПИН кодовете не съвпадат</string>
+    <string name="title__re_enter_your_pattern">Въведете отново своя модел</string>
+    <string name="msg__enter_your_pattern">Въведете своя модел BiTSy, за да продължите</string>
+    <string name="msg__set_a_pattern">За сигурност задайте модел</string>
+    <string name="msg__release_finger">Освободете пръста, когато сте готови</string>
+    <string name="button__clear">ясно</string>
+    <string name="button__next">Следващия</string>
+    <string name="text__draw_an_unlock_pattern">Начертайте шаблон за отключване</string>
+    <string name="msg__draw_pattern_confirm">Начертайте отново шаблон за потвърждение</string>
+    <string name="button__confirm">потвърждавам</string>
+    <string name="msg__your_new_unlock_pattern">Вашият нов модел за отключване</string>
+    <string name="error__wront_pattern">Грешен модел</string>
+    <string name="text__pattern_recorded">Образецът е записан</string>
+    <string name="error__connect_at_least_4_dots">Свържете най-малко 4 точки. Опитай пак.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Твърде много неправилни опити. Опитайте отново след %1$d минути.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Твърде много неправилни опити. Опитайте отново след %1$d секунди.</string>
+
+</resources>

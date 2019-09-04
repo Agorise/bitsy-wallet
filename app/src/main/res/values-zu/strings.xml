@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Vuma</string>
+    <string name="button__disagree">Ukungavumelani</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">I-PIN engu-6+ yamadijithi</string>
+    <string name="error__pin_too_short">IPIN ifushane kakhulu</string>
+    <string name="text_field__confirm_pin">Qinisekisa iphinikhodi</string>
+    <string name="error__pin_mismatch">I-PIN mismatch</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Sicela ufake i-brainkey efanele, kufanele ibe namagama ayi-12 noma ayi-16.</string>
+    <string name="button__import_existing_account">Ngenisa i-akhawunti ekhona</string>
+    <string name="text__or">Noma</string>
+    <string name="button__create_new_account">Dala i-akhawunti entsha</string>
+    <string name="error__invalid_brainkey">Awekho ama-akhawunti alawulwa yi-brainkey enikezwe lapho etholakala khona, sicela uhlole i-brainkey yakho ukuthola amaphutha wokuthayipha</string>
+    <string name="error__try_again">Sicela uzame futhi ngemuva kwemizuzu engu-5</string>
+    <string name="dialog__account_candidates_title">Sicela ukhethe i-akhawunti</string>
+    <string name="dialog__account_candidates_content">Izinkinobho ezisuselwe kule-brainkey zibonakala zisetshenziselwa ukulawula ama-akhawunti angaphezu kweyodwa, sicela ukhethe ukuthi iyiphi i-akhawunti ofisa ukuyingenisa</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Igama le-akhawunti ye-BitShares</string>
+    <string name="error__read_dict_file">Iphutha lokufunda ifayela lesichazamazwi</string>
+    <string name="error__invalid_account_length">Igama le-akhawunti kufanele libe nezinhlamvu ezi-3 kuye kwezingu-16.</string>
+    <string name="error__invalid_account_start">Igama le-akhawunti kufanele liqale ngohlamvu.</string>
+    <string name="error__invalid_account_name">Sicela ufake igama elijwayelekile eliqukethe okungenani ideshi, inombolo, noma unkamisa.</string>
+    <string name="text__verifying_account_availability">Iqinisekisa ukutholakala kwe-akhawunti…</string>
+    <string name="error__account_not_available">Igama lelo akhawunti selivele lithathiwe.</string>
+    <string name="text__account_is_available">I-akhawunti iyatholakala</string>
+    <string name="title_error">Iphutha</string>
+    <string name="error__faucet">Iseva ibuyise iphutha. Lokhu kungahle kube ngenxa yomkhawulo obekiwe ngenhloso ongavumeli izicelo ezivame kusuka ekhelini elifanayo le-IP esikhathini esisheshayo. Sicela ulinde imizuzu emi-5 bese uzama futhi, noma ushintshele kwinethiwekhi ehlukile, ngokwesibonelo kusuka ku-wifi kuya kwiseli.</string>
+    <string name="error__faucet_template">Isikhiphi sibuyise iphutha. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Uhlelo lokusebenza alukwazanga ukubuyisa imininingwane nge-akhawunti entsha eyenziwe</string>
+    <string name="button__create">Dala</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Okwenziwayo</string>
+    <string name="title_merchants_and_tellers">Abathengisi nabathengisi</string>
+    <string name="title_receive">Thola</string>
+    <string name="title_balances">Izilinganiso</string>
+    <string name="title_send">Thumela</string>
+    <string name="title_net_worth">Imali engenayo</string>
+    <string name="text__coming_soon">Kuyeza maduze</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Sesha</string>
+    <string name="title_filter">Hlunga</string>
+    <string name="title_export">Thumela</string>
+    <string name="text__no_transactions">Akukho Okwenziwayo</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Izinketho zokuhlunga</string>
+    <string name="text__all">Konke</string>
+    <string name="text__sent">Kuthunyelwe</string>
+    <string name="text__received">Kwamukelwe</string>
+    <string name="text__date_range">Ibanga Losuku</string>
+    <string name="text__equivalent_value">Inani Elilinganayo</string>
+    <string name="text__ignore_network_fees">Ziba imali ye-Network</string>
+    <string name="text__between">Phakathi</string>
+    <string name="text__and">futhi</string>
+    <string name="button__filter">Hlunga</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Thekelisa okuthengiwe</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Imvume yesitoreji iyadingeka ukukhipha amafayela we-PDF / CSV.</string>
+    <string name="title_from">Kusuka</string>
+    <string name="title_to">To</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Usuku</string>
+    <string name="title_time">Isikhathi</string>
+    <string name="title_amount">Inani</string>
+    <string name="title_equivalent_value">Inani Elilinganayo</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">I-eReceipt</string>
+    <string name="text__value">Inani</string>
+    <string name="template__memo">Imemo: %1$s</string>
+    <string name="template__date">Usuku: %1$s</string>
+    <string name="template__tx">I-Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Abathengisi</string>
+    <string name="title_tellers">Abathengisi</string>
+    <string name="title_about">Cishe</string>
+    <string name="msg__merchants_description">Abathengisi bePalmPay bangumgogodla we-Crypto Economy entsha. Uma ufuna amabhizinisi azokwamukela i-Cryptocurrency yakho, vele usebenzise idatha yokuSesha neMephu engezansi. Abathengisi abaningi bazongezwa lapha njengoba amaNxusa wePalmPay esazisa.</string>
+    <string name="msg__tellers_description">Abathengisi ngabantu abazoshintshanisa imali yakho ye-fiat nge-cryptocurrencies, okuphambene nalokho. Basiza nabathengisi ngokuxazululwa kwezikhali.</string>
+    <string name="msg__location_permission_necessary">Imvume yendawo iyadingeka ukukhombisa indawo yakho yamanje emephini.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Imininingwane</string>
+    <string name="text__to">To</string>
+    <string name="text__amount">Inani</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Skena QR</string>
+    <string name="error__invalid_account">I-akhawunti engavumelekile</string>
+    <string name="error__not_enough_funds">Akunamali eyanele</string>
+    <string name="msg__camera_permission_necessary">Imvume yekhamera iyadingeka ukufunda amakhodi we-QR.</string>
+    <string name="text__transaction_sent">Ukuthenga kuthunyelwe!</string>
+    <string name="msg__transaction_not_sent">Ayikwazi ukuthumela okwenziwayo</string>
+    <string name="error__you_dont_own_asset">Awunayo noma iyiphi i-%1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Thayipha igama le-akhawunti yaseBitshares lomuntu ofuna ukuthumela imali kuye. \nIsibonelo: i-agorise-faucet</string>
+    <string name="text__asset_balance">Ibhalansi Yempahla</string>
+    <string name="msg__asset_balance_explanation">Ungathinta ibhalansi ebonisiwe ukuthumela yonke leyo mpahla. Ukwenza lokhu kuzokugcwalisela i-Amount field.</string>
+    <string name="msg__memo_explanation">Ukufaka iMemo akudingekile, kepha ukuthatha amanothi wokuthi kungani uthumele imali kuhle ukuthola ireferensi yesikhathi esizayo. AmaMemos abonakala kuwe kuphela nomuntu othumele kuye imali.</string>
+    <string name="text__network_fee">Imali Yenethiwekhi</string>
+    <string name="msg__network_fee_explanation">Imali yeNethiwekhi ifakiwe enanini ofuna ukulithumela. Isibonelo, uma ufuna ukuthumela ama-BTS angama-50, ama-BiTSy empeleni azothumela ~ 50.21 BTS. Okungeziwe okungu-0.21 kulesi sibonelo yimali yokushintshwa kweBitshares kanye ne-0,01% kwiQembu Lonjiniyela leBiTSy (ngokuvamile ~ isenti eli-1).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Awudingi ukuskena i-QR yomuntu ukuthumela imali, kodwa kukusiza ukugwema amaphutha. Uma uthumela imali evela kwi-akhawunti yakho, ihambile unomphela, ngakho-ke qiniseka ngaso sonke isikhathi ukuthi igama le-akhawunti enkonzeni ethi "To" ilungile.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Ifa</string>
+    <string name="text__other">Okunye…</string>
+    <string name="template__please_send">Sicela uthumele: %1$s %2$s</string>
+    <string name="text__any_amount">Noma iyiphi Inani</string>
+    <string name="template__to">Ku: %1$s</string>
+    <string name="msg__invoice_subject">Irisidi ye-BiTSy evela ku-%1$s</string>
+    <string name="title_share">Yabelana</string>
+    <string name="text__share_with">Yabelana no</string>
+    <string name="msg__storage_permission_necessary_share">Imvume yokubeka iyadingeka ukwaba izithombe.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Izilungiselelo</string>
+    <string name="title__general">Okujwayelekile</string>
+    <string name="msg__close_timer">Vala i-BiTSy ngokuzenzakalelayo ngemuva kwemizuzu engu-3 yokungasebenzi</string>
+    <string name="msg__night_mode">Imodi yasebusuku</string>
+    <string name="text__view_network_status">Bheka Isimo Senethiwekhi</string>
+    <string name="title__backup">Isipele</string>
+    <string name="msg__brainkey_description">BrainKey. Amagama wokuthola i-akhawunti angabanjwa noma akopishwe, kepha angahlelwa.</string>
+    <string name="msg__brainkey_info">Bhala phansi! Qiniseka ukuthi unamakhophi ama-2 ale BrainKey ezindaweni ezi-2 eziphephile uma umlilo noma ulahlekile. Ezokuphepha Okokuqala! Noma ngubani ukufinyelela i-BrainKey yakho angafinyelela imali ku-akhawunti yakho!</string>
+    <string name="button__copied">Kukopishwe</string>
+    <string name="button__view_and_copy">Buka futhi Kopisha</string>
+    <string name="title__accounts">Ama-akhawunti</string>
+    <string name="msg__upgrade_to_ltm">Thuthukisela ku-LifeTime Ubulungu (i-LTM). Ama-akhawunti e-Bitshares \ \'LTM akhokha imali ebiza kakhulu, thola imali engamaphesenti angama-80 kanye namabhonasi okudluliselwa.</string>
+    <string name="button__upgrade_to_ltm">Thuthukela ku-LTM</string>
+    <string name="msg__account_upgrade_dialog">Ubulungu besikhathi seLife likuvumela ukuthi uhwebe ngensimbi encishisiwe yezimali zenethiwekhi. \n \nKuzosebenza ku-akhawunti yamanje "%1$s" \n \nKodwa nokho iza nezindleko zama-dollar ayi-100 akhokhelwe eBitshares. \n \nUqinisekile ukuthi ufuna ukuqhubeka?</string>
+    <string name="title__account_upgraded">I-Akhawunti ithuthukisiwe</string>
+    <string name="msg__account_upgraded">Halala! I-akhawunti yakho manje isithuthukiselwe Ubulungu Bokuphila.</string>
+    <string name="title__upgrade_account_error">Iphutha ngenkathi izama ukuthuthukisa i-akhawunti</string>
+    <string name="msg__upgrade_account_error">Sicela uqinisekise ukuthi i-akhawunti yakho inemali esele ngokwanele ukukhokhela izindleko.</string>
+    <string name="msg__remove_current_account">Susa i-Akhawunti yamanje kusuka kule divayisi bese udala noma ungenise enye ehlukile.</string>
+    <string name="button__remove">Susa</string>
+    <string name="title__remove_account">Susa i-Akhawunti</string>
+    <string name="msg__remove_account_confirmation">Uqinisekile ukuthi ufuna ukususa i-akhawunti yamanje kusuka kule divayisi?</string>
+    <string name="title__bugs_or_ideas">Amaphutha noma Imibono?</string>
+    <string name="msg__bugs_or_ideas">I-Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Ibhulokhi: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Ezokuphepha</string>
+    <string name="text__security_lock">Ukuphepha Kukhiye</string>
+    <string name="title__security_dialog">Khetha Ilokhi Yokuphepha</string>
+    <string name="text__pin">IPIN</string>
+    <string name="text__pattern">Iphethini</string>
+    <string name="text__none">Akukho</string>
+    <string name="button__choose">Khetha</string>
+    <string name="title__re_enter_your_pin">Faka i-PIN yakho futhi</string>
+    <string name="msg__enter_your_pin">Faka iPIN yakho ye-BiTSy ukuze uqhubeke</string>
+    <string name="error__wrong_pin">Iphinikhodi engalungile</string>
+    <string name="title__set_bitsy_security_lock">Setha ukuphepha kwe-BiTSy</string>
+    <string name="msg__set_a_pin">Ngokuphepha, setha i-PIN</string>
+    <string name="msg__min_pin_length">IPIN kumele okungenani ibe nezinombolo eziyi-6</string>
+    <string name="title__pins_dont_match">Ama-PIN awafani</string>
+    <string name="title__re_enter_your_pattern">Faka futhi iphethini yakho</string>
+    <string name="msg__enter_your_pattern">Faka iphethini yakho ye-BiTSy ukuze uqhubeke</string>
+    <string name="msg__set_a_pattern">Ngokuphepha, setha iphethini</string>
+    <string name="msg__release_finger">Khipha umunwe lapho usuqedile</string>
+    <string name="button__clear">Sula</string>
+    <string name="button__next">Olandelayo</string>
+    <string name="text__draw_an_unlock_pattern">Dweba iphethini yokuvula</string>
+    <string name="msg__draw_pattern_confirm">Dweba iphethini futhi ukuze uqinisekise</string>
+    <string name="button__confirm">Qinisekisa</string>
+    <string name="msg__your_new_unlock_pattern">Iphethini yakho entsha yokuvula</string>
+    <string name="error__wront_pattern">Iphethini engalungile</string>
+    <string name="text__pattern_recorded">Iphethini liqoshwe</string>
+    <string name="error__connect_at_least_4_dots">Xhuma okungenani amachashazi ama-4. Zama futhi.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Imizamo eminingi engalungile. Zama futhi emaminithini angu-%1$d.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Imizamo eminingi engalungile. Zama futhi ngemizuzwana eyi-%1$d.</string>
+
+</resources>

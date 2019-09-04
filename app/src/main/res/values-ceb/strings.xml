@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Pagkauyon</string>
+    <string name="button__disagree">Dili mouyon</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ numero nga PIN</string>
+    <string name="error__pin_too_short">Mubo ra kaayo ang PIN</string>
+    <string name="text_field__confirm_pin">Kumpirmar ang PIN</string>
+    <string name="error__pin_mismatch">Paghinay sa PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Palihug ipasok ang tama nga brainkey, kinahanglan kini adunay 12 o 16 nga mga pulong.</string>
+    <string name="button__import_existing_account">Pag-import karon sa account</string>
+    <string name="text__or">O</string>
+    <string name="button__create_new_account">Paghimo bag-ong account</string>
+    <string name="error__invalid_brainkey">Walay mga account nga kontrolado sa gihatag nga brainkey kung diin nakit-an, palihug susihon ang imong brainkey alang sa pag-type sa mga sayup</string>
+    <string name="error__try_again">Palihug pagsulay pag-usab pagkahuman sa 5 minutos</string>
+    <string name="dialog__account_candidates_title">Palihug pilia ang usa ka account</string>
+    <string name="dialog__account_candidates_content">Ang mga yawe nga nakuha gikan sa kini nga brainkey daw gigamit aron makontrol ang labaw pa sa usa ka account, palihug pilia kung unsang account ang gusto nimo i-import</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Ngalan sa account sa BitShares</string>
+    <string name="error__read_dict_file">Sayup sa pagbasa file sa diksyonaryo</string>
+    <string name="error__invalid_account_length">Ang ngalan sa account kinahanglan 3 hangtod 16 ka karakter.</string>
+    <string name="error__invalid_account_start">Ang ngalan sa account kinahanglan magsugod sa usa ka sulat.</string>
+    <string name="error__invalid_account_name">Palihug isulat ang usa ka naandan nga ngalan nga adunay labing menos usa ka dash, numero, o wala nga bokales.</string>
+    <string name="text__verifying_account_availability">Ang pagtino sa kasayuran sa account…</string>
+    <string name="error__account_not_available">Kana nga account sa account gikuha na.</string>
+    <string name="text__account_is_available">Magamit ang account</string>
+    <string name="title_error">Sayop</string>
+    <string name="error__faucet">Ang server nagbalik usa ka sayup. Mahimong kini tungod sa usa ka limitasyon nga katuyoan nga gipahimutang sa lugar aron dili tugotan ang kanunay nga mga hangyo nga moabut gikan sa parehas nga IP address sa usa ka mubu nga panahon. Palihug paghulat 5 minuto ug sulayi pag-usab, o pagbalhin sa lain nga network, pananglitan gikan sa wifi ngadto sa cell.</string>
+    <string name="error__faucet_template">Ang gripo mibalik usa ka sayup. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Ang app dili makuha ang kasayuran bahin sa bag-ong gibuhat nga account</string>
+    <string name="button__create">Paghimo</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Mga Transaksyon</string>
+    <string name="title_merchants_and_tellers">Mga Mamaligyaay ug Tigbaligya</string>
+    <string name="title_receive">Dawata</string>
+    <string name="title_balances">Mga Balanse</string>
+    <string name="title_send">Gipadala</string>
+    <string name="title_net_worth">Sulit ang Net</string>
+    <string name="text__coming_soon">Malapit na</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Pagpangita</string>
+    <string name="title_filter">Pagsala</string>
+    <string name="title_export">Pag-eksport</string>
+    <string name="text__no_transactions">Walay mga Transaksyon</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Mga kapilian sa pagsala</string>
+    <string name="text__all">Tanan</string>
+    <string name="text__sent">Gipadala</string>
+    <string name="text__received">Gidawat</string>
+    <string name="text__date_range">Range Range</string>
+    <string name="text__equivalent_value">Parehas nga Hiyas</string>
+    <string name="text__ignore_network_fees">Likayi ang bayad sa Network</string>
+    <string name="text__between">Taliwala</string>
+    <string name="text__and">ug</string>
+    <string name="button__filter">Pagsala</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">I-export ang na-filter nga mga transaksyon</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Kinahanglan ang pagtugot sa pagtipig aron ma-export ang mga file nga PDF / CSV.</string>
+    <string name="title_from">Gikan sa</string>
+    <string name="title_to">To</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Petsa</string>
+    <string name="title_time">Panahon</string>
+    <string name="title_amount">Gidak-on</string>
+    <string name="title_equivalent_value">Parehas nga Hiyas</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Bili</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Petsa: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Mga negosyante</string>
+    <string name="title_tellers">Magsulti</string>
+    <string name="title_about">Mahitungod sa</string>
+    <string name="msg__merchants_description">Ang mga magpapatigayon sa PalmPay ang bukobuko sa bag-ong Crypto Economy. Kung nangita ka mga negosyo nga makadawat sa imong Cryptocurrency, pagkahuman gamiton ang datos sa Search and Map sa ubos. Daghang mga magpapatigayon ang idugang dinhi sama sa gipahibalo sa amon sa mga PalmPay Ambassadors.</string>
+    <string name="msg__tellers_description">Ang mga tigsulti mao ang mga tawo nga magbinayloay sa imong mga kabus nga salapi sa mga cryptocurrencies, ug ingon usab. Gitabangan usab nila ang mga Merchants sa pag-areglo sa fiat.</string>
+    <string name="msg__location_permission_necessary">Kinahanglan ang pagtugot sa lokasyon aron ipakita ang imong karon nga lokasyon sa mapa.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Impormasyon</string>
+    <string name="text__to">To</string>
+    <string name="text__amount">Gidak-on</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Pag-scan sa QR</string>
+    <string name="error__invalid_account">Dili husto nga asoy</string>
+    <string name="error__not_enough_funds">Dili igo nga pondo</string>
+    <string name="msg__camera_permission_necessary">Kinahanglan ang pagtugot sa camera aron mabasa ang mga QR code.</string>
+    <string name="text__transaction_sent">Gipadala ang transaksyon!</string>
+    <string name="msg__transaction_not_sent">Dili makapadala transaksyon</string>
+    <string name="error__you_dont_own_asset">Dili nimo tag-iya ang bisan unsang %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Pag-type sa ngalan sa account sa Bitshares sa tawo nga gusto nimo ipadala ang pondo. \n Alang sa panig-ingnan: agorise-faucet</string>
+    <string name="text__asset_balance">Balanse sa Asset</string>
+    <string name="msg__asset_balance_explanation">Mahimo ka mag-tap sa balanse nga gipakita aron ipadala tanan kana nga kabtangan. Ang pagbuhat sa ingon punan ang uma nga bahin alang kanimo.</string>
+    <string name="msg__memo_explanation">Ang pagsulod sa usa ka Memo dili kinahanglan, apan ang pagkuha sa mga nota kung nganong gipadala nimo ang mga pondo nga nindot alang sa reperensya sa umaabot. Ang mga memo makita ra kanimo ug sa tawo nga imong gipadala sa pondo.</string>
+    <string name="text__network_fee">Bayad sa Network</string>
+    <string name="msg__network_fee_explanation">Ang bayad sa Network gilakip sa kantidad nga gusto nimo ipadala. Pananglitan, kung gusto nimo magpadala sa 50 BTS, ang BiTSy sa tinuud nga magpadala ~ 50.21 BTS. Ang dugang nga 0.21 sa kini nga panig-ingnan mao ang bayad sa transaksyon sa Bitshares dugang nga 0.01% sa BiTSy Developer Team (kasagaran ~ 1 sentimento).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Dili kinahanglan nimo i-scan ang QR sa usa ka tawo aron makapadala mga pondo, apan kini makatabang kanimo aron malikayan ang mga sayup. Kung nagpadala ka mga pondo gikan sa imong account, nawala na sila hangtod sa hangtod, busa siguruha nga siguruha nga ang ngalan sa account sa uma nga "To" tama.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Uban pa…</string>
+    <string name="template__please_send">Palihug Ipadala: %1$s %2$s</string>
+    <string name="text__any_amount">Bisan unsang Hunahuna</string>
+    <string name="template__to">Sa: %1$s</string>
+    <string name="msg__invoice_subject">Invoice sa BiTSy gikan sa %1$s</string>
+    <string name="title_share">Pagpakigbahin</string>
+    <string name="text__share_with">Pagpakigbahin sa</string>
+    <string name="msg__storage_permission_necessary_share">Kinahanglan ang pagtugot sa pagtipig aron ipaambit ang mga imahe.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Mga setting</string>
+    <string name="title__general">Kinatibuk-an</string>
+    <string name="msg__close_timer">Awtomatikong isara ang BiTSy pagkahuman sa 3 minutos nga dili aktibo</string>
+    <string name="msg__night_mode">Mode sa gabii</string>
+    <string name="text__view_network_status">Tan-awa ang Katungod sa Network</string>
+    <string name="title__backup">Pag-backup</string>
+    <string name="msg__brainkey_description">BrainKey. Mga pulong sa pagbawi sa account nga mahimong makuha o makopya, apan wala gi-edit.</string>
+    <string name="msg__brainkey_info">Isulat kini! Siguruha nga adunay ka 2 kopya sa kini nga BrainKey sa 2 luwas nga lokasyon kung adunay sunog o pagkawala. Una sa Seguridad! Bisan kinsa nga adunay access sa imong BrainKey mahimong maka-access sa mga pondo sa imong account!</string>
+    <string name="button__copied">Gikopya</string>
+    <string name="button__view_and_copy">Pagtan-aw &amp; Kopyaha</string>
+    <string name="title__accounts">Mga account</string>
+    <string name="msg__upgrade_to_ltm">Pag-upgrade sa LifeTime Membership (LTM). Ang Bitshares \ \'LTM account nagbayad hapit-zero fees, pagkuha 80% cashback ug mga bonus alang sa mga referral.</string>
+    <string name="button__upgrade_to_ltm">Pag-upgrade sa LTM</string>
+    <string name="msg__account_upgrade_dialog">Gitugotan ka sa Pagpaapil sa Kinabuhi sa Kinabuhi nga makignegosyo sa usa ka pagkunhod nga hugpong sa mga bayad sa network. Ang \n \nMakatuman kini sa kasamtangan nga asoy nga "%1$s" \n \nDili usab kini moabut sa kantidad nga hapit 100 USD nga gibayran sa Bitshares. \n \nGusto ba nimo nga magpadayon?</string>
+    <string name="title__account_upgraded">Gi-upgrade ang Account</string>
+    <string name="msg__account_upgraded">Pagpangalipay! Gi-upgrade na karon ang imong account sa Lifetime Membership.</string>
+    <string name="title__upgrade_account_error">Sayup samtang naningkamot sa pag-upgrade sa account</string>
+    <string name="msg__upgrade_account_error">Palihug siguruha nga ang imong account adunay igo nga balanse aron mahatagan ang mga gasto.</string>
+    <string name="msg__remove_current_account">Kuhaa ang kasamtangan nga Account gikan sa kini nga aparato ug paghimo o pag-import sa usa nga lahi.</string>
+    <string name="button__remove">Kuhaa</string>
+    <string name="title__remove_account">Kuhaa ang Account</string>
+    <string name="msg__remove_account_confirmation">Sigurado ka nga gusto nimo makuha ang kasamtangan nga account sa kini nga aparato?</string>
+    <string name="title__bugs_or_ideas">Mga Bawal o Mga ideya?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Pag-block: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Seguridad</string>
+    <string name="text__security_lock">Ang Lock Lock</string>
+    <string name="title__security_dialog">Pagpili usa ka Security Lock</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Sumbanan</string>
+    <string name="text__none">Wala</string>
+    <string name="button__choose">Pagpili</string>
+    <string name="title__re_enter_your_pin">Isulud usab ang imong PIN</string>
+    <string name="msg__enter_your_pin">Pagsulud sa imong BiTSy PIN aron magpadayon</string>
+    <string name="error__wrong_pin">Sayup nga PIN</string>
+    <string name="title__set_bitsy_security_lock">Pagpahimutang sa Kaamanan sa BiTSy</string>
+    <string name="msg__set_a_pin">Alang sa kasiguruhan, pagtakda usa ka PIN</string>
+    <string name="msg__min_pin_length">Ang PIN kinahanglan labing menos 6 nga numero</string>
+    <string name="title__pins_dont_match">Tugma nga mga PIN dili</string>
+    <string name="title__re_enter_your_pattern">Isulud usab ang imong sumbanan</string>
+    <string name="msg__enter_your_pattern">Pagsulud sa imong sumbanan sa BiTSy aron magpadayon</string>
+    <string name="msg__set_a_pattern">Alang sa kasiguruhan, pagtakda usa ka Sumbanan</string>
+    <string name="msg__release_finger">Ipagawas ang tudlo kung nahuman na</string>
+    <string name="button__clear">Tin-aw</string>
+    <string name="button__next">Sunod</string>
+    <string name="text__draw_an_unlock_pattern">Pagdrowing og usa ka pattern sa pag-unlock</string>
+    <string name="msg__draw_pattern_confirm">Pag-usab nga sumbanan pag-usab aron makumpirma</string>
+    <string name="button__confirm">Sa pagmatuod sa</string>
+    <string name="msg__your_new_unlock_pattern">Ang imong bag-ong pattern sa pagbukas</string>
+    <string name="error__wront_pattern">Sayup nga sundanan</string>
+    <string name="text__pattern_recorded">Sumbanan nga natala</string>
+    <string name="error__connect_at_least_4_dots">Pagkonekta labing menos 4 nga tulbok. Sulayi pag-usab.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Daghang dili husto nga mga pagsulay. Sulayi pag-usab sa %1$d minuto.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Daghang dili husto nga mga pagsulay. Sulayi pag-usab sa %1$d segundo.</string>
+
+</resources>

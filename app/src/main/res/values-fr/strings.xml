@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Se mettre d\'accord</string>
+    <string name="button__disagree">Être en désaccord</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">Code PIN 6 chiffres et plus</string>
+    <string name="error__pin_too_short">PIN trop court</string>
+    <string name="text_field__confirm_pin">Confirmer le code PIN</string>
+    <string name="error__pin_mismatch">Non concordance des codes PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">S\'il vous plaît entrer la bonne énigme, il devrait avoir 12 ou 16 mots.</string>
+    <string name="button__import_existing_account">Importer un compte existant</string>
+    <string name="text__or">Ou</string>
+    <string name="button__create_new_account">Créer un nouveau compte</string>
+    <string name="error__invalid_brainkey">Aucun compte contrôlé par la clé cérébrale donnée n’a été trouvé, veuillez vérifier votre clé cérébrale pour les erreurs de frappe.</string>
+    <string name="error__try_again">Veuillez réessayer après 5 minutes.</string>
+    <string name="dialog__account_candidates_title">Veuillez sélectionner un compte</string>
+    <string name="dialog__account_candidates_content">Les clés dérivées de cette clé mentale semblent être utilisées pour contrôler plusieurs comptes. Veuillez sélectionner le compte que vous souhaitez importer.</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Nom du compte BitShares</string>
+    <string name="error__read_dict_file">Erreur de lecture du fichier de dictionnaire</string>
+    <string name="error__invalid_account_length">Le nom du compte doit comporter entre 3 et 16 caractères.</string>
+    <string name="error__invalid_account_start">Le nom du compte doit commencer par une lettre.</string>
+    <string name="error__invalid_account_name">Veuillez entrer un nom régulier contenant au moins un tiret, un nombre ou pas de voyelles.</string>
+    <string name="text__verifying_account_availability">Vérification de la disponibilité du compte…</string>
+    <string name="error__account_not_available">Ce nom de compte est déjà pris.</string>
+    <string name="text__account_is_available">Le compte est disponible</string>
+    <string name="title_error">Erreur</string>
+    <string name="error__faucet">Le serveur a renvoyé une erreur. Cela peut être dû à une limitation mise en place à dessein pour interdire les demandes fréquentes provenant de la même adresse IP en peu de temps. Attendez 5 minutes et réessayez ou basculez sur un autre réseau, par exemple du wifi à la cellule.</string>
+    <string name="error__faucet_template">Le robinet a renvoyé une erreur. Msg: %1$s</string>
+    <string name="error__created_account_not_found">L\'application n\'a pas pu récupérer d\'informations sur le compte nouvellement créé</string>
+    <string name="button__create">Créer</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transactions</string>
+    <string name="title_merchants_and_tellers">Marchands et marchands</string>
+    <string name="title_receive">Recevoir</string>
+    <string name="title_balances">Soldes</string>
+    <string name="title_send">Envoyer</string>
+    <string name="title_net_worth">Valeur nette</string>
+    <string name="text__coming_soon">Arrive bientôt</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Chercher</string>
+    <string name="title_filter">Filtre</string>
+    <string name="title_export">Exportation</string>
+    <string name="text__no_transactions">Aucune transaction</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Options de filtrage</string>
+    <string name="text__all">Tout</string>
+    <string name="text__sent">Envoyé</string>
+    <string name="text__received">Reçu</string>
+    <string name="text__date_range">Plage de dates</string>
+    <string name="text__equivalent_value">Valeur équivalente</string>
+    <string name="text__ignore_network_fees">Ignorer les frais de réseau</string>
+    <string name="text__between">Entre</string>
+    <string name="text__and">et</string>
+    <string name="button__filter">Filtre</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Exporter les transactions filtrées</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Une autorisation de stockage est nécessaire pour exporter des fichiers PDF / CSV.</string>
+    <string name="title_from">De</string>
+    <string name="title_to">À</string>
+    <string name="title_memo">Note</string>
+    <string name="title_date">Rendez-vous amoureux</string>
+    <string name="title_time">Temps</string>
+    <string name="title_amount">Montant</string>
+    <string name="title_equivalent_value">Valeur équivalente</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Valeur</string>
+    <string name="template__memo">Mémo: %1$s</string>
+    <string name="template__date">Date: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Marchands</string>
+    <string name="title_tellers">Caissiers</string>
+    <string name="title_about">À propos</string>
+    <string name="msg__merchants_description">Les marchands PalmPay sont la colonne vertébrale de la nouvelle économie cryptographique. Si vous recherchez des entreprises qui accepteront votre cryptomonnaie, utilisez simplement les données de recherche et de cartographie ci-dessous. Plus de marchands seront ajoutés ici, selon les ambassadeurs PalmPay.</string>
+    <string name="msg__tellers_description">Les caissiers sont des personnes qui échangeront vos devises fiduciaires contre des crypto-monnaies, et inversement. Ils aident également les marchands avec le règlement de fiat.</string>
+    <string name="msg__location_permission_necessary">L\'autorisation de localisation est nécessaire pour afficher votre position actuelle sur la carte.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">À</string>
+    <string name="text__amount">Montant</string>
+    <string name="text__memo">Note</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Compte invalide</string>
+    <string name="error__not_enough_funds">Pas assez de fonds</string>
+    <string name="msg__camera_permission_necessary">La permission de la caméra est nécessaire pour lire les codes QR.</string>
+    <string name="text__transaction_sent">Transaction envoyée!</string>
+    <string name="msg__transaction_not_sent">Impossible d\'envoyer la transaction</string>
+    <string name="error__you_dont_own_asset">Vous ne possédez pas de %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Tapez le nom du compte BitShares de la personne à qui vous voulez envoyer des fonds. \nPar exemple: robinet agorise</string>
+    <string name="text__asset_balance">Solde de l\'actif</string>
+    <string name="msg__asset_balance_explanation">Vous pouvez appuyer sur le solde affiché pour envoyer tout cet actif. Cela remplira le champ Montant pour vous.</string>
+    <string name="msg__memo_explanation">Il n’est pas nécessaire de saisir un mémo, mais il est utile de noter les raisons pour lesquelles vous avez envoyé les fonds. Les mémos ne sont visibles que pour vous et la personne à qui vous avez envoyé des fonds.</string>
+    <string name="text__network_fee">Frais de réseau</string>
+    <string name="msg__network_fee_explanation">Les frais de réseau sont inclus dans le montant que vous souhaitez envoyer. Par exemple, si vous souhaitez envoyer 50 BTS, BiTSy enverra en réalité environ 50,21 BTS. Le 0,21 ajouté dans cet exemple correspond aux frais de transaction Bitshares plus 0,01% de l’équipe de développeurs BiTSy (généralement environ 1 cent).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Vous n\'avez pas besoin de scanner le QR de quelqu\'un pour envoyer des fonds, mais cela vous aide à éviter les erreurs. Une fois que vous envoyez des fonds à partir de votre compte, ils sont définitivement perdus. Assurez-vous donc toujours que le nom du compte dans le champ «À» est correct.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Atout</string>
+    <string name="text__other">Autre…</string>
+    <string name="template__please_send">S\'il vous plaît envoyer: %1$s %2$s</string>
+    <string name="text__any_amount">N\'importe quel montant</string>
+    <string name="template__to">À: %1$s</string>
+    <string name="msg__invoice_subject">Facture biTSy de %1$s</string>
+    <string name="title_share">Partager</string>
+    <string name="text__share_with">Partager avec</string>
+    <string name="msg__storage_permission_necessary_share">Une autorisation de stockage est nécessaire pour partager des images.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Réglages</string>
+    <string name="title__general">Général</string>
+    <string name="msg__close_timer">Fermer automatiquement BiTSy après 3 minutes d\'inactivité</string>
+    <string name="msg__night_mode">Mode nuit</string>
+    <string name="text__view_network_status">Afficher l\'état du réseau</string>
+    <string name="title__backup">Sauvegarde</string>
+    <string name="msg__brainkey_description">BrainKey. Mots de récupération de compte pouvant être capturés ou copiés, mais non modifiés.</string>
+    <string name="msg__brainkey_info">Notez ceci! Assurez-vous de disposer de 2 copies de ce BrainKey dans 2 emplacements sécurisés en cas d\'incendie ou de perte. La sécurité d\'abord! Toute personne ayant accès à votre BrainKey peut accéder aux fonds de votre compte!</string>
+    <string name="button__copied">Copié</string>
+    <string name="button__view_and_copy">Voir et copier</string>
+    <string name="title__accounts">Comptes</string>
+    <string name="msg__upgrade_to_ltm">Passez à l\'abonnement LifeTime (LTM). Les comptes LTM BitShares paient des frais pratiquement nuls, reçoivent 80% de cashback et des bonus pour les parrainages.</string>
+    <string name="button__upgrade_to_ltm">Mise à niveau vers LTM</string>
+    <string name="msg__account_upgrade_dialog">L\'abonnement à vie vous permet de négocier avec un ensemble réduit de frais de réseau. \n \nIl entrera en vigueur pour le compte courant "%1$s" \n \nIl coûtera toutefois environ 100 USD en BitShares. \n \nEtes-vous sûr de vouloir continuer?</string>
+    <string name="title__account_upgraded">Compte mis à niveau</string>
+    <string name="msg__account_upgraded">Toutes nos félicitations! Votre compte a maintenant été mis à niveau vers l\'abonnement à vie.</string>
+    <string name="title__upgrade_account_error">Erreur lors de la tentative de mise à niveau du compte</string>
+    <string name="msg__upgrade_account_error">Assurez-vous que le solde de votre compte est suffisant pour couvrir les coûts.</string>
+    <string name="msg__remove_current_account">Supprimez le compte actuel de ce périphérique et créez ou importez un autre.</string>
+    <string name="button__remove">Retirer</string>
+    <string name="title__remove_account">Supprimer le compte</string>
+    <string name="msg__remove_account_confirmation">Êtes-vous sûr de vouloir supprimer le compte actuel de cet appareil?</string>
+    <string name="title__bugs_or_ideas">Bugs ou idées?</string>
+    <string name="msg__bugs_or_ideas">Télégramme: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sécurité</string>
+    <string name="text__security_lock">Verrou de sécurité</string>
+    <string name="title__security_dialog">Choisissez un verrou de sécurité</string>
+    <string name="text__pin">ÉPINGLE</string>
+    <string name="text__pattern">Modèle</string>
+    <string name="text__none">Aucun</string>
+    <string name="button__choose">Choisir</string>
+    <string name="title__re_enter_your_pin">Ressaisissez votre code PIN</string>
+    <string name="msg__enter_your_pin">Entrez votre NIP BiTSy pour continuer</string>
+    <string name="error__wrong_pin">Mauvais NIP</string>
+    <string name="title__set_bitsy_security_lock">Définir BiTSy Security</string>
+    <string name="msg__set_a_pin">Pour la sécurité, définissez un code PIN</string>
+    <string name="msg__min_pin_length">Le code PIN doit comporter au moins 6 chiffres.</string>
+    <string name="title__pins_dont_match">Les codes PIN ne correspondent pas</string>
+    <string name="title__re_enter_your_pattern">Re-entrez votre modèle</string>
+    <string name="msg__enter_your_pattern">Entrez votre modèle BiTSy pour continuer</string>
+    <string name="msg__set_a_pattern">Pour la sécurité, définir un modèle</string>
+    <string name="msg__release_finger">Relâchez le doigt lorsque vous avez terminé</string>
+    <string name="button__clear">Clair</string>
+    <string name="button__next">Prochain</string>
+    <string name="text__draw_an_unlock_pattern">Dessiner un motif de déverrouillage</string>
+    <string name="msg__draw_pattern_confirm">Dessinez à nouveau le motif pour confirmer</string>
+    <string name="button__confirm">Confirmer</string>
+    <string name="msg__your_new_unlock_pattern">Votre nouveau modèle de déverrouillage</string>
+    <string name="error__wront_pattern">Mauvais modèle</string>
+    <string name="text__pattern_recorded">Pattern enregistré</string>
+    <string name="error__connect_at_least_4_dots">Relie au moins 4 points. Réessayer.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Trop de tentatives incorrectes. Réessayez dans %1$d minutes.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Trop de tentatives incorrectes. Réessayez dans %1$d secondes.</string>
+
+</resources>

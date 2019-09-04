@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Розӣ</string>
+    <string name="button__disagree">Норозӣ</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ рақами PIN</string>
+    <string name="error__pin_too_short">PIN хеле кӯтоҳ</string>
+    <string name="text_field__confirm_pin">PIN-ро тасдиқ кунед</string>
+    <string name="error__pin_mismatch">Мутобиқати PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Лутфан калиди дурустро дохил кунед, он бояд 12 ё 16 калимаро дар бар гирад.</string>
+    <string name="button__import_existing_account">Ҳисоби мавҷудбударо ворид кунед</string>
+    <string name="text__or">Ё</string>
+    <string name="button__create_new_account">Ҳисоби нав эҷод кунед</string>
+    <string name="error__invalid_brainkey">Ягон ҳисобе, ки бо тугмаи майнаи додашуда назорат карда намешавад, лутфан тугмаи майнаи шуморо барои хатогиҳо чоп кунед</string>
+    <string name="error__try_again">Лутфан пас аз 5 дақиқа такрор кунед</string>
+    <string name="dialog__account_candidates_title">Лутфан ҳисоберо интихоб кунед</string>
+    <string name="dialog__account_candidates_content">Калидҳое, ки аз ин майнаи даст омадаанд, барои назорат кардани беш аз як ҳисоб истифода мешаванд, лутфан ҳисоберо ворид кунед</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Номи ҳисоб BitShares</string>
+    <string name="error__read_dict_file">Хатогӣ ҳангоми хондани файли луғат</string>
+    <string name="error__invalid_account_length">Номи ҳисоб бояд аз 3 то 16 аломат дошта бошад.</string>
+    <string name="error__invalid_account_start">Номи ҳисоб бояд бо ҳарф оғоз шавад.</string>
+    <string name="error__invalid_account_name">Лутфан исми муқаррариро ворид кунед, ки ҳадди аққал як тире, рақам ё садонокро аз ҳарф иборат бошанд.</string>
+    <string name="text__verifying_account_availability">Санҷиши мавҷудияти ҳисоб…</string>
+    <string name="error__account_not_available">Ин номи ҳисоб аллакай гирифта шудааст.</string>
+    <string name="text__account_is_available">Ҳисоб мавҷуд аст</string>
+    <string name="title_error">Хатогӣ</string>
+    <string name="error__faucet">Сервер хатогиро баргардонд. Ин метавонад сабаби маҳдудият бо ҳадафи маҳдуд кардани дархостҳои зуд аз як суроғаи IP дар фосилаи кӯтоҳ муқарраршуда бошад. Лутфан 5 дақиқа интизор шавед ва бори дигар кӯшиш кунед ё ба шабакаи дигар гузаред, масалан аз WiFi ба ячейка.</string>
+    <string name="error__faucet_template">Лӯлаи хато баргашт. Нишон: %1$s</string>
+    <string name="error__created_account_not_found">Барнома маълумотро дар бораи ҳисоби навбунёдшуда барқарор карда наметавонад</string>
+    <string name="button__create">Эҷод</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Амалиётҳо</string>
+    <string name="title_merchants_and_tellers">Тоҷирон ва таблиғкунандагон</string>
+    <string name="title_receive">Қабул кунед</string>
+    <string name="title_balances">Тавозунҳо</string>
+    <string name="title_send">Ирсол</string>
+    <string name="title_net_worth">Арзиши холис</string>
+    <string name="text__coming_soon">Ба зудӣ</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Ҷустуҷӯ</string>
+    <string name="title_filter">Филтр</string>
+    <string name="title_export">Содирот</string>
+    <string name="text__no_transactions">Не муомилот</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Имконоти филтр</string>
+    <string name="text__all">Ҳама</string>
+    <string name="text__sent">Фиристода</string>
+    <string name="text__received">Гирифтанд</string>
+    <string name="text__date_range">Диапазони сана</string>
+    <string name="text__equivalent_value">Арзиши баробарарзиш</string>
+    <string name="text__ignore_network_fees">Пардохтҳои шабакаро нодида гиред</string>
+    <string name="text__between">Байни</string>
+    <string name="text__and">ва</string>
+    <string name="button__filter">Филтр</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Содироти муомилоти филтршуда</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Барои содироти файлҳои PDF / CSV иҷозатномаи нигоҳдорӣ лозим аст.</string>
+    <string name="title_from">Аз</string>
+    <string name="title_to">Ба</string>
+    <string name="title_memo">Нотик</string>
+    <string name="title_date">Таърих</string>
+    <string name="title_time">Вақт</string>
+    <string name="title_amount">Маблағ</string>
+    <string name="title_equivalent_value">Арзиши баробарарзиш</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Арзиш</string>
+    <string name="template__memo">Хотира: %1$s</string>
+    <string name="template__date">Сана: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Тоҷирон</string>
+    <string name="title_tellers">Табрикгарон</string>
+    <string name="title_about">Дар бораи</string>
+    <string name="msg__merchants_description">Тоҷирони PalmPay пуштибони иқтисоди нави Crypto мебошанд. Агар шумо бизнесҳоеро ҷустуҷӯ кунед, ки Cryptocurrency шуморо қабул мекунанд, пас танҳо маълумотҳои Ҷустуҷӯ ва Харитаро истифода баред. Тавре ки сафирони PalmPay ба мо хабар медиҳанд, дар ин ҷо бештар савдогарон илова карда мешаванд.</string>
+    <string name="msg__tellers_description">Теллерҳо одамоне мебошанд, ки асъори fiat-и шуморо бо cryptocurrencies мубодила мекунанд ва баръакс. Онҳо инчунин ба тоҷирон дар ҳисоббаробаркуниҳо кӯмак мерасонанд.</string>
+    <string name="msg__location_permission_necessary">Барои нишон додани макони ҷории шумо дар харита иҷозатномаи ҷойгиршавӣ лозим аст.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Маълумот</string>
+    <string name="text__to">Ба</string>
+    <string name="text__amount">Маблағ</string>
+    <string name="text__memo">Нотик</string>
+    <string name="text__scan_qr">QR-ро скан кунед</string>
+    <string name="error__invalid_account">Ҳисоб нодуруст аст</string>
+    <string name="error__not_enough_funds">Маблағ кофӣ нест</string>
+    <string name="msg__camera_permission_necessary">Барои хондани рамзҳои QR иҷозати камера лозим аст.</string>
+    <string name="text__transaction_sent">Амалиёт фиристода шуд!</string>
+    <string name="msg__transaction_not_sent">Интиқоли муомилот ғайриимкон аст</string>
+    <string name="error__you_dont_own_asset">Шумо соҳиби %1$s надоред</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Дар номи ҳисоби Bitshares шахсе нависед, ки мехоҳед ба он маблағ фиристед. \nМасалан: агориз-кран</string>
+    <string name="text__asset_balance">Тавозуни дороиҳо</string>
+    <string name="msg__asset_balance_explanation">Шумо метавонед тавозуни нишон додашударо ламс кунед, то тамоми дороиҳо фиристед. Ҳамин тавр, майдони Ҳаҷми барои шумо пур карда мешавад.</string>
+    <string name="msg__memo_explanation">Ворид кардани ёддошт талаб карда намешавад, аммо гирифтани ёддошт дар бораи он, ки шумо маблағро фиристодаед, чӣ тавр барои истинод дар оянда хуб аст. Ёддоштҳо танҳо ба шумо ва ба шахсе, ки ба шумо маблағ фиристодед, дида мешаванд.</string>
+    <string name="text__network_fee">Пардохти шабака</string>
+    <string name="msg__network_fee_explanation">Пардохти шабака ба миқдори дархосте, ки шумо мехоҳед фиристодан дохил мешавад. Масалан, агар шумо 50 BTS ирсол кардан хоҳед, BiTSy воқеан ~ 50.21 BTS-ро мефиристад. 0,21 иловашуда дар ин мисол ҳаққи транзаксияи Bitshares ва 0,01% ба BiTSy Developer Team аст (одатан ~ 1 сент).</string>
+    <string name="text__qr_code">Рамзи QR</string>
+    <string name="msg__qr_code_explanation">Ба шумо лозим нест, ки QR-и касеро барои фиристодани маблағ скан кунед, аммо ин ба шумо кӯмак мекунад, то хато накунед. Пас аз он ки шумо аз суратҳисобатон маблағ мефиристед, онҳо абадан нест мешаванд, бинобар ин, ҳамеша дуруст будани номи ҳисоб дар майдони "Ба" боварӣ ҳосил кунед.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Дороиҳо</string>
+    <string name="text__other">Дигар…</string>
+    <string name="template__please_send">Лутфан ирсол кунед: %1$s %2$s</string>
+    <string name="text__any_amount">Ҳама маблағ</string>
+    <string name="template__to">Ба: %1$s</string>
+    <string name="msg__invoice_subject">Ҳисобнома BiTSy аз %1$s</string>
+    <string name="title_share">Ҳиссаи</string>
+    <string name="text__share_with">Мубодила бо</string>
+    <string name="msg__storage_permission_necessary_share">Барои мубодилаи тасвирҳо иҷозат барои нигоҳдорӣ лозим аст.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Танзимот</string>
+    <string name="title__general">Умумӣ</string>
+    <string name="msg__close_timer">Баъд аз 3 дақиқаи ғайрифаъол худкор BiTSy-ро ба таври худкор пӯшед</string>
+    <string name="msg__night_mode">Реҷаи шабона</string>
+    <string name="text__view_network_status">Дидани вазъи шабака</string>
+    <string name="title__backup">Нусхабардорӣ</string>
+    <string name="msg__brainkey_description">BrainKey. Калимаҳои барқарорсозии ҳисоб, ки метавонанд сабт ё нусхабардорӣ карда шаванд, аммо тағир дода нашудаанд.</string>
+    <string name="msg__brainkey_info">Инро нависед! Боварӣ ҳосил кунед, ки шумо 2 нусхаи ин BrainKeyро дар 2 ҷои бехатар дар ҳолати оташ ё талаф шудан доред. Аввал Амният! Ҳар касе, ки ба BrainKey дастрасӣ дорад, метавонад ба маблағҳои дар суратҳисоби шумо воридшуда дастрасӣ пайдо кунад!</string>
+    <string name="button__copied">Нусхабардор</string>
+    <string name="button__view_and_copy">Намоиш ва нусхабардорӣ</string>
+    <string name="title__accounts">Ҳисобҳо</string>
+    <string name="msg__upgrade_to_ltm">Такмил додан ба аъзогии LifeTime (LTM). Ҳисоби Bitshares \ \'LTM пардохтҳои сифрӣ пардохт мекунанд, 80% нақд ва бонусҳо барои роҳхат мегиранд.</string>
+    <string name="button__upgrade_to_ltm">Такмил додан ба LTM</string>
+    <string name="msg__account_upgrade_dialog">Узвият дар вақти ҳаёт ба шумо имкон медиҳад, ки бо пардохтҳои шабака кам шавед. \n \nИн ба ҳисоби ҷории "%1$s" \n \n эътибор пайдо мекунад. Аммо ин на бо арзиши тақрибан 100 доллар дар Bitshares пардохт мешавад. \n \nШумо мехоҳед идома диҳед?</string>
+    <string name="title__account_upgraded">Ҳисоб такмил ёфт</string>
+    <string name="msg__account_upgraded">Табрик мекунем! Акнун ҳисоби шумо ба узвияти якумрӣ таҷдид карда шуд.</string>
+    <string name="title__upgrade_account_error">Хатогӣ ҳангоми кӯшиши такмил додани ҳисоб</string>
+    <string name="msg__upgrade_account_error">Лутфан боварӣ ҳосил кунед, ки ҳисоби шумо барои пӯшонидани хароҷот маблағи кофӣ дорад.</string>
+    <string name="msg__remove_current_account">Ҳисоби ҷориро аз ин дастгоҳ хориҷ кунед ва ҳисоби дигареро эҷод кунед ё ворид кунед.</string>
+    <string name="button__remove">Хориҷ кунед</string>
+    <string name="title__remove_account">Ҳисобро хориҷ кунед</string>
+    <string name="msg__remove_account_confirmation">Шумо мутмаин ҳастед, ки ҳисоби ҷориро аз ин дастгоҳ нест кунед?</string>
+    <string name="title__bugs_or_ideas">Хатогиҳо ё ғояҳо?</string>
+    <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Амният</string>
+    <string name="text__security_lock">Қулфи амният</string>
+    <string name="title__security_dialog">Қулфи амниятро интихоб кунед</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Намуна</string>
+    <string name="text__none">Ҳеҷ</string>
+    <string name="button__choose">Интихоб кунед</string>
+    <string name="title__re_enter_your_pin">PIN-и худро дубора ворид кунед</string>
+    <string name="msg__enter_your_pin">Барои идома додан BiTSy PIN-и худро ворид кунед</string>
+    <string name="error__wrong_pin">PIN нодуруст аст</string>
+    <string name="title__set_bitsy_security_lock">Танзими амнияти BiTSy</string>
+    <string name="msg__set_a_pin">Барои амният PIN таъин кунед</string>
+    <string name="msg__min_pin_length">PIN бояд на камтар аз 6 рақам бошад</string>
+    <string name="title__pins_dont_match">PIN мувофиқат намекунад</string>
+    <string name="title__re_enter_your_pattern">Намунаи худро дубора ворид кунед</string>
+    <string name="msg__enter_your_pattern">Барои идома додан, намунаи BiTSy-и худро ворид кунед</string>
+    <string name="msg__set_a_pattern">Барои амният, намунае гузоред</string>
+    <string name="msg__release_finger">Ҳангоми анҷом додани ангуштон озод кунед</string>
+    <string name="button__clear">Тоза</string>
+    <string name="button__next">Баъдӣ</string>
+    <string name="text__draw_an_unlock_pattern">Намунаи кушоданро кашед</string>
+    <string name="msg__draw_pattern_confirm">Барои тасдиқи дубора намунае кашед</string>
+    <string name="button__confirm">Тасдиқ кунед</string>
+    <string name="msg__your_new_unlock_pattern">Намуди нави кушодани шумо</string>
+    <string name="error__wront_pattern">Намунаи нодуруст</string>
+    <string name="text__pattern_recorded">Намуна сабт шудааст</string>
+    <string name="error__connect_at_least_4_dots">Ақаллан 4 нуқтаро пайваст кунед. Дубора сайъ кунед.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Бисёр кӯшиши нодуруст. Баъд аз %1$d дақиқа такрор кунед.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Бисёр кӯшиши нодуруст. Баъд аз %1$d сония бори дигар кӯшиш кунед.</string>
+
+</resources>

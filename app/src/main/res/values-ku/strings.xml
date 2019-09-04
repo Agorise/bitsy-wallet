@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Qebûlkirin</string>
+    <string name="button__disagree">Lihevderneketin</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ hejmarên PIN</string>
+    <string name="error__pin_too_short">PIN pir kurt</string>
+    <string name="text_field__confirm_pin">PIN piştrast bikin</string>
+    <string name="error__pin_mismatch">PIN lihevnekirin</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Ji kerema xwe rahêjê rastê binivîse, divê ew 12 an 16 bêj be.</string>
+    <string name="button__import_existing_account">Hesabê heyî import</string>
+    <string name="text__or">An</string>
+    <string name="button__create_new_account">Hesabek nû çêbikin</string>
+    <string name="error__invalid_brainkey">Accountsu hesabên mêjiyê mestir ên ku hatine dîtin nehatî kontrol kirin, ji kerema xwe ji bo çewtiyên tîpîkan serê mêjiyê xwe kontrol bikin</string>
+    <string name="error__try_again">Ji kerema xwe piştî 5 hûrdeman dîsa biceribînin</string>
+    <string name="dialog__account_candidates_title">Ji kerema xwe hesabek hilbijêrin</string>
+    <string name="dialog__account_candidates_content">Bişkojkên ji vê lêdanê têne xuyang kirin ku ji bo kontrolkirina bêtir ji yek hesab têne bikar anîn, ji kerema xwe kîjan hesabê ku hûn dixwazin barkirin hilbijêrin</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Navê hesabê BitShares</string>
+    <string name="error__read_dict_file">Di xwendina pelê ferhengê de çewtî derket</string>
+    <string name="error__invalid_account_length">Navê hesabê divê 3 ji 16 tîpan be.</string>
+    <string name="error__invalid_account_start">Navê hesabê divê bi nameyek dest pê bike.</string>
+    <string name="error__invalid_account_name">Ji kerema xwe navekî birêkûpêk binivîse ku bi kêmî ve yek dar, hejmar, an bê vokal tune.</string>
+    <string name="text__verifying_account_availability">Verêkirina hebûna hesabê…</string>
+    <string name="error__account_not_available">Ew navê hesabê jixwe tête girtin.</string>
+    <string name="text__account_is_available">Hesab heye</string>
+    <string name="title_error">Şaşî</string>
+    <string name="error__faucet">Servîsa xeletiyek vegerand. Ev dibe ku ji ber sînordariyek ku armanc tê danîn da ku nehêlin daxwazên dubare yên ji heman navnîşana IP-yê di demek kurt de winda bibin. Ji kerema xwe 5 hûrdeman bisekinin û careke din biceribînin, an jî li torê cûreyek veguherînin, mînakî ji wifi ji hucreyê.</string>
+    <string name="error__faucet_template">Faket xeletiyek vegerand. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Serîlêdan nekarî agahdariya di derbarê hesabê nû-afirandin de bistîne</string>
+    <string name="button__create">Xûliqandin</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transactions</string>
+    <string name="title_merchants_and_tellers">Bazirgan &amp; Firoşyar</string>
+    <string name="title_receive">Wergirtin</string>
+    <string name="title_balances">Balîfan</string>
+    <string name="title_send">Şandin</string>
+    <string name="title_net_worth">Net Worth</string>
+    <string name="text__coming_soon">Ji nêzda</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Gerr</string>
+    <string name="title_filter">Parzûn</string>
+    <string name="title_export">Eksport</string>
+    <string name="text__no_transactions">No Danûstendin</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Vebijarkên filter</string>
+    <string name="text__all">Gişt</string>
+    <string name="text__sent">Şandin</string>
+    <string name="text__received">Hatiye wergirtin</string>
+    <string name="text__date_range">Rêjeya tarîxê</string>
+    <string name="text__equivalent_value">Nirxa Wekhevî</string>
+    <string name="text__ignore_network_fees">Dravê Torgiloka Bîrnebîne</string>
+    <string name="text__between">Navber</string>
+    <string name="text__and">û</string>
+    <string name="button__filter">Parzûn</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Danûstandinên pargîdaniyê yên filter derxînin</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Destûrdana hilanînê pêdivî ye ku pelên PDF / CSV derxe.</string>
+    <string name="title_from">Ji</string>
+    <string name="title_to">Ber</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Rojek</string>
+    <string name="title_time">Dem</string>
+    <string name="title_amount">Biha</string>
+    <string name="title_equivalent_value">Nirxa Wekhevî</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Giranî</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Dîrok: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Bazirgan</string>
+    <string name="title_tellers">Pêşkêşker</string>
+    <string name="title_about">Ji dor</string>
+    <string name="msg__merchants_description">Bazirganên PalmPay paşînek aboriya nû ya Crypto ne. Ger hûn li karsaziyên ku dê Cryptocurrency-a we qebûl bikin, hingê tenê daneyên Lêgerîn û Nexşeyê li jêr bikar bînin. Wekî ku Balyozên PalmPay me agahdar bikin dê bêtir bazirganan li vir werin zêdekirin.</string>
+    <string name="msg__tellers_description">Firoşyar kes in ku dê diravên weya fiyetê bi cryptocurrency de, û berevajî bikin. Ew di heman demê de arîkariya Merîwanan bi bicîhkirina fiat re dikin.</string>
+    <string name="msg__location_permission_necessary">Destûrdayîna cihan hewce ye ku cîhê xweya heyî ya li ser nexşeyê nîşan bide.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Agahdarî</string>
+    <string name="text__to">Ber</string>
+    <string name="text__amount">Biha</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">QR bikirînin</string>
+    <string name="error__invalid_account">Hesabek xelet e</string>
+    <string name="error__not_enough_funds">Fonên ne bes</string>
+    <string name="msg__camera_permission_necessary">Destûra kamera pêdivî ye ku hûn kodên QR bixwînin.</string>
+    <string name="text__transaction_sent">Veguhastin şandin!</string>
+    <string name="msg__transaction_not_sent">Ne gengaz e ku danûstendinê bişîne</string>
+    <string name="error__you_dont_own_asset">Tu ne xwediyê %1$s bibî</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Navê hesabê Bitshares-ê kesê ku hûn dixwazin fona bişînin binivîsin. \n Ji bo nimûne: agorise-faucet</string>
+    <string name="text__asset_balance">Balansa Asset</string>
+    <string name="msg__asset_balance_explanation">Hûn dikarin li ser balansa hatî xuyang kirin ku hemî hemî vê taybetmendiyê bişînin. Bi vî rengî hûn ê qada Qonaxa ji bo we tije bikin.</string>
+    <string name="msg__memo_explanation">Vêvekirina Memo ne hewce ye, lê lêdana li ser çima we dirav şand ji bo referansa pêşerojê ne xweş e. Bîranîn tenê ji we û ji wî kesê ku hûn fena re şandine re xuya dibin.</string>
+    <string name="text__network_fee">Feqrê Tora</string>
+    <string name="msg__network_fee_explanation">Xerca Torê di mîqdara ku hûn dixwazin bişînin de tête navîn. Mînakî, heke hûn dixwazin 50 BTS bişînin, BiTSy bi rastî 50.21 BTS bişînin. Di vê nimûneyê de 0.21-yê hatî zêdekirin bihayê danûstendina Bitshares plus 0,01% ji Tîmê Pêşkeftina BiTSy re (bi gelemperî ~ 1 sed).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Hûn ne hewce ne ku QR yekî şandin ku diravan bişînin, lê ew ji we re dibe alîkar ku hûn xeletiyan nekin. Youaxê ku hûn hesabê xwe ji hesabê xwe dişînin, ew her gav diçin, ji ber vê yekê her dem pê bawer bikin ku navê hesabê di qada "To" rast e.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Yên din…</string>
+    <string name="template__please_send">Ji kerema xwe bişînin: %1$s %2$s</string>
+    <string name="text__any_amount">An Hêjayî</string>
+    <string name="template__to">To: %1$s</string>
+    <string name="msg__invoice_subject">Ji %1$s fatûreya BiTSy</string>
+    <string name="title_share">Par</string>
+    <string name="text__share_with">Parve dikin li gel</string>
+    <string name="msg__storage_permission_necessary_share">Destûrnameya hilanînê ji bo parvekirina wêneyan hewce ye.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Mîhengên</string>
+    <string name="title__general">Giştî</string>
+    <string name="msg__close_timer">Piştî 3 hûrdeyên neçalakbûnê BiTSy bixwezin</string>
+    <string name="msg__night_mode">Modeêweya şevê</string>
+    <string name="text__view_network_status">Rewşa Torê bibînin</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Peyvên nûvekirinê yên hesabê ku dikare were girtin an kopîkirin, lê nehatiye sererast kirin.</string>
+    <string name="msg__brainkey_info">Vê binivîsin! Bawer bikin ku di 2 bûyerên agir an zirarê de ji we re 2 kopiyên vê BrainKey hene. Yekem Ewlekarî! Kesê ku gihîştina BrainKey-a we dikare fonan li hesabê we têkeve!</string>
+    <string name="button__copied">Kopî kirin</string>
+    <string name="button__view_and_copy">Dîtin &amp; kopî kirin</string>
+    <string name="title__accounts">Hesaban</string>
+    <string name="msg__upgrade_to_ltm">Ji Endamtiya LifeTime nûve bikin (LTM). Hesabên LTM-ê yên Bitshares nêzî nîv-heqê drav didin, ji% 80% paşîn û berdêl ji bo referansan distînin.</string>
+    <string name="button__upgrade_to_ltm">Ji LTM-ê nûve bikin</string>
+    <string name="msg__account_upgrade_dialog">Endametiya Jiyana We dihêle hûn danûstendinek bi dravdana torgilokê ya kêm kêm bikin. \n \n Ew ê hesabê heyî yê %1$s  \n \n Hûn bi xwe bawer in ku hûn pêşve dixwazin?</string>
+    <string name="title__account_upgraded">Hesab hatî nûve kirin</string>
+    <string name="msg__account_upgraded">Xwezî! Hesabê we nuha ji Endamtiya Lifetime hatî nûve kirin.</string>
+    <string name="title__upgrade_account_error">Tryingewtî dema ku hûn hewl didin nûvekirinê bigirin</string>
+    <string name="msg__upgrade_account_error">Ji kerema xwe hesabê we heye ku hesabê we têra xwe hebe da ku lêçûnan bide.</string>
+    <string name="msg__remove_current_account">Hesabê heyî ji vê cîhazê vekişînin û hebkî cûda ava bikin.</string>
+    <string name="button__remove">Dûrxistin</string>
+    <string name="title__remove_account">Hesabê derxistin</string>
+    <string name="msg__remove_account_confirmation">Ma hûn guman dikin ku hûn dixwazin hesabê heyî ji vê amûrê derxînin?</string>
+    <string name="title__bugs_or_ideas">Pirsgirêk an Nerînên?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Ewlekarî</string>
+    <string name="text__security_lock">Girtina ewlehiyê</string>
+    <string name="title__security_dialog">Hilbijarkek Pêvek hilbijêrin</string>
+    <string name="text__pin">DERZÎ</string>
+    <string name="text__pattern">Mînak</string>
+    <string name="text__none">Netû</string>
+    <string name="button__choose">Helbijartin</string>
+    <string name="title__re_enter_your_pin">PIN-ê xwe dîsa têkevin</string>
+    <string name="msg__enter_your_pin">PIN-ê ya BiTSy binivîse ku berdewam bike</string>
+    <string name="error__wrong_pin">PIN-a çewt</string>
+    <string name="title__set_bitsy_security_lock">Ewlekariya BiTSy Set</string>
+    <string name="msg__set_a_pin">Ji bo ewlehiyê, PIN saz bikin</string>
+    <string name="msg__min_pin_length">PIN divê herî kêm 6 hejmar be</string>
+    <string name="title__pins_dont_match">PIN-ê li hev nayên</string>
+    <string name="title__re_enter_your_pattern">Pîvana xwe ji nû ve binivîse</string>
+    <string name="msg__enter_your_pattern">Modela xweya BiTSy binivîse ku berdewam bike</string>
+    <string name="msg__set_a_pattern">Ji bo ewlehiyê, Modelek Bikin</string>
+    <string name="msg__release_finger">Gava ku xilas kirin tiliya berdanê</string>
+    <string name="button__clear">Zelal</string>
+    <string name="button__next">Piştî</string>
+    <string name="text__draw_an_unlock_pattern">Mînakek vekêşanê bikişînin</string>
+    <string name="msg__draw_pattern_confirm">Ji bo pejirandinê dîsa pîvanê bikişînin</string>
+    <string name="button__confirm">Tesdîqkirin</string>
+    <string name="msg__your_new_unlock_pattern">Pîvana nû ya vekirinê ya we</string>
+    <string name="error__wront_pattern">Pîvana çewt</string>
+    <string name="text__pattern_recorded">Pattern tomar kir</string>
+    <string name="error__connect_at_least_4_dots">Bi kêmî ve 4 xalan girêdidin. Dubare bixebitin.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Gelek hewldanên çewt. Di %1$d hûrdem de dîsa biceribînin.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Gelek hewldanên çewt. Di %1$d seconds de dîsa biceribînin.</string>
+
+</resources>

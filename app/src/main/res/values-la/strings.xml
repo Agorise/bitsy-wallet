@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">conveniunt</string>
+    <string name="button__disagree">dissentio</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">ACUS numeri 6 +</string>
+    <string name="error__pin_too_short">ACUS brevior</string>
+    <string name="text_field__confirm_pin">ACUS confirmandas</string>
+    <string name="error__pin_mismatch">ACUS mismatch</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Please enter brainkey verum est, si habent XII et XVI verba.</string>
+    <string name="button__import_existing_account">Import existentium rationem</string>
+    <string name="text__or">aut</string>
+    <string name="button__create_new_account">Propter creo</string>
+    <string name="error__invalid_brainkey">Non autem in dedit rationes inventi brainkey ubi, quaeso ad reprehendo vestri typing errores brainkey</string>
+    <string name="error__try_again">V minuta post Vicipaedia</string>
+    <string name="dialog__account_candidates_title">Placere eligere rationem</string>
+    <string name="dialog__account_candidates_content">Inde usus clavium brainkey continere videntur propter quam quaeso velis eligere unde importat</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Ideo nomine BitShares</string>
+    <string name="error__read_dict_file">Lectio dictionary lima Error</string>
+    <string name="error__invalid_account_length">III ut sit nomen XVI Ratio ingenia.</string>
+    <string name="error__invalid_account_start">Propter nomen should satus per litteras.</string>
+    <string name="error__invalid_account_name">Quo nomine iusti intrabunt saltem impetu velit numerus necne vocales.</string>
+    <string name="text__verifying_account_availability">Availability Add probari possit ratio…</string>
+    <string name="error__account_not_available">Quod is iam propter nomen tuum.</string>
+    <string name="text__account_is_available">Ratio est available</string>
+    <string name="title_error">Error</string>
+    <string name="error__faucet">Per eumdem errorem rediit. Hoc in proposito locum deberi terminationem ex eadem inscriptio statim saepius brevi spatio. Quaeso, iterum conare et exspectare V minuta, vel switch ad alia network, exempli gratia de WiFi ad cellulam.</string>
+    <string name="error__faucet_template">Faucet errorem rediit. Msg: %1$s</string>
+    <string name="error__created_account_not_found">App quod non potuit recuperare nuper notitia de causa creata est</string>
+    <string name="button__create">Create</string>
+
+    <!-- Home -->
+    <string name="title_transactions">transactions</string>
+    <string name="title_merchants_and_tellers">Mercatores &amp; Thy Majestie</string>
+    <string name="title_receive">accipite</string>
+    <string name="title_balances">iustificabo stateram impiam</string>
+    <string name="title_send">Mitte</string>
+    <string name="title_net_worth">Found</string>
+    <string name="text__coming_soon">Mox adventu</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Quaerere</string>
+    <string name="title_filter">filter</string>
+    <string name="title_export">export</string>
+    <string name="text__no_transactions">non Opera</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">optiones filtri</string>
+    <string name="text__all">Omnis</string>
+    <string name="text__sent">missus</string>
+    <string name="text__received">suscepit</string>
+    <string name="text__date_range">Date dolor</string>
+    <string name="text__equivalent_value">aequiualenti,</string>
+    <string name="text__ignore_network_fees">Network ignorare fees</string>
+    <string name="text__between">inter</string>
+    <string name="text__and">et</string>
+    <string name="button__filter">filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Export percolantur transactions</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Permission est necessarium repono export PDF / CSV lima.</string>
+    <string name="title_from">Ex</string>
+    <string name="title_to">Ad</string>
+    <string name="title_memo">memo</string>
+    <string name="title_date">Date</string>
+    <string name="title_time">Tempus</string>
+    <string name="title_amount">tantum</string>
+    <string name="title_equivalent_value">aequiualenti,</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">valorem</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Date: %1$s</string>
+    <string name="template__tx">TX: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">mercatoribus</string>
+    <string name="title_tellers">Thy Majestie</string>
+    <string name="title_about">circa</string>
+    <string name="msg__merchants_description">PalmPay mercatorum et pacificorum hostia sacrificium novae Teubneriana Crypto. Si vos es vultus parumper tua suscipere negotiis, quod Cryptocurrency ergo iustus utor Geographica Exquire et inferius. Hic addidit ultra ut mercatores, ut legati ad PalmPay certiorem nobis.</string>
+    <string name="msg__tellers_description">Scrutatores, qui simul veniat ad populum tuum, fiat apud valūtās cryptocurrencies, et e converso. Sunt etiam fiat apud mercatores res adiuvaret.</string>
+    <string name="msg__location_permission_necessary">Ostende te current location location permission necesse est ut in tabula.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Ad</string>
+    <string name="text__amount">tantum</string>
+    <string name="text__memo">memo</string>
+    <string name="text__scan_qr">QR scan</string>
+    <string name="error__invalid_account">propter invalida</string>
+    <string name="error__not_enough_funds">Non satis pecunia</string>
+    <string name="msg__camera_permission_necessary">QR codes camera permission est legere.</string>
+    <string name="text__transaction_sent">Transaction misit?</string>
+    <string name="msg__transaction_not_sent">Quamquam invisa inmittere</string>
+    <string name="error__you_dont_own_asset">Non habes \ \'habere quis T %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Type de Bitshares ideo nomen persona vis mittere pecunia est. \nFor exemplum: agorise faucet,</string>
+    <string name="text__asset_balance">Libra dignissim</string>
+    <string name="msg__asset_balance_explanation">ICTUS in stateris ut ostenderet tibi quod omnis res. Aliquam in hoc agro et impleamur in.</string>
+    <string name="msg__memo_explanation">Primo si numerum non requiritur, sed in notaret quare misisti in futuro reference quia pecunia est nice quod. Modo visibilis ex vobis homo, quem tu es Memos et pecunia missum est.</string>
+    <string name="text__network_fee">Network pretium</string>
+    <string name="msg__network_fee_explanation">Network in feodo quod includitur in quantum vis mittere. Eg si vis mittere L BTS, Bitsy vere mittet ~ 50.21 BTS. 0,21 adiecit et hoc exemplum est de feodo Bitshares transaction plus 0.01% ad Bitsy Team Developer (typically ~ I cent.)</string>
+    <string name="text__qr_code">QR code</string>
+    <string name="msg__qr_code_explanation">Et non opus est scan QR fi t ad aliquem mittere scriptor pecunia sed non est tibi ut vitare errat. Mittere pecuniam iuxta ordinem vestrum Cum rationem tuam creare, profecti sunt in sempiternum: et fac propter nomen est semper in in "ad" sit verum agro.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">dignissim</string>
+    <string name="text__other">Alii…</string>
+    <string name="template__please_send">Mitte quaeso, %1$s %2$s</string>
+    <string name="text__any_amount">Pecuniae</string>
+    <string name="template__to">Ad: %1$s</string>
+    <string name="msg__invoice_subject">Cautionem de %1$s Bitsy</string>
+    <string name="title_share">Share</string>
+    <string name="text__share_with">Communicet</string>
+    <string name="msg__storage_permission_necessary_share">Permission est necessarium repono participes imaginibus.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Optiones</string>
+    <string name="title__general">Generalis</string>
+    <string name="msg__close_timer">Automatice proxima post III minutes exercitationis Bitsy</string>
+    <string name="msg__night_mode">modus noctem</string>
+    <string name="text__view_network_status">Status View Network</string>
+    <string name="title__backup">tergum</string>
+    <string name="msg__brainkey_description">BrainKey. Ratio recuperatio potest capi nec copied verbis, sed factis.</string>
+    <string name="msg__brainkey_info">Scribe hoc? Vide II exemplaria istiusmodi habere vos in II BrainKey secure locus ignis et si damnum. Securitatis prima? Quis est obvius ut vestri BrainKey accedere possunt, cum pecunia in ratione vestra?</string>
+    <string name="button__copied">copied</string>
+    <string name="button__view_and_copy">View &amp; Copy</string>
+    <string name="title__accounts">Rationibus</string>
+    <string name="msg__upgrade_to_ltm">Sodalitas ad upgrade LifeTime (LTM). Bitshares \ \'LTM rationes reddere, nullus apud feodis suis ut LXXX% cashback et bonuses pro referrals.</string>
+    <string name="button__upgrade_to_ltm">Phasellus ut LTM</string>
+    <string name="msg__account_upgrade_dialog">De Vita tempus Contact concedit vos prohibiti commercio intra Alpes paro of network dominis feodorum. \n \nIt tollet effectum est ob hodiernam «%1$s" \n \nIt est autem cum venerit USD pretium sumptus circa C in Bitshares. Visne vero \n \nAre procedere?</string>
+    <string name="title__account_upgraded">ratio Upgraded</string>
+    <string name="msg__account_upgraded">Gratulationes! Ratio tua est nunc upgraded ad Sodalitas saeculorum.</string>
+    <string name="title__upgrade_account_error">Error dum conatur ad upgrade ratio</string>
+    <string name="msg__upgrade_account_error">Quaeso, scrutare non habet rationem statera satis ad operiendum costs.</string>
+    <string name="msg__remove_current_account">Ratio current vel removere ab hac subtilitate sumptuque creare unum alium importare.</string>
+    <string name="button__remove">Remove</string>
+    <string name="title__remove_account">Remove Ratio</string>
+    <string name="msg__remove_account_confirmation">Es vos certus vos volo ut aufero current propter hoc fabrica?</string>
+    <string name="title__bugs_or_ideas">Bugs seu Ideas?</string>
+    <string name="msg__bugs_or_ideas">Telegraphum: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Obstructionum: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Security</string>
+    <string name="text__security_lock">securitatis et sursum</string>
+    <string name="title__security_dialog">Elige Securitatis et sursum</string>
+    <string name="text__pin">ACUS</string>
+    <string name="text__pattern">Modus</string>
+    <string name="text__none">Nihil</string>
+    <string name="button__choose">Elige</string>
+    <string name="title__re_enter_your_pin">Re-intra ACUS</string>
+    <string name="msg__enter_your_pin">Nulla ACUS pergere Bitsy</string>
+    <string name="error__wrong_pin">ACUS nefas</string>
+    <string name="title__set_bitsy_security_lock">Constitue Securitatis Bitsy</string>
+    <string name="msg__set_a_pin">Propter securitatem, set a ACUS</string>
+    <string name="msg__min_pin_length">ACUS debet esse saltem VI numeri</string>
+    <string name="title__pins_dont_match">PINs don \ \'t par</string>
+    <string name="title__re_enter_your_pattern">Re-enter imitare</string>
+    <string name="msg__enter_your_pattern">Nulla forma permanere Bitsy</string>
+    <string name="msg__set_a_pattern">Propter securitatem, set a Modus</string>
+    <string name="msg__release_finger">Digito factum dimittere</string>
+    <string name="button__clear">liquet</string>
+    <string name="button__next">deinde</string>
+    <string name="text__draw_an_unlock_pattern">Unlock exemplum trahere</string>
+    <string name="msg__draw_pattern_confirm">Exemplum trahere ad confirmandas</string>
+    <string name="button__confirm">Constituo</string>
+    <string name="msg__your_new_unlock_pattern">Unlock vestri novus ratio</string>
+    <string name="error__wront_pattern">nefas exemplaris</string>
+    <string name="text__pattern_recorded">exemplum memoriae</string>
+    <string name="error__connect_at_least_4_dots">Certe dots coniungere IV. Conare iterum.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Nimis multi falsa conatusque prohibebit. Conare iterum %1$d minutes.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Nimis multi falsa conatusque prohibebit. %1$d seconds horae iterum tenta.</string>
+
+</resources>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">složiti</string>
+    <string name="button__disagree">ne slagati se</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ znamenki PIN</string>
+    <string name="error__pin_too_short">PIN je prekratak</string>
+    <string name="text_field__confirm_pin">Potvrdite PIN</string>
+    <string name="error__pin_mismatch">Neslaganje PIN-a</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Unesite ispravni moždani ključ, trebao bi imati 12 ili 16 riječi.</string>
+    <string name="button__import_existing_account">Uvezi postojeći račun</string>
+    <string name="text__or">Ili</string>
+    <string name="button__create_new_account">Kreirajte novi račun</string>
+    <string name="error__invalid_brainkey">Ako nema pronađenih računa kojima upravlja zadani moždani ključ, provjerite mozak pomoću tipke</string>
+    <string name="error__try_again">Pokušajte ponovo nakon 5 minuta</string>
+    <string name="dialog__account_candidates_title">Odaberite račun</string>
+    <string name="dialog__account_candidates_content">Ključevi izvedeni iz ove moždane tipke izgleda da se koriste za kontrolu više računa, odaberite koji račun želite uvesti</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Naziv računa BitShares</string>
+    <string name="error__read_dict_file">Pogreška prilikom čitanja datoteke s rječnikom</string>
+    <string name="error__invalid_account_length">Naziv računa trebao bi biti 3 do 16 znakova.</string>
+    <string name="error__invalid_account_start">Naziv računa trebao bi početi slovom.</string>
+    <string name="error__invalid_account_name">Unesite uobičajeni naziv koji sadrži najmanje jednu crticu, broj ili samoglasnike.</string>
+    <string name="text__verifying_account_availability">Provjera dostupnosti računa…</string>
+    <string name="error__account_not_available">Ime tog računa je već zauzeto.</string>
+    <string name="text__account_is_available">Račun je dostupan</string>
+    <string name="title_error">greška</string>
+    <string name="error__faucet">Poslužitelj je vratio pogrešku. To bi moglo biti posljedica ograničenja koje je namjerno postavljeno za onemogućavanje čestih zahtjeva koji dolaze s iste IP adrese u kratkom roku. Pričekajte 5 minuta i pokušajte ponovo ili se prebacite na drugu mrežu, primjerice s wifija u mobitel.</string>
+    <string name="error__faucet_template">Slavina je vratila pogrešku. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Aplikacija nije mogla dohvatiti podatke o novootvorenom računu</string>
+    <string name="button__create">Stvoriti</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transakcije</string>
+    <string name="title_merchants_and_tellers">Trgovci i prodavači</string>
+    <string name="title_receive">dobiti</string>
+    <string name="title_balances">Vage</string>
+    <string name="title_send">Poslati</string>
+    <string name="title_net_worth">Neto vrijednost</string>
+    <string name="text__coming_soon">Dolazi uskoro</string>
+
+    <!-- Transactions -->
+    <string name="title_search">traži</string>
+    <string name="title_filter">filtar</string>
+    <string name="title_export">Izvoz</string>
+    <string name="text__no_transactions">Nema transakcija</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Opcije filtriranja</string>
+    <string name="text__all">svi</string>
+    <string name="text__sent">Poslano</string>
+    <string name="text__received">primljen</string>
+    <string name="text__date_range">Raspon datuma</string>
+    <string name="text__equivalent_value">Ekvivalentna vrijednost</string>
+    <string name="text__ignore_network_fees">Zanemarite mrežne naknade</string>
+    <string name="text__between">Između</string>
+    <string name="text__and">i</string>
+    <string name="button__filter">filtar</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Izvoz filtriranih transakcija</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Dozvola za pohranu potrebna je za izvoz PDF / CSV datoteka.</string>
+    <string name="title_from">Iz</string>
+    <string name="title_to">Do</string>
+    <string name="title_memo">memorandum</string>
+    <string name="title_date">Datum</string>
+    <string name="title_time">Vrijeme</string>
+    <string name="title_amount">Iznos</string>
+    <string name="title_equivalent_value">Ekvivalentna vrijednost</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Vrijednost</string>
+    <string name="template__memo">Napomena: %1$s</string>
+    <string name="template__date">Datum: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Trgovci</string>
+    <string name="title_tellers">blagajnici</string>
+    <string name="title_about">Oko</string>
+    <string name="msg__merchants_description">PalmPay trgovci su okosnica nove kripto ekonomije. Ako tražite poduzeća koja će prihvatiti vašu kripto valutu, jednostavno upotrijebite podatke za pretraživanje i karte u nastavku. Ovdje će biti dodano više trgovaca nakon što nas obavijeste PalmPay ambasadori.</string>
+    <string name="msg__tellers_description">Prodavači su ljudi koji će zamijeniti vaše valute fiat kripto valutama i obrnuto. Oni također pomažu trgovcima u nagodbi.</string>
+    <string name="msg__location_permission_necessary">Dopuštenje lokacije potrebno je za prikaz trenutne lokacije na karti.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Informacije</string>
+    <string name="text__to">Do</string>
+    <string name="text__amount">Iznos</string>
+    <string name="text__memo">memorandum</string>
+    <string name="text__scan_qr">Skeniraj QR</string>
+    <string name="error__invalid_account">Nevažeći račun</string>
+    <string name="error__not_enough_funds">Nema dovoljno sredstava</string>
+    <string name="msg__camera_permission_necessary">Za čitanje QR kodova potrebno je dopuštenje fotoaparata.</string>
+    <string name="text__transaction_sent">Transakcija poslana!</string>
+    <string name="msg__transaction_not_sent">Nije moguće poslati transakciju</string>
+    <string name="error__you_dont_own_asset">Nemate nijedan %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Unesite ime računa Bitshares na osobu kojoj želite poslati sredstva. \nNa primjer: agorise-slavina</string>
+    <string name="text__asset_balance">Bilans imovine</string>
+    <string name="msg__asset_balance_explanation">Možete dodirnuti prikazani saldo da biste poslali svu imovinu. U tom ćete slučaju ispuniti polje Iznos za vas.</string>
+    <string name="msg__memo_explanation">Unos memoranduma nije potreban, ali bilježenje zašto ste poslali sredstva lijepo je za buduću referencu. Bilješke su vidljive samo vama i osobi kojoj ste poslali sredstva.</string>
+    <string name="text__network_fee">Naknada za mrežu</string>
+    <string name="msg__network_fee_explanation">Naknada za mrežu uključena je u iznos koji želite poslati. Na primjer, ako želite poslati 50 BTS, BiTSy će zapravo poslati ~ 50,21 BTS. Dodanih 0,21 u ovom primjeru je naknada za Bitshares transakciju plus 0,01% za BiTSy tim programera (obično ~ 1 posto).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Ne morate skenirati nečiji QR da biste poslali sredstva, ali to vam pomaže da izbjegnete pogreške. Nakon što pošaljete sredstva s vašeg računa, oni će zauvijek nestati, tako da uvijek provjerite je li naziv računa u polju "Za" točan.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Imovina</string>
+    <string name="text__other">Ostali…</string>
+    <string name="template__please_send">Molimo pošaljite: %1$s %2$s</string>
+    <string name="text__any_amount">Bilo koji iznos</string>
+    <string name="template__to">Za: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy faktura iz %1$s</string>
+    <string name="title_share">Udio</string>
+    <string name="text__share_with">Podijeli s</string>
+    <string name="msg__storage_permission_necessary_share">Za dijeljenje slika potrebno je dopuštenje za pohranu.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">postavke</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">Automatski zatvorite BiTSy nakon 3 minute neaktivnosti</string>
+    <string name="msg__night_mode">Noćni način</string>
+    <string name="text__view_network_status">Pogledajte status mreže</string>
+    <string name="title__backup">rezerva</string>
+    <string name="msg__brainkey_description">BrainKey. Riječi za oporavak računa koje se mogu snimiti ili kopirati, ali ne i uređivati.</string>
+    <string name="msg__brainkey_info">Zapiši ovo! Budite sigurni da imate 2 kopije ovog BrainKey-a na 2 sigurna mjesta u slučaju požara ili gubitka. Prvo sigurnost! Svatko tko ima pristup vašem BrainKeyu može pristupiti sredstvima na vašem računu!</string>
+    <string name="button__copied">Kopirano</string>
+    <string name="button__view_and_copy">Prikaži i kopiraj</string>
+    <string name="title__accounts">Računi</string>
+    <string name="msg__upgrade_to_ltm">Nadogradite na LifeTime članstvo (LTM). Bitshares \ \'LTM računi plaćaju naknade blizu nule, dobivaju 80% povrata novca i bonuse za preporuke.</string>
+    <string name="button__upgrade_to_ltm">Nadogradite na LTM</string>
+    <string name="msg__account_upgrade_dialog">Članstvo u Life Time-u omogućuje vam trgovinu sa smanjenim mrežnim naknadama. \n \nIzuzet će učinak na tekućem računu "%1$s" \n \nIpak, ipak dolazi s troškovima od oko 100 USD koji se plaćaju u Bitsharesu. \n \n Jeste li sigurni da želite nastaviti?</string>
+    <string name="title__account_upgraded">Račun je nadograđen</string>
+    <string name="msg__account_upgraded">Čestitamo! Vaš je račun sada nadograđen na doživotno članstvo.</string>
+    <string name="title__upgrade_account_error">Pogreška prilikom pokušaja nadogradnje računa</string>
+    <string name="msg__upgrade_account_error">Provjerite ima li vaš račun dovoljno sredstava da pokrije troškove.</string>
+    <string name="msg__remove_current_account">Uklonite trenutačni račun s ovog uređaja i stvorite ili uvezite drugi.</string>
+    <string name="button__remove">Ukloniti</string>
+    <string name="title__remove_account">Ukloni račun</string>
+    <string name="msg__remove_account_confirmation">Jeste li sigurni da želite ukloniti trenutni račun s ovog uređaja?</string>
+    <string name="title__bugs_or_ideas">Kukci ili ideje?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">sigurnosti</string>
+    <string name="text__security_lock">Sigurnosno zaključavanje</string>
+    <string name="title__security_dialog">Odaberite sigurnosnu bravu</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Uzorak</string>
+    <string name="text__none">nijedan</string>
+    <string name="button__choose">izabrati</string>
+    <string name="title__re_enter_your_pin">Ponovno unesite svoj PIN</string>
+    <string name="msg__enter_your_pin">Unesite svoj BiTSy PIN za nastavak</string>
+    <string name="error__wrong_pin">Pogrešan PIN</string>
+    <string name="title__set_bitsy_security_lock">Postavite BiTSy sigurnost</string>
+    <string name="msg__set_a_pin">Radi sigurnosti postavite PIN</string>
+    <string name="msg__min_pin_length">PIN mora biti najmanje 6 znamenki</string>
+    <string name="title__pins_dont_match">PIN-ovi se ne podudaraju</string>
+    <string name="title__re_enter_your_pattern">Ponovno unesite svoj obrazac</string>
+    <string name="msg__enter_your_pattern">Unesite svoj BiTSy uzorak za nastavak</string>
+    <string name="msg__set_a_pattern">Radi sigurnosti postavite Uzorak</string>
+    <string name="msg__release_finger">Otpustite prst po završetku</string>
+    <string name="button__clear">Čisto</string>
+    <string name="button__next">Sljedeći</string>
+    <string name="text__draw_an_unlock_pattern">Nacrtajte uzorak za otključavanje</string>
+    <string name="msg__draw_pattern_confirm">Ponovo nacrtajte uzorak za potvrdu</string>
+    <string name="button__confirm">potvrditi</string>
+    <string name="msg__your_new_unlock_pattern">Vaš novi obrazac za otključavanje</string>
+    <string name="error__wront_pattern">Pogrešan uzorak</string>
+    <string name="text__pattern_recorded">Uzorak je zabilježen</string>
+    <string name="error__connect_at_least_4_dots">Spojite najmanje 4 točkice. Pokušajte ponovo.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Previše je pogrešnih pokušaja. Pokušajte ponovo za %1$d minuta.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Previše je pogrešnih pokušaja. Pokušajte ponovo za %1$d sekundi.</string>
+
+</resources>

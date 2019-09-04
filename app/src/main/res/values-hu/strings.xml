@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Egyetért</string>
+    <string name="button__disagree">Nem ért egyet</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ számjegyű PIN-kód</string>
+    <string name="error__pin_too_short">A PIN-kód túl rövid</string>
+    <string name="text_field__confirm_pin">Erősítse meg a PIN-kódot</string>
+    <string name="error__pin_mismatch">A PIN-kód eltérése</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Kérjük, írja be a helyes brainkey-t, 12 vagy 16 szóból álljon.</string>
+    <string name="button__import_existing_account">Importáljon meglévő fiókot</string>
+    <string name="text__or">Vagy</string>
+    <string name="button__create_new_account">Új fiók létrehozása</string>
+    <string name="error__invalid_brainkey">Nincs olyan fiók, amelyet az adott agyi kulcs ellenőrzése alatt tartana, kérjük, ellenőrizze az agykulcsot gépelési hibák szempontjából</string>
+    <string name="error__try_again">Kérjük, próbálja újra 5 perc múlva</string>
+    <string name="dialog__account_candidates_title">Kérjük, válasszon egy fiókot</string>
+    <string name="dialog__account_candidates_content">Az agyi kulcsból származó kulcsok úgy tűnik, hogy egynél több fiókot is kezelnek, kérjük, válassza ki, melyiket kívánja importálni</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares fiók neve</string>
+    <string name="error__read_dict_file">Hiba a szótárfájl olvasásakor</string>
+    <string name="error__invalid_account_length">A fióknévnek 3–16 karakter hosszúnak kell lennie.</string>
+    <string name="error__invalid_account_start">A számla nevének betűvel kell kezdődnie.</string>
+    <string name="error__invalid_account_name">Adjon meg egy rendes nevet, amely legalább egy kötőjelet, számot vagy magánhangzót nem tartalmaz.</string>
+    <string name="text__verifying_account_availability">Fiók rendelkezésre állásának ellenőrzése…</string>
+    <string name="error__account_not_available">Az a fiók név már foglalt.</string>
+    <string name="text__account_is_available">Fiók elérhető</string>
+    <string name="title_error">Hiba</string>
+    <string name="error__faucet">A szerver hibát adott vissza. Ennek oka lehet annak a korlátozásnak a célja, amelyet célzottan megállapítottak arra, hogy rövid időn belül tiltják az ugyanazon IP-címről érkező gyakori kérelmeket. Kérjük, várjon 5 percet, és próbálja újra, vagy váltson másik hálózatra, például wifi-ről cellára.</string>
+    <string name="error__faucet_template">A csap hibát adott vissza. Üzenet: %1$s</string>
+    <string name="error__created_account_not_found">Az alkalmazás nem tudott információkat szerezni az újonnan létrehozott fiókról</string>
+    <string name="button__create">teremt</string>
+
+    <!-- Home -->
+    <string name="title_transactions">tranzakciók</string>
+    <string name="title_merchants_and_tellers">Kereskedők és eladók</string>
+    <string name="title_receive">Kap</string>
+    <string name="title_balances">egyenlegek</string>
+    <string name="title_send">Elküld</string>
+    <string name="title_net_worth">Nettó érték</string>
+    <string name="text__coming_soon">Hamarosan</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Keresés</string>
+    <string name="title_filter">Szűrő</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Nincs tranzakció</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Szűrési lehetőségek</string>
+    <string name="text__all">Minden</string>
+    <string name="text__sent">Küldött</string>
+    <string name="text__received">kapott</string>
+    <string name="text__date_range">Időintervallum</string>
+    <string name="text__equivalent_value">Egyenértékű érték</string>
+    <string name="text__ignore_network_fees">Hagyja figyelmen kívül a hálózati díjakat</string>
+    <string name="text__between">Között</string>
+    <string name="text__and">és</string>
+    <string name="button__filter">Szűrő</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Exportált szűrt tranzakciók</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Tárolási engedély szükséges a PDF / CSV fájlok exportálásához.</string>
+    <string name="title_from">Tól től</string>
+    <string name="title_to">Nak nek</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Dátum</string>
+    <string name="title_time">Idő</string>
+    <string name="title_amount">Összeg</string>
+    <string name="title_equivalent_value">Egyenértékű érték</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Érték</string>
+    <string name="template__memo">Feljegyzés: %1$s</string>
+    <string name="template__date">Dátum: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">kereskedők</string>
+    <string name="title_tellers">szavazatszámláló</string>
+    <string name="title_about">Ról ről</string>
+    <string name="msg__merchants_description">A PalmPay kereskedők képezik az új Crypto Economy gerincét. Ha olyan vállalkozásokat keres, amelyek elfogadják a kriptovalutát, akkor csak használja az alábbi Keresési és Térkép adatokat. További kereskedők kerülnek ide, mivel a PalmPay nagykövetek tájékoztatják minket.</string>
+    <string name="msg__tellers_description">A eladók olyan emberek, akik cserélik az Ön fiat-valutáit kriptovalutákkal, és fordítva. Segítik a kereskedőket a fiat rendezésében.</string>
+    <string name="msg__location_permission_necessary">A helymeghatározás szükséges ahhoz, hogy jelenlegi tartózkodási helyét megjelenítse a térképen.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Nak nek</string>
+    <string name="text__amount">Összeg</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Érvénytelen fiók</string>
+    <string name="error__not_enough_funds">Nincs elég forrás</string>
+    <string name="msg__camera_permission_necessary">A QR-kód olvasásához kamerához engedély szükséges.</string>
+    <string name="text__transaction_sent">Tranzakció elküldve!</string>
+    <string name="msg__transaction_not_sent">Nem sikerült elküldeni a tranzakciót</string>
+    <string name="error__you_dont_own_asset">Önnek nem tartozik %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Írja be annak a személynek a Bitshares fiókját, akinek pénzt szeretne küldeni. \nPélda: agresszív csaptelep</string>
+    <string name="text__asset_balance">Eszköz-egyenleg</string>
+    <string name="msg__asset_balance_explanation">Érintse meg a megjelenített egyenleget az összes eszköz elküldéséhez. Ezzel kitölti az Összeg mezőt.</string>
+    <string name="msg__memo_explanation">Feljegyzés beírása nem kötelező, de a későbbi referencia céljából érdemes megjegyezni, hogy miért küldte el az összeget. A feljegyzés csak Ön és az a személy láthatja, akinek pénzt küldött.</string>
+    <string name="text__network_fee">Hálózati díj</string>
+    <string name="msg__network_fee_explanation">A hálózati díjat az elküldendő összeg tartalmazza. Például, ha 50 BTS-t szeretne küldeni, a BiTSy valójában ~ 50,21 BTS-t küld. Ebben a példában a hozzáadott 0,21 a Bitshares tranzakciós díj plusz 0,01% a BiTSy Developer Team számára (általában ~ 1 cent).</string>
+    <string name="text__qr_code">QR-kód</string>
+    <string name="msg__qr_code_explanation">A pénzeszközök elküldéséhez nem kell beolvasnia valaki QR-jét, de segít elkerülni a hibákat. Miután pénzt küldött a számlájáról, ezek örökre eltűnnek, ezért mindig ellenőrizze, hogy a „Címzett” mezőben a fiók neve helyes-e.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">vagyontárgy</string>
+    <string name="text__other">Más…</string>
+    <string name="template__please_send">Kérem, küldje el: %1$s %2$s</string>
+    <string name="text__any_amount">Bármennyi</string>
+    <string name="template__to">Címzett: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy számla %1$s-tól</string>
+    <string name="title_share">Részvény</string>
+    <string name="text__share_with">Oszd</string>
+    <string name="msg__storage_permission_necessary_share">A képek megosztásához tárolási engedély szükséges.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Beállítások</string>
+    <string name="title__general">Tábornok</string>
+    <string name="msg__close_timer">3 perc tétlenség után automatikusan bezárja a BiTSy-t</string>
+    <string name="msg__night_mode">Éjszakai mód</string>
+    <string name="text__view_network_status">Hálózati állapot megtekintése</string>
+    <string name="title__backup">biztonsági mentés</string>
+    <string name="msg__brainkey_description">BrainKey. Fiók helyreállítási szavak, amelyeket rögzíteni vagy lemásolni, de nem lehet szerkeszteni.</string>
+    <string name="msg__brainkey_info">Írja le ezt! Ügyeljen arra, hogy a BrainKey 2 példányban legyen 2 biztonságos helyen, tűz vagy veszteség esetén. Biztonság először! Bárki, aki hozzáféréssel rendelkezik a BrainKey-hez, hozzáférhet a számlájához!</string>
+    <string name="button__copied">másolt</string>
+    <string name="button__view_and_copy">Megtekintés és másolás</string>
+    <string name="title__accounts">Fiókok</string>
+    <string name="msg__upgrade_to_ltm">Frissítés a LifeTime tagságra (LTM). A Bitshares \ \'LTM számlák nullához közeli díjat fizetnek, 80% -os cashback-et és bónuszt kapnak az áttételért.</string>
+    <string name="button__upgrade_to_ltm">Frissítsen LTM-re</string>
+    <string name="msg__account_upgrade_dialog">Az Élettartam tagság lehetővé teszi a csökkentett hálózati díjakkal való kereskedelmet. \n \nEz a "%1$s" folyó fizetési számlára lép hatályba, \n \nA mindazonáltal körülbelül 100 USD költséggel jár, amelyet a Bitshares-ben fizettek. \n \n Biztosan folytatni akarja?</string>
+    <string name="title__account_upgraded">Fiók frissítve</string>
+    <string name="msg__account_upgraded">Gratulálunk! Fiókod most frissítve lett az egész életen át tartó tagságra.</string>
+    <string name="title__upgrade_account_error">Hiba történt a fiók frissítése közben</string>
+    <string name="msg__upgrade_account_error">Kérjük, ellenőrizze, hogy számlájának elegendő egyenlege van-e a költségek fedezésére.</string>
+    <string name="msg__remove_current_account">Távolítsa el az aktuális fiókot az eszközről, és hozzon létre vagy importáljon egy másik fiókot.</string>
+    <string name="button__remove">eltávolít</string>
+    <string name="title__remove_account">Fiók törlése</string>
+    <string name="msg__remove_account_confirmation">Biztos benne, hogy el akarja távolítani az aktuális fiókot az eszközről?</string>
+    <string name="title__bugs_or_ideas">Hibák vagy ötletek?</string>
+    <string name="msg__bugs_or_ideas">Távirat: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokk: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Biztonság</string>
+    <string name="text__security_lock">Biztonsági zár</string>
+    <string name="title__security_dialog">Válasszon egy biztonsági zárat</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Minta</string>
+    <string name="text__none">Egyik sem</string>
+    <string name="button__choose">Választ</string>
+    <string name="title__re_enter_your_pin">Írja be újra a PIN-kódot</string>
+    <string name="msg__enter_your_pin">Írja be a BiTSy PIN kódját a folytatáshoz</string>
+    <string name="error__wrong_pin">Rossz PIN kód</string>
+    <string name="title__set_bitsy_security_lock">Állítsa be a BiTSy biztonságot</string>
+    <string name="msg__set_a_pin">A biztonság érdekében állítson be egy PIN-kódot</string>
+    <string name="msg__min_pin_length">A PIN-kódnak legalább 6 jegyűnek kell lennie</string>
+    <string name="title__pins_dont_match">A PIN-kódok nem egyeznek</string>
+    <string name="title__re_enter_your_pattern">Írja be újra a mintát</string>
+    <string name="msg__enter_your_pattern">Írja be a BiTSy mintáját a folytatáshoz</string>
+    <string name="msg__set_a_pattern">A biztonság érdekében állítson be egy mintát</string>
+    <string name="msg__release_finger">Ha kész, engedje el az ujját</string>
+    <string name="button__clear">Egyértelmű</string>
+    <string name="button__next">Következő</string>
+    <string name="text__draw_an_unlock_pattern">Rajzolj egy feloldási mintát</string>
+    <string name="msg__draw_pattern_confirm">Rajzolj ismét mintát a megerősítéshez</string>
+    <string name="button__confirm">megerősít</string>
+    <string name="msg__your_new_unlock_pattern">Az új feloldási minta</string>
+    <string name="error__wront_pattern">Rossz minta</string>
+    <string name="text__pattern_recorded">Minta rögzítve</string>
+    <string name="error__connect_at_least_4_dots">Csatlakoztasson legalább 4 pontot. Próbáld újra.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Túl sok helytelen kísérlet. Próbálja újra %1$d perc múlva.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Túl sok helytelen kísérlet. Próbálja újra %1$d másodperc múlva.</string>
+
+</resources>

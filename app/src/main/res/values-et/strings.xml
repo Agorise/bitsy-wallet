@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Nõus</string>
+    <string name="button__disagree">Pole nõus</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ numbri PIN-kood</string>
+    <string name="error__pin_too_short">PIN on liiga lühike</string>
+    <string name="text_field__confirm_pin">Kinnitage PIN-kood</string>
+    <string name="error__pin_mismatch">PIN-i mittevastavus</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Sisestage õige peavõti, sellel peaks olema 12 või 16 sõna.</string>
+    <string name="button__import_existing_account">Importige olemasolev konto</string>
+    <string name="text__or">Või</string>
+    <string name="button__create_new_account">Loo uus konto</string>
+    <string name="error__invalid_brainkey">Antud ajutise võtmega ei kontrollita ühtegi kontot, palun kontrollige oma ajurütmi trükivigade osas</string>
+    <string name="error__try_again">Proovige 5 minuti pärast uuesti</string>
+    <string name="dialog__account_candidates_title">Valige konto</string>
+    <string name="dialog__account_candidates_content">Tundub, et sellest ajuvõtmest saadud võtmeid kasutatakse mitme konto kontrollimiseks, palun valige, millist kontot soovite importida</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares konto nimi</string>
+    <string name="error__read_dict_file">Viga sõnastiku faili lugemisel</string>
+    <string name="error__invalid_account_length">Konto nimi peaks olema 3 kuni 16 tähemärki.</string>
+    <string name="error__invalid_account_start">Konto nimi peaks algama tähega.</string>
+    <string name="error__invalid_account_name">Sisestage tavaline nimi, mis sisaldab vähemalt ühte kriipsu, numbrit või täishäälikuteta.</string>
+    <string name="text__verifying_account_availability">Konto saadavuse kontrollimine…</string>
+    <string name="error__account_not_available">See konto nimi on juba võetud.</string>
+    <string name="text__account_is_available">Konto on saadaval</string>
+    <string name="title_error">Viga</string>
+    <string name="error__faucet">Server saatis vea. Selle põhjuseks võib olla piirang, mis on sihipäraselt kehtestatud samast IP-aadressist pärinevate sagedaste taotluste keelamiseks lühikese aja jooksul. Oodake 5 minutit ja proovige uuesti, või minge üle teisele võrgule, näiteks WiFi-st mobiiltelefoni.</string>
+    <string name="error__faucet_template">Segis tagas viga. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Rakendus ei saanud teavet värskelt loodud konto kohta</string>
+    <string name="button__create">Loo</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Tehingud</string>
+    <string name="title_merchants_and_tellers">Kaupmehed ja müüjad</string>
+    <string name="title_receive">Võta vastu</string>
+    <string name="title_balances">Tasakaalud</string>
+    <string name="title_send">Saada</string>
+    <string name="title_net_worth">Netoväärtus</string>
+    <string name="text__coming_soon">Tulekul</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Otsing</string>
+    <string name="title_filter">Filtreeri</string>
+    <string name="title_export">Eksport</string>
+    <string name="text__no_transactions">Tehinguid pole</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtreerimisvalikud</string>
+    <string name="text__all">Kõik</string>
+    <string name="text__sent">Saadetud</string>
+    <string name="text__received">Vastu võetud</string>
+    <string name="text__date_range">Kuupäevavahemik</string>
+    <string name="text__equivalent_value">Samaväärne väärtus</string>
+    <string name="text__ignore_network_fees">Ignoreerige võrgutasusid</string>
+    <string name="text__between">Vahel</string>
+    <string name="text__and">ja</string>
+    <string name="button__filter">Filtreeri</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Ekspordi filtreeritud tehingud</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Talletusluba on vajalik PDF / CSV-failide eksportimiseks.</string>
+    <string name="title_from">Alates</string>
+    <string name="title_to">Et</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Kuupäev</string>
+    <string name="title_time">Aeg</string>
+    <string name="title_amount">Summa</string>
+    <string name="title_equivalent_value">Samaväärne väärtus</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">e-kviitung</string>
+    <string name="text__value">Väärtus</string>
+    <string name="template__memo">Märkus: %1$s</string>
+    <string name="template__date">Kuupäev: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Kaupmehed</string>
+    <string name="title_tellers">Tellerid</string>
+    <string name="title_about">Umbes</string>
+    <string name="msg__merchants_description">PalmPay kaupmehed on uue krüptoökonoomia selgroog. Kui otsite ettevõtteid, mis aktsepteerivad teie krüptovaluutat, siis kasutage lihtsalt allolevaid otsingu- ja kaardiandmeid. Siia lisandub rohkem kaupmehi, kui PalmPay suursaadikud meid teavitavad.</string>
+    <string name="msg__tellers_description">Müüjad on inimesed, kes vahetavad teie fiati valuutad krüptovaluutadega ja vastupidi. Samuti abistavad nad kaupmehi fiati lahendamisel.</string>
+    <string name="msg__location_permission_necessary">Asukoha luba on vajalik teie praeguse asukoha kaardil kuvamiseks.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Et</string>
+    <string name="text__amount">Summa</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Skaneeri QR</string>
+    <string name="error__invalid_account">Vigane konto</string>
+    <string name="error__not_enough_funds">Pole piisavalt vahendeid</string>
+    <string name="msg__camera_permission_necessary">QR-koodide lugemiseks on vajalik kaamera luba.</string>
+    <string name="text__transaction_sent">Tehing on saadetud!</string>
+    <string name="msg__transaction_not_sent">Tehingut ei saa saata</string>
+    <string name="error__you_dont_own_asset">Te ei oma ühtegi %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Tippige selle inimese Bitshares\'i konto nimi, kellele soovite raha saata. \nNäide: agressiiv-kraan</string>
+    <string name="text__asset_balance">Vara bilanss</string>
+    <string name="msg__asset_balance_explanation">Kogu vara saatmiseks võite puudutada kuvatavat saldot. Sellega täidetakse teie jaoks väli Summa.</string>
+    <string name="msg__memo_explanation">Memo sisestamine pole nõutav, kuid märkuste tegemine selle kohta, miks raha saatsite, on edaspidiseks kasutamiseks tore. Memod on nähtavad ainult teile ja inimesele, kellele raha edastasite.</string>
+    <string name="text__network_fee">Võrgutasu</string>
+    <string name="msg__network_fee_explanation">Võrgutasu sisaldub summa, mida soovite saata. Näiteks kui soovite saata 50 BTS-i, saadab BiTSy tegelikult ~ 50,21 BTS-i. Selles näites lisatud 0,21 on Bitsharese tehingutasu pluss 0,01% BiTSy arendajate meeskonnale (tavaliselt ~ 1 sent).</string>
+    <string name="text__qr_code">QR kood</string>
+    <string name="msg__qr_code_explanation">Rahaliste vahendite saatmiseks ei pea te kellegi QR-i skannima, kuid see aitab teil vigu vältida. Kui olete oma kontolt raha saatnud, on need igaveseks kadunud, nii et veenduge alati, et väljal „Saaja” on kontonimi õige.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Vara</string>
+    <string name="text__other">Muu…</string>
+    <string name="template__please_send">Palun saatke: %1$s %2$s</string>
+    <string name="text__any_amount">Mis tahes summa</string>
+    <string name="template__to">Saaja: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy arve %1$s</string>
+    <string name="title_share">Jaga</string>
+    <string name="text__share_with">Jaga</string>
+    <string name="msg__storage_permission_necessary_share">Piltide jagamiseks on vajalik salvestusluba.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Seadistused</string>
+    <string name="title__general">Üldine</string>
+    <string name="msg__close_timer">Sulgege BiTSy automaatselt pärast 3-minutist tegevusetust</string>
+    <string name="msg__night_mode">Öine režiim</string>
+    <string name="text__view_network_status">Kuva võrgu olek</string>
+    <string name="title__backup">Varundamine</string>
+    <string name="msg__brainkey_description">BrainKey. Konto taastamise sõnad, mida saab jäädvustada või kopeerida, kuid mitte muuta.</string>
+    <string name="msg__brainkey_info">Kirjutage see üles! Veenduge, et teil oleks 2 BrainKey eksemplari kahes turvalises kohas tulekahju või kaotuse korral. Turvalisus kõigepealt! Igaüks, kellel on juurdepääs teie BrainKey-le, pääseb juurde teie konto vahenditele!</string>
+    <string name="button__copied">Kopeeritud</string>
+    <string name="button__view_and_copy">Kuva ja kopeeri</string>
+    <string name="title__accounts">Kontod</string>
+    <string name="msg__upgrade_to_ltm">Uuendage LifeTime\'i liikmelisuseks (LTM). Bitshares \'LTM-i kontod maksavad nullilähedased tasud, saavad 80% raha tagasi ja boonused viidete eest.</string>
+    <string name="button__upgrade_to_ltm">Minge üle LTM-ile</string>
+    <string name="msg__account_upgrade_dialog">Eluaegne liikmelisus võimaldab teil kaubelda vähendatud võrgutasudega. \n \nSee jõustub arvelduskontol "%1$s" \n \nSee maksab Bitsharesis siiski umbes 100 USD. \n \nKas olete kindel, et soovite jätkata?</string>
+    <string name="title__account_upgraded">Konto täiendatud</string>
+    <string name="msg__account_upgraded">Palju õnne! Teie konto on nüüd üle viidud eluaegseks liikmeks.</string>
+    <string name="title__upgrade_account_error">Viga konto täiendamisel</string>
+    <string name="msg__upgrade_account_error">Veenduge, et teie kontol oleks kulude katmiseks piisavalt saldot.</string>
+    <string name="msg__remove_current_account">Eemaldage praegune konto sellest seadmest ja looge või importige teine.</string>
+    <string name="button__remove">Eemalda</string>
+    <string name="title__remove_account">Eemalda konto</string>
+    <string name="msg__remove_account_confirmation">Kas soovite kindlasti praeguse konto sellest seadmest eemaldada?</string>
+    <string name="title__bugs_or_ideas">Vead või ideed?</string>
+    <string name="msg__bugs_or_ideas">Telegramm: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokeeri: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Turvalisus</string>
+    <string name="text__security_lock">Turvalukk</string>
+    <string name="title__security_dialog">Valige Turvalukk</string>
+    <string name="text__pin">PIN-kood</string>
+    <string name="text__pattern">Muster</string>
+    <string name="text__none">Puudub</string>
+    <string name="button__choose">Valige</string>
+    <string name="title__re_enter_your_pin">Sisestage oma PIN-kood uuesti</string>
+    <string name="msg__enter_your_pin">Jätkamiseks sisestage oma BiTSy PIN-kood</string>
+    <string name="error__wrong_pin">Vale PIN-kood</string>
+    <string name="title__set_bitsy_security_lock">Seadke BiTSy Security</string>
+    <string name="msg__set_a_pin">Turvalisuse tagamiseks määrake PIN-kood</string>
+    <string name="msg__min_pin_length">PIN-kood peab olema vähemalt 6 numbrit</string>
+    <string name="title__pins_dont_match">PIN-koodid ei sobi</string>
+    <string name="title__re_enter_your_pattern">Sisestage oma muster uuesti</string>
+    <string name="msg__enter_your_pattern">Jätkamiseks sisestage oma BiTSy muster</string>
+    <string name="msg__set_a_pattern">Turvalisuse tagamiseks määrake muster</string>
+    <string name="msg__release_finger">Kui olete valmis, vabastage sõrm</string>
+    <string name="button__clear">Selge</string>
+    <string name="button__next">Järgmine</string>
+    <string name="text__draw_an_unlock_pattern">Joonistage avamismuster</string>
+    <string name="msg__draw_pattern_confirm">Joonistamiseks kinnitage uuesti muster</string>
+    <string name="button__confirm">Kinnitage</string>
+    <string name="msg__your_new_unlock_pattern">Teie uus lukustusmuster</string>
+    <string name="error__wront_pattern">Vale muster</string>
+    <string name="text__pattern_recorded">Salvestatud muster</string>
+    <string name="error__connect_at_least_4_dots">Ühendage vähemalt 4 punkti. Proovi uuesti.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Liiga palju valesid katseid. Proovige %1$d minuti pärast uuesti.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Liiga palju valesid katseid. Proovige uuesti %1$d sekundi pärast.</string>
+
+</resources>

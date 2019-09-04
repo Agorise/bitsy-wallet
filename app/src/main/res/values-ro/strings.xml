@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">De acord</string>
+    <string name="button__disagree">Dezacord</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ cifre PIN</string>
+    <string name="error__pin_too_short">PIN prea scurt</string>
+    <string name="text_field__confirm_pin">Confirmați PIN-ul</string>
+    <string name="error__pin_mismatch">Nepotrivire PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Vă rugăm să introduceți cheie de creier corectă, ar trebui să aibă 12 sau 16 cuvinte.</string>
+    <string name="button__import_existing_account">Importați contul existent</string>
+    <string name="text__or">Sau</string>
+    <string name="button__create_new_account">Creează un cont nou</string>
+    <string name="error__invalid_brainkey">În cazul în care nu s-au găsit conturi controlate de cheia dată, vă rugăm să verificați dacă există greșeli de tastare</string>
+    <string name="error__try_again">Încercați din nou după 5 minute</string>
+    <string name="dialog__account_candidates_title">Vă rugăm să selectați un cont</string>
+    <string name="dialog__account_candidates_content">Tastele derivate din această cheie creieră par a fi folosite pentru a controla mai multe conturi, selectați ce cont doriți să importați</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Numele contului BitShares</string>
+    <string name="error__read_dict_file">Eroare la citirea fișierului dicționar</string>
+    <string name="error__invalid_account_length">Numele contului trebuie să fie de 3 până la 16 caractere.</string>
+    <string name="error__invalid_account_start">Numele contului ar trebui să înceapă cu o literă.</string>
+    <string name="error__invalid_account_name">Vă rugăm să introduceți un nume obișnuit care să conțină cel puțin o liniuță, un număr sau fără vocale.</string>
+    <string name="text__verifying_account_availability">Verificarea disponibilității contului…</string>
+    <string name="error__account_not_available">Numele contului este deja luat.</string>
+    <string name="text__account_is_available">Contul este disponibil</string>
+    <string name="title_error">Eroare</string>
+    <string name="error__faucet">Serverul a returnat o eroare. Acest lucru s-ar putea datora unei limitări stabilite în mod special pentru a nu permite solicitările frecvente care provin de la aceeași adresă IP într-un interval de timp scurt. Așteptați 5 minute și încercați din nou sau treceți la o altă rețea, de exemplu de la wifi la celulă.</string>
+    <string name="error__faucet_template">Robinetul a returnat o eroare. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Aplicația nu a putut prelua informații despre contul nou creat</string>
+    <string name="button__create">Crea</string>
+
+    <!-- Home -->
+    <string name="title_transactions">tranzacţii</string>
+    <string name="title_merchants_and_tellers">Comercianți și comercianți</string>
+    <string name="title_receive">A primi</string>
+    <string name="title_balances">solduri</string>
+    <string name="title_send">Trimite</string>
+    <string name="title_net_worth">Valoarea netă</string>
+    <string name="text__coming_soon">In curand</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Căutare</string>
+    <string name="title_filter">Filtru</string>
+    <string name="title_export">Export</string>
+    <string name="text__no_transactions">Fără tranzacții</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Opțiuni de filtrare</string>
+    <string name="text__all">Toate</string>
+    <string name="text__sent">Trimis</string>
+    <string name="text__received">Primit</string>
+    <string name="text__date_range">Interval de date</string>
+    <string name="text__equivalent_value">Valoare echivalentă</string>
+    <string name="text__ignore_network_fees">Ignorați taxele pentru rețea</string>
+    <string name="text__between">Între</string>
+    <string name="text__and">și</string>
+    <string name="button__filter">Filtru</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Export tranzacții filtrate</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Permisiunea de stocare este necesară pentru a exporta fișiere PDF / CSV.</string>
+    <string name="title_from">Din</string>
+    <string name="title_to">La</string>
+    <string name="title_memo">Notificare</string>
+    <string name="title_date">Data</string>
+    <string name="title_time">Timp</string>
+    <string name="title_amount">Cantitate</string>
+    <string name="title_equivalent_value">Valoare echivalentă</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Valoare</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">comercianţi</string>
+    <string name="title_tellers">casierii</string>
+    <string name="title_about">Despre</string>
+    <string name="msg__merchants_description">Comercianții PalmPay sunt coloana vertebrală a noii economii Crypto. Dacă sunteți în căutarea unor companii care vă vor accepta Cryptocurrency, atunci utilizați doar datele de căutare și hartă de mai jos. Mai mulți comercianți vor fi adăugați aici, după cum ne informează ambasadorii PalmPay.</string>
+    <string name="msg__tellers_description">Povestitorii sunt persoane care îți vor schimba monedele fiat cu criptomonede și, invers. De asemenea, aceștia ajută comercianții cu decontare fiat.</string>
+    <string name="msg__location_permission_necessary">Este necesară permisiunea de locație pentru a arăta locația dvs. curentă pe hartă.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">La</string>
+    <string name="text__amount">Cantitate</string>
+    <string name="text__memo">Notificare</string>
+    <string name="text__scan_qr">Scanare QR</string>
+    <string name="error__invalid_account">Cont invalid</string>
+    <string name="error__not_enough_funds">fonduri insuficiente</string>
+    <string name="msg__camera_permission_necessary">Este necesară permisiunea camerei pentru a citi coduri QR.</string>
+    <string name="text__transaction_sent">Tranzacție trimisă!</string>
+    <string name="msg__transaction_not_sent">Imposibil de trimis tranzacția</string>
+    <string name="error__you_dont_own_asset">Nu dețineți %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Introduceți numele contului Bitshares al persoanei către care doriți să trimiteți fonduri. \nPentru exemplu: agorise-robinet</string>
+    <string name="text__asset_balance">Soldul activelor</string>
+    <string name="msg__asset_balance_explanation">Puteți atinge soldul afișat pentru a trimite tot acel activ. Dacă faceți acest lucru, completați câmpul Suma pentru dvs.</string>
+    <string name="msg__memo_explanation">Nu este necesară înscrierea unui memo, dar luarea de note cu privire la motivul pentru care ați trimis fondurile este plăcut pentru referințe viitoare. Memos sunt vizibile numai dvs. și persoana căreia i-ați trimis fonduri.</string>
+    <string name="text__network_fee">Taxa de rețea</string>
+    <string name="msg__network_fee_explanation">Taxa de rețea este inclusă în suma pe care doriți să o trimiteți. De exemplu, dacă doriți să trimiteți 50 BTS, BiTSy va trimite efectiv ~ 50.21 BTS. 0,21 adăugat în acest exemplu este taxa de tranzacție Bitshares plus 0,01% la echipa de dezvoltatori BiTSy (de obicei ~ 1%).</string>
+    <string name="text__qr_code">Cod QR</string>
+    <string name="msg__qr_code_explanation">Nu trebuie să scanați QR-ul cuiva pentru a trimite fonduri, dar vă ajută să evitați greșelile. Odată ce trimiteți fonduri din contul dvs., acestea au dispărut pentru totdeauna, deci asigurați-vă întotdeauna că numele contului din câmpul „Spre” este corect.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">activ</string>
+    <string name="text__other">Alte…</string>
+    <string name="template__please_send">Vă rugăm să trimiteți: %1$s %2$s</string>
+    <string name="text__any_amount">Orice sumă</string>
+    <string name="template__to">Către: %1$s</string>
+    <string name="msg__invoice_subject">Factură biTSy de la %1$s</string>
+    <string name="title_share">Acțiune</string>
+    <string name="text__share_with">Împarte cu</string>
+    <string name="msg__storage_permission_necessary_share">Permisiunea de stocare este necesară pentru a partaja imagini.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Setări</string>
+    <string name="title__general">General</string>
+    <string name="msg__close_timer">Închideți automat BiTSy după 3 minute de inactivitate</string>
+    <string name="msg__night_mode">Mod de noapte</string>
+    <string name="text__view_network_status">Vizualizați starea rețelei</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Cuvinte de recuperare a contului care pot fi capturate sau copiate, dar nu pot fi editate.</string>
+    <string name="msg__brainkey_info">Notează asta! Asigurați-vă că aveți 2 copii ale acestui BrainKey în 2 locații sigure în caz de incendiu sau pierdere. Securitatea întâi! Oricine are acces la BrainKey poate accesa fondurile din contul dvs.!</string>
+    <string name="button__copied">Copiată</string>
+    <string name="button__view_and_copy">Vizualizare și copiere</string>
+    <string name="title__accounts">Conturi</string>
+    <string name="msg__upgrade_to_ltm">Treceți la LifeTime Membership (LTM). Conturile LTM de la Bitshares plătesc taxe aproape zero, primesc încasări de 80% și bonusuri pentru recomandări.</string>
+    <string name="button__upgrade_to_ltm">Actualizați la LTM</string>
+    <string name="msg__account_upgrade_dialog">Calitatea de abonament de viață vă permite să tranzacționați cu un set redus de taxe de rețea. \n \n Va intra în vigoare în contul curent "%1$s" \n \nCum vine totuși cu un cost de aproximativ 100 USD plătit în Bitshares. \n \n Sunteți sigur că doriți să continuați?</string>
+    <string name="title__account_upgraded">Cont actualizat</string>
+    <string name="msg__account_upgraded">Felicitări! Contul dvs. a fost actualizat la calitatea de membru Lifetime.</string>
+    <string name="title__upgrade_account_error">Eroare în timp ce încercați să actualizați contul</string>
+    <string name="msg__upgrade_account_error">Vă rugăm să vă asigurați că contul dvs. are suficient sold pentru a acoperi costurile.</string>
+    <string name="msg__remove_current_account">Eliminați contul curent de pe acest dispozitiv și creați sau importați altul.</string>
+    <string name="button__remove">Elimina</string>
+    <string name="title__remove_account">Sterge contul</string>
+    <string name="msg__remove_account_confirmation">Sigur doriți să eliminați contul curent de pe acest dispozitiv?</string>
+    <string name="title__bugs_or_ideas">Bug-uri sau idei?</string>
+    <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Securitate</string>
+    <string name="text__security_lock">Blocare de securitate</string>
+    <string name="title__security_dialog">Alegeți un Lock Lock</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Model</string>
+    <string name="text__none">Nici unul</string>
+    <string name="button__choose">Alege</string>
+    <string name="title__re_enter_your_pin">Reintroduceți codul PIN</string>
+    <string name="msg__enter_your_pin">Introduceți codul PIN BiTSy pentru a continua</string>
+    <string name="error__wrong_pin">PIN greșit</string>
+    <string name="title__set_bitsy_security_lock">Setați BiTSy Security</string>
+    <string name="msg__set_a_pin">Pentru securitate, setați un cod PIN</string>
+    <string name="msg__min_pin_length">PIN-ul trebuie să aibă cel puțin 6 cifre</string>
+    <string name="title__pins_dont_match">Codurile PIN nu se potrivesc</string>
+    <string name="title__re_enter_your_pattern">Reintroduceți modelul</string>
+    <string name="msg__enter_your_pattern">Introduceți modelul dvs. BiTSy pentru a continua</string>
+    <string name="msg__set_a_pattern">Pentru securitate, setați un model</string>
+    <string name="msg__release_finger">Eliberați degetul când ați terminat</string>
+    <string name="button__clear">clar</string>
+    <string name="button__next">Următor →</string>
+    <string name="text__draw_an_unlock_pattern">Desenați un model de deblocare</string>
+    <string name="msg__draw_pattern_confirm">Desenează din nou modelul pentru a confirma</string>
+    <string name="button__confirm">A confirma</string>
+    <string name="msg__your_new_unlock_pattern">Noul tău model de deblocare</string>
+    <string name="error__wront_pattern">Model greșit</string>
+    <string name="text__pattern_recorded">Model înregistrat</string>
+    <string name="error__connect_at_least_4_dots">Conectați cel puțin 4 puncte. Încearcă din nou.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Prea multe încercări incorecte. Încercați din nou în %1$d minute.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Prea multe încercări incorecte. Încercați din nou în %1$d secunde.</string>
+
+</resources>

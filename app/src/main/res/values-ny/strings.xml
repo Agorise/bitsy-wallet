@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Gwirizanani</string>
+    <string name="button__disagree">Kusagwirizana</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">Pini nambala 6+</string>
+    <string name="error__pin_too_short">Pini yochepa kwambiri</string>
+    <string name="text_field__confirm_pin">Tsimikizani Pini</string>
+    <string name="error__pin_mismatch">Kusungidwa kwina</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Chonde lowetsani zolondola mu ubongo, ziyenera kukhala ndi mawu 12 kapena 16.</string>
+    <string name="button__import_existing_account">Lowetsani akaunti yomwe ilipo</string>
+    <string name="text__or">Kapena</string>
+    <string name="button__create_new_account">Pangani akaunti yatsopano</string>
+    <string name="error__invalid_brainkey">Palibe akaunti zomwe zimayang\'aniridwa ndi ubongo wopezeka ndi zomwe zidapezeka, chonde onani malingaliro anu kuti muwone zolakwika</string>
+    <string name="error__try_again">Chonde yesaninso pakatha mphindi 5</string>
+    <string name="dialog__account_candidates_title">Chonde sankhani</string>
+    <string name="dialog__account_candidates_content">Mafungulo ochokera ku mindkey awa akuwoneka kuti akugwiritsidwa ntchito kuwongolera akaunti imodzi, chonde sankhani akaunti yomwe mukufuna kutsatsa</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Dzina la akaunti ya BitShares</string>
+    <string name="error__read_dict_file">Panali vuto pakuphunzira buku lotanthauzira mawu</string>
+    <string name="error__invalid_account_length">Dzina laakaunti liyenera kukhala zilembo 3 mpaka 16.</string>
+    <string name="error__invalid_account_start">Dzina laakaunti liyenera kuyamba ndi kalata.</string>
+    <string name="error__invalid_account_name">Chonde lowetsani dzina lokhazikika lomwe lili ndi chidutswa chimodzi, nambala, kapena mavawelo.</string>
+    <string name="text__verifying_account_availability">Kutsimikizira kupezeka kwa akaunti…</string>
+    <string name="error__account_not_available">Dzinali dzina lake latengedwa kale.</string>
+    <string name="text__account_is_available">Akaunti ikupezeka</string>
+    <string name="title_error">Zolakwika</string>
+    <string name="error__faucet">Seva yabweza cholakwika. Izi zitha kukhala chifukwa cha malire osakhazikitsidwa kuti asavomereze zopempha zomwe zimachokera ku adilesi yomweyo ya IP posachedwa. Chonde dikirani mphindi 5 ndikuyesanso, kapena sinthani ku netiweki ina, mwachitsanzo kuchokera pa wifi kupita pa foni.</string>
+    <string name="error__faucet_template">Chikhocho chinabweza cholakwika. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Pulogalamuyi sinathe kupeza zambiri za akaunti yomwe yangopangidwa kumene</string>
+    <string name="button__create">Pangani</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Kusinthanitsa</string>
+    <string name="title_merchants_and_tellers">Ogulitsa &amp; Ogulitsa</string>
+    <string name="title_receive">Landirani</string>
+    <string name="title_balances">Kusamala</string>
+    <string name="title_send">Tumizani</string>
+    <string name="title_net_worth">Zofunika Kwambiri</string>
+    <string name="text__coming_soon">Zikubwera posachedwa</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Sakani</string>
+    <string name="title_filter">Zosefera</string>
+    <string name="title_export">Kutumiza kunja</string>
+    <string name="text__no_transactions">Palibe Kutulutsa</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Zosankha zosefera</string>
+    <string name="text__all">Zonse</string>
+    <string name="text__sent">Kutumizidwa</string>
+    <string name="text__received">Zalandiridwa</string>
+    <string name="text__date_range">Zosintha Tsiku</string>
+    <string name="text__equivalent_value">Mtengo Wofanana</string>
+    <string name="text__ignore_network_fees">Pewani zolipira pa Network</string>
+    <string name="text__between">Pakati</string>
+    <string name="text__and">ndi</string>
+    <string name="button__filter">Zosefera</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Kutumiza kosefera kunja</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Chilolezo chosungira ndikofunikira kutulutsa mafayilo a PDF / CSV.</string>
+    <string name="title_from">Kuchokera</string>
+    <string name="title_to">Kuti</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Tsiku</string>
+    <string name="title_time">Nthawi</string>
+    <string name="title_amount">Kuchuluka</string>
+    <string name="title_equivalent_value">Mtengo Wofanana</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Mtengo</string>
+    <string name="template__memo">Chidule: %1$s</string>
+    <string name="template__date">Tsiku: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Ogulitsa</string>
+    <string name="title_tellers">Ogulitsa</string>
+    <string name="title_about">Za</string>
+    <string name="msg__merchants_description">Ogulitsa PalmPay ndiye msana wa Crypto Economy yatsopano. Ngati mukufuna mabizinesi omwe angavomereze Cryptocurrency yanu, ndiye ingogwiritsani ntchito zosaka ndi Mapu pansipa. Ogulitsa ochulukirapo adzawonjezedwa pano pamene akazembe a PalmPay atiuza.</string>
+    <string name="msg__tellers_description">Ogulitsa ndi anthu omwe angasinthe ndalama zanu ndi ndalama zamkati, ndi mosinthanitsa. Amathandizanso amalonda ndi malo okhala.</string>
+    <string name="msg__location_permission_necessary">Chilolezo cha malo ndichofunikira kuwonetsa malo omwe muli patsamba lino.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Zambiri</string>
+    <string name="text__to">Kuti</string>
+    <string name="text__amount">Kuchuluka</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Jambulani QR</string>
+    <string name="error__invalid_account">Akaunti yosavomerezeka</string>
+    <string name="error__not_enough_funds">Palibe ndalama zokwanira</string>
+    <string name="msg__camera_permission_necessary">Chilolezo cha kamera ndikofunikira kuti muwerenge manambala a QR.</string>
+    <string name="text__transaction_sent">Kusinthanitsa kwatumizidwa!</string>
+    <string name="msg__transaction_not_sent">Takanika kutumiza</string>
+    <string name="error__you_dont_own_asset">Mulibe %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Lembani dzina la akaunti ya Bitshares la munthu amene mukufuna kumutumizira ndalama. \nChitsanzo: agorise-faucet</string>
+    <string name="text__asset_balance">Kusamala Kwazinthu</string>
+    <string name="msg__asset_balance_explanation">Mutha kuwonera pamalonda omwe awonetsedwa kuti atumize zinthu zonsezo. Kuchita motero kudzaza gawo la Mulingo wanu.</string>
+    <string name="msg__memo_explanation">Kulowetsa Memo sikofunikira, koma kulemba zolemba zomwe mwatumiza ndalamazo ndi zabwino kuti mudzagwiritse ntchito m\'tsogolo. Memos akuwonekera kwa inu ndi munthu amene mudatumiza ndalama.</string>
+    <string name="text__network_fee">Ndalama Zama Network</string>
+    <string name="msg__network_fee_explanation">Malipiro a Network akuphatikizidwa ndi kuchuluka komwe mukufuna kutumiza. Mwachitsanzo, ngati mukufuna kutumiza 50 BTS, BiTSy imatumiza ~ 50.21 BTS. Omwe anawonjezerapo 0,21 pachitsanzo ichi amalipiritsa ndalama ku Bitshares kuphatikiza 0.01% kwa Gulu Lopanga Mabizinesi a BiTSy (amodzi ~ ~ 1 cent).</string>
+    <string name="text__qr_code">QR Code</string>
+    <string name="msg__qr_code_explanation">Simuyenera kuchita kusanthula QR ya munthu wina kuti mutumize ndalama, koma zimakuthandizani kupewa zolakwa. Mukatumiza ndalama kuchokera ku akaunti yanu, sizitha kwamuyaya, choncho onetsetsani kuti dzina laakauntiyo m\'gawo la "Kuti" ndi lolondola.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Chuma</string>
+    <string name="text__other">Zina…</string>
+    <string name="template__please_send">Chonde Tumizani: %1$s %2$s</string>
+    <string name="text__any_amount">Mtengo Uliwonse</string>
+    <string name="template__to">Ku: %1$s</string>
+    <string name="msg__invoice_subject">Invoice ya BiTSy kuchokera %1$s</string>
+    <string name="title_share">Gawani</string>
+    <string name="text__share_with">Gawani ndi</string>
+    <string name="msg__storage_permission_necessary_share">Chilolezo chosungira ndikofunikira kugawana zithunzi.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Makonda</string>
+    <string name="title__general">Zambiri</string>
+    <string name="msg__close_timer">Tsekani zokha za BiTSy pakatha mphindi 3 zopanda ntchito</string>
+    <string name="msg__night_mode">Zochita usiku</string>
+    <string name="text__view_network_status">Onani Mkhalidwe Wapaintaneti</string>
+    <string name="title__backup">Zosunga</string>
+    <string name="msg__brainkey_description">BrainKey. Mawu obwezeretsa akaunti omwe amatha kujambulidwa kapena kukopera, koma osasinthidwa.</string>
+    <string name="msg__brainkey_info">Lembani izi! Onetsetsani kuti muli ndi makope awiri a BrainKey m\'malo awiri otetezeka moto kapena kuwonongeka. Chitetezo Choyamba! Aliyense amene ali ndi mwayi wofika pa BrainKey amatha kulowa mu akaunti yanu!</string>
+    <string name="button__copied">Zokopedwa</string>
+    <string name="button__view_and_copy">Onani &amp; Copy</string>
+    <string name="title__accounts">Maakaunti</string>
+    <string name="msg__upgrade_to_ltm">Sinthani ku LifeTime Umembala (LTM). Ma akaunti a Bitshares \ \'LTM amalipira pafupi zero, amalipiritsa ndalama 80 ndi mabonasi otumizira.</string>
+    <string name="button__upgrade_to_ltm">Sinthani kupita ku LTM</string>
+    <string name="msg__account_upgrade_dialog">Umoyo wa Umwini Wamunthu umakupatsani mwayi wochita malonda ndi ndalama zochepetsedwa. \n \nZikambirana pa akaunti yaposachedwa "%1$s" \n \nLimabwera ndimtengo wokwanira 100 USD wolipiridwa ku Bitshares. \n \n Kodi mukutsimikiza mukufuna kupita?</string>
+    <string name="title__account_upgraded">Kukweza Akaunti</string>
+    <string name="msg__account_upgraded">Zabwino! Akaunti yanu tsopano yasinthidwa kukhala Umembala Wamoyo wonse.</string>
+    <string name="title__upgrade_account_error">Panali vuto pothetsa akaunti</string>
+    <string name="msg__upgrade_account_error">Chonde onetsetsani kuti akaunti yanu ili ndi ndalama zokwanira kulipira ndalama.</string>
+    <string name="msg__remove_current_account">Chotsani Akaunti Yakale pachida ichi ndikupanga kapena kutengera china.</string>
+    <string name="button__remove">Chotsani</string>
+    <string name="title__remove_account">Chotsani Akaunti</string>
+    <string name="msg__remove_account_confirmation">Mukutsimikiza kuti mukufuna kuchotsapo akauntiyi pachida ichi?</string>
+    <string name="title__bugs_or_ideas">Ngongole kapena Malingaliro?</string>
+    <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Cholepheretsa: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Chitetezo</string>
+    <string name="text__security_lock">Security Lock</string>
+    <string name="title__security_dialog">Sankhani Chitetezo</string>
+    <string name="text__pin">Pini</string>
+    <string name="text__pattern">Chitsanzo</string>
+    <string name="text__none">Palibe</string>
+    <string name="button__choose">Sankhani</string>
+    <string name="title__re_enter_your_pin">Lowetsani PIN yanu</string>
+    <string name="msg__enter_your_pin">Lowetsani chizindikiro chanu cha BiTSy kuti mupitilize</string>
+    <string name="error__wrong_pin">Pini yolakwika</string>
+    <string name="title__set_bitsy_security_lock">Khazikitsani chitetezo cha BiTSy</string>
+    <string name="msg__set_a_pin">Kuti mutetezedwe, ikani chikhomo</string>
+    <string name="msg__min_pin_length">Pini iyenera kukhala ndi manambala 6</string>
+    <string name="title__pins_dont_match">Zikwangwani sizingafanane</string>
+    <string name="title__re_enter_your_pattern">Lowetsani ndondomeko yanu</string>
+    <string name="msg__enter_your_pattern">Lowetsani dongosolo lanu la BiTSy kuti mupitirize</string>
+    <string name="msg__set_a_pattern">Kuti mudziteteze, khazikitsani Chitsanzo</string>
+    <string name="msg__release_finger">Masulani chala mukamaliza</string>
+    <string name="button__clear">Chotsani</string>
+    <string name="button__next">Ena</string>
+    <string name="text__draw_an_unlock_pattern">Jambulani mawonekedwe osatseguka</string>
+    <string name="msg__draw_pattern_confirm">Jambulani pateni kuti mutsimikizire</string>
+    <string name="button__confirm">Tsimikizani</string>
+    <string name="msg__your_new_unlock_pattern">Makina anu atsopano otsegula</string>
+    <string name="error__wront_pattern">Njira yolakwika</string>
+    <string name="text__pattern_recorded">Zojambulidwa</string>
+    <string name="error__connect_at_least_4_dots">Lumikizani madontho anayi. Yesaninso.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Kuyesa kopitilira muyeso. Yesaninso m\'mphindi %1$d.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Kuyesa kopitilira muyeso. Yesaninso m\'masekondi %1$d.</string>
+
+</resources>

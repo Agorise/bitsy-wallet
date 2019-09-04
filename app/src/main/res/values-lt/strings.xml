@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Sutinku</string>
+    <string name="button__disagree">Nesutikti</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6 ir daugiau skaitmenų PIN kodas</string>
+    <string name="error__pin_too_short">PIN kodas per trumpas</string>
+    <string name="text_field__confirm_pin">Patvirtinkite PIN kodą</string>
+    <string name="error__pin_mismatch">PIN kodo neatitikimas</string>
+    <string name="text__brain_key">„BrainKey“</string>
+    <string name="error__enter_correct_brainkey">Įveskite teisingą smegenų raktą. Tai turėtų sudaryti 12 arba 16 žodžių.</string>
+    <string name="button__import_existing_account">Importuoti esamą sąskaitą</string>
+    <string name="text__or">Arba</string>
+    <string name="button__create_new_account">Sukurti naują paskyrą</string>
+    <string name="error__invalid_brainkey">Jokių paskyrų, kurių nekontroliuoja nurodytas smegenų raktas, nerasta. Patikrinkite, ar jūsų smegenų klavišuose nėra rašymo klaidų</string>
+    <string name="error__try_again">Bandykite dar kartą po 5 minučių</string>
+    <string name="dialog__account_candidates_title">Pasirinkite paskyrą</string>
+    <string name="dialog__account_candidates_content">Atrodo, kad raktai, gauti iš šio „smegenų rakto“, yra naudojami valdyti daugiau nei vieną paskyrą, pasirinkite kurią paskyrą norite importuoti</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">„BitShares“ paskyros pavadinimas</string>
+    <string name="error__read_dict_file">Klaida skaitant žodyno failą</string>
+    <string name="error__invalid_account_length">Sąskaitos pavadinimas turėtų būti nuo 3 iki 16 simbolių.</string>
+    <string name="error__invalid_account_start">Sąskaitos pavadinimas turėtų prasidėti raide.</string>
+    <string name="error__invalid_account_name">Įveskite įprastą pavadinimą, kuriame yra bent vienas brūkšnys, skaičius arba nėra balsių.</string>
+    <string name="text__verifying_account_availability">Tikrinama paskyros prieinamumas…</string>
+    <string name="error__account_not_available">Tas paskyros pavadinimas jau paimtas.</string>
+    <string name="text__account_is_available">Paskyra yra</string>
+    <string name="title_error">Klaida</string>
+    <string name="error__faucet">Serveris pateikė klaidą. Tai gali nutikti dėl tikslingai nustatyto apribojimo, kuris leistų per trumpą laiką neleisti dažnai pateikti užklausų iš to paties IP adreso. Palaukite 5 minutes ir bandykite dar kartą arba perjunkite į kitą tinklą, pavyzdžiui, iš „wifi“ į mobilųjį telefoną.</string>
+    <string name="error__faucet_template">Maišytuvas grąžino klaidą. Pranešimas: %1$s</string>
+    <string name="error__created_account_not_found">Programa negalėjo gauti informacijos apie naujai sukurtą paskyrą</string>
+    <string name="button__create">Sukurti</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Sandoriai</string>
+    <string name="title_merchants_and_tellers">Prekybininkai ir pardavėjai</string>
+    <string name="title_receive">Gauti</string>
+    <string name="title_balances">Balansai</string>
+    <string name="title_send">Siųsti</string>
+    <string name="title_net_worth">Grynasis vertas</string>
+    <string name="text__coming_soon">Netrukus</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Paieška</string>
+    <string name="title_filter">Filtras</string>
+    <string name="title_export">Eksportuoti</string>
+    <string name="text__no_transactions">Jokių operacijų</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filtravimo parinktys</string>
+    <string name="text__all">Visi</string>
+    <string name="text__sent">Išsiųsta</string>
+    <string name="text__received">Gauta</string>
+    <string name="text__date_range">Data asortimentas</string>
+    <string name="text__equivalent_value">Lygiavertė vertė</string>
+    <string name="text__ignore_network_fees">Nepaisykite tinklo mokesčių</string>
+    <string name="text__between">Tarp</string>
+    <string name="text__and">ir</string>
+    <string name="button__filter">Filtras</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Eksportuoti filtruotas operacijas</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Saugojimo leidimas yra būtinas norint eksportuoti PDF / CSV failus.</string>
+    <string name="title_from">Iš</string>
+    <string name="title_to">Kam</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Data</string>
+    <string name="title_time">Laikas</string>
+    <string name="title_amount">Suma</string>
+    <string name="title_equivalent_value">Lygiavertė vertė</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceptas</string>
+    <string name="text__value">Vertė</string>
+    <string name="template__memo">Pastaba: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Prekeiviai</string>
+    <string name="title_tellers">Skaitytojai</string>
+    <string name="title_about">Apie</string>
+    <string name="msg__merchants_description">„PalmPay“ prekybininkai yra naujosios „Crypto Economy“ atramos pagrindas. Jei ieškote verslo, kuris priims jūsų kriptovaliutą, tiesiog naudokite žemiau pateiktus paieškos ir žemėlapio duomenis. Čia bus įtraukta daugiau prekybininkų, nes mus informuoja „PalmPay“ ambasadoriai.</string>
+    <string name="msg__tellers_description">Paskaitytojai yra žmonės, kurie keis jūsų „fiat“ valiutas su kriptovaliutomis ir atvirkščiai. Jie taip pat padeda pirkliams atsiskaityti už „fiat“.</string>
+    <string name="msg__location_permission_necessary">Vietos leidimas yra būtinas norint dabartinę vietą parodyti žemėlapyje.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Informacija</string>
+    <string name="text__to">Kam</string>
+    <string name="text__amount">Suma</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Nuskaityti QR</string>
+    <string name="error__invalid_account">Netinkama sąskaita</string>
+    <string name="error__not_enough_funds">Nepakanka lėšų</string>
+    <string name="msg__camera_permission_necessary">Norint skaityti QR kodus, reikalingas fotoaparato leidimas.</string>
+    <string name="text__transaction_sent">Operacija išsiųsta!</string>
+    <string name="msg__transaction_not_sent">Neįmanoma išsiųsti operacijos</string>
+    <string name="error__you_dont_own_asset">Jums nepriklauso %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Įveskite asmens, kuriam norite pervesti lėšas, „Bitshares“ sąskaitos pavadinimą. \nPavyzdys: maišytuvas-maišytuvas</string>
+    <string name="text__asset_balance">Turto balansas</string>
+    <string name="msg__asset_balance_explanation">Galite paspausti rodomą balansą, kad išsiųstumėte visą tą turtą. Tai atlikę užpildysite lauką Kiekis.</string>
+    <string name="msg__memo_explanation">Įrašyti atmintinę nebūtina, tačiau atkreipti dėmesį į tai, kodėl išsiuntėte lėšas, yra naudinga ateityje. Atmintines matote tik jūs ir asmuo, kuriam jūs siuntėte lėšas.</string>
+    <string name="text__network_fee">Tinklo mokestis</string>
+    <string name="msg__network_fee_explanation">Tinklo mokestis įskaičiuotas į norimą atsiųsti sumą. Pavyzdžiui, jei norite išsiųsti 50 BTS, „BiTSy“ iš tikrųjų atsiųs ~ 50,21 BTS. Pridedamas 0,21 šiame pavyzdyje yra „Bitshares“ operacijos mokestis plius 0,01% „BiTSy“ kūrėjų komandai (paprastai ~ 1 centas).</string>
+    <string name="text__qr_code">QR kodas</string>
+    <string name="msg__qr_code_explanation">Norint išsiųsti lėšų, jums nereikia nuskaityti kieno nors QR, tačiau tai padeda išvengti klaidų. Kai tik išsiųsite lėšų iš savo sąskaitos, jų nebebus visam laikui, todėl visada įsitikinkite, kad sąskaitos pavadinimas lauke „Kam“ yra teisingas.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Turtas</string>
+    <string name="text__other">Kita…</string>
+    <string name="template__please_send">Prašome atsiųsti: %1$s %2$s</string>
+    <string name="text__any_amount">Bet kokia suma</string>
+    <string name="template__to">Kam: %1$s</string>
+    <string name="msg__invoice_subject">„BiTSy“ sąskaita faktūra nuo %1$s</string>
+    <string name="title_share">Dalintis</string>
+    <string name="text__share_with">Pasidalink su</string>
+    <string name="msg__storage_permission_necessary_share">Atminties leidimas yra būtinas norint dalintis vaizdais.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Nustatymai</string>
+    <string name="title__general">Generolas</string>
+    <string name="msg__close_timer">Automatiškai uždarykite „BiTSy“ po 3 minučių neveiklumo</string>
+    <string name="msg__night_mode">Nakties rėžimas</string>
+    <string name="text__view_network_status">Peržiūrėti tinklo būseną</string>
+    <string name="title__backup">Atsarginė kopija</string>
+    <string name="msg__brainkey_description">„BrainKey“. Paskyros atkūrimo žodžiai, kuriuos galima užfiksuoti ar nukopijuoti, bet ne redaguoti.</string>
+    <string name="msg__brainkey_info">Užsirašyk tai! Įsitikinkite, kad turite 2 šio „BrainKey“ egzempliorius 2 saugiose vietose gaisro ar praradimo atveju. Saugumas pirmiausia! Kiekvienas, turintis prieigą prie jūsų „BrainKey“, gali pasiekti jūsų sąskaitoje esančias lėšas!</string>
+    <string name="button__copied">Nukopijuota</string>
+    <string name="button__view_and_copy">Peržiūrėti ir kopijuoti</string>
+    <string name="title__accounts">Sąskaitos</string>
+    <string name="msg__upgrade_to_ltm">Atnaujinkite „LifeTime“ narystę (LTM). „Bitshares“ LTM sąskaitos moka beveik nulinį mokestį, gauna 80% grynųjų pinigų ir premijų už siuntimus.</string>
+    <string name="button__upgrade_to_ltm">Naujovinkite į LTM</string>
+    <string name="msg__account_upgrade_dialog">Narystė visam gyvenimui suteikia galimybę prekiauti sumažinus tinklo mokesčių rinkinį. \n \nJis įsigalios į einamąją sąskaitą „%1$s“ \n \nTačiau ji kainuoja apie 100 USD, sumokėtų „Bitshares“. \n \nAr tikrai norite tęsti?</string>
+    <string name="title__account_upgraded">Paskyra atnaujinta</string>
+    <string name="msg__account_upgraded">Sveikiname! Dabar jūsų paskyra buvo pakeista į narystę visam gyvenimui.</string>
+    <string name="title__upgrade_account_error">Klaida bandant atnaujinti sąskaitą</string>
+    <string name="msg__upgrade_account_error">Įsitikinkite, kad sąskaitoje yra pakankamai balanso padengti išlaidas.</string>
+    <string name="msg__remove_current_account">Pašalinkite dabartinę sąskaitą iš šio įrenginio ir sukurkite arba importuokite kitą.</string>
+    <string name="button__remove">Pašalinti</string>
+    <string name="title__remove_account">Pašalinti sąskaitą</string>
+    <string name="msg__remove_account_confirmation">Ar tikrai norite pašalinti dabartinę sąskaitą iš šio įrenginio?</string>
+    <string name="title__bugs_or_ideas">Klaidų ar idėjų?</string>
+    <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokuoti: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Saugumas</string>
+    <string name="text__security_lock">Apsaugos užraktas</string>
+    <string name="title__security_dialog">Pasirinkite saugos užraktą</string>
+    <string name="text__pin">PIN kodas</string>
+    <string name="text__pattern">Raštas</string>
+    <string name="text__none">Nė vienas</string>
+    <string name="button__choose">Pasirinkite</string>
+    <string name="title__re_enter_your_pin">Iš naujo įveskite savo PIN kodą</string>
+    <string name="msg__enter_your_pin">Norėdami tęsti, įveskite savo „BiTSy“ PIN kodą</string>
+    <string name="error__wrong_pin">Neteisingas PIN kodas</string>
+    <string name="title__set_bitsy_security_lock">Nustatykite „BiTSy Security“</string>
+    <string name="msg__set_a_pin">Norėdami užtikrinti saugumą, nustatykite PIN kodą</string>
+    <string name="msg__min_pin_length">PIN kodas turi būti bent 6 skaitmenys</string>
+    <string name="title__pins_dont_match">PIN kodai neatitinka</string>
+    <string name="title__re_enter_your_pattern">Iš naujo įveskite savo modelį</string>
+    <string name="msg__enter_your_pattern">Norėdami tęsti, įveskite savo „BiTSy“ modelį</string>
+    <string name="msg__set_a_pattern">Norėdami užtikrinti saugumą, nustatykite šabloną</string>
+    <string name="msg__release_finger">Baigę atleiskite pirštą</string>
+    <string name="button__clear">Aišku</string>
+    <string name="button__next">Kitas</string>
+    <string name="text__draw_an_unlock_pattern">Nubrėžkite atrakinimo modelį</string>
+    <string name="msg__draw_pattern_confirm">Dar kartą pieškite modelį, kad patvirtintumėte</string>
+    <string name="button__confirm">Patvirtinti</string>
+    <string name="msg__your_new_unlock_pattern">Jūsų naujas atrakinimo modelis</string>
+    <string name="error__wront_pattern">Klaidingas raštas</string>
+    <string name="text__pattern_recorded">Užfiksuotas modelis</string>
+    <string name="error__connect_at_least_4_dots">Prijunkite mažiausiai 4 taškus. Bandyk iš naujo.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Per daug klaidingų bandymų. Bandykite dar kartą po %1$d minučių.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Per daug klaidingų bandymų. Bandykite dar kartą po %1$d sekundžių.</string>
+
+</resources>

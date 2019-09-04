@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Setuju</string>
+    <string name="button__disagree">Ora setuju</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN 6 angka</string>
+    <string name="error__pin_too_short">PIN banget cendhak</string>
+    <string name="text_field__confirm_pin">Konfirmasi PIN</string>
+    <string name="error__pin_mismatch">Kesalahan PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Ketik brainkey sing bener, kudu ana 12 utawa 16 tembung.</string>
+    <string name="button__import_existing_account">Impor akun sing ana</string>
+    <string name="text__or">Utawa</string>
+    <string name="button__create_new_account">Gawe akun anyar</string>
+    <string name="error__invalid_brainkey">Ora ana akun sing dikendhaleni dening brainkey sing ditemtokake ing ngendi ditemokake, priksa brainkey sampeyan amarga ngetik kasalahan</string>
+    <string name="error__try_again">Coba maneh sawise 5 menit</string>
+    <string name="dialog__account_candidates_title">Pilih pilih akun</string>
+    <string name="dialog__account_candidates_content">Tombol sing asalé saka brainkey iki bisa digunakake kanggo ngontrol luwih saka siji akun, pilih pilih akun sing pengin diimpor</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Jeneng akun BitShares</string>
+    <string name="error__read_dict_file">Kesalahan maca file kamus</string>
+    <string name="error__invalid_account_length">Jeneng akun kudu dadi 3 nganti 16 karakter.</string>
+    <string name="error__invalid_account_start">Jeneng akun kudu diwiwiti kanthi huruf.</string>
+    <string name="error__invalid_account_name">Mangga ketik jeneng biasa sing paling ora siji aksara swara, nomer, utawa ora ana.</string>
+    <string name="text__verifying_account_availability">Ndhaptar kasedhiyan akun…</string>
+    <string name="error__account_not_available">Jeneng akun kasebut wis dijupuk.</string>
+    <string name="text__account_is_available">Akun kasedhiya</string>
+    <string name="title_error">Kesalahan</string>
+    <string name="error__faucet">Server ngasilake kesalahan. Iki bisa uga amarga watesan sing disetel kanthi ora sengaja supaya ora njaluk panjaluk sing asring teka saka alamat IP sing padha ing wektu sing cendhak. Enteni 5 menit lan coba maneh, utawa ngalih menyang jaringan sing beda, umpamane saka wifi menyang sel.</string>
+    <string name="error__faucet_template">Keran ngasilake kesalahan. Msg: %1$s</string>
+    <string name="error__created_account_not_found">App ora bisa njupuk informasi babagan akun sing mentas digawe</string>
+    <string name="button__create">Nggawe</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transaksi</string>
+    <string name="title_merchants_and_tellers">Merchants &amp; Tellers</string>
+    <string name="title_receive">Nampa</string>
+    <string name="title_balances">Balance</string>
+    <string name="title_send">Kirim</string>
+    <string name="title_net_worth">Worth Net</string>
+    <string name="text__coming_soon">Bakal rauh</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Telusuri</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Ekspor</string>
+    <string name="text__no_transactions">Ora Ana Transaksi</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Pilihan Filter</string>
+    <string name="text__all">Kabeh</string>
+    <string name="text__sent">Dikirim</string>
+    <string name="text__received">Ditampa</string>
+    <string name="text__date_range">Range Tanggal</string>
+    <string name="text__equivalent_value">Nilai sing padha</string>
+    <string name="text__ignore_network_fees">Nglirwakake beya Jaringan</string>
+    <string name="text__between">Antarane</string>
+    <string name="text__and">lan</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Transaksi transaksi saring</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Ijin panyimpenan perlu kanggo ngekspor file PDF / CSV.</string>
+    <string name="title_from">Saka</string>
+    <string name="title_to">Kanggo</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Tanggal</string>
+    <string name="title_time">Wektu</string>
+    <string name="title_amount">Jumlah</string>
+    <string name="title_equivalent_value">Nilai sing padha</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Nilai</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Tanggal: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Pedagang</string>
+    <string name="title_tellers">Kuwate</string>
+    <string name="title_about">Babagan</string>
+    <string name="msg__merchants_description">Pedagang PalmPay minangka tulang belakang Ekonomi Crypto anyar. Yen sampeyan nggoleki bisnis sing bakal nampa Cryptocurrency sampeyan, mula gunakake data Telusuri lan Map ing ngisor iki. Luwih akeh pedagang bakal ditambahake ing kene minangka duta Besar PalmPay.</string>
+    <string name="msg__tellers_description">Sing ngomong minangka wong sing bakal ijol-ijolan mata uang sampeyan kanthi cryptocurrencies, lan uga kosok balene. Dheweke uga ngrewangi Pedagang kanthi pemukiman fiat.</string>
+    <string name="msg__location_permission_necessary">Ijin lokasi perlu kanggo nuduhake lokasi saiki ing peta.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Kanggo</string>
+    <string name="text__amount">Jumlah</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scan QR</string>
+    <string name="error__invalid_account">Akun ora sah</string>
+    <string name="error__not_enough_funds">Ora cukup dana</string>
+    <string name="msg__camera_permission_necessary">Ijin kamera perlu maca kode QR.</string>
+    <string name="text__transaction_sent">Transaksi dikirim!</string>
+    <string name="msg__transaction_not_sent">Ora bisa ngirim transaksi</string>
+    <string name="error__you_dont_own_asset">Sampeyan ora duwe %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Ketik jeneng akun Bitshares saka wong sing pengin dikirim dana. \n Kanggo conto: keruwetan agorise</string>
+    <string name="text__asset_balance">Imbangan Aset</string>
+    <string name="msg__asset_balance_explanation">Sampeyan bisa nutul imbangan sing ditampilake kanggo ngirim kabeh aset kasebut. Nindakake kaya kasebut bakal ngisi kolom Jumlah kanggo sampeyan.</string>
+    <string name="msg__memo_explanation">Ngetik Memo ora dibutuhake, nanging njupuk cathetan kenapa sampeyan ngirim dana kasebut cocog kanggo referensi ing mangsa ngarep. Memo mung katon sampeyan lan wong sing dikirim dana menyang.</string>
+    <string name="text__network_fee">Ragad Jaringan</string>
+    <string name="msg__network_fee_explanation">Ragad Jaringan kalebu ing jumlah sing pengin dikirim. Contone, yen sampeyan pengin ngirim 50 BTS, BiTSy sejatine bakal ngirim ~ 50,2 BTS. 0.21 tambahan ing conto iki yaiku biaya transaksi Bitshares ditambah karo 0,01% menyang Tim pangembang BiTSy (biasane ~ 1 sen).</string>
+    <string name="text__qr_code">Kode QR</string>
+    <string name="msg__qr_code_explanation">Sampeyan ora perlu mindhai QR kanggo ngirim dana, nanging mbantu sampeyan ngindhari kesalahan. Sawise sampeyan ngirim dana saka akun, kabeh bakal ilang, mula mesthi priksa jeneng akun ing kolom "Kanggo" bener.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Liyane…</string>
+    <string name="template__please_send">Mangga Kirim: %1$s %2$s</string>
+    <string name="text__any_amount">Sembarang Jumlah</string>
+    <string name="template__to">Kanggo: %1$s</string>
+    <string name="msg__invoice_subject">Invois BiTSy saka %1$s</string>
+    <string name="title_share">Nuduhake</string>
+    <string name="text__share_with">Nuduhake</string>
+    <string name="msg__storage_permission_necessary_share">Ijin panyimpenan perlu kanggo nuduhake gambar.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Setelan</string>
+    <string name="title__general">Umum</string>
+    <string name="msg__close_timer">Nutup BiTSy kanthi otomatis sawise 3 menit ora aktif</string>
+    <string name="msg__night_mode">Mode wengi</string>
+    <string name="text__view_network_status">Deleng Status Network</string>
+    <string name="title__backup">Gawe serep</string>
+    <string name="msg__brainkey_description">BrainKey. Tembung pemulihan akun sing bisa dijupuk utawa disalin, nanging ora bisa diedit.</string>
+    <string name="msg__brainkey_info">Tulisen iki! Priksa manawa sampeyan duwe 2 salinan BrainKey iki ing 2 lokasi sing aman yen bisa enteni geni utawa ilang. Keamanan Pisanan! Sapa wae sing duwe akses menyang BrainKey bisa ngakses dana ing akun!</string>
+    <string name="button__copied">Disalin</string>
+    <string name="button__view_and_copy">Ndeleng &amp; Nyalin</string>
+    <string name="title__accounts">Akun</string>
+    <string name="msg__upgrade_to_ltm">Nganyarke menyang Keanggotaan LifeTime (LTM). Akun Bitshares \ \'LTM mbayar ragad cedhak-nol, entuk uang dhuwit bali regane 80% lan bonus kanggo ngubungake.</string>
+    <string name="button__upgrade_to_ltm">Nganyarke menyang LTM</string>
+    <string name="msg__account_upgrade_dialog">Keanggotaan Wektu Urip ngidini sampeyan kanggo perdagangan karo sithik biaya jaringan sing suda. \n \nIku bakal ditrapake kanggo akun saiki "%1$s" \n \nIngkono uga kanthi biaya sekitar 100 USD sing dibayar ing Bitshares. \n \n Apa sampeyan pengin nerusake?</string>
+    <string name="title__account_upgraded">Nganyarke akun</string>
+    <string name="msg__account_upgraded">Sugeng! Akun sampeyan saiki wis nganyari menyang Keanggotaan Lifetime.</string>
+    <string name="title__upgrade_account_error">Kesalahan nalika nyoba nganyarke akun</string>
+    <string name="msg__upgrade_account_error">Priksa manawa akun sampeyan duwe imbangan sing cukup kanggo nyukupi biaya kasebut.</string>
+    <string name="msg__remove_current_account">Mbusak Akun saiki saka piranti iki lan gawe utawa ngimpor beda.</string>
+    <string name="button__remove">Mbusak</string>
+    <string name="title__remove_account">Mbusak Akun</string>
+    <string name="msg__remove_account_confirmation">Apa sampeyan pengin mbusak akun saiki saka piranti iki?</string>
+    <string name="title__bugs_or_ideas">Kopi utawa Gagasan?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloken: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Keamanan</string>
+    <string name="text__security_lock">Kunci Keamanan</string>
+    <string name="title__security_dialog">Pilih Kunci Keamanan</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Pola</string>
+    <string name="text__none">Ora ana</string>
+    <string name="button__choose">Pilih</string>
+    <string name="title__re_enter_your_pin">Ketik maneh PIN</string>
+    <string name="msg__enter_your_pin">Ketik PIN BiTSy sampeyan supaya bisa terus</string>
+    <string name="error__wrong_pin">PIN sing salah</string>
+    <string name="title__set_bitsy_security_lock">Setel Keamanan BiTSy</string>
+    <string name="msg__set_a_pin">Kanggo keamanan, ngeset PIN</string>
+    <string name="msg__min_pin_length">PIN kudu paling sethithik 6 digit</string>
+    <string name="title__pins_dont_match">Pertandhingan PIN ora cocog</string>
+    <string name="title__re_enter_your_pattern">Ketik maneh pola sampeyan</string>
+    <string name="msg__enter_your_pattern">Ketik pola BiTSy sampeyan supaya bisa terus</string>
+    <string name="msg__set_a_pattern">Kanggo keamanan, ngeset pola</string>
+    <string name="msg__release_finger">Pedhot driji yen wis rampung</string>
+    <string name="button__clear">Cetha</string>
+    <string name="button__next">Sabanjure</string>
+    <string name="text__draw_an_unlock_pattern">Gambar pola bukak kunci</string>
+    <string name="msg__draw_pattern_confirm">Pola gambar maneh kanggo konfirmasi</string>
+    <string name="button__confirm">Konfirmasi</string>
+    <string name="msg__your_new_unlock_pattern">Pola bukak kunci anyar sampeyan</string>
+    <string name="error__wront_pattern">Pola salah</string>
+    <string name="text__pattern_recorded">Pola direkam</string>
+    <string name="error__connect_at_least_4_dots">Sambungake paling ora 4 titik. Coba maneh.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Akeh banget salah usaha. Coba maneh maneh ing %1$d menit.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Akeh banget salah usaha. Coba maneh ing %1$d detik.</string>
+
+</resources>

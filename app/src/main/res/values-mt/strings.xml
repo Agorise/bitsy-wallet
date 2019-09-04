@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Jaqblu</string>
+    <string name="button__disagree">Ma taqbilx</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ figuri PIN</string>
+    <string name="error__pin_too_short">PIN qasir wisq</string>
+    <string name="text_field__confirm_pin">Ikkonferma PIN</string>
+    <string name="error__pin_mismatch">Żbilanċ PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Jekk jogħġbok daħħal brainkey korrett, għandu jkollha 12 jew 16-il kelma.</string>
+    <string name="button__import_existing_account">Importa kont eżistenti</string>
+    <string name="text__or">Jew</string>
+    <string name="button__create_new_account">Oħloq kont ġdid</string>
+    <string name="error__invalid_brainkey">L-ebda kontijiet ikkontrollati mill-brainkey mogħti fejn jinsabu, jekk jogħġbok iċċekkja l-brainkey tiegħek għal żbalji ta \'tajpjar</string>
+    <string name="error__try_again">Erġa \'erġa\' wara 5 minuti</string>
+    <string name="dialog__account_candidates_title">Jekk jogħġbok agħżel kont</string>
+    <string name="dialog__account_candidates_content">Iċ-ċwievet imnissla minn din il-brainkey jidhru li qed jintużaw biex tikkontrolla aktar minn kont wieħed, jekk jogħġbok agħżel liema kont tixtieq timporta</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Isem tal-kont BitShares</string>
+    <string name="error__read_dict_file">Żball fil-qari tal-fajl tad-dizzjunarju</string>
+    <string name="error__invalid_account_length">L-isem tal-kont għandu jkun ta \'3 sa 16-il karattru.</string>
+    <string name="error__invalid_account_start">L-isem tal-kont għandu jibda b\'ittra.</string>
+    <string name="error__invalid_account_name">Jekk jogħġbok ikteb isem regolari li jkun fih tal-inqas sing, numru, jew l-ebda vokali.</string>
+    <string name="text__verifying_account_availability">Tivverifika d-disponibbiltà tal-kont…</string>
+    <string name="error__account_not_available">Dak l-isem tal-kont diġà ttieħed.</string>
+    <string name="text__account_is_available">Kont huwa disponibbli</string>
+    <string name="title_error">Żball</string>
+    <string name="error__faucet">Is-server irritorna żball. Dan jista \'jkun minħabba limitazzjoni stabbilita b\'mod xieraq biex tiċħad it-talbiet frekwenti li jkunu ġejjin mill-istess indirizz IP fi żmien qasir. Jekk jogħġbok stenna 5 minuti u erġa \'erġa\', jew aqleb għal netwerk differenti, per eżempju minn wifi għal ċellola.</string>
+    <string name="error__faucet_template">Il-faucet irritorna żball. Msg: %1$s</string>
+    <string name="error__created_account_not_found">L-app ma setgħetx tikseb informazzjoni dwar il-kont maħluq</string>
+    <string name="button__create">Oħloq</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Tranżazzjonijiet</string>
+    <string name="title_merchants_and_tellers">Negozjanti u Teller</string>
+    <string name="title_receive">Irċievi</string>
+    <string name="title_balances">Bilanċi</string>
+    <string name="title_send">Ibgħat</string>
+    <string name="title_net_worth">X’Jiswa Nett</string>
+    <string name="text__coming_soon">Ġej dalwaqt</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Fittex</string>
+    <string name="title_filter">Iffiltra</string>
+    <string name="title_export">Esportazzjoni</string>
+    <string name="text__no_transactions">L-ebda transazzjoni</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Għażliet tal-filtru</string>
+    <string name="text__all">Kollha</string>
+    <string name="text__sent">Mibgħut</string>
+    <string name="text__received">Waslu</string>
+    <string name="text__date_range">Medda tad-Data</string>
+    <string name="text__equivalent_value">Valur ekwivalenti</string>
+    <string name="text__ignore_network_fees">Injora l-miżati tan-Netwerk</string>
+    <string name="text__between">Bejn</string>
+    <string name="text__and">u</string>
+    <string name="button__filter">Iffiltra</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Tranżazzjonijiet iffiltrati fuq l-esportazzjoni</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Huwa meħtieġ permess tal-ħażna biex jiġu esportati fajls PDF / CSV.</string>
+    <string name="title_from">Minn</string>
+    <string name="title_to">Biex</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Data</string>
+    <string name="title_time">Ħin</string>
+    <string name="title_amount">Ammont</string>
+    <string name="title_equivalent_value">Valur ekwivalenti</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">Riċeviment elettroniku</string>
+    <string name="text__value">Valur</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Negozjanti</string>
+    <string name="title_tellers">Tellers</string>
+    <string name="title_about">Dwar</string>
+    <string name="msg__merchants_description">In-negozjanti tal-PalmPay huma s-sinsla tal-Ekonomija Kripto l-ġdida. Jekk qed tfittex negozji li se jaċċettaw il-Cryptocurrency tiegħek, allura sempliċement uża d-dejta Fittex u Mappa hawn taħt. Aktar negozjanti ser jiġu miżjuda hawn hekk kif l-Ambaxxaturi tal-PalmPay jinfurmawna.</string>
+    <string name="msg__tellers_description">Ċellieba huma nies li jiskambjaw il-muniti fiat tiegħek ma \'cryptocurrencies, u viċi versa. Huma jassistu wkoll in-Negozjanti bis-saldu tal-fiat.</string>
+    <string name="msg__location_permission_necessary">Huwa meħtieġ permess tal-lok biex turi l-lokazzjoni preżenti tiegħek fuq il-mappa.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Info</string>
+    <string name="text__to">Biex</string>
+    <string name="text__amount">Ammont</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Skennja QR</string>
+    <string name="error__invalid_account">Kont invalidu</string>
+    <string name="error__not_enough_funds">Mhux biżżejjed fondi</string>
+    <string name="msg__camera_permission_necessary">Huwa meħtieġ permess tal-kamera biex jinqraw kodiċi QR.</string>
+    <string name="text__transaction_sent">Tranżazzjoni mibgħuta!</string>
+    <string name="msg__transaction_not_sent">Mhux possibbli li tibgħat transazzjoni</string>
+    <string name="error__you_dont_own_asset">Inti m\'għandekx %1$s stess</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Ittajpja l-isem tal-kont ta ’Bitshares tal-persuna li trid tibgħatlek il-fondi. \nGħall-eżempju: agorise-faucet</string>
+    <string name="text__asset_balance">Bilanċ tal-Assi</string>
+    <string name="msg__asset_balance_explanation">Tista \'taptap fuq il-bilanċ muri biex tibgħat dak l-assi kollha. Jekk tagħmel hekk imla l-kamp Ammont għalik.</string>
+    <string name="msg__memo_explanation">Id-dħul ta \'Memo mhuwiex meħtieġ, iżda t-teħid ta\' noti dwar għaliex int bagħtet il-fondi huwa sabiħ għal referenza futura. Memos huma viżibbli biss għalik u għall-persuna li int bagħtet fondi għaliha.</string>
+    <string name="text__network_fee">Ħlas tan-Netwerk</string>
+    <string name="msg__network_fee_explanation">Il-ħlas tan-Netwerk huwa inkluż fl-ammont li trid tibgħat. Pereżempju, jekk trid tibgħat 50 BTS, BiTSy fil-fatt tibgħat ~ 50.21 BTS. Il-0.21 miżjud f’dan l-eżempju huwa t-tariffa tat-tranżazzjoni Bitshares flimkien ma ’0.01% għat-Tim tal-Iżviluppatur tal-BiTSy (tipikament ~ 1 fil-mija).</string>
+    <string name="text__qr_code">Kodiċi QR</string>
+    <string name="msg__qr_code_explanation">M\'għandekx bżonn tiskannja l-QR ta \'xi ħadd biex tibgħat fondi, imma tgħinek tevita żbalji. Ladarba tibgħat fondi mill-kont tiegħek, dawn ma baqgħux għal dejjem, u għalhekk dejjem kun żgur li l-isem tal-kont fil-qasam "Sa" huwa korrett.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Assi</string>
+    <string name="text__other">Oħrajn…</string>
+    <string name="template__please_send">Jekk jogħġbok Ibgħat: %1$s %2$s</string>
+    <string name="text__any_amount">Kull Ammont</string>
+    <string name="template__to">Lil: %1$s</string>
+    <string name="msg__invoice_subject">Fattura tal-BiTSy minn %1$s</string>
+    <string name="title_share">Aqsam</string>
+    <string name="text__share_with">Aqsam ma \'</string>
+    <string name="msg__storage_permission_necessary_share">Huwa meħtieġ permess għall-ħażna biex jinqasmu l-immaġini.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Issettjar</string>
+    <string name="title__general">Ġenerali</string>
+    <string name="msg__close_timer">Għalaq awtomatikament BiTSy wara 3 minuti ta \'inattività</string>
+    <string name="msg__night_mode">Modalità bil-lejl</string>
+    <string name="text__view_network_status">Ara l-Istat tan-Netwerk</string>
+    <string name="title__backup">Backup</string>
+    <string name="msg__brainkey_description">BrainKey. Kliem ta \'rkupru tal-kont li jista\' jinqabad jew jiġi kkupjat, iżda mhux editjat.</string>
+    <string name="msg__brainkey_info">Ikteb dan! Kun żgur li għandek 2 kopji ta \'dan BrainKey f\'2 postijiet siguri f\'każ ta\' nar jew telf. Sigurtà l-Ewwel! Kull min għandu aċċess għall-BrainKey tiegħek jista \'jaċċessa l-fondi fil-kont tiegħek!</string>
+    <string name="button__copied">Ikkopjat</string>
+    <string name="button__view_and_copy">Ara u Kopja</string>
+    <string name="title__accounts">Kontijiet</string>
+    <string name="msg__upgrade_to_ltm">Aġġornament għal Sħubija LifeTime (LTM). Il-kontijiet Bitshares \ \'LTM iħallsu miżati kważi żero, jiksbu 80% ta\' flus lura u bonusijiet għal referenzi.</string>
+    <string name="button__upgrade_to_ltm">Aġġorna għal LTM</string>
+    <string name="msg__account_upgrade_dialog">Is-Sħubija tal-Ħajja tal-Ħajja tippermettilek tinnegozja ma \'sett imnaqqas ta\' ħlasijiet għan-netwerk. \n \nIt tidħol fis-seħħ għall-kont kurrenti "%1$s" \n \nIt madankollu toħroġ bi spiża ta \'madwar 100 USD imħallsa f\'Bitshares. \n \nArt żgur li trid tipproċedi?</string>
+    <string name="title__account_upgraded">Kont Imtejjeb</string>
+    <string name="msg__account_upgraded">Prosit! Il-kont tiegħek issa ġie aġġornat għas-Sħubija tal-Ħajja.</string>
+    <string name="title__upgrade_account_error">Żball waqt li ppruvajt taġġorna l-kont</string>
+    <string name="msg__upgrade_account_error">Jekk jogħġbok kun żgur li l-kont tiegħek għandu bilanċ biżżejjed biex ikopri l-ispejjeż.</string>
+    <string name="msg__remove_current_account">Neħħi l-Kont kurrenti minn dan it-tagħmir u toħloq jew timporta wieħed differenti.</string>
+    <string name="button__remove">Neħħi</string>
+    <string name="title__remove_account">Neħħi l-Kont</string>
+    <string name="msg__remove_account_confirmation">Int żgur li trid tneħħi l-kont kurrenti minn dan it-tagħmir?</string>
+    <string name="title__bugs_or_ideas">Bugs jew Ideat?</string>
+    <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Blokk: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sigurtà</string>
+    <string name="text__security_lock">Lock Lock</string>
+    <string name="title__security_dialog">Agħżel Lock Lock</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Disinn</string>
+    <string name="text__none">Xejn</string>
+    <string name="button__choose">Agħżel</string>
+    <string name="title__re_enter_your_pin">Erġa \'daħħal il-PIN tiegħek</string>
+    <string name="msg__enter_your_pin">Daħħal il-PIN tal-BiTSy tiegħek biex tkompli</string>
+    <string name="error__wrong_pin">Żball tal-PIN</string>
+    <string name="title__set_bitsy_security_lock">Issettja s-Sigurtà tal-BiTSy</string>
+    <string name="msg__set_a_pin">Għas-sigurtà, issettja PIN</string>
+    <string name="msg__min_pin_length">Il-PIN għandu jkun ta \'l-inqas 6 ċifri</string>
+    <string name="title__pins_dont_match">PINs ma jaqblux</string>
+    <string name="title__re_enter_your_pattern">Erġa \'daħħal ix-xejra tiegħek</string>
+    <string name="msg__enter_your_pattern">Daħħal il-mudell tal-BiTSy tiegħek biex tkompli</string>
+    <string name="msg__set_a_pattern">Għas-sigurtà, issettja Pattern</string>
+    <string name="msg__release_finger">Itlaq is-saba \'meta jkun għaddej</string>
+    <string name="button__clear">Ċari</string>
+    <string name="button__next">Sussegwentement</string>
+    <string name="text__draw_an_unlock_pattern">Pinġi disinn ta \'żblokk</string>
+    <string name="msg__draw_pattern_confirm">Iġbed id-disinn mill-ġdid biex tikkonferma</string>
+    <string name="button__confirm">Ikkonferma</string>
+    <string name="msg__your_new_unlock_pattern">Il-mudell ġdid tiegħek nisfruttaw</string>
+    <string name="error__wront_pattern">Disinn żbaljat</string>
+    <string name="text__pattern_recorded">Disinn irreġistrat</string>
+    <string name="error__connect_at_least_4_dots">Qabbad mill-inqas 4 tikek. Erġa \'pprova.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Wisq tentattivi mhux korretti. Erġa \'erġa\' fil-%1$d minuti.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Wisq tentattivi mhux korretti. Erġa \'erġa\' fi %1$d sekondi.</string>
+
+</resources>

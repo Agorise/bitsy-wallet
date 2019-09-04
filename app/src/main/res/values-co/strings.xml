@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">D\'accordu</string>
+    <string name="button__disagree">Disaccorda</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ cifre PIN</string>
+    <string name="error__pin_too_short">PIN troppu cortu</string>
+    <string name="text_field__confirm_pin">Confirmà u PIN</string>
+    <string name="error__pin_mismatch">Non corrispondenza PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Inserite un brainkey currettu, duverebbe avè da 12 o 16 parole.</string>
+    <string name="button__import_existing_account">Importa contu esistente</string>
+    <string name="text__or">O</string>
+    <string name="button__create_new_account">Crea un novu contu</string>
+    <string name="error__invalid_brainkey">Nisun contu cuntrullatu da u brainkey datu induve si trova, fate un cuntrollu per u vostru brainkey per errori di scrive</string>
+    <string name="error__try_again">Pruvate dopu à 5 minuti</string>
+    <string name="dialog__account_candidates_title">Selezziunate un contu</string>
+    <string name="dialog__account_candidates_content">I chjavi derivati da questu brainkey pareranu esse utilizati per cuntrullà più di un cuntu, selezziunate quale contu chì vulete impurtà</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Nome di contu BitShares</string>
+    <string name="error__read_dict_file">Errore à leghje u schedariu di dizziunariu</string>
+    <string name="error__invalid_account_length">U nome di contu deve esse da 3 à 16 caratteri.</string>
+    <string name="error__invalid_account_start">U nome di u contu duverebbe cumincià cù una lettera.</string>
+    <string name="error__invalid_account_name">Scrivite un nome regulare chì cuntene almenu un trattino, un numaru, o nimu vocali.</string>
+    <string name="text__verifying_account_availability">Verificà a dispunibilità di u contu…</string>
+    <string name="error__account_not_available">Stu nome di contu hè digià pigliatu.</string>
+    <string name="text__account_is_available">U contu hè dispunibule</string>
+    <string name="title_error">Errore</string>
+    <string name="error__faucet">U server hà tornatu un errore. Chistu pò esse dovutu à una limitazione apposta in u locu per disallà e richieste frequenti da u listessu indirizzu IP in un lapse di tempu. Aspetta per 5 minuti è torna à pruvà, o cambiate à una reta diversa, per esempiu da wifi à cellula.</string>
+    <string name="error__faucet_template">U faucet hà vultatu un errore. Msg: %1$s</string>
+    <string name="error__created_account_not_found">L\'app ùn pudia ritruvà informazioni nantu à u cuntu creatu novu</string>
+    <string name="button__create">Crea</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transazzioni</string>
+    <string name="title_merchants_and_tellers">Mercanti è Ghjuvellori</string>
+    <string name="title_receive">Riceve</string>
+    <string name="title_balances">Bilanci</string>
+    <string name="title_send">Invia</string>
+    <string name="title_net_worth">Vale a pena netta</string>
+    <string name="text__coming_soon">Prestu</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Ricerca</string>
+    <string name="title_filter">Filtrà</string>
+    <string name="title_export">Esporta</string>
+    <string name="text__no_transactions">Nè transazzione</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Opzioni di filtri</string>
+    <string name="text__all">Tuttu</string>
+    <string name="text__sent">Mandatu</string>
+    <string name="text__received">Ricevutu</string>
+    <string name="text__date_range">Intervallu di data</string>
+    <string name="text__equivalent_value">Valore equivalente</string>
+    <string name="text__ignore_network_fees">Ignora i tariffi di a Rete</string>
+    <string name="text__between">Trà</string>
+    <string name="text__and">è</string>
+    <string name="button__filter">Filtrà</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Export transazzioni filtrati</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">U permessu di almacenamiento hè necessariu per esportà file PDF / CSV.</string>
+    <string name="title_from">Da</string>
+    <string name="title_to">To</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Data</string>
+    <string name="title_time">U tempu</string>
+    <string name="title_amount">Quantità</string>
+    <string name="title_equivalent_value">Valore equivalente</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Valore</string>
+    <string name="template__memo">Memu: %1$s</string>
+    <string name="template__date">Data: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Mercanti</string>
+    <string name="title_tellers">Ghjuventù</string>
+    <string name="title_about">À propositu</string>
+    <string name="msg__merchants_description">I cummircianti di PalmPay sò a spina di a nova economia criptu. Sè vo circate da e imprese chì accettanu a vostra criptovaluta, basta aduprà i dati di Ricerca è Mappa quì sottu. Più cummercianti saranu aghjustati quì cumu l\'Ambasciatori di PalmPay ci infurmanu.</string>
+    <string name="msg__tellers_description">I Tellers sò e persone chì scambiaranu e vostre valute fiat cù criptocurrenze, è vice versa. Aiutanu ancu i Mercanti cù salvezza fiat.</string>
+    <string name="msg__location_permission_necessary">U permessu di locu hè necessariu per vede a vostra situazione attuale in a mappa.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Infurmazioni</string>
+    <string name="text__to">To</string>
+    <string name="text__amount">Quantità</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">Scansione QR</string>
+    <string name="error__invalid_account">Un contu invalidu</string>
+    <string name="error__not_enough_funds">Micca fondi abbastanza</string>
+    <string name="msg__camera_permission_necessary">L\'autorizazione di a càmera hè necessaria per leghje codici QR.</string>
+    <string name="text__transaction_sent">Transazzione mandata!</string>
+    <string name="msg__transaction_not_sent">Impussibule di mandà transazzione</string>
+    <string name="error__you_dont_own_asset">Ùn possede micca %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Type in u nome di u cuntu Bitshares di a persona chì vulete mandà fondi. \nPer esempiu: agorise-faucet</string>
+    <string name="text__asset_balance">Saldo di beni</string>
+    <string name="msg__asset_balance_explanation">Pudete appughjà nantu à u bilanciu affissatu per mandà tutti quelli beni. Fate cusì cumpiendu u campu di Quantità per voi.</string>
+    <string name="msg__memo_explanation">L\'ingressu di un Memo ùn hè micca necessariu, ma pigliate note nantu à perchè avete mandatu i fondi hè bellu per riferenza futura. Memos hè solu visibile per voi è da a persona à quale avete mandatu fondi.</string>
+    <string name="text__network_fee">Tariffa di a rete</string>
+    <string name="msg__network_fee_explanation">A tarifa di a Rete hè inclusa in l\'ammontu chì vulete mandà. Per esempiu, se vulete mandà 50 BTS, BiTSy invià veramente ~ 50.21 BTS. L\'aghjuntu 0.21 in questu esempiu hè a tarifa di transazzione di Bitshares più 0.01% à u Team di Sviluppatore BiTSy (tipicamenti ~ 1 centu).</string>
+    <string name="text__qr_code">Codice QR</string>
+    <string name="msg__qr_code_explanation">Ùn avete bisognu à scansificà QR di qualcunu per mandà fondi, ma aiuta per evità errori. Una volta chì mandate fondi da u vostru contu, sò andati per sempre, dunque sempre assicuratevi chì u nome di contu in u campu "To" hè currettu.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Altru…</string>
+    <string name="template__please_send">Inviate: %1$s %2$s</string>
+    <string name="text__any_amount">Ogni Ammontu</string>
+    <string name="template__to">À: %1$s</string>
+    <string name="msg__invoice_subject">Factura BiTSy da %1$s</string>
+    <string name="title_share">Condividi</string>
+    <string name="text__share_with">Condividi cù</string>
+    <string name="msg__storage_permission_necessary_share">U permessu di almacenamentu hè necessariu di sparte images.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="title__general">Generale</string>
+    <string name="msg__close_timer">Chjudite automaticamente BiTSy dopu 3 minuti di inattività</string>
+    <string name="msg__night_mode">Modu notti</string>
+    <string name="text__view_network_status">Vede u Statu di a Rede</string>
+    <string name="title__backup">Salvà</string>
+    <string name="msg__brainkey_description">BrainKey. Parolle di ricuperazione di u cuntu chì pò esse captu o copiatu, ma micca editatu.</string>
+    <string name="msg__brainkey_info">Scrivite questu! Assicuratevi chì avete 2 copie di questu BrainKey in 2 posti sicuri in casu di focu o perdita. Sicurità Prima! Qualchese chì hà accessu à u vostru BrainKey pò accede à i fondi in u vostru contu!</string>
+    <string name="button__copied">Copiati</string>
+    <string name="button__view_and_copy">Vede &amp; Copia</string>
+    <string name="title__accounts">U Accounts</string>
+    <string name="msg__upgrade_to_ltm">Avanzate à adesione LifeTime (LTM). I cunti Bitshares \ \'LTM paganu tariffu vicinu à u zero, uttene un 80% di rimborsu è bonuses per riferimenti.</string>
+    <string name="button__upgrade_to_ltm">Avanzate à LTM</string>
+    <string name="msg__account_upgrade_dialog">L\'appartenenza à u Tempu di Vita permette di cummerciu cun un settu ridottu di tariffu di a rete. \n \nAnderà effettu in u cuntu corrente "%1$s" \n \nVale però cù un costu di circa 100 USD pagati in Bitshares. \n \nSè sicuru chì vulete procedà?</string>
+    <string name="title__account_upgraded">Account Upgraded</string>
+    <string name="msg__account_upgraded">Felicitazioni! U vostru contu hè statu avà aghjurnatu à l\'abbinenza Lifetime.</string>
+    <string name="title__upgrade_account_error">Errore mentre pruvate d\'aghjurnà u vostru contu</string>
+    <string name="msg__upgrade_account_error">Assicuratevi chì u vostru contu hà abbastanza saldo per copre i costi.</string>
+    <string name="msg__remove_current_account">Elimina u cuntu attuale da questu dispusitivu è crea o impurtate un altru.</string>
+    <string name="button__remove">Elimina</string>
+    <string name="title__remove_account">Elimina u cuntu</string>
+    <string name="msg__remove_account_confirmation">Hè sicuru chì vulete sguassà u cuntu attuale da questu dispositivu?</string>
+    <string name="title__bugs_or_ideas">Bugs o Idee?</string>
+    <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloccu: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Sicurità</string>
+    <string name="text__security_lock">Serratura di sicurità</string>
+    <string name="title__security_dialog">Sceglite un serratura di sicurità</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Pattern</string>
+    <string name="text__none">Nisunu</string>
+    <string name="button__choose">Scegli</string>
+    <string name="title__re_enter_your_pin">Torna indettendu u vostru PIN</string>
+    <string name="msg__enter_your_pin">Introduzzate u vostru PIN BiTSy per continuà</string>
+    <string name="error__wrong_pin">PIN sbagliatu</string>
+    <string name="title__set_bitsy_security_lock">Sceglie BiTSy Securità</string>
+    <string name="msg__set_a_pin">Per a sicurità, stabilisce un PIN</string>
+    <string name="msg__min_pin_length">U PIN deve esse almenu 6 cifre</string>
+    <string name="title__pins_dont_match">PIN non corrispondenu</string>
+    <string name="title__re_enter_your_pattern">Re-entre in u vostru mudellu</string>
+    <string name="msg__enter_your_pattern">Ingressu u vostru mudellu BiTSy per continuà</string>
+    <string name="msg__set_a_pattern">Per a sicurità, stabilisce un Pattern</string>
+    <string name="msg__release_finger">Lintate u dito quandu hè fattu</string>
+    <string name="button__clear">Chjaru</string>
+    <string name="button__next">Avanti</string>
+    <string name="text__draw_an_unlock_pattern">Disegna un mudellu di sbloccare</string>
+    <string name="msg__draw_pattern_confirm">Disegna di novu u mudellu per cunfirmà</string>
+    <string name="button__confirm">Conferma</string>
+    <string name="msg__your_new_unlock_pattern">U vostru novu mudellu di sbloccare</string>
+    <string name="error__wront_pattern">Modellu sbagliatu</string>
+    <string name="text__pattern_recorded">Pattern registratu</string>
+    <string name="error__connect_at_least_4_dots">Connettate almenu 4 punti. Prova dinò.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Troppu tentativi sbagliati. Pruvate di novu in %1$d minuti.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Troppu tentativi sbagliati. Pruvate di novu in %1$d seconde.</string>
+
+</resources>

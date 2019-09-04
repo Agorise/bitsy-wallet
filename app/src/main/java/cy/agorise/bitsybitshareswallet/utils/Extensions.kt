@@ -8,7 +8,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.util.regex.Pattern
 
 /**
  * Creates an enabled state, by enabling the button and using the given [colorResource] to color it.
@@ -37,14 +36,14 @@ fun Context.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
  * Verifies that the current string contains at least one digit
  */
 fun String.containsDigits(): Boolean {
-    return Pattern.matches("\\d", this)
+    return this.matches(".*\\d.*".toRegex())
 }
 
 /**
  * Verifies that the current string contains at least one vowel
  */
 fun String.containsVowels(): Boolean {
-    return Pattern.matches("[aeiou]", this)
+    return matches(".*[aeiou].*".toRegex())
 }
 
 /**

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Sammála</string>
+    <string name="button__disagree">Ósammála</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ stafa PIN númer</string>
+    <string name="error__pin_too_short">PIN-númerið er of stutt</string>
+    <string name="text_field__confirm_pin">Staðfestu PIN-númerið</string>
+    <string name="error__pin_mismatch">Misræmi PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Vinsamlegast sláðu inn réttan heilalykil, hann ætti að hafa 12 eða 16 orð.</string>
+    <string name="button__import_existing_account">Flytja inn núverandi reikning</string>
+    <string name="text__or">Eða</string>
+    <string name="button__create_new_account">Búðu til nýjan reikning</string>
+    <string name="error__invalid_brainkey">Engir reikningar stjórnaðir af tilteknum heilalykli fundust, vinsamlegast athugaðu hvort heilalykillinn hafi villur á vélritun</string>
+    <string name="error__try_again">Vinsamlegast reyndu aftur eftir 5 mínútur</string>
+    <string name="dialog__account_candidates_title">Veldu reikning</string>
+    <string name="dialog__account_candidates_content">Lyklarnir fengnir frá þessum heilalykli virðast vera notaðir til að stjórna fleiri en einum reikningi, vinsamlegast veldu hvaða reikning þú vilt flytja inn</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Nafn BitShares reiknings</string>
+    <string name="error__read_dict_file">Villa við lestur orðabókar</string>
+    <string name="error__invalid_account_length">Reikningsheiti ætti að vera 3 til 16 stafir.</string>
+    <string name="error__invalid_account_start">Reikningsheiti ætti að byrja með bréfi.</string>
+    <string name="error__invalid_account_name">Vinsamlegast sláðu inn venjulegt nafn sem inniheldur að minnsta kosti eitt bandstrik, númer eða engin sérhljóð.</string>
+    <string name="text__verifying_account_availability">Staðfestir aðgengi reiknings…</string>
+    <string name="error__account_not_available">Það reikningsheiti er þegar tekið.</string>
+    <string name="text__account_is_available">Reikningur er tiltækur</string>
+    <string name="title_error">Villa</string>
+    <string name="error__faucet">Miðlarinn skilaði villu. Þetta gæti verið vegna takmarkana sem settar eru markvisst til að banna tíðar beiðnir sem koma frá sama IP-tölu á stuttum tíma. Vinsamlegast bíddu í 5 mínútur og reyndu aftur, eða skiptu yfir í annað net, til dæmis frá WiFi í klefi.</string>
+    <string name="error__faucet_template">Blöndunartækið skilaði villu. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Forritið gat ekki sótt upplýsingar um nýstofnaðan reikning</string>
+    <string name="button__create">Búa til</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Viðskipti</string>
+    <string name="title_merchants_and_tellers">Kaupmenn og sölumenn</string>
+    <string name="title_receive">Fáðu</string>
+    <string name="title_balances">Jafnvægi</string>
+    <string name="title_send">Senda</string>
+    <string name="title_net_worth">Nettó virði</string>
+    <string name="text__coming_soon">Væntanlegt</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Leitaðu</string>
+    <string name="title_filter">Sía</string>
+    <string name="title_export">Útflutningur</string>
+    <string name="text__no_transactions">Engin viðskipti</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Sía valkosti</string>
+    <string name="text__all">Allt</string>
+    <string name="text__sent">Sent</string>
+    <string name="text__received">Móttekið</string>
+    <string name="text__date_range">Dagsetning svið</string>
+    <string name="text__equivalent_value">Jafngildi</string>
+    <string name="text__ignore_network_fees">Hunsa netgjald</string>
+    <string name="text__between">Milli</string>
+    <string name="text__and">og</string>
+    <string name="button__filter">Sía</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Flytja út síaða viðskipti</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Geymsluheimild er nauðsynleg til að flytja út PDF / CSV skrár.</string>
+    <string name="title_from">Frá</string>
+    <string name="title_to">Að</string>
+    <string name="title_memo">Minnisatriði</string>
+    <string name="title_date">Dagsetning</string>
+    <string name="title_time">Tími</string>
+    <string name="title_amount">Magn</string>
+    <string name="title_equivalent_value">Jafngildi</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Gildi</string>
+    <string name="template__memo">Minnisatriði: %1$s</string>
+    <string name="template__date">Dagsetning: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Kaupmenn</string>
+    <string name="title_tellers">Teljendur</string>
+    <string name="title_about">Um það bil</string>
+    <string name="msg__merchants_description">PalmPay söluaðilar eru burðarásar í nýju dulmálshagkerfinu. Ef þú ert að leita að fyrirtækjum sem munu samþykkja Cryptocurrency þinn skaltu nota leitar- og kortagögnin hér að neðan. Fleiri kaupmenn munu bætast við hér þegar sendiherrar PalmPay upplýsa okkur.</string>
+    <string name="msg__tellers_description">Sölumenn eru fólk sem mun skiptast á fiat gjaldmiðlum þínum með cryptocururrency og öfugt. Þeir aðstoða einnig kaupmenn við uppgjör fiat.</string>
+    <string name="msg__location_permission_necessary">Staðsetningarheimild er nauðsynleg til að sýna núverandi staðsetningu þína á kortinu.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Upplýsingar</string>
+    <string name="text__to">Að</string>
+    <string name="text__amount">Magn</string>
+    <string name="text__memo">Minnisatriði</string>
+    <string name="text__scan_qr">Skannaðu QR</string>
+    <string name="error__invalid_account">Ógildur reikningur</string>
+    <string name="error__not_enough_funds">Ekki nóg fé</string>
+    <string name="msg__camera_permission_necessary">Leyfi myndavélar er nauðsynlegt til að lesa QR kóða.</string>
+    <string name="text__transaction_sent">Færsla send!</string>
+    <string name="msg__transaction_not_sent">Ekki tókst að senda viðskipti</string>
+    <string name="error__you_dont_own_asset">Þú átt ekki neina %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Sláðu inn Bitshares reikningsheiti þess aðila sem þú vilt senda fé til. \nTil dæmis: agorise-blöndunartæki</string>
+    <string name="text__asset_balance">Eignarjöfnuður</string>
+    <string name="msg__asset_balance_explanation">Þú getur pikkað á stöðuna sem birtist til að senda alla eignina. Ef þú gerir það mun fylla út reitinn Upphæð fyrir þig.</string>
+    <string name="msg__memo_explanation">Ekki er krafist að slá inn minnisblað, en það er gott til framtíðar að taka minnispunkta af hverju þú sendir fjármagnið. Minnisblöð eru aðeins sýnileg þér og þeim sem þú sendir fé til.</string>
+    <string name="text__network_fee">Netgjald</string>
+    <string name="msg__network_fee_explanation">Netgjaldið er innifalið í upphæðinni sem þú vilt senda. Til dæmis, ef þú vilt senda 50 BTS, mun BiTSy í raun senda ~ 50,21 BTS. Viðbótin 0,21 í þessu dæmi er Bitshares viðskiptagjald auk 0,01% til BiTSy Developer Team (venjulega ~ 1 sent).</string>
+    <string name="text__qr_code">QR kóða</string>
+    <string name="msg__qr_code_explanation">Þú þarft ekki að skanna QR einhvers til að senda fé, en það hjálpar þér að forðast mistök. Þegar þú hefur sent fé frá reikningi þínum eru þeir horfnir að eilífu, svo vertu alltaf viss um að nafn reikningsins í „Til“ reitinn sé rétt.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Eignir</string>
+    <string name="text__other">Annað…</string>
+    <string name="template__please_send">Vinsamlegast sendu: %1$s %2$s</string>
+    <string name="text__any_amount">Hvaða fjárhæð sem er</string>
+    <string name="template__to">Til: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy reikningur frá %1$s</string>
+    <string name="title_share">Deildu</string>
+    <string name="text__share_with">Deila með</string>
+    <string name="msg__storage_permission_necessary_share">Geymsluheimild er nauðsynleg til að deila myndum.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Stillingar</string>
+    <string name="title__general">Almennt</string>
+    <string name="msg__close_timer">Lokaðu BiTSy sjálfkrafa eftir 3 mínútna aðgerðaleysi</string>
+    <string name="msg__night_mode">Næturstilling</string>
+    <string name="text__view_network_status">Skoða netstöðu</string>
+    <string name="title__backup">Afritun</string>
+    <string name="msg__brainkey_description">BrainKey. Orð um endurheimt reikninga sem hægt er að handtaka eða afrita en ekki breyta.</string>
+    <string name="msg__brainkey_info">Skrifaðu þetta! Vertu viss um að þú hafir 2 eintök af þessum BrainKey á 2 öruggum stöðum ef eldur eða tjón verða. Öryggi fyrst! Allir sem hafa aðgang að BrainKey þínum geta fengið aðgang að fjármunum á reikningnum þínum!</string>
+    <string name="button__copied">Afritað</string>
+    <string name="button__view_and_copy">Skoða og afrita</string>
+    <string name="title__accounts">Reikningar</string>
+    <string name="msg__upgrade_to_ltm">Uppfærðu í LifeTime aðild (LTM). Bitshares LTM reikningar greiða nær núllgjöld, fá 80% cashback og bónus fyrir tilvísanir.</string>
+    <string name="button__upgrade_to_ltm">Uppfærðu í LTM</string>
+    <string name="msg__account_upgrade_dialog">Með Life Time Aðild gerir þér kleift að eiga viðskipti með lækkuðu netkerfagjöldum. \n \nÞað mun taka gildi á viðskiptareikninginn „%1$s“ \n \nÞað er þó kostnaður um það bil 100 USD sem greiddur er í bitahlutum. \n \n Ertu viss um að þú viljir halda áfram?</string>
+    <string name="title__account_upgraded">Uppfærsla reiknings</string>
+    <string name="msg__account_upgraded">Til hamingju! Reikningurinn þinn hefur nú verið uppfærður í Ævi Aðild.</string>
+    <string name="title__upgrade_account_error">Villa við að reyna að uppfæra reikninginn</string>
+    <string name="msg__upgrade_account_error">Gakktu úr skugga um að reikningurinn þinn sé með nægjanlegt jafnvægi til að standa straum af kostnaðinum.</string>
+    <string name="msg__remove_current_account">Fjarlægðu núverandi reikning úr þessu tæki og búðu til eða fluttu inn annan.</string>
+    <string name="button__remove">Fjarlægðu</string>
+    <string name="title__remove_account">Fjarlægja reikning</string>
+    <string name="msg__remove_account_confirmation">Ertu viss um að þú viljir fjarlægja núverandi reikning frá þessu tæki?</string>
+    <string name="title__bugs_or_ideas">Bugs eða hugmyndir?</string>
+    <string name="msg__bugs_or_ideas">Símskeyti: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Loka fyrir: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Öryggi</string>
+    <string name="text__security_lock">Öryggislás</string>
+    <string name="title__security_dialog">Veldu öryggislás</string>
+    <string name="text__pin">PIN númer</string>
+    <string name="text__pattern">Mynstur</string>
+    <string name="text__none">Enginn</string>
+    <string name="button__choose">Veldu</string>
+    <string name="title__re_enter_your_pin">Sláðu aftur inn PIN númerið þitt</string>
+    <string name="msg__enter_your_pin">Sláðu inn BiTSy PIN númerið þitt til að halda áfram</string>
+    <string name="error__wrong_pin">Röng PIN númer</string>
+    <string name="title__set_bitsy_security_lock">Stilltu BiTSy Security</string>
+    <string name="msg__set_a_pin">Til að tryggja öryggi skaltu stilla PIN-númer</string>
+    <string name="msg__min_pin_length">PIN-númerið verður að vera að minnsta kosti 6 tölustafir</string>
+    <string name="title__pins_dont_match">PIN-númer passa ekki saman</string>
+    <string name="title__re_enter_your_pattern">Sláðu aftur inn mynstrið þitt</string>
+    <string name="msg__enter_your_pattern">Sláðu inn BiTSy mynstrið þitt til að halda áfram</string>
+    <string name="msg__set_a_pattern">Til að tryggja öryggi skaltu stilla mynstur</string>
+    <string name="msg__release_finger">Slepptu fingri þegar því er lokið</string>
+    <string name="button__clear">Tær</string>
+    <string name="button__next">Næst</string>
+    <string name="text__draw_an_unlock_pattern">Teiknaðu aflæsingarmynstur</string>
+    <string name="msg__draw_pattern_confirm">Teiknaðu mynstur til að staðfesta</string>
+    <string name="button__confirm">Staðfesta</string>
+    <string name="msg__your_new_unlock_pattern">Nýja aflæsingarmynstrið þitt</string>
+    <string name="error__wront_pattern">Rangt mynstur</string>
+    <string name="text__pattern_recorded">Mynstur skráð</string>
+    <string name="error__connect_at_least_4_dots">Tengdu að minnsta kosti 4 punkta. Reyndu aftur.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Of margar rangar tilraunir. Reyndu aftur eftir %1$d mínútur.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Of margar rangar tilraunir. Reyndu aftur eftir %1$d sekúndur.</string>
+
+</resources>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Oerienkomme</string>
+    <string name="button__disagree">It net iens</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ sifers PIN</string>
+    <string name="error__pin_too_short">PIN te koart</string>
+    <string name="text_field__confirm_pin">Befêstigje PIN</string>
+    <string name="error__pin_mismatch">PIN-oerienkomst</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Fier de juste harsenkaai yn, it soe 12 as 16 wurden moatte hawwe.</string>
+    <string name="button__import_existing_account">Besteande account ymportearje</string>
+    <string name="text__or">Of</string>
+    <string name="button__create_new_account">Nij akkount oanmeitsje</string>
+    <string name="error__invalid_brainkey">Gjin akkounts kontroleare troch de opjûne breinkaai binne fûn, kontrolearje asjebleaft jo harsnok foar typflater</string>
+    <string name="error__try_again">Besykje it nei 5 minuten opnij</string>
+    <string name="dialog__account_candidates_title">Selektearje asjebleaft in akkount</string>
+    <string name="dialog__account_candidates_content">De kaaien ûntliend oan dizze harsenske lykje te wurde brûkt om mear dan ien akkount te kontrolearjen, selektearje asjebleaft hokker akkount jo wolle ymportearje</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares-akkountnamme</string>
+    <string name="error__read_dict_file">Flater by it lêzen fan wurdboekbestân</string>
+    <string name="error__invalid_account_length">Accountnamme moat 3 oant 16 tekens wêze.</string>
+    <string name="error__invalid_account_start">Accountnamme moat begjinne mei in letter.</string>
+    <string name="error__invalid_account_name">Fier in reguliere namme yn dy\'t teminsten ien streepke, in nûmer as gjin lûden befettet.</string>
+    <string name="text__verifying_account_availability">Ferifiearje akkount beskikberens…</string>
+    <string name="error__account_not_available">Dy akkountnamme is al nommen.</string>
+    <string name="text__account_is_available">Akkount is beskikber</string>
+    <string name="title_error">Fersin</string>
+    <string name="error__faucet">De server joech in flater werom. Dit kin komme troch in beheining dy\'t doelbewust ynsteld is om faak fersiken dy\'t út itselde IP-adres komme yn in koarte tiidferlof te ûntsjen. Wachtsje asjebleaft 5 minuten en besykje it opnij, of wikselje nei in oar netwurk, bygelyks fan wifi nei sel.</string>
+    <string name="error__faucet_template">De kraan joech in flater werom. Msg: %1$s</string>
+    <string name="error__created_account_not_found">De app koe gjin ynformaasje ophelje oer it nij oanmakke akkount</string>
+    <string name="button__create">Meitsje</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Transaksjes</string>
+    <string name="title_merchants_and_tellers">Keapers en fertellers</string>
+    <string name="title_receive">Ûntfange</string>
+    <string name="title_balances">Salden</string>
+    <string name="title_send">Stjoere</string>
+    <string name="title_net_worth">Net wurdich</string>
+    <string name="text__coming_soon">Meikoarten</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Sykje</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Eksportearje</string>
+    <string name="text__no_transactions">Gjin transaksjes</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filteropsjes</string>
+    <string name="text__all">Alle</string>
+    <string name="text__sent">Stjoerd</string>
+    <string name="text__received">Untfongen</string>
+    <string name="text__date_range">Datum berik</string>
+    <string name="text__equivalent_value">Ekwivalinte wearde</string>
+    <string name="text__ignore_network_fees">Negearje netwurkkosten</string>
+    <string name="text__between">Tusken</string>
+    <string name="text__and">en</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Filtreare transaksjes eksportearje</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Opslachfergunning is nedich om PDF / CSV-bestannen te eksportearjen.</string>
+    <string name="title_from">Fan</string>
+    <string name="title_to">Nei</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">Datum</string>
+    <string name="title_time">Tiid</string>
+    <string name="title_amount">Tal</string>
+    <string name="title_equivalent_value">Ekwivalinte wearde</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Wearde</string>
+    <string name="template__memo">Memo: %1$s</string>
+    <string name="template__date">Datum: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Keapers</string>
+    <string name="title_tellers">Tellers</string>
+    <string name="title_about">Oer</string>
+    <string name="msg__merchants_description">PalmPay-keaplju binne de rêchbonke fan \'e nije Krypto-ekonomy. As jo sykje nei bedriuwen dy\'t jo Cryptocurrency akseptearje, brûk dan gewoan de hjirûnder sykje- en kaartgegevens. Mear keaplju sille hjir wurde tafoege as de PalmPay-ambassadeurs ús ynformearje.</string>
+    <string name="msg__tellers_description">Tellers binne minsken dy\'t jo fiat-faluta sille útwikselje mei cryptocurrencies, en oarsom. Se helpe ek keaplju mei fiatregeling.</string>
+    <string name="msg__location_permission_necessary">Lokaasjestimming is nedich om jo hjoeddeistige lokaasje op \'e kaart sjen te litten.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Ynfo</string>
+    <string name="text__to">Nei</string>
+    <string name="text__amount">Tal</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">QR scan</string>
+    <string name="error__invalid_account">Unjildich akkount</string>
+    <string name="error__not_enough_funds">Net genôch fûnsen</string>
+    <string name="msg__camera_permission_necessary">Camera-tastimming is nedich om QR-koaden te lêzen.</string>
+    <string name="text__transaction_sent">Transaksje ferstjoerd!</string>
+    <string name="msg__transaction_not_sent">Koe gjin transaksje ferstjoere</string>
+    <string name="error__you_dont_own_asset">Jo hawwe gjin %1$s</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Typ de Bitshares-akkountnamme yn fan de persoan wêr\'t jo fûnsen nei wolle stjoere. \n Foar foarbyld: agorise-kraan</string>
+    <string name="text__asset_balance">Assetbalâns</string>
+    <string name="msg__asset_balance_explanation">Jo kinne tapje op it werjûn saldo om al dat asset te ferstjoeren. Dit dwaan sil it fjild Bedrach foar jo ynfolje.</string>
+    <string name="msg__memo_explanation">In memo ynfiere is net fereaske, mar oantekeningen nimme oer wêrom jo de fûnsen hawwe stjoerd is leuk foar takomstige referinsje. Memo\'s binne allinich sichtber foar jo en de persoan nei wa\'t jo fûnsen stjoerd hawwe.</string>
+    <string name="text__network_fee">Netwurkfergoeding</string>
+    <string name="msg__network_fee_explanation">De netwurkfergoeding is opnommen yn it bedrach dat jo wolle stjoere. As jo bygelyks 50 BTS wolle stjoere, sil BiTSy feitlik ~ 50,21 BTS stjoere. De tafoege 0.21 yn dit foarbyld is de Bitshares-transaksjekosten plus 0.01% oan it BiTSy Developer Team (typysk ~ 1 sint).</string>
+    <string name="text__qr_code">QR koade</string>
+    <string name="msg__qr_code_explanation">Jo hoege de QR net fan immen te scannen om fûnsen te ferstjoeren, mar it helpt jo om fouten te foarkommen. Sadree\'t jo ienris jild hawwe ferstjoerd fan jo akkount, binne se foar altyd fuort, dus soargje der altyd foar dat de akkountnamme yn it "Oan" fjild korrekt is.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Asset</string>
+    <string name="text__other">Oar…</string>
+    <string name="template__please_send">Stjoer asjebleaft: %1$s %2$s</string>
+    <string name="text__any_amount">Elke bedrach</string>
+    <string name="template__to">Oan: %1$s</string>
+    <string name="msg__invoice_subject">BiTSy-faktuer fan %1$s</string>
+    <string name="title_share">Diele</string>
+    <string name="text__share_with">Diele mei</string>
+    <string name="msg__storage_permission_necessary_share">Opslachfergunning is nedich om ôfbyldings te dielen.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Ynstellings</string>
+    <string name="title__general">Algemien</string>
+    <string name="msg__close_timer">BiTSy automatysk slute nei 3 minuten fan ynaktiviteit</string>
+    <string name="msg__night_mode">Nachtmodus</string>
+    <string name="text__view_network_status">Netwurkstatus besjen</string>
+    <string name="title__backup">Reservekopy</string>
+    <string name="msg__brainkey_description">BrainKey. Wurden foar akkountherstel dy\'t kinne wurde fêstlein of kopieare, mar net bewurke.</string>
+    <string name="msg__brainkey_info">Skriuw dit del! Wês der wis fan dat jo 2 kopyen fan dizze BrainKey hawwe op 2 feilige lokaasjes yn gefal fan brân of ferlies. Feiligens earst! Elkenien mei tagong ta jo BrainKey kin tagong krije ta de fûnsen yn jo akkount!</string>
+    <string name="button__copied">Kopieare</string>
+    <string name="button__view_and_copy">Besjoch en kopiearje</string>
+    <string name="title__accounts">Rekken</string>
+    <string name="msg__upgrade_to_ltm">Upgrade nei LifeTime Lidmaatskip (LTM). Bitshares \ \'LTM-accounts betelje hast nul fergoedingen, krije 80% cashback en bonussen foar trochferwizings.</string>
+    <string name="button__upgrade_to_ltm">Upgrade nei LTM</string>
+    <string name="msg__account_upgrade_dialog">Mei it Life Time-lidmaatskip kinne jo hannelje mei in redusearre set netwurkkosten. \n \nIt sil effekt hawwe nei it hjoeddeistige akkount "%1$s" \n \nIt komt lykwols mei in kosten fan sawat 100 USD betelle yn Bitshares. \n \n Binne jo wis dat jo trochgean wolle?</string>
+    <string name="title__account_upgraded">Akkount opwurdearre</string>
+    <string name="msg__account_upgraded">Lokwinsken! Jo akkount is no opwurdearre nei it Lifetime-lidmaatskip.</string>
+    <string name="title__upgrade_account_error">Flater by besykjen om akkount te upgrade</string>
+    <string name="msg__upgrade_account_error">Soargje derfoar dat jo akkount genôch saldo hat om de kosten te dekken.</string>
+    <string name="msg__remove_current_account">Ferwiderje it hjoeddeistige akkount fan dit apparaat en meitsje of in oare ien oanmeitsje of ymportearje.</string>
+    <string name="button__remove">Weinimme</string>
+    <string name="title__remove_account">Akkount fuortsmite</string>
+    <string name="msg__remove_account_confirmation">Binne jo wis dat jo it aktive akkount fan dit apparaat wolle ferwiderje?</string>
+    <string name="title__bugs_or_ideas">Bugs of ideeën?</string>
+    <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Block: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Feiligens</string>
+    <string name="text__security_lock">Feiligensslot</string>
+    <string name="title__security_dialog">Kies in befeiligingsslot</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Patroan</string>
+    <string name="text__none">Gjin</string>
+    <string name="button__choose">Kieze</string>
+    <string name="title__re_enter_your_pin">Fier jo PIN opnij yn</string>
+    <string name="msg__enter_your_pin">Fier jo BiTSy-PIN yn om troch te gean</string>
+    <string name="error__wrong_pin">Ferkearde PIN</string>
+    <string name="title__set_bitsy_security_lock">BiTSy Security ynstelle</string>
+    <string name="msg__set_a_pin">Stel foar in feiligens in PIN yn</string>
+    <string name="msg__min_pin_length">PIN moat op syn minst 6 sifers wêze</string>
+    <string name="title__pins_dont_match">PINs komme net oerien</string>
+    <string name="title__re_enter_your_pattern">Fier jo patroan opnij yn</string>
+    <string name="msg__enter_your_pattern">Fier jo BiTSy-patroan yn om troch te gean</string>
+    <string name="msg__set_a_pattern">Foar feiligens, set in patroan yn</string>
+    <string name="msg__release_finger">Finger losmeitsje as jo klear binne</string>
+    <string name="button__clear">Opklearje</string>
+    <string name="button__next">Folgjende</string>
+    <string name="text__draw_an_unlock_pattern">Tekenje in ûntslutingspatroon</string>
+    <string name="msg__draw_pattern_confirm">Teken patroan opnij om te befêstigjen</string>
+    <string name="button__confirm">Befêstigje</string>
+    <string name="msg__your_new_unlock_pattern">Jo nije unlockpatroon</string>
+    <string name="error__wront_pattern">Ferkeard patroan</string>
+    <string name="text__pattern_recorded">Patroan opnommen</string>
+    <string name="error__connect_at_least_4_dots">Ferbine op syn minst 4 punten. Besykje opnij.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Tefolle ferkearde pogingen. Besykje it opnij yn %1$d minuten.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Tefolle ferkearde pogingen. Besykje it opnij yn %1$d sekonden.</string>
+
+</resources>

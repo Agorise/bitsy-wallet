@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.collection.LongSparseArray
 import androidx.lifecycle.ViewModelProviders
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
@@ -32,11 +33,8 @@ import cy.agorise.graphenej.api.calls.GetAccounts
 import cy.agorise.graphenej.api.calls.GetDynamicGlobalProperties
 import cy.agorise.graphenej.models.DynamicGlobalProperties
 import cy.agorise.graphenej.models.JsonRpcResponse
-import cy.agorise.graphenej.network.FullNode
 import cy.agorise.graphenej.operations.AccountUpgradeOperationBuilder
-import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_settings.*
 import org.bitcoinj.core.DumpedPrivateKey
@@ -53,6 +51,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         private const val ACTION_CHANGE_SECURITY_LOCK = 1
         private const val ACTION_SHOW_BRAINKEY = 2
         private const val ACTION_UPGRADE_TO_LTM = 3
+        private const val ACTION_REMOVE_ACCOUNT = 4
 
         // Constants used to organize NetworkService requests
         private const val RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES = 1
@@ -73,7 +72,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     private var nodesAdapter: FullNodesAdapter? = null
 
     // Map used to keep track of request and response id pairs
-    private val responseMap = HashMap<Long, Int>()
+    private val responseMap = LongSparseArray<Int>()
 
     /** Transaction to upgrade to LTM */
     private var ltmTransaction: Transaction? = null
@@ -119,6 +118,8 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                         privateKey = CryptoUtils.decrypt(it, encryptedWIF)
                     } catch (e: AEADBadTagException) {
                         Log.e(TAG, "AEADBadTagException. Class: " + e.javaClass + ", Msg: " + e.message)
+                    } catch (e: IllegalStateException) {
+                        Crashlytics.logException(e)
                     }
                 }
             })
@@ -127,30 +128,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         initNightModeSwitch()
 
-        tvNetworkStatus.setOnClickListener { v ->
-            if (mNetworkService != null) {
-                // PublishSubject used to announce full node latencies updates
-                val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable
-                fullNodePublishSubject?.observeOn(AndroidSchedulers.mainThread())?.subscribe(nodeLatencyObserver)
-
-                val fullNodes = mNetworkService!!.nodes
-
-                nodesAdapter = FullNodesAdapter(v.context)
-                nodesAdapter?.add(fullNodes)
-
-                mNodesDialog = MaterialDialog(v.context)
-                    .title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
-                    .message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
-                    .customListAdapter(nodesAdapter as FullNodesAdapter)
-                    .negativeButton(android.R.string.ok)
-                    .onDismiss { mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask) }
-
-                mNodesDialog?.show()
-
-                // Registering a recurrent task used to poll for dynamic global properties requests
-                mHandler.post(mRequestDynamicGlobalPropertiesTask)
-            }
-        }
+        tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
 
         // Obtain the current Security Lock Option selected and display it in the screen
         val securityLockSelected = PreferenceManager.getDefaultSharedPreferences(context)
@@ -168,34 +146,53 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         btnViewBrainKey.setOnClickListener { onShowBrainKeyButtonSelected() }
 
         btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
+
+        btnRemoveAccount.setOnClickListener { onRemoveAccountButtonSelected() }
     }
 
-    /**
-     * Observer used to be notified about node latency measurement updates.
-     */
-    private val nodeLatencyObserver = object : Observer<FullNode> {
-        override fun onSubscribe(d: Disposable) {
-            mDisposables.add(d)
-        }
+    private fun showNodesDialog(v: View) {
+        if (mNetworkService != null) {
+            val fullNodes = mNetworkService!!.nodes
 
-        override fun onNext(fullNode: FullNode) {
-            if (!fullNode.isRemoved)
-                nodesAdapter?.add(fullNode)
-            else
-                nodesAdapter?.remove(fullNode)
-        }
+            nodesAdapter = FullNodesAdapter(v.context)
+            nodesAdapter?.add(fullNodes)
 
-        override fun onError(e: Throwable) {
-            Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + e.message)
-        }
+            // PublishSubject used to announce full node latencies updates
+            val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable ?: return
 
-        override fun onComplete() {}
+            val nodesDisposable = fullNodePublishSubject
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    { fullNode ->
+                        if (!fullNode.isRemoved)
+                            nodesAdapter?.add(fullNode)
+                        else
+                            nodesAdapter?.remove(fullNode)
+                    }, {
+                        Log.e(TAG, "nodeLatencyObserver.onError.Msg: " + it.message)
+                    }
+                )
+
+            mNodesDialog = MaterialDialog(v.context).show {
+                title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
+                customListAdapter(nodesAdapter as FullNodesAdapter)
+                negativeButton(android.R.string.ok)
+                onDismiss {
+                    mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask)
+                    nodesDisposable.dispose()
+                }
+            }
+
+            // Registering a recurrent task used to poll for dynamic global properties requests
+            mHandler.post(mRequestDynamicGlobalPropertiesTask)
+        }
     }
 
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
-            val responseType = responseMap[response.id]
-            when (responseType) {
+            when (responseMap[response.id]) {
                 RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES    -> handleDynamicGlobalPropertiesNodes(response.result)
                 RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM      -> handleDynamicGlobalPropertiesLTM(response.result)
                 RESPONSE_BROADCAST_TRANSACTION                  -> handleBroadcastTransaction(response)
@@ -226,7 +223,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             ltmTransaction?.blockData = BlockData(headBlockNumber, headBlockId, expirationTime)
 
             val id = mNetworkService?.sendMessage(BroadcastTransaction(ltmTransaction), BroadcastTransaction.REQUIRED_API)
-            if (id != null) responseMap[id] = RESPONSE_BROADCAST_TRANSACTION
+            if (id != null) responseMap.append(id, RESPONSE_BROADCAST_TRANSACTION)
 
             // TODO use an indicator to show that a transaction is in progress
         }
@@ -265,7 +262,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     private val mRequestDynamicGlobalPropertiesTask = object : Runnable {
         override fun run() {
             val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
-            if (id != null) responseMap[id] = RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES
+            if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES)
 
             mHandler.postDelayed(this, Constants.BLOCK_PERIOD)
         }
@@ -358,6 +355,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             ACTION_CHANGE_SECURITY_LOCK -> showChooseSecurityLockDialog()
             ACTION_SHOW_BRAINKEY        -> getBrainkey()
             ACTION_UPGRADE_TO_LTM       -> showUpgradeToLTMDialog()
+            ACTION_REMOVE_ACCOUNT       -> showRemoveAccountDialog()
         }
     }
 
@@ -429,6 +427,11 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             showUpgradeToLTMDialog()
     }
 
+    private fun onRemoveAccountButtonSelected() {
+        if (!verifySecurityLock(ACTION_REMOVE_ACCOUNT))
+            showRemoveAccountDialog()
+    }
+
     /**
      * Obtains the brainKey from the authorities db table for the current user account and if it is not null it passes
      * the brainKey to a method to show it in a nice MaterialDialog
@@ -491,10 +494,42 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     ltmTransaction = Transaction(currentPrivateKey, null, operations)
 
                     val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
-                    if (id != null) responseMap[id] = RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM
+                    if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM)
                 }
             }
         }
+    }
+
+    private fun showRemoveAccountDialog() {
+        context?.let { context ->
+            MaterialDialog(context).show {
+                title(R.string.title__remove_account)
+                message(R.string.msg__remove_account_confirmation)
+                negativeButton(android.R.string.cancel)
+                positiveButton(android.R.string.ok) {
+                    removeAccount(it.context)
+                }
+            }
+        }
+    }
+
+    private fun removeAccount(context: Context) {
+        // Clears the database.
+        mViewModel.clearDatabase(context)
+
+        // Clears the shared preferences.
+        val pref = PreferenceManager.getDefaultSharedPreferences(context)
+        pref.edit().clear().apply()
+
+        // Marks the license as agreed, so that it is not shown to the user again.
+        pref.edit().putInt(
+            Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION).apply()
+
+        // Restarts the activity, which will restart the whole application since it uses a
+        // single activity architecture.
+        val intent = activity?.intent
+        activity?.finish()
+        activity?.startActivity(intent)
     }
 
     override fun onServiceDisconnected(name: ComponentName?) {

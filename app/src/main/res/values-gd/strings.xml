@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">Aontachadh</string>
+    <string name="button__disagree">Eas-aonta</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">PIN 6+</string>
+    <string name="error__pin_too_short">PIN ro ghoirid</string>
+    <string name="text_field__confirm_pin">Dearbhaich PIN</string>
+    <string name="error__pin_mismatch">Mì-chothromachadh PIN</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">Feuch an cuir thu a-steach brainkey ceart, bu chòir gum biodh 12 no 16 facal ann.</string>
+    <string name="button__import_existing_account">Cuir a-steach cunntas a tha ann mu thràth</string>
+    <string name="text__or">Air neo</string>
+    <string name="button__create_new_account">Cruthaich cunntas ùr</string>
+    <string name="error__invalid_brainkey">Chan eil cunntasan sam bith fo smachd an brainkey a chaidh a thoirt seachad far an lorgar iad, thoir sùil air an brainkey agad airson mearachdan clò-sgrìobhaidh</string>
+    <string name="error__try_again">Feuch ris a-rithist às deidh 5 mionaidean</string>
+    <string name="dialog__account_candidates_title">Tagh cunntas</string>
+    <string name="dialog__account_candidates_content">Tha e coltach gu bheil na h-iuchraichean a thig bhon brainkey seo air an cleachdadh gus smachd a chumail air barrachd air aon chunntas, tagh dè an cunntas a tha thu airson a thoirt a-steach</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">Ainm cunntais BitShares</string>
+    <string name="error__read_dict_file">Mearachd le bhith a ’leughadh faidhle faclair</string>
+    <string name="error__invalid_account_length">Bu chòir ainm a ’chunntais a bhith eadar 3 is 16 caractar.</string>
+    <string name="error__invalid_account_start">Bu chòir ainm a ’chunntais tòiseachadh le litir.</string>
+    <string name="error__invalid_account_name">Cuir a-steach ainm cunbhalach anns a bheil co-dhiù aon sgrìob, àireamh no fuaimreagan.</string>
+    <string name="text__verifying_account_availability">A ’dearbhadh gu bheil cothrom air cunntas…</string>
+    <string name="error__account_not_available">Tha an t-ainm cunntais sin air a thoirt mu thràth.</string>
+    <string name="text__account_is_available">Tha cunntas ri fhaighinn</string>
+    <string name="title_error">Mearachd</string>
+    <string name="error__faucet">Thill am frithealaiche mearachd. Dh\'fhaodadh seo a bhith mar thoradh air cuingealachadh a chaidh a shuidheachadh a dh\'aona ghnothaich gus iarrtasan tric a thig bhon aon seòladh IP a cheadachadh ann an ùine ghoirid. Fuirich 5 mionaidean agus feuch ris a-rithist, no gluais gu lìonra eadar-dhealaichte, mar eisimpleir bho wifi gu cealla.</string>
+    <string name="error__faucet_template">Thill am faucet mearachd. Msg: %1$s</string>
+    <string name="error__created_account_not_found">Cha b ’urrainn don app fiosrachadh fhaighinn mun chunntas ùr a chaidh a chruthachadh</string>
+    <string name="button__create">Cruthaich</string>
+
+    <!-- Home -->
+    <string name="title_transactions">Gnìomhan</string>
+    <string name="title_merchants_and_tellers">Ceannaichean &amp; Luchd-glacaidh</string>
+    <string name="title_receive">Faighinn</string>
+    <string name="title_balances">Cothroman</string>
+    <string name="title_send">Cuir</string>
+    <string name="title_net_worth">Worth glan</string>
+    <string name="text__coming_soon">A \'tighinn a dh\'aithgheàrr</string>
+
+    <!-- Transactions -->
+    <string name="title_search">Rannsaich</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_export">Às-mhalairt</string>
+    <string name="text__no_transactions">No Gnìomhan</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">Filter roghainnean</string>
+    <string name="text__all">Uile</string>
+    <string name="text__sent">Air a chuir</string>
+    <string name="text__received">Fhuair</string>
+    <string name="text__date_range">Raon Ceann-latha</string>
+    <string name="text__equivalent_value">Luach Co-ionann</string>
+    <string name="text__ignore_network_fees">Mothaich cìsean Lìonra</string>
+    <string name="text__between">Eadar</string>
+    <string name="text__and">agus</string>
+    <string name="button__filter">Filter</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">Às-mhalairt gnothaichean sìolaidh</string>
+    <string name="text__pdf">PDF</string>
+    <string name="text__csv">CSV</string>
+    <string name="msg__storage_permission_necessary_export">Feumar cead stòraidh gus faidhlichean PDF / CSV às-mhalairt.</string>
+    <string name="title_from">Bho</string>
+    <string name="title_to">Gu</string>
+    <string name="title_memo">Meòrachan</string>
+    <string name="title_date">Ceann-latha</string>
+    <string name="title_time">Ùine</string>
+    <string name="title_amount">Meud</string>
+    <string name="title_equivalent_value">Luach Co-ionann</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">Luach</string>
+    <string name="template__memo">Meòrachan: %1$s</string>
+    <string name="template__date">Ceann-latha: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">Ceannaichean</string>
+    <string name="title_tellers">Luchd-glacaidh</string>
+    <string name="title_about">Mu dheidhinn</string>
+    <string name="msg__merchants_description">Is e ceannaichean PalmPay cnàimh-droma an Eaconamaidh Crypto ùr. Ma tha thu a ’coimhead airson gnìomhachasan a ghabhas ris an Cryptocurrency agad, an uairsin dìreach cleachd an dàta Rannsachaidh is Mapa gu h-ìosal. Thèid barrachd mharsantan a chur ris an seo mar a bhios Tosgairean PalmPay ag innse dhuinn.</string>
+    <string name="msg__tellers_description">Is e daoine a bhios ag iomlaid an airgeadan fiat agad le cryptocurrencies, agus a chaochladh. Bidh iad cuideachd a ’toirt taic do Mharsantan le tuineachadh fiat.</string>
+    <string name="msg__location_permission_necessary">Feumar cead suidheachaidh gus d ’àite gnàthach a nochdadh air a’ mhapa.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">Fiosrachadh</string>
+    <string name="text__to">Gu</string>
+    <string name="text__amount">Meud</string>
+    <string name="text__memo">Meòrachan</string>
+    <string name="text__scan_qr">Sgan QR</string>
+    <string name="error__invalid_account">Cunntas mì-dhligheach</string>
+    <string name="error__not_enough_funds">Gun airgead gu leòr</string>
+    <string name="msg__camera_permission_necessary">Feumar cead camara gus còdan QR a leughadh.</string>
+    <string name="text__transaction_sent">Transaction air a chuir!</string>
+    <string name="msg__transaction_not_sent">Cha ghabh malairt a chuir air falbh</string>
+    <string name="error__you_dont_own_asset">Chan eil %1$s agad</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">Cuir a-steach ainm cunntais Bitshares an neach a tha thu airson airgead a chuir thuige. \nFor eisimpleir: fosgladhise-faucet</string>
+    <string name="text__asset_balance">Cothromachadh Maoin</string>
+    <string name="msg__asset_balance_explanation">Faodaidh tu tapadh air a ’chothromachadh a tha air a thaisbeanadh gus a’ mhaoin sin gu lèir a chuir. Le bhith a ’dèanamh seo lìonaidh e an raon Suim dhut.</string>
+    <string name="msg__memo_explanation">Chan eil feum air cuir a-steach meòrachan, ach tha e math notaichean a ghabhail air carson a chuir thu an t-airgead a-steach san àm ri teachd. Chan eil meòrachain rim faicinn ach thu fhèin agus an neach a chuir thu airgead thuca.</string>
+    <string name="text__network_fee">Cìs Lìonra</string>
+    <string name="msg__network_fee_explanation">Tha a ’chìs Lìonra air a ghabhail a-steach san t-sùim a tha thu airson a chuir. Mar eisimpleir, ma tha thu airson 50 BTS a chuir air falbh, cuiridh BiTSy ~ 50.21 BTS gu dearbh. Is e an 0.21 a bharrachd san eisimpleir seo cìs malairt Bitshares a bharrachd air 0.01% gu Sgioba Leasachaidh BiTSy (mar as trice ~ 1 ceud).</string>
+    <string name="text__qr_code">Còd QR</string>
+    <string name="msg__qr_code_explanation">Cha leig thu leas QR cuideigin a sganadh gus airgead a chuir air falbh, ach cuidichidh e thu gus mearachdan a sheachnadh. Cho luath ‘s a chuireas tu airgead bhon chunntas agad, tha iad air falbh gu bràth, mar sin dèan cinnteach an-còmhnaidh gu bheil ainm a’ chunntais anns an raon “To” ceart.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">Maoin</string>
+    <string name="text__other">Eile…</string>
+    <string name="template__please_send">Feuch an cuir thu: %1$s %2$s</string>
+    <string name="text__any_amount">Suim sam bith</string>
+    <string name="template__to">Gu: %1$s</string>
+    <string name="msg__invoice_subject">Fàirdeal BiTSy bho %1$s</string>
+    <string name="title_share">Co-roinn</string>
+    <string name="text__share_with">Co-roinn le</string>
+    <string name="msg__storage_permission_necessary_share">Feumar cead stòraidh gus ìomhaighean a cho-roinn.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Suidhichidhean</string>
+    <string name="title__general">Coitcheann</string>
+    <string name="msg__close_timer">Dùin BiTSy gu fèin-ghluasadach às deidh 3 mionaidean de neo-ghnìomhachd</string>
+    <string name="msg__night_mode">Modh oidhche</string>
+    <string name="text__view_network_status">Faic Inbhe Lìonra</string>
+    <string name="title__backup">Cùl-taic</string>
+    <string name="msg__brainkey_description">BrainKey. Faclan faighinn air ais cunntas a ghabhas glacadh no a chopaigeadh, ach nach deach a dheasachadh.</string>
+    <string name="msg__brainkey_info">Sgrìobh seo sìos! Dèan cinnteach gu bheil 2 leth-bhreac den BrainKey seo agad ann an 2 àite tèarainte air eagal teine no call. Tèarainteachd an toiseach! Faodaidh duine sam bith aig a bheil cothrom air do BrainKey faighinn chun mhaoin sa chunntas agad!</string>
+    <string name="button__copied">Leth-bhreac</string>
+    <string name="button__view_and_copy">Faic &amp; Leth-bhreac</string>
+    <string name="title__accounts">Cunntasan</string>
+    <string name="msg__upgrade_to_ltm">Ùrachadh air Ballrachd LifeTime (LTM). Bidh cunntasan Bitshares \ ’LTM a’ pàigheadh chìsean faisg air neoni, a ’faighinn airgead air ais 80% agus bònasan airson iomraidhean.</string>
+    <string name="button__upgrade_to_ltm">Ùrachadh gu LTM</string>
+    <string name="msg__account_upgrade_dialog">Tha Ballrachd Ùine Beatha a ’toirt cothrom dhut malairt le seata nas lugha de chìsean lìonra. \n \nIt a ’tighinn gu buil ris a’ chunntas làithreach “%1$s” \n \nTha e a ’tighinn le cosgais timcheall air 100 USD pàighte ann am Bitshares. \n \nA bheil thu cinnteach gu bheil thu airson a dhol air adhart?</string>
+    <string name="title__account_upgraded">Cunntas air ùrachadh</string>
+    <string name="msg__account_upgraded">Meal do naidheachd! Tha an cunntas agad a-nis air ùrachadh gu Ballrachd Fad-beatha.</string>
+    <string name="title__upgrade_account_error">Mearachd fhad ‘s a tha thu a’ feuchainn ris a ’chunntas ùrachadh</string>
+    <string name="msg__upgrade_account_error">Dèan cinnteach gu bheil cothromachadh gu leòr anns a ’chunntas agad gus na cosgaisean a phàigheadh.</string>
+    <string name="msg__remove_current_account">Thoir air falbh an cunntas gnàthach bhon inneal seo agus cruthaich no cuir a-steach fear eadar-dhealaichte.</string>
+    <string name="button__remove">Thoir air falbh</string>
+    <string name="title__remove_account">Thoir air falbh cunntas</string>
+    <string name="msg__remove_account_confirmation">A bheil thu cinnteach gu bheil thu airson an cunntas làithreach a thoirt air falbh bhon inneal seo?</string>
+    <string name="title__bugs_or_ideas">Bugs no Beachdan?</string>
+    <string name="msg__bugs_or_ideas">Teileagram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">Tèarainteachd</string>
+    <string name="text__security_lock">Lock tèarainteachd</string>
+    <string name="title__security_dialog">Tagh Lock Tèarainteachd</string>
+    <string name="text__pin">PIN</string>
+    <string name="text__pattern">Pàtran</string>
+    <string name="text__none">Chan eil gin</string>
+    <string name="button__choose">Tagh</string>
+    <string name="title__re_enter_your_pin">Cuir a-steach do PIN a-rithist</string>
+    <string name="msg__enter_your_pin">Cuir a-steach do PIN BiTSy gus leantainn air adhart</string>
+    <string name="error__wrong_pin">PIN ceàrr</string>
+    <string name="title__set_bitsy_security_lock">Suidhich tèarainteachd BiTSy</string>
+    <string name="msg__set_a_pin">Airson tèarainteachd, suidhich PIN</string>
+    <string name="msg__min_pin_length">Feumaidh PIN a bhith co-dhiù 6 àireamhan</string>
+    <string name="title__pins_dont_match">Cha bhith PIN a ’maidseadh</string>
+    <string name="title__re_enter_your_pattern">Thoir a-steach do phàtran a-rithist</string>
+    <string name="msg__enter_your_pattern">Cuir a-steach am pàtran BiTSy agad gus leantainn air adhart</string>
+    <string name="msg__set_a_pattern">Airson tèarainteachd, suidhich Pàtran</string>
+    <string name="msg__release_finger">Leig às a ’mheur nuair a bhios tu deiseil</string>
+    <string name="button__clear">Soilleir</string>
+    <string name="button__next">An ath rud</string>
+    <string name="text__draw_an_unlock_pattern">Tarraing pàtran fhuasgladh</string>
+    <string name="msg__draw_pattern_confirm">Tarraing pàtran a-rithist gus dearbhadh</string>
+    <string name="button__confirm">Dearbhaich</string>
+    <string name="msg__your_new_unlock_pattern">Am pàtran fhuasgladh ùr agad</string>
+    <string name="error__wront_pattern">Pàtran ceàrr</string>
+    <string name="text__pattern_recorded">Pàtran air a chlàradh</string>
+    <string name="error__connect_at_least_4_dots">Ceangail co-dhiù 4 dotagan. Feuch a-rithist.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">Cus oidhirpean ceàrr. Feuch a-rithist ann an %1$d mionaidean.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">Cus oidhirpean ceàrr. Feuch a-rithist ann an %1$d diogan.</string>
+
+</resources>

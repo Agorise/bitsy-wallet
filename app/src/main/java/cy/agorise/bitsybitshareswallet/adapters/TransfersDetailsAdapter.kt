@@ -1,6 +1,7 @@
 package cy.agorise.bitsybitshareswallet.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -158,7 +159,14 @@ class TransfersDetailsAdapter(private val context: Context) :
         // Open the eReceipt when a transaction is tapped
         viewHolder.rootView.setOnClickListener { v ->
             val action = TransactionsFragmentDirections.eReceiptAction(transferDetail.id)
-            v.findNavController().navigate(action)
+            try {
+                v.findNavController().navigate(action)
+            } catch (ignored: IllegalArgumentException) {
+                // This exception is being ignored because it happens when a user taps two or
+                // more items on the list at the same time, only the first navigates correctly and
+                // the remaining produce an exception.
+                Log.d("TransfersDetailsAdapter", "Ignoring IllegalArgumentException")
+            }
         }
     }
 

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">સંમત થાઓ</string>
+    <string name="button__disagree">અસંમત</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ અંકો પિન</string>
+    <string name="error__pin_too_short">પિન ખૂબ નાનો છે</string>
+    <string name="text_field__confirm_pin">પિનની પુષ્ટિ કરો</string>
+    <string name="error__pin_mismatch">પિન મેળ ખાતો નથી</string>
+    <string name="text__brain_key">મગજની</string>
+    <string name="error__enter_correct_brainkey">કૃપા કરી સાચી મગજની કી દાખલ કરો, તેમાં 12 અથવા 16 શબ્દો હોવા જોઈએ.</string>
+    <string name="button__import_existing_account">હાલનું ખાતું આયાત કરો</string>
+    <string name="text__or">અથવા</string>
+    <string name="button__create_new_account">નવું ખાતું બનાવો</string>
+    <string name="error__invalid_brainkey">આપેલ બ્રેઇનકી દ્વારા કોઈ એકાઉન્ટ્સ નિયંત્રિત નથી ત્યાં મળ્યાં નથી, ટાઇપિંગ ભૂલો માટે કૃપા કરીને તમારા મગજની તપાસ કરો</string>
+    <string name="error__try_again">કૃપા કરી 5 મિનિટ પછી ફરી પ્રયાસ કરો</string>
+    <string name="dialog__account_candidates_title">કૃપા કરીને એક એકાઉન્ટ પસંદ કરો</string>
+    <string name="dialog__account_candidates_content">આ મગજનીમાંથી નીકળતી કીઓનો ઉપયોગ એક કરતા વધુ ખાતાને નિયંત્રિત કરવા માટે થાય છે, કૃપા કરીને તમે કયા એકાઉન્ટને આયાત કરવા માંગો છો તે પસંદ કરો</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">બિટશેર્સ એકાઉન્ટનું નામ</string>
+    <string name="error__read_dict_file">શબ્દકોશ ફાઇલ વાંચવામાં ભૂલ</string>
+    <string name="error__invalid_account_length">એકાઉન્ટનું નામ 3 થી 16 અક્ષરોનું હોવું જોઈએ.</string>
+    <string name="error__invalid_account_start">ખાતાનું નામ પત્રથી શરૂ થવું જોઈએ.</string>
+    <string name="error__invalid_account_name">કૃપા કરી નિયમિત નામ દાખલ કરો જેમાં ઓછામાં ઓછું એક આડંબર, સંખ્યા અથવા કોઈ સ્વર ન હોય.</string>
+    <string name="text__verifying_account_availability">ખાતાની ઉપલબ્ધતા ચકાસી રહી છે…</string>
+    <string name="error__account_not_available">તે એકાઉન્ટનું નામ પહેલેથી જ લેવામાં આવ્યું છે.</string>
+    <string name="text__account_is_available">એકાઉન્ટ ઉપલબ્ધ છે</string>
+    <string name="title_error">ભૂલ</string>
+    <string name="error__faucet">સર્વરે ભૂલ પરત કરી. ટૂંકા સમય વિરામમાં સમાન આઇપી સરનામાંથી આવતી વારંવારની વિનંતીઓને નકારવા હેતુપૂર્વક તે રીતે મર્યાદિત કરવાને કારણે આ હોઈ શકે છે. કૃપા કરી 5 મિનિટ રાહ જુઓ અને ફરીથી પ્રયાસ કરો, અથવા બીજા નેટવર્ક પર સ્વિચ કરો, ઉદાહરણ તરીકે વાઇફાઇથી સેલ પર.</string>
+    <string name="error__faucet_template">પ્રવાહી વહેવાનો હરકોઈ જાતનો પ્રવાહી એક ભૂલ પાછો આપ્યો. Msg: %1$s</string>
+    <string name="error__created_account_not_found">એપ્લિકેશન નવા બનાવેલા એકાઉન્ટ વિશેની માહિતી પ્રાપ્ત કરી શકી નથી</string>
+    <string name="button__create">બનાવો</string>
+
+    <!-- Home -->
+    <string name="title_transactions">વ્યવહાર</string>
+    <string name="title_merchants_and_tellers">વેપારીઓ અને ટેલર્સ</string>
+    <string name="title_receive">પ્રાપ્ત કરો</string>
+    <string name="title_balances">સંતુલન</string>
+    <string name="title_send">મોકલો</string>
+    <string name="title_net_worth">નેટ વર્થ</string>
+    <string name="text__coming_soon">ટૂક સમયમાં આવી રહ્યું છે</string>
+
+    <!-- Transactions -->
+    <string name="title_search">શોધો</string>
+    <string name="title_filter">ફિલ્ટર કરો</string>
+    <string name="title_export">નિકાસ કરો</string>
+    <string name="text__no_transactions">કોઈ વ્યવહાર નથી</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">ફિલ્ટર વિકલ્પો</string>
+    <string name="text__all">બધા</string>
+    <string name="text__sent">મોકલેલો</string>
+    <string name="text__received">પ્રાપ્ત થયો</string>
+    <string name="text__date_range">તારીખ રેંજ</string>
+    <string name="text__equivalent_value">સમાન મૂલ્ય</string>
+    <string name="text__ignore_network_fees">નેટવર્ક ફી અવગણો</string>
+    <string name="text__between">વચ્ચે</string>
+    <string name="text__and">અને</string>
+    <string name="button__filter">ફિલ્ટર કરો</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">ફિલ્ટર વ્યવહારોની નિકાસ કરો</string>
+    <string name="text__pdf">પી.ડી.એફ.</string>
+    <string name="text__csv">સીએસવી</string>
+    <string name="msg__storage_permission_necessary_export">પીડીએફ / સીએસવી ફાઇલો નિકાસ કરવા માટે સ્ટોરેજ પરવાનગી જરૂરી છે.</string>
+    <string name="title_from">થી</string>
+    <string name="title_to">થી</string>
+    <string name="title_memo">યાદી</string>
+    <string name="title_date">તારીખ</string>
+    <string name="title_time">સમય</string>
+    <string name="title_amount">રકમ</string>
+    <string name="title_equivalent_value">સમાન મૂલ્ય</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">મૂલ્ય</string>
+    <string name="template__memo">મેમો: %1$s</string>
+    <string name="template__date">તારીખ: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">વેપારીઓ</string>
+    <string name="title_tellers">ટેલર્સ</string>
+    <string name="title_about">વિશે</string>
+    <string name="msg__merchants_description">પામપે વેપારી એ નવી ક્રિપ્ટો ઇકોનોમીની કરોડરજ્જુ છે. જો તમે એવા વ્યવસાયો શોધી રહ્યા છો કે જે તમારી ક્રિપ્ટોકરન્સીને સ્વીકારે, તો પછી નીચે આપેલી શોધ અને નકશા ડેટાનો ઉપયોગ કરો. પામપે એમ્બેસેડર્સ અમને જણાવે છે તેમ વધુ વેપારી અહીં ઉમેરવામાં આવશે.</string>
+    <string name="msg__tellers_description">ટેલર્સ એ લોકો છે જે તમારી ફિયાટ કરન્સીને ક્રિપ્ટોક્યુરન્સીઝ સાથે વિનિમય કરશે, અને .લટું. તેઓ વેપારીઓને ફિયાટ સેટલમેન્ટમાં પણ મદદ કરે છે.</string>
+    <string name="msg__location_permission_necessary">નકશા પર તમારું વર્તમાન સ્થાન બતાવવા માટે સ્થાન પરવાનગી જરૂરી છે.</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">માહિતી</string>
+    <string name="text__to">થી</string>
+    <string name="text__amount">રકમ</string>
+    <string name="text__memo">યાદી</string>
+    <string name="text__scan_qr">સ્કેન ક્યૂઆર</string>
+    <string name="error__invalid_account">અમાન્ય એકાઉન્ટ</string>
+    <string name="error__not_enough_funds">પૂરતા ફંડ નથી</string>
+    <string name="msg__camera_permission_necessary">ક્યૂઆર કોડ્સ વાંચવા માટે ક Cameraમેરાની પરવાનગી આવશ્યક છે.</string>
+    <string name="text__transaction_sent">ટ્રાન્ઝેક્શન મોકલ્યું!</string>
+    <string name="msg__transaction_not_sent">વ્યવહાર મોકલવામાં અસમર્થ</string>
+    <string name="error__you_dont_own_asset">તમે કોઈપણ %1$s માલિક નથી</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">તમે જે વ્યક્તિને ભંડોળ મોકલવા માંગો છો તેના બીટશેર્સ એકાઉન્ટ નામ લખો. \n ઉદાહરણ તરીકે: એગોરિઝ-પ્રવાહી વહેવાનો હરકોઈ જાતનો નળ</string>
+    <string name="text__asset_balance">એસેટ બેલેન્સ</string>
+    <string name="msg__asset_balance_explanation">તમે તે બધી સંપત્તિ મોકલવા માટે પ્રદર્શિત સંતુલન પર ટેપ કરી શકો છો. આમ કરવાથી તમારા માટે રકમ ક્ષેત્ર ભરાશે.</string>
+    <string name="msg__memo_explanation">મેમો દાખલ કરવો જરૂરી નથી, પરંતુ તમે ભંડોળ કેમ મોકલ્યું તેની નોંધ લેવી, ભવિષ્યના સંદર્ભ માટે સરસ છે. મેમોઝ ફક્ત તમને અને તે વ્યક્તિને જ દેખાય છે જેના માટે તમે ભંડોળ મોકલ્યું છે.</string>
+    <string name="text__network_fee">નેટવર્ક ફી</string>
+    <string name="msg__network_fee_explanation">નેટવર્ક ફી તે જથ્થામાં સમાવિષ્ટ છે જે તમે મોકલવા માંગો છો. ઉદાહરણ તરીકે, જો તમે 50 બીટીએસ મોકલવા માંગતા હો, તો બીટીએસસી ખરેખર ~ 50.21 બીટીએસ મોકલશે. આ ઉદાહરણમાં ઉમેરવામાં આવેલ 0.21 એ બીટીટીએસ ડેવલપર ટીમમાં (સામાન્ય રીતે cent 1 ટકા) બીટશેર્સ ટ્રાન્ઝેક્શન ફી ઉપરાંત 0.01% છે.</string>
+    <string name="text__qr_code">ક્યૂઆર કોડ</string>
+    <string name="msg__qr_code_explanation">ભંડોળ મોકલવા માટે તમારે કોઈની ક્યૂઆર સ્કેન કરવાની જરૂર નથી, પરંતુ તે ભૂલો ટાળવામાં તમારી સહાય કરે છે. એકવાર તમે તમારા એકાઉન્ટમાંથી ભંડોળ મોકલો, તે કાયમ માટે જશે, તેથી હંમેશાં ખાતરી કરો કે “ટૂ” ક્ષેત્રમાં એકાઉન્ટનું નામ સાચું છે.</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">સંપત્તિ</string>
+    <string name="text__other">અન્ય…</string>
+    <string name="template__please_send">કૃપા કરીને મોકલો: %1$s %2$s</string>
+    <string name="text__any_amount">કોઈપણ રકમ</string>
+    <string name="template__to">પ્રતિ: %1$s</string>
+    <string name="msg__invoice_subject">%1$s દ્વારા બીટીએસસી ઇન્વoiceઇસ</string>
+    <string name="title_share">શેર કરો</string>
+    <string name="text__share_with">સાથે શેર કરો</string>
+    <string name="msg__storage_permission_necessary_share">છબીઓ શેર કરવા માટે સ્ટોરેજ પરવાનગી જરૂરી છે.</string>
+
+    <!-- Settings -->
+    <string name="title_settings">સેટિંગ્સ</string>
+    <string name="title__general">જનરલ</string>
+    <string name="msg__close_timer">નિષ્ક્રિયતાના 3 મિનિટ પછી બીટીએસસીને આપમેળે બંધ કરો</string>
+    <string name="msg__night_mode">નાઇટ મોડ</string>
+    <string name="text__view_network_status">નેટવર્ક સ્થિતિ જુઓ</string>
+    <string name="title__backup">બેકઅપ</string>
+    <string name="msg__brainkey_description">મગજની. એકાઉન્ટ રિકવરી શબ્દો કે જે કબજે કરી શકાય છે અથવા કiedપિ કરી શકાય છે, પરંતુ સંપાદિત નથી.</string>
+    <string name="msg__brainkey_info">આ લખો! ખાતરી કરો કે તમારી પાસે આગ અથવા નુકસાનના કિસ્સામાં 2 સુરક્ષિત સ્થળોએ આ બ્રેઇનકીની 2 નકલો છે. સુરક્ષા પ્રથમ! તમારા મગજની toક્સેસવાળા કોઈપણ તમારા એકાઉન્ટમાં ભંડોળનો ઉપયોગ કરી શકે છે!</string>
+    <string name="button__copied">કiedપિ કરી</string>
+    <string name="button__view_and_copy">જુઓ અને ક Copyપિ કરો</string>
+    <string name="title__accounts">હિસાબો</string>
+    <string name="msg__upgrade_to_ltm">લાઇફટાઇમ સભ્યપદ (LTM) પર અપગ્રેડ કરો. બીટશેર્સના એલટીએમ ખાતા શૂન્ય ફીની ચૂકવણી કરે છે, 80% કેશબેક અને રેફરલ્સ માટે બોનસ મેળવે છે.</string>
+    <string name="button__upgrade_to_ltm">એલટીએમ પર અપગ્રેડ કરો</string>
+    <string name="msg__account_upgrade_dialog">લાઇફ ટાઇમ સદસ્યતા તમને નેટવર્ક ફીના ઘટાડેલા સેટ સાથે વેપાર કરવાની મંજૂરી આપે છે. \n \n તે ચાલુ ખાતા "%1$s" પર અસર કરશે \n \n તે બિટશેરમાં ચૂકવેલ લગભગ 100 ડોલરની કિંમત સાથે આવે છે. \n \n શું તમે ખરેખર આગળ વધવા માંગો છો?</string>
+    <string name="title__account_upgraded">એકાઉન્ટ અપગ્રેડ કર્યું</string>
+    <string name="msg__account_upgraded">અભિનંદન! તમારું એકાઉન્ટ હવે આજીવન સભ્યપદ માટે અપગ્રેડ કરવામાં આવ્યું છે.</string>
+    <string name="title__upgrade_account_error">એકાઉન્ટ અપગ્રેડ કરવાનો પ્રયાસ કરતી વખતે ભૂલ</string>
+    <string name="msg__upgrade_account_error">કૃપા કરીને ખાતરી કરો કે તમારા ખાતામાં ખર્ચ આવરી લેવા માટે પૂરતું બેલેન્સ છે.</string>
+    <string name="msg__remove_current_account">આ ઉપકરણમાંથી વર્તમાન એકાઉન્ટને દૂર કરો અને કોઈ બીજું બનાવો અથવા આયાત કરો.</string>
+    <string name="button__remove">દૂર કરો</string>
+    <string name="title__remove_account">એકાઉન્ટ દૂર કરો</string>
+    <string name="msg__remove_account_confirmation">શું તમે ખરેખર આ ઉપકરણમાંથી વર્તમાન એકાઉન્ટને દૂર કરવા માંગો છો?</string>
+    <string name="title__bugs_or_ideas">બગ્સ અથવા વિચારો?</string>
+    <string name="msg__bugs_or_ideas">ટેલિગ્રામ: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">અવરોધિત: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">સુરક્ષા</string>
+    <string name="text__security_lock">સિક્યુરિટી લockક</string>
+    <string name="title__security_dialog">સિક્યુરિટી લ Chooseક પસંદ કરો</string>
+    <string name="text__pin">પિન</string>
+    <string name="text__pattern">દાખલો</string>
+    <string name="text__none">કંઈ નહીં</string>
+    <string name="button__choose">પસંદ કરો</string>
+    <string name="title__re_enter_your_pin">તમારો પિન ફરીથી દાખલ કરો</string>
+    <string name="msg__enter_your_pin">ચાલુ રાખવા માટે તમારો બાયટી પિન દાખલ કરો</string>
+    <string name="error__wrong_pin">ખોટો પિન</string>
+    <string name="title__set_bitsy_security_lock">બીટીએસસી સુરક્ષા સેટ કરો</string>
+    <string name="msg__set_a_pin">સુરક્ષા માટે, એક પિન સેટ કરો</string>
+    <string name="msg__min_pin_length">પિન ઓછામાં ઓછો 6 અંકનો હોવો જોઈએ</string>
+    <string name="title__pins_dont_match">પિન મેળ ખાતા નથી</string>
+    <string name="title__re_enter_your_pattern">તમારી પેટર્ન ફરીથી દાખલ કરો</string>
+    <string name="msg__enter_your_pattern">ચાલુ રાખવા માટે તમારી બાયટીસ્ટી પેટર્ન દાખલ કરો</string>
+    <string name="msg__set_a_pattern">સુરક્ષા માટે, એક પેટર્ન સેટ કરો</string>
+    <string name="msg__release_finger">થઈ જાય ત્યારે આંગળી છોડો</string>
+    <string name="button__clear">ચોખ્ખુ</string>
+    <string name="button__next">આગળ</string>
+    <string name="text__draw_an_unlock_pattern">અનલlockક પેટર્ન દોરો</string>
+    <string name="msg__draw_pattern_confirm">પુષ્ટિ કરવા માટે ફરીથી પેટર્ન દોરો</string>
+    <string name="button__confirm">પુષ્ટિ કરો</string>
+    <string name="msg__your_new_unlock_pattern">તમારી નવી અનલlockક પેટર્ન</string>
+    <string name="error__wront_pattern">ખોટી પેટર્ન</string>
+    <string name="text__pattern_recorded">દાખલો રેકોર્ડ કરાયો</string>
+    <string name="error__connect_at_least_4_dots">ઓછામાં ઓછા 4 ટપકાં કનેક્ટ કરો. ફરીથી પ્રયત્ન કરો.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">ઘણાં ખોટા પ્રયાસો. %1$d મિનિટમાં ફરી પ્રયાસ કરો.</string>
+    <string name="error__security_lock_too_many_attempts_seconds">ઘણાં ખોટા પ્રયાસો. %1$d સેકંડમાં ફરી પ્રયાસ કરો.</string>
+
+</resources>

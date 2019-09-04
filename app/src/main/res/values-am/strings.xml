@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- License Activity -->
+    <string name="button__agree">እስማማለሁ ፡፡</string>
+    <string name="button__disagree">አለመግባባት።</string>
+
+    <!-- Import Brainkey -->
+    <string name="text_field__6_digit_pin">6+ ቁጥሮች ፒን።</string>
+    <string name="error__pin_too_short">ፒን በጣም አጭር ነው።</string>
+    <string name="text_field__confirm_pin">ፒን ያረጋግጡ</string>
+    <string name="error__pin_mismatch">የፒን አለመመጣጠን።</string>
+    <string name="text__brain_key">BrainKey</string>
+    <string name="error__enter_correct_brainkey">እባክዎን ትክክለኛውን አንጎል ያስገቡ ፣ 12 ወይም 16 ቃላት ሊኖረው ይገባል ፡፡</string>
+    <string name="button__import_existing_account">ያለውን መለያ ያስመጡ</string>
+    <string name="text__or">ወይም ፡፡</string>
+    <string name="button__create_new_account">አዲስ መለያ ይፍጠሩ</string>
+    <string name="error__invalid_brainkey">በተሰየመው አንጎል ቁልፍ ቁጥጥር ስር ምንም መለያዎች የሉም ፣ እባክዎ ስህተቶች ለመተየብ አንጎልዎን ይፈትሹ።</string>
+    <string name="error__try_again">እባክዎ ከ 5 ደቂቃዎች በኋላ እንደገና ይሞክሩ።</string>
+    <string name="dialog__account_candidates_title">እባክዎ አንድ መለያ ይምረጡ።</string>
+    <string name="dialog__account_candidates_content">ከዚህ አንጎል ቁልፍ የተገኙት ቁልፎች ከአንድ በላይ መለያዎችን ለመቆጣጠር የሚጠቀሙ ይመስላል ፣ እባክዎ የትኛውን መለያ ማስገባት እንደሚፈልጉ ይምረጡ ፡፡</string>
+
+    <!-- Create Account -->
+    <string name="text__bitshares_account_name">BitShares መለያ ስም።</string>
+    <string name="error__read_dict_file">የመዝገበ-ቃላት ፋይል በማንበብ ላይ ስህተት።</string>
+    <string name="error__invalid_account_length">የመለያ ስም ከ 3 እስከ 16 ቁምፊዎች መሆን አለበት።</string>
+    <string name="error__invalid_account_start">የመለያ ስም በደብዳቤ መጀመር አለበት።</string>
+    <string name="error__invalid_account_name">እባክዎን ቢያንስ አንድ ሰረዝ ፣ ቁጥር ወይም አናባቢ አናባቢዎችን የያዘ መደበኛ ስም ያስገቡ ፡፡</string>
+    <string name="text__verifying_account_availability">የመለያ ተገኝነትን በማረጋገጥ ላይ…</string>
+    <string name="error__account_not_available">ያ መለያ ስም አስቀድሞ ተወስ isል።</string>
+    <string name="text__account_is_available">መለያ ይገኛል።</string>
+    <string name="title_error">ስህተት።</string>
+    <string name="error__faucet">አገልጋዩ አንድ ስህተት መልሷል። ይህ በአጭር ጊዜ ውስጥ ከአንድ ተመሳሳይ የአይፒ አድራሻ የሚመጡ ተደጋጋሚ ጥያቄዎችን ለመከልከል በዝግጅት ላይ ባለ ቦታ ላይ ሊሆን ይችላል። እባክዎ 5 ደቂቃዎች ይጠብቁ እና እንደገና ይሞክሩ ፣ ወይም ወደ ተለየ አውታረ መረብ ለምሳሌ ከ wifi ወደ ሕዋስ ይቀይሩ።</string>
+    <string name="error__faucet_template">የጀልባው መሳሪያው ስህተት ተመለሰ ፡፡ ሚሲግ %1$s</string>
+    <string name="error__created_account_not_found">መተግበሪያው ስለአዲሱ የተፈጠረው መለያ መረጃን ማምጣት አልቻለም።</string>
+    <string name="button__create">ፍጠር።</string>
+
+    <!-- Home -->
+    <string name="title_transactions">ግብይቶች</string>
+    <string name="title_merchants_and_tellers">ነጋዴዎች እና ሻጮች ፡፡</string>
+    <string name="title_receive">ተቀበል።</string>
+    <string name="title_balances">ሚዛን።</string>
+    <string name="title_send">ይላኩ።</string>
+    <string name="title_net_worth">ከታክስ በኋላ የተገኘ ትርፍ</string>
+    <string name="text__coming_soon">በቅርብ ቀን</string>
+
+    <!-- Transactions -->
+    <string name="title_search">ይፈልጉ</string>
+    <string name="title_filter">ማጣሪያ</string>
+    <string name="title_export">ወደ ውጭ ይላኩ</string>
+    <string name="text__no_transactions">ግብይቶች የሉም።</string>
+
+    <!-- Transactions filter options -->
+    <string name="title_filter_options">የማጣሪያ አማራጮች</string>
+    <string name="text__all">ሁሉም።</string>
+    <string name="text__sent">ተልኳል።</string>
+    <string name="text__received">ተቀብሏል።</string>
+    <string name="text__date_range">የቀን ክልል</string>
+    <string name="text__equivalent_value">ተመጣጣኝ እሴት።</string>
+    <string name="text__ignore_network_fees">የአውታረ መረብ ክፍያዎችን ችላ ይበሉ።</string>
+    <string name="text__between">መካከል።</string>
+    <string name="text__and">እና</string>
+    <string name="button__filter">ማጣሪያ</string>
+
+    <!-- Transactions export options -->
+    <string name="title_export_transactions">የተጣሩ ግብይቶችን ወደ ውጭ ይላኩ</string>
+    <string name="text__pdf">ፒዲኤፍ።</string>
+    <string name="text__csv">ሲ.ኤስ.ቪ.</string>
+    <string name="msg__storage_permission_necessary_export">የፒ ዲ ኤፍ / CSV ፋይሎችን ወደ ውጭ ለመላክ የማከማቻ ፈቃድ አስፈላጊ ነው።</string>
+    <string name="title_from">ከ</string>
+    <string name="title_to">ለ</string>
+    <string name="title_memo">Memo</string>
+    <string name="title_date">ቀን</string>
+    <string name="title_time">ጊዜ።</string>
+    <string name="title_amount">መጠን</string>
+    <string name="title_equivalent_value">ተመጣጣኝ እሴት።</string>
+
+    <!-- eReceipt -->
+    <string name="title_e_receipt">eReceipt</string>
+    <string name="text__value">እሴት።</string>
+    <string name="template__memo">ማስታወሻ: %1$s</string>
+    <string name="template__date">ቀን: %1$s</string>
+    <string name="template__tx">Tx: %1$s</string>
+
+
+    <!-- Merchants & Tellers -->
+    <string name="title_merchants">ነጋዴዎች ፡፡</string>
+    <string name="title_tellers">ሻጮች</string>
+    <string name="title_about">ስለ</string>
+    <string name="msg__merchants_description">የፓልምፓይ ነጋዴዎች የአዲሱ Crypto ኢኮኖሚ የጀርባ አጥንት ናቸው። የእርስዎን የ Cryptocurrency ገንዘብ የሚቀበሉ ንግዶችን የሚፈልጉ ከሆኑ ከዚያ ከዚህ በታች ያለውን የፍለጋ እና ካርታ ውሂብን ይጠቀሙ ፡፡ የፓልም ፓይ አምባሳደሮች እንደሚነግሩን ተጨማሪ ነጋዴዎች እዚህ ይታከላሉ ፡፡</string>
+    <string name="msg__tellers_description">ሻጮች የሚከፍሉት ምንዛሬዎን cryptocurrencies ፣ እና በተቃራኒው ደግሞ የሚለዋወጡ ሰዎች ናቸው። እንዲሁም ነጋዴዎችን ከድል ጋር ለማስተካከል ይረዳሉ ፡፡</string>
+    <string name="msg__location_permission_necessary">የአሁኑን አካባቢዎን በካርታው ላይ ለማሳየት የአካባቢ ፍቃድ አስፈላጊ ነው።</string>
+
+    <!-- Send Transaction -->
+    <string name="title_info">መረጃ</string>
+    <string name="text__to">ለ</string>
+    <string name="text__amount">መጠን</string>
+    <string name="text__memo">Memo</string>
+    <string name="text__scan_qr">QR ቅኝት</string>
+    <string name="error__invalid_account">የተሳሳተ መለያ ፡፡</string>
+    <string name="error__not_enough_funds">በቂ ገንዘብ የለም ፡፡</string>
+    <string name="msg__camera_permission_necessary">የ QR ኮዶችን ለማንበብ የካሜራ ፈቃድ አስፈላጊ ነው።</string>
+    <string name="text__transaction_sent">ግብይት ተልኳል!</string>
+    <string name="msg__transaction_not_sent">ግብይት መላክ አልተቻለም።</string>
+    <string name="error__you_dont_own_asset">ምንም %1$s ባለቤት የለህም ፡፡</string>
+
+    <!-- Send Transaction info dialog -->
+    <string name="msg__to_explanation">ገንዘብ እንዲልኩለት የሚፈልጉትን ሰው የ Bitshares መለያ ስም ይተይቡ። \n ለምሳሌ-agorise-faucet።</string>
+    <string name="text__asset_balance">የንብረት ቀሪ ሂሳብ።</string>
+    <string name="msg__asset_balance_explanation">ሁሉንም ያንን ንብረት ለመላክ የታየውን ቀሪ ሂሳብ መታ ማድረግ ይችላሉ። እንዲህ ማድረግ ለእርስዎ መጠን የሚሞላውን መስክ ይሞላል።</string>
+    <string name="msg__memo_explanation">በማስታወሻ ውስጥ ማስገባት አስፈላጊ አይደለም ፣ ነገር ግን ገንዘብ ለምን እንደላኩ በማስታወሻዎች ላይ መያዙ ለወደፊቱ ማጣቀሻ ጥሩ ነው። Memos ለእርስዎ እና ለእርስዎ ገንዘብ የላኩለት ሰው ብቻ ነው ሊታዩ የሚችሉት።</string>
+    <string name="text__network_fee">የአውታረ መረብ ክፍያ።</string>
+    <string name="msg__network_fee_explanation">የኔትዎርክ ክፍያ ለመላክ በሚፈልጉት መጠን ውስጥ ይካተታል ፡፡ ለምሳሌ ፣ 50 BTS ለመላክ ከፈለጉ ፣ BiTSy በእውነቱ ~ 50.21 BTS ይልካል። በዚህ ምሳሌ ውስጥ የታየው 0.21 የ Bitshares ግብይት ክፍያ እና ከ 0.01% ወደ ቢቲሲ ገንቢ ቡድን (በተለምዶ ~ 1 ሳንቲም) ነው።</string>
+    <string name="text__qr_code">QR ኮድ።</string>
+    <string name="msg__qr_code_explanation">ገንዘብ ለመላክ የአንድን ሰው QR መቃኘት አያስፈልግዎትም ፣ ግን ስህተቶችን ለማስወገድ ይረዳዎታል። አንዴ ከመለያዎ ገንዘብ ከላኩ ፣ እነሱ ለዘላለም ይጠፋሉ ፣ ስለዚህ በ ‹ለ› መስክ ውስጥ ያለው የመለያ ስም ትክክል መሆኑን ያረጋግጡ ፡፡</string>
+
+    <!-- Receive Transaction -->
+    <string name="text__asset">ንብረት</string>
+    <string name="text__other">ሌላ…</string>
+    <string name="template__please_send">እባክዎ ይላኩ: %1$s %2$s</string>
+    <string name="text__any_amount">ማንኛውም መጠን።</string>
+    <string name="template__to">ለ: %1$s</string>
+    <string name="msg__invoice_subject">የቢስኪ ደረሰኝ ከ %1$s</string>
+    <string name="title_share">ያጋሩ።</string>
+    <string name="text__share_with">ተካፈል</string>
+    <string name="msg__storage_permission_necessary_share">ምስሎችን ለማጋራት የማከማቻ ፈቃድ አስፈላጊ ነው።</string>
+
+    <!-- Settings -->
+    <string name="title_settings">ቅንብሮች።</string>
+    <string name="title__general">አጠቃላይ ፡፡</string>
+    <string name="msg__close_timer">እንቅስቃሴ-አልባነት ከ 3 ደቂቃዎች በኋላ በራስ-ሰር BiTSy ን ይዝጉ።</string>
+    <string name="msg__night_mode">የሌሊት ሞድ</string>
+    <string name="text__view_network_status">የአውታረ መረብ ሁኔታን ይመልከቱ።</string>
+    <string name="title__backup">ምትኬ።</string>
+    <string name="msg__brainkey_description">BrainKey. ሊቀረጽ ወይም ሊገለበጥ የሚችል የመለያ መልሶ ማግኛ ቃላት ፣ ግን አርትitedት ሊደረግበት አይችልም።</string>
+    <string name="msg__brainkey_info">ይህንን ይፃፉ! እሳት ወይም ኪሳራ ቢከሰትብዎት የዚህ BrainKey 2 ደህንነቶች በ 2 ደህንነቱ በተጠበቁ አካባቢዎች መያዙን ያረጋግጡ። ደህንነት በመጀመሪያ! ወደ BrainKey መዳረሻ ያለው ማንኛውም ሰው በእርስዎ ሂሳብ ውስጥ ያሉትን ገንዘቦች መድረስ ይችላል!</string>
+    <string name="button__copied">ተቀድቷል።</string>
+    <string name="button__view_and_copy">ይመልከቱ እና ይቅዱ።</string>
+    <string name="title__accounts">መለያዎች</string>
+    <string name="msg__upgrade_to_ltm">ወደ ሕይወት ዕድሜ አባልነት (LTM) ያልቁ። የ Bitshares \ LTM መለያዎች ቅርብ ዜሮ ክፍያን ይከፍላሉ ፣ 80% ጥሬ ገንዘብ ተመላሽ እና ለሪፈሮች ጉርሻዎችን ያግኙ።</string>
+    <string name="button__upgrade_to_ltm">ወደ LTM ያሻሽሉ።</string>
+    <string name="msg__account_upgrade_dialog">የሕይወት ጊዜ አባልነት በተቀነሰ የኔትወርክ ክፍያዎች ስብስብ ለመገኘት ያስችልዎታል። \n \n አሁን ባለው መለያ "%1$s" "\n \n" ላይ ግን በ Bitshares ውስጥ ከ 100 የአሜሪካ ዶላር ከሚከፈለው ወጪ ጋር ይመጣል ፡፡ \n \n እርግጠኛ ነዎት ለመቀጠል ይፈልጋሉ?</string>
+    <string name="title__account_upgraded">መለያ ተሻሽሏል።</string>
+    <string name="msg__account_upgraded">እንኳን ደስ አለዎት! የእርስዎ መለያ አሁን ወደ ዕድሜ ልክ አባልነት ተሻሽሏል።</string>
+    <string name="title__upgrade_account_error">መለያን ለማላቅ በሚሞከርበት ጊዜ ስህተት ተከስቷል።</string>
+    <string name="msg__upgrade_account_error">እባክዎን ሂሳቦቹን ለመሸፈን በቂ ሂሳብ ያለው መሆኑን ያረጋግጡ ፡፡</string>
+    <string name="msg__remove_current_account">የአሁኑን መለያ ከዚህ መሣሪያ ያስወግዱ እና የተለየ ይፍጠሩ ወይም ያስመጡ።</string>
+    <string name="button__remove">ያስወግዱ</string>
+    <string name="title__remove_account">መለያ ያስወግዱ</string>
+    <string name="msg__remove_account_confirmation">እርግጠኛ ነዎት የአሁኑን መለያ ከዚህ መሣሪያ ላይ ለማስወገድ ይፈልጋሉ?</string>
+    <string name="title__bugs_or_ideas">ሳንካዎች ወይም ሀሳቦች?</string>
+    <string name="msg__bugs_or_ideas">ቴሌግራም-https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="title__bitshares_nodes_dialog">አግድ: %1$s</string>
+
+    <!-- Security Settings -->
+    <string name="title__security">ደህንነት</string>
+    <string name="text__security_lock">የደህንነት ቁልፍ</string>
+    <string name="title__security_dialog">የደህንነት ቁልፍን ይምረጡ።</string>
+    <string name="text__pin">ፒን</string>
+    <string name="text__pattern">ስርዓተ-ጥለት።</string>
+    <string name="text__none">ምንም።</string>
+    <string name="button__choose">ይምረጡ።</string>
+    <string name="title__re_enter_your_pin">የእርስዎን ፒን እንደገና ያስገቡ።</string>
+    <string name="msg__enter_your_pin">ለመቀጠል የእርስዎን BiTSy ፒን ያስገቡ።</string>
+    <string name="error__wrong_pin">የተሳሳተ ፒን።</string>
+    <string name="title__set_bitsy_security_lock">የቢቲቲቲ ደህንነት ያዘጋጁ።</string>
+    <string name="msg__set_a_pin">ለደህንነት ሲባል ፒን ያዘጋጁ ፡፡</string>
+    <string name="msg__min_pin_length">ፒን ቢያንስ 6 ቁጥሮች መሆን አለበት።</string>
+    <string name="title__pins_dont_match">ፒንዎች አይዛመዱም።</string>
+    <string name="title__re_enter_your_pattern">ንድፍዎን እንደገና ያስገቡ።</string>
+    <string name="msg__enter_your_pattern">ለመቀጠል የእርስዎን BiTSy ንድፍ ያስገቡ።</string>
+    <string name="msg__set_a_pattern">ለደህንነት ሲባል ስርዓተ-ጥለት ያዘጋጁ ፡፡</string>
+    <string name="msg__release_finger">ሲጨርሱ ጣትዎን ይልቀቁ።</string>
+    <string name="button__clear">ያፅዱ</string>
+    <string name="button__next">ቀጣይ</string>
+    <string name="text__draw_an_unlock_pattern">የመክፈቻ ስርዓተ ጥለት ይሳሉ።</string>
+    <string name="msg__draw_pattern_confirm">ለማረጋገጥ ስርዓተ ጥለት እንደገና ይሳሉ።</string>
+    <string name="button__confirm">ያረጋግጡ</string>
+    <string name="msg__your_new_unlock_pattern">አዲሱ የመክፈቻ ስርዓተ ጥለትዎ</string>
+    <string name="error__wront_pattern">የተሳሳተ ስርዓተ-ጥለት።</string>
+    <string name="text__pattern_recorded">ስርዓቱ ተመዝግቧል</string>
+    <string name="error__connect_at_least_4_dots">ቢያንስ 4 ነጥቦችን ያገናኙ። ድጋሚ ሞክር.</string>
+    <string name="error__security_lock_too_many_attempts_minutes">በጣም ብዙ የተሳሳቱ ሙከራዎች። በ %1$d ደቂቃዎች ውስጥ እንደገና ይሞክሩ ፡፡</string>
+    <string name="error__security_lock_too_many_attempts_seconds">በጣም ብዙ የተሳሳቱ ሙከራዎች። በ %1$d ሰከንዶች ውስጥ እንደገና ይሞክሩ ፡፡</string>
+
+</resources>
