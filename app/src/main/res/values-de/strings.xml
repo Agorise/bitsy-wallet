@@ -9,7 +9,7 @@
     <string name="error__pin_too_short">PIN zu kurz</string>
     <string name="text_field__confirm_pin">PIN bestätigen</string>
     <string name="error__pin_mismatch">PIN stimmt nicht überein</string>
-    <string name="text__brain_key">BrainKey</string>
+    <string name="text__brain_key">Brainkey</string>
     <string name="error__enter_correct_brainkey">Bitte geben Sie den richtigen Brainkey ein, er sollte 12 oder 16 Wörter haben.</string>
     <string name="button__import_existing_account">Vorhandenes Konto importieren</string>
     <string name="text__or">Oder</string>
@@ -40,7 +40,7 @@
     <string name="title_receive">Erhalten</string>
     <string name="title_balances">Guthaben</string>
     <string name="title_send">Senden</string>
-    <string name="title_net_worth">Vermögen (Einkommen und Verdienst)</string>
+    <string name="title_net_worth">Netto</string>
     <string name="text__coming_soon">Demnächst</string>
 
     <!-- Transactions -->
@@ -83,8 +83,8 @@
 
 
     <!-- Merchants & Tellers -->
-    <string name="title_merchants">Kaufleute</string>
-    <string name="title_tellers">Erzähler</string>
+    <string name="title_merchants">Händler</string>
+    <string name="title_tellers">Kassierer</string>
     <string name="title_about">Über</string>
     <string name="msg__merchants_description">PalmPay-Händler sind das Rückgrat der neuen Crypto Economy. Wenn Sie nach Unternehmen suchen, die Ihre Kryptowährung akzeptieren, verwenden Sie einfach die folgenden Such- und Kartendaten. Weitere Händler werden hier hinzugefügt, wie die PalmPay-Botschafter uns mitteilen.</string>
     <string name="msg__tellers_description">Kassierer sind Personen, die Ihre Fiat-Währungen in Kryptowährungen umtauschen und umgekehrt. Sie unterstützen Händler auch bei der Abwicklung von Fiat-Geschäften.</string>
@@ -105,16 +105,16 @@
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Geben Sie den Namen des Bitshares-Kontos der Person ein, an die Sie Geld senden möchten. \nZum Beispiel: Agorise-Wasserhahn</string>
-    <string name="text__asset_balance">Vermögenssaldo</string>
+    <string name="text__asset_balance">Währung</string>
     <string name="msg__asset_balance_explanation">Sie können auf das angezeigte Guthaben tippen, um das gesamte Guthaben zu senden. Dadurch wird das Feld Betrag für Sie ausgefüllt.</string>
     <string name="msg__memo_explanation">Das Eingeben eines Memos ist nicht erforderlich, aber es ist hilfreich, sich Notizen darüber zu machen, warum Sie das Geld gesendet haben, um später darauf zurückgreifen zu können. Memos sind nur für Sie und die Person sichtbar, an die Sie Geld überwiesen haben.</string>
     <string name="text__network_fee">Netzwerkgebühr</string>
     <string name="msg__network_fee_explanation">Die Netzwerkgebühr ist in dem Betrag enthalten, den Sie senden möchten. Wenn Sie beispielsweise 50 BTS senden möchten, sendet BiTSy tatsächlich ~ 50,21 BTS. Die hinzugefügten 0,21 in diesem Beispiel sind die Bitshares-Transaktionsgebühr plus 0,01% für das BiTSy-Entwicklerteam (in der Regel ~ 1 Cent).</string>
     <string name="text__qr_code">QR-Code</string>
-    <string name="msg__qr_code_explanation">Sie müssen nicht den QR-Code einer Person scannen, um Geld zu senden, aber dies hilft Ihnen, Fehler zu vermeiden. Sobald Sie Gelder von Ihrem Konto gesendet haben, sind diese für immer gelöscht. Vergewissern Sie sich daher immer, dass der Kontoname im Feld "An" korrekt ist.</string>
+    <string name="msg__qr_code_explanation">Sie müssen nicht den QR-Code einer Person scannen, um Geld zu senden, aber dies hilft Ihnen, Fehler zu vermeiden. Sobald Sie Gelder von Ihrem Konto gesendet haben, sind diese für immer gelöscht. Vergewissern Sie sich daher immer, dass der Kontoname im Feld \"An\" korrekt ist.</string>
 
     <!-- Receive Transaction -->
-    <string name="text__asset">Vermögenswert</string>
+    <string name="text__asset">Währung</string>
     <string name="text__other">Andere…</string>
     <string name="template__please_send">Bitte senden Sie: %1$s %2$s</string>
     <string name="text__any_amount">Jeder Betrag</string>
@@ -125,22 +125,22 @@
     <string name="msg__storage_permission_necessary_share">Für die Freigabe von Bildern ist eine Speichererlaubnis erforderlich.</string>
 
     <!-- Settings -->
-    <string name="title_settings">die Einstellungen</string>
+    <string name="title_settings">Einstellungen</string>
     <string name="title__general">Allgemeines</string>
     <string name="msg__close_timer">Schließen Sie BiTSy automatisch nach 3 Minuten Inaktivität</string>
     <string name="msg__night_mode">Nacht-Modus</string>
     <string name="text__view_network_status">Netzwerkstatus anzeigen</string>
     <string name="title__backup">Backup</string>
-    <string name="msg__brainkey_description">BrainKey. Wörter zur Kontowiederherstellung, die erfasst oder kopiert, aber nicht bearbeitet werden können.</string>
-    <string name="msg__brainkey_info">Schreib das auf! Stellen Sie sicher, dass Sie 2 Kopien dieses BrainKey an 2 sicheren Orten aufbewahren, falls es zu einem Brand oder Verlust kommt. Sicherheit geht vor! Jeder, der Zugriff auf Ihren BrainKey hat, kann auf die Guthaben auf Ihrem Konto zugreifen!</string>
+    <string name="msg__brainkey_description">Brainkey. Wörter zur Kontowiederherstellung, die erfasst oder kopiert, aber nicht bearbeitet werden können.</string>
+    <string name="msg__brainkey_info">Schreiben Sie das auf! Stellen Sie sicher, dass Sie 2 Kopien dieses Brainkey an 2 sicheren Orten aufbewahren, falls es zu einem Brand oder Verlust kommt. Sicherheit geht vor! Jeder, der Zugriff auf Ihren Brainkey hat, kann auf die Guthaben auf Ihrem Konto zugreifen!</string>
     <string name="button__copied">Kopiert</string>
     <string name="button__view_and_copy">Anzeigen und kopieren</string>
-    <string name="title__accounts">Konten</string>
-    <string name="msg__upgrade_to_ltm">Upgrade auf eine LifeTime-Mitgliedschaft (LTM). Die LTM-Konten von Bitshares zahlen Gebühren nahe Null, erhalten 80% Cashback und Bonusse für Empfehlungen.</string>
+    <string name="title__accounts">Konto</string>
+    <string name="msg__upgrade_to_ltm">Upgrade auf eine LifeTime-Mitgliedschaft (LTM). Die LTM-Konten von Bitshares Kosten fast keine Gebühren, erhalten 80% Cashback und Bonusse für Empfehlungen.</string>
     <string name="button__upgrade_to_ltm">Upgrade auf LTM</string>
-    <string name="msg__account_upgrade_dialog">Mit der Life Time-Mitgliedschaft können Sie mit reduzierten Netzwerkgebühren handeln. \n \nEs wird auf das Girokonto "%1$s" wirksam. \n \nEs ist jedoch mit Kosten in Höhe von ca. 100 USD verbunden, die in Bitshares gezahlt werden. \n \nSind Sie sicher, dass Sie fortfahren möchten?</string>
+    <string name="msg__account_upgrade_dialog">Mit der LifeTime-Mitgliedschaft können Sie mit reduzierten Netzwerkgebühren handeln. \n \nEs wird auf das Girokonto "%1$s" wirksam. \n \nEs ist jedoch mit Kosten in Höhe von ca. 100 USD verbunden, die in Bitshares gezahlt werden. \n \nSind Sie sicher, dass Sie fortfahren möchten?</string>
     <string name="title__account_upgraded">Konto aktualisiert</string>
-    <string name="msg__account_upgraded">Herzliche Glückwünsche! Ihr Konto wurde jetzt auf die lebenslange Mitgliedschaft aktualisiert.</string>
+    <string name="msg__account_upgraded">Herzlichen Glückwünsch! Ihr Konto wurde jetzt auf die lebenslange Mitgliedschaft aktualisiert.</string>
     <string name="title__upgrade_account_error">Fehler beim Versuch, das Konto zu aktualisieren</string>
     <string name="msg__upgrade_account_error">Bitte stellen Sie sicher, dass Ihr Konto über ausreichend Guthaben verfügt, um die Kosten zu decken.</string>
     <string name="msg__remove_current_account">Entfernen Sie das aktuelle Konto von diesem Gerät und erstellen oder importieren Sie ein anderes Konto.</string>
@@ -148,29 +148,29 @@
     <string name="title__remove_account">Konto entfernen</string>
     <string name="msg__remove_account_confirmation">Möchten Sie das aktuelle Konto wirklich von diesem Gerät entfernen?</string>
     <string name="title__bugs_or_ideas">Bugs oder Ideen?</string>
-    <string name="msg__bugs_or_ideas">Telegramm: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
+    <string name="msg__bugs_or_ideas">Telegram: \nhttps://t.me/Agorise \nKeybase: \nhttps://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Block: %1$s</string>
 
     <!-- Security Settings -->
     <string name="title__security">Sicherheit</string>
-    <string name="text__security_lock">Sicherheitsschloss</string>
-    <string name="title__security_dialog">Wählen Sie ein Sicherheitsschloss</string>
-    <string name="text__pin">STIFT</string>
+    <string name="text__security_lock">PIN oder Muster</string>
+    <string name="title__security_dialog">Wählen Sie ein PIN oder Muster</string>
+    <string name="text__pin">PIN Nummer</string>
     <string name="text__pattern">Muster</string>
     <string name="text__none">Keiner</string>
     <string name="button__choose">Wählen</string>
     <string name="title__re_enter_your_pin">Geben Sie Ihre PIN erneut ein</string>
     <string name="msg__enter_your_pin">Geben Sie Ihre BiTSy-PIN ein, um fortzufahren</string>
-    <string name="error__wrong_pin">Falsche Pin</string>
+    <string name="error__wrong_pin">Falsche PIN</string>
     <string name="title__set_bitsy_security_lock">Stellen Sie die BiTSy-Sicherheit ein</string>
     <string name="msg__set_a_pin">Legen Sie aus Sicherheitsgründen eine PIN fest</string>
-    <string name="msg__min_pin_length">Die PIN muss mindestens 6-stellig sein</string>
+    <string name="msg__min_pin_length">Die PIN muss mindestens 6-Nummern enthalten</string>
     <string name="title__pins_dont_match">PINs stimmen nicht überein</string>
     <string name="title__re_enter_your_pattern">Geben Sie Ihr Muster erneut ein</string>
     <string name="msg__enter_your_pattern">Geben Sie Ihr BiTSy-Muster ein, um fortzufahren</string>
     <string name="msg__set_a_pattern">Legen Sie aus Sicherheitsgründen ein Muster fest</string>
     <string name="msg__release_finger">Lassen Sie den Finger los, wenn Sie fertig sind</string>
-    <string name="button__clear">klar</string>
+    <string name="button__clear">Klar</string>
     <string name="button__next">Nächster</string>
     <string name="text__draw_an_unlock_pattern">Zeichnen Sie ein Entsperrmuster</string>
     <string name="msg__draw_pattern_confirm">Zeichnen Sie das Muster zur Bestätigung erneut</string>
