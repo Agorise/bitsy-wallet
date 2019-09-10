@@ -63,7 +63,7 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "2.0.0"
+    def lifecycle_version = "2.1.0"
     def room_version = "2.1.0"
     def rx_bindings_version = "3.0.0-alpha2"
 
@@ -81,6 +81,7 @@ dependencies {
     implementation 'com.google.maps.android:android-maps-utils:0.5'
     // AAC Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version" // viewModelScope
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     // AAC Room
     implementation "androidx.room:room-runtime:$room_version"
@@ -93,7 +94,6 @@ dependencies {
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha03"
     // RxBindings
     implementation "com.jakewharton.rxbinding3:rxbinding:$rx_bindings_version"
     implementation "com.jakewharton.rxbinding3:rxbinding-material:$rx_bindings_version" // Material Components widgets
