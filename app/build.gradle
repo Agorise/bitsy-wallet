@@ -12,11 +12,11 @@ androidExtensions {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "cy.agorise.bitsybitshareswallet"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 9
         versionName "0.13.1-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,6 +55,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     // Gradle automatically adds 'android.test.runner' as a dependency.
     useLibrary 'android.test.runner'
     useLibrary 'android.test.base'
@@ -65,16 +68,16 @@ android {
 dependencies {
     def lifecycle_version = "2.1.0"
     def room_version = "2.1.0"
-    def rx_bindings_version = "3.0.0-alpha2"
+    def rx_bindings_version = '3.0.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':graphenejlib:graphenej')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // AndroidX
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     // Google
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.4.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.android.material:material:1.1.0-alpha04'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
@@ -99,13 +102,13 @@ dependencies {
     implementation "com.jakewharton.rxbinding3:rxbinding-material:$rx_bindings_version" // Material Components widgets
     implementation "com.jakewharton.rxbinding3:rxbinding-appcompat:$rx_bindings_version" // AndroidX appcompat widgets
     // Retrofit & OkHttp
-    implementation 'com.squareup.okhttp3:okhttp:3.12.2'
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     //Firebase
-    implementation 'com.google.firebase:firebase-core:17.1.0'
+    implementation 'com.google.firebase:firebase-core:17.2.0'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     // PDF and CSV generation
     implementation 'com.itextpdf:itextpdf:5.5.13'

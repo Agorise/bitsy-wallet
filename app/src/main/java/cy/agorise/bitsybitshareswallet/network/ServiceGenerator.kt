@@ -21,7 +21,11 @@ class ServiceGenerator private constructor(apiBaseUrl: String, gson: Gson) {
     private val services = HashMap<Class<*>, Any>()
 
     init {
-        val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val httpLoggingInterceptor = HttpLoggingInterceptor()
+        val logging =
+            httpLoggingInterceptor.apply {
+                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            }
         httpClient = OkHttpClient.Builder().addInterceptor(logging)
         builder = Retrofit.Builder()
             .baseUrl(apiBaseUrl)
@@ -31,7 +35,7 @@ class ServiceGenerator private constructor(apiBaseUrl: String, gson: Gson) {
 
     constructor(apiBaseUrl: String) : this(apiBaseUrl, Gson())
 
-    fun <T> getService(serviceClass: Class<T>): T {
+    fun <T> getService(serviceClass: Class<T>): T? {
 
         var service = serviceClass.cast(services[serviceClass])
         if (service == null) {

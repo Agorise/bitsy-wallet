@@ -15,7 +15,7 @@ import cy.agorise.bitsybitshareswallet.utils.hideKeyboard
  */
 class MyTextInputEditText(context: Context?, attrs: AttributeSet?) : TextInputEditText(context, attrs){
 
-    override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection {
+    override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
         val connection = super.onCreateInputConnection(outAttrs)
         val imeActions = outAttrs.imeOptions and EditorInfo.IME_MASK_ACTION
         if (imeActions and EditorInfo.IME_ACTION_DONE != 0) {

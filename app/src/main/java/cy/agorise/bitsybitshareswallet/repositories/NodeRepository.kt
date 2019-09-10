@@ -33,7 +33,7 @@ class NodeRepository(private val nodeDao: NodeDao) {
             "wss://api.bts.ai")
     }
 
-    private val mBitsyWebservice: BitsyWebservice
+    private val mBitsyWebservice: BitsyWebservice?
 
     init {
         val sg = ServiceGenerator(Constants.BITSY_WEBSERVICE_URL)
@@ -86,10 +86,10 @@ class NodeRepository(private val nodeDao: NodeDao) {
         val updatePeriod = Constants.NODES_UPDATE_PERIOD
         // Verify if nodes list should be updated
         if (now - updatePeriod > lastUpdate) {
-            val response = mBitsyWebservice.getNodes()
+            val response = mBitsyWebservice?.getNodes()
             try {
                 // Update the list of nodes only if we got at least MIN_NODES_SIZE nodes
-                if (response.isSuccessful && (response.body()?.size ?: 0) >= MIN_NODES_SIZE) {
+                if (response?.isSuccessful == true && (response.body()?.size ?: 0) >= MIN_NODES_SIZE) {
                     val nodesWS = response.body() ?: return
 
                     val nodesDB = nodesWS.map {

@@ -19,7 +19,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class TransferRepository internal constructor(context: Context) {
-    private val TAG = "TransferRepository"
+    companion object {
+        private const val TAG = "TransferRepository"
+    }
+
     private val mTransferDao: TransferDao
     private val mEquivalentValuesDao: EquivalentValueDao
     private val compositeDisposable = CompositeDisposable()
@@ -103,10 +106,10 @@ class TransferRepository internal constructor(context: Context) {
         val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
         val date = Date(transfer.timestamp * 1000)
         val response = sg.getService(CoingeckoService::class.java)
-                        .getHistoricalValueSync("bitshares", dateFormat.format(date), false)
-                        .execute()
+                        ?.getHistoricalValueSync("bitshares", dateFormat.format(date), false)
+                        ?.execute()
         var equivalentFiatValue = -1L
-        if(response.isSuccessful){
+        if(response?.isSuccessful == true){
             val price: Double = response.body()?.market_data?.current_price?.get(symbol) ?: -1.0
             // The equivalent value is obtained by:
             // 1- Dividing the base value by 100000 (BTS native precision)
@@ -114,7 +117,7 @@ class TransferRepository internal constructor(context: Context) {
             // 3- Multiplying the resulting value by 100 in order to express it in cents
             equivalentFiatValue = Math.round(transfer.btsValue?.div(1e5)?.times(price)?.times(100) ?: -1.0)
         }else{
-            Log.w(TAG,"Request was not successful. code: ${response.code()}")
+            Log.w(TAG,"Request was not successful. code: ${response?.code()}")
         }
         return EquivalentValue(transfer.id, equivalentFiatValue, symbol)
     }

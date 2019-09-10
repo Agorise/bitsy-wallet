@@ -275,10 +275,10 @@ class CreateAccountFragment : BaseAccountFragment() {
         val sg = ServiceGenerator(Constants.FAUCET_URL)
         val faucetService = sg.getService(FaucetService::class.java)
 
-        val call = faucetService.registerPrivateAccount(faucetRequest)
+        val call = faucetService?.registerPrivateAccount(faucetRequest)
 
         // Execute the call asynchronously. Get a positive or negative callback.
-        call.enqueue(object : Callback<FaucetResponse> {
+        call?.enqueue(object : Callback<FaucetResponse> {
             override fun onResponse(call: Call<FaucetResponse>, response: Response<FaucetResponse>) {
                 // The network call was a success and we got a response, obtain the info of the newly created account
                 // with a delay to let the nodes update their information
