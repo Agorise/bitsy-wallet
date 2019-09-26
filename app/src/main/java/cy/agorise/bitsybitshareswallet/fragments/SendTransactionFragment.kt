@@ -457,7 +457,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     }
 
     private fun validateAmount() {
-        val txtAmount = tietAmount.text.toString()
+        val txtAmount = tietAmount.text.toString().replace(",", ".")
 
         if (mBalancesDetailsAdapter?.isEmpty != false) return
         val balance = mBalancesDetailsAdapter?.getItem(spAsset.selectedItemPosition) ?: return
@@ -543,7 +543,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         // Create TransferOperation
         if (mNetworkService?.isConnected == true) {
             val balance = mBalancesDetailsAdapter!!.getItem(spAsset.selectedItemPosition)!!
-            val amount = (tietAmount.text.toString().toDouble() * Math.pow(10.0, balance.precision.toDouble())).toLong()
+            val amount = (tietAmount.text.toString().replace(",", ".").toDouble()
+                    * Math.pow(10.0, balance.precision.toDouble())).toLong()
 
             val transferAmount = AssetAmount(UnsignedLong.valueOf(amount), Asset(balance.id))
 
