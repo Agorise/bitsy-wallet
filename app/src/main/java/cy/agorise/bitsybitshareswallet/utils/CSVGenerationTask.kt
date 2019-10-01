@@ -51,14 +51,12 @@ class CSVGenerationTask(context: Context) : AsyncTask<List<TransferDetail>, Int,
 
             // Configure date and time formats to reuse in all the transfers
             val locale = mContext.get()?.resources?.configuration?.locale
-            val calendar = Calendar.getInstance()
             val dateFormat = SimpleDateFormat("MM-dd-yyyy", locale)
-            val timeFormat = SimpleDateFormat("HH:MM:ss", locale)
+            val timeFormat = SimpleDateFormat("HH:mm:ss", locale)
 
             // Save all the transfers information
             for ( (index, transferDetail) in transferDetails.withIndex()) {
-                calendar.timeInMillis = transferDetail.date * 1000
-                val date = calendar.time
+                val date = Date(transferDetail.date * 1000)
 
                 row[0] = transferDetail.from ?: ""          // From
                 row[1] = transferDetail.to ?: ""            // To

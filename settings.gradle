@@ -1,1 +1,1 @@
-include ':app', ':graphenejlib:graphenej'
+include ':app', ':graphenejlib:graphenej', ':PDFJet'
