@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Trafodiad wedi\'i anfon!</string>
     <string name="msg__transaction_not_sent">Methu anfon trafodiad</string>
     <string name="error__you_dont_own_asset">Nid ydych chi\'n berchen ar unrhyw %1$s</string>
+    <string name="title__no_internet_error">Dim Rhyngrwyd</string>
+    <string name="msg__no_internet_error">Methu anfon arian. Cysylltwch â\'r Rhyngrwyd.</string>
+    <string name="title__time_sync_error">Gwall Sync Amser</string>
+    <string name="msg__time_sync_error">Methu anfon arian. Gwnewch yn siŵr bod “Dyddiad ac Amser Awtomatig” wedi\'i alluogi ar eich dyfais.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Teipiwch enw cyfrif Bitshares y person rydych chi am anfon arian ato. \n Er enghraifft: agorise-faucet</string>

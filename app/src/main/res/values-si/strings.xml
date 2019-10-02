@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ගනුදෙනුව යවන ලදි!</string>
     <string name="msg__transaction_not_sent">ගනුදෙනුව යැවිය නොහැක</string>
     <string name="error__you_dont_own_asset">ඔබට කිසිදු %1$s අයිති නැත</string>
+    <string name="title__no_internet_error">අන්තර්ජාලයක් නැත</string>
+    <string name="msg__no_internet_error">අරමුදල් යැවිය නොහැක. කරුණාකර අන්තර්ජාලයට සම්බන්ධ වන්න.</string>
+    <string name="title__time_sync_error">කාල සමමුහුර්ත කිරීමේ දෝෂයකි</string>
+    <string name="msg__time_sync_error">අරමුදල් යැවිය නොහැක. කරුණාකර ඔබගේ උපාංගයේ “ස්වයංක්‍රීය දිනය සහ වේලාව” සක්‍රීය කර ඇති බවට වග බලා ගන්න.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ඔබට අරමුදල් යැවීමට අවශ්‍ය පුද්ගලයාගේ බිට්ෂෙයාර් ගිණුමේ නම ටයිප් කරන්න. \n උදාහරණයක් ලෙස: agorise-faucet</string>

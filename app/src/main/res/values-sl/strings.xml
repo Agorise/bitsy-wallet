@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transakcija poslana!</string>
     <string name="msg__transaction_not_sent">Transakcije ni mogoče poslati</string>
     <string name="error__you_dont_own_asset">Nimate nobenega %1$s</string>
+    <string name="title__no_internet_error">Brez interneta</string>
+    <string name="msg__no_internet_error">Sredstva ni mogoče poslati. Povežite se z internetom.</string>
+    <string name="title__time_sync_error">Napaka pri sinhronizaciji</string>
+    <string name="msg__time_sync_error">Sredstva ni mogoče poslati. Prepričajte se, da je v napravi omogočena možnost »Samodejni datum in čas«.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Vnesite ime računa Bitshares osebe, ki ji želite poslati sredstva. \n Na primer: agorise-pipa</string>

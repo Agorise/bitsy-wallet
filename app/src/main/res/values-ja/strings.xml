@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">トランザクションが送信されました！</string>
     <string name="msg__transaction_not_sent">トランザクションを送信できません</string>
     <string name="error__you_dont_own_asset">%1$sを所有していない</string>
+    <string name="title__no_internet_error">インターネットがない</string>
+    <string name="msg__no_internet_error">資金を送信できません。インターネットに接続してください。</string>
+    <string name="title__time_sync_error">時刻同期エラー</string>
+    <string name="msg__time_sync_error">資金を送信できません。デバイスで「自動日付と時刻」が有効になっていることを確認してください。</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">資金を送りたい相手のBitsharesアカウント名を入力します。 \n例：agorise-faucet</string>

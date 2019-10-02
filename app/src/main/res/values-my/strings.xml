@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ငွေသွင်းငွေထုတ်ကိုစလှေတျ!</string>
     <string name="msg__transaction_not_sent">ငွေပေးငွေယူပေးပို့ဖို့မအောင်မြင်ဘူး</string>
     <string name="error__you_dont_own_asset">သငျသညျ Don \ \'\' t ကိုမဆို %1$s ပိုင်ဆိုင်</string>
+    <string name="title__no_internet_error">အဘယ်သူမျှမကအင်တာနက်</string>
+    <string name="msg__no_internet_error">ရန်ပုံငွေများကိုပေးပို့ဖို့လုပ်လို့မရနိုင်ပါ။ အင်တာနက်ကိုချိတ်ဆက်ပေးပါ။</string>
+    <string name="title__time_sync_error">အချိန်င့်က်အမှား</string>
+    <string name="msg__time_sync_error">ရန်ပုံငွေများကိုပေးပို့ဖို့လုပ်လို့မရနိုင်ပါ။ "အလိုအလျောက်နေ့စွဲနှင့်အချိန်" သင့်ရဲ့ device ကိုအပေါ်ကို enable လုပ်ထားတဲ့သေချာပါစေ။</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">အဆိုပါ Bitshares အတွက် type ကိုသင်ရန်ပုံငွေများပေးပို့ချင်သောလူတစ်ဦး၏နာမကိုအမှီအကောင့်။ \nFor ဥပမာ: agorise-faucet</string>

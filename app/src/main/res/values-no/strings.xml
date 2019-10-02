@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaksjonen er sendt!</string>
     <string name="msg__transaction_not_sent">Kan ikke sende transaksjonen</string>
     <string name="error__you_dont_own_asset">Du eier ikke noen %1$s</string>
+    <string name="title__no_internet_error">Ingen Internett</string>
+    <string name="msg__no_internet_error">Kan ikke sende midler. Koble til Internett.</string>
+    <string name="title__time_sync_error">Tidssynkroniseringsfeil</string>
+    <string name="msg__time_sync_error">Kan ikke sende midler. Forsikre deg om at "Automatisk dato og tid" er aktivert på enheten din.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Skriv inn Bitshares-kontonavnet til personen du vil sende midler til. \nFor eksempel: armaturkran</string>

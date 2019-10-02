@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Здзелка адпраўлена!</string>
     <string name="msg__transaction_not_sent">Немагчыма адправіць транзакцыю</string>
     <string name="error__you_dont_own_asset">Вы не маеце ніводнага %1$s</string>
+    <string name="title__no_internet_error">Няма Інтэрнэту</string>
+    <string name="msg__no_internet_error">Немагчыма адправіць сродкі. Калі ласка, падключыцеся да Інтэрнэту.</string>
+    <string name="title__time_sync_error">Памылка сінхранізацыі часу</string>
+    <string name="msg__time_sync_error">Немагчыма адправіць сродкі. Пераканайцеся, што "Аўтаматычная дата і час" уключаны на вашай прыладзе.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Увядзіце імя ўліковага запісу Bitshares чалавека, якому вы хочаце адправіць сродкі. \nНа прыклад: агорыс-кран</string>

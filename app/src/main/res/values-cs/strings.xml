@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transakce byla odeslána!</string>
     <string name="msg__transaction_not_sent">Nelze odeslat transakci</string>
     <string name="error__you_dont_own_asset">Nevlastníte žádné %1$s</string>
+    <string name="title__no_internet_error">Žádný internet</string>
+    <string name="msg__no_internet_error">Nelze odeslat prostředky. Připojte se k internetu.</string>
+    <string name="title__time_sync_error">Chyba synchronizace času</string>
+    <string name="msg__time_sync_error">Nelze odeslat prostředky. Zkontrolujte, zda je na vašem zařízení povoleno „Automatické datum a čas“.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Zadejte jméno účtu Bitshares osoby, které chcete poslat finanční prostředky. \nNapříklad: agorise-faucet</string>

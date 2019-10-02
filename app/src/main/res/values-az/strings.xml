@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Əməliyyat göndərildi!</string>
     <string name="msg__transaction_not_sent">Əməliyyatı göndərmək olmur</string>
     <string name="error__you_dont_own_asset">Hər hansı bir %1$s sahibi deyilsiniz</string>
+    <string name="title__no_internet_error">İnternet yoxdur</string>
+    <string name="msg__no_internet_error">Vəsait göndərə bilmir. Zəhmət olmasa İnternetə qoşulun.</string>
+    <string name="title__time_sync_error">Zaman sinxronizasiya xətası</string>
+    <string name="msg__time_sync_error">Vəsait göndərə bilmir. Zəhmət olmasa cihazınızda "Avtomatik tarix və vaxt" effektiv olduğundan əmin olun.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Vəsait göndərmək istədiyiniz şəxsin Bitshares hesab adını yazın. \nMəsələn: agorise-musluk</string>

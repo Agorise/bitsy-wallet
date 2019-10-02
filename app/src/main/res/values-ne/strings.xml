@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">लेनदेन पठाइयो!</string>
     <string name="msg__transaction_not_sent">लेनदेन पठाउन असमर्थ</string>
     <string name="error__you_dont_own_asset">तपाईं कुनै %1$s को मालिक हुनुहुन्न</string>
+    <string name="title__no_internet_error">इन्टरनेट छैन</string>
+    <string name="msg__no_internet_error">कोष पठाउन असमर्थ। कृपया इन्टरनेटमा जडान गर्नुहोस्।</string>
+    <string name="title__time_sync_error">समय समक्रमण त्रुटि</string>
+    <string name="msg__time_sync_error">कोष पठाउन असमर्थ। कृपया निश्चित गर्नुहोस् कि "स्वचालित मिति र समय" तपाइँको उपकरणमा सक्षम छ।</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Bitshares खाताको नाम टाइप गर्नुहोस् व्यक्तिको नाम तपाईंले फन्डहरू पठाउन चाहानुहुन्छ। \n उदाहरणका लागि: एगोरिज-नल</string>

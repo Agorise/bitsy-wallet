@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaksie gestuur!</string>
     <string name="msg__transaction_not_sent">Kon nie die transaksie stuur nie</string>
     <string name="error__you_dont_own_asset">U het geen %1$s nie</string>
+    <string name="title__no_internet_error">Geen internet nie</string>
+    <string name="msg__no_internet_error">Kan nie fondse stuur nie. Koppel asseblief aan die internet.</string>
+    <string name="title__time_sync_error">Tydsinkroniseringsfout</string>
+    <string name="msg__time_sync_error">Kan nie fondse stuur nie. Maak seker dat \'Outomatiese datum en tyd\' op u toestel geaktiveer is.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Tik die Bitshares-rekeningnaam in van die persoon waarheen u fondse wil stuur. \nVoor voorbeeld: kraan van agorise</string>

@@ -104,6 +104,10 @@
     <string name="text__transaction_sent">Transaction sent!</string>
     <string name="msg__transaction_not_sent">Unable to send transaction</string>
     <string name="error__you_dont_own_asset">You don\'t own any %1$s</string>
+    <string name="title__no_internet_error">No Internet</string>
+    <string name="msg__no_internet_error">Unable to send funds. Please connect to the Internet.</string>
+    <string name="title__time_sync_error">Time Sync Error</string>
+    <string name="msg__time_sync_error">Unable to send funds. Please make sure “Automatic Date and Time” is enabled on your device.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Type in the Bitshares account name of the person you want to send funds to.\nFor example: agorise-faucet</string>

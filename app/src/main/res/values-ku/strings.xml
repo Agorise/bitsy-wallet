@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Veguhastin şandin!</string>
     <string name="msg__transaction_not_sent">Ne gengaz e ku danûstendinê bişîne</string>
     <string name="error__you_dont_own_asset">Tu ne xwediyê %1$s bibî</string>
+    <string name="title__no_internet_error">Internetnternet tune</string>
+    <string name="msg__no_internet_error">Nekarîn fonan bişînin. Ji kerema xwe ve girêdayî înternetê.</string>
+    <string name="title__time_sync_error">Error Sync</string>
+    <string name="msg__time_sync_error">Nekarîn fonan bişînin. Ji kerema xwe bila "Dîrok û Demê Xwe" li ser cîhaza xwe çalak be.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Navê hesabê Bitshares-ê kesê ku hûn dixwazin fona bişînin binivîsin. \n Ji bo nimûne: agorise-faucet</string>

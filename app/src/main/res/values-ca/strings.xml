@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">S\'ha enviat la transacció!</string>
     <string name="msg__transaction_not_sent">No es pot enviar la transacció</string>
     <string name="error__you_dont_own_asset">No teniu cap %1$s</string>
+    <string name="title__no_internet_error">No hi ha Internet</string>
+    <string name="msg__no_internet_error">No es poden enviar fons. Connecteu-vos a Internet.</string>
+    <string name="title__time_sync_error">Error de sincronització de temps</string>
+    <string name="msg__time_sync_error">No es poden enviar fons. Assegureu-vos que s\'hagi activat "Data i hora automàtiques" al vostre dispositiu.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Escriviu el nom del compte de Bitshares de la persona a la qual voleu enviar fons. \nPer exemple: agorise-aixeta</string>

@@ -4,6 +4,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
+import android.provider.Settings
 import android.util.Log
 import android.view.*
 import android.widget.AdapterView
@@ -52,7 +53,6 @@ import java.text.DecimalFormatSymbols
 import java.util.ArrayList
 import java.util.Locale
 import java.util.concurrent.TimeUnit
-import javax.crypto.AEADBadTagException
 
 class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHandler,
     BaseSecurityLockDialog.OnPINPatternEnteredListener {
@@ -585,6 +585,22 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             Log.d(TAG, "Network Service is not connected")
     }
 
+    private fun verifyGlobalSettingsTimeAutomatic() {
+        if (Settings.Global.getInt(context?.contentResolver, Settings.Global.AUTO_TIME, 0) != 1) {
+            context?.let { context ->
+                MaterialDialog(context).show {
+                    title(R.string.title__time_sync_error)
+                    message(R.string.msg__time_sync_error)
+                    positiveButton(android.R.string.ok) {
+                        this@SendTransactionFragment.findNavController().navigateUp()
+                    }
+                    cancelable(false)
+                    cancelOnTouchOutside(false)
+                }
+            }
+        }
+    }
+
     /**
      * Obtains the correct [TransferOperation] object to send the fee to Agorise. A fee is only sent if the Asset is
      * BTS or a SmartCoin.
@@ -623,6 +639,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         if (isCameraPreviewVisible)
             startCameraPreview()
+
+        verifyGlobalSettingsTimeAutomatic()
     }
 
     override fun onPause() {

@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Bitim yuborildi!</string>
     <string name="msg__transaction_not_sent">O‘tkazma yuborilmadi</string>
     <string name="error__you_dont_own_asset">Sizda %1$s mavjud emas</string>
+    <string name="title__no_internet_error">Internet yo\'q</string>
+    <string name="msg__no_internet_error">Mablag‘ni yuborib bo‘lmadi. Iltimos, Internetga ulaning.</string>
+    <string name="title__time_sync_error">Vaqtni sinxronlashda xato</string>
+    <string name="msg__time_sync_error">Mablag‘ni yuborib bo‘lmadi. Iltimos, qurilmangizda "Avtomatik sana va vaqt" yoqilganligiga ishonch hosil qiling.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Sizga pul yubormoqchi bo\'lgan odamning Bitshares hisob nomini kiriting. \nMasalan: agorise-musluk</string>

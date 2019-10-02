@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Tranzacție trimisă!</string>
     <string name="msg__transaction_not_sent">Imposibil de trimis tranzacția</string>
     <string name="error__you_dont_own_asset">Nu dețineți %1$s</string>
+    <string name="title__no_internet_error">Fara Internet</string>
+    <string name="msg__no_internet_error">Nu se pot trimite fonduri. Vă rugăm să vă conectați la Internet.</string>
+    <string name="title__time_sync_error">Eroare de sincronizare a timpului</string>
+    <string name="msg__time_sync_error">Nu se pot trimite fonduri. Vă rugăm să vă asigurați că „Data și ora automate” sunt activate pe dispozitivul dvs.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Introduceți numele contului Bitshares al persoanei către care doriți să trimiteți fonduri. \nPentru exemplu: agorise-robinet</string>

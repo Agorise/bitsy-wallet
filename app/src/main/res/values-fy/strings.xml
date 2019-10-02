@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaksje ferstjoerd!</string>
     <string name="msg__transaction_not_sent">Koe gjin transaksje ferstjoere</string>
     <string name="error__you_dont_own_asset">Jo hawwe gjin %1$s</string>
+    <string name="title__no_internet_error">Gjin ynternet</string>
+    <string name="msg__no_internet_error">Kin fûnsen net ferstjoere. Ferbine asjebleaft mei it ynternet.</string>
+    <string name="title__time_sync_error">Tiidsyngronisaasjeflater</string>
+    <string name="msg__time_sync_error">Kin fûnsen net ferstjoere. Soargje derfoar dat "Automatyske datum en tiid" ynskeakele is op jo apparaat.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Typ de Bitshares-akkountnamme yn fan de persoan wêr\'t jo fûnsen nei wolle stjoere. \n Foar foarbyld: agorise-kraan</string>

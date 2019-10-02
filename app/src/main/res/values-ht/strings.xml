@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Tranzaksyon voye!</string>
     <string name="msg__transaction_not_sent">Kapab voye tranzaksyon</string>
     <string name="error__you_dont_own_asset">Ou pa posede okenn %1$s</string>
+    <string name="title__no_internet_error">Pa gen entènèt</string>
+    <string name="msg__no_internet_error">Kapab voye lajan. Tanpri konekte sou entènèt la.</string>
+    <string name="title__time_sync_error">Tan senkro erè</string>
+    <string name="msg__time_sync_error">Kapab voye lajan. Tanpri asire w ke "Dat ak lè otomatik" se pèmèt sou aparèy ou an.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Tape nan non an kont Bitshares moun nan ou vle voye lajan nan. \nPou egzanp: agorise-tiyo</string>

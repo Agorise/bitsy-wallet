@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Ko te whakawhitinga i tukuna mai!</string>
     <string name="msg__transaction_not_sent">Kaore e taea te tuku moni</string>
     <string name="error__you_dont_own_asset">Kaore koe e whiwhi i tetahi o %1$s</string>
+    <string name="title__no_internet_error">No Ipurangi</string>
+    <string name="msg__no_internet_error">Kaore e taea te tuku moni. Tena hono ki te Ipurangi.</string>
+    <string name="title__time_sync_error">Hapa Tukutahi Ra</string>
+    <string name="msg__time_sync_error">Kaore e taea te tuku moni. Kia mahara ka whakahohea te "Raarangi Taera me te Waa" ki to taputapu.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Patohia te ingoa pūkete Bitshares o te tangata e hiahia ana koe ki te tuku moni. \nNo te tauira: agorise-faucet</string>

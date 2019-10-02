@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ટ્રાન્ઝેક્શન મોકલ્યું!</string>
     <string name="msg__transaction_not_sent">વ્યવહાર મોકલવામાં અસમર્થ</string>
     <string name="error__you_dont_own_asset">તમે કોઈપણ %1$s માલિક નથી</string>
+    <string name="title__no_internet_error">ઇન્ટરનેટ નથી</string>
+    <string name="msg__no_internet_error">ભંડોળ મોકલવામાં અસમર્થ. કૃપા કરીને ઇન્ટરનેટથી કનેક્ટ થાઓ.</string>
+    <string name="title__time_sync_error">સમય સમન્વયન ભૂલ</string>
+    <string name="msg__time_sync_error">ભંડોળ મોકલવામાં અસમર્થ. કૃપા કરીને ખાતરી કરો કે તમારા ઉપકરણ પર "સ્વચાલિત તારીખ અને સમય" સક્ષમ છે.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">તમે જે વ્યક્તિને ભંડોળ મોકલવા માંગો છો તેના બીટશેર્સ એકાઉન્ટ નામ લખો. \n ઉદાહરણ તરીકે: એગોરિઝ-પ્રવાહી વહેવાનો હરકોઈ જાતનો નળ</string>

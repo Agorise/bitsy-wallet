@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Bidali den transakzioa!</string>
     <string name="msg__transaction_not_sent">Ezin da transakzioa bidali</string>
     <string name="error__you_dont_own_asset">Ez duzu %1$s jaberik</string>
+    <string name="title__no_internet_error">Internetik ez</string>
+    <string name="msg__no_internet_error">Ezin da fondoak bidali. Mesedez, konektatu Internetera.</string>
+    <string name="title__time_sync_error">Ordua sinkronizatzeko errorea</string>
+    <string name="msg__time_sync_error">Ezin da fondoak bidali. Ziurtatu "Data eta ordua automatikoak" gaituta dagoela zure gailuan.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Idatzi funtsak bidali nahi dituzun Bitshares kontuaren izena. \n Adibidez: agorise-txorrota</string>

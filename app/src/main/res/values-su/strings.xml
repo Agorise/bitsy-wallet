@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaksi dikirim!</string>
     <string name="msg__transaction_not_sent">Teu tiasa ngirim transaksi</string>
     <string name="error__you_dont_own_asset">Anjeun henteu milu naon %1$s</string>
+    <string name="title__no_internet_error">Henteu Henteu Internét</string>
+    <string name="msg__no_internet_error">Teu tiasa ngirim dana. Mangga nyambung ka Internét.</string>
+    <string name="title__time_sync_error">Kasalahan Sinkronisasi Waktos</string>
+    <string name="msg__time_sync_error">Teu tiasa ngirim dana. Punten pastikeun "Tanggal sareng Waktos Otomatis" diaktipkeun dina alat anjeun.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Tipe nami akun Bitshares jalma anu anjeun hoyong kirimkeun dana. \nFor conto: agorise-faucet</string>

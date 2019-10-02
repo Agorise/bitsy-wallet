@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">거래가 발송되었습니다!</string>
     <string name="msg__transaction_not_sent">거래를 보낼 수 없습니다</string>
     <string name="error__you_dont_own_asset">%1$s을 (를) 소유하고 있지 않습니다.</string>
+    <string name="title__no_internet_error">인터넷이 없습니다</string>
+    <string name="msg__no_internet_error">송금 할 수 없습니다. 인터넷에 연결하십시오.</string>
+    <string name="title__time_sync_error">시간 동기화 오류</string>
+    <string name="msg__time_sync_error">송금 할 수 없습니다. 장치에서 "자동 날짜 및 시간"이 활성화되어 있는지 확인하십시오.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">자금을 송금하려는 사람의 Bitshares 계정 이름을 입력하십시오. \n 예 : agorise-faucet</string>

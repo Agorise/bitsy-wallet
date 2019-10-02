@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Idirbheart seolta!</string>
     <string name="msg__transaction_not_sent">Ní féidir idirbheart a sheoladh</string>
     <string name="error__you_dont_own_asset">Níl aon %1$s agat</string>
+    <string name="title__no_internet_error">Gan Idirlíon</string>
+    <string name="msg__no_internet_error">Ní féidir cistí a sheoladh. Le do thoil déan ceangal leis an Idirlíon.</string>
+    <string name="title__time_sync_error">Earráid Sync Ama</string>
+    <string name="msg__time_sync_error">Ní féidir cistí a sheoladh. Cinntigh le do thoil go bhfuil “Dáta agus Am Uathoibríoch” cumasaithe ar do ghléas.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Clóscríobh in ainm cuntais Bitshares an duine ar mian leat cistí a sheoladh chuige. \nFor shampla: oscailt-faucet</string>

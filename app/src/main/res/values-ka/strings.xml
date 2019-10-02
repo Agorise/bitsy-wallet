@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">გარიგების გაგზავნა!</string>
     <string name="msg__transaction_not_sent">გარიგების გაგზავნა შეუძლებელია</string>
     <string name="error__you_dont_own_asset">თქვენ არ გაქვთ რაიმე %1$s</string>
+    <string name="title__no_internet_error">ინტერნეტი არ არის</string>
+    <string name="msg__no_internet_error">სახსრების გაგზავნა შეუძლებელია. გთხოვთ დაუკავშირდეთ ინტერნეტს.</string>
+    <string name="title__time_sync_error">დროის სინქრონიზაციის შეცდომა</string>
+    <string name="msg__time_sync_error">სახსრების გაგზავნა შეუძლებელია. დარწმუნდით, რომ ჩართულია "ავტომატური თარიღი და დრო" თქვენს მოწყობილობაში.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ჩაწერეთ Bitshares ანგარიშის სახელი იმ პირის მიმართ, რომელზეც გსურთ ფულის გაგზავნა. \n მაგალითად: აგორიზა-ონკანი</string>

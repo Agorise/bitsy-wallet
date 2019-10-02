@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaction misit?</string>
     <string name="msg__transaction_not_sent">Quamquam invisa inmittere</string>
     <string name="error__you_dont_own_asset">Non habes \ \'habere quis T %1$s</string>
+    <string name="title__no_internet_error">Non Internet</string>
+    <string name="msg__no_internet_error">\'Non mitteret pecunia. Placere coniungere ad Internet.</string>
+    <string name="title__time_sync_error">Sync error Tempus</string>
+    <string name="msg__time_sync_error">\'Non mitteret pecunia. Quaeso, scrutare "Automatic et tempus \'est enabled in fabrica.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Type de Bitshares ideo nomen persona vis mittere pecunia est. \nFor exemplum: agorise faucet,</string>

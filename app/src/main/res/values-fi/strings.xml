@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Tapahtuma lähetetty!</string>
     <string name="msg__transaction_not_sent">Tapahtumaa ei voi lähettää</string>
     <string name="error__you_dont_own_asset">Et omista %1$s</string>
+    <string name="title__no_internet_error">Ei Internetiä</string>
+    <string name="msg__no_internet_error">Varoja ei voi lähettää. Muodosta yhteys Internetiin.</string>
+    <string name="title__time_sync_error">Aikasynkronointivirhe</string>
+    <string name="msg__time_sync_error">Varoja ei voi lähettää. Varmista, että ”Automaattinen päivämäärä ja aika” on käytössä laitteellasi.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Kirjoita sen henkilön Bitshares-tilin nimi, jolle haluat lähettää varoja. \nEsimerkki: sekoitushana</string>

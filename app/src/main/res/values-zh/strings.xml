@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">交易已发送！</string>
     <string name="msg__transaction_not_sent">无法发送交易</string>
     <string name="error__you_dont_own_asset">你不拥有任何%1$s</string>
+    <string name="title__no_internet_error">没有网路</string>
+    <string name="msg__no_internet_error">无法汇款。请连接到互联网。</string>
+    <string name="title__time_sync_error">时间同步错误</string>
+    <string name="msg__time_sync_error">无法汇款。请确保您的设备上启用了“自动日期和时间”。</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">输入您要向其汇款的人的Bitshares帐户名称。 \n例如：agorise-faucet</string>

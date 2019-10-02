@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Darījums nosūtīts!</string>
     <string name="msg__transaction_not_sent">Nevar nosūtīt darījumu</string>
     <string name="error__you_dont_own_asset">Jums nepieder neviens %1$s</string>
+    <string name="title__no_internet_error">Nav interneta</string>
+    <string name="msg__no_internet_error">Nevar nosūtīt līdzekļus. Lūdzu, izveidojiet savienojumu ar internetu.</string>
+    <string name="title__time_sync_error">Laika sinhronizācijas kļūda</string>
+    <string name="msg__time_sync_error">Nevar nosūtīt līdzekļus. Lūdzu, pārliecinieties, vai ierīcē ir iespējots “Automātiskais datums un laiks”.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Ierakstiet tās personas Bitshares konta vārdu, kurai vēlaties nosūtīt līdzekļus. \nPiemēram: jaucējkrāns</string>

@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Транзакцията е изпратена!</string>
     <string name="msg__transaction_not_sent">Не може да се изпрати транзакция</string>
     <string name="error__you_dont_own_asset">Не притежавате никакви %1$s</string>
+    <string name="title__no_internet_error">Няма интернет</string>
+    <string name="msg__no_internet_error">Не може да се изпращат средства. Моля, свържете се с интернет.</string>
+    <string name="title__time_sync_error">Грешка при синхронизиране на времето</string>
+    <string name="msg__time_sync_error">Не може да се изпращат средства. Моля, уверете се, че „Автоматична дата и час“ е активирана на вашето устройство.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Въведете името на акаунта в Bitshares на лицето, на което искате да изпратите средства. \n Например: agorise-кран</string>

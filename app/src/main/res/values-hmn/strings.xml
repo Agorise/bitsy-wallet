@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Hloov xa!</string>
     <string name="msg__transaction_not_sent">Tsis tuaj yeem xa kev sib pauv</string>
     <string name="error__you_dont_own_asset">Koj tsis txhob muaj ib yam %1$s</string>
+    <string name="title__no_internet_error">Tsis muaj Is Taws Nem</string>
+    <string name="msg__no_internet_error">Tsis tuaj yeem xa nyiaj. Thov txuas rau Is Taws Nem.</string>
+    <string name="title__time_sync_error">Lub sij hawm Sync yuam kev</string>
+    <string name="msg__time_sync_error">Tsis tuaj yeem xa nyiaj. Thov nco ntsoov "Tsis Siv Neeg Hnub thiab Sijhawm" raug qhib rau hauv koj lub ntaus ntawv.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Ntaus rau Bitshares tus lej lub npe ntawm tus neeg uas koj xav xa nyiaj mus rau. \nPiv txwv li: agorise-faucet</string>

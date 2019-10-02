@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Operacija išsiųsta!</string>
     <string name="msg__transaction_not_sent">Neįmanoma išsiųsti operacijos</string>
     <string name="error__you_dont_own_asset">Jums nepriklauso %1$s</string>
+    <string name="title__no_internet_error">Nėra interneto</string>
+    <string name="msg__no_internet_error">Neįmanoma išsiųsti lėšų. Prisijunkite prie interneto.</string>
+    <string name="title__time_sync_error">Laiko sinchronizacijos klaida</string>
+    <string name="msg__time_sync_error">Neįmanoma išsiųsti lėšų. Įsitikinkite, kad jūsų įrenginyje įjungta „Automatinė data ir laikas“.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Įveskite asmens, kuriam norite pervesti lėšas, „Bitshares“ sąskaitos pavadinimą. \nPavyzdys: maišytuvas-maišytuvas</string>

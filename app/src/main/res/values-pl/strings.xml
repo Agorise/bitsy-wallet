@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transakcja wysłana!</string>
     <string name="msg__transaction_not_sent">Nie można wysłać transakcji</string>
     <string name="error__you_dont_own_asset">Nie masz żadnych %1$s</string>
+    <string name="title__no_internet_error">Brak internetu</string>
+    <string name="msg__no_internet_error">Nie można wysłać środków. Połącz się z Internetem.</string>
+    <string name="title__time_sync_error">Błąd synchronizacji czasu</string>
+    <string name="msg__time_sync_error">Nie można wysłać środków. Upewnij się, że w urządzeniu włączona jest „Automatyczna data i godzina”.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Wpisz nazwę konta Bitshares osoby, do której chcesz wysłać środki. \n Na przykład: agorise-kran</string>

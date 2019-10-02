@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Ununuzi umetumwa!</string>
     <string name="msg__transaction_not_sent">Imeshindwa kutuma shughuli</string>
     <string name="error__you_dont_own_asset">Haujamiliki %1$s yoyote</string>
+    <string name="title__no_internet_error">Hakuna mtandao</string>
+    <string name="msg__no_internet_error">Imeshindwa kutuma pesa. Tafadhali unganisha kwenye mtandao.</string>
+    <string name="title__time_sync_error">Kosa la Usawazishaji wa Wakati</string>
+    <string name="msg__time_sync_error">Imeshindwa kutuma pesa. Tafadhali hakikisha "Tarehe na Wakati otomatiki" imewashwa kwenye kifaa chako.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Andika jina la akaunti ya Bitshares ya mtu ambaye unataka kumtumia pesa. Mfano wa \n Mfano: agorise-bomba</string>

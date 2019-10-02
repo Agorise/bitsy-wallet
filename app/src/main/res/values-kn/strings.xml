@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ವಹಿವಾಟು ಕಳುಹಿಸಲಾಗಿದೆ!</string>
     <string name="msg__transaction_not_sent">ವಹಿವಾಟು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
     <string name="error__you_dont_own_asset">ನೀವು ಯಾವುದೇ %1$s ಅನ್ನು ಹೊಂದಿಲ್ಲ</string>
+    <string name="title__no_internet_error">ಇಂಟರ್ನೆಟ್ ಇಲ್ಲ</string>
+    <string name="msg__no_internet_error">ಹಣವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಇಂಟರ್ನೆಟ್‌ಗೆ ಸಂಪರ್ಕಪಡಿಸಿ.</string>
+    <string name="title__time_sync_error">ಸಮಯ ಸಿಂಕ್ ದೋಷ</string>
+    <string name="msg__time_sync_error">ಹಣವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ “ಸ್ವಯಂಚಾಲಿತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ” ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ನೀವು ಹಣವನ್ನು ಕಳುಹಿಸಲು ಬಯಸುವ ವ್ಯಕ್ತಿಯ ಬಿಟ್‌ಶೇರ್ಸ್ ಖಾತೆಯ ಹೆಸರನ್ನು ಟೈಪ್ ಮಾಡಿ. \n ಉದಾಹರಣೆಗಾಗಿ: ಅಗೋರೈಸ್-ನಲ್ಲಿ</string>

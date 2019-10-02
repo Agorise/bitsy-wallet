@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Macaamiladi waa la diray!</string>
     <string name="msg__transaction_not_sent">Ma awoodin in la diro macaamil ganacsi</string>
     <string name="error__you_dont_own_asset">Ma lihid wax %1$s</string>
+    <string name="title__no_internet_error">Internet lahayn</string>
+    <string name="msg__no_internet_error">Ma awoodo in la diro lacagaha. Fadlan ku xir khadka internetka.</string>
+    <string name="title__time_sync_error">Waqtiga Iscasilaadda waqtiga</string>
+    <string name="msg__time_sync_error">Ma awoodo in la diro lacagaha. Fadlan hubi in "Automatic Taariikhda iyo Waqtiga" ay ku shaqeyneyso qalabkaaga.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Ku qor magaca koontada \'Bitshares\' ee qofka aad rabto inaad lacag ugu dirto. \n Tusaale ahaan: agorise-faucet</string>

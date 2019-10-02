@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Giao dịch đã được gửi!</string>
     <string name="msg__transaction_not_sent">Không thể gửi giao dịch</string>
     <string name="error__you_dont_own_asset">Bạn không sở hữu bất kỳ %1$s nào</string>
+    <string name="title__no_internet_error">Không có mạng</string>
+    <string name="msg__no_internet_error">Không thể gửi tiền. Vui lòng kết nối Internet.</string>
+    <string name="title__time_sync_error">Lỗi đồng bộ hóa thời gian</string>
+    <string name="msg__time_sync_error">Không thể gửi tiền. Vui lòng đảm bảo Ngày tự động và Thời gian tự động được bật trên thiết bị của bạn.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Nhập tên tài khoản Bitshares của người bạn muốn gửi tiền. \n Ví dụ: vòi agorise</string>

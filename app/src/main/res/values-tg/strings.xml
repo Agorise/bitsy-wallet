@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Амалиёт фиристода шуд!</string>
     <string name="msg__transaction_not_sent">Интиқоли муомилот ғайриимкон аст</string>
     <string name="error__you_dont_own_asset">Шумо соҳиби %1$s надоред</string>
+    <string name="title__no_internet_error">Интернет нест</string>
+    <string name="msg__no_internet_error">Интиқоли маблағ имконнопазир аст. Лутфан ба интернет пайваст шавед.</string>
+    <string name="title__time_sync_error">Хатогии синхронизатсияи вақт</string>
+    <string name="msg__time_sync_error">Интиқоли маблағ имконнопазир аст. Лутфан боварӣ ҳосил намоед, ки дар дастгоҳи шумо "Сана ва вақти автоматӣ" фаъол аст.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Дар номи ҳисоби Bitshares шахсе нависед, ки мехоҳед ба он маблағ фиристед. \nМасалан: агориз-кран</string>

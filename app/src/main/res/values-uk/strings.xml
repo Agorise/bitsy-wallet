@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Угода надіслана!</string>
     <string name="msg__transaction_not_sent">Неможливо надіслати транзакцію</string>
     <string name="error__you_dont_own_asset">Ви не володієте жодними %1$s</string>
+    <string name="title__no_internet_error">Інтернету немає</string>
+    <string name="msg__no_internet_error">Неможливо надіслати кошти. Підключіться до Інтернету.</string>
+    <string name="title__time_sync_error">Помилка синхронізації в часі</string>
+    <string name="msg__time_sync_error">Неможливо надіслати кошти. Переконайтеся, що на вашому пристрої включено "Автоматична дата та час".</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Введіть ім\'я рахунку Bitshares того, кому ви хочете надіслати кошти. \nНа приклад: agorise-кран</string>

@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ການເຮັດທຸລະ ກຳ ຖືກສົ່ງແລ້ວ!</string>
     <string name="msg__transaction_not_sent">ບໍ່ສາມາດສົ່ງການເຮັດທຸລະ ກຳ ໄດ້</string>
     <string name="error__you_dont_own_asset">ທ່ານບໍ່ເປັນເຈົ້າຂອງ %1$s</string>
+    <string name="title__no_internet_error">ບໍ່ມີອິນເຕີເນັດ</string>
+    <string name="msg__no_internet_error">ບໍ່ສາມາດສົ່ງເງິນໄດ້. ກະລຸນາເຊື່ອມຕໍ່ອິນເຕີເນັດ.</string>
+    <string name="title__time_sync_error">ຂໍ້ຜິດພາດໃນການຊິ້ງຂໍ້ມູນເວລາ</string>
+    <string name="msg__time_sync_error">ບໍ່ສາມາດສົ່ງເງິນໄດ້. ກະລຸນາກວດສອບໃຫ້ແນ່ໃຈວ່າ "ວັນທີແລະເວລາອັດຕະໂນມັດ" ຖືກເປີດໃຊ້ງານໃນອຸປະກອນຂອງທ່ານ.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">ພິມຊື່ບັນຊີ Bitshares ຂອງບຸກຄົນທີ່ທ່ານຕ້ອງການສົ່ງເງິນເຂົ້າ. \n ຕົວຢ່າງ: agau-faucet</string>

@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transaction sent!</string>
     <string name="msg__transaction_not_sent">Tsy afaka nandefa fifanakalozana</string>
     <string name="error__you_dont_own_asset">Tsy manana %1$s ianao</string>
+    <string name="title__no_internet_error">Tsy misy Internet</string>
+    <string name="msg__no_internet_error">Tsy afaka nandefa vola. Azafady mba mifandray amin\'ny Internet.</string>
+    <string name="title__time_sync_error">Hadisoana nanaovana fotoana</string>
+    <string name="msg__time_sync_error">Tsy afaka nandefa vola. Azafady azonao antoka fa alefa ao amin\'ny fitaovana ampiasainao ny "daty sy fotoana" mandeha ho azy.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Ampidiro amin\'ny anaran\'ny kaonty Bitshares olona tianao handefasana vola. \nManampy: agorise-faucet</string>

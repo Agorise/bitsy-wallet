@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Gipadala ang transaksyon!</string>
     <string name="msg__transaction_not_sent">Dili makapadala transaksyon</string>
     <string name="error__you_dont_own_asset">Dili nimo tag-iya ang bisan unsang %1$s</string>
+    <string name="title__no_internet_error">Wala’y Internet</string>
+    <string name="msg__no_internet_error">Dili makapadala mga pondo. Palihug pagkonektar sa Internet.</string>
+    <string name="title__time_sync_error">Sayup sa Oras sa Pag-sync</string>
+    <string name="msg__time_sync_error">Dili makapadala mga pondo. Palihug siguruha nga ang "Awtomatikong Petsa ug Oras" gipadagan sa imong aparato.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Pag-type sa ngalan sa account sa Bitshares sa tawo nga gusto nimo ipadala ang pondo. \n Alang sa panig-ingnan: agorise-faucet</string>

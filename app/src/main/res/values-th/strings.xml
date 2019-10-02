@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ส่งธุรกรรมแล้ว!</string>
     <string name="msg__transaction_not_sent">ไม่สามารถส่งธุรกรรม</string>
     <string name="error__you_dont_own_asset">คุณไม่ได้เป็นเจ้าของ %1$s</string>
+    <string name="title__no_internet_error">ไม่มีอินเทอร์เน็ต</string>
+    <string name="msg__no_internet_error">ไม่สามารถส่งเงิน กรุณาเชื่อมต่ออินเทอร์เน็ต</string>
+    <string name="title__time_sync_error">ข้อผิดพลาดในการซิงค์เวลา</string>
+    <string name="msg__time_sync_error">ไม่สามารถส่งเงิน โปรดตรวจสอบว่า "วันที่และเวลาอัตโนมัติ" เปิดใช้งานบนอุปกรณ์ของคุณ</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">พิมพ์ชื่อบัญชี Bitshares ของบุคคลที่คุณต้องการส่งเงินไปให้ \n ตัวอย่าง: agorise-faucet</string>

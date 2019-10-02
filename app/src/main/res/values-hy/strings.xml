@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Գործարքն ուղարկվեց:</string>
     <string name="msg__transaction_not_sent">Անհնար է գործարքը ուղարկել</string>
     <string name="error__you_dont_own_asset">Դուք չեք պատկանում որևէ %1$s</string>
+    <string name="title__no_internet_error">Ոչ մի ինտերնետ</string>
+    <string name="msg__no_internet_error">Անհնար է միջոցներ ուղարկել: Խնդրում ենք միանալ ինտերնետին:</string>
+    <string name="title__time_sync_error">Ժամանակի համաժամացման սխալ</string>
+    <string name="msg__time_sync_error">Անհնար է միջոցներ ուղարկել: Համոզվեք, որ «Ավտոմատ ամսաթիվը և ժամանակը» միացված են ձեր սարքում:</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Մուտքագրեք Bitshares հաշիվը այն անձի անունով, որին ցանկանում եք գումար ուղարկել: \n Օրինակի համար `ագորիս-ծորակ</string>

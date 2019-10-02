@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Бүтүм жиберди!</string>
     <string name="msg__transaction_not_sent">бүтүм жөнөтө албайт</string>
     <string name="error__you_dont_own_asset">Сиз: "Т кандай %1$s ээ \ дон</string>
+    <string name="title__no_internet_error">Интернет жок</string>
+    <string name="msg__no_internet_error">каражаттарды жөнөтүү мүмкүн болбой жатат. Интернетке туташа коюш керек.</string>
+    <string name="title__time_sync_error">Убакыт Синх катасы</string>
+    <string name="msg__time_sync_error">каражаттарды жөнөтүү мүмкүн болбой жатат. чын эле "Automatic датаны жана убакытты" кылып Сураныч, сиздин түзмөктө иштетилген.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Bitshares түрү Сиз акча каражаттарын жөнөтүү үчүн каалаган адамдын аты-жөнү туура келет. \nFor мисал: agorise-дааратканасынын</string>

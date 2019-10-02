@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Η συναλλαγή στάλθηκε!</string>
     <string name="msg__transaction_not_sent">Δεν είναι δυνατή η αποστολή συναλλαγής</string>
     <string name="error__you_dont_own_asset">Δεν διαθέτετε κανένα %1$s</string>
+    <string name="title__no_internet_error">Δεν υπάρχει Internet</string>
+    <string name="msg__no_internet_error">Δεν είναι δυνατή η αποστολή χρημάτων. Συνδεθείτε στο Internet.</string>
+    <string name="title__time_sync_error">Σφάλμα συγχρονισμού ώρας</string>
+    <string name="msg__time_sync_error">Δεν είναι δυνατή η αποστολή χρημάτων. Βεβαιωθείτε ότι η "Αυτόματη ημερομηνία και ώρα" είναι ενεργοποιημένη στη συσκευή σας.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Πληκτρολογήστε το όνομα του λογαριασμού Bitshares του ατόμου στο οποίο θέλετε να στείλετε χρήματα. \nΓια παράδειγμα: βύθιση-βρύση</string>

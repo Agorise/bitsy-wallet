@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">भेजा गया लेन-देन!</string>
     <string name="msg__transaction_not_sent">लेनदेन भेजने में असमर्थ</string>
     <string name="error__you_dont_own_asset">आप किसी भी %1$s के स्वामी नहीं हैं</string>
+    <string name="title__no_internet_error">इंटरनेट नहीं है</string>
+    <string name="msg__no_internet_error">फंड भेजने में असमर्थ। कृपया इंटरनेट से कनेक्ट करें।</string>
+    <string name="title__time_sync_error">टाइम सिंक एरर</string>
+    <string name="msg__time_sync_error">फंड भेजने में असमर्थ। कृपया सुनिश्चित करें कि "स्वचालित दिनांक और समय" आपके डिवाइस पर सक्षम है।</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">जिस व्यक्ति को आप धन भेजना चाहते हैं उसका बिट्सरे खाते का नाम टाइप करें। \nFor उदाहरण: agorise-faucet</string>

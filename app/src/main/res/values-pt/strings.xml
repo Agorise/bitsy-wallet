@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transação enviada!</string>
     <string name="msg__transaction_not_sent">Não foi possível enviar a transação</string>
     <string name="error__you_dont_own_asset">Você não possui nenhum %1$s</string>
+    <string name="title__no_internet_error">Sem internet</string>
+    <string name="msg__no_internet_error">Não foi possível enviar fundos. Por favor, conecte-se à Internet.</string>
+    <string name="title__time_sync_error">Erro de sincronização de tempo</string>
+    <string name="msg__time_sync_error">Não foi possível enviar fundos. Verifique se a opção “Data e hora automáticas” está ativada no seu dispositivo.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Digite o nome da conta Bitshares da pessoa para quem você deseja enviar fundos. \nPor exemplo: torneira de torneira</string>

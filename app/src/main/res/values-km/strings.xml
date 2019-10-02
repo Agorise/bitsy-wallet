@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">ប្រតិបត្តិការបានផ្ញើ!</string>
     <string name="msg__transaction_not_sent">មិនអាចផ្ញើប្រតិបត្តិការបានទេ។</string>
     <string name="error__you_dont_own_asset">អ្នកមិនមែនជាម្ចាស់ %1$s ទេ</string>
+    <string name="title__no_internet_error">គ្មានអ៊ីនធឺណិត។</string>
+    <string name="msg__no_internet_error">មិនអាចផ្ញើប្រាក់បានទេ។ សូមភ្ជាប់ទៅអ៊ីនធឺណិត។</string>
+    <string name="title__time_sync_error">កំហុសពេលធ្វើសមកាលកម្ម។</string>
+    <string name="msg__time_sync_error">មិនអាចផ្ញើប្រាក់បានទេ។ សូមប្រាកដថាកាលបរិច្ឆេទនិងពេលវេលាស្វ័យប្រវត្តិត្រូវបានបើកនៅលើឧបករណ៍របស់អ្នក។</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">វាយបញ្ចូលឈ្មោះគណនី Bitshares របស់មនុស្សដែលអ្នកចង់ផ្ញើប្រាក់ទៅ។ ឧទាហរណ៍ឧទាហរណ៍៖ ក្បាលម៉ាសីនតឹក។</string>

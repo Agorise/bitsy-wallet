@@ -102,6 +102,10 @@
     <string name="text__transaction_sent">Transazione inviata!</string>
     <string name="msg__transaction_not_sent">Impossibile inviare la transazione</string>
     <string name="error__you_dont_own_asset">Non possiedi alcun %1$s</string>
+    <string name="title__no_internet_error">Senza internet</string>
+    <string name="msg__no_internet_error">Impossibile inviare fondi. Si prega di connettersi a Internet.</string>
+    <string name="title__time_sync_error">Errore di sincronizzazione temporale</string>
+    <string name="msg__time_sync_error">Impossibile inviare fondi. Assicurati che "Data e ora automatiche" siano abilitate sul tuo dispositivo.</string>
 
     <!-- Send Transaction info dialog -->
     <string name="msg__to_explanation">Digita il nome dell\'account Bitshares della persona a cui desideri inviare fondi. \n Per esempio: agorise-faucet</string>
