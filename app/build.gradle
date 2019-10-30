@@ -117,7 +117,7 @@ dependencies {
     api 'com.google.guava:guava:27.0.1-android'
     implementation 'org.bitcoinj:bitcoinj-core:0.14.3'
     implementation 'com.moldedbits.r2d2:r2d2:1.0.1'
-    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
     implementation 'com.afollestad.material-dialogs:core:3.1.0'
     implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
     // Android Debug Database
