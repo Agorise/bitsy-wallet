@@ -221,6 +221,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 populatePropertiesFromQRCodeString(Invoice.toQrCode(invoice))
             }, 2000) // Wait to let the other elements of the fragment initialize
         }
+
+        verifyGlobalSettingsTimeAutomatic()
     }
 
     /** Handles the selection of items in the Asset spinner, to keep track of the selectedAssetSymbol and show the
@@ -592,7 +594,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                     title(R.string.title__time_sync_error)
                     message(R.string.msg__time_sync_error)
                     positiveButton(android.R.string.ok) {
-                        this@SendTransactionFragment.findNavController().navigateUp()
+                        findNavController().navigateUp()
                     }
                     cancelable(false)
                     cancelOnTouchOutside(false)
@@ -639,8 +641,6 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         if (isCameraPreviewVisible)
             startCameraPreview()
-
-        verifyGlobalSettingsTimeAutomatic()
     }
 
     override fun onPause() {
