@@ -82,6 +82,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     private var isCameraPreviewVisible = false
     private var isToAccountCorrect = false
     private var isAmountCorrect = false
+    private var isMemoCorrect = true
 
     private var mBalancesDetails = ArrayList<BalanceDetail>()
 
@@ -211,6 +212,19 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { validateAmount() }
+        )
+
+        // Use RxJava Debounce to update the Memo error, to make sure it has the correct length
+        mDisposables.add(
+            tietMemo.textChanges()
+                .skipInitialValue()
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .map { it.toString().trim() }
+                .subscribe {
+                    isMemoCorrect = it.length <= tilMemo.counterMaxLength
+                    enableDisableSendFAB()
+                }
         )
 
         // Populates the To field if a Deep Link was used
@@ -488,7 +502,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     }
 
     private fun enableDisableSendFAB() {
-        if (isToAccountCorrect && isAmountCorrect) {
+        if (isToAccountCorrect && isAmountCorrect && isMemoCorrect) {
             fabSendTransaction.enable(R.color.colorSend)
             vSend.setBackgroundResource(R.drawable.send_fab_background)
         } else {
