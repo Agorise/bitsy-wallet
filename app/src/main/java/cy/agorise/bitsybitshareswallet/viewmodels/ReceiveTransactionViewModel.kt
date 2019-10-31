@@ -63,7 +63,7 @@ class ReceiveTransactionViewModel(application: Application) : AndroidViewModel(a
         withContext(Default) {
 
             val hints = HashMap<EncodeHintType, Any>()
-            hints[EncodeHintType.MARGIN] = 0
+            hints[EncodeHintType.MARGIN] = 1
             val result = MultiFormatWriter().encode(
                 data,
                 BarcodeFormat.QR_CODE, size, size, hints
