@@ -608,6 +608,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
      * BTS or a SmartCoin.
      */
     private fun getAgoriseFeeOperation(transferOperation: TransferOperation): TransferOperation? {
+        // Disable Agorise fees on debug builds
+        if (BuildConfig.DEBUG)
+            return null
+
         // Verify that the current Asset is either BTS or a SmartCoin
         if (Constants.assetsWhichSendFeeToAgorise.contains(transferOperation.assetAmount?.asset?.objectId ?: "")) {
             val fee = transferOperation.assetAmount?.multiplyBy(Constants.FEE_PERCENTAGE) ?: return null
