@@ -117,7 +117,7 @@ object Constants {
     const val KEY_TELLERS_LAST_UPDATE = "key_tellers_last_update"
 
     /** Constant used to decide whether or not to update the tellers and merchants info from the webservice */
-    const val MERCHANTS_UPDATE_PERIOD = 1000L * 60 * 60 + 24 // 1 day
+    const val MERCHANTS_UPDATE_PERIOD = 1000L * 60 * 60 + 3 // 3 hours
 
     /** Name of the external storage folder used to save files like PDF and CSV exports and Backups **/
     const val EXTERNAL_STORAGE_FOLDER = "BiTSy"

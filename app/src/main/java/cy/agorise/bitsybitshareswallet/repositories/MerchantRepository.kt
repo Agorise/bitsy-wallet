@@ -21,13 +21,27 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
 
     companion object {
         private const val TAG = "MerchantRepository"
+
+        private const val MERCHANTS_QUERY_LIMIT = 50
     }
 
     private val mMerchantDao: MerchantDao
 
+    private val merchantsList = mutableListOf<Merchant>()
+    private var merchantsSkip = 0
+
+    private val bitsyWebservice: BitsyWebservice
+
     init {
         val db = BitsyDatabase.getDatabase(context)
         mMerchantDao = db!!.merchantDao()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constants.BITSY_WEBSERVICE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
     }
 
     /** Returns a LiveData object directly from the database while the response from the WebService is obtained. */
@@ -45,15 +59,8 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
 
         if (lastMerchantUpdate + Constants.MERCHANTS_UPDATE_PERIOD < now) {
             Log.d(TAG, "Updating merchants from webservice")
-            // TODO make sure it works when there are more merchants than those sent back in the first response
-            val retrofit = Retrofit.Builder()
-                .baseUrl(Constants.BITSY_WEBSERVICE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-
-            val bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
-            val call = bitsyWebservice.getMerchants(0)
-            call.enqueue(this)
+            val request = bitsyWebservice.getMerchants(merchantsSkip, MERCHANTS_QUERY_LIMIT)
+            request.enqueue(this)
         }
     }
 
@@ -61,23 +68,29 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
         if (response.isSuccessful) {
             val res: FeathersResponse<Merchant>? = response.body()
             val merchants = res?.data ?: return
-            insertAllAsyncTask(mMerchantDao).execute(merchants)
 
-            val now = System.currentTimeMillis()
-            PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putLong(Constants.KEY_MERCHANTS_LAST_UPDATE, now).apply()
+            if (merchants.isNotEmpty()) {
+                merchantsList.addAll(merchants)
+                merchantsSkip += MERCHANTS_QUERY_LIMIT
+
+                val request = bitsyWebservice.getMerchants(merchantsSkip, MERCHANTS_QUERY_LIMIT)
+                request.enqueue(this)
+            } else {
+                updateMerchants(merchantsList)
+
+                val now = System.currentTimeMillis()
+                PreferenceManager.getDefaultSharedPreferences(context).edit()
+                    .putLong(Constants.KEY_MERCHANTS_LAST_UPDATE, now).apply()
+            }
         }
     }
 
     override fun onFailure(call: Call<FeathersResponse<Merchant>>, t: Throwable) { /* Do nothing */ }
 
-    private class insertAllAsyncTask internal constructor(private val mAsyncTaskDao: MerchantDao) :
-        AsyncTask<List<Merchant>, Void, Void>() {
-
-        override fun doInBackground(vararg merchants: List<Merchant>): Void? {
-            mAsyncTaskDao.deleteAll()
-            mAsyncTaskDao.insertAll(merchants[0])
-            return null
+    private fun updateMerchants(merchants: List<Merchant>) {
+        AsyncTask.execute {
+            mMerchantDao.deleteAll()
+            mMerchantDao.insertAll(merchants)
         }
     }
 
