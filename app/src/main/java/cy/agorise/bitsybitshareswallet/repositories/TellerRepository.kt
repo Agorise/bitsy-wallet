@@ -21,13 +21,27 @@ class TellerRepository internal constructor(val context: Context) : retrofit2.Ca
 
     companion object {
         private const val TAG = "TellerRepository"
+
+        private const val TELLERS_QUERY_LIMIT = 50
     }
 
     private val mTellerDao: TellerDao
 
+    private val tellersList = mutableListOf<Teller>()
+    private var tellersSkip = 0
+
+    private val bitsyWebservice: BitsyWebservice
+
     init {
         val db = BitsyDatabase.getDatabase(context)
         mTellerDao = db!!.tellerDao()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constants.BITSY_WEBSERVICE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
     }
 
     /** Returns a LiveData object directly from the database while the response from the WebService is obtained. */
@@ -45,15 +59,8 @@ class TellerRepository internal constructor(val context: Context) : retrofit2.Ca
 
         if (lastTellerUpdate + Constants.MERCHANTS_UPDATE_PERIOD < now) {
             Log.d(TAG, "Updating tellers from webservice")
-            // TODO make sure it works when there are more tellers than those sent back in the first response
-            val retrofit = Retrofit.Builder()
-                .baseUrl(Constants.BITSY_WEBSERVICE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-
-            val bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
-            val call = bitsyWebservice.getTellers(0)
-            call.enqueue(this)
+            val request = bitsyWebservice.getTellers(tellersSkip, TELLERS_QUERY_LIMIT)
+            request.enqueue(this)
         }
     }
 
@@ -61,23 +68,29 @@ class TellerRepository internal constructor(val context: Context) : retrofit2.Ca
         if (response.isSuccessful) {
             val res: FeathersResponse<Teller>? = response.body()
             val tellers = res?.data ?: return
-            insertAllAsyncTask(mTellerDao).execute(tellers)
 
-            val now = System.currentTimeMillis()
-            PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putLong(Constants.KEY_TELLERS_LAST_UPDATE, now).apply()
+            if (tellers.isNotEmpty()) {
+                tellersList.addAll(tellers)
+                tellersSkip += TELLERS_QUERY_LIMIT
+
+                val request = bitsyWebservice.getTellers(tellersSkip, TELLERS_QUERY_LIMIT)
+                request.enqueue(this)
+            } else {
+                updateTellers(tellersList)
+
+                val now = System.currentTimeMillis()
+                PreferenceManager.getDefaultSharedPreferences(context).edit()
+                    .putLong(Constants.KEY_TELLERS_LAST_UPDATE, now).apply()
+            }
         }
     }
 
     override fun onFailure(call: Call<FeathersResponse<Teller>>, t: Throwable) { /* Do nothing */ }
 
-    private class insertAllAsyncTask internal constructor(private val mAsyncTaskDao: TellerDao) :
-        AsyncTask<List<Teller>, Void, Void>() {
-
-        override fun doInBackground(vararg tellers: List<Teller>): Void? {
-            mAsyncTaskDao.deleteAll()
-            mAsyncTaskDao.insertAll(tellers[0])
-            return null
+    private fun updateTellers(tellers: List<Teller>) {
+        AsyncTask.execute {
+            mTellerDao.deleteAll()
+            mTellerDao.insertAll(tellers)
         }
     }
 
