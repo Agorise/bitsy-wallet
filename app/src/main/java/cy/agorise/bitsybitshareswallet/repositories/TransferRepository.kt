@@ -82,7 +82,7 @@ class TransferRepository internal constructor(context: Context) {
             .map { transfer -> obtainFiatValue(transfer, symbol) }
             .subscribe({
                 Log.d(TAG,"Got equivalent value: $it")
-                mEquivalentValuesDao.insert(it)
+                if(it.value >= 0) mEquivalentValuesDao.insert(it)
             },{
                 Log.e(TAG,"Error while trying to create a new equivalent value. Msg: ${it.message}")
                 for(element in it.stackTrace){
@@ -110,12 +110,20 @@ class TransferRepository internal constructor(context: Context) {
                         ?.execute()
         var equivalentFiatValue = -1L
         if(response?.isSuccessful == true){
-            val price: Double = response.body()?.market_data?.current_price?.get(symbol) ?: -1.0
-            // The equivalent value is obtained by:
-            // 1- Dividing the base value by 100000 (BTS native precision)
-            // 2- Multiplying that BTS value by the unit price in the chosen fiat
-            // 3- Multiplying the resulting value by 100 in order to express it in cents
-            equivalentFiatValue = Math.round(transfer.btsValue?.div(1e5)?.times(price)?.times(100) ?: -1.0)
+            // We try to use the locale-selected currency first
+            var selectedCurrency = symbol
+            // Checking that the provided currency is supported by the Coingecko API
+            val isCurrencySupported = response?.body()?.market_data?.current_price?.keys?.contains(symbol.toLowerCase())
+            // In case it is not, we fallback to USD
+            if(isCurrencySupported == false) selectedCurrency = "usd"
+            val price: Double = response.body()?.market_data?.current_price?.get(selectedCurrency.toLowerCase()) ?: -1.0
+            if(price > 0){
+                // The equivalent value is obtained by:
+                // 1- Dividing the base value by 100000 (BTS native precision)
+                // 2- Multiplying that BTS value by the unit price in the chosen fiat
+                // 3- Multiplying the resulting value by 100 in order to express it in cents
+                equivalentFiatValue = Math.round(transfer.btsValue?.toFloat()?.div(1e5)?.times(price)?.times(100) ?: -1.0)
+            }
         }else{
             Log.w(TAG,"Request was not successful. code: ${response?.code()}")
         }

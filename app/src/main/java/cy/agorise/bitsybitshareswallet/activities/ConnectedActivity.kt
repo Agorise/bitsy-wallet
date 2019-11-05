@@ -127,7 +127,8 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
         // Configure ConnectedActivityViewModel to obtain missing equivalent values
         mConnectedActivityViewModel = ViewModelProviders.of(this).get(ConnectedActivityViewModel::class.java)
 
-        mConnectedActivityViewModel.observeMissingEquivalentValuesIn("usd") //TODO: Obtain this from shared preferences?
+        val currency = Currency.getInstance(Locale.getDefault())
+        mConnectedActivityViewModel.observeMissingEquivalentValuesIn(currency.currencyCode) //TODO: Obtain this from shared preferences?
 
         // Configure UserAccountViewModel to obtain the missing account ids
         mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
