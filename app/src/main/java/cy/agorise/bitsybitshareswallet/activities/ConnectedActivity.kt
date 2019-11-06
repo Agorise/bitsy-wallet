@@ -4,6 +4,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.pm.PackageInfoCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.crashlytics.android.Crashlytics
@@ -47,6 +49,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
+import kotlin.concurrent.thread
 
 /**
  * The app uses the single Activity methodology, but this activity was created so that MainActivity can extend from it.
@@ -175,6 +178,20 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
                 this.handleError(it)
             })
         mCompositeDisposable.add(disposable)
+
+        thread {
+            val info = this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
+            val versionCode = PackageInfoCompat.getLongVersionCode(info)
+            val hasPurgedEquivalentValues = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, false)
+            if(versionCode > 11 && !hasPurgedEquivalentValues) {
+                mConnectedActivityViewModel.purgeEquivalentValues()
+                PreferenceManager.getDefaultSharedPreferences(this)
+                    .edit()
+                    .putBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, true)
+                    .apply()
+            }
+        }
     }
 
     /**

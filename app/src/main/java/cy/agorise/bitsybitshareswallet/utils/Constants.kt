@@ -128,7 +128,10 @@ object Constants {
     /** Minimum time period in seconds between BitShares nodes list updates */
     const val NODES_UPDATE_PERIOD = (60 * 60).toLong() // 1 hour
 
-
+    /** Because of a bug in pre-version code 11 releases, some entries in the equivalent values
+     *  table were invalid. We'll be performing a purge at version code 12, but we only want to do
+     *  it once. After this, we record this in shared preferences using this key */
+    const val KEY_HAS_PURGED_EQUIVALENT_VALUES = "key_has_purged_equivalent_values"
     /////////////////////// Crashlytics custom keys ///////////////////////
 
     /** Key used to add the last visited fragment name to the Crashlytics report */

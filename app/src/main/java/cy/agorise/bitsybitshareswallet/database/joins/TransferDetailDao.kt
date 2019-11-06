@@ -42,8 +42,8 @@ interface TransferDetailDao {
             assets.precision AS `assetPrecision`,
             assets.symbol AS `assetSymbol`,
             assets.issuer as `assetIssuer`,
-            (SELECT value FROM equivalent_values WHERE equivalent_values.transfer_id=transfers.id) AS `fiatAmount`,
-            (SELECT symbol FROM equivalent_values WHERE equivalent_values.transfer_id=transfers.id) AS `fiatSymbol`
+            (SELECT value FROM equivalent_values WHERE equivalent_values.transfer_id=transfers.id AND symbol=:currency) AS `fiatAmount`,
+            (SELECT symbol FROM equivalent_values WHERE equivalent_values.transfer_id=transfers.id AND symbol=:currency) AS `fiatSymbol`
         FROM
             transfers
         INNER JOIN
@@ -51,5 +51,5 @@ interface TransferDetailDao {
         WHERE
             transfers.transfer_asset_id = assets.id
     """)
-    fun getAll(userId: String): LiveData<List<TransferDetail>>
+    fun getAll(userId: String, currency: String): LiveData<List<TransferDetail>>
 }

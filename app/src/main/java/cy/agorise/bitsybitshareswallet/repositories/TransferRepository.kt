@@ -12,9 +12,9 @@ import cy.agorise.bitsybitshareswallet.database.entities.Transfer
 import cy.agorise.bitsybitshareswallet.network.CoingeckoService
 import cy.agorise.bitsybitshareswallet.network.ServiceGenerator
 import cy.agorise.bitsybitshareswallet.utils.Constants
+import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -77,18 +77,16 @@ class TransferRepository internal constructor(context: Context) {
      */
     fun observeMissingEquivalentValuesIn(symbol: String) {
         compositeDisposable.add(mTransferDao.getTransfersWithMissingValueIn(symbol)
-            .subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.io())
             .map { transfer -> obtainFiatValue(transfer, symbol) }
             .subscribe({
-                Log.d(TAG,"Got equivalent value: $it")
                 if(it.value >= 0) mEquivalentValuesDao.insert(it)
             },{
                 Log.e(TAG,"Error while trying to create a new equivalent value. Msg: ${it.message}")
                 for(element in it.stackTrace){
                     Log.e(TAG,"${element.className}#${element.methodName}:${element.lineNumber}")
                 }
-            }))
+            })
+        )
     }
 
     /**
@@ -110,13 +108,7 @@ class TransferRepository internal constructor(context: Context) {
                         ?.execute()
         var equivalentFiatValue = -1L
         if(response?.isSuccessful == true){
-            // We try to use the locale-selected currency first
-            var selectedCurrency = symbol
-            // Checking that the provided currency is supported by the Coingecko API
-            val isCurrencySupported = response?.body()?.market_data?.current_price?.keys?.contains(symbol.toLowerCase())
-            // In case it is not, we fallback to USD
-            if(isCurrencySupported == false) selectedCurrency = "usd"
-            val price: Double = response.body()?.market_data?.current_price?.get(selectedCurrency.toLowerCase()) ?: -1.0
+            val price: Double = response.body()?.market_data?.current_price?.get(symbol.toLowerCase()) ?: -1.0
             if(price > 0){
                 // The equivalent value is obtained by:
                 // 1- Dividing the base value by 100000 (BTS native precision)
@@ -167,5 +159,28 @@ class TransferRepository internal constructor(context: Context) {
     fun onCleared() {
         if(!compositeDisposable.isDisposed)
             compositeDisposable.clear()
+    }
+
+    /**
+     * Method used to override a given currency if it turns out not to be supported by the API.
+     * <p>
+     * The CoinGecko API supports 20+ fiat currencies. So we can very easily calculate historical
+     * equivalent values for those currencies. If the currency is not supported though,
+     * we must fall back to USD.
+     *
+     * @param   symbol  The 3 letters symbol of the currency
+     */
+    fun getSupportedCurrency(symbol: String): Observable<String> {
+        return Observable.just(symbol)
+            .map {
+                val sg = ServiceGenerator(Constants.COINGECKO_URL)
+                val response = sg.getService(CoingeckoService::class.java)
+                    ?.getSupportedCurrencies()
+                    ?.execute()
+                if(response?.body()?.indexOf(symbol.toLowerCase()) == -1)
+                    "usd"
+                else
+                    it
+            }
     }
 }
