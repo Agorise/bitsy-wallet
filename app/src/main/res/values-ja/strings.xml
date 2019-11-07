@@ -151,6 +151,9 @@
     <string name="button__remove">削除する</string>
     <string name="title__remove_account">アカウントを削除</string>
     <string name="msg__remove_account_confirmation">このデバイスから現在のアカウントを削除してもよろしいですか？</string>
+    <string name="title__earn_more_bts">BTSをもっと獲得しましょう！</string>
+    <string name="msg__earn_more_bts">PalmPay POSアプリで暗号通貨を受け入れるよう雇用主に依頼してください！</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">バグまたはアイデア？</string>
     <string name="msg__bugs_or_ideas">電報：https://t.me/Agorise \nKeybase：https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">ブロック：%1$s</string>

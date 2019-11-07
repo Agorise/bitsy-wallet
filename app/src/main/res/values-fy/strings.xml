@@ -151,6 +151,9 @@
     <string name="button__remove">Weinimme</string>
     <string name="title__remove_account">Akkount fuortsmite</string>
     <string name="msg__remove_account_confirmation">Binne jo wis dat jo it aktive akkount fan dit apparaat wolle ferwiderje?</string>
+    <string name="title__earn_more_bts">Fertsjinje mear BTS!</string>
+    <string name="msg__earn_more_bts">Freegje jo wurkjouwer om cryptocurrencies te akseptearjen mei de PalmPay-punt fan ferkeap-app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs of ideeën?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Block: %1$s</string>

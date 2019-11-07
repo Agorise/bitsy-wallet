@@ -151,6 +151,9 @@
     <string name="button__remove">നീക്കംചെയ്യുക</string>
     <string name="title__remove_account">അക്കൗണ്ട് നീക്കംചെയ്യുക</string>
     <string name="msg__remove_account_confirmation">ഈ ഉപകരണത്തിൽ നിന്ന് നിലവിലെ അക്കൗണ്ട് നീക്കംചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?</string>
+    <string name="title__earn_more_bts">കൂടുതൽ BTS നേടുക!</string>
+    <string name="msg__earn_more_bts">പാംപേ പോയിന്റ് ഓഫ് സെയിൽ ആപ്ലിക്കേഷൻ ഉപയോഗിച്ച് ക്രിപ്റ്റോകറൻസികൾ സ്വീകരിക്കാൻ നിങ്ങളുടെ തൊഴിലുടമയോട് ആവശ്യപ്പെടുക!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">ബഗുകളോ ആശയങ്ങളോ?</string>
     <string name="msg__bugs_or_ideas">ടെലിഗ്രാം: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">തടയുക: %1$s</string>

@@ -151,6 +151,9 @@
     <string name="button__remove">Forigi</string>
     <string name="title__remove_account">Forigi Konton</string>
     <string name="msg__remove_account_confirmation">Ĉu vi certas, ke vi volas forigi la nunan konton el ĉi tiu aparato?</string>
+    <string name="title__earn_more_bts">Gajni pli BTS!</string>
+    <string name="msg__earn_more_bts">Petu vian Dungiston akcepti kriptokombinojn kun la vendopunkta programo PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Cimoj aŭ Ideoj?</string>
     <string name="msg__bugs_or_ideas">Telegramo: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloko: %1$s</string>

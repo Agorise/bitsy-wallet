@@ -151,6 +151,9 @@
     <string name="button__remove">Neħħi</string>
     <string name="title__remove_account">Neħħi l-Kont</string>
     <string name="msg__remove_account_confirmation">Int żgur li trid tneħħi l-kont kurrenti minn dan it-tagħmir?</string>
+    <string name="title__earn_more_bts">Aqla \'aktar BTS!</string>
+    <string name="msg__earn_more_bts">Staqsi lil Min Iħaddem biex jaċċetta cryptocurrencies bl-app tal-punt tal-bejgħ tal-PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs jew Ideat?</string>
     <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blokk: %1$s</string>

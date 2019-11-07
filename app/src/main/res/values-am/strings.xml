@@ -151,6 +151,9 @@
     <string name="button__remove">ያስወግዱ</string>
     <string name="title__remove_account">መለያ ያስወግዱ</string>
     <string name="msg__remove_account_confirmation">እርግጠኛ ነዎት የአሁኑን መለያ ከዚህ መሣሪያ ላይ ለማስወገድ ይፈልጋሉ?</string>
+    <string name="title__earn_more_bts">ተጨማሪ BTS ያግኙ!</string>
+    <string name="msg__earn_more_bts">አሠሪህ የ “PalmPay” ሽያጭ መተግበሪያውን የፒልፓይ ነጥብ ነጥብ እንዲቀበል ይጠይቅ!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">ሳንካዎች ወይም ሀሳቦች?</string>
     <string name="msg__bugs_or_ideas">ቴሌግራም-https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">አግድ: %1$s</string>

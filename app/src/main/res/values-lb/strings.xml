@@ -151,6 +151,9 @@
     <string name="button__remove">Ewechzehuelen</string>
     <string name="title__remove_account">Ewechzehuelen Kont</string>
     <string name="msg__remove_account_confirmation">Sidd Dir sécher, dass Dir den aktuelle Kont vun dësem Apparat läsche wëllt?</string>
+    <string name="title__earn_more_bts">Verdéngt méi BTS!</string>
+    <string name="msg__earn_more_bts">Frot Äre Patron cryptocururrency ze akzeptéieren mat der PalmPay Verkafspunkt!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs oder Iddien?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Spär: %1$s</string>

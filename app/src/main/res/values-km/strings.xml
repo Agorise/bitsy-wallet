@@ -151,6 +151,9 @@
     <string name="button__remove">យកចេញ។</string>
     <string name="title__remove_account">យកគណនីចេញ។</string>
     <string name="msg__remove_account_confirmation">តើអ្នកប្រាកដថាចង់យកគណនីបច្ចុប្បន្នចេញពីឧបករណ៍នេះទេ?</string>
+    <string name="title__earn_more_bts">រកប្រាក់បាន BTS កាន់តែច្រើន!</string>
+    <string name="msg__earn_more_bts">ស្នើសុំនិយោជិករបស់អ្នកឱ្យទទួលយកគ្រីបគ្រីបជាមួយចំណុចផតផាយនៃកម្មវិធីលក់!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">កំហុសឬគំនិត?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">ប្លុក៖ %1$s</string>

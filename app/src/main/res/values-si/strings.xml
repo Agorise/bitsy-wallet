@@ -151,6 +151,9 @@
     <string name="button__remove">ඉවත් කරන්න</string>
     <string name="title__remove_account">ගිණුම ඉවත් කරන්න</string>
     <string name="msg__remove_account_confirmation">මෙම උපාංගයෙන් ජංගම ගිණුම ඉවත් කිරීමට ඔබට අවශ්‍යද?</string>
+    <string name="title__earn_more_bts">තවත් BTS උපයන්න!</string>
+    <string name="msg__earn_more_bts">පාම්පේ පොයින්ට් ඔෆ් සේල් ඇප් එක සමඟ ගුප්තකේතන මුදල් භාර ගැනීමට ඔබේ සේවායෝජකයාගෙන් ඉල්ලා සිටින්න!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">දෝෂ හෝ අදහස්?</string>
     <string name="msg__bugs_or_ideas">විදුලි පණිවුඩය: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">වාරණය: %1$s</string>

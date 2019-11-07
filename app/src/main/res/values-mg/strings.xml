@@ -151,6 +151,9 @@
     <string name="button__remove">Esory</string>
     <string name="title__remove_account">Esory ny kaonty</string>
     <string name="msg__remove_account_confirmation">Azo antoka ve fa te hanaisotra ny kaontinao ankehitriny amin\'ity fitaovana ity ianao?</string>
+    <string name="title__earn_more_bts">Mahazo BTS bebe kokoa!</string>
+    <string name="msg__earn_more_bts">Angataho ny mpampiasa anao hanaiky ny cryptocurrencies miaraka amin\'ny teboka fivarotana PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Baitra na hevitra?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Sakana: %1$s</string>

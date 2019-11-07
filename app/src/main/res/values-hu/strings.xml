@@ -151,6 +151,9 @@
     <string name="button__remove">eltávolít</string>
     <string name="title__remove_account">Fiók törlése</string>
     <string name="msg__remove_account_confirmation">Biztos benne, hogy el akarja távolítani az aktuális fiókot az eszközről?</string>
+    <string name="title__earn_more_bts">Keress több BTS-t!</string>
+    <string name="msg__earn_more_bts">Kérje meg munkáltatóját, hogy fogadjon el kriptovalutákat a PalmPay értékesítési pont alkalmazásával!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Hibák vagy ötletek?</string>
     <string name="msg__bugs_or_ideas">Távirat: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blokk: %1$s</string>

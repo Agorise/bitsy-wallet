@@ -151,6 +151,9 @@
     <string name="button__remove">Retire</string>
     <string name="title__remove_account">Retire Kont</string>
     <string name="msg__remove_account_confirmation">Èske ou sèten ou vle retire kont aktyèl la nan aparèy sa a?</string>
+    <string name="title__earn_more_bts">Touche plis BTS!</string>
+    <string name="msg__earn_more_bts">Mande Anplwayè ou a aksepte cryptocurrencies ak pwen PalmPay nan app vant!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Pinèz oswa Lide?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blòk: %1$s</string>

@@ -151,6 +151,9 @@
     <string name="button__remove">Kuhaa</string>
     <string name="title__remove_account">Kuhaa ang Account</string>
     <string name="msg__remove_account_confirmation">Sigurado ka nga gusto nimo makuha ang kasamtangan nga account sa kini nga aparato?</string>
+    <string name="title__earn_more_bts">Pag-angkon dugang nga BTS!</string>
+    <string name="msg__earn_more_bts">Hangyoa ang imong Trabaho sa pagdawat sa mga cryptocurrencies uban ang punto sa pagbaligya sa PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Mga Bawal o Mga ideya?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Pag-block: %1$s</string>

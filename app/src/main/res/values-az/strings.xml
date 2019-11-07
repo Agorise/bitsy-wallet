@@ -151,6 +151,9 @@
     <string name="button__remove">Sil</string>
     <string name="title__remove_account">Hesabı sil</string>
     <string name="msg__remove_account_confirmation">Cari hesabı bu cihazdan silmək istədiyinizə əminsiniz?</string>
+    <string name="title__earn_more_bts">Daha çox BTS qazanın!</string>
+    <string name="msg__earn_more_bts">İşəgötürəninizdən PalmPay satış nöqtəsi ilə cryptocurrencies qəbul etməsini xahiş edin!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Hatalar və ya fikirlər?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

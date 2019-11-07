@@ -151,6 +151,9 @@
     <string name="button__remove">Алып тастаңыз</string>
     <string name="title__remove_account">Тіркелгіні жою</string>
     <string name="msg__remove_account_confirmation">Ағымдағы есептік жазбаны осы құрылғыдан алып тастағыңыз келе ме?</string>
+    <string name="title__earn_more_bts">Тағы BTS ұтып алыңыз!</string>
+    <string name="msg__earn_more_bts">Сіздің жұмыс берушіңізден PalmPay сату нүктесімен бірге cryptocurrency қабылдауды сұраңыз!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Қателер немесе идеялар?</string>
     <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>

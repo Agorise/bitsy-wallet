@@ -151,6 +151,9 @@
     <string name="button__remove">heq</string>
     <string name="title__remove_account">Hiq Llogarinë</string>
     <string name="msg__remove_account_confirmation">Jeni i sigurt që doni të hiqni llogarinë rrjedhëse nga kjo pajisje?</string>
+    <string name="title__earn_more_bts">Fito më shumë BTS!</string>
+    <string name="msg__earn_more_bts">Kërkojini punëdhënësit tuaj që të pranojë kripotokraci me aplikacionin e shitjes me pikë PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Gabime apo ide?</string>
     <string name="msg__bugs_or_ideas">Telegrafi: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blloku: %1$s</string>

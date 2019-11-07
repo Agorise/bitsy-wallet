@@ -151,6 +151,9 @@
     <string name="button__remove">Kendu</string>
     <string name="title__remove_account">Kendu kontua</string>
     <string name="msg__remove_account_confirmation">Ziur al zaude kontu korrontea gailutik kendu nahi duzula?</string>
+    <string name="title__earn_more_bts">Irabazi BTS gehiago!</string>
+    <string name="msg__earn_more_bts">Eskatu zure enpresaburuari cryptocurrencies onartzeko PalmPay salmenta puntuko aplikazioarekin!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Akatsak edo ideiak?</string>
     <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blokea: %1$s</string>

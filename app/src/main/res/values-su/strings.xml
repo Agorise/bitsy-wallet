@@ -151,6 +151,9 @@
     <string name="button__remove">Leungitkeun</string>
     <string name="title__remove_account">Cabut Akun</string>
     <string name="msg__remove_account_confirmation">Naha anjeun badé ngahapus akun anu énggal tina alat ieu?</string>
+    <string name="title__earn_more_bts">Kéngingkeun BTS langkung!</string>
+    <string name="msg__earn_more_bts">Tanya Juragan Anjeun pikeun nampi cryptocurrencies sareng titik jual PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Koper atanapi Gagasan?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

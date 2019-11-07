@@ -151,6 +151,9 @@
     <string name="button__remove">Thoir air falbh</string>
     <string name="title__remove_account">Thoir air falbh cunntas</string>
     <string name="msg__remove_account_confirmation">A bheil thu cinnteach gu bheil thu airson an cunntas làithreach a thoirt air falbh bhon inneal seo?</string>
+    <string name="title__earn_more_bts">Coisinn barrachd BTS!</string>
+    <string name="msg__earn_more_bts">Iarr air an neach-fastaidh agad gabhail ri cryptocurrencies leis an aplacaid puing reic PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs no Beachdan?</string>
     <string name="msg__bugs_or_ideas">Teileagram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>

@@ -151,6 +151,9 @@
     <string name="button__remove">Ka saar</string>
     <string name="title__remove_account">Ka saar Koontada</string>
     <string name="msg__remove_account_confirmation">Ma hubtaa inaad rabto inaad ka qaaddo xisaabta hadda jirta aaladda?</string>
+    <string name="title__earn_more_bts">Soo hel BTS badan!</string>
+    <string name="msg__earn_more_bts">Weydii loo-shaqeeyahaaga inuu aqbalo cryptocurrencies barnaamijka PalmPay dhibicda iibinta!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Dhiqlaha ama fikradaha?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Hakad: %1$s</string>

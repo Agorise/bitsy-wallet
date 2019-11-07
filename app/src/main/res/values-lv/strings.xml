@@ -151,6 +151,9 @@
     <string name="button__remove">Noņemt</string>
     <string name="title__remove_account">Noņemt kontu</string>
     <string name="msg__remove_account_confirmation">Vai tiešām vēlaties noņemt pašreizējo kontu no šīs ierīces?</string>
+    <string name="title__earn_more_bts">Nopelniet vairāk BTS!</string>
+    <string name="msg__earn_more_bts">Palūdziet savam darba devējam pieņemt kriptovalūtas, izmantojot lietotni PalmPay pārdošanas vietā!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Kļūdas vai idejas?</string>
     <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloķēt: %1$s</string>

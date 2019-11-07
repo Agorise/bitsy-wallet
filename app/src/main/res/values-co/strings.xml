@@ -151,6 +151,9 @@
     <string name="button__remove">Elimina</string>
     <string name="title__remove_account">Elimina u cuntu</string>
     <string name="msg__remove_account_confirmation">Hè sicuru chì vulete sguassà u cuntu attuale da questu dispositivu?</string>
+    <string name="title__earn_more_bts">Guadagna più BTS!</string>
+    <string name="msg__earn_more_bts">Dumandate à u vostru Datoriu di accettà i criptovaluti cù l\'app di puntu di vendita PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs o Idee?</string>
     <string name="msg__bugs_or_ideas">Telegramma: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloccu: %1$s</string>

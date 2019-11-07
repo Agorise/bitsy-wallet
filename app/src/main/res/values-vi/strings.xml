@@ -151,6 +151,9 @@
     <string name="button__remove">Tẩy</string>
     <string name="title__remove_account">Xoá tài khoản</string>
     <string name="msg__remove_account_confirmation">Bạn có chắc chắn muốn xóa tài khoản hiện tại khỏi thiết bị này?</string>
+    <string name="title__earn_more_bts">Kiếm thêm BTS!</string>
+    <string name="msg__earn_more_bts">Yêu cầu Chủ lao động của bạn chấp nhận tiền điện tử với ứng dụng điểm bán hàng PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Lỗi hay ý tưởng?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Chặn: %1$s</string>

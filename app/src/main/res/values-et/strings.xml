@@ -151,6 +151,9 @@
     <string name="button__remove">Eemalda</string>
     <string name="title__remove_account">Eemalda konto</string>
     <string name="msg__remove_account_confirmation">Kas soovite kindlasti praeguse konto sellest seadmest eemaldada?</string>
+    <string name="title__earn_more_bts">Teeni rohkem BTS-e!</string>
+    <string name="msg__earn_more_bts">Paluge oma tööandjal aktsepteerida krüptovaluutasid PalmPay müügipunkti rakendusega!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Vead või ideed?</string>
     <string name="msg__bugs_or_ideas">Telegramm: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blokeeri: %1$s</string>

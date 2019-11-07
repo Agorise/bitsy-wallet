@@ -151,6 +151,9 @@
     <string name="button__remove">Dûrxistin</string>
     <string name="title__remove_account">Hesabê derxistin</string>
     <string name="msg__remove_account_confirmation">Ma hûn guman dikin ku hûn dixwazin hesabê heyî ji vê amûrê derxînin?</string>
+    <string name="title__earn_more_bts">BTS bêtir qezenc bikin!</string>
+    <string name="msg__earn_more_bts">Ji Karmendê Xwe bipirsin ku bi serîlêdana firotanê ya xala PalmPay re cryptocurururs qebûl bikin!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Pirsgirêk an Nerînên?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

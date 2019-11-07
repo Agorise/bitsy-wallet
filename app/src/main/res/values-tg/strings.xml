@@ -151,6 +151,9 @@
     <string name="button__remove">Хориҷ кунед</string>
     <string name="title__remove_account">Ҳисобро хориҷ кунед</string>
     <string name="msg__remove_account_confirmation">Шумо мутмаин ҳастед, ки ҳисоби ҷориро аз ин дастгоҳ нест кунед?</string>
+    <string name="title__earn_more_bts">BTS зиёдтар пул кор кунед!</string>
+    <string name="msg__earn_more_bts">Аз корфармоатон хоҳиш кунед, ки cryptocurrencies-ро бо барномаи PalmPay нуқтаи фурӯш қабул кунад!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Хатогиҳо ё ғояҳо?</string>
     <string name="msg__bugs_or_ideas">Телеграмма: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Блок: %1$s</string>

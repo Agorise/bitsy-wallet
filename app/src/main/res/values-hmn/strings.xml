@@ -151,6 +151,9 @@
     <string name="button__remove">Tshem tawm</string>
     <string name="title__remove_account">Tshem Tawm Cov Nyiaj Tawm</string>
     <string name="msg__remove_account_confirmation">Koj puas paub tseeb tias koj xav kom tshem tawm cov as khauj tam sim no los ntawm lub khoom siv no?</string>
+    <string name="title__earn_more_bts">Khwv tau ntau dua BTS!</string>
+    <string name="msg__earn_more_bts">Hais kom koj Tus tswv lag luam kom lees txais cryptocurrencies nrog PalmPay point ntawm muag app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Cov Yoov lossis Cov Tswv Yim?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Thaiv: %1$s</string>
