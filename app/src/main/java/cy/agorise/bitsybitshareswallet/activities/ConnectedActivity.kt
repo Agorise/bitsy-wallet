@@ -179,12 +179,13 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
             })
         mCompositeDisposable.add(disposable)
 
-        thread {
-            val info = this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
-            val versionCode = PackageInfoCompat.getLongVersionCode(info)
-            val hasPurgedEquivalentValues = PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, false)
-            if(versionCode > 11 && !hasPurgedEquivalentValues) {
+
+        val info = this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
+        val versionCode = PackageInfoCompat.getLongVersionCode(info)
+        val hasPurgedEquivalentValues = PreferenceManager.getDefaultSharedPreferences(this)
+            .getBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, false)
+        if(versionCode > 11 && !hasPurgedEquivalentValues) {
+            thread {
                 mConnectedActivityViewModel.purgeEquivalentValues()
                 PreferenceManager.getDefaultSharedPreferences(this)
                     .edit()
