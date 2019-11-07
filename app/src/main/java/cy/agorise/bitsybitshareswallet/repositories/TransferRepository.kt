@@ -1,7 +1,9 @@
 package cy.agorise.bitsybitshareswallet.repositories
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.AsyncTask
+import android.preference.PreferenceManager
 import android.util.Log
 import androidx.lifecycle.LiveData
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
@@ -26,11 +28,13 @@ class TransferRepository internal constructor(context: Context) {
     private val mTransferDao: TransferDao
     private val mEquivalentValuesDao: EquivalentValueDao
     private val compositeDisposable = CompositeDisposable()
+    private val mPreferences: SharedPreferences
 
     init {
         val db = BitsyDatabase.getDatabase(context)
         mTransferDao = db!!.transferDao()
         mEquivalentValuesDao = db.equivalentValueDao()
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(context)
     }
 
     fun insertAll(transfers: List<Transfer>) {
@@ -177,10 +181,24 @@ class TransferRepository internal constructor(context: Context) {
                 val response = sg.getService(CoingeckoService::class.java)
                     ?.getSupportedCurrencies()
                     ?.execute()
+                // Updating the supported currencies cache
+                mPreferences.edit()
+                    .putStringSet(Constants.KEY_COINGECKO_CURRENCIES_CACHE, response?.body()?.toMutableSet() ?: setOf())
+                    .apply()
                 if(response?.body()?.indexOf(symbol.toLowerCase()) == -1)
                     "usd"
                 else
                     it
+            }
+            .onErrorReturn {
+                // Error caused potentially by the lack of connectivity. If this happens we just
+                // retrieve the value from the cache
+                val currencies = mPreferences.getStringSet(Constants.KEY_COINGECKO_CURRENCIES_CACHE, setOf())
+                var selectedCurrency = "usd"
+                if(currencies.contains(symbol)) {
+                    selectedCurrency = symbol
+                }
+                selectedCurrency
             }
     }
 }

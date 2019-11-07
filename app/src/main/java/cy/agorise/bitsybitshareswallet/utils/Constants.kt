@@ -48,6 +48,9 @@ object Constants {
     /** Coingecko's API URL */
     const val COINGECKO_URL = "https://api.coingecko.com"
 
+    /** Key used to store and retrieve a cache of the coingecko supported currencies */
+    const val KEY_COINGECKO_CURRENCIES_CACHE = "key_coingecko_currencies_cache"
+
     /** The fee to send in every transfer (0.01%) */
     const val FEE_PERCENTAGE = 0.0001
 
