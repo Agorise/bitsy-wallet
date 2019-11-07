@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/ic_share">
+
+    <target android:name="icon">
+        <aapt:attr name="android:animation" >
+            <set android:ordering="together">
+                <objectAnimator
+                    android:duration="700"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:propertyName="scaleX"
+                    android:valueFrom="1.1"
+                    android:valueTo="0.9"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:duration="700"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:propertyName="scaleY"
+                    android:valueFrom="1.1"
+                    android:valueTo="0.9"
+                    android:valueType="floatType"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>
