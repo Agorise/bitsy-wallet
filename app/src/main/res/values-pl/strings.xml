@@ -151,6 +151,9 @@
     <string name="button__remove">Usunąć</string>
     <string name="title__remove_account">Usuń konto</string>
     <string name="msg__remove_account_confirmation">Czy na pewno chcesz usunąć bieżące konto z tego urządzenia?</string>
+    <string name="title__earn_more_bts">Zarób więcej BTS!</string>
+    <string name="msg__earn_more_bts">Poproś swojego pracodawcę o akceptację kryptowalut za pomocą aplikacji punktu sprzedaży PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Błędy czy pomysły?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

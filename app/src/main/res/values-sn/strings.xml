@@ -151,6 +151,9 @@
     <string name="button__remove">Bvisa</string>
     <string name="title__remove_account">Bvisa Akaunti</string>
     <string name="msg__remove_account_confirmation">Une chokwadi here kuti iwe unoda kubvisa yazvino account kubva pane ino kifaa?</string>
+    <string name="title__earn_more_bts">Tora zvimwe BTS!</string>
+    <string name="msg__earn_more_bts">Kumbira wako Mushandirwi kuti agamuchire cryptocurrencies nePalmPay point yekutengesa app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Madhigi kana mazano?</string>
     <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Vharira: %1$s</string>

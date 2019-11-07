@@ -151,6 +151,9 @@
     <string name="button__remove">Pašalinti</string>
     <string name="title__remove_account">Pašalinti sąskaitą</string>
     <string name="msg__remove_account_confirmation">Ar tikrai norite pašalinti dabartinę sąskaitą iš šio įrenginio?</string>
+    <string name="title__earn_more_bts">Uždirbkite daugiau BTS!</string>
+    <string name="msg__earn_more_bts">Paprašykite savo darbdavio sutikti su kriptovaliutomis naudojant „PalmPay“ pardavimo vietos programą!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Klaidų ar idėjų?</string>
     <string name="msg__bugs_or_ideas">Telegrama: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blokuoti: %1$s</string>

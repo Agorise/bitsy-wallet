@@ -151,6 +151,9 @@
     <string name="button__remove">Αφαιρώ</string>
     <string name="title__remove_account">Κατάργηση λογαριασμού</string>
     <string name="msg__remove_account_confirmation">Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τρέχοντα λογαριασμό από αυτήν τη συσκευή;</string>
+    <string name="title__earn_more_bts">Κερδίστε περισσότερα BTS!</string>
+    <string name="msg__earn_more_bts">Ζητήστε από τον εργοδότη σας να δεχτεί κρυπτοσυχνότητες με την εφαρμογή PalmPay point app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Σφάλματα ή ιδέες;</string>
     <string name="msg__bugs_or_ideas">Τηλεγράφημα: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Αποκλεισμός: %1$s</string>

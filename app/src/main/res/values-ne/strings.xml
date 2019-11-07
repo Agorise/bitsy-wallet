@@ -151,6 +151,9 @@
     <string name="button__remove">हटाउनुहोस्</string>
     <string name="title__remove_account">खाता हटाउनुहोस्</string>
     <string name="msg__remove_account_confirmation">के तपाईं यस उपकरणबाट हालको खाता हटाउन निश्चित हुनुहुन्छ?</string>
+    <string name="title__earn_more_bts">अधिक BTS कमाउनुहोस्!</string>
+    <string name="msg__earn_more_bts">तपाईंको नियोक्तालाई PalmPay point of বিক্রয় अनुप्रयोगको साथ क्रिप्टो मुद्राहरू स्वीकार गर्न भन्नुहोस्!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">बग वा विचारहरू?</string>
     <string name="msg__bugs_or_ideas">टेलिग्राम: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">रोक्नुहोस्: %1$s</string>

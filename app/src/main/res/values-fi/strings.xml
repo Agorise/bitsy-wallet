@@ -151,6 +151,9 @@
     <string name="button__remove">Poistaa</string>
     <string name="title__remove_account">Poista tili</string>
     <string name="msg__remove_account_confirmation">Haluatko varmasti poistaa nykyisen tilin tästä laitteesta?</string>
+    <string name="title__earn_more_bts">Ansaitse lisää BTS!</string>
+    <string name="msg__earn_more_bts">Pyydä työnantajaasi hyväksymään salaustekniikat PalmPay-myyntipiste-sovelluksen avulla!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Vikoja tai ideoita?</string>
     <string name="msg__bugs_or_ideas">Sähköposti: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Estä: %1$s</string>

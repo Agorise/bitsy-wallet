@@ -151,6 +151,9 @@
     <string name="button__remove">去掉</string>
     <string name="title__remove_account">刪除帳戶</string>
     <string name="msg__remove_account_confirmation">您確定要從此設備中刪除當前帳戶嗎？</string>
+    <string name="title__earn_more_bts">賺更多的防彈少年團！</string>
+    <string name="msg__earn_more_bts">要求您的雇主使用PalmPay銷售點應用接受加密貨幣！</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">錯誤或想法？</string>
     <string name="msg__bugs_or_ideas">電報：https：//t.me/Agorise \nKeybase：https：//keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">阻止：%1$s</string>

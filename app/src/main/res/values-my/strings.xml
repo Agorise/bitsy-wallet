@@ -151,6 +151,9 @@
     <string name="button__remove">Remove</string>
     <string name="title__remove_account">အကောင့် Remove</string>
     <string name="msg__remove_account_confirmation">သင်ဤကိရိယာမှလက်ရှိအကောင့်ကိုဖယ်ရှားလိုတာသေချာလား?</string>
+    <string name="title__earn_more_bts">BTS ထပ်မံရရှိပါ။</string>
+    <string name="msg__earn_more_bts">PalmPay အရောင်းအက်ပလီကေးရှင်းနှင့် cryptocurrencies လက်ခံရန်သင့်အလုပ်ရှင်အားပြောပါ။</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">bugs သို့မဟုတ်အကြံပြုချက်များ?</string>
     <string name="msg__bugs_or_ideas">ကြေးနန်း: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">block: %1$s</string>

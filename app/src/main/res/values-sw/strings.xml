@@ -151,6 +151,9 @@
     <string name="button__remove">Ondoa</string>
     <string name="title__remove_account">Ondoa Akaunti</string>
     <string name="msg__remove_account_confirmation">Una uhakika unataka kuondoa akaunti ya sasa kutoka kwa kifaa hiki?</string>
+    <string name="title__earn_more_bts">Pata BTS zaidi!</string>
+    <string name="msg__earn_more_bts">Uliza Mwajiri wako akubali cryptocurrencies na programu ya kuuza ya PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Mdudu au Mawazo?</string>
     <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Zuia: %1$s</string>

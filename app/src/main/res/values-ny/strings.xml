@@ -151,6 +151,9 @@
     <string name="button__remove">Chotsani</string>
     <string name="title__remove_account">Chotsani Akaunti</string>
     <string name="msg__remove_account_confirmation">Mukutsimikiza kuti mukufuna kuchotsapo akauntiyi pachida ichi?</string>
+    <string name="title__earn_more_bts">Pezani ma BTS ena!</string>
+    <string name="msg__earn_more_bts">Funsani Wolemba Ntchito wanu kuti alandire ma cryptocurrencies ndi mtengo wa PalmPay wogulitsa!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Ngongole kapena Malingaliro?</string>
     <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Cholepheretsa: %1$s</string>

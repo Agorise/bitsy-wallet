@@ -151,6 +151,9 @@
     <string name="button__remove">Tlosa</string>
     <string name="title__remove_account">Tlosa Ak\'haonte</string>
     <string name="msg__remove_account_confirmation">Na u na le bonnete ba hore u batla ho tlosa ak\'haonte ea hajoale sesebelisoa see?</string>
+    <string name="title__earn_more_bts">Fumana chelete e eketsehileng ea BTS!</string>
+    <string name="msg__earn_more_bts">Kopa Mohiri oa hau ho amohela li-cryptocurrencies ka ntlha ea PalmPay ea sesebelisoa sa thekiso!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Likoranta kapa mehopolo?</string>
     <string name="msg__bugs_or_ideas">Telegraph: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Thibelo: %1$s</string>

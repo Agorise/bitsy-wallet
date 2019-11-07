@@ -151,6 +151,9 @@
     <string name="button__remove">odstrániť</string>
     <string name="title__remove_account">Odstrániť účet</string>
     <string name="msg__remove_account_confirmation">Naozaj chcete z tohto zariadenia odstrániť aktuálny účet?</string>
+    <string name="title__earn_more_bts">Zarobte viac BTS!</string>
+    <string name="msg__earn_more_bts">Požiadajte svojho zamestnávateľa, aby prijal kryptomeny s aplikáciou predajného miesta PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Chyby alebo nápady?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

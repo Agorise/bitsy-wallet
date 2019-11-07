@@ -151,6 +151,9 @@
     <string name="button__remove">Kaldır</string>
     <string name="title__remove_account">Hesabı kaldır</string>
     <string name="msg__remove_account_confirmation">Mevcut hesabı bu cihazdan kaldırmak istediğinizden emin misiniz?</string>
+    <string name="title__earn_more_bts">Daha fazla BTS kazan!</string>
+    <string name="msg__earn_more_bts">İşvereninizden, satış uygulamasının PalmPay noktasıyla şifrelemeleri kabul etmesini isteyin!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Hata mı Fikir mi?</string>
     <string name="msg__bugs_or_ideas">Telgraf: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Blok: %1$s</string>

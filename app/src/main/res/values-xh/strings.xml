@@ -151,6 +151,9 @@
     <string name="button__remove">Susa</string>
     <string name="title__remove_account">Susa iAkhawunti</string>
     <string name="msg__remove_account_confirmation">Uqinisekile ukuba ufuna ukususa i-akhawunti yangoku kwesi sixhobo?</string>
+    <string name="title__earn_more_bts">Zuza i-BTS engakumbi!</string>
+    <string name="msg__earn_more_bts">Cela umqeshi wakho ukuba amkele ii-cryptocurrencies kunye nePalmPay point yokuthengisa app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Iintsholongwane okanye iiNgcinga?</string>
     <string name="msg__bugs_or_ideas">Umnxeba: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Ibhlok: %1$s</string>

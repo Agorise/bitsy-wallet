@@ -151,6 +151,9 @@
     <string name="button__remove">풀다</string>
     <string name="title__remove_account">계정 삭제</string>
     <string name="msg__remove_account_confirmation">이 기기에서 현재 계정을 삭제 하시겠습니까?</string>
+    <string name="title__earn_more_bts">더 많은 BTS를 적립하십시오!</string>
+    <string name="msg__earn_more_bts">PalmPay POS 앱으로 cryptocurrencies를 수락하도록 고용주에게 요청하십시오!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">버그 또는 아이디어?</string>
     <string name="msg__bugs_or_ideas">전보 : https://t.me/Agorise \n 키베이스 : https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">블록 : %1$s</string>

@@ -151,6 +151,9 @@
     <string name="button__remove">Tango</string>
     <string name="title__remove_account">Tangohia te Pūkete</string>
     <string name="msg__remove_account_confirmation">Kei te hiahia koe ki te tango i nga putea oana mai i tenei whakaaro?</string>
+    <string name="title__earn_more_bts">Whiwhi ake BTS!</string>
+    <string name="msg__earn_more_bts">A ani i to Kaimahi ki te whakaae i a cryptocurrencies me te PalmPay te tikanga hoko!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Peke, whakaaro ranei?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Poraka: %1$s</string>

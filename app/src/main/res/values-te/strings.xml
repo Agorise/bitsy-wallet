@@ -151,6 +151,9 @@
     <string name="button__remove">తొలగించు</string>
     <string name="title__remove_account">ఖాతాను తొలగించండి</string>
     <string name="msg__remove_account_confirmation">మీరు ఖచ్చితంగా ఈ పరికరం నుండి ప్రస్తుత ఖాతాను తొలగించాలనుకుంటున్నారా?</string>
+    <string name="title__earn_more_bts">మరింత BTS సంపాదించండి!</string>
+    <string name="msg__earn_more_bts">పామ్‌పే పాయింట్ ఆఫ్ సేల్ అనువర్తనంతో క్రిప్టోకరెన్సీలను అంగీకరించమని మీ యజమానిని అడగండి!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">దోషాలు లేదా ఆలోచనలు?</string>
     <string name="msg__bugs_or_ideas">టెలిగ్రామ్: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">బ్లాక్: %1$s</string>

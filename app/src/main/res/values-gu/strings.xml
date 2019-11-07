@@ -151,6 +151,9 @@
     <string name="button__remove">દૂર કરો</string>
     <string name="title__remove_account">એકાઉન્ટ દૂર કરો</string>
     <string name="msg__remove_account_confirmation">શું તમે ખરેખર આ ઉપકરણમાંથી વર્તમાન એકાઉન્ટને દૂર કરવા માંગો છો?</string>
+    <string name="title__earn_more_bts">વધુ બીટીએસ કમાઓ!</string>
+    <string name="msg__earn_more_bts">તમારા એમ્પ્લોયરને પામપે બિંદુના વેચાણ એપ્લિકેશન સાથે ક્રિપ્ટોકરન્સી સ્વીકારવાનું કહો!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">બગ્સ અથવા વિચારો?</string>
     <string name="msg__bugs_or_ideas">ટેલિગ્રામ: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">અવરોધિત: %1$s</string>

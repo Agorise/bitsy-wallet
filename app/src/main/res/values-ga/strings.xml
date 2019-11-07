@@ -151,6 +151,9 @@
     <string name="button__remove">Bain amach</string>
     <string name="title__remove_account">Bain an Cuntas</string>
     <string name="msg__remove_account_confirmation">An bhfuil tú cinnte gur mian leat an cuntas reatha a bhaint as an ngléas seo?</string>
+    <string name="title__earn_more_bts">Níos mó BTS a thuilleamh!</string>
+    <string name="msg__earn_more_bts">Iarr ar d’Fhostóir glacadh le criptocurrencies le haip díolphointe PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bugs nó Smaointe?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>

@@ -151,6 +151,9 @@
     <string name="button__remove">Tynnu</string>
     <string name="title__remove_account">Dileu Cyfrif</string>
     <string name="msg__remove_account_confirmation">Ydych chi\'n siŵr eich bod chi am gael gwared â\'r cyfrif cyfredol o\'r ddyfais hon?</string>
+    <string name="title__earn_more_bts">Ennill mwy o BTS!</string>
+    <string name="msg__earn_more_bts">Gofynnwch i\'ch Cyflogwr dderbyn cryptocurrencies gydag ap pwynt gwerthu PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Bygiau neu Syniadau?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Bloc: %1$s</string>

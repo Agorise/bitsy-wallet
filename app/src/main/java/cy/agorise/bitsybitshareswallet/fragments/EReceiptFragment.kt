@@ -3,6 +3,7 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.drawable.Animatable
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.text.Html
@@ -125,6 +126,12 @@ class EReceiptFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_e_receipt, menu)
+
+        // Animate the share icon
+        val shareIcon = menu.findItem(R.id.menu_share).icon
+        if (shareIcon is Animatable) {
+            shareIcon.start()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

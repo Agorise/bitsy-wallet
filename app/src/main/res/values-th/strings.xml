@@ -151,6 +151,9 @@
     <string name="button__remove">เอาออก</string>
     <string name="title__remove_account">ปิดบัญชี</string>
     <string name="msg__remove_account_confirmation">คุณแน่ใจหรือไม่ว่าต้องการลบบัญชีปัจจุบันออกจากอุปกรณ์นี้</string>
+    <string name="title__earn_more_bts">รับ BTS มากขึ้น!</string>
+    <string name="msg__earn_more_bts">ขอให้นายจ้างของคุณยอมรับการเข้ารหัสลับด้วยแอปจุดขาย PalmPay!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">บักหรือไอเดีย</string>
     <string name="msg__bugs_or_ideas">โทรเลข: https://t.me/Agorise \nKeybase: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">บล็อก: %1$s</string>

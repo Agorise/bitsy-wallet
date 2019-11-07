@@ -151,6 +151,9 @@
     <string name="button__remove">Aveese</string>
     <string name="title__remove_account">Aveese le Faletupe</string>
     <string name="msg__remove_account_confirmation">E te mautinoa e te manaʻo e aveese le tala oi ai nei mai lenei masini?</string>
+    <string name="title__earn_more_bts">Maua atili BTS!</string>
+    <string name="msg__earn_more_bts">Fesili atu i lau Tagata e Ona le Galuega e talia faʻasalaga i le PalmPay point of sale app!</string>
+    <string name="msg__palmpay_link">www.PalmPay.io</string>
     <string name="title__bugs_or_ideas">Tusia po o Manatu?</string>
     <string name="msg__bugs_or_ideas">Telegram: https://t.me/Agorise Faʻamaumauga: https://keybase.io/team/Agorise</string>
     <string name="title__bitshares_nodes_dialog">Pupuni: %1$s</string>
