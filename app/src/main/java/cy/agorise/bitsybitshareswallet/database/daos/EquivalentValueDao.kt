@@ -13,4 +13,10 @@ interface EquivalentValueDao {
 
     @Query("SELECT * FROM equivalent_values")
     fun getAllEquivalentValues(): LiveData<List<EquivalentValue>>
+
+    @Query("SELECT COUNT(*) FROM equivalent_values WHERE symbol=:currency")
+    fun getEquivalentValuesCountForCurrency(currency: String): Long
+
+    @Query("DELETE FROM equivalent_values WHERE value < 0")
+    fun purge(): Int
 }

@@ -15,4 +15,8 @@ class EquivalentValuesRepository(context: Context) {
         mEquivalentValuesDao = db?.equivalentValueDao()
         mTransfersDao = db?.transferDao()
     }
+
+    fun purge(): Int? {
+        return mEquivalentValuesDao?.purge()
+    }
 }
