@@ -53,6 +53,7 @@ import java.text.DecimalFormatSymbols
 import java.util.ArrayList
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+import kotlin.Comparator
 
 class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHandler,
     BaseSecurityLockDialog.OnPINPatternEnteredListener {
@@ -316,9 +317,9 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
             transaction!!.blockData = BlockData(headBlockNumber, headBlockId, expirationTime)
 
-            val asset = Asset(mBalancesDetailsAdapter!!.getItem(spAsset.selectedItemPosition)!!.id)
+            var feeAsset = Asset(Constants.CORE_ASSET)
 
-            val id = mNetworkService?.sendMessage(GetRequiredFees(transaction!!, asset), GetRequiredFees.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(GetRequiredFees(transaction!!, feeAsset), GetRequiredFees.REQUIRED_API)
             if (id != null) responseMap.append(id, RESPONSE_GET_REQUIRED_FEES)
         } else {
             context?.toast(getString(R.string.msg__transaction_not_sent))

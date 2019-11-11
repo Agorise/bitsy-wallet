@@ -145,4 +145,7 @@ object Constants {
 
     /** Key used to add the account ID to the Crashlytics report*/
     const val CRASHLYTICS_KEY_ACCOUNT_ID = "crashlytics_key_account_id"
+
+    /** Definition of the system core (BTS) asset id */
+    const val CORE_ASSET = "1.3.0"
 }
