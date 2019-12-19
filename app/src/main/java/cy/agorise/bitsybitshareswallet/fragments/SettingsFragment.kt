@@ -3,7 +3,6 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.content.*
 import android.os.Bundle
 import android.os.Handler
-import android.os.IBinder
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -190,6 +189,15 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        if (mNetworkService?.isConnected == true)
+            showConnectedState()
+        else
+            showDisconnectedState()
+    }
+
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
             when (responseMap[response.id]) {
@@ -201,7 +209,26 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         }
     }
 
-    override fun handleConnectionStatusUpdate(connectionStatusUpdate: ConnectionStatusUpdate) {  }
+    override fun handleConnectionStatusUpdate(connectionStatusUpdate: ConnectionStatusUpdate) {
+        when (connectionStatusUpdate.updateCode) {
+            ConnectionStatusUpdate.CONNECTED -> {
+                showConnectedState()
+            }
+            ConnectionStatusUpdate.DISCONNECTED -> {
+                showDisconnectedState()
+            }
+        }
+    }
+
+    private fun showConnectedState() {
+        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
+            resources.getDrawable(R.drawable.ic_connected, null), null)
+    }
+
+    private fun showDisconnectedState() {
+        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
+            resources.getDrawable(R.drawable.ic_disconnected, null), null)
+    }
 
     /** Handles the result of the [GetDynamicGlobalProperties] api call to obtain the current block number and update
      * it in the Nodes Dialog */
@@ -530,20 +557,6 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         val intent = activity?.intent
         activity?.finish()
         activity?.startActivity(intent)
-    }
-
-    override fun onServiceDisconnected(name: ComponentName?) {
-        super.onServiceDisconnected(name)
-
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_disconnected, null), null)
-    }
-
-    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        super.onServiceConnected(name, service)
-
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_connected, null), null)
     }
 }
 

@@ -1,10 +1,6 @@
 package cy.agorise.bitsybitshareswallet.processors
 
-import android.content.ComponentName
 import android.content.Context
-import android.content.Intent
-import android.content.ServiceConnection
-import android.os.IBinder
 import android.preference.PreferenceManager
 import android.util.Log
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
@@ -29,6 +25,7 @@ import org.bitcoinj.core.DumpedPrivateKey
 import org.bitcoinj.core.ECKey
 import java.util.*
 import javax.crypto.AEADBadTagException
+import kotlin.math.floor
 
 /**
  * This class is responsible for loading the local database with all past transfer operations of the
@@ -66,32 +63,13 @@ class TransfersLoader(private var mContext: Context?) {
     private var authorityRepository: AuthorityRepository? = null
 
     /* Network service connection */
-    private var mNetworkService: NetworkService? = null
+    private var mNetworkService: NetworkService? = NetworkService.getInstance()
 
     /* Counter used to keep track of the transfer history batch count */
     private var historicalTransferCount = 0
 
-    /** Flag used to keep track of the NetworkService binding state */
-    private var mBound: Boolean = false
-
     // Map used to keep track of request and response id pairs
     private val responseMap = HashMap<Long, Int>()
-
-    private val mConnection = object : ServiceConnection {
-        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            // We've bound to LocalService, cast the IBinder and get LocalService instance
-            val binder = service as NetworkService.LocalBinder
-            mNetworkService = binder.service
-            mBound = true
-
-            // Start the transfers update
-            startTransfersUpdateProcedure()
-        }
-
-        override fun onServiceDisconnected(name: ComponentName?) {
-            mBound = false
-        }
-    }
 
     init {
         transferRepository = TransferRepository(mContext!!)
@@ -138,14 +116,8 @@ class TransfersLoader(private var mContext: Context?) {
                 }
             )
 
-            onStart()
-        }
-    }
-
-    private fun onStart() {
-        // Bind to LocalService
-        Intent(mContext, NetworkService::class.java).also { intent ->
-            mContext?.bindService(intent, mConnection, Context.BIND_AUTO_CREATE)
+            // Start the transfers update
+            startTransfersUpdateProcedure()
         }
     }
 
@@ -165,7 +137,7 @@ class TransfersLoader(private var mContext: Context?) {
                      if (transferCount > 0) {
                         // If we already have some transfers in the database, we might want to skip the request
                         // straight to the last batch
-                        historicalTransferCount = Math.floor((transferCount /
+                        historicalTransferCount = floor((transferCount /
                                 HISTORICAL_TRANSFER_BATCH_SIZE).toDouble()).toInt()
                     }
                     // Retrieving account transactions
@@ -257,10 +229,10 @@ class TransfersLoader(private var mContext: Context?) {
             val memo = op.memo
             if (memo.byteMessage != null) {
                 try {
-                    if (memo.destination.equals(myAddress)) {
+                    if (memo.destination == myAddress) {
                         val decryptedMessage = Memo.decryptMessage(memoKey, memo.source, memo.nonce, memo.byteMessage)
                         memo.plaintextMessage = decryptedMessage
-                    }else if(memo.source.equals(myAddress)){
+                    }else if(memo.source == myAddress){
                         val decryptedMessage = Memo.decryptMessage(memoKey, memo.destination, memo.nonce, memo.byteMessage)
                         memo.plaintextMessage = decryptedMessage
                     }
@@ -271,7 +243,7 @@ class TransfersLoader(private var mContext: Context?) {
                     Log.e(TAG, "NullPointerException. Msg: " + e.message)
                 } catch (e: Exception) {
                     Log.e(TAG, "Exception while decoding memo. Msg: " + e.message)
-                    Log.e(TAG,"Exception type: " + e)
+                    Log.e(TAG, "Exception type: $e")
                     for(element in e.stackTrace){
                         Log.e(TAG, String.format("%s#%s:%d", element.className, element.methodName, element.lineNumber))
                     }
@@ -300,13 +272,6 @@ class TransfersLoader(private var mContext: Context?) {
         Log.d(TAG, "Destroying TransfersLoader")
         if (!mDisposables.isDisposed) mDisposables.dispose()
 
-        try {
-            if (mBound && mNetworkService != null)
-                mContext?.unbindService(mConnection)
-        } catch (e: IllegalArgumentException) {
-            Log.d(TAG, "Avoid crash related to Service not registered: ${e.message}")
-        }
-        mBound = false
         mContext = null
         mNetworkService = null
     }

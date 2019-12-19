@@ -50,7 +50,6 @@ class NodeRepository(private val nodeDao: NodeDao) {
     suspend fun getFormattedNodes(): Pair<String, Boolean> {
         val nodes = nodeDao.getSortedNodes()
 
-        // TODO verify if this is the best way to fire and forget launch a coroutine inside another coroutine
         // Launches a job to refresh the list of nodes into the database, without blocking the
         // execution of this function, so that the formatted nodes can be returned immediately
         // without waiting until the nodes have been updated in the database.

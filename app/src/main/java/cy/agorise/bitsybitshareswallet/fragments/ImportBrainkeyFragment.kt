@@ -1,9 +1,7 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
-import android.content.ComponentName
 import android.os.Bundle
 import android.os.Handler
-import android.os.IBinder
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,7 +33,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_import_brainkey.*
 import org.bitcoinj.core.ECKey
 import java.text.NumberFormat
-import java.util.ArrayList
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 class ImportBrainkeyFragment : BaseAccountFragment() {
@@ -249,10 +247,10 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
             if (Character.isUpperCase(brainKey.toCharArray()[brainKey.length - 1])) {
                 // If the last character is an uppercase, we assume the whole brainkey
                 // was given in capital letters and turn it to lowercase
-                getAccountFromBrainkey(brainKey.toLowerCase())
+                getAccountFromBrainkey(brainKey.toLowerCase(Locale.ROOT))
             } else {
                 // Otherwise we turn the whole brainkey to capital letters
-                getAccountFromBrainkey(brainKey.toUpperCase())
+                getAccountFromBrainkey(brainKey.toUpperCase(Locale.ROOT))
             }
         } else {
             // If no case switching should take place, we perform the network call with
@@ -274,6 +272,15 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
         keyReferencesRequestId = mNetworkService?.sendMessage(GetKeyReferences(address), GetKeyReferences.REQUIRED_API)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        if (mNetworkService?.isConnected == true)
+            showConnectedState()
+        else
+            showDisconnectedState()
+    }
+
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (response.id == keyReferencesRequestId) {
             handleBrainKeyAccountReferences(response.result)
@@ -289,7 +296,24 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     }
 
     override fun handleConnectionStatusUpdate(connectionStatusUpdate: ConnectionStatusUpdate) {
-        Log.d(TAG, "handleConnectionStatusUpdate. code: " + connectionStatusUpdate.updateCode)
+        when (connectionStatusUpdate.updateCode) {
+            ConnectionStatusUpdate.CONNECTED -> {
+                showConnectedState()
+            }
+            ConnectionStatusUpdate.DISCONNECTED -> {
+                showDisconnectedState()
+            }
+        }
+    }
+
+    private fun showConnectedState() {
+        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
+            resources.getDrawable(R.drawable.ic_connected, null), null)
+    }
+
+    private fun showDisconnectedState() {
+        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
+            resources.getDrawable(R.drawable.ic_disconnected, null), null)
     }
 
     /**
@@ -384,19 +408,5 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
             }
             mHandler.postDelayed(this, Constants.BLOCK_PERIOD)
         }
-    }
-
-    override fun onServiceDisconnected(name: ComponentName?) {
-        super.onServiceDisconnected(name)
-
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_disconnected, null), null)
-    }
-
-    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        super.onServiceConnected(name, service)
-
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_connected, null), null)
     }
 }

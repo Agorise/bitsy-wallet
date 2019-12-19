@@ -3,9 +3,8 @@ package cy.agorise.bitsybitshareswallet.utils
 import android.app.Application
 import com.crashlytics.android.Crashlytics
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
+import cy.agorise.bitsybitshareswallet.network.NetworkServiceManager
 import cy.agorise.bitsybitshareswallet.repositories.NodeRepository
-import cy.agorise.graphenej.api.ApiAccess
-import cy.agorise.graphenej.api.android.NetworkServiceManager
 import io.reactivex.plugins.RxJavaPlugins
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,18 +45,9 @@ class BitsyApplication : Application() {
     }
 
     private suspend fun startNetworkServiceConnection() {
-        // Specifying some important information regarding the connection, such as the
-        // credentials and the requested API accesses
-        val requestedApis = ApiAccess.API_DATABASE or ApiAccess.API_HISTORY or ApiAccess.API_NETWORK_BROADCAST
         val (nodes, autoConnect) = mNodeRepository.getFormattedNodes()
-        val networkManager = NetworkServiceManager.Builder()
-            .setUserName("")
-            .setPassword("")
-            .setRequestedApis(requestedApis)
-            .setCustomNodeUrls(nodes)
-            .setAutoConnect(autoConnect)
-            .setNodeLatencyVerification(true)
-            .build(this)
+
+        val networkManager = NetworkServiceManager(nodes.split(","))
         /*
         * Registering this class as a listener to all activity's callback cycle events, in order to
         * better estimate when the user has left the app and it is safe to disconnect the websocket connection

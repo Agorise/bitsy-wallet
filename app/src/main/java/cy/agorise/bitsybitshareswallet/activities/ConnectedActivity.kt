@@ -1,14 +1,9 @@
 package cy.agorise.bitsybitshareswallet.activities
 
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.ServiceConnection
 import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
-import android.os.IBinder
 import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
@@ -56,7 +51,7 @@ import kotlin.concurrent.thread
  * This class manages everything related to keeping the information in the database updated using graphenej's
  * NetworkService, leaving to MainActivity only the Navigation work and some other UI features.
  */
-abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
+abstract class ConnectedActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "ConnectedActivity"
@@ -96,7 +91,7 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
     private var missingAssets = ArrayList<Asset>()
 
     /* Network service connection */
-    protected var mNetworkService: NetworkService? = null
+    protected var mNetworkService: NetworkService? = NetworkService.getInstance()
 
     // Map used to keep track of request and response id pairs
     private val responseMap = HashMap<Long, Int>()
@@ -109,11 +104,6 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
     // Variable used to hold a reference to the specific Transfer instance which we're currently trying
     // to resolve an equivalent BTS value
     var transfer: Transfer? = null
-
-    /**
-     * Flag used to keep track of the NetworkService binding state
-     */
-    private var mShouldUnbindNetwork: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -227,8 +217,7 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
 
             if (message.error == null) {
                 if (responseMap.containsKey(message.id)) {
-                    val responseType = responseMap[message.id]
-                    when (responseType) {
+                    when (responseMap[message.id]) {
                         RESPONSE_GET_FULL_ACCOUNTS      ->
                             handleAccountDetails((message.result as List<*>)[0] as FullAccountDetails)
 
@@ -522,23 +511,9 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
         }
     }
 
-    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        // We've bound to LocalService, cast the IBinder and get LocalService instance
-        val binder = service as NetworkService.LocalBinder
-        mNetworkService = binder.service
-    }
-
-    override fun onServiceDisconnected(name: ComponentName?) { }
-
     override fun onResume() {
         super.onResume()
 
-        val intent = Intent(this, NetworkService::class.java)
-        if (bindService(intent, this, Context.BIND_AUTO_CREATE)) {
-            mShouldUnbindNetwork = true
-        } else {
-            Log.e(TAG, "Binding to the network service failed.")
-        }
         mHandler.postDelayed(mCheckMissingPaymentsTask, Constants.MISSING_PAYMENT_CHECK_PERIOD)
         mHandler.postDelayed(verifyConnectionToSuitableNodeTask, NODE_CHECK_DELAY)
     }
@@ -549,12 +524,6 @@ abstract class ConnectedActivity : AppCompatActivity(), ServiceConnection {
             mConnectedActivityViewModel.updateNodeLatencies(nodes as List<FullNode>)
         }
 
-        // Unbinding from network service
-        if (mShouldUnbindNetwork) {
-            unbindService(this)
-            mShouldUnbindNetwork = false
-            mNetworkService = null
-        }
         mHandler.removeCallbacks(mCheckMissingPaymentsTask)
         mHandler.removeCallbacks(mRequestMissingUserAccountsTask)
         mHandler.removeCallbacks(mRequestMissingAssetsTask)
