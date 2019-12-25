@@ -14,7 +14,6 @@ import cy.agorise.bitsybitshareswallet.database.entities.Transfer
 import cy.agorise.bitsybitshareswallet.network.CoingeckoService
 import cy.agorise.bitsybitshareswallet.network.ServiceGenerator
 import cy.agorise.bitsybitshareswallet.utils.Constants
-import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import java.text.SimpleDateFormat
@@ -163,42 +162,5 @@ class TransferRepository internal constructor(context: Context) {
     fun onCleared() {
         if(!compositeDisposable.isDisposed)
             compositeDisposable.clear()
-    }
-
-    /**
-     * Method used to override a given currency if it turns out not to be supported by the API.
-     * <p>
-     * The CoinGecko API supports 20+ fiat currencies. So we can very easily calculate historical
-     * equivalent values for those currencies. If the currency is not supported though,
-     * we must fall back to USD.
-     *
-     * @param   symbol  The 3 letters symbol of the currency
-     */
-    fun getSupportedCurrency(symbol: String): Observable<String> {
-        return Observable.just(symbol)
-            .map {
-                val sg = ServiceGenerator(Constants.COINGECKO_URL)
-                val response = sg.getService(CoingeckoService::class.java)
-                    ?.getSupportedCurrencies()
-                    ?.execute()
-                // Updating the supported currencies cache
-                mPreferences.edit()
-                    .putStringSet(Constants.KEY_COINGECKO_CURRENCIES_CACHE, response?.body()?.toMutableSet() ?: setOf())
-                    .apply()
-                if(response?.body()?.indexOf(symbol.toLowerCase()) == -1)
-                    "usd"
-                else
-                    it
-            }
-            .onErrorReturn {
-                // Error caused potentially by the lack of connectivity. If this happens we just
-                // retrieve the value from the cache
-                val currencies = mPreferences.getStringSet(Constants.KEY_COINGECKO_CURRENCIES_CACHE, setOf())
-                var selectedCurrency = "usd"
-                if(currencies.contains(symbol)) {
-                    selectedCurrency = symbol
-                }
-                selectedCurrency
-            }
     }
 }

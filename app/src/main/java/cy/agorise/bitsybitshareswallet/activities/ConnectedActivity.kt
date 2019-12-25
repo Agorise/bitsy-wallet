@@ -19,6 +19,7 @@ import cy.agorise.bitsybitshareswallet.database.entities.Transfer
 import cy.agorise.bitsybitshareswallet.processors.TransfersLoader
 import cy.agorise.bitsybitshareswallet.repositories.AssetRepository
 import cy.agorise.bitsybitshareswallet.utils.Constants
+import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceViewModel
 import cy.agorise.bitsybitshareswallet.viewmodels.ConnectedActivityViewModel
 import cy.agorise.bitsybitshareswallet.viewmodels.TransferViewModel
@@ -121,7 +122,9 @@ abstract class ConnectedActivity : AppCompatActivity() {
         mConnectedActivityViewModel = ViewModelProviders.of(this).get(ConnectedActivityViewModel::class.java)
 
         val currency = Currency.getInstance(Locale.getDefault())
-        mConnectedActivityViewModel.observeMissingEquivalentValuesIn(currency.currencyCode) //TODO: Obtain this from shared preferences?
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        Log.d(TAG, "Using currency: ${currencyCode.toUpperCase(Locale.ROOT)}")
+        mConnectedActivityViewModel.observeMissingEquivalentValuesIn(currencyCode)
 
         // Configure UserAccountViewModel to obtain the missing account ids
         mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)

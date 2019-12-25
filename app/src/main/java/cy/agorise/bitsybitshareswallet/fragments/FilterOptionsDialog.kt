@@ -18,6 +18,7 @@ import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.Constants
+import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 import cy.agorise.bitsybitshareswallet.views.DatePickerFragment
 import kotlinx.android.synthetic.main.dialog_filter_options.*
@@ -158,9 +159,9 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
             llEquivalentValue.visibility = if(isChecked) View.GONE else View.VISIBLE }
         cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
 
-        // TODO obtain user selected currency
-        val currencySymbol = "usd"
-        mCurrency = Currency.getInstance(currencySymbol)
+        val currency = Currency.getInstance(Locale.getDefault())
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        mCurrency = Currency.getInstance(currencyCode)
 
         val fromEquivalentValue = mFilterOptions.fromEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
@@ -170,7 +171,7 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
         etToEquivalentValue.setText("$toEquivalentValue", TextView.BufferType.EDITABLE)
 
-        tvEquivalentValueSymbol.text = currencySymbol.toUpperCase()
+        tvEquivalentValueSymbol.text = currencyCode.toUpperCase(Locale.getDefault())
 
         // Initialize transaction network fees
         switchAgoriseFees.isChecked = mFilterOptions.agoriseFees

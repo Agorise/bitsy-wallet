@@ -1,14 +1,11 @@
 package cy.agorise.bitsybitshareswallet.viewmodels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.repositories.TransferDetailRepository
-import cy.agorise.bitsybitshareswallet.repositories.TransferRepository
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import cy.agorise.bitsybitshareswallet.utils.Helper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -16,10 +13,9 @@ import java.util.*
 
 class TransactionsViewModel(application: Application) : AndroidViewModel(application) {
     companion object {
-        val TAG = "TransactionsViewModel"
+        const val TAG = "TransactionsViewModel"
     }
     private var mRepository = TransferDetailRepository(application)
-    private var mTransfersRepository = TransferRepository(application)
 
     /**
      * [FilterOptions] used to filter the list of [TransferDetail] taken from the database
@@ -44,24 +40,14 @@ class TransactionsViewModel(application: Application) : AndroidViewModel(applica
 
     internal fun getFilteredTransactions(userId: String): LiveData<List<TransferDetail>> {
         val currency = Currency.getInstance(Locale.getDefault())
-        mTransfersRepository.getSupportedCurrency(currency.currencyCode)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                Log.d(TAG,"Looking for currency with code: ${it}")
-                transactions = mRepository.getAll(userId, it)
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        transactions = mRepository.getAll(userId, currencyCode)
 
-                filteredTransactions.addSource(transactions) { transactions ->
-                    viewModelScope.launch {
-                        filteredTransactions.value = filter(transactions, mFilterOptions)
-                    }
-                }
-            },{
-                Log.e(TAG,"Error while trying to obtain a filtered list of transactions. Msg: ${it.message}")
-                for(element in it.stackTrace){
-                    Log.e(ConnectedActivityViewModel.TAG,"${element.className}#${element.methodName}:${element.lineNumber}")
-                }
-            })
+        filteredTransactions.addSource(transactions) { transactions ->
+            viewModelScope.launch {
+                filteredTransactions.value = filter(transactions, mFilterOptions)
+            }
+        }
 
         return filteredTransactions
     }

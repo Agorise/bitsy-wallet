@@ -13,8 +13,4 @@ interface CoingeckoService {
     fun getHistoricalValueSync(@Query("id") id: String,
                                @Query("date") date: String,
                                @Query("localization") localization: Boolean): Call<HistoricalPrice>
-
-    @Headers("Content-Type: application/json")
-    @GET("/api/v3/simple/supported_vs_currencies")
-    fun getSupportedCurrencies(): Call<Array<String>>
 }
