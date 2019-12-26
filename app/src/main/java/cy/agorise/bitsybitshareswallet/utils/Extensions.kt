@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -52,4 +53,13 @@ fun String.containsVowels(): Boolean {
 fun View.hideKeyboard(){
     val inputMethodManager = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(this.windowToken, 0)
+}
+
+/**
+ * Allows to request focus and show the Keyboard from an EditText (and its sub-classes).
+ */
+fun EditText.showKeyboard() {
+    requestFocus()
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }

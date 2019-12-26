@@ -21,6 +21,7 @@ import cy.agorise.bitsybitshareswallet.adapters.AssetsAdapter
 import cy.agorise.bitsybitshareswallet.adapters.AutoSuggestAssetAdapter
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
+import cy.agorise.bitsybitshareswallet.utils.showKeyboard
 import cy.agorise.bitsybitshareswallet.utils.toast
 import cy.agorise.bitsybitshareswallet.viewmodels.ReceiveTransactionViewModel
 import cy.agorise.graphenej.*
@@ -156,6 +157,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
                 mAssetsAdapter?.getItem(position)?.let { asset ->
                     if (asset.id == OTHER_ASSET) {
                         tilAsset.visibility = View.VISIBLE
+                        actvAsset.showKeyboard()
                         mAsset = null
                     } else {
                         tilAsset.visibility = View.GONE
