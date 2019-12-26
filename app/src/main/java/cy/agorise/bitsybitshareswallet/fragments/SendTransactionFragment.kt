@@ -317,7 +317,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
             transaction!!.blockData = BlockData(headBlockNumber, headBlockId, expirationTime)
 
-            var feeAsset = Asset(Constants.CORE_ASSET)
+            val feeAsset = Asset(Constants.CORE_ASSET)
 
             val id = mNetworkService?.sendMessage(GetRequiredFees(transaction!!, feeAsset), GetRequiredFees.REQUIRED_API)
             if (id != null) responseMap.append(id, RESPONSE_GET_REQUIRED_FEES)
@@ -451,10 +451,15 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 amount += nextItem.quantity * nextItem.price
             }
 
-            val df = DecimalFormat("####." + "#".repeat(balanceDetail.precision))
-            df.roundingMode = RoundingMode.CEILING
-            df.decimalFormatSymbols = DecimalFormatSymbols(Locale.getDefault())
-            tietAmount.setText(df.format(amount))
+            // Populate the amount field only if amount is not zero.
+            if (amount > 0.0) {
+                val df = DecimalFormat("####." + "#".repeat(balanceDetail.precision))
+                df.roundingMode = RoundingMode.CEILING
+                df.decimalFormatSymbols = DecimalFormatSymbols(Locale.getDefault())
+                tietAmount.setText(df.format(amount))
+            } else {
+                tietAmount.setText("")
+            }
 
         }catch (e: Exception) {
             Log.d(TAG, "Invoice error: " + e.message)
