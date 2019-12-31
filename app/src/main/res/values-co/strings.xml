@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Scrivite questu! Assicuratevi chì avete 2 copie di questu BrainKey in 2 posti sicuri in casu di focu o perdita. Sicurità Prima! Qualchese chì hà accessu à u vostru BrainKey pò accede à i fondi in u vostru contu!</string>
     <string name="button__copied">Copiati</string>
     <string name="button__view_and_copy">Vede &amp; Copia</string>
+    <string name="msg__backup_warning">Hè necessariu Salvà stu contu!</string>
     <string name="title__accounts">U Accounts</string>
     <string name="msg__upgrade_to_ltm">Avanzate à adesione LifeTime (LTM). I cunti Bitshares \ \'LTM paganu tariffu vicinu à u zero, uttene un 80% di rimborsu è bonuses per riferimenti.</string>
     <string name="button__upgrade_to_ltm">Avanzate à LTM</string>

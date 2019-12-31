@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Kirjoita tämä muistiin! Varmista, että sinulla on 2 kopiota tästä BrainKey-laitteesta kahdessa turvallisessa paikassa tulipalon tai menetyksen varalta. Turvallisuus ensin! Kuka tahansa, jolla on pääsy BrainKeysiisi, voi käyttää tilisi varoja!</string>
     <string name="button__copied">kopioitu</string>
     <string name="button__view_and_copy">Näytä ja kopioi</string>
+    <string name="msg__backup_warning">Sinun on varmuuskopioitava tämä tili!</string>
     <string name="title__accounts">tilit</string>
     <string name="msg__upgrade_to_ltm">Päivitä LifeTime-jäsenyyteen (LTM). Bitshares \ \'LTM -tilit maksavat melkein nollapalkkiot, saavat 80% rahaa takaisin ja bonuksia lähetteistä.</string>
     <string name="button__upgrade_to_ltm">Päivitä LTM: ään</string>

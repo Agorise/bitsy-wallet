@@ -1,6 +1,7 @@
 package cy.agorise.bitsybitshareswallet.utils
 
 import android.app.Application
+import android.util.Log
 import com.crashlytics.android.Crashlytics
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.network.NetworkServiceManager
@@ -31,7 +32,10 @@ class BitsyApplication : Application() {
 
         // Add RxJava error handler to avoid crashes when an error occurs on a RxJava operation, but still log the
         // exception to Crashlytics so that we can fix the issues
-        RxJavaPlugins.setErrorHandler { throwable -> Crashlytics.logException(throwable)}
+        RxJavaPlugins.setErrorHandler { throwable ->
+            Log.e("RxJava Error", throwable.message)
+            Crashlytics.logException(throwable)
+        }
 
         appScope = CoroutineScope(Dispatchers.Main + applicationJob)
 

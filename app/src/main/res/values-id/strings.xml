@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Tulis ini! Pastikan Anda memiliki 2 salinan BrainKey ini di 2 lokasi aman jika terjadi kebakaran atau kehilangan. Keamanan Pertama! Siapa pun yang memiliki akses ke BrainKey Anda dapat mengakses dana di akun Anda!</string>
     <string name="button__copied">Disalin</string>
     <string name="button__view_and_copy">Lihat &amp; Salin</string>
+    <string name="msg__backup_warning">Anda perlu Cadangkan akun ini!</string>
     <string name="title__accounts">Akun</string>
     <string name="msg__upgrade_to_ltm">Tingkatkan ke Keanggotaan LifeTime (LTM). Akun LTM Bitshares membayar biaya hampir nol, dapatkan cashback 80% dan bonus untuk referensi.</string>
     <string name="button__upgrade_to_ltm">Tingkatkan ke LTM</string>

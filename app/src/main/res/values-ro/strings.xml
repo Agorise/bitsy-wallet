@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Notează asta! Asigurați-vă că aveți 2 copii ale acestui BrainKey în 2 locații sigure în caz de incendiu sau pierdere. Securitatea întâi! Oricine are acces la BrainKey poate accesa fondurile din contul dvs.!</string>
     <string name="button__copied">Copiată</string>
     <string name="button__view_and_copy">Vizualizare și copiere</string>
+    <string name="msg__backup_warning">Trebuie să faceți backup pentru acest cont!</string>
     <string name="title__accounts">Conturi</string>
     <string name="msg__upgrade_to_ltm">Treceți la LifeTime Membership (LTM). Conturile LTM de la Bitshares plătesc taxe aproape zero, primesc încasări de 80% și bonusuri pentru recomandări.</string>
     <string name="button__upgrade_to_ltm">Actualizați la LTM</string>

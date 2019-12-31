@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Ysgrifennwch hwn i lawr! Gwnewch yn siŵr bod gennych 2 gopi o\'r BrainKey hwn mewn 2 leoliad diogel rhag ofn tân neu golled. Diogelwch yn Gyntaf! Gall unrhyw un sydd â mynediad i\'ch BrainKey gael mynediad i\'r cronfeydd yn eich cyfrif!</string>
     <string name="button__copied">Copïwyd</string>
     <string name="button__view_and_copy">Gweld a Copïo</string>
+    <string name="msg__backup_warning">Mae angen i chi Gwneud copi wrth gefn o\'r cyfrif hwn!</string>
     <string name="title__accounts">Cyfrifon</string>
     <string name="msg__upgrade_to_ltm">Uwchraddio i Aelodaeth Amser Oes (LTM). Mae cyfrifon LTM Bitshares yn talu ffioedd bron yn sero, yn cael 80% o arian yn ôl a bonysau am atgyfeiriadau.</string>
     <string name="button__upgrade_to_ltm">Uwchraddio i LTM</string>

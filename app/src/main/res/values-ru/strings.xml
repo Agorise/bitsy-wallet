@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Запишите это! Убедитесь, что у вас есть 2 копии этого BrainKey в 2 безопасных местах на случай пожара или потери. Безопасность прежде всего! Любой, кто имеет доступ к вашему BrainKey, может получить доступ к средствам на вашем счете!</string>
     <string name="button__copied">скопированно</string>
     <string name="button__view_and_copy">Просмотр и копирование</string>
+    <string name="msg__backup_warning">Вам необходимо сделать резервную копию этой учетной записи!</string>
     <string name="title__accounts">Счета</string>
     <string name="msg__upgrade_to_ltm">Обновление до пожизненного членства (LTM). Счета Bitshares \ LTM платят почти нулевую комиссию, получают 80% кэшбэка и бонусы за рефералов.</string>
     <string name="button__upgrade_to_ltm">Обновление до LTM</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Schreiben Sie das auf! Stellen Sie sicher, dass Sie 2 Kopien dieses Brainkey an 2 sicheren Orten aufbewahren, falls es zu einem Brand oder Verlust kommt. Sicherheit geht vor! Jeder, der Zugriff auf Ihren Brainkey hat, kann auf die Guthaben auf Ihrem Konto zugreifen!</string>
     <string name="button__copied">Kopiert</string>
     <string name="button__view_and_copy">Anzeigen und kopieren</string>
+    <string name="msg__backup_warning">Sie müssen dieses Konto sichern!</string>
     <string name="title__accounts">Konto</string>
     <string name="msg__upgrade_to_ltm">Upgrade auf eine LifeTime-Mitgliedschaft (LTM). Die LTM-Konten von Bitshares Kosten fast keine Gebühren, erhalten 80% Cashback und Bonusse für Empfehlungen.</string>
     <string name="button__upgrade_to_ltm">Upgrade auf LTM</string>

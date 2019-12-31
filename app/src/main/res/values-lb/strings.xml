@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Schreift dëst erof! Gitt sécher datt Dir 2 Exemplare vun dësem BrainKey op 2 sécher Plazen am Fall vu Feier oder Verloscht hutt. Sécherheet Éischt! Jiddereen mat Zougang zu Ärem BrainKey kënnen Zougang zu de Fongen op Ärem Kont kréien!</string>
     <string name="button__copied">Kopéiert</string>
     <string name="button__view_and_copy">Gesinn &amp; Kopie</string>
+    <string name="msg__backup_warning">Dir musst dëse Kont Backup!</string>
     <string name="title__accounts">Konten</string>
     <string name="msg__upgrade_to_ltm">Upgrade op LifeTime Membership (LTM). Bitshares \ \'LTM Konten bezuele bal null Käschten, kréien 80% Cashback a Bonus fir Referratiounen.</string>
     <string name="button__upgrade_to_ltm">Upgrade op LTM</string>

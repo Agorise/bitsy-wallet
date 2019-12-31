@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Kirjutage see üles! Veenduge, et teil oleks 2 BrainKey eksemplari kahes turvalises kohas tulekahju või kaotuse korral. Turvalisus kõigepealt! Igaüks, kellel on juurdepääs teie BrainKey-le, pääseb juurde teie konto vahenditele!</string>
     <string name="button__copied">Kopeeritud</string>
     <string name="button__view_and_copy">Kuva ja kopeeri</string>
+    <string name="msg__backup_warning">Peate selle konto varundama!</string>
     <string name="title__accounts">Kontod</string>
     <string name="msg__upgrade_to_ltm">Uuendage LifeTime\'i liikmelisuseks (LTM). Bitshares \'LTM-i kontod maksavad nullilähedased tasud, saavad 80% raha tagasi ja boonused viidete eest.</string>
     <string name="button__upgrade_to_ltm">Minge üle LTM-ile</string>

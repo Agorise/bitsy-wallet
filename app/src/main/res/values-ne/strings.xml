@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">यसलाई लेख्नुहोस्! यो निश्चित गर्नुहोस् कि तपाईसँग BrainKey को २ प्रतिलिपिहरू छन् २ सुरक्षित स्थानहरुमा आगो वा हराएको खण्डमा। सुरक्षा पहिलो! तपाइँको BrainKey को साथ पहुँच भएको जो कोहीले तपाइँको खातामा कोष पहुँच गर्न सक्दछन्!</string>
     <string name="button__copied">प्रतिलिपि गरिएको</string>
     <string name="button__view_and_copy">हेर्नुहोस् र प्रतिलिपि गर्नुहोस्</string>
+    <string name="msg__backup_warning">तपाईंले यस खाताको जगेडा गर्न आवश्यक छ!</string>
     <string name="title__accounts">खाताहरू</string>
     <string name="msg__upgrade_to_ltm">LifeTime सदस्यता (LTM) मा अपग्रेड गर्नुहोस्। Bitshares L \'LTM खाताहरू नजिक शून्य शुल्क तिर्न, %०% क्यासब्याक र रेफरलको लागि बोनस पाउनुहोस्।</string>
     <string name="button__upgrade_to_ltm">LTM मा अपग्रेड गर्नुहोस्</string>

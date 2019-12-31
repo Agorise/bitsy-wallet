@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Lembani izi! Onetsetsani kuti muli ndi makope awiri a BrainKey m\'malo awiri otetezeka moto kapena kuwonongeka. Chitetezo Choyamba! Aliyense amene ali ndi mwayi wofika pa BrainKey amatha kulowa mu akaunti yanu!</string>
     <string name="button__copied">Zokopedwa</string>
     <string name="button__view_and_copy">Onani &amp; Copy</string>
+    <string name="msg__backup_warning">Muyenera kusunga akaunti iyi!</string>
     <string name="title__accounts">Maakaunti</string>
     <string name="msg__upgrade_to_ltm">Sinthani ku LifeTime Umembala (LTM). Ma akaunti a Bitshares \ \'LTM amalipira pafupi zero, amalipiritsa ndalama 80 ndi mabonasi otumizira.</string>
     <string name="button__upgrade_to_ltm">Sinthani kupita ku LTM</string>

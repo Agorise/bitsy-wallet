@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Idatzi hau! Ziurtatu BrainKey honen kopia 2 leku segurutan 2 sute edo galera izanez gero. Segurtasuna Lehenik eta behin! Zure BrainKey-erako sarbidea duen edonork sar dezake zure konturako funtsak!</string>
     <string name="button__copied">kopiatzen</string>
     <string name="button__view_and_copy">Ikusi eta kopiatu</string>
+    <string name="msg__backup_warning">Kontu hau Backup egin behar duzu!</string>
     <string name="title__accounts">kontuak</string>
     <string name="msg__upgrade_to_ltm">Eguneratu LifeTime-ko kide izatera (LTM). Bitshares \ \'LTM kontuek ia zero tasak ordaintzen dituzte,% 80ko diru-itzulkina eta erreferentzien hobariak lortzeko.</string>
     <string name="button__upgrade_to_ltm">Berritu LTMra</string>

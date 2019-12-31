@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">यह नीचे लिखें! सुनिश्चित करें कि आपके पास इस ब्रेनके की 2 प्रतियां आग या नुकसान के मामले में 2 सुरक्षित स्थानों पर हैं। सुरक्षा पहले! आपके BrainKey तक पहुंच रखने वाला कोई भी व्यक्ति आपके खाते में धनराशि तक पहुंच सकता है!</string>
     <string name="button__copied">कॉपी किया गया</string>
     <string name="button__view_and_copy">देखें और कॉपी करें</string>
+    <string name="msg__backup_warning">आपको इस खाते का बैकअप लेना होगा!</string>
     <string name="title__accounts">हिसाब किताब</string>
     <string name="msg__upgrade_to_ltm">लाइफटाइम सदस्यता (LTM) में अपग्रेड करें। Bitshares के LTM खातों में लगभग शून्य शुल्क का भुगतान होता है, रेफरल के लिए 80% कैशबैक और बोनस मिलता है।</string>
     <string name="button__upgrade_to_ltm">एलटीएम को अपग्रेड करें</string>

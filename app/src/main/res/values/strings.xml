@@ -141,6 +141,7 @@
     <string name="msg__brainkey_info">Write this down! Be sure you have 2 copies of this BrainKey in 2 secure locations in case of fire or loss. Security First! Anyone with access to your BrainKey can access the funds in your account!</string>
     <string name="button__copied">Copied</string>
     <string name="button__view_and_copy">View &amp; Copy</string>
+    <string name="msg__backup_warning">You need to Backup this account!</string>
     <string name="title__accounts">Accounts</string>
     <string name="msg__upgrade_to_ltm">Upgrade to LifeTime Membership (LTM). Bitshares\' LTM accounts pay near-zero fees, get 80% cashback and bonuses for referrals.</string>
     <string name="button__upgrade_to_ltm">Upgrade to LTM</string>

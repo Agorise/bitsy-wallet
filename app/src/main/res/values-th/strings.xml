@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">เขียนลงนี้! ต้องแน่ใจว่าคุณมี BrainKey นี้ 2 ชุดในที่ปลอดภัย 2 แห่งในกรณีที่ไฟไหม้หรือสูญหาย ปลอดภัยไว้ก่อน! ทุกคนที่สามารถเข้าถึง BrainKey ของคุณสามารถเข้าถึงเงินทุนในบัญชีของคุณ!</string>
     <string name="button__copied">คัดลอก</string>
     <string name="button__view_and_copy">ดูและคัดลอก</string>
+    <string name="msg__backup_warning">คุณต้องสำรองข้อมูลบัญชีนี้!</string>
     <string name="title__accounts">บัญชี</string>
     <string name="msg__upgrade_to_ltm">อัปเกรดเป็นสมาชิก LifeTime (LTM) บัญชี LTM ของ Bitshares จ่ายค่าธรรมเนียมเกือบเป็นศูนย์รับเงินคืน 80% และโบนัสสำหรับการอ้างอิง</string>
     <string name="button__upgrade_to_ltm">อัปเกรดเป็น LTM</string>

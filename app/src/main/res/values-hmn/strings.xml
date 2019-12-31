@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Sau qhov no! Nco ntsoov koj muaj 2 daim Ntawv BrainKey hauv 2 qhov chaw zoo thaum muaj hluav taws lossis ploj. Kev Ruaj Ntseg Ua Ntej! Txhua tus neeg uas nkag mus rau koj BrainKey tuaj yeem nkag mus rau cov nyiaj hauv koj tus account!</string>
     <string name="button__copied">Luam theej ntawv</string>
     <string name="button__view_and_copy">Saib &amp; Luam Ntawv</string>
+    <string name="msg__backup_warning">Koj yuav tsum rov qab cov nyiaj no!</string>
     <string name="title__accounts">Cov Txhab Nyiaj</string>
     <string name="msg__upgrade_to_ltm">Hloov kho rau LifeTime Kev Koom Tes (LTM). Bitshares \ \'LTM tus as-qhauj them ze-xoom tus nqi, tau txais 80% nyiaj rov qab thiab nyiaj tshwj xeeb rau kev xa mus.</string>
     <string name="button__upgrade_to_ltm">Txawj ntxiv rau LTM</string>

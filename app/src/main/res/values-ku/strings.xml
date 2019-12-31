@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Vê binivîsin! Bawer bikin ku di 2 bûyerên agir an zirarê de ji we re 2 kopiyên vê BrainKey hene. Yekem Ewlekarî! Kesê ku gihîştina BrainKey-a we dikare fonan li hesabê we têkeve!</string>
     <string name="button__copied">Kopî kirin</string>
     <string name="button__view_and_copy">Dîtin &amp; kopî kirin</string>
+    <string name="msg__backup_warning">Hûn hewce ne ku vê hesabê paşve bikin!</string>
     <string name="title__accounts">Hesaban</string>
     <string name="msg__upgrade_to_ltm">Ji Endamtiya LifeTime nûve bikin (LTM). Hesabên LTM-ê yên Bitshares nêzî nîv-heqê drav didin, ji% 80% paşîn û berdêl ji bo referansan distînin.</string>
     <string name="button__upgrade_to_ltm">Ji LTM-ê nûve bikin</string>

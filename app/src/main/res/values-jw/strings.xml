@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Tulisen iki! Priksa manawa sampeyan duwe 2 salinan BrainKey iki ing 2 lokasi sing aman yen bisa enteni geni utawa ilang. Keamanan Pisanan! Sapa wae sing duwe akses menyang BrainKey bisa ngakses dana ing akun!</string>
     <string name="button__copied">Disalin</string>
     <string name="button__view_and_copy">Ndeleng &amp; Nyalin</string>
+    <string name="msg__backup_warning">Sampeyan kudu nggawe serep akun iki!</string>
     <string name="title__accounts">Akun</string>
     <string name="msg__upgrade_to_ltm">Nganyarke menyang Keanggotaan LifeTime (LTM). Akun Bitshares \ \'LTM mbayar ragad cedhak-nol, entuk uang dhuwit bali regane 80% lan bonus kanggo ngubungake.</string>
     <string name="button__upgrade_to_ltm">Nganyarke menyang LTM</string>

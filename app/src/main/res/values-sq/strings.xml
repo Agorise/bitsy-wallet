@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Shkruajeni këtë! Sigurohuni që keni 2 kopje të këtij BrainKey në 2 vende të sigurta në rast zjarri ose humbjeje. Siguria e parë! Kushdo që ka qasje në BrainKey tuaj mund të hyjë në fondet në llogarinë tuaj!</string>
     <string name="button__copied">kopjuar</string>
     <string name="button__view_and_copy">Shikoni dhe kopjoni</string>
+    <string name="msg__backup_warning">Ju duhet të kopjoni këtë llogari!</string>
     <string name="title__accounts">llogaritë</string>
     <string name="msg__upgrade_to_ltm">Përditësoni në Anëtarësimin në LifeTime (LTM). Llogaritë LTM të Bitshares paguajnë tarifa afro zero, marrin 80% kthim parash dhe shpërblime për referime.</string>
     <string name="button__upgrade_to_ltm">Përditësoni në LTM</string>

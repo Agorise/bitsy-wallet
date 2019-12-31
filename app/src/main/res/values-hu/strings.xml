@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Írja le ezt! Ügyeljen arra, hogy a BrainKey 2 példányban legyen 2 biztonságos helyen, tűz vagy veszteség esetén. Biztonság először! Bárki, aki hozzáféréssel rendelkezik a BrainKey-hez, hozzáférhet a számlájához!</string>
     <string name="button__copied">másolt</string>
     <string name="button__view_and_copy">Megtekintés és másolás</string>
+    <string name="msg__backup_warning">Biztonsági másolatot kell készítenie erről a fiókról!</string>
     <string name="title__accounts">Fiókok</string>
     <string name="msg__upgrade_to_ltm">Frissítés a LifeTime tagságra (LTM). A Bitshares \ \'LTM számlák nullához közeli díjat fizetnek, 80% -os cashback-et és bónuszt kapnak az áttételért.</string>
     <string name="button__upgrade_to_ltm">Frissítsen LTM-re</string>

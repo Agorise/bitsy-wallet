@@ -157,6 +157,18 @@
                     android:layout_marginTop="@dimen/spacing_same_topic"
                     android:text="@string/button__view_and_copy"/>
 
+                <TextView
+                    android:id="@+id/tvBackupWarning"
+                    style="@style/TextAppearance.Bitsy.Body2.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_same_topic"
+                    android:drawableStart="@drawable/ic_error"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="@string/msg__backup_warning"
+                    android:textStyle="bold"/>
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

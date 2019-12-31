@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Γράψτε αυτό κάτω! Βεβαιωθείτε ότι έχετε 2 αντίγραφα αυτού του BrainKey σε 2 ασφαλείς θέσεις σε περίπτωση πυρκαγιάς ή απώλειας. Ασφάλεια πρώτα! Όποιος έχει πρόσβαση στο BrainKey μπορεί να έχει πρόσβαση στα χρήματα του λογαριασμού σας!</string>
     <string name="button__copied">Αντιγραφή</string>
     <string name="button__view_and_copy">Προβολή &amp; Αντιγραφή</string>
+    <string name="msg__backup_warning">Πρέπει να δημιουργήσετε αντίγραφο ασφαλείας αυτού του λογαριασμού!</string>
     <string name="title__accounts">Λογαριασμοί</string>
     <string name="msg__upgrade_to_ltm">Αναβαθμίστε τη Μέλη LifeTime (LTM). Οι λογαριασμοί LTM του Bitshares πληρώνουν σχεδόν μηδενικά τέλη, λαμβάνουν 80% επιστροφή χρημάτων και μπόνους για παραπομπές.</string>
     <string name="button__upgrade_to_ltm">Αναβάθμιση σε LTM</string>

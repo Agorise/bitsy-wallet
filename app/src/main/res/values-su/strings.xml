@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Tulis ieu turun! Pastikeun anjeun gaduh 2 salinan BrainKey ieu di 2 lokasi anu aman upami aya seuneu atanapi rugi. Kaamanan Mimiti! Saha waé anu ngagaduhan aksés ka BrainKey anjeun tiasa ngaksés dana dina akun anjeun!</string>
     <string name="button__copied">Disalin</string>
     <string name="button__view_and_copy">Nempo &amp; Tiron</string>
+    <string name="msg__backup_warning">Anjeun kedah nyadangkeun rekening ieu!</string>
     <string name="title__accounts">Akun</string>
     <string name="msg__upgrade_to_ltm">Ningkatkeun Kaanggotaan LifeTime (LTM). Akun Bitshares \ \'LTM mayar waragad sa-enol, kéngingkeun artos 80% sareng bonus kanggo referrals.</string>
     <string name="button__upgrade_to_ltm">Ngaronjatkeun ka LTM</string>

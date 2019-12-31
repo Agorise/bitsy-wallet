@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">આ લખો! ખાતરી કરો કે તમારી પાસે આગ અથવા નુકસાનના કિસ્સામાં 2 સુરક્ષિત સ્થળોએ આ બ્રેઇનકીની 2 નકલો છે. સુરક્ષા પ્રથમ! તમારા મગજની toક્સેસવાળા કોઈપણ તમારા એકાઉન્ટમાં ભંડોળનો ઉપયોગ કરી શકે છે!</string>
     <string name="button__copied">કiedપિ કરી</string>
     <string name="button__view_and_copy">જુઓ અને ક Copyપિ કરો</string>
+    <string name="msg__backup_warning">તમારે આ એકાઉન્ટનો બેકઅપ લેવાની જરૂર છે!</string>
     <string name="title__accounts">હિસાબો</string>
     <string name="msg__upgrade_to_ltm">લાઇફટાઇમ સભ્યપદ (LTM) પર અપગ્રેડ કરો. બીટશેર્સના એલટીએમ ખાતા શૂન્ય ફીની ચૂકવણી કરે છે, 80% કેશબેક અને રેફરલ્સ માટે બોનસ મેળવે છે.</string>
     <string name="button__upgrade_to_ltm">એલટીએમ પર અપગ્રેડ કરો</string>

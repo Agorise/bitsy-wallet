@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Skribu ĉi tion! Certigu, ke vi havas 2 kopiojn de ĉi tiu BrainKey en 2 sekuraj lokoj en kazo de fajro aŭ perdo. Sekureco Unue! Ĉiu kun aliro al via BrainKey povas aliri la financojn en via konto!</string>
     <string name="button__copied">Kopiado</string>
     <string name="button__view_and_copy">Vidi &amp; Kopii</string>
+    <string name="msg__backup_warning">Vi devas Rezerva ĉi tiu konto!</string>
     <string name="title__accounts">Raportoj</string>
     <string name="msg__upgrade_to_ltm">Ĝisdatigu al LifeTime Membership (LTM). Bitshares \ \'LTM-kontoj pagas preskaŭ nulajn kotizojn, ricevas 80% monŝrankon kaj gratifikojn por aludoj.</string>
     <string name="button__upgrade_to_ltm">Ĝisdatigu al LTM</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Tuhia tenei! Kia mahara kia rua nga kape o tenei BrainKey i nga waahi e 2 e noho ana hei ahi, he ngaro ranei. Haumarutanga Tuatahi! Ko te tangata e uru ana ki to BrainKey ka taea te uru atu ki nga putea kei roto i o putea!</string>
     <string name="button__copied">Kua kape</string>
     <string name="button__view_and_copy">Tirohia &amp; Tāruatia</string>
+    <string name="msg__backup_warning">Me matua Pūrua tenei pūkete!</string>
     <string name="title__accounts">Pūkete</string>
     <string name="msg__upgrade_to_ltm">Te Whakahoutanga ki te Taha Mema Ora (LTM). Ka utua e nga putea BEShares \ \'LTM nga utu kore-kore, whiwhi 80% moni moni me nga putea mo nga tohutao.</string>
     <string name="button__upgrade_to_ltm">Te Whakahoutanga ki te LTM</string>

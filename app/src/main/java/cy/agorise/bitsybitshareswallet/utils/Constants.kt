@@ -135,6 +135,18 @@ object Constants {
      *  table were invalid. We'll be performing a purge at version code 12, but we only want to do
      *  it once. After this, we record this in shared preferences using this key */
     const val KEY_HAS_PURGED_EQUIVALENT_VALUES = "key_has_purged_equivalent_values"
+
+    /**
+     * Key used to store the timestamp of the last account backup
+     */
+    const val KEY_LAST_ACCOUNT_BACKUP = "key_last_account_backup"
+
+    /**
+     * The time period for how often the user should do a backup of his account
+     */
+    const val ACCOUNT_BACKUP_PERIOD = 1000L * 60 * 60 * 24 * 60 // 60 days ~ 2 months
+
+
     /////////////////////// Crashlytics custom keys ///////////////////////
 
     /** Key used to add the last visited fragment name to the Crashlytics report */

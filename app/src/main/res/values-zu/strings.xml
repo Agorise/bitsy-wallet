@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Bhala phansi! Qiniseka ukuthi unamakhophi ama-2 ale BrainKey ezindaweni ezi-2 eziphephile uma umlilo noma ulahlekile. Ezokuphepha Okokuqala! Noma ngubani ukufinyelela i-BrainKey yakho angafinyelela imali ku-akhawunti yakho!</string>
     <string name="button__copied">Kukopishwe</string>
     <string name="button__view_and_copy">Buka futhi Kopisha</string>
+    <string name="msg__backup_warning">Udinga ukwenza isipele le akhawunti!</string>
     <string name="title__accounts">Ama-akhawunti</string>
     <string name="msg__upgrade_to_ltm">Thuthukisela ku-LifeTime Ubulungu (i-LTM). Ama-akhawunti e-Bitshares \ \'LTM akhokha imali ebiza kakhulu, thola imali engamaphesenti angama-80 kanye namabhonasi okudluliselwa.</string>
     <string name="button__upgrade_to_ltm">Thuthukela ku-LTM</string>

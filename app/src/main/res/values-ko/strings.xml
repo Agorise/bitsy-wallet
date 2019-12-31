@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">적어! 화재 나 분실의 경우 안전한 장소 2 곳에이 BrainKey를 2 부 보관하십시오. 보안 우선! BrainKey에 액세스 할 수있는 사람은 누구나 계정의 자금에 액세스 할 수 있습니다!</string>
     <string name="button__copied">복사</string>
     <string name="button__view_and_copy">보기 및 복사</string>
+    <string name="msg__backup_warning">이 계정을 백업해야합니다!</string>
     <string name="title__accounts">계정</string>
     <string name="msg__upgrade_to_ltm">LTM (LifeTime Membership)으로 업그레이드하십시오. 비트 쉐어의 LTM 계정은 거의 제로 수수료를 지불하고 80 %의 캐쉬백과 추천에 대한 보너스를받습니다.</string>
     <string name="button__upgrade_to_ltm">LTM으로 업그레이드</string>

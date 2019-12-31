@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Isulat kini! Siguruha nga adunay ka 2 kopya sa kini nga BrainKey sa 2 luwas nga lokasyon kung adunay sunog o pagkawala. Una sa Seguridad! Bisan kinsa nga adunay access sa imong BrainKey mahimong maka-access sa mga pondo sa imong account!</string>
     <string name="button__copied">Gikopya</string>
     <string name="button__view_and_copy">Pagtan-aw &amp; Kopyaha</string>
+    <string name="msg__backup_warning">Kinahanglan nimo nga i-backup kini nga account!</string>
     <string name="title__accounts">Mga account</string>
     <string name="msg__upgrade_to_ltm">Pag-upgrade sa LifeTime Membership (LTM). Ang Bitshares \ \'LTM account nagbayad hapit-zero fees, pagkuha 80% cashback ug mga bonus alang sa mga referral.</string>
     <string name="button__upgrade_to_ltm">Pag-upgrade sa LTM</string>

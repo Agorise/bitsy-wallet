@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Anoteu-ho! Assegureu-vos de tenir 2 còpies d’aquest BrainKey en 2 ubicacions segures en cas d’incendi o pèrdua. Seguretat primer! Qualsevol que tingui accés al vostre BrainKey pot accedir als fons del vostre compte.</string>
     <string name="button__copied">Copiat</string>
     <string name="button__view_and_copy">Veure i copiar</string>
+    <string name="msg__backup_warning">Cal que feu una còpia de seguretat d’aquest compte.</string>
     <string name="title__accounts">Comptes</string>
     <string name="msg__upgrade_to_ltm">Actualització a LifeTime Membership (LTM). Els comptes LTM de Bitshares paguen comissions gairebé nul·les, obtenen un 80% de devolució de diners i bonificacions per a derivacions.</string>
     <string name="button__upgrade_to_ltm">Actualitza a LTM</string>

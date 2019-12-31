@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Escreva isso! Certifique-se de ter 2 cópias deste BrainKey em 2 locais seguros em caso de incêndio ou perda. Segurança em primeiro lugar! Qualquer pessoa com acesso ao seu BrainKey pode acessar os fundos da sua conta!</string>
     <string name="button__copied">Copiado</string>
     <string name="button__view_and_copy">Ver e copiar</string>
+    <string name="msg__backup_warning">Você precisa fazer backup desta conta!</string>
     <string name="title__accounts">Contas</string>
     <string name="msg__upgrade_to_ltm">Atualize para a associação LifeTime (LTM). As contas LTM da Bitshares pagam taxas próximas de zero, recebem reembolso de 80% e bônus por referências.</string>
     <string name="button__upgrade_to_ltm">Atualize para LTM</string>

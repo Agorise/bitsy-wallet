@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Zapiši ovo! Budite sigurni da imate 2 kopije ovog BrainKey-a na 2 sigurna mjesta u slučaju požara ili gubitka. Prvo sigurnost! Svako ko ima pristup vašem BrainKey-u može pristupiti sredstvima na vašem računu!</string>
     <string name="button__copied">Kopirano</string>
     <string name="button__view_and_copy">Prikaži i kopiraj</string>
+    <string name="msg__backup_warning">Trebate sigurnosno kopirati ovaj račun!</string>
     <string name="title__accounts">Računi</string>
     <string name="msg__upgrade_to_ltm">Nadogradite na LifeTime članstvo (LTM). Bitshares \ \'LTM računi plaćaju naknade od skoro nule, primaju 80% gotovine i bonuse za preporuke.</string>
     <string name="button__upgrade_to_ltm">Nadogradite na LTM</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">ဒီရေးချ! သငျသညျမီးသို့မဟုတ်အရှုံး၏အမှု၌ 2 လုံခြုံနေရာများ၌ဤ BrainKey 2 မိတ္တူများသေချာပါစေ။ လုံခြုံရေးပထမဦးစွာ! သင့်ရဲ့ BrainKey မှဝင်ရောက်ခွင့်နှင့်အတူမည်သူမဆိုသင့်အကောင့်အတွက်ရန်ပုံငွေရယူနိုငျပါသညျ!</string>
     <string name="button__copied">ကူးယူ</string>
     <string name="button__view_and_copy">ကြည့်ရန် &amp; Copy ကူး</string>
+    <string name="msg__backup_warning">သင်ဤအကောင့်ကိုအရန်ကူးရန်လိုအပ်သည်!</string>
     <string name="title__accounts">accounts ကို</string>
     <string name="msg__upgrade_to_ltm">တစ်သက်တာအသင်းဝင် (LTM) အားအဆင့်မြှင့်တင်ရန်။ Bitshares \ \'\' LTM အကောင့်အနီး-သုညအခကြေးငွေပေးဆောင်, ရည်ညွှန်းအဘို့ 80% cashback နှင့်ဆုကြေးငွေရရှိမည်ဖြစ်သည်။</string>
     <string name="button__upgrade_to_ltm">LTM ဖို့ Upgrade</string>

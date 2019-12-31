@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">寫下來！如果發生火災或丟失，請確保您在2個安全位置擁有2份此BrainKey副本。安全第一！有權訪問您的BrainKey的任何人都可以訪問您帳戶中的資金！</string>
     <string name="button__copied">複製</string>
     <string name="button__view_and_copy">查看和復制</string>
+    <string name="msg__backup_warning">您需要備份該帳戶！</string>
     <string name="title__accounts">帳號</string>
     <string name="msg__upgrade_to_ltm">升級到LifeTime會員（LTM）。 Bitshares \'LTM賬戶支付接近零的費用，獲得80％的現金返還和轉介獎金。</string>
     <string name="button__upgrade_to_ltm">升級到LTM</string>

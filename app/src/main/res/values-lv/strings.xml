@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Pierakstiet šo! Pārliecinieties, ka jums ir 2 šīs BrainKey kopijas 2 drošās vietās ugunsgrēka vai nozaudēšanas gadījumā. Drošība vispirms! Ikviens, kam ir piekļuve jūsu BrainKey, var piekļūt jūsu konta līdzekļiem!</string>
     <string name="button__copied">Kopēts</string>
     <string name="button__view_and_copy">Skatīt un kopēt</string>
+    <string name="msg__backup_warning">Jums ir jāveido šī konta dublējums.</string>
     <string name="title__accounts">Konti</string>
     <string name="msg__upgrade_to_ltm">Jaunināšana uz dalību LifeTime (LTM). Bitshares \ \'LTM konti maksā gandrīz nulles maksu, saņem 80% naudas atmaksu un prēmijas par nodošanu.</string>
     <string name="button__upgrade_to_ltm">Jaunināt uz LTM</string>

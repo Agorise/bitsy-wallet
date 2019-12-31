@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Skryf dit neer! Maak seker dat u 2 eksemplare van hierdie BrainKey op 2 veilige plekke het in geval van brand of verlies. Sekuriteit eerste! Enigiemand met toegang tot u BrainKey kan toegang tot die fondse in u rekening kry!</string>
     <string name="button__copied">kopieer</string>
     <string name="button__view_and_copy">Bekyk en kopieer</string>
+    <string name="msg__backup_warning">U moet hierdie rekening rugsteun!</string>
     <string name="title__accounts">rekeninge</string>
     <string name="msg__upgrade_to_ltm">Opgradeer na LifeTime-lidmaatskap (LTM). Bitshares se LTM-rekeninge betaal byna nul-fooie, kry 80% cashback en bonusse vir verwysings.</string>
     <string name="button__upgrade_to_ltm">Opgradeer na LTM</string>

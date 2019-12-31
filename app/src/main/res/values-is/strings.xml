@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Skrifaðu þetta! Vertu viss um að þú hafir 2 eintök af þessum BrainKey á 2 öruggum stöðum ef eldur eða tjón verða. Öryggi fyrst! Allir sem hafa aðgang að BrainKey þínum geta fengið aðgang að fjármunum á reikningnum þínum!</string>
     <string name="button__copied">Afritað</string>
     <string name="button__view_and_copy">Skoða og afrita</string>
+    <string name="msg__backup_warning">Þú verður að taka afrit af þessum reikningi!</string>
     <string name="title__accounts">Reikningar</string>
     <string name="msg__upgrade_to_ltm">Uppfærðu í LifeTime aðild (LTM). Bitshares LTM reikningar greiða nær núllgjöld, fá 80% cashback og bónus fyrir tilvísanir.</string>
     <string name="button__upgrade_to_ltm">Uppfærðu í LTM</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">დაწერე ეს! დარწმუნდით, რომ თქვენ გაქვთ BrainKey- ის 2 ასლი 2 უსაფრთხო ადგილას ხანძრის ან დაზიანების შემთხვევაში. უსაფრთხოების პირველი! ყველას, ვისაც აქვს წვდომა თქვენს BrainKey- ს, შეუძლია შეხვიდეთ თქვენს ანგარიშში არსებული თანხები!</string>
     <string name="button__copied">გადაწერა</string>
     <string name="button__view_and_copy">ნახვა და კოპირება</string>
+    <string name="msg__backup_warning">ამ ანგარიშის სარეზერვო სისტემაა!</string>
     <string name="title__accounts">ანგარიშები</string>
     <string name="msg__upgrade_to_ltm">განახლება LifeTime წევრობაზე (LTM). Bitshares- ის LTM ანგარიშები იხდიან უახლოეს ნულოვან გადასახადს, მიიღებენ 80% ნაღდი ანგარიშსწორებას და გადასახადების მიღებას.</string>
     <string name="button__upgrade_to_ltm">განახლება LTM- ზე</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Soraty eto io! Aza adino fa manana kopia 2 amin\'ity BrainKey ity ianao amin\'ny toerana 2 azo antoka raha misy ny fahamaizana na fatiantoka. Fiarovana aloha! Izay rehetra miditra amin\'ny BrainKey dia afaka miditra ao amin\'ny kaontinao!</string>
     <string name="button__copied">dika</string>
     <string name="button__view_and_copy">Hijery sy handika</string>
+    <string name="msg__backup_warning">Mila manohana ny kaonty ianao!</string>
     <string name="title__accounts">Kaonty</string>
     <string name="msg__upgrade_to_ltm">Fanavaozana ho an\'ny mpikambanaTime Membership (LTM). Ny kaonty Bitshares \ \'LTM dia mandoa vidin\'oliva be dia be, mahazo vola mitentina 80% sy bonus ho an\'ny répertoire.</string>
     <string name="button__upgrade_to_ltm">Fiakarana amin\'ny LTM</string>

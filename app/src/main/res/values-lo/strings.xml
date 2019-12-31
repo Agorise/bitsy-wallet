@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">ຂຽນນີ້ລົງ! ຮັບປະກັນວ່າທ່ານມີ BrainKey ສຳ ເນົາ 2 ສະບັບໃນ 2 ສະຖານທີ່ທີ່ປອດໄພໃນກໍລະນີໄຟ ໄໝ້ ຫຼືສູນເສຍ. ຄວາມປອດໄພກ່ອນ! ທຸກໆຄົນທີ່ເຂົ້າເຖິງ BrainKey ຂອງທ່ານສາມາດເຂົ້າເຖິງເງິນທຶນໃນບັນຊີຂອງທ່ານ!</string>
     <string name="button__copied">ຄັດລອກແລ້ວ</string>
     <string name="button__view_and_copy">ເບິ່ງແລະ ສຳ ເນົາ</string>
+    <string name="msg__backup_warning">ທ່ານ ຈຳ ເປັນຕ້ອງ ສຳ ຮອງບັນຊີນີ້!</string>
     <string name="title__accounts">ບັນຊີ</string>
     <string name="msg__upgrade_to_ltm">ຍົກລະດັບໃຫ້ສະມາຊິກ LifeTime (LTM). ບັນຊີ Bitshares \ \'LTM ຈ່າຍຄ່າ ທຳ ນຽມໃກ້ສູນ, ຮັບເງີນຄືນ 80% ແລະໂບນັດ ສຳ ລັບການສົ່ງຕໍ່.</string>
     <string name="button__upgrade_to_ltm">ຍົກລະດັບເປັນ LTM</string>

@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Ikteb dan! Kun żgur li għandek 2 kopji ta \'dan BrainKey f\'2 postijiet siguri f\'każ ta\' nar jew telf. Sigurtà l-Ewwel! Kull min għandu aċċess għall-BrainKey tiegħek jista \'jaċċessa l-fondi fil-kont tiegħek!</string>
     <string name="button__copied">Ikkopjat</string>
     <string name="button__view_and_copy">Ara u Kopja</string>
+    <string name="msg__backup_warning">Għandek bżonn backup dan il-kont!</string>
     <string name="title__accounts">Kontijiet</string>
     <string name="msg__upgrade_to_ltm">Aġġornament għal Sħubija LifeTime (LTM). Il-kontijiet Bitshares \ \'LTM iħallsu miżati kważi żero, jiksbu 80% ta\' flus lura u bonusijiet għal referenzi.</string>
     <string name="button__upgrade_to_ltm">Aġġorna għal LTM</string>

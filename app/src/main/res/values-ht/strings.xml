@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Ekri sa a desann! Asire ou ke ou gen 2 kopi sa a BrainKey nan 2 kote ki an sekirite nan ka ta gen dife oswa pèt. Sekirite Sosyal Premye! Nenpòt moun ki gen aksè nan BrainKey ou ka jwenn aksè nan lajan yo nan kont ou!</string>
     <string name="button__copied">Kopi</string>
     <string name="button__view_and_copy">View &amp; Kopi</string>
+    <string name="msg__backup_warning">Ou bezwen Backup kont sa a!</string>
     <string name="title__accounts">Kont</string>
     <string name="msg__upgrade_to_ltm">Ajou a LifeTime Manm (LTM). Bitshares \'LTM kont peye frè prèske zewo, jwenn 80% kachbak ak bonis pou referans.</string>
     <string name="button__upgrade_to_ltm">Ajou LTM</string>

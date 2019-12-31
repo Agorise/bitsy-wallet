@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Bunu yaz! Yangın veya kayıp durumunda, bu BrainKey\'in 2 kopyasının 2 güvenli yerde olduğundan emin olun. Önce güvenlik! BrainKey\'inize erişimi olan herkes hesabınızdaki paralara erişebilir!</string>
     <string name="button__copied">Kopyalanan</string>
     <string name="button__view_and_copy">Görüntüle ve Kopyala</string>
+    <string name="msg__backup_warning">Bu hesabı yedeklemeniz gerekiyor!</string>
     <string name="title__accounts">Hesaplar</string>
     <string name="msg__upgrade_to_ltm">LifeTime Üyeliğine (LTM) yükseltin. Bitshares \ \'LTM hesapları sıfıra yakın ücret ödüyor,% 80 geri ödeme ve başvuru için ikramiye alıyorlar.</string>
     <string name="button__upgrade_to_ltm">LTM\'ye yükseltin</string>

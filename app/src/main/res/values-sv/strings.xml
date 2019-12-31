@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Skriv ner det här! Se till att du har två kopior av denna BrainKey på två säkra platser i händelse av brand eller förlust. Säkerhet först! Alla som har tillgång till din BrainKey kan komma åt pengarna på ditt konto!</string>
     <string name="button__copied">kopierade</string>
     <string name="button__view_and_copy">Visa och kopiera</string>
+    <string name="msg__backup_warning">Du måste säkerhetskopiera det här kontot!</string>
     <string name="title__accounts">konton</string>
     <string name="msg__upgrade_to_ltm">Uppgradera till LifeTime-medlemskap (LTM). Bitshares LTM-konton betalar nästan nollavgifter, får 80% cashback och bonusar för remisser.</string>
     <string name="button__upgrade_to_ltm">Uppgradera till LTM</string>

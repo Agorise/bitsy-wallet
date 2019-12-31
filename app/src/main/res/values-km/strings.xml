@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">សរសេរនេះចុះ! ត្រូវប្រាកដថាអ្នកមាន BrainKey ចំនួន ២ ច្បាប់នៅក្នុងទីតាំងមានសុវត្ថិភាព ២ ក្នុងករណីអគ្គិភ័យឬការបាត់បង់។ សុវត្ថិភាពជាមុនសិន! អ្នកដែលមានសិទ្ធិប្រើប្រាស់ BrainKey របស់អ្នកអាចទទួលបានមូលនិធិនៅក្នុងគណនីរបស់អ្នក!</string>
     <string name="button__copied">បានចំលង។</string>
     <string name="button__view_and_copy">មើលនិងចម្លង។</string>
+    <string name="msg__backup_warning">អ្នកត្រូវបម្រុងទុកគណនីនេះ!</string>
     <string name="title__accounts">គណនី។</string>
     <string name="msg__upgrade_to_ltm">ធ្វើឱ្យប្រសើរឡើងទៅជាសមាជិកភាពពេលវេលា (LTM) ។ គណនី LTM របស់ Bitshares បង់ថ្លៃជិតសូន្យទទួលបានប្រាក់សំណង ៨០% និងប្រាក់រង្វាន់សំរាប់ការបញ្ជូន។</string>
     <string name="button__upgrade_to_ltm">ធ្វើបច្ចុប្បន្នភាពទៅអិលធីអិម។</string>

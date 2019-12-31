@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Գրիր սա: Համոզված եղեք, որ այս BrainKey- ի 2 օրինակ կա 2 անվտանգ վայրում `հրդեհի կամ կորստի դեպքում: Անվտանգություն նախ. Յուրաքանչյուր ոք, ով մուտք ունի ձեր BrainKey- ը, կարող է մուտք ունենալ ձեր հաշվին առկա միջոցները:</string>
     <string name="button__copied">Պատճենվել է</string>
     <string name="button__view_and_copy">Դիտեք և պատճենեք</string>
+    <string name="msg__backup_warning">Դուք պետք է կրկնօրինակեք այս հաշիվը:</string>
     <string name="title__accounts">Հաշիվներ</string>
     <string name="msg__upgrade_to_ltm">Թարմացրեք LifeTime- ի անդամությանը (LTM): Bitshares- ի LTM հաշիվները վճարում են մոտ զրոյական վճար, ստանում են 80% կանխիկացում և ուղարկում են ուղեկցորդների բոնուսներ:</string>
     <string name="button__upgrade_to_ltm">Թարմացրեք LTM- ին</string>

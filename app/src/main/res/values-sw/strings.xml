@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Andika hii! Hakikisha una nakala mbili za BrainKey hii katika maeneo 2 salama ikiwa moto au upotezaji. Usalama Kwanza! Mtu yeyote anayepata BrainKey yako anaweza kupata pesa katika akaunti yako!</string>
     <string name="button__copied">Imenakiliwa</string>
     <string name="button__view_and_copy">Angalia &amp; Nakala</string>
+    <string name="msg__backup_warning">Unahitaji Hifadhi akaunti hii!</string>
     <string name="title__accounts">Akaunti</string>
     <string name="msg__upgrade_to_ltm">Boresha kwa Umiliki wa Maisha ya Maisha (LTM). Akaunti za Bitshares \ \'LTM hulipa ada ya karibu na sifuri, pata pesa taslimu 80% na mafao ya rufaa.</string>
     <string name="button__upgrade_to_ltm">Boresha kwa LTM</string>

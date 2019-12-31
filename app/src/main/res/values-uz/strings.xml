@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Buni yozing! Yong\'in yoki yo\'qotish holatlarida ushbu xavfsiz BrainKey-ning 2 nusxasi borligiga ishonch hosil qiling. Birinchidan, xavfsizlik! Sizning BrainKey-ga kirgan har kim hisobingizdagi mablag\'lardan foydalanishi mumkin!</string>
     <string name="button__copied">Nusxalangan</string>
     <string name="button__view_and_copy">Ko\'rish va nusxalash</string>
+    <string name="msg__backup_warning">Ushbu hisobni zaxiralashingiz kerak!</string>
     <string name="title__accounts">Hisoblar</string>
     <string name="msg__upgrade_to_ltm">LifeTime a\'zoligiga (LTM) yangilang. Bitshares\'ning LTM hisobvaraqlari nolga yaqin to\'lovlarni to\'laydi, yo\'llanmalar uchun 80% naqd pul va bonuslarni oladi.</string>
     <string name="button__upgrade_to_ltm">LTM-ga yangilang</string>

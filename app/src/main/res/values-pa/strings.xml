@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">ਇਸ ਨੂੰ ਲਿਖੋ! ਇਹ ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਅੱਗ ਲੱਗਣ ਜਾਂ ਨੁਕਸਾਨ ਦੇ ਮਾਮਲੇ ਵਿੱਚ ਤੁਹਾਡੇ ਕੋਲ ਇਸ ਬਰਨਕੀ ਦੀਆਂ 2 ਕਾਪੀਆਂ 2 ਸੁਰੱਖਿਅਤ ਥਾਵਾਂ ਤੇ ਹਨ. ਸੁਰੱਖਿਆ ਪਹਿਲਾਂ! ਤੁਹਾਡੇ BrainKey ਤੱਕ ਪਹੁੰਚ ਵਾਲਾ ਕੋਈ ਵੀ ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਫੰਡਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦਾ ਹੈ!</string>
     <string name="button__copied">ਕਾੱਪੀ</string>
     <string name="button__view_and_copy">ਵੇਖੋ ਅਤੇ ਨਕਲ ਕਰੋ</string>
+    <string name="msg__backup_warning">ਤੁਹਾਨੂੰ ਇਸ ਖਾਤੇ ਦਾ ਬੈਕਅਪ ਲੈਣ ਦੀ ਜ਼ਰੂਰਤ ਹੈ!</string>
     <string name="title__accounts">ਖਾਤੇ</string>
     <string name="msg__upgrade_to_ltm">ਲਾਈਫਟਾਈਮ ਮੈਂਬਰੀ (LTM) ਲਈ ਅਪਗ੍ਰੇਡ ਕਰੋ. ਬਿੱਟਸ਼ੇਅਰਜ਼ L \'ਐਲਟੀਐਮ ਖਾਤੇ ਨੇੜੇ-ਜ਼ੀਰੋ ਫੀਸਾਂ ਦਾ ਭੁਗਤਾਨ ਕਰਦੇ ਹਨ, ਰੈਫਰਲ ਲਈ 80% ਕੈਸ਼ਬੈਕ ਅਤੇ ਬੋਨਸ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ.</string>
     <string name="button__upgrade_to_ltm">LTM ਵਿੱਚ ਅਪਗ੍ਰੇਡ ਕਰੋ</string>

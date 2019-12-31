@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Бул жаз! силер оттон же жоголгон учурда 2 коопсуз жерлерде бул BrainKey 2 көчүрмөсүн керек. Коопсуздук биринчи! Сиздин BrainKey жетүү менен эч кимди эсепке акча каражаттарын колдоно аласыз!</string>
     <string name="button__copied">көчүрүлдү</string>
     <string name="button__view_and_copy">ЖМКнын &amp; Көчүрүү</string>
+    <string name="msg__backup_warning">Сиз камдык Бул каттоо эсеби керек!</string>
     <string name="title__accounts">Каттоо</string>
     <string name="msg__upgrade_to_ltm">Өмүр бою мүчөлүк (LTM) жогорулатуу. Bitshares \ \'LTM эсептери, жакын-нөл жыйымдарды төлөөгө багыттоо үчүн 80% кешбек жана бонустарды.</string>
     <string name="button__upgrade_to_ltm">LTM көтөрүү</string>

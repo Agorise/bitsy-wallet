@@ -144,6 +144,14 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         btnViewBrainKey.setOnClickListener { onShowBrainKeyButtonSelected() }
 
+        val lastAccountBackup = PreferenceManager.getDefaultSharedPreferences(context)
+            .getLong(Constants.KEY_LAST_ACCOUNT_BACKUP, 0L)
+
+        val now = System.currentTimeMillis()
+
+        if (lastAccountBackup + Constants.ACCOUNT_BACKUP_PERIOD < now)
+            tvBackupWarning.visibility = View.VISIBLE
+
         btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
 
         btnRemoveAccount.setOnClickListener { onRemoveAccountButtonSelected() }
@@ -471,16 +479,17 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             val authorityRepository = AuthorityRepository(it)
 
             mDisposables.add(authorityRepository.get(userId)
+                .subscribeOn(Schedulers.io())
+                .map { authority ->
+                    val plainBrainKey = CryptoUtils.decrypt(it, authority.encryptedBrainKey)
+                    val plainSequenceNumber = CryptoUtils.decrypt(it, authority.encryptedSequenceNumber)
+                    val sequenceNumber = Integer.parseInt(plainSequenceNumber)
+                    BrainKey(plainBrainKey, sequenceNumber)
+                }
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { authority ->
-                    if (authority != null) {
-                        val plainBrainKey = CryptoUtils.decrypt(it, authority.encryptedBrainKey)
-                        val plainSequenceNumber = CryptoUtils.decrypt(it, authority.encryptedSequenceNumber)
-                        val sequenceNumber = Integer.parseInt(plainSequenceNumber)
-                        val brainKey = BrainKey(plainBrainKey, sequenceNumber)
-                        showBrainKeyDialog(brainKey)
-                    }
+                .subscribe { brainkey ->
+                    showBrainKeyDialog(brainkey)
                 }
             )
         }
@@ -491,13 +500,19 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
      */
     private fun showBrainKeyDialog(brainKey: BrainKey) {
         context?.let { context ->
-            MaterialDialog(context).show {
-                title(text = "BrainKey")
-                message(text = brainKey.brainKey)
-                customView(R.layout.dialog_copy_brainkey)
-                cancelable(false)
-                positiveButton(R.string.button__copied) { it.dismiss() }
-            }
+            val dialog = MaterialDialog(context)
+                .title(text = "BrainKey")
+                .message(text = brainKey.brainKey)
+                .customView(R.layout.dialog_copy_brainkey)
+                .cancelable(false)
+                .positiveButton(R.string.button__copied) {
+                    val now = System.currentTimeMillis()
+                    PreferenceManager.getDefaultSharedPreferences(it.context).edit()
+                        .putLong(Constants.KEY_LAST_ACCOUNT_BACKUP, now).apply()
+                    tvBackupWarning.visibility = View.GONE
+                }
+
+            dialog.show()
         }
     }
 

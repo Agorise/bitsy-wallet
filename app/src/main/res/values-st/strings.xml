@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Ngola sena fatše! Etsa bonnete ba hore u na le likopi tse peli tsa BrainKey tsena libakeng tse 2 tse sireletsehileng haeba u ka cha kapa oa lahleha. Tšireletseho Pele! Mang kapa mang ea nang le phihlello ho BrainKey ea hau a ka kena licheleteng tsa hau!</string>
     <string name="button__copied">E kopitsoe</string>
     <string name="button__view_and_copy">Sheba &amp; Kopitsa</string>
+    <string name="msg__backup_warning">U hloka ho boloka ak\'haonte ena!</string>
     <string name="title__accounts">Litefiso</string>
     <string name="msg__upgrade_to_ltm">Ntlafatsa hore u be setho sa LifeTime (LTM). Litefiso tsa Bitshares \ \'LTM li lefa litefiso tse haufi le zero, fumana chelete ea 80% le libonase bakeng sa ho fetisoa.</string>
     <string name="button__upgrade_to_ltm">Ntlafatsa ho LTM</string>

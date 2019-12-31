@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Qor tan! Hubso inaad haysato 2 koobi oo ah BrainKeydan 2 meel oo aamin ah haddii ay dhacdo dab ama khasaare. Amniga marka hore! Qof kasta oo marin u heli kara BrainKey wuu heli karaa lacagta ku jirta koontadaada!</string>
     <string name="button__copied">Nuqul</string>
     <string name="button__view_and_copy">Muuqaal &amp; Nuqul</string>
+    <string name="msg__backup_warning">Waxaad ubaahantahay inaad Gujisid akoonkan!</string>
     <string name="title__accounts">Akoonada</string>
     <string name="msg__upgrade_to_ltm">Kordhinta xubinnimada LifeTime (LTM). Xisaabaadka Bitshares \ \'LTM waxay bixiyaan ajuuro u dhow eber, waxay helayaan 80% lacag celinno iyo gunnooyin loogu talagalay gudbinta.</string>
     <string name="button__upgrade_to_ltm">Kordhinta LTM</string>

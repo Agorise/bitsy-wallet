@@ -139,6 +139,7 @@
     <string name="msg__brainkey_info">Инро нависед! Боварӣ ҳосил кунед, ки шумо 2 нусхаи ин BrainKeyро дар 2 ҷои бехатар дар ҳолати оташ ё талаф шудан доред. Аввал Амният! Ҳар касе, ки ба BrainKey дастрасӣ дорад, метавонад ба маблағҳои дар суратҳисоби шумо воридшуда дастрасӣ пайдо кунад!</string>
     <string name="button__copied">Нусхабардор</string>
     <string name="button__view_and_copy">Намоиш ва нусхабардорӣ</string>
+    <string name="msg__backup_warning">Шумо бояд ин ҳисобро нусхабардорӣ кунед!</string>
     <string name="title__accounts">Ҳисобҳо</string>
     <string name="msg__upgrade_to_ltm">Такмил додан ба аъзогии LifeTime (LTM). Ҳисоби Bitshares \ \'LTM пардохтҳои сифрӣ пардохт мекунанд, 80% нақд ва бонусҳо барои роҳхат мегиранд.</string>
     <string name="button__upgrade_to_ltm">Такмил додан ба LTM</string>
