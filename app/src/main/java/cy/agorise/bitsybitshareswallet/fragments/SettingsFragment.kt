@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
 import com.afollestad.materialdialogs.customview.customView
@@ -66,6 +67,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
     // Dialog displaying the list of nodes and their latencies
     private var mNodesDialog: MaterialDialog? = null
+
+    // NodesDialog's RecyclerView LayoutManager used to always keep showing the first node of the list.
+    private var mNodesDialogLinearLayoutManager: LinearLayoutManager? = null
 
     /** Adapter that holds the FullNode list used in the Bitshares nodes modal */
     private var nodesAdapter: FullNodesAdapter? = null
@@ -165,13 +169,15 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             nodesAdapter?.add(fullNodes)
 
             // PublishSubject used to announce full node latencies updates
-            val fullNodePublishSubject = mNetworkService!!.nodeLatencyObservable ?: return
+            val fullNodePublishSubject = mNetworkService?.nodeLatencyObservable ?: return
 
             val nodesDisposable = fullNodePublishSubject
-                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { fullNode ->
+                        mNodesDialogLinearLayoutManager?.scrollToPositionWithOffset(0, 0)
+
                         if (!fullNode.isRemoved)
                             nodesAdapter?.add(fullNode)
                         else
@@ -181,10 +187,12 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     }
                 )
 
+            mNodesDialogLinearLayoutManager = LinearLayoutManager(v.context)
+
             mNodesDialog = MaterialDialog(v.context).show {
                 title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
                 message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
-                customListAdapter(nodesAdapter as FullNodesAdapter)
+                customListAdapter(nodesAdapter as FullNodesAdapter, mNodesDialogLinearLayoutManager)
                 negativeButton(android.R.string.ok)
                 onDismiss {
                     mHandler.removeCallbacks(mRequestDynamicGlobalPropertiesTask)
