@@ -86,11 +86,11 @@ class HomeFragment : Fragment() {
                 tvAccountName.text = userAccount.name
                 if (userAccount.isLtm) {
                     // Add the lightning bolt to the start of the account name if it is LTM
-                    tvAccountName.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                        resources.getDrawable(R.drawable.ic_ltm_account, null), null, null, null
+                    tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_ltm_account, 0, 0, 0
                     )
                     // Add some padding so that the lightning bolt icon is not too close to the account name text
-                    tvAccountName.compoundDrawablePadding = 4
+                    tvAccountName.compoundDrawablePadding = 12
                 }
             }
         })
