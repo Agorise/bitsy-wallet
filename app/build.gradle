@@ -17,8 +17,8 @@ android {
         applicationId "cy.agorise.bitsybitshareswallet"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 12
-        versionName "0.16.0-beta"
+        versionCode 13
+        versionName "0.17.0-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
