@@ -33,7 +33,7 @@ class NetworkServiceManager(nodes: List<String>) :
         }
     }
 
-    override fun onActivityCreated(activity: Activity, bundle: Bundle) {}
+    override fun onActivityCreated(activity: Activity, bundle: Bundle?) {}
     override fun onActivityStarted(activity: Activity) {}
     override fun onActivityResumed(activity: Activity?) {
         mHandler.removeCallbacks(mDisconnectRunnable)
@@ -51,12 +51,7 @@ class NetworkServiceManager(nodes: List<String>) :
     }
 
     override fun onActivityStopped(activity: Activity) {}
-    override fun onActivitySaveInstanceState(
-        activity: Activity,
-        bundle: Bundle
-    ) {
-    }
-
+    override fun onActivitySaveInstanceState(activity: Activity, bundle: Bundle) {}
     override fun onActivityDestroyed(activity: Activity) {}
 
     companion object {
