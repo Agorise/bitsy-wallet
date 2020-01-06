@@ -57,9 +57,18 @@ object Helper {
     }
 
     /**
-     * If the given currency code is supported, returns it, else returns the default one.
+     * Verifies that the locale has a valid currency, else uses the default one. Then if
+     * the given currency code is supported, returns it, else returns the default one.
      */
-    fun getCoingeckoSupportedCurrency(currencyCode: String): String {
+    fun getCoingeckoSupportedCurrency(locale: Locale): String {
+        val currency = try {
+            Currency.getInstance(locale)
+        } catch (e: IllegalArgumentException) {
+            Currency.getInstance(Locale.US)
+        }
+
+        val currencyCode = currency.currencyCode
+
         val supportedCurrencies = setOf("usd", "aed", "ars", "aud", "bdt", "bhd", "bmd", "brl", "cad",
             "chf", "clp", "cny", "czk", "dkk", "eur", "gbp", "hkd", "huf", "idr", "ils", "inr", "jpy",
             "krw", "kwd", "lkr", "mmk", "mxn", "myr", "nok", "nzd", "php", "pkr", "pln", "rub", "sar",
@@ -68,6 +77,6 @@ object Helper {
         return if (currencyCode.toLowerCase(Locale.ROOT) in supportedCurrencies)
             currencyCode
         else
-            "usd"
+            "USD"
     }
 }

@@ -159,8 +159,7 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
             llEquivalentValue.visibility = if(isChecked) View.GONE else View.VISIBLE }
         cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
 
-        val currency = Currency.getInstance(Locale.getDefault())
-        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(Locale.getDefault())
         mCurrency = Currency.getInstance(currencyCode)
 
         val fromEquivalentValue = mFilterOptions.fromEquivalentValue /

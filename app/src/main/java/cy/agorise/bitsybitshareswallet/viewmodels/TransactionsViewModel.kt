@@ -39,8 +39,7 @@ class TransactionsViewModel(application: Application) : AndroidViewModel(applica
     }
 
     internal fun getFilteredTransactions(userId: String): LiveData<List<TransferDetail>> {
-        val currency = Currency.getInstance(Locale.getDefault())
-        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(Locale.getDefault())
         transactions = mRepository.getAll(userId, currencyCode)
 
         filteredTransactions.addSource(transactions) { transactions ->

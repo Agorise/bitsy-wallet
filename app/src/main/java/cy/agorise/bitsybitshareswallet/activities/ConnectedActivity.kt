@@ -121,8 +121,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
         // Configure ConnectedActivityViewModel to obtain missing equivalent values
         mConnectedActivityViewModel = ViewModelProviders.of(this).get(ConnectedActivityViewModel::class.java)
 
-        val currency = Currency.getInstance(Locale.getDefault())
-        val currencyCode = Helper.getCoingeckoSupportedCurrency(currency.currencyCode)
+        val currencyCode = Helper.getCoingeckoSupportedCurrency(Locale.getDefault())
         Log.d(TAG, "Using currency: ${currencyCode.toUpperCase(Locale.ROOT)}")
         mConnectedActivityViewModel.observeMissingEquivalentValuesIn(currencyCode)
 
