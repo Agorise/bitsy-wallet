@@ -18,9 +18,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
-import com.crashlytics.android.Crashlytics
 import com.google.android.material.snackbar.Snackbar
 import com.google.common.primitives.UnsignedLong
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -137,7 +137,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
@@ -154,7 +155,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                     try {
                         wifKey = CryptoUtils.decrypt(it, encryptedWIF)
                     } catch (e: Exception) {
-                        Crashlytics.logException(e)
+                        crashlytics.recordException(e)
                     }
                 }
             })

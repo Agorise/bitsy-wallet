@@ -12,7 +12,7 @@ import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
@@ -105,7 +105,8 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
 
         onAttachToParentFragment(parentFragment!!)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         mFilterOptions = arguments?.getParcelable(KEY_FILTER_OPTIONS)!!
 

@@ -1,11 +1,10 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.Fragment
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.graphenej.api.ConnectionStatusUpdate
 import cy.agorise.graphenej.api.android.NetworkService
@@ -34,7 +33,8 @@ abstract class ConnectedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val locale = ConfigurationCompat.getLocales(resources.configuration)[0]
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LANGUAGE, locale.displayName)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LANGUAGE, locale.displayName)
 
         // Connect to the RxBus, which receives events from the NetworkService
         mDisposables.add(
@@ -43,7 +43,7 @@ abstract class ConnectedFragment : Fragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { handleIncomingMessage(it) } ,
-                        { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                        { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
     }

@@ -2,7 +2,7 @@ package cy.agorise.bitsybitshareswallet.repositories
 
 import android.os.AsyncTask
 import android.util.Log
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.database.daos.NodeDao
 import cy.agorise.bitsybitshareswallet.database.entities.Node
 import cy.agorise.bitsybitshareswallet.network.BitsyWebservice
@@ -100,7 +100,7 @@ class NodeRepository(private val nodeDao: NodeDao) {
                 }
             } catch (e: Exception) {
                 // Generic exception handling
-                Crashlytics.logException(e)
+                FirebaseCrashlytics.getInstance().recordException(e)
             }
         }
     }

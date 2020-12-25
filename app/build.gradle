@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
-apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 // Needed for Kotlin's @Parcelize annotation
 androidExtensions {
@@ -32,17 +32,14 @@ android {
         }
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            resValue("string", "PORT_NUMBER", "8082")
+        }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            // enable crashlytics
-            ext.enableCrashlytics = true
-        }
-        debug {
-            resValue("string", "PORT_NUMBER", "8082")
-            // disable crashlytics
-            ext.enableCrashlytics = false
         }
     }
     android.packagingOptions {
@@ -109,8 +106,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     //Firebase
-    implementation 'com.google.firebase:firebase-core:17.2.1'
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
     // CSV generation
     implementation 'com.opencsv:opencsv:3.7'
     // Others

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.utils.Constants
@@ -35,7 +35,8 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Request focus to the PIN EditText and automatically show the keyboard when the dialog appears.
         tietPIN.requestFocus()

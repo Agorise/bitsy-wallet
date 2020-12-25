@@ -2,7 +2,7 @@ package cy.agorise.bitsybitshareswallet.utils
 
 import android.app.Application
 import android.util.Log
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.network.NetworkServiceManager
 import cy.agorise.bitsybitshareswallet.repositories.NodeRepository
@@ -34,7 +34,7 @@ class BitsyApplication : Application() {
         // exception to Crashlytics so that we can fix the issues
         RxJavaPlugins.setErrorHandler { throwable ->
             Log.e("RxJava Error", throwable.message)
-            Crashlytics.logException(throwable)
+            FirebaseCrashlytics.getInstance().recordException(throwable)
         }
 
         appScope = CoroutineScope(Dispatchers.Main + applicationJob)

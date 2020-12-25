@@ -24,8 +24,8 @@
             android:value="@string/google_maps_key"/>
         <!-- Avoid Crashlytics crash collection for all users/builds -->
         <meta-data
-                android:name="firebase_crashlytics_collection_enabled"
-                android:value="false" />
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
         <!-- Avoid crashes with Google maps in SDK 28 (Android 9 [Pie]) -->
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity

@@ -30,7 +30,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.util.concurrent.TimeUnit
 import com.afollestad.materialdialogs.MaterialDialog
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.models.FaucetRequest
 import cy.agorise.bitsybitshareswallet.models.FaucetResponse
 import cy.agorise.bitsybitshareswallet.network.ServiceGenerator
@@ -72,7 +72,8 @@ class CreateAccountFragment : BaseAccountFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Use RxJava Debounce to check the validity and availability of the user's proposed account name
         mDisposables.add(
@@ -82,7 +83,7 @@ class CreateAccountFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validateAccountName(it.toString()) },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
@@ -94,7 +95,7 @@ class CreateAccountFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validatePIN() },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
@@ -106,7 +107,7 @@ class CreateAccountFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validatePINConfirmation() },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
@@ -353,7 +354,8 @@ class CreateAccountFragment : BaseAccountFragment() {
             context?.toast(getString(R.string.error__read_dict_file))
             findNavController().navigateUp()
         } catch (e: IllegalArgumentException) {
-            Crashlytics.logException(e)
+            val crashlytics = FirebaseCrashlytics.getInstance()
+            crashlytics.recordException(e)
             // TODO if this does happen to real devices, use a proper error message
             context?.toast(getString(R.string.error__try_again))
             findNavController().navigateUp()

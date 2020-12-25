@@ -11,9 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.core.CrashlyticsCore
-import cy.agorise.bitsybitshareswallet.BuildConfig
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.database.entities.Balance
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
 import cy.agorise.bitsybitshareswallet.processors.TransfersLoader
@@ -26,6 +24,7 @@ import cy.agorise.bitsybitshareswallet.viewmodels.TransferViewModel
 import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
 import cy.agorise.graphenej.Asset
 import cy.agorise.graphenej.AssetAmount
+import cy.agorise.graphenej.BuildConfig
 import cy.agorise.graphenej.UserAccount
 import cy.agorise.graphenej.api.ApiAccess
 import cy.agorise.graphenej.api.ConnectionStatusUpdate
@@ -34,7 +33,6 @@ import cy.agorise.graphenej.api.android.RxBus
 import cy.agorise.graphenej.api.calls.*
 import cy.agorise.graphenej.models.*
 import cy.agorise.graphenej.network.FullNode
-import io.fabric.sdk.android.Fabric
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -109,10 +107,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val crashlytics = Crashlytics.Builder()
-            .core(CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
-            .build()
-        Fabric.with(this, crashlytics)
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(!BuildConfig.DEBUG)
 
         getUserAccount()
 
@@ -198,7 +193,8 @@ abstract class ConnectedActivity : AppCompatActivity() {
             mCurrentAccount = UserAccount(userId)
 
         // Make sure crashlytics reports contains the account ID
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_ACCOUNT_ID, userId)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_ACCOUNT_ID, userId)
     }
 
     /**
@@ -211,7 +207,8 @@ abstract class ConnectedActivity : AppCompatActivity() {
         for (e in stack) {
             Log.e(TAG, String.format("%s#%s:%d", e.className, e.methodName, e.lineNumber))
         }
-        Crashlytics.log(Log.ERROR, TAG, "ConnectedActivity reporting error. Msg: ${throwable.message}")
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.log("E/$TAG: ConnectedActivity reporting error. Msg: ${throwable.message}")
     }
 
     private fun handleIncomingMessage(message: Any?) {
@@ -253,8 +250,9 @@ abstract class ConnectedActivity : AppCompatActivity() {
         } else if (message is ConnectionStatusUpdate) {
             if (message.updateCode == ConnectionStatusUpdate.CONNECTED) {
                 // Make sure the Crashlytics report contains the currently selected node
-                val selectedNode = mNetworkService?.selectedNode
-                Crashlytics.log(selectedNode?.url)
+                val selectedNodeUrl = mNetworkService?.selectedNode?.url ?: ""
+                val crashlytics = FirebaseCrashlytics.getInstance()
+                crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_CURRENT_NODE, selectedNodeUrl)
             } else if (message.updateCode == ConnectionStatusUpdate.DISCONNECTED) {
                 // If we got a disconnection notification, we should clear our response map, since
                 // all its stored request ids will now be reset

@@ -132,9 +132,8 @@
 
 ##--------------- proguard configuration for Crashlytics  ----------
 # source https://firebase.google.com/docs/crashlytics/get-deobfuscated-reports?platform=android
--keepattributes *Annotation*                      # Keep Crashlytics annotations
--keepattributes SourceFile,LineNumberTable        # Keep file names/line numbers
--keep public class * extends java.lang.Exception  # Keep custom exceptions (opt)
+-keepattributes SourceFile,LineNumberTable        # Keep file names and line numbers.
+-keep public class * extends java.lang.Exception  # Optional: Keep custom exceptions.
 
 
 ##--------------- proguard configuration for Coroutines  ----------

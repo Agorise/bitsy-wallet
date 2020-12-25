@@ -13,8 +13,8 @@ import androidx.collection.LongSparseArray
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.crashlytics.android.Crashlytics
 import com.google.common.primitives.UnsignedLong
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.AssetsAdapter
@@ -100,7 +100,8 @@ class ReceiveTransactionFragment : ConnectedFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Configure ViewModel
         mViewModel = ViewModelProviders.of(this).get(ReceiveTransactionViewModel::class.java)
@@ -286,7 +287,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             updateAmountAddressUI(amount, asset.symbol, asset.precision, mUserAccount!!.name)
         } catch (e: NullPointerException) {
             Log.e(TAG, "NullPointerException. Msg: " + e.message)
-            Crashlytics.logException(e)
+            FirebaseCrashlytics.getInstance().recordException(e)
         }
     }
 

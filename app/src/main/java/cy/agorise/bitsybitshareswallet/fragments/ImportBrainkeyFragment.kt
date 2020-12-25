@@ -14,7 +14,7 @@ import com.afollestad.materialdialogs.callbacks.onDismiss
 import com.afollestad.materialdialogs.list.customListAdapter
 import com.afollestad.materialdialogs.list.getRecyclerView
 import com.afollestad.materialdialogs.list.listItemsSingleChoice
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
@@ -83,7 +83,8 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Crashlytics.setString(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
+        val crashlytics = FirebaseCrashlytics.getInstance()
+        crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Use RxJava Debounce to update the PIN error only after the user stops writing for > 500 ms
         mDisposables.add(
@@ -93,7 +94,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validatePIN() },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
@@ -105,7 +106,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validatePINConfirmation() },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
@@ -118,7 +119,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     { validateBrainKey(it) },
-                    { Crashlytics.log(Log.DEBUG, TAG, it.message) }
+                    { crashlytics.log("D/$TAG: ${it.message}") }
                 )
         )
 
