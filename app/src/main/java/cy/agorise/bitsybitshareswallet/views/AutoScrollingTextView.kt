@@ -13,7 +13,7 @@ import androidx.appcompat.widget.AppCompatTextView
  *      android:marqueeRepeatLimit="marquee_forever"
  *      android:scrollHorizontally="true"
  */
-class AutoScrollingTextView(context: Context?, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
+class AutoScrollingTextView(context: Context, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
     override fun onFocusChanged(
         focused: Boolean, direction: Int,
         previouslyFocusedRect: Rect?
