@@ -12,11 +12,11 @@ androidExtensions {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "cy.agorise.bitsybitshareswallet"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 14
         versionName "0.17.1-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
