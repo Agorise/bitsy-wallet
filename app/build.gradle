@@ -66,6 +66,7 @@ dependencies {
     def lifecycle_version = "2.2.0"
     def room_version = "2.2.6"
     def rx_bindings_version = '3.0.0'
+    def version_coroutine = '1.4.1'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':graphenejlib:graphenej')
@@ -76,7 +77,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     // Google
     implementation 'com.google.zxing:core:3.4.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.android.material:material:1.1.0-alpha04'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
@@ -106,8 +107,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.0'
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     //Firebase
-    implementation 'com.google.firebase:firebase-analytics:18.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
     // CSV generation
     implementation 'com.opencsv:opencsv:3.7'
     // Others
