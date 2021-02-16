@@ -50,9 +50,6 @@ build.xml
 *.ipr
 *.iws
 
-# Fabric plugin
-app/fabric.properties
-
 # Allocation tracker
 /captures/*
 
