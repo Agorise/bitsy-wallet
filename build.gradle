@@ -9,7 +9,8 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.2'
@@ -26,11 +27,21 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
-        maven {
-            url 'https://maven.google.com/'
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        // Limit which libraries can be obtained from JCenter to these ones specified below
+        jcenter() {
+            content {
+                includeModule("com.amitshekhar.android", "debug-db")
+                includeModule("com.amitshekhar.android", "debug-db-base")
+                includeModule("com.moldedbits.r2d2", "r2d2")
+                includeModule("me.dm7.barcodescanner", "zxing")
+                includeModule("me.dm7.barcodescanner", "core")
+                includeModule("com.andrognito.patternlockview", "patternlockview")
+                includeModule("com.jraska.livedata", "testing-ktx")
+                includeModule("com.jraska.livedata", "testing")
+            }
         }
-
     }
 }
 
