@@ -6,25 +6,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
-import android.widget.*
+import android.widget.TextView
 import androidx.core.os.ConfigurationCompat
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
+import cy.agorise.bitsybitshareswallet.databinding.DialogFilterOptionsBinding
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 import cy.agorise.bitsybitshareswallet.views.DatePickerFragment
-import kotlinx.android.synthetic.main.dialog_filter_options.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.ClassCastException
 import kotlin.collections.ArrayList
 
 
@@ -43,12 +42,17 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         const val END_DATE_PICKER = 1
     }
 
+    private var _binding: DialogFilterOptionsBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var mFilterOptions: FilterOptions
 
     private var mCallback: OnFilterOptionsSelectedListener? = null
 
-    private var dateFormat: SimpleDateFormat = SimpleDateFormat("d/MMM/yyyy",
-        ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0])
+    private var dateFormat: SimpleDateFormat = SimpleDateFormat(
+        "d/MMM/yyyy",
+        ConfigurationCompat.getLocales(Resources.getSystem().configuration)[0]
+    )
 
     private var mBalanceDetails = ArrayList<BalanceDetail>()
 
@@ -59,7 +63,7 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     private lateinit var mCurrency: Currency
 
     override fun onDateSet(which: Int, timestamp: Long) {
-        when(which) {
+        when (which) {
             START_DATE_PICKER -> {
                 mFilterOptions.startDate = timestamp
 
@@ -85,10 +89,10 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
 
     private fun updateDateTextViews() {
         var date = Date(mFilterOptions.startDate)
-        tvStartDate.text = dateFormat.format(date)
+        binding.tvStartDate.text = dateFormat.format(date)
 
         date = Date(mFilterOptions.endDate)
-        tvEndDate.text = dateFormat.format(date)
+        binding.tvEndDate.text = dateFormat.format(date)
     }
 
     // Container Fragment must implement this interface
@@ -96,8 +100,13 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         fun onFilterOptionsSelected(filterOptions: FilterOptions)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.dialog_filter_options, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = DialogFilterOptionsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -112,73 +121,81 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
 
         // Initialize Transactions direction
         when (mFilterOptions.transactionsDirection) {
-            0 -> rbTransactionAll.isChecked = true
-            1 -> rbTransactionSent.isChecked = true
-            2 -> rbTransactionReceived.isChecked = true
+            0 -> binding.rbTransactionAll.isChecked = true
+            1 -> binding.rbTransactionSent.isChecked = true
+            2 -> binding.rbTransactionReceived.isChecked = true
         }
 
         // Initialize Date range
-        cbDateRange.setOnCheckedChangeListener { _, isChecked ->
-            llDateRange.visibility = if(isChecked) View.GONE else View.VISIBLE }
-        cbDateRange.isChecked = mFilterOptions.dateRangeAll
+        binding.cbDateRange.setOnCheckedChangeListener { _, isChecked ->
+            binding.llDateRange.visibility = if (isChecked) View.GONE else View.VISIBLE
+        }
+        binding.cbDateRange.isChecked = mFilterOptions.dateRangeAll
 
-        tvStartDate.setOnClickListener(mDateClickListener)
+        binding.tvStartDate.setOnClickListener(mDateClickListener)
 
-        tvEndDate.setOnClickListener(mDateClickListener)
+        binding.tvEndDate.setOnClickListener(mDateClickListener)
 
         updateDateTextViews()
 
         // Initialize Asset
-        cbAsset.setOnCheckedChangeListener { _, isChecked ->
-            sAsset.visibility = if(isChecked) View.GONE else View.VISIBLE
+        binding.cbAsset.setOnCheckedChangeListener { _, isChecked ->
+            binding.sAsset.visibility = if (isChecked) View.GONE else View.VISIBLE
         }
-        cbAsset.isChecked = mFilterOptions.assetAll
+        binding.cbAsset.isChecked = mFilterOptions.assetAll
 
         // Configure BalanceDetailViewModel to obtain the user's Balances
-        mBalanceDetailViewModel = ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
+        mBalanceDetailViewModel =
+            ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
 
-        mBalanceDetailViewModel.getAll().observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
-            mBalanceDetails.clear()
-            mBalanceDetails.addAll(balancesDetails)
-            mBalanceDetails.sortWith(
-                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-            )
-            mBalancesDetailsAdapter = BalancesDetailsAdapter(context!!, android.R.layout.simple_spinner_item, mBalanceDetails)
-            sAsset.adapter = mBalancesDetailsAdapter
+        mBalanceDetailViewModel.getAll()
+            .observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
+                mBalanceDetails.clear()
+                mBalanceDetails.addAll(balancesDetails)
+                mBalanceDetails.sortWith(
+                    Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
+                )
+                mBalancesDetailsAdapter = BalancesDetailsAdapter(
+                    context!!,
+                    android.R.layout.simple_spinner_item,
+                    mBalanceDetails
+                )
+                binding.sAsset.adapter = mBalancesDetailsAdapter
 
-            // Try to select the selectedAssetSymbol
-            for (i in 0 until mBalancesDetailsAdapter!!.count) {
-                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == mFilterOptions.asset) {
-                    sAsset.setSelection(i)
-                    break
+                // Try to select the selectedAssetSymbol
+                for (i in 0 until mBalancesDetailsAdapter!!.count) {
+                    if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == mFilterOptions.asset) {
+                        binding.sAsset.setSelection(i)
+                        break
+                    }
                 }
-            }
-        })
+            })
 
         // Initialize Equivalent Value
-        cbEquivalentValue.setOnCheckedChangeListener { _, isChecked ->
-            llEquivalentValue.visibility = if(isChecked) View.GONE else View.VISIBLE }
-        cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
+        binding.cbEquivalentValue.setOnCheckedChangeListener { _, isChecked ->
+            binding.llEquivalentValue.visibility = if (isChecked) View.GONE else View.VISIBLE
+        }
+        binding.cbEquivalentValue.isChecked = mFilterOptions.equivalentValueAll
 
         val currencyCode = Helper.getCoingeckoSupportedCurrency(Locale.getDefault())
         mCurrency = Currency.getInstance(currencyCode)
 
         val fromEquivalentValue = mFilterOptions.fromEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
-        etFromEquivalentValue.setText("$fromEquivalentValue", TextView.BufferType.EDITABLE)
+        binding.etFromEquivalentValue.setText("$fromEquivalentValue", TextView.BufferType.EDITABLE)
 
         val toEquivalentValue = mFilterOptions.toEquivalentValue /
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
-        etToEquivalentValue.setText("$toEquivalentValue", TextView.BufferType.EDITABLE)
+        binding.etToEquivalentValue.setText("$toEquivalentValue", TextView.BufferType.EDITABLE)
 
-        tvEquivalentValueSymbol.text = currencyCode.toUpperCase(Locale.getDefault())
+        binding.tvEquivalentValueSymbol.text = currencyCode.toUpperCase(Locale.getDefault())
 
         // Initialize transaction network fees
-        switchAgoriseFees.isChecked = mFilterOptions.agoriseFees
+        binding.switchAgoriseFees.isChecked = mFilterOptions.agoriseFees
 
         // Setup cancel and filter buttons
-        btnCancel.setOnClickListener { dismiss() }
-        btnFilter.setOnClickListener { validateFields() }
+        binding.btnCancel.setOnClickListener { dismiss() }
+        binding.btnFilter.setOnClickListener { validateFields() }
     }
 
     override fun onResume() {
@@ -187,7 +204,10 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         // Force dialog fragment to use the full width of the screen
         // TODO use the same width as standard fragments
         val dialogWindow = dialog?.window
-        dialogWindow?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialogWindow?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
 
     /**
@@ -226,18 +246,20 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     }
 
     private fun validateFields() {
-        mFilterOptions.transactionsDirection =  when {
-            rbTransactionAll.isChecked -> 0
-            rbTransactionSent.isChecked -> 1
-            rbTransactionReceived.isChecked -> 2
-            else -> { 0 }
+        mFilterOptions.transactionsDirection = when {
+            binding.rbTransactionAll.isChecked -> 0
+            binding.rbTransactionSent.isChecked -> 1
+            binding.rbTransactionReceived.isChecked -> 2
+            else -> {
+                0
+            }
         }
 
-        mFilterOptions.dateRangeAll = cbDateRange.isChecked
+        mFilterOptions.dateRangeAll = binding.cbDateRange.isChecked
 
-        mFilterOptions.assetAll = cbAsset.isChecked
+        mFilterOptions.assetAll = binding.cbAsset.isChecked
 
-        val symbol = (sAsset.selectedItem as BalanceDetail?)?.symbol
+        val symbol = (binding.sAsset.selectedItem as BalanceDetail?)?.symbol
         // If there are no assets in the spinner (the account has 0 balances or the app has not yet
         // fetched the account balances) symbol will be null, make sure that does not create a crash.
         if (symbol != null)
@@ -245,19 +267,20 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         else
             mFilterOptions.assetAll = true
 
-        mFilterOptions.equivalentValueAll = cbEquivalentValue.isChecked
+        mFilterOptions.equivalentValueAll = binding.cbEquivalentValue.isChecked
 
-        mFilterOptions.fromEquivalentValue = etFromEquivalentValue.text.toString().toLong() *
-                Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
+        mFilterOptions.fromEquivalentValue =
+            binding.etFromEquivalentValue.text.toString().toLong() *
+                    Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
 
-        mFilterOptions.toEquivalentValue = etToEquivalentValue.text.toString().toLong() *
+        mFilterOptions.toEquivalentValue = binding.etToEquivalentValue.text.toString().toLong() *
                 Math.pow(10.0, mCurrency.defaultFractionDigits.toDouble()).toLong()
 
         // Make sure ToEquivalentValue is at least 50 units bigger than FromEquivalentValue
         mFilterOptions.toEquivalentValue =
             Math.max(mFilterOptions.toEquivalentValue, mFilterOptions.fromEquivalentValue + 50)
 
-        mFilterOptions.agoriseFees = switchAgoriseFees.isChecked
+        mFilterOptions.agoriseFees = binding.switchAgoriseFees.isChecked
 
         mCallback!!.onFilterOptionsSelected(mFilterOptions)
         dismiss()

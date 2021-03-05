@@ -24,15 +24,19 @@ import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
 class HomeFragment : Fragment() {
 
     companion object {
-        private const val TAG ="HomeFragment"
+        private const val TAG = "HomeFragment"
     }
-
-    private lateinit var mUserAccountViewModel: UserAccountViewModel
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private lateinit var mUserAccountViewModel: UserAccountViewModel
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
         val nightMode = PreferenceManager.getDefaultSharedPreferences(context)
@@ -54,8 +58,10 @@ class HomeFragment : Fragment() {
         window?.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         // Sets the status and navigation bars background color to a dark blue or just dark
         context?.let { context ->
-            val statusBarColor = ContextCompat.getColor(context,
-                    if (!nightMode) R.color.colorPrimaryVariant else R.color.colorStatusBarDark)
+            val statusBarColor = ContextCompat.getColor(
+                context,
+                if (!nightMode) R.color.colorPrimaryVariant else R.color.colorStatusBarDark
+            )
             window?.statusBarColor = statusBarColor
             window?.navigationBarColor = statusBarColor
         }
@@ -90,22 +96,23 @@ class HomeFragment : Fragment() {
         // Configure UserAccountViewModel to show the current account
         mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
 
-        mUserAccountViewModel.getUserAccount(userId).observe(this, Observer<UserAccount>{ userAccount ->
-            if (userAccount != null) {
-                binding.tvAccountName.text = userAccount.name
-                if (userAccount.isLtm) {
-                    // Add the lightning bolt to the start of the account name if it is LTM
-                    binding.tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.ic_ltm_account, 0, 0, 0
-                    )
-                    // Add some padding so that the lightning bolt icon is not too close to the account name text
-                    binding.tvAccountName.compoundDrawablePadding = 12
+        mUserAccountViewModel.getUserAccount(userId)
+            .observe(this, Observer<UserAccount> { userAccount ->
+                if (userAccount != null) {
+                    binding.tvAccountName.text = userAccount.name
+                    if (userAccount.isLtm) {
+                        // Add the lightning bolt to the start of the account name if it is LTM
+                        binding.tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.ic_ltm_account, 0, 0, 0
+                        )
+                        // Add some padding so that the lightning bolt icon is not too close to the account name text
+                        binding.tvAccountName.compoundDrawablePadding = 12
+                    }
                 }
-            }
-        })
+            })
 
         // Navigate to the Receive Transaction Fragment
-        binding.fabReceiveTransaction.setOnClickListener (
+        binding.fabReceiveTransaction.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.receive_action)
         )
 
@@ -131,7 +138,7 @@ class HomeFragment : Fragment() {
     /**
      * Pager adapter to create the placeholder fragments
      */
-    private inner class PagerAdapter internal constructor(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class PagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
@@ -141,8 +148,12 @@ class HomeFragment : Fragment() {
                 NetWorthFragment()
         }
 
-        override fun getPageTitle(position: Int): CharSequence? {
-            return listOf(getString(R.string.title_balances), getString(R.string.title_net_worth), "")[position]
+        override fun getPageTitle(position: Int): CharSequence {
+            return listOf(
+                getString(R.string.title_balances),
+                getString(R.string.title_net_worth),
+                ""
+            )[position]
         }
 
         override fun getCount(): Int {
