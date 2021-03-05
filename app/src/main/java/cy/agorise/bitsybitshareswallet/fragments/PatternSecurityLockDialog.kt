@@ -36,6 +36,11 @@ class PatternSecurityLockDialog : BaseSecurityLockDialog() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private var newPattern = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

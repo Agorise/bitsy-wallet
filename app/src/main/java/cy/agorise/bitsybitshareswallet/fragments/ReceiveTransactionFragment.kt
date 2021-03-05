@@ -19,6 +19,7 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.AssetsAdapter
 import cy.agorise.bitsybitshareswallet.adapters.AutoSuggestAssetAdapter
+import cy.agorise.bitsybitshareswallet.databinding.FragmentReceiveTransactionBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.utils.showKeyboard
@@ -29,8 +30,6 @@ import cy.agorise.graphenej.api.ConnectionStatusUpdate
 import cy.agorise.graphenej.api.calls.ListAssets
 import cy.agorise.graphenej.models.JsonRpcResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_receive_transaction.*
-import java.lang.Exception
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
@@ -52,6 +51,9 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         private const val OTHER_ASSET = "other_asset"
     }
+
+    private var _binding: FragmentReceiveTransactionBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var mViewModel: ReceiveTransactionViewModel
 
@@ -75,7 +77,11 @@ class ReceiveTransactionFragment : ConnectedFragment() {
     // Map used to keep track of request and response id pairs
     private val responseMap = LongSparseArray<Int>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
         val nightMode = PreferenceManager.getDefaultSharedPreferences(context)
@@ -88,13 +94,21 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         // Sets the status and navigation bars background color to a dark green or just dark
         val window = activity?.window
         context?.let { context ->
-            val statusBarColor = ContextCompat.getColor(context,
-                    if (!nightMode) R.color.colorReceiveDark else R.color.colorStatusBarDark)
+            val statusBarColor = ContextCompat.getColor(
+                context,
+                if (!nightMode) R.color.colorReceiveDark else R.color.colorStatusBarDark
+            )
             window?.statusBarColor = statusBarColor
             window?.navigationBarColor = statusBarColor
         }
 
-        return inflater.inflate(R.layout.fragment_receive_transaction, container, false)
+        _binding = FragmentReceiveTransactionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -110,9 +124,9 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "")
 
         mViewModel.getUserAccount(userId!!).observe(this,
-            Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>{ user ->
+            Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount> { user ->
                 mUserAccount = UserAccount(user.id, user.name)
-        })
+            })
 
         mViewModel.getAllNonZero().observe(this,
             Observer<List<cy.agorise.bitsybitshareswallet.database.entities.Asset>> { assets ->
@@ -121,8 +135,10 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
                 // Add BTS to always show a QR
                 if (mAssets.isEmpty())
-                    mAssets.add(cy.agorise.bitsybitshareswallet.database.entities.Asset(
-                        "1.3.0", "BTS", 5, "", "")
+                    mAssets.add(
+                        cy.agorise.bitsybitshareswallet.database.entities.Asset(
+                            "1.3.0", "BTS", 5, "", ""
+                        )
                     )
 
                 mAssets.sortWith(
@@ -135,33 +151,39 @@ class ReceiveTransactionFragment : ConnectedFragment() {
                 )
                 mAssets.add(asset)
 
-                mAssetsAdapter = AssetsAdapter(context!!, android.R.layout.simple_spinner_item, mAssets)
-                spAsset.adapter = mAssetsAdapter
+                mAssetsAdapter =
+                    AssetsAdapter(context!!, android.R.layout.simple_spinner_item, mAssets)
+                binding.spAsset.adapter = mAssetsAdapter
 
                 // Try to select the selectedAssetSymbol
                 for (i in 0 until mAssetsAdapter!!.count) {
                     if (mAssetsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
-                        spAsset.setSelection(i)
+                        binding.spAsset.setSelection(i)
                         break
                     }
                 }
-        })
+            })
 
         mViewModel.qrCodeBitmap.observe(this, Observer { bitmap ->
-            ivQR.setImageBitmap(bitmap)
+            binding.ivQR.setImageBitmap(bitmap)
         })
 
-        spAsset.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) { }
+        binding.spAsset.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 mAssetsAdapter?.getItem(position)?.let { asset ->
                     if (asset.id == OTHER_ASSET) {
-                        tilAsset.visibility = View.VISIBLE
-                        actvAsset.showKeyboard()
+                        binding.tilAsset.visibility = View.VISIBLE
+                        binding.actvAsset.showKeyboard()
                         mAsset = null
                     } else {
-                        tilAsset.visibility = View.GONE
+                        binding.tilAsset.visibility = View.GONE
                         selectedAssetSymbol = asset.symbol
 
                         mAsset = Asset(asset.id, asset.toString(), asset.precision)
@@ -174,25 +196,26 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         // Use RxJava Debounce to create QR code only after the user stopped typing an amount
         mDisposables.add(
-            tietAmount.textChanges()
+            binding.tietAmount.textChanges()
                 .debounce(1000, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe( { updateQR() }, { mAsset = null} )
+                .subscribe({ updateQR() }, { mAsset = null })
         )
 
         // Add adapter to the Assets AutoCompleteTextView
-        mAutoSuggestAssetAdapter = AutoSuggestAssetAdapter(context!!, android.R.layout.simple_dropdown_item_1line)
-        actvAsset.setAdapter(mAutoSuggestAssetAdapter)
+        mAutoSuggestAssetAdapter =
+            AutoSuggestAssetAdapter(context!!, android.R.layout.simple_dropdown_item_1line)
+        binding.actvAsset.setAdapter(mAutoSuggestAssetAdapter)
 
         // Use RxJava Debounce to avoid making calls to the NetworkService on every text change event and also avoid
         // the first call when the View is created
         mDisposables.add(
-            actvAsset.textChanges()
+            binding.actvAsset.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .map { it.toString().trim().toUpperCase() }
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe( {
+                .subscribe({
                     if (!selectedInAutoCompleteTextView) {
                         mAsset = null
                         updateQR()
@@ -201,15 +224,18 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
                     // Get a list of assets that match the already typed string by the user
                     if (it.length > 1 && mNetworkService != null) {
-                        val id = mNetworkService?.sendMessage(ListAssets(it, AUTO_SUGGEST_ASSET_LIMIT),
-                            ListAssets.REQUIRED_API)
+                        val id = mNetworkService?.sendMessage(
+                            ListAssets(it, AUTO_SUGGEST_ASSET_LIMIT),
+                            ListAssets.REQUIRED_API
+                        )
                         if (id != null) responseMap.append(id, RESPONSE_LIST_ASSETS)
                     }
-                }, { mAsset = null } )
+                }, { mAsset = null })
         )
 
-        actvAsset.setOnItemClickListener { parent, _, position, _ ->
-            val asset = parent.adapter.getItem(position) as cy.agorise.bitsybitshareswallet.database.entities.Asset
+        binding.actvAsset.setOnItemClickListener { parent, _, position, _ ->
+            val asset =
+                parent.adapter.getItem(position) as cy.agorise.bitsybitshareswallet.database.entities.Asset
             mAsset = Asset(asset.id, asset.toString(), asset.precision)
             selectedInAutoCompleteTextView = true
             updateQR()
@@ -220,7 +246,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         if (responseMap.containsKey(response.id)) {
             val responseType = responseMap[response.id]
             when (responseType) {
-                RESPONSE_LIST_ASSETS    -> handleListAssets(response.result)
+                RESPONSE_LIST_ASSETS -> handleListAssets(response.result)
             }
             responseMap.remove(response.id)
         }
@@ -261,7 +287,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
     private fun updateQR() {
         if (mAsset == null) {
-            ivQR.setImageDrawable(null)
+            binding.ivQR.setImageDrawable(null)
             // TODO clean the please pay and to text at the bottom too
             return
         }
@@ -270,20 +296,22 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         // Try to obtain the amount from the Amount Text Field or make it zero otherwise
         val amount: Long = try {
-            val tmpAmount = tietAmount.text.toString().toDouble()
+            val tmpAmount = binding.tietAmount.text.toString().toDouble()
             (tmpAmount * Math.pow(10.0, asset.precision.toDouble())).toLong()
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             0
         }
 
         val total = AssetAmount(UnsignedLong.valueOf(amount), asset)
         val totalInDouble = Util.fromBase(total)
         val items = arrayOf(LineItem("transfer", 1, totalInDouble))
-        val invoice = Invoice(mUserAccount?.name, "", "",
-            asset.symbol.replaceFirst("bit", ""), items, "", "")
+        val invoice = Invoice(
+            mUserAccount?.name, "", "",
+            asset.symbol.replaceFirst("bit", ""), items, "", ""
+        )
         Log.d(TAG, "invoice: " + invoice.toJsonString())
         try {
-            mViewModel.updateInvoice(invoice, min(ivQR.width, ivQR.height))
+            mViewModel.updateInvoice(invoice, min(binding.ivQR.width, binding.ivQR.height))
             updateAmountAddressUI(amount, asset.symbol, asset.precision, mUserAccount!!.name)
         } catch (e: NullPointerException) {
             Log.e(TAG, "NullPointerException. Msg: " + e.message)
@@ -294,11 +322,16 @@ class ReceiveTransactionFragment : ConnectedFragment() {
     /**
      * Updates the UI to show the amount and account to send the payment
      */
-    private fun updateAmountAddressUI(assetAmount: Long, assetSymbol: String, assetPrecision: Int, account: String) {
+    private fun updateAmountAddressUI(
+        assetAmount: Long,
+        assetSymbol: String,
+        assetPrecision: Int,
+        account: String
+    ) {
         val txtAmount: String = if (assetAmount == 0L) {
             getString(R.string.template__please_send, getString(R.string.text__any_amount), " ")
         } else {
-            val df = DecimalFormat("####."+("#".repeat(assetPrecision)))
+            val df = DecimalFormat("####." + ("#".repeat(assetPrecision)))
             df.roundingMode = RoundingMode.CEILING
             df.decimalFormatSymbols = DecimalFormatSymbols(Locale.getDefault())
 
@@ -309,8 +342,8 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         val txtAccount = getString(R.string.template__to, account)
 
-        tvPleasePay.text = txtAmount
-        tvTo.text = txtAccount
+        binding.tvPleasePay.text = txtAmount
+        binding.tvTo.text = txtAccount
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -332,18 +365,28 @@ class ReceiveTransactionFragment : ConnectedFragment() {
     }
 
     private fun verifyStoragePermission() {
-        if (ContextCompat.checkSelfPermission(activity!!, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                activity!!,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            != PackageManager.PERMISSION_GRANTED
+        ) {
             // Permission is not already granted
-            requestPermissions(arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION)
+            requestPermissions(
+                arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION
+            )
         } else {
             // Permission is already granted
             shareQRScreenshot()
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
@@ -367,13 +410,13 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             return
 
         // Get Screenshot
-        val screenshot = Helper.loadBitmapFromView(container)
+        val screenshot = Helper.loadBitmapFromView(binding.container)
         val imageUri = Helper.saveTemporalBitmap(context!!, screenshot)
 
         // Prepare information for share intent
         val subject = getString(R.string.msg__invoice_subject, mUserAccount?.name)
-        val content = tvPleasePay.text.toString() + "\n" +
-                tvTo.text.toString()
+        val content = binding.tvPleasePay.text.toString() + "\n" +
+                binding.tvTo.text.toString()
 
         // Create share intent and call it
         val shareIntent = Intent()

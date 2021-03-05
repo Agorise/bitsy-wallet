@@ -27,6 +27,7 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
+import cy.agorise.bitsybitshareswallet.databinding.FragmentSendTransactionBinding
 import cy.agorise.bitsybitshareswallet.utils.*
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 import cy.agorise.bitsybitshareswallet.viewmodels.SendTransactionViewModel
@@ -43,7 +44,6 @@ import cy.agorise.graphenej.models.JsonRpcResponse
 import cy.agorise.graphenej.operations.TransferOperation
 import cy.agorise.graphenej.operations.TransferOperationBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_send_transaction.*
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 import org.bitcoinj.core.DumpedPrivateKey
 import org.bitcoinj.core.ECKey
@@ -73,6 +73,9 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         // Constant used to perform security locked requests
         private const val ACTION_SEND_TRANSFER = 1
     }
+
+    private var _binding: FragmentSendTransactionBinding? = null
+    private val binding get() = _binding!!
 
     // Navigation AAC Safe Args
     private val args: SendTransactionFragmentArgs by navArgs()
@@ -112,7 +115,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     /** This is one of the recipient account's public key, it will be used for memo encoding */
     private var destinationPublicKey: PublicKey? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
         val nightMode = PreferenceManager.getDefaultSharedPreferences(context)
@@ -125,13 +132,21 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         // Sets the status and navigation bars background color to a dark red or just dark
         val window = activity?.window
         context?.let { context ->
-            val statusBarColor = ContextCompat.getColor(context,
-                    if (!nightMode) R.color.colorSendDark else R.color.colorStatusBarDark)
+            val statusBarColor = ContextCompat.getColor(
+                context,
+                if (!nightMode) R.color.colorSendDark else R.color.colorStatusBarDark
+            )
             window?.statusBarColor = statusBarColor
             window?.navigationBarColor = statusBarColor
         }
 
-        return inflater.inflate(R.layout.fragment_send_transaction, container, false)
+        _binding = FragmentSendTransactionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -147,7 +162,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             mUserAccount = UserAccount(userId)
 
         // Configure ViewModel
-        mViewModel= ViewModelProviders.of(this).get(SendTransactionViewModel::class.java)
+        mViewModel = ViewModelProviders.of(this).get(SendTransactionViewModel::class.java)
 
         mViewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal).observe(this,
             Observer<String> { encryptedWIF ->
@@ -168,37 +183,43 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             }, 500)
         }
 
-        fabOpenCamera.setOnClickListener { if (isCameraPreviewVisible) stopCameraPreview() else verifyCameraPermission() }
+        binding.fabOpenCamera.setOnClickListener { if (isCameraPreviewVisible) stopCameraPreview() else verifyCameraPermission() }
 
         // Configure BalanceDetailViewModel to show the current balances
-        mBalanceDetailViewModel = ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
+        mBalanceDetailViewModel =
+            ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
 
-        mBalanceDetailViewModel.getAll().observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
-            mBalancesDetails.clear()
-            mBalancesDetails.addAll(balancesDetails)
-            mBalancesDetails.sortWith(
-                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-            )
-            mBalancesDetailsAdapter = BalancesDetailsAdapter(context!!, android.R.layout.simple_spinner_item, mBalancesDetails)
-            spAsset.adapter = mBalancesDetailsAdapter
+        mBalanceDetailViewModel.getAll()
+            .observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
+                mBalancesDetails.clear()
+                mBalancesDetails.addAll(balancesDetails)
+                mBalancesDetails.sortWith(
+                    Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
+                )
+                mBalancesDetailsAdapter = BalancesDetailsAdapter(
+                    context!!,
+                    android.R.layout.simple_spinner_item,
+                    mBalancesDetails
+                )
+                binding.spAsset.adapter = mBalancesDetailsAdapter
 
-            // Try to select the selectedAssetSymbol
-            for (i in 0 until mBalancesDetailsAdapter!!.count) {
-                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
-                    spAsset.setSelection(i)
-                    break
+                // Try to select the selectedAssetSymbol
+                for (i in 0 until mBalancesDetailsAdapter!!.count) {
+                    if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
+                        binding.spAsset.setSelection(i)
+                        break
+                    }
                 }
-            }
-        })
+            })
 
-        spAsset.onItemSelectedListener = assetItemSelectedListener
+        binding.spAsset.onItemSelectedListener = assetItemSelectedListener
 
-        fabSendTransaction.setOnClickListener { verifySecurityLockSendTransfer() }
-        fabSendTransaction.disable(R.color.lightGray)
+        binding.fabSendTransaction.setOnClickListener { verifySecurityLockSendTransfer() }
+        binding.fabSendTransaction.disable(R.color.lightGray)
 
         // Use RxJava Debounce to avoid making calls to the NetworkService on every text change event
         mDisposables.add(
-            tietTo.textChanges()
+            binding.tietTo.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .map { it.toString().trim() }
@@ -209,7 +230,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         // Use RxJava Debounce to update the Amount error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietAmount.textChanges()
+            binding.tietAmount.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -218,13 +239,13 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         // Use RxJava Debounce to update the Memo error, to make sure it has the correct length
         mDisposables.add(
-            tietMemo.textChanges()
+            binding.tietMemo.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .map { it.toString().trim() }
                 .subscribe {
-                    isMemoCorrect = it.length <= tilMemo.counterMaxLength
+                    isMemoCorrect = it.length <= binding.tilMemo.counterMaxLength
                     enableDisableSendFAB()
                 }
         )
@@ -243,8 +264,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
     /** Handles the selection of items in the Asset spinner, to keep track of the selectedAssetSymbol and show the
      * current user's balance of the selected asset. */
-    private val assetItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-        override fun onNothingSelected(parent: AdapterView<*>?) { }
+    private val assetItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        override fun onNothingSelected(parent: AdapterView<*>?) {}
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             val balance = mBalancesDetailsAdapter!!.getItem(position)!!
@@ -252,8 +273,12 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
             val amount = balance.amount.toDouble() / Math.pow(10.0, balance.precision.toDouble())
 
-            tvAvailableAssetAmount.text =
-                    String.format("%." + Math.min(balance.precision, 8) + "f %s", amount, balance.toString())
+            binding.tvAvailableAssetAmount.text =
+                String.format(
+                    "%." + Math.min(balance.precision, 8) + "f %s",
+                    amount,
+                    balance.toString()
+                )
 
             validateAmount()
         }
@@ -262,10 +287,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
             when (responseMap[response.id]) {
-                RESPONSE_GET_ACCOUNT_BY_NAME            -> handleAccountProperties(response.result)
-                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES  -> handleDynamicGlobalProperties(response.result)
-                RESPONSE_GET_REQUIRED_FEES              -> handleRequiredFees(response.result)
-                RESPONSE_BROADCAST_TRANSACTION          -> handleBroadcastTransaction(response)
+                RESPONSE_GET_ACCOUNT_BY_NAME -> handleAccountProperties(response.result)
+                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES -> handleDynamicGlobalProperties(response.result)
+                RESPONSE_GET_REQUIRED_FEES -> handleRequiredFees(response.result)
+                RESPONSE_BROADCAST_TRANSACTION -> handleBroadcastTransaction(response)
             }
             responseMap.remove(response.id)
         }
@@ -285,12 +310,12 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         if (result is AccountProperties) {
             mSelectedUserAccount = UserAccount(result.id, result.name)
             destinationPublicKey = result.active.keyAuths.keys.iterator().next()
-            tilTo.isErrorEnabled = false
+            binding.tilTo.isErrorEnabled = false
             isToAccountCorrect = true
         } else {
             mSelectedUserAccount = null
             destinationPublicKey = null
-            tilTo.error = getString(R.string.error__invalid_account)
+            binding.tilTo.error = getString(R.string.error__invalid_account)
             isToAccountCorrect = false
         }
 
@@ -320,7 +345,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
             val feeAsset = Asset(Constants.CORE_ASSET)
 
-            val id = mNetworkService?.sendMessage(GetRequiredFees(transaction!!, feeAsset), GetRequiredFees.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(
+                GetRequiredFees(transaction!!, feeAsset),
+                GetRequiredFees.REQUIRED_API
+            )
             if (id != null) responseMap.append(id, RESPONSE_GET_REQUIRED_FEES)
         } else {
             context?.toast(getString(R.string.msg__transaction_not_sent))
@@ -334,7 +362,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             Log.d(TAG, "GetRequiredFees: " + transaction.toString())
             transaction!!.setFees(result as List<AssetAmount>) // TODO find how to remove this warning
 
-            val id = mNetworkService?.sendMessage(BroadcastTransaction(transaction), BroadcastTransaction.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(
+                BroadcastTransaction(transaction),
+                BroadcastTransaction.REQUIRED_API
+            )
             if (id != null) responseMap.append(id, RESPONSE_BROADCAST_TRANSACTION)
         } else {
             context?.toast(getString(R.string.msg__transaction_not_sent))
@@ -357,9 +388,13 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     /** Verifies if the user has already granted the Camera permission, if not the asks for it */
     private fun verifyCameraPermission() {
         if (ContextCompat.checkSelfPermission(activity!!, android.Manifest.permission.CAMERA)
-            != PackageManager.PERMISSION_GRANTED) {
+            != PackageManager.PERMISSION_GRANTED
+        ) {
             // Permission is not already granted
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
+            requestPermissions(
+                arrayOf(android.Manifest.permission.CAMERA),
+                REQUEST_CAMERA_PERMISSION
+            )
         } else {
             // Permission is already granted
             startCameraPreview()
@@ -367,7 +402,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     }
 
     /** Handles the result from the camera permission request */
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
@@ -381,27 +420,27 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     }
 
     private fun startCameraPreview() {
-        cameraPreview.visibility = View.VISIBLE
-        fabOpenCamera.setImageResource(R.drawable.ic_close)
+        binding.cameraPreview.visibility = View.VISIBLE
+        binding.fabOpenCamera.setImageResource(R.drawable.ic_close)
         isCameraPreviewVisible = true
 
         // Configure QR scanner
-        cameraPreview.setFormats(listOf(BarcodeFormat.QR_CODE))
-        cameraPreview.setAspectTolerance(0.5f)
-        cameraPreview.setAutoFocus(true)
-        cameraPreview.setLaserColor(R.color.colorSecondary)
-        cameraPreview.setMaskColor(R.color.colorSecondary)
-        cameraPreview.setResultHandler(this)
-        cameraPreview.startCamera()
+        binding.cameraPreview.setFormats(listOf(BarcodeFormat.QR_CODE))
+        binding.cameraPreview.setAspectTolerance(0.5f)
+        binding.cameraPreview.setAutoFocus(true)
+        binding.cameraPreview.setLaserColor(R.color.colorSecondary)
+        binding.cameraPreview.setMaskColor(R.color.colorSecondary)
+        binding.cameraPreview.setResultHandler(this)
+        binding.cameraPreview.startCamera()
 
-        cameraPreview.scrollY = holderCamera.width / 6
+        binding.cameraPreview.scrollY = binding.holderCamera.width / 6
     }
 
     private fun stopCameraPreview() {
-        cameraPreview.visibility = View.INVISIBLE
-        fabOpenCamera.setImageResource(R.drawable.ic_camera)
+        binding.cameraPreview.visibility = View.INVISIBLE
+        binding.fabOpenCamera.setImageResource(R.drawable.ic_camera)
         isCameraPreviewVisible = false
-        cameraPreview.stopCamera()
+        binding.cameraPreview.stopCamera()
     }
 
     /** Handles the result of the QR code read from the camera **/
@@ -410,19 +449,19 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     }
 
     /** Tries to populate the Account, Amount and Memo fields
-    * and the Asset spinner with the obtained information */
+     * and the Asset spinner with the obtained information */
     private fun populatePropertiesFromQRCodeString(qrString: String) {
         try {
             val invoice = Invoice.fromQrCode(qrString)
 
             Log.d(TAG, "QR Code read: " + invoice.toJsonString())
 
-            tietTo.setText(invoice.to)
+            binding.tietTo.setText(invoice.to)
 
             if (invoice.memo != null) {
-                tietMemo.setText(invoice.memo)
+                binding.tietMemo.setText(invoice.memo)
                 if (invoice.memo.startsWith("PP"))
-                    tietMemo.isEnabled = false
+                    binding.tietMemo.isEnabled = false
             }
 
             var balanceDetail: BalanceDetail? = null
@@ -432,8 +471,9 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 if (mBalancesDetailsAdapter?.getItem(i)?.symbol == invoice.currency.toUpperCase() ||
                     (invoice.currency.startsWith("bit", true) &&
                             invoice.currency.replaceFirst("bit", "").toUpperCase() ==
-                            mBalancesDetailsAdapter?.getItem(i)?.symbol)) {
-                    spAsset.setSelection(i)
+                            mBalancesDetailsAdapter?.getItem(i)?.symbol)
+                ) {
+                    binding.spAsset.setSelection(i)
                     balanceDetail = mBalancesDetailsAdapter?.getItem(i)
                     break
                 }
@@ -442,8 +482,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             // If the user does not own any of the requested asset then show a SnackBar to explain the issue and
             // return early to avoid filling the asset field
             if (balanceDetail == null) {
-                Snackbar.make(rootView, getString(R.string.error__you_dont_own_asset, invoice.currency.toUpperCase()),
-                    Snackbar.LENGTH_INDEFINITE).setAction(android.R.string.ok) {  }.show()
+                Snackbar.make(
+                    binding.rootView,
+                    getString(R.string.error__you_dont_own_asset, invoice.currency.toUpperCase()),
+                    Snackbar.LENGTH_INDEFINITE
+                ).setAction(android.R.string.ok) { }.show()
                 return
             }
 
@@ -457,12 +500,12 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 val df = DecimalFormat("####." + "#".repeat(balanceDetail.precision))
                 df.roundingMode = RoundingMode.CEILING
                 df.decimalFormatSymbols = DecimalFormatSymbols(Locale.getDefault())
-                tietAmount.setText(df.format(amount))
+                binding.tietAmount.setText(df.format(amount))
             } else {
-                tietAmount.setText("")
+                binding.tietAmount.setText("")
             }
 
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             Log.d(TAG, "Invoice error: " + e.message)
         }
     }
@@ -473,15 +516,19 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
      */
     private fun validateAccount(accountName: String) {
         isToAccountCorrect = false
-        val id = mNetworkService?.sendMessage(GetAccountByName(accountName), GetAccountByName.REQUIRED_API)
+        val id = mNetworkService?.sendMessage(
+            GetAccountByName(accountName),
+            GetAccountByName.REQUIRED_API
+        )
         if (id != null) responseMap.append(id, RESPONSE_GET_ACCOUNT_BY_NAME)
     }
 
     private fun validateAmount() {
-        val txtAmount = tietAmount.text.toString().replace(",", ".")
+        val txtAmount = binding.tietAmount.text.toString().replace(",", ".")
 
         if (mBalancesDetailsAdapter?.isEmpty != false) return
-        val balance = mBalancesDetailsAdapter?.getItem(spAsset.selectedItemPosition) ?: return
+        val balance =
+            mBalancesDetailsAdapter?.getItem(binding.spAsset.selectedItemPosition) ?: return
         val currentAmount = balance.amount.toDouble() / Math.pow(10.0, balance.precision.toDouble())
 
         val amount: Double = try {
@@ -492,15 +539,15 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         when {
             currentAmount < amount -> {
-                tilAmount.error = getString(R.string.error__not_enough_funds)
+                binding.tilAmount.error = getString(R.string.error__not_enough_funds)
                 isAmountCorrect = false
             }
             amount == 0.0 -> {
-                tilAmount.isErrorEnabled = false
+                binding.tilAmount.isErrorEnabled = false
                 isAmountCorrect = false
             }
             else -> {
-                tilAmount.isErrorEnabled = false
+                binding.tilAmount.isErrorEnabled = false
                 isAmountCorrect = true
             }
         }
@@ -510,11 +557,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
     private fun enableDisableSendFAB() {
         if (isToAccountCorrect && isAmountCorrect && isMemoCorrect) {
-            fabSendTransaction.enable(R.color.colorSend)
-            vSend.setBackgroundResource(R.drawable.send_fab_background)
+            binding.fabSendTransaction.enable(R.color.colorSend)
+            binding.vSend.setBackgroundResource(R.drawable.send_fab_background)
         } else {
-            fabSendTransaction.disable(R.color.lightGray)
-            vSend.setBackgroundResource(R.drawable.send_fab_background_disabled)
+            binding.fabSendTransaction.disable(R.color.lightGray)
+            binding.vSend.setBackgroundResource(R.drawable.send_fab_background_disabled)
         }
     }
 
@@ -528,8 +575,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
         // Args used for both PIN and Pattern options
         val args = Bundle()
-        args.putInt(BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
-            BaseSecurityLockDialog.STEP_SECURITY_LOCK_VERIFY)
+        args.putInt(
+            BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
+            BaseSecurityLockDialog.STEP_SECURITY_LOCK_VERIFY
+        )
         args.putInt(BaseSecurityLockDialog.KEY_ACTION_IDENTIFIER, ACTION_SEND_TRANSFER)
 
         when (securityLockSelected) {
@@ -556,15 +605,16 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         }
     }
 
-    override fun onPINPatternChanged() { /* Do nothing */ }
+    override fun onPINPatternChanged() { /* Do nothing */
+    }
 
     /** Starts the Send Transfer operation procedure, creating a [TransferOperation] and sending a call to the
      * NetworkService to obtain the [DynamicGlobalProperties] object needed to successfully send a Transfer */
     private fun startSendTransferOperation() {
         // Create TransferOperation
         if (mNetworkService?.isConnected == true) {
-            val balance = mBalancesDetailsAdapter!!.getItem(spAsset.selectedItemPosition)!!
-            val amount = (tietAmount.text.toString().replace(",", ".").toDouble()
+            val balance = mBalancesDetailsAdapter!!.getItem(binding.spAsset.selectedItemPosition)!!
+            val amount = (binding.tietAmount.text.toString().replace(",", ".").toDouble()
                     * Math.pow(10.0, balance.precision.toDouble())).toLong()
 
             val transferAmount = AssetAmount(UnsignedLong.valueOf(amount), Asset(balance.id))
@@ -574,13 +624,16 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
                 .setDestination(mSelectedUserAccount)
                 .setTransferAmount(transferAmount)
 
-            val privateKey = ECKey.fromPrivate(DumpedPrivateKey.fromBase58(null, wifKey).key.privKeyBytes)
+            val privateKey =
+                ECKey.fromPrivate(DumpedPrivateKey.fromBase58(null, wifKey).key.privKeyBytes)
 
             // Add memo if it is not empty
-            val memoMsg = tietMemo.text.toString()
+            val memoMsg = binding.tietMemo.text.toString()
             if (memoMsg.isNotEmpty()) {
-                val nonce = Math.abs(SecureRandomGenerator.getSecureRandom().nextLong()).toBigInteger()
-                val encryptedMemo = Memo.encryptMessage(privateKey, destinationPublicKey!!, nonce, memoMsg)
+                val nonce =
+                    Math.abs(SecureRandomGenerator.getSecureRandom().nextLong()).toBigInteger()
+                val encryptedMemo =
+                    Memo.encryptMessage(privateKey, destinationPublicKey!!, nonce, memoMsg)
                 val from = Address(ECKey.fromPublicOnly(privateKey.pubKey))
                 val to = Address(destinationPublicKey!!.key)
                 val memo = Memo(from, to, nonce, encryptedMemo)
@@ -601,9 +654,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             transaction = Transaction(privateKey, null, operations)
 
             // Start the send transaction procedure which includes a series of calls
-            val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(),
-                GetDynamicGlobalProperties.REQUIRED_API)
-            if (id != null ) responseMap.append(id,  RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES)
+            val id = mNetworkService?.sendMessage(
+                GetDynamicGlobalProperties(),
+                GetDynamicGlobalProperties.REQUIRED_API
+            )
+            if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES)
         } else
             Log.d(TAG, "Network Service is not connected")
     }
@@ -634,8 +689,12 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             return null
 
         // Verify that the current Asset is either BTS or a SmartCoin
-        if (Constants.assetsWhichSendFeeToAgorise.contains(transferOperation.assetAmount?.asset?.objectId ?: "")) {
-            val fee = transferOperation.assetAmount?.multiplyBy(Constants.FEE_PERCENTAGE) ?: return null
+        if (Constants.assetsWhichSendFeeToAgorise.contains(
+                transferOperation.assetAmount?.asset?.objectId ?: ""
+            )
+        ) {
+            val fee =
+                transferOperation.assetAmount?.multiplyBy(Constants.FEE_PERCENTAGE) ?: return null
 
             return TransferOperationBuilder()
                 .setSource(mUserAccount)
