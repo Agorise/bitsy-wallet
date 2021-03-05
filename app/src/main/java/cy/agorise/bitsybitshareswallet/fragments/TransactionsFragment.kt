@@ -21,12 +21,12 @@ import com.jakewharton.rxbinding3.appcompat.queryTextChangeEvents
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.TransfersDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
+import cy.agorise.bitsybitshareswallet.databinding.FragmentTransactionsBinding
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.*
 import cy.agorise.bitsybitshareswallet.viewmodels.TransactionsViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.fragment_transactions.*
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -42,14 +42,27 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         private const val REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 100
     }
 
+    private var _binding: FragmentTransactionsBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var mViewModel: TransactionsViewModel
 
     private var mDisposables = CompositeDisposable()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
-        return inflater.inflate(R.layout.fragment_transactions, container, false)
+        _binding = FragmentTransactionsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,8 +75,8 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
 
         val transfersDetailsAdapter = TransfersDetailsAdapter(context!!)
-        rvTransactions.adapter = transfersDetailsAdapter
-        rvTransactions.layoutManager = LinearLayoutManager(context)
+        binding.rvTransactions.adapter = transfersDetailsAdapter
+        binding.rvTransactions.layoutManager = LinearLayoutManager(context)
 
         // Configure TransactionsViewModel to fetch the transaction history
         mViewModel = ViewModelProviders.of(this).get(TransactionsViewModel::class.java)
@@ -71,11 +84,11 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         mViewModel.getFilteredTransactions(userId).observe(this,
             Observer<List<TransferDetail>> { transactions ->
                 if (transactions.isEmpty()) {
-                    rvTransactions.visibility = View.GONE
-                    tvEmpty.visibility = View.VISIBLE
+                    binding.rvTransactions.visibility = View.GONE
+                    binding.tvEmpty.visibility = View.VISIBLE
                 } else {
-                    rvTransactions.visibility = View.VISIBLE
-                    tvEmpty.visibility = View.GONE
+                    binding.rvTransactions.visibility = View.VISIBLE
+                    binding.tvEmpty.visibility = View.GONE
 
                     val shouldScrollUp = transactions.size - transfersDetailsAdapter.itemCount == 1
                     transfersDetailsAdapter.replaceAll(transactions)
@@ -83,13 +96,13 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                     // Scroll to the top only if the difference between old and new items is 1
                     // which most likely means a new transaction was received/sent.
                     if (shouldScrollUp)
-                        rvTransactions.scrollToPosition(0)
+                        binding.rvTransactions.scrollToPosition(0)
                 }
-        })
+            })
 
         // Set custom touch listener to handle bounce/stretch effect
-        val bounceTouchListener = BounceTouchListener(rvTransactions)
-        rvTransactions.setOnTouchListener(bounceTouchListener)
+        val bounceTouchListener = BounceTouchListener(binding.rvTransactions)
+        binding.rvTransactions.setOnTouchListener(bounceTouchListener)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -118,7 +131,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
             R.id.menu_filter -> {
                 val filterOptionsDialog = FilterOptionsDialog()
                 val args = Bundle()
-                args.putParcelable(FilterOptionsDialog.KEY_FILTER_OPTIONS, mViewModel.getFilterOptions())
+                args.putParcelable(
+                    FilterOptionsDialog.KEY_FILTER_OPTIONS,
+                    mViewModel.getFilterOptions()
+                )
                 filterOptionsDialog.arguments = args
                 filterOptionsDialog.show(childFragmentManager, "filter-options-tag")
                 true
@@ -152,11 +168,17 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
 
     /** Verifies that the storage permission has been granted before attempting to generate the export options */
     private fun verifyStoragePermission() {
-        if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                activity!!,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            != PackageManager.PERMISSION_GRANTED
+        ) {
             // Permission is not already granted
-            requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION)
+            requestPermissions(
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION
+            )
         } else {
             // Permission is already granted
             showExportOptionsDialog()
@@ -166,7 +188,11 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     /** Received the result of the storage permission request and if it was accepted then shows the export options
      * dialog, but if it was not accepted then shows a toast explaining that the permission is necessary to generate
      * the export options */
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION) {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
@@ -181,7 +207,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     private fun showExportOptionsDialog() {
         MaterialDialog(context!!).show {
             title(R.string.title_export_transactions)
-            listItemsMultiChoice(R.array.export_options, initialSelection = intArrayOf(0,1)) { _, indices, _ ->
+            listItemsMultiChoice(
+                R.array.export_options,
+                initialSelection = intArrayOf(0, 1)
+            ) { _, indices, _ ->
                 val exportPDF = indices.contains(0)
                 val exportCSV = indices.contains(1)
                 exportFilteredTransactions(exportPDF, exportCSV)

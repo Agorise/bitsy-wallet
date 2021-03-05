@@ -10,11 +10,11 @@ import android.view.inputmethod.EditorInfo
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.databinding.DialogPinSecurityLockBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.CryptoUtils
 import cy.agorise.bitsybitshareswallet.utils.hideKeyboard
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.dialog_pin_security_lock.*
 
 /**
  * Contains all the specific logic to create and confirm a new PIN or verifying the validity of the current one.
@@ -25,9 +25,22 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
         const val TAG = "PINSecurityLockDialog"
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private var _binding: DialogPinSecurityLockBinding? = null
+    private val binding get() = _binding!!
 
-        return inflater.inflate(R.layout.dialog_pin_security_lock, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        _binding = DialogPinSecurityLockBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private var newPIN = ""
@@ -39,13 +52,13 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
         crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Request focus to the PIN EditText and automatically show the keyboard when the dialog appears.
-        tietPIN.requestFocus()
+        binding.tietPIN.requestFocus()
         dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
 
         setupScreen()
 
         // Listens to the event when the user clicks the 'Enter' button in the keyboard and acts accordingly
-        tietPIN.setOnEditorActionListener { v, actionId, _ ->
+        binding.tietPIN.setOnEditorActionListener { v, actionId, _ ->
             var handled = false
             if (actionId == EditorInfo.IME_ACTION_GO) {
                 if (currentStep == STEP_SECURITY_LOCK_VERIFY) {
@@ -56,8 +69,8 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
                     if (hashedPIN == currentHashedPINPattern) {
                         // PIN is correct, proceed
                         resetIncorrectSecurityLockAttemptsAndTime()
-                        tietPIN.hideKeyboard()
-                        rootView.requestFocus()
+                        binding.tietPIN.hideKeyboard()
+                        binding.rootView.requestFocus()
                         dismiss()
                         mCallback?.onPINPatternEntered(actionIdentifier)
                     } else {
@@ -65,7 +78,7 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
                         if (incorrectSecurityLockAttempts < Constants.MAX_INCORRECT_SECURITY_LOCK_ATTEMPTS) {
                             // Show the error only when the user has not reached the max attempts limit, because if that
                             // is the case another error is gonna be shown in the setupScreen() method
-                            tilPIN.error = getString(R.string.error__wrong_pin)
+                            binding.tilPIN.error = getString(R.string.error__wrong_pin)
                         }
                         setupScreen()
                     }
@@ -81,7 +94,7 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
                 } else if (currentStep == STEP_SECURITY_LOCK_CONFIRM) {
                     val pinConfirm = v.text.toString().trim()
                     if (pinConfirm != newPIN) {
-                        tvTitle.text = getString(R.string.title__pins_dont_match)
+                        binding.tvTitle.text = getString(R.string.title__pins_dont_match)
                     } else {
                         val salt = CryptoUtils.generateSalt()
                         val hashedPIN = CryptoUtils.createSHA256Hash(salt + pinConfirm)
@@ -103,20 +116,21 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
         }
 
         mDisposables.add(
-            tietPIN.textChanges()
+            binding.tietPIN.textChanges()
                 .skipInitialValue()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     if (currentStep == STEP_SECURITY_LOCK_VERIFY &&
-                        incorrectSecurityLockAttempts < Constants.MAX_INCORRECT_SECURITY_LOCK_ATTEMPTS) {
+                        incorrectSecurityLockAttempts < Constants.MAX_INCORRECT_SECURITY_LOCK_ATTEMPTS
+                    ) {
                         // Make sure the error is removed when the user types again
-                        tilPIN.isErrorEnabled = false
+                        binding.tilPIN.isErrorEnabled = false
                     } else if (currentStep == STEP_SECURITY_LOCK_CREATE) {
                         // Show the min length requirement for the PIN only when it has not been fulfilled
                         if (it.trim().length >= Constants.MIN_PIN_LENGTH) {
-                            tilPIN.helperText = ""
+                            binding.tilPIN.helperText = ""
                         } else {
-                            tilPIN.helperText = getString(R.string.msg__min_pin_length)
+                            binding.tilPIN.helperText = getString(R.string.msg__min_pin_length)
                         }
                     }
                 }
@@ -126,15 +140,15 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
     private fun setupScreen() {
         when (currentStep) {
             STEP_SECURITY_LOCK_VERIFY -> {
-                tvTitle.text = getString(R.string.title__re_enter_your_pin)
-                tvSubTitle.text = getString(R.string.msg__enter_your_pin)
-                tietPIN.isEnabled = true
+                binding.tvTitle.text = getString(R.string.title__re_enter_your_pin)
+                binding.tvSubTitle.text = getString(R.string.msg__enter_your_pin)
+                binding.tietPIN.isEnabled = true
                 if (incorrectSecurityLockAttempts >= Constants.MAX_INCORRECT_SECURITY_LOCK_ATTEMPTS) {
                     // User has entered the PIN incorrectly too many times
                     val now = System.currentTimeMillis()
                     if (now <= incorrectSecurityLockTime + Constants.INCORRECT_SECURITY_LOCK_COOLDOWN) {
-                        tietPIN.setText("")
-                        tietPIN.isEnabled = false
+                        binding.tietPIN.setText("")
+                        binding.tietPIN.isEnabled = false
                         startContDownTimer()
                     } else {
                         resetIncorrectSecurityLockAttemptsAndTime()
@@ -142,28 +156,28 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
                 }
             }
             STEP_SECURITY_LOCK_CREATE -> {
-                tvTitle.text = getString(R.string.title__set_bitsy_security_lock)
-                tvSubTitle.text = getString(R.string.msg__set_a_pin)
-                tilPIN.helperText = getString(R.string.msg__min_pin_length)
-                tilPIN.isErrorEnabled = false
+                binding.tvTitle.text = getString(R.string.title__set_bitsy_security_lock)
+                binding.tvSubTitle.text = getString(R.string.msg__set_a_pin)
+                binding.tilPIN.helperText = getString(R.string.msg__min_pin_length)
+                binding.tilPIN.isErrorEnabled = false
             }
             STEP_SECURITY_LOCK_CONFIRM -> {
-                tvTitle.text = getString(R.string.title__re_enter_your_pin)
-                tvSubTitle.text = ""
-                tvSubTitle.visibility = View.GONE
-                tietPIN.setText("")
-                tilPIN.helperText = ""
-                tilPIN.isErrorEnabled = false
+                binding.tvTitle.text = getString(R.string.title__re_enter_your_pin)
+                binding.tvSubTitle.text = ""
+                binding.tvSubTitle.visibility = View.GONE
+                binding.tietPIN.setText("")
+                binding.tilPIN.helperText = ""
+                binding.tilPIN.isErrorEnabled = false
             }
         }
     }
 
     override fun onTimerSecondPassed(errorMessage: String) {
-        tilPIN.error = errorMessage
+        binding.tilPIN.error = errorMessage
     }
 
     override fun onTimerFinished() {
         setupScreen()
-        tilPIN.isErrorEnabled = false
+        binding.tilPIN.isErrorEnabled = false
     }
 }

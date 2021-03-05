@@ -12,8 +12,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.databinding.ActivityMainBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
-import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * Uses the AAC Navigation Component with a NavHostFragment which is the place where all Fragments are shown,
@@ -21,7 +21,8 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : ConnectedActivity() {
 
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     // Handler and Runnable used to add a timer for user inaction and close the app if enough time has passed
     private lateinit var mHandler: Handler
@@ -31,12 +32,14 @@ class MainActivity : ConnectedActivity() {
         super.onCreate(savedInstanceState)
         // Sets the theme to night mode if it has been selected by the user
         if (PreferenceManager.getDefaultSharedPreferences(this)
-                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)) {
+                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
+        ) {
             setTheme(R.style.Theme_Bitsy_Dark)
         }
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
 
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.navHostFragment) as NavHostFragment? ?: return
@@ -56,7 +59,8 @@ class MainActivity : ConnectedActivity() {
         // closes the app, if not then it just restarts the Handler (timer)
         mRunnable = Runnable {
             if (PreferenceManager.getDefaultSharedPreferences(this)
-                    .getBoolean(Constants.KEY_AUTO_CLOSE_ACTIVATED, true)) {
+                    .getBoolean(Constants.KEY_AUTO_CLOSE_ACTIVATED, true)
+            ) {
                 finish()
                 android.os.Process.killProcess(android.os.Process.myPid())
             } else
@@ -107,8 +111,8 @@ class MainActivity : ConnectedActivity() {
 
     override fun onBackPressed() {
         // Trick used to avoid crashes when the user is in the License or ImportBrainkey and presses the back button
-        val currentDestination=NavHostFragment.findNavController(navHostFragment).currentDestination
-        when(currentDestination?.id) {
+        val currentDestination = binding.navHostFragment.findNavController().currentDestination
+        when (currentDestination?.id) {
             R.id.license_dest, R.id.import_brainkey_dest -> finish()
             else -> super.onBackPressed()
         }

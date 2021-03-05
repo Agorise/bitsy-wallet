@@ -8,9 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.collection.LongSparseArray
 import androidx.navigation.fragment.findNavController
+import com.afollestad.materialdialogs.MaterialDialog
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.databinding.FragmentCreateAccountBinding
+import cy.agorise.bitsybitshareswallet.models.FaucetRequest
+import cy.agorise.bitsybitshareswallet.models.FaucetResponse
 import cy.agorise.bitsybitshareswallet.network.FaucetService
+import cy.agorise.bitsybitshareswallet.network.ServiceGenerator
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.containsDigits
 import cy.agorise.bitsybitshareswallet.utils.containsVowels
@@ -22,20 +28,14 @@ import cy.agorise.graphenej.api.calls.GetAccountByName
 import cy.agorise.graphenej.models.AccountProperties
 import cy.agorise.graphenej.models.JsonRpcResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_create_account.*
 import org.bitcoinj.core.ECKey
+import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.util.concurrent.TimeUnit
-import com.afollestad.materialdialogs.MaterialDialog
-import com.google.firebase.crashlytics.FirebaseCrashlytics
-import cy.agorise.bitsybitshareswallet.models.FaucetRequest
-import cy.agorise.bitsybitshareswallet.models.FaucetResponse
-import cy.agorise.bitsybitshareswallet.network.ServiceGenerator
-import retrofit2.Call
-import retrofit2.Response
 
 
 class CreateAccountFragment : BaseAccountFragment() {
@@ -49,9 +49,13 @@ class CreateAccountFragment : BaseAccountFragment() {
 
         // Used when trying to validate that the account name is available
         private const val RESPONSE_GET_ACCOUNT_BY_NAME_VALIDATION = 1
+
         // Used when trying to obtain the info of the newly created account
         private const val RESPONSE_GET_ACCOUNT_BY_NAME_CREATED = 2
     }
+
+    private var _binding: FragmentCreateAccountBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var mAddress: String
 
@@ -63,10 +67,20 @@ class CreateAccountFragment : BaseAccountFragment() {
     // Map used to keep track of request and response id pairs
     private val responseMap = LongSparseArray<Int>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
-        return inflater.inflate(R.layout.fragment_create_account, container, false)
+        _binding = FragmentCreateAccountBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,7 +91,7 @@ class CreateAccountFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to check the validity and availability of the user's proposed account name
         mDisposables.add(
-            tietAccountName.textChanges()
+            binding.tietAccountName.textChanges()
                 .skipInitialValue()
                 .debounce(800, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -89,7 +103,7 @@ class CreateAccountFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to update the PIN error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietPin.textChanges()
+            binding.tietPin.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -101,7 +115,7 @@ class CreateAccountFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to update the PIN Confirmation error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietPinConfirmation.textChanges()
+            binding.tietPinConfirmation.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -111,10 +125,10 @@ class CreateAccountFragment : BaseAccountFragment() {
                 )
         )
 
-        btnCancel.setOnClickListener { findNavController().navigateUp() }
+        binding.btnCancel.setOnClickListener { findNavController().navigateUp() }
 
-        btnCreate.isEnabled = false
-        btnCreate.setOnClickListener { createAccount() }
+        binding.btnCreate.isEnabled = false
+        binding.btnCreate.setOnClickListener { createAccount() }
 
         // Generating BrainKey
         generateKeys()
@@ -123,19 +137,23 @@ class CreateAccountFragment : BaseAccountFragment() {
     private fun validateAccountName(accountName: String) {
         isAccountValidAndAvailable = false
 
-        if ( !isAccountLengthValid(accountName) ) {
-            tilAccountName.helperText = ""
-            tilAccountName.error = getString(R.string.error__invalid_account_length)
-        } else if ( !isAccountStartValid(accountName) ) {
-            tilAccountName.helperText = ""
-            tilAccountName.error = getString(R.string.error__invalid_account_start)
-        } else if ( !isAccountNameValid(accountName) ) {
-            tilAccountName.helperText = ""
-            tilAccountName.error = getString(R.string.error__invalid_account_name)
+        if (!isAccountLengthValid(accountName)) {
+            binding.tilAccountName.helperText = ""
+            binding.tilAccountName.error = getString(R.string.error__invalid_account_length)
+        } else if (!isAccountStartValid(accountName)) {
+            binding.tilAccountName.helperText = ""
+            binding.tilAccountName.error = getString(R.string.error__invalid_account_start)
+        } else if (!isAccountNameValid(accountName)) {
+            binding.tilAccountName.helperText = ""
+            binding.tilAccountName.error = getString(R.string.error__invalid_account_name)
         } else {
-            tilAccountName.isErrorEnabled = false
-            tilAccountName.helperText = getString(R.string.text__verifying_account_availability)
-            val id = mNetworkService?.sendMessage(GetAccountByName(accountName), GetAccountByName.REQUIRED_API)
+            binding.tilAccountName.isErrorEnabled = false
+            binding.tilAccountName.helperText =
+                getString(R.string.text__verifying_account_availability)
+            val id = mNetworkService?.sendMessage(
+                GetAccountByName(accountName),
+                GetAccountByName.REQUIRED_API
+            )
 
             if (id != null)
                 responseMap.append(id, RESPONSE_GET_ACCOUNT_BY_NAME_VALIDATION)
@@ -170,13 +188,13 @@ class CreateAccountFragment : BaseAccountFragment() {
     }
 
     private fun validatePIN() {
-        val pin = tietPin.text.toString()
+        val pin = binding.tietPin.text.toString()
 
         if (pin.length < Constants.MIN_PIN_LENGTH) {
-            tilPin.error = getString(R.string.error__pin_too_short)
+            binding.tilPin.error = getString(R.string.error__pin_too_short)
             isPINValid = false
         } else {
-            tilPin.isErrorEnabled = false
+            binding.tilPin.isErrorEnabled = false
             isPINValid = true
         }
 
@@ -184,13 +202,13 @@ class CreateAccountFragment : BaseAccountFragment() {
     }
 
     private fun validatePINConfirmation() {
-        val pinConfirmation = tietPinConfirmation.text.toString()
+        val pinConfirmation = binding.tietPinConfirmation.text.toString()
 
-        if (pinConfirmation != tietPin.text.toString()) {
-            tilPinConfirmation.error = getString(R.string.error__pin_mismatch)
+        if (pinConfirmation != binding.tietPin.text.toString()) {
+            binding.tilPinConfirmation.error = getString(R.string.error__pin_mismatch)
             isPINConfirmationValid = false
         } else {
-            tilPinConfirmation.isErrorEnabled = false
+            binding.tilPinConfirmation.isErrorEnabled = false
             isPINConfirmationValid = true
         }
 
@@ -198,20 +216,21 @@ class CreateAccountFragment : BaseAccountFragment() {
     }
 
     private fun enableDisableCreateButton() {
-        btnCreate.isEnabled =  (isPINValid && isPINConfirmationValid && isAccountValidAndAvailable)
+        binding.btnCreate.isEnabled =
+            (isPINValid && isPINConfirmationValid && isAccountValidAndAvailable)
     }
 
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
             when (responseMap[response.id]) {
                 RESPONSE_GET_ACCOUNT_BY_NAME_VALIDATION -> handleAccountNameValidation(response.result)
-                RESPONSE_GET_ACCOUNT_BY_NAME_CREATED    -> handleAccountNameCreated(response.result)
+                RESPONSE_GET_ACCOUNT_BY_NAME_CREATED -> handleAccountNameCreated(response.result)
             }
             responseMap.remove(response.id)
         }
     }
 
-    override fun handleConnectionStatusUpdate(connectionStatusUpdate: ConnectionStatusUpdate) { }
+    override fun handleConnectionStatusUpdate(connectionStatusUpdate: ConnectionStatusUpdate) {}
 
     /**
      * Handles the response from the NetworkService's GetAccountByName call to decide if the user's suggested
@@ -219,12 +238,12 @@ class CreateAccountFragment : BaseAccountFragment() {
      */
     private fun handleAccountNameValidation(result: Any?) {
         if (result is AccountProperties) {
-            tilAccountName.helperText = ""
-            tilAccountName.error = getString(R.string.error__account_not_available)
+            binding.tilAccountName.helperText = ""
+            binding.tilAccountName.error = getString(R.string.error__account_not_available)
             isAccountValidAndAvailable = false
         } else {
-            tilAccountName.isErrorEnabled = false
-            tilAccountName.helperText = getString(R.string.text__account_is_available)
+            binding.tilAccountName.isErrorEnabled = false
+            binding.tilAccountName.helperText = getString(R.string.text__account_is_available)
             isAccountValidAndAvailable = true
         }
 
@@ -237,7 +256,7 @@ class CreateAccountFragment : BaseAccountFragment() {
      */
     private fun handleAccountNameCreated(result: Any?) {
         if (result is AccountProperties) {
-            onAccountSelected(result, tietPin.text.toString())
+            onAccountSelected(result, binding.tietPin.text.toString())
         } else {
             context?.toast(getString(R.string.error__created_account_not_found))
             setStateError()
@@ -248,9 +267,9 @@ class CreateAccountFragment : BaseAccountFragment() {
      * Sets the state to Loading, when the app is trying to create an account and waiting for the response.
      */
     private fun setStateLoading() {
-        btnCancel.isEnabled = false
-        btnCreate.isEnabled = false
-        progressBar.visibility = View.VISIBLE
+        binding.btnCancel.isEnabled = false
+        binding.btnCreate.isEnabled = false
+        binding.progressBar.visibility = View.VISIBLE
     }
 
     /**
@@ -258,9 +277,9 @@ class CreateAccountFragment : BaseAccountFragment() {
      * the information from the newly created account.
      */
     private fun setStateError() {
-        btnCancel.isEnabled = true
-        btnCreate.isEnabled = false
-        progressBar.visibility = View.GONE
+        binding.btnCancel.isEnabled = true
+        binding.btnCreate.isEnabled = false
+        binding.progressBar.visibility = View.GONE
     }
 
     /**
@@ -270,7 +289,7 @@ class CreateAccountFragment : BaseAccountFragment() {
     private fun createAccount() {
         setStateLoading()
 
-        val accountName = tietAccountName.text.toString()
+        val accountName = binding.tietAccountName.text.toString()
         val faucetRequest = FaucetRequest(accountName, mAddress, Constants.FAUCET_REFERRER)
 
         val sg = ServiceGenerator(Constants.FAUCET_URL)
@@ -280,7 +299,10 @@ class CreateAccountFragment : BaseAccountFragment() {
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call?.enqueue(object : Callback<FaucetResponse> {
-            override fun onResponse(call: Call<FaucetResponse>, response: Response<FaucetResponse>) {
+            override fun onResponse(
+                call: Call<FaucetResponse>,
+                response: Response<FaucetResponse>
+            ) {
                 // The network call was a success and we got a response, obtain the info of the newly created account
                 // with a delay to let the nodes update their information
                 val handler = Handler()
@@ -307,8 +329,10 @@ class CreateAccountFragment : BaseAccountFragment() {
 
     private fun getCreatedAccountInfo(faucetResponse: FaucetResponse?) {
         if (faucetResponse?.account != null) {
-            val id = mNetworkService?.sendMessage(GetAccountByName(faucetResponse.account?.name),
-                GetAccountByName.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(
+                GetAccountByName(faucetResponse.account?.name),
+                GetAccountByName.REQUIRED_API
+            )
 
             if (id != null)
                 responseMap.append(id, RESPONSE_GET_ACCOUNT_BY_NAME_CREATED)
@@ -320,7 +344,7 @@ class CreateAccountFragment : BaseAccountFragment() {
                 getString(R.string.error__faucet_template, "None")
             }
 
-            context?.let {context ->
+            context?.let { context ->
                 MaterialDialog(context)
                     .title(R.string.title_error)
                     .message(text = content)
@@ -338,7 +362,8 @@ class CreateAccountFragment : BaseAccountFragment() {
         var reader: BufferedReader? = null
         val dictionary: String
         try {
-            reader = BufferedReader(InputStreamReader(context!!.assets.open(BRAINKEY_FILE), "UTF-8"))
+            reader =
+                BufferedReader(InputStreamReader(context!!.assets.open(BRAINKEY_FILE), "UTF-8"))
             dictionary = reader.readLine()
 
             val brainKeySuggestion = BrainKey.suggest(dictionary)
@@ -347,7 +372,7 @@ class CreateAccountFragment : BaseAccountFragment() {
             Log.d(TAG, "brain key: $brainKeySuggestion")
             Log.d(TAG, "address would be: $address")
             mAddress = address.toString()
-            tvBrainKey.text = mBrainKey?.brainKey
+            binding.tvBrainKey.text = mBrainKey?.brainKey
 
         } catch (e: IOException) {
             Log.e(TAG, "IOException while trying to generate key. Msg: " + e.message)
@@ -364,7 +389,10 @@ class CreateAccountFragment : BaseAccountFragment() {
                 try {
                     reader.close()
                 } catch (e: IOException) {
-                    Log.e(TAG, "IOException while trying to close BufferedReader. Msg: " + e.message)
+                    Log.e(
+                        TAG,
+                        "IOException while trying to close BufferedReader. Msg: " + e.message
+                    )
                 }
 
             }

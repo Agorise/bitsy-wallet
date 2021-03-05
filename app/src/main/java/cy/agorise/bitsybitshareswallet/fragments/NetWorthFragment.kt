@@ -5,16 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.databinding.FragmentNetWorthBinding
 
-class NetWorthFragment: Fragment() {
+class NetWorthFragment : Fragment() {
+
+    private var _binding: FragmentNetWorthBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         setHasOptionsMenu(true)
 
-        return inflater.inflate(R.layout.fragment_net_worth, container, false)
+        _binding = FragmentNetWorthBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

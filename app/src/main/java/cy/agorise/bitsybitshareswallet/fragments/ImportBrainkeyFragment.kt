@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
@@ -19,9 +20,12 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.FullNodesAdapter
+import cy.agorise.bitsybitshareswallet.databinding.FragmentImportBrainkeyBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.toast
-import cy.agorise.graphenej.*
+import cy.agorise.graphenej.Address
+import cy.agorise.graphenej.BrainKey
+import cy.agorise.graphenej.UserAccount
 import cy.agorise.graphenej.api.ConnectionStatusUpdate
 import cy.agorise.graphenej.api.calls.GetAccounts
 import cy.agorise.graphenej.api.calls.GetDynamicGlobalProperties
@@ -30,7 +34,6 @@ import cy.agorise.graphenej.models.AccountProperties
 import cy.agorise.graphenej.models.DynamicGlobalProperties
 import cy.agorise.graphenej.models.JsonRpcResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_import_brainkey.*
 import org.bitcoinj.core.ECKey
 import java.text.NumberFormat
 import java.util.*
@@ -41,6 +44,9 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     companion object {
         private const val TAG = "ImportBrainkeyFragment"
     }
+
+    private var _binding: FragmentImportBrainkeyBinding? = null
+    private val binding get() = _binding!!
 
     /** User account associated with the key derived from the brainkey that the user just typed in */
     private var mUserAccount: UserAccount? = null
@@ -72,12 +78,22 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     /** Handler that will be used to make recurrent calls to get the latest BitShares block number*/
     private val mHandler = Handler()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Remove up navigation icon from the toolbar
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         toolbar?.navigationIcon = null
 
-        return inflater.inflate(R.layout.fragment_import_brainkey, container, false)
+        _binding = FragmentImportBrainkeyBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -88,7 +104,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to update the PIN error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietPin.textChanges()
+            binding.tietPin.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -100,7 +116,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to update the PIN Confirmation error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietPinConfirmation.textChanges()
+            binding.tietPinConfirmation.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -112,7 +128,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
 
         // Use RxJava Debounce to update the BrainKey error only after the user stops writing for > 500 ms
         mDisposables.add(
-            tietBrainKey.textChanges()
+            binding.tietBrainKey.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
                 .map { it.toString().trim() }
@@ -123,14 +139,14 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 )
         )
 
-        btnImport.isEnabled = false
-        btnImport.setOnClickListener { verifyBrainKey(false) }
+        binding.btnImport.isEnabled = false
+        binding.btnImport.setOnClickListener { verifyBrainKey(false) }
 
-        btnCreate.setOnClickListener (
+        binding.btnCreate.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.create_account_action)
         )
 
-        tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
+        binding.tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
     }
 
     private fun showNodesDialog(v: View) {
@@ -160,7 +176,13 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 )
 
             mNodesDialog = MaterialDialog(v.context).show {
-                title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                title(
+                    text = String.format(
+                        "%s v%s",
+                        getString(R.string.app_name),
+                        BuildConfig.VERSION_NAME
+                    )
+                )
                 message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
                 customListAdapter(nodesAdapter as FullNodesAdapter)
                 negativeButton(android.R.string.ok)
@@ -170,7 +192,8 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 }
             }
 
-            mNodesDialogLinearLayoutManager = (mNodesDialog?.getRecyclerView()?.layoutManager as LinearLayoutManager)
+            mNodesDialogLinearLayoutManager =
+                (mNodesDialog?.getRecyclerView()?.layoutManager as LinearLayoutManager)
 
             // Registering a recurrent task used to poll for dynamic global properties requests
             mHandler.post(mRequestDynamicGlobalPropertiesTask)
@@ -178,13 +201,13 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     }
 
     private fun validatePIN() {
-        val pin = tietPin.text.toString()
+        val pin = binding.tietPin.text.toString()
 
         if (pin.length < Constants.MIN_PIN_LENGTH) {
-            tilPin.error = getString(R.string.error__pin_too_short)
+            binding.tilPin.error = getString(R.string.error__pin_too_short)
             isPINValid = false
         } else {
-            tilPin.isErrorEnabled = false
+            binding.tilPin.isErrorEnabled = false
             isPINValid = true
         }
 
@@ -192,13 +215,13 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     }
 
     private fun validatePINConfirmation() {
-        val pinConfirmation = tietPinConfirmation.text.toString()
+        val pinConfirmation = binding.tietPinConfirmation.text.toString()
 
-        if (pinConfirmation != tietPin.text.toString()) {
-            tilPinConfirmation.error = getString(R.string.error__pin_mismatch)
+        if (pinConfirmation != binding.tietPin.text.toString()) {
+            binding.tilPinConfirmation.error = getString(R.string.error__pin_mismatch)
             isPINConfirmationValid = false
         } else {
-            tilPinConfirmation.isErrorEnabled = false
+            binding.tilPinConfirmation.isErrorEnabled = false
             isPINConfirmationValid = true
         }
 
@@ -207,10 +230,10 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
 
     private fun validateBrainKey(brainKey: String) {
         if (brainKey.isEmpty() || !brainKey.contains(" ") || brainKey.split(" ").size !in 12..16) {
-            tilBrainKey.error = getString(R.string.error__enter_correct_brainkey)
+            binding.tilBrainKey.error = getString(R.string.error__enter_correct_brainkey)
             isBrainKeyValid = false
         } else {
-            tilBrainKey.isErrorEnabled = false
+            binding.tilBrainKey.isErrorEnabled = false
             isBrainKeyValid = true
         }
 
@@ -218,7 +241,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     }
 
     private fun enableDisableImportButton() {
-        btnImport.isEnabled =  (isPINValid && isPINConfirmationValid && isBrainKeyValid)
+        binding.btnImport.isEnabled = (isPINValid && isPINConfirmationValid && isBrainKeyValid)
     }
 
     /**
@@ -242,7 +265,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
      */
     private fun verifyBrainKey(switchCase: Boolean) {
         //showDialog("", getString(R.string.importing_your_wallet))
-        val brainKey = tietBrainKey.text.toString().trim()
+        val brainKey = binding.tietBrainKey.text.toString().trim()
         // Should we switch the brainkey case?
         if (switchCase) {
             if (Character.isUpperCase(brainKey.toCharArray()[brainKey.length - 1])) {
@@ -270,7 +293,8 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
         mBrainKey = BrainKey(brainKey, 0)
         val address = Address(ECKey.fromPublicOnly(mBrainKey!!.privateKey.pubKey))
         Log.d(TAG, String.format("Brainkey would generate address: %s", address.toString()))
-        keyReferencesRequestId = mNetworkService?.sendMessage(GetKeyReferences(address), GetKeyReferences.REQUIRED_API)
+        keyReferencesRequestId =
+            mNetworkService?.sendMessage(GetKeyReferences(address), GetKeyReferences.REQUIRED_API)
     }
 
     override fun onStart() {
@@ -290,8 +314,14 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
         } else if (response.result is DynamicGlobalProperties) {
             val dynamicGlobalProperties = response.result as DynamicGlobalProperties
             if (mNodesDialog != null && mNodesDialog?.isShowing == true) {
-                val blockNumber = NumberFormat.getInstance().format(dynamicGlobalProperties.head_block_number)
-                mNodesDialog?.message(text = getString(R.string.title__bitshares_nodes_dialog, blockNumber))
+                val blockNumber =
+                    NumberFormat.getInstance().format(dynamicGlobalProperties.head_block_number)
+                mNodesDialog?.message(
+                    text = getString(
+                        R.string.title__bitshares_nodes_dialog,
+                        blockNumber
+                    )
+                )
             }
         }
     }
@@ -308,13 +338,17 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
     }
 
     private fun showConnectedState() {
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_connected, null), null)
+        binding.tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(
+            null, null,
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_connected, null), null
+        )
     }
 
     private fun showDisconnectedState() {
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_disconnected, null), null)
+        binding.tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(
+            null, null,
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_disconnected, null), null
+        )
     }
 
     /**
@@ -342,7 +376,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
             // trying to find out the account name
             mUserAccount = accountList[0]
             getAccountsRequestId =
-                    mNetworkService?.sendMessage(GetAccounts(mUserAccount), GetAccounts.REQUIRED_API)
+                mNetworkService?.sendMessage(GetAccounts(mUserAccount), GetAccounts.REQUIRED_API)
         } else {
             // If we found more than one account linked to this key, we must also
             // find out the account names, but the procedure is a bit different in
@@ -371,12 +405,18 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 MaterialDialog(context!!)
                     .title(R.string.dialog__account_candidates_title)
                     .message(R.string.dialog__account_candidates_content)
-                    .listItemsSingleChoice (items = candidates, initialSelection = -1) { _, index, _ ->
+                    .listItemsSingleChoice(
+                        items = candidates,
+                        initialSelection = -1
+                    ) { _, index, _ ->
                         if (index >= 0) {
                             // If one account was selected, we keep a reference to it and
                             // store the account properties
                             mUserAccount = mUserAccountCandidates!![index]
-                            onAccountSelected(accountPropertiesList[index], tietPin.text.toString())
+                            onAccountSelected(
+                                accountPropertiesList[index],
+                                binding.tietPin.text.toString()
+                            )
                         }
                     }
                     .positiveButton(android.R.string.ok)
@@ -386,7 +426,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                     .cancelable(false)
                     .show()
             } else if (accountPropertiesList.size == 1) {
-                onAccountSelected(accountPropertiesList[0], tietPin.text.toString())
+                onAccountSelected(accountPropertiesList[0], binding.tietPin.text.toString())
             } else {
                 context?.toast(getString(R.string.error__try_again))
             }
@@ -400,7 +440,10 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
         override fun run() {
             if (mNetworkService != null) {
                 if (mNetworkService?.isConnected == true) {
-                    mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
+                    mNetworkService?.sendMessage(
+                        GetDynamicGlobalProperties(),
+                        GetDynamicGlobalProperties.REQUIRED_API
+                    )
                 } else {
                     Log.d(TAG, "NetworkService exists but is not connected")
                 }

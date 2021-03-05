@@ -1,6 +1,6 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
-import android.content.*
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
@@ -22,6 +23,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.BuildConfig
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.FullNodesAdapter
+import cy.agorise.bitsybitshareswallet.databinding.FragmentSettingsBinding
 import cy.agorise.bitsybitshareswallet.repositories.AuthorityRepository
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.CryptoUtils
@@ -36,7 +38,6 @@ import cy.agorise.graphenej.models.JsonRpcResponse
 import cy.agorise.graphenej.operations.AccountUpgradeOperationBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_settings.*
 import org.bitcoinj.core.DumpedPrivateKey
 import org.bitcoinj.core.ECKey
 import java.text.NumberFormat
@@ -58,6 +59,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         private const val RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM = 2
         private const val RESPONSE_BROADCAST_TRANSACTION = 3
     }
+
+    private var _binding: FragmentSettingsBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var mViewModel: SettingsFragmentViewModel
 
@@ -82,17 +86,27 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
     private val mHandler = Handler()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         setHasOptionsMenu(true)
 
         val nightMode = PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
+            .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
 
         // Make sure the toolbar show the correct colors in both day and night modes
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         toolbar?.setBackgroundResource(if (!nightMode) R.color.colorPrimary else R.color.colorToolbarDark)
 
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -105,15 +119,16 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
 
         // Configure ViewModel
-        mViewModel= ViewModelProviders.of(this).get(SettingsFragmentViewModel::class.java)
+        mViewModel = ViewModelProviders.of(this).get(SettingsFragmentViewModel::class.java)
 
         mViewModel.getUserAccount(userId).observe(this,
-            androidx.lifecycle.Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>{ userAccount ->
+            androidx.lifecycle.Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount> { userAccount ->
                 if (userAccount != null) {
                     mUserAccount = UserAccount(userAccount.id, userAccount.name)
-                    btnUpgradeToLTM.isEnabled = !userAccount.isLtm  // Disable button if already LTM
+                    binding.btnUpgradeToLTM.isEnabled =
+                        !userAccount.isLtm  // Disable button if already LTM
                 }
-        })
+            })
 
         mViewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal).observe(this,
             androidx.lifecycle.Observer<String> { encryptedWIF ->
@@ -121,7 +136,10 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     try {
                         privateKey = CryptoUtils.decrypt(it, encryptedWIF)
                     } catch (e: AEADBadTagException) {
-                        Log.e(TAG, "AEADBadTagException. Class: " + e.javaClass + ", Msg: " + e.message)
+                        Log.e(
+                            TAG,
+                            "AEADBadTagException. Class: " + e.javaClass + ", Msg: " + e.message
+                        )
                     } catch (e: IllegalStateException) {
                         crashlytics.recordException(e)
                     }
@@ -132,22 +150,23 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         initNightModeSwitch()
 
-        tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
+        binding.tvNetworkStatus.setOnClickListener { v -> showNodesDialog(v) }
 
         // Obtain the current Security Lock Option selected and display it in the screen
         val securityLockSelected = PreferenceManager.getDefaultSharedPreferences(context)
-                .getInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0)
+            .getInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0)
         // Security Lock Options
         // 0 -> None
         // 1 -> PIN
         // 2 -> Pattern
 
-        tvSecurityLockSelected.text = resources.getStringArray(R.array.security_lock_options)[securityLockSelected]
+        binding.tvSecurityLockSelected.text =
+            resources.getStringArray(R.array.security_lock_options)[securityLockSelected]
 
-        tvSecurityLock.setOnClickListener { onSecurityLockTextSelected() }
-        tvSecurityLockSelected.setOnClickListener { onSecurityLockTextSelected() }
+        binding.tvSecurityLock.setOnClickListener { onSecurityLockTextSelected() }
+        binding.tvSecurityLockSelected.setOnClickListener { onSecurityLockTextSelected() }
 
-        btnViewBrainKey.setOnClickListener { onShowBrainKeyButtonSelected() }
+        binding.btnViewBrainKey.setOnClickListener { onShowBrainKeyButtonSelected() }
 
         val lastAccountBackup = PreferenceManager.getDefaultSharedPreferences(context)
             .getLong(Constants.KEY_LAST_ACCOUNT_BACKUP, 0L)
@@ -155,11 +174,11 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         val now = System.currentTimeMillis()
 
         if (lastAccountBackup + Constants.ACCOUNT_BACKUP_PERIOD < now)
-            tvBackupWarning.visibility = View.VISIBLE
+            binding.tvBackupWarning.visibility = View.VISIBLE
 
-        btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
+        binding.btnUpgradeToLTM.setOnClickListener { onUpgradeToLTMButtonSelected() }
 
-        btnRemoveAccount.setOnClickListener { onRemoveAccountButtonSelected() }
+        binding.btnRemoveAccount.setOnClickListener { onRemoveAccountButtonSelected() }
     }
 
     private fun showNodesDialog(v: View) {
@@ -191,7 +210,13 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             mNodesDialogLinearLayoutManager = LinearLayoutManager(v.context)
 
             mNodesDialog = MaterialDialog(v.context).show {
-                title(text = String.format("%s v%s", getString(R.string.app_name), BuildConfig.VERSION_NAME))
+                title(
+                    text = String.format(
+                        "%s v%s",
+                        getString(R.string.app_name),
+                        BuildConfig.VERSION_NAME
+                    )
+                )
                 message(text = getString(R.string.title__bitshares_nodes_dialog, "-------"))
                 customListAdapter(nodesAdapter as FullNodesAdapter, mNodesDialogLinearLayoutManager)
                 negativeButton(android.R.string.ok)
@@ -218,9 +243,13 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     override fun handleJsonRpcResponse(response: JsonRpcResponse<*>) {
         if (responseMap.containsKey(response.id)) {
             when (responseMap[response.id]) {
-                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES    -> handleDynamicGlobalPropertiesNodes(response.result)
-                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM      -> handleDynamicGlobalPropertiesLTM(response.result)
-                RESPONSE_BROADCAST_TRANSACTION                  -> handleBroadcastTransaction(response)
+                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES -> handleDynamicGlobalPropertiesNodes(
+                    response.result
+                )
+                RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM -> handleDynamicGlobalPropertiesLTM(
+                    response.result
+                )
+                RESPONSE_BROADCAST_TRANSACTION -> handleBroadcastTransaction(response)
             }
             responseMap.remove(response.id)
         }
@@ -238,13 +267,17 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     }
 
     private fun showConnectedState() {
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_connected, null), null)
+        binding.tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(
+            null, null,
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_connected, null), null
+        )
     }
 
     private fun showDisconnectedState() {
-        tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null,
-            resources.getDrawable(R.drawable.ic_disconnected, null), null)
+        binding.tvNetworkStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(
+            null, null,
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_disconnected, null), null
+        )
     }
 
     /** Handles the result of the [GetDynamicGlobalProperties] api call to obtain the current block number and update
@@ -253,7 +286,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         if (result is DynamicGlobalProperties) {
             if (mNodesDialog != null && mNodesDialog?.isShowing == true) {
                 val blockNumber = NumberFormat.getInstance().format(result.head_block_number)
-                mNodesDialog?.message(text = getString(R.string.title__bitshares_nodes_dialog, blockNumber))
+                mNodesDialog?.message(
+                    text = getString(R.string.title__bitshares_nodes_dialog, blockNumber)
+                )
             }
         }
     }
@@ -266,7 +301,10 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
             ltmTransaction?.blockData = BlockData(headBlockNumber, headBlockId, expirationTime)
 
-            val id = mNetworkService?.sendMessage(BroadcastTransaction(ltmTransaction), BroadcastTransaction.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(
+                BroadcastTransaction(ltmTransaction),
+                BroadcastTransaction.REQUIRED_API
+            )
             if (id != null) responseMap.append(id, RESPONSE_BROADCAST_TRANSACTION)
 
             // TODO use an indicator to show that a transaction is in progress
@@ -305,7 +343,10 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
      */
     private val mRequestDynamicGlobalPropertiesTask = object : Runnable {
         override fun run() {
-            val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
+            val id = mNetworkService?.sendMessage(
+                GetDynamicGlobalProperties(),
+                GetDynamicGlobalProperties.REQUIRED_API
+            )
             if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_NODES)
 
             mHandler.postDelayed(this, Constants.BLOCK_PERIOD)
@@ -320,9 +361,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         val autoCloseOn = PreferenceManager.getDefaultSharedPreferences(context)
             .getBoolean(Constants.KEY_AUTO_CLOSE_ACTIVATED, true)
 
-        switchAutoClose.isChecked = autoCloseOn
+        binding.switchAutoClose.isChecked = autoCloseOn
 
-        switchAutoClose.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchAutoClose.setOnCheckedChangeListener { buttonView, isChecked ->
             PreferenceManager.getDefaultSharedPreferences(buttonView.context).edit()
                 .putBoolean(Constants.KEY_AUTO_CLOSE_ACTIVATED, isChecked).apply()
         }
@@ -337,9 +378,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         val nightModeOn = PreferenceManager.getDefaultSharedPreferences(context)
             .getBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, false)
 
-        switchNightMode.isChecked = nightModeOn
+        binding.switchNightMode.isChecked = nightModeOn
 
-        switchNightMode.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchNightMode.setOnCheckedChangeListener { buttonView, isChecked ->
 
             PreferenceManager.getDefaultSharedPreferences(buttonView.context).edit()
                 .putBoolean(Constants.KEY_NIGHT_MODE_ACTIVATED, isChecked).apply()
@@ -371,8 +412,10 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         // Args used for both PIN and Pattern options
         val args = Bundle()
-        args.putInt(BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
-            BaseSecurityLockDialog.STEP_SECURITY_LOCK_VERIFY)
+        args.putInt(
+            BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
+            BaseSecurityLockDialog.STEP_SECURITY_LOCK_VERIFY
+        )
         args.putInt(BaseSecurityLockDialog.KEY_ACTION_IDENTIFIER, actionIdentifier)
 
         return when (securityLockSelected) {
@@ -397,9 +440,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
     override fun onPINPatternEntered(actionIdentifier: Int) {
         when (actionIdentifier) {
             ACTION_CHANGE_SECURITY_LOCK -> showChooseSecurityLockDialog()
-            ACTION_SHOW_BRAINKEY        -> getBrainkey()
-            ACTION_UPGRADE_TO_LTM       -> showUpgradeToLTMDialog()
-            ACTION_REMOVE_ACCOUNT       -> showRemoveAccountDialog()
+            ACTION_SHOW_BRAINKEY -> getBrainkey()
+            ACTION_UPGRADE_TO_LTM -> showUpgradeToLTMDialog()
+            ACTION_REMOVE_ACCOUNT -> showRemoveAccountDialog()
         }
     }
 
@@ -412,7 +455,8 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         // 1 -> PIN
         // 2 -> Pattern
 
-        tvSecurityLockSelected.text = resources.getStringArray(R.array.security_lock_options)[securityLockSelected]
+        binding.tvSecurityLockSelected.text =
+            resources.getStringArray(R.array.security_lock_options)[securityLockSelected]
     }
 
     /**
@@ -430,17 +474,23 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         context?.let {
             MaterialDialog(it).show {
                 title(R.string.title__security_dialog)
-                listItemsSingleChoice(R.array.security_lock_options, initialSelection = securityLockSelected) {_, index, _ ->
+                listItemsSingleChoice(
+                    R.array.security_lock_options,
+                    initialSelection = securityLockSelected
+                ) { _, index, _ ->
                     // Args used for both PIN and Pattern options
                     val args = Bundle()
-                    args.putInt(BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
-                        BaseSecurityLockDialog.STEP_SECURITY_LOCK_CREATE)
+                    args.putInt(
+                        BaseSecurityLockDialog.KEY_STEP_SECURITY_LOCK,
+                        BaseSecurityLockDialog.STEP_SECURITY_LOCK_CREATE
+                    )
                     args.putInt(BaseSecurityLockDialog.KEY_ACTION_IDENTIFIER, -1)
 
                     when (index) {
                         0 -> { /* None */
                             PreferenceManager.getDefaultSharedPreferences(context).edit()
-                                .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0).apply() // 0 -> None
+                                .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0)
+                                .apply() // 0 -> None
 
                             // Call this function to update the UI
                             onPINPatternChanged()
@@ -491,7 +541,8 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                 .subscribeOn(Schedulers.io())
                 .map { authority ->
                     val plainBrainKey = CryptoUtils.decrypt(it, authority.encryptedBrainKey)
-                    val plainSequenceNumber = CryptoUtils.decrypt(it, authority.encryptedSequenceNumber)
+                    val plainSequenceNumber =
+                        CryptoUtils.decrypt(it, authority.encryptedSequenceNumber)
                     val sequenceNumber = Integer.parseInt(plainSequenceNumber)
                     BrainKey(plainBrainKey, sequenceNumber)
                 }
@@ -518,7 +569,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     val now = System.currentTimeMillis()
                     PreferenceManager.getDefaultSharedPreferences(it.context).edit()
                         .putLong(Constants.KEY_LAST_ACCOUNT_BACKUP, now).apply()
-                    tvBackupWarning.visibility = View.GONE
+                    binding.tvBackupWarning.visibility = View.GONE
                 }
 
             dialog.show()
@@ -541,11 +592,18 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                     operations.add(operation)
 
                     val currentPrivateKey = ECKey.fromPrivate(
-                        DumpedPrivateKey.fromBase58(null, privateKey).key.privKeyBytes)
+                        DumpedPrivateKey.fromBase58(null, privateKey).key.privKeyBytes
+                    )
                     ltmTransaction = Transaction(currentPrivateKey, null, operations)
 
-                    val id = mNetworkService?.sendMessage(GetDynamicGlobalProperties(), GetDynamicGlobalProperties.REQUIRED_API)
-                    if (id != null) responseMap.append(id, RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM)
+                    val id = mNetworkService?.sendMessage(
+                        GetDynamicGlobalProperties(),
+                        GetDynamicGlobalProperties.REQUIRED_API
+                    )
+                    if (id != null) responseMap.append(
+                        id,
+                        RESPONSE_GET_DYNAMIC_GLOBAL_PROPERTIES_LTM
+                    )
                 }
             }
         }
@@ -574,7 +632,8 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
         // Marks the license as agreed, so that it is not shown to the user again.
         pref.edit().putInt(
-            Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION).apply()
+            Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION
+        ).apply()
 
         // Restarts the activity, which will restart the whole application since it uses a
         // single activity architecture.
