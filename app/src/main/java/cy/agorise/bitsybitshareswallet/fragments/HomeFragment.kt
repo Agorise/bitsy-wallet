@@ -1,25 +1,24 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.database.entities.UserAccount
+import cy.agorise.bitsybitshareswallet.databinding.FragmentHomeBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 
 class HomeFragment : Fragment() {
@@ -29,6 +28,9 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var mUserAccountViewModel: UserAccountViewModel
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(true)
@@ -58,7 +60,13 @@ class HomeFragment : Fragment() {
             window?.navigationBarColor = statusBarColor
         }
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -84,40 +92,40 @@ class HomeFragment : Fragment() {
 
         mUserAccountViewModel.getUserAccount(userId).observe(this, Observer<UserAccount>{ userAccount ->
             if (userAccount != null) {
-                tvAccountName.text = userAccount.name
+                binding.tvAccountName.text = userAccount.name
                 if (userAccount.isLtm) {
                     // Add the lightning bolt to the start of the account name if it is LTM
-                    tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
+                    binding.tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.ic_ltm_account, 0, 0, 0
                     )
                     // Add some padding so that the lightning bolt icon is not too close to the account name text
-                    tvAccountName.compoundDrawablePadding = 12
+                    binding.tvAccountName.compoundDrawablePadding = 12
                 }
             }
         })
 
         // Navigate to the Receive Transaction Fragment
-        fabReceiveTransaction.setOnClickListener (
+        binding.fabReceiveTransaction.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.receive_action)
         )
 
         // Navigate to the Send Transaction Fragment without activating the camera
-        fabSendTransaction.setOnClickListener(
+        binding.fabSendTransaction.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.send_action)
         )
 
         // Navigate to the Send Transaction Fragment using Navigation's SafeArgs to activate the camera
-        fabSendTransactionCamera.setOnClickListener {
+        binding.fabSendTransactionCamera.setOnClickListener {
             val action = HomeFragmentDirections.sendAction(true)
             findNavController().navigate(action)
         }
 
         // Configure ViewPager with PagerAdapter and TabLayout to display the Balances/NetWorth section
         val pagerAdapter = PagerAdapter(childFragmentManager)
-        viewPager.adapter = pagerAdapter
-        tabLayout.setupWithViewPager(viewPager)
+        binding.viewPager.adapter = pagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
         // Set the pie chart icon for the third tab
-        tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_pie_chart)
+        binding.tabLayout.getTabAt(2)?.setIcon(R.drawable.ic_pie_chart)
     }
 
     /**
