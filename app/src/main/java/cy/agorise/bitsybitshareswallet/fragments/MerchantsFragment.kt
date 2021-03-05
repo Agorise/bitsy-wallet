@@ -39,6 +39,7 @@ import com.jakewharton.rxbinding3.appcompat.queryTextChangeEvents
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.database.entities.Merchant
 import cy.agorise.bitsybitshareswallet.database.entities.Teller
+import cy.agorise.bitsybitshareswallet.databinding.FragmentMerchantsBinding
 import cy.agorise.bitsybitshareswallet.models.MapObject
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.MerchantClusterRenderer
@@ -50,10 +51,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_merchants.*
 import java.math.BigInteger
 import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 
 
 class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestionListener {
@@ -73,6 +72,9 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         private const val SUGGEST_COLUMN_IS_MERCHANT = "suggest_is_merchant"
         private const val SUGGEST_COLUMN_IMAGE_RESOURCE = "suggest_image_resource"
     }
+
+    private var _binding: FragmentMerchantsBinding? = null
+    private val binding get() = _binding!!
 
     private var mMap: GoogleMap? = null
 
@@ -108,17 +110,33 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
     private var statusBarSize = 0
     private var navigationBarSize = 0
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Hide the activity's Toolbar so that we can make the trick of the translucent navigation and status bars
         val activityToolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         activityToolbar?.visibility = View.GONE
 
         // Sets the Navigation and Status bars translucent so that the map can be viewed through them
         val window = activity?.window
-        window?.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
-        window?.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window?.setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
+        )
+        window?.setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        )
 
-        return inflater.inflate(R.layout.fragment_merchants, container, false)
+        _binding = FragmentMerchantsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -132,17 +150,17 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         view.setOnApplyWindowInsetsListener { v, insets ->
             statusBarSize = insets.systemWindowInsetTop
             navigationBarSize = insets.systemWindowInsetBottom
-            val layoutParams = toolbar.layoutParams as ViewGroup.MarginLayoutParams
+            val layoutParams = binding.toolbar.layoutParams as ViewGroup.MarginLayoutParams
             layoutParams.topMargin = statusBarSize
             insets
         }
 
         // Set the fragment's toolbar as the activity toolbar just for this fragment
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setHasOptionsMenu(true)
 
-        toolbar?.setOnClickListener { dismissPopupWindow() }
+        binding.toolbar.setOnClickListener { dismissPopupWindow() }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
@@ -183,7 +201,11 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
             }
         }
 
-        mPopupWindow = PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        mPopupWindow = PopupWindow(
+            popupView,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -192,7 +214,8 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         // Adds listener for the SearchView
         val searchItem = menu.findItem(R.id.menu_search)
         mSearchView = searchItem.actionView as SearchView
-        mSearchView?.suggestionsAdapter = SimpleCursorAdapter(context, R.layout.item_merchant_suggestion, null,
+        mSearchView?.suggestionsAdapter = SimpleCursorAdapter(
+            context, R.layout.item_merchant_suggestion, null,
             arrayOf(SUGGEST_COLUMN_NAME, SUGGEST_COLUMN_ADDRESS, SUGGEST_COLUMN_IMAGE_RESOURCE),
             intArrayOf(R.id.tvName, R.id.tvAddress, R.id.ivMarkerPin)
         )
@@ -268,24 +291,40 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
 
                 mapObjects
             }
-        ).subscribe({mapObjects ->
+        ).subscribe({ mapObjects ->
             run {
                 Log.d(TAG, "list with ${mapObjects.size} elements")
                 val cursor = MatrixCursor(
                     arrayOf(
-                        SUGGEST_COLUMN_ID, SUGGEST_COLUMN_LAT, SUGGEST_COLUMN_LON, SUGGEST_COLUMN_NAME,
-                        SUGGEST_COLUMN_ADDRESS, SUGGEST_COLUMN_IS_MERCHANT, SUGGEST_COLUMN_IMAGE_RESOURCE
+                        SUGGEST_COLUMN_ID,
+                        SUGGEST_COLUMN_LAT,
+                        SUGGEST_COLUMN_LON,
+                        SUGGEST_COLUMN_NAME,
+                        SUGGEST_COLUMN_ADDRESS,
+                        SUGGEST_COLUMN_IS_MERCHANT,
+                        SUGGEST_COLUMN_IMAGE_RESOURCE
                     )
                 )
                 for (mapObject in mapObjects) {
-                    cursor.addRow(arrayOf(BigInteger(mapObject._id, 16).toLong(), mapObject.lat, mapObject.lon,
-                        mapObject.name, mapObject.address, mapObject.isMerchant,
-                        if (mapObject.isMerchant == 1) R.drawable.ic_merchant_pin else R.drawable.ic_teller_pin))
+                    cursor.addRow(
+                        arrayOf(
+                            BigInteger(mapObject._id, 16).toLong(),
+                            mapObject.lat,
+                            mapObject.lon,
+                            mapObject.name,
+                            mapObject.address,
+                            mapObject.isMerchant,
+                            if (mapObject.isMerchant == 1) R.drawable.ic_merchant_pin else R.drawable.ic_teller_pin
+                        )
+                    )
                 }
                 mSearchView?.suggestionsAdapter?.changeCursor(cursor)
             }
         },
-            {error -> Log.e(TAG, "Error while retrieving autocomplete suggestions. Msg: $error")})
+            { error ->
+                val message = "Error while retrieving autocomplete suggestions. Msg: $error"
+                Log.e(TAG, message)
+            })
         )
     }
 
@@ -319,7 +358,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         if (item.itemId == R.id.menu_filter) {
             // Try to show or dismiss the custom popup window with the merchants and tellers switches
             if (mPopupWindow?.isShowing == false) {
-                mPopupWindow?.showAsDropDown(toolbar, screenWidth, 8)
+                mPopupWindow?.showAsDropDown(binding.toolbar, screenWidth, 8)
                 if (mMap?.isMyLocationEnabled == true)
                     mMap?.uiSettings?.isMyLocationButtonEnabled = false
             } else
@@ -331,7 +370,11 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
 
     /** Handles the result from the location permission request */
     @SuppressLint("MissingPermission")
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == REQUEST_LOCATION_PERMISSION) {
@@ -357,7 +400,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         mMap = googleMap
 
         // Add padding to move the controls out of the toolbar/status bar and navigation bar.
-        mMap?.setPadding(0, toolbar.height +  statusBarSize, 0, navigationBarSize)
+        mMap?.setPadding(0, binding.toolbar.height + statusBarSize, 0, navigationBarSize)
 
         applyMapTheme()
 
@@ -407,9 +450,13 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
 
     private fun verifyLocationPermission() {
         if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.ACCESS_FINE_LOCATION)
-            != PackageManager.PERMISSION_GRANTED) {
+            != PackageManager.PERMISSION_GRANTED
+        ) {
             // Permission is not already granted
-            requestPermissions(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), REQUEST_LOCATION_PERMISSION)
+            requestPermissions(
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                REQUEST_LOCATION_PERMISSION
+            )
         } else {
             // Permission is already granted
             mMap?.isMyLocationEnabled = true
@@ -435,7 +482,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         // Force marker to use a custom info window
         mMerchantClusterManager?.markerCollection?.setOnInfoWindowAdapter(MerchantInfoWindowAdapter())
 
-        mMerchantViewModel.getAllMerchants().observe(this, Observer<List<Merchant>> {merchants ->
+        mMerchantViewModel.getAllMerchants().observe(this, Observer<List<Merchant>> { merchants ->
             this.merchants.clear()
             this.merchants.addAll(merchants)
             showHideMerchantsMarkers()
@@ -461,7 +508,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         // Force marker to use a custom info window
         mTellerClusterManager?.markerCollection?.setOnInfoWindowAdapter(TellerInfoWindowAdapter())
 
-        mMerchantViewModel.getAllTellers().observe(this, Observer<List<Teller>> {tellers ->
+        mMerchantViewModel.getAllTellers().observe(this, Observer<List<Teller>> { tellers ->
             this.tellers.clear()
             this.tellers.addAll(tellers)
             showHideTellersMarkers()
@@ -512,13 +559,14 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
     inner class MerchantInfoWindowAdapter : GoogleMap.InfoWindowAdapter {
 
         override fun getInfoWindow(marker: Marker?): View {
-            val infoWindowLayout: View = LayoutInflater.from(context).inflate(
-                R.layout.marker_merch_info_window, null)
-            val tvName      = infoWindowLayout.findViewById<TextView>(R.id.tvName)
-            val tvAddress   = infoWindowLayout.findViewById<TextView>(R.id.tvAddress)
-            val tvPhone     = infoWindowLayout.findViewById<TextView>(R.id.tvPhone)
-            val tvTelegram  = infoWindowLayout.findViewById<TextView>(R.id.tvTelegram)
-            val tvWebsite   = infoWindowLayout.findViewById<TextView>(R.id.tvWebsite)
+            val infoWindowLayout: View = LayoutInflater.from(context)
+                .inflate(R.layout.marker_merch_info_window, null)
+
+            val tvName = infoWindowLayout.findViewById<TextView>(R.id.tvName)
+            val tvAddress = infoWindowLayout.findViewById<TextView>(R.id.tvAddress)
+            val tvPhone = infoWindowLayout.findViewById<TextView>(R.id.tvPhone)
+            val tvTelegram = infoWindowLayout.findViewById<TextView>(R.id.tvTelegram)
+            val tvWebsite = infoWindowLayout.findViewById<TextView>(R.id.tvWebsite)
 
             if (selectedMerchant != null) {
                 tvName.text = selectedMerchant?.name
@@ -557,17 +605,18 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
     inner class TellerInfoWindowAdapter : GoogleMap.InfoWindowAdapter {
 
         override fun getInfoWindow(marker: Marker?): View {
-            val infoWindowLayout: View = LayoutInflater.from(context).inflate(
-                R.layout.marker_teller_info_window, null)
-            val tvName      = infoWindowLayout.findViewById<TextView>(R.id.tvName)
-            val tvAddress   = infoWindowLayout.findViewById<TextView>(R.id.tvAddress)
-            val tvPhone     = infoWindowLayout.findViewById<TextView>(R.id.tvPhone)
-            val tvTelegram  = infoWindowLayout.findViewById<TextView>(R.id.tvTelegram)
-            val tvKeybase   = infoWindowLayout.findViewById<TextView>(R.id.tvKeybase)
-            val tvWhatsapp  = infoWindowLayout.findViewById<TextView>(R.id.tvWhatsapp)
-            val tvViber     = infoWindowLayout.findViewById<TextView>(R.id.tvViber)
-            val tvEmail   = infoWindowLayout.findViewById<TextView>(R.id.tvEmail)
-            val tvWebsite   = infoWindowLayout.findViewById<TextView>(R.id.tvWebsite)
+            val infoWindowLayout: View = LayoutInflater.from(context)
+                .inflate(R.layout.marker_teller_info_window, null)
+
+            val tvName = infoWindowLayout.findViewById<TextView>(R.id.tvName)
+            val tvAddress = infoWindowLayout.findViewById<TextView>(R.id.tvAddress)
+            val tvPhone = infoWindowLayout.findViewById<TextView>(R.id.tvPhone)
+            val tvTelegram = infoWindowLayout.findViewById<TextView>(R.id.tvTelegram)
+            val tvKeybase = infoWindowLayout.findViewById<TextView>(R.id.tvKeybase)
+            val tvWhatsapp = infoWindowLayout.findViewById<TextView>(R.id.tvWhatsapp)
+            val tvViber = infoWindowLayout.findViewById<TextView>(R.id.tvViber)
+            val tvEmail = infoWindowLayout.findViewById<TextView>(R.id.tvEmail)
+            val tvWebsite = infoWindowLayout.findViewById<TextView>(R.id.tvWebsite)
 
             if (selectedTeller != null) {
                 tvName.text = selectedTeller?.gt_name

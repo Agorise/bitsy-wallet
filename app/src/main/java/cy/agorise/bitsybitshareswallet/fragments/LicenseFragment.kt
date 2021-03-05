@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.databinding.FragmentLicenseBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
-import kotlinx.android.synthetic.main.fragment_license.*
 
 class LicenseFragment : Fragment() {
 
@@ -19,12 +19,25 @@ class LicenseFragment : Fragment() {
         private const val TAG = "LicenseFragment"
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    private var _binding: FragmentLicenseBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Remove up navigation icon from the toolbar
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         toolbar?.navigationIcon = null
 
-        return inflater.inflate(R.layout.fragment_license, container, false)
+        _binding = FragmentLicenseBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,11 +54,11 @@ class LicenseFragment : Fragment() {
         if (agreedLicenseVersion == Constants.CURRENT_LICENSE_VERSION) {
             agree()
         } else {
-            wbLA.loadUrl("file:///android_asset/eula.html")
+            binding.wbLA.loadUrl("file:///android_asset/eula.html")
 
-            btnDisagree.setOnClickListener { activity?.finish() }
+            binding.btnDisagree.setOnClickListener { activity?.finish() }
 
-            btnAgree.setOnClickListener { agree() }
+            binding.btnAgree.setOnClickListener { agree() }
         }
     }
 
@@ -55,7 +68,8 @@ class LicenseFragment : Fragment() {
      */
     private fun agree() {
         PreferenceManager.getDefaultSharedPreferences(context).edit()
-            .putInt(Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION).apply()
+            .putInt(Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION)
+            .apply()
 
         findNavController().navigate(R.id.import_brainkey_action)
     }
