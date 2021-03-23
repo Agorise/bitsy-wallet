@@ -10,8 +10,7 @@ import android.widget.TextView
 import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
@@ -42,6 +41,8 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         const val END_DATE_PICKER = 1
     }
 
+    private val viewModel: BalanceDetailViewModel by viewModels()
+
     private var _binding: DialogFilterOptionsBinding? = null
     private val binding get() = _binding!!
 
@@ -55,8 +56,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     )
 
     private var mBalanceDetails = ArrayList<BalanceDetail>()
-
-    private lateinit var mBalanceDetailViewModel: BalanceDetailViewModel
 
     private var mBalancesDetailsAdapter: BalancesDetailsAdapter? = null
 
@@ -117,7 +116,7 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        onAttachToParentFragment(parentFragment!!)
+        onAttachToParentFragment(requireParentFragment())
 
         val crashlytics = FirebaseCrashlytics.getInstance()
         crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
@@ -150,31 +149,25 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         binding.cbAsset.isChecked = mFilterOptions.assetAll
 
         // Configure BalanceDetailViewModel to obtain the user's Balances
-        mBalanceDetailViewModel =
-            ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
+        viewModel.getAll().observe(viewLifecycleOwner, { balancesDetails ->
+            mBalanceDetails.clear()
+            mBalanceDetails.addAll(balancesDetails)
+            mBalanceDetails.sortWith { a, b -> a.toString().compareTo(b.toString(), true) }
+            mBalancesDetailsAdapter = BalancesDetailsAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item,
+                mBalanceDetails
+            )
+            binding.sAsset.adapter = mBalancesDetailsAdapter
 
-        mBalanceDetailViewModel.getAll()
-            .observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
-                mBalanceDetails.clear()
-                mBalanceDetails.addAll(balancesDetails)
-                mBalanceDetails.sortWith(
-                    Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-                )
-                mBalancesDetailsAdapter = BalancesDetailsAdapter(
-                    context!!,
-                    android.R.layout.simple_spinner_item,
-                    mBalanceDetails
-                )
-                binding.sAsset.adapter = mBalancesDetailsAdapter
-
-                // Try to select the selectedAssetSymbol
-                for (i in 0 until mBalancesDetailsAdapter!!.count) {
-                    if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == mFilterOptions.asset) {
-                        binding.sAsset.setSelection(i)
-                        break
-                    }
+            // Try to select the selectedAssetSymbol
+            for (i in 0 until mBalancesDetailsAdapter!!.count) {
+                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == mFilterOptions.asset) {
+                    binding.sAsset.setSelection(i)
+                    break
                 }
-            })
+            }
+        })
 
         // Initialize Equivalent Value
         binding.cbEquivalentValue.setOnCheckedChangeListener { _, isChecked ->

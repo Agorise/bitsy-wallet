@@ -362,8 +362,9 @@ class CreateAccountFragment : BaseAccountFragment() {
         var reader: BufferedReader? = null
         val dictionary: String
         try {
-            reader =
-                BufferedReader(InputStreamReader(context!!.assets.open(BRAINKEY_FILE), "UTF-8"))
+            reader = BufferedReader(
+                InputStreamReader(requireContext().assets.open(BRAINKEY_FILE), "UTF-8")
+            )
             dictionary = reader.readLine()
 
             val brainKeySuggestion = BrainKey.suggest(dictionary)

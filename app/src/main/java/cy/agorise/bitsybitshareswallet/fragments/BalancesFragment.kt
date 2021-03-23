@@ -5,21 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cy.agorise.bitsybitshareswallet.adapters.BalancesAdapter
-import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
 import cy.agorise.bitsybitshareswallet.databinding.FragmentBalancesBinding
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
 
 class BalancesFragment : Fragment() {
 
+    private val viewModel: BalanceDetailViewModel by viewModels()
+
     private var _binding: FragmentBalancesBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var mBalanceDetailViewModel: BalanceDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,19 +38,15 @@ class BalancesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Configure BalanceDetailViewModel to show the current balances
-        mBalanceDetailViewModel =
-            ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
-
-        val balancesAdapter = BalancesAdapter(context!!)
+        val balancesAdapter = BalancesAdapter(requireContext())
         binding.rvBalances.adapter = balancesAdapter
-        binding.rvBalances.layoutManager = LinearLayoutManager(context!!)
+        binding.rvBalances.layoutManager = LinearLayoutManager(requireContext())
         binding.rvBalances.addItemDecoration(
-            DividerItemDecoration(context!!, DividerItemDecoration.VERTICAL)
+            DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
         )
 
-        mBalanceDetailViewModel.getAll()
-            .observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
-                balancesAdapter.replaceAll(balancesDetails)
-            })
+        viewModel.getAll().observe(viewLifecycleOwner, { balancesDetails ->
+            balancesAdapter.replaceAll(balancesDetails)
+        })
     }
 }

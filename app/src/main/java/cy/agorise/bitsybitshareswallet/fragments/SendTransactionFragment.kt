@@ -12,8 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.afollestad.materialdialogs.MaterialDialog
@@ -74,13 +73,15 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         private const val ACTION_SEND_TRANSFER = 1
     }
 
-    private var _binding: FragmentSendTransactionBinding? = null
-    private val binding get() = _binding!!
-
-    // Navigation AAC Safe Args
     private val args: SendTransactionFragmentArgs by navArgs()
 
-    private lateinit var mViewModel: SendTransactionViewModel
+    // TODO consolidate ViewModels
+    private val viewModel: SendTransactionViewModel by viewModels()
+
+    private val balanceDetailViewModel: BalanceDetailViewModel by viewModels()
+
+    private var _binding: FragmentSendTransactionBinding? = null
+    private val binding get() = _binding!!
 
     /** Variables used in field's validation */
     private var isCameraPreviewVisible = false
@@ -89,8 +90,6 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
     private var isMemoCorrect = true
 
     private var mBalancesDetails = ArrayList<BalanceDetail>()
-
-    private lateinit var mBalanceDetailViewModel: BalanceDetailViewModel
 
     private var mBalancesDetailsAdapter: BalancesDetailsAdapter? = null
 
@@ -162,10 +161,8 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             mUserAccount = UserAccount(userId)
 
         // Configure ViewModel
-        mViewModel = ViewModelProviders.of(this).get(SendTransactionViewModel::class.java)
-
-        mViewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal).observe(this,
-            Observer<String> { encryptedWIF ->
+        viewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal)
+            .observe(viewLifecycleOwner, { encryptedWIF ->
                 context?.let {
                     try {
                         wifKey = CryptoUtils.decrypt(it, encryptedWIF)
@@ -186,31 +183,27 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         binding.fabOpenCamera.setOnClickListener { if (isCameraPreviewVisible) stopCameraPreview() else verifyCameraPermission() }
 
         // Configure BalanceDetailViewModel to show the current balances
-        mBalanceDetailViewModel =
-            ViewModelProviders.of(this).get(BalanceDetailViewModel::class.java)
+        balanceDetailViewModel.getAll().observe(viewLifecycleOwner, { balancesDetails ->
+            mBalancesDetails.clear()
+            mBalancesDetails.addAll(balancesDetails)
+            mBalancesDetails.sortWith(
+                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
+            )
+            mBalancesDetailsAdapter = BalancesDetailsAdapter(
+                requireContext(),
+                android.R.layout.simple_spinner_item,
+                mBalancesDetails
+            )
+            binding.spAsset.adapter = mBalancesDetailsAdapter
 
-        mBalanceDetailViewModel.getAll()
-            .observe(this, Observer<List<BalanceDetail>> { balancesDetails ->
-                mBalancesDetails.clear()
-                mBalancesDetails.addAll(balancesDetails)
-                mBalancesDetails.sortWith(
-                    Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-                )
-                mBalancesDetailsAdapter = BalancesDetailsAdapter(
-                    context!!,
-                    android.R.layout.simple_spinner_item,
-                    mBalancesDetails
-                )
-                binding.spAsset.adapter = mBalancesDetailsAdapter
-
-                // Try to select the selectedAssetSymbol
-                for (i in 0 until mBalancesDetailsAdapter!!.count) {
-                    if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
-                        binding.spAsset.setSelection(i)
-                        break
-                    }
+            // Try to select the selectedAssetSymbol
+            for (i in 0 until mBalancesDetailsAdapter!!.count) {
+                if (mBalancesDetailsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
+                    binding.spAsset.setSelection(i)
+                    break
                 }
-            })
+            }
+        })
 
         binding.spAsset.onItemSelectedListener = assetItemSelectedListener
 
@@ -387,7 +380,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
     /** Verifies if the user has already granted the Camera permission, if not the asks for it */
     private fun verifyCameraPermission() {
-        if (ContextCompat.checkSelfPermission(activity!!, android.Manifest.permission.CAMERA)
+        if (ContextCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.CAMERA)
             != PackageManager.PERMISSION_GRANTED
         ) {
             // Permission is not already granted
@@ -711,7 +704,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_info) {
-            MaterialDialog(context!!).show {
+            MaterialDialog(requireContext()).show {
                 customView(R.layout.dialog_send_transaction_info, scrollable = true)
                 positiveButton(android.R.string.ok) { dismiss() }
             }

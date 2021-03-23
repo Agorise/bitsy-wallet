@@ -7,10 +7,9 @@ import android.os.Handler
 import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.pm.PackageInfoCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.database.entities.Balance
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
@@ -69,10 +68,11 @@ abstract class ConnectedActivity : AppCompatActivity() {
         private const val RESPONSE_GET_MARKET_HISTORY = 6
     }
 
-    private lateinit var mUserAccountViewModel: UserAccountViewModel
-    private lateinit var mBalanceViewModel: BalanceViewModel
-    private lateinit var mTransferViewModel: TransferViewModel
-    private lateinit var mConnectedActivityViewModel: ConnectedActivityViewModel
+    // TODO consolidate ViewModels
+    private val userAccountViewModel: UserAccountViewModel by viewModels()
+    private val balanceViewModel: BalanceViewModel by viewModels()
+    private val transferViewModel: TransferViewModel by viewModels()
+    private val connectedActivityViewModel: ConnectedActivityViewModel by viewModels()
 
     private lateinit var mAssetRepository: AssetRepository
 
@@ -114,42 +114,38 @@ abstract class ConnectedActivity : AppCompatActivity() {
         mAssetRepository = AssetRepository(this)
 
         // Configure ConnectedActivityViewModel to obtain missing equivalent values
-        mConnectedActivityViewModel = ViewModelProviders.of(this).get(ConnectedActivityViewModel::class.java)
-
         val currencyCode = Helper.getCoingeckoSupportedCurrency(Locale.getDefault())
         Log.d(TAG, "Using currency: ${currencyCode.toUpperCase(Locale.ROOT)}")
-        mConnectedActivityViewModel.observeMissingEquivalentValuesIn(currencyCode)
+        connectedActivityViewModel.observeMissingEquivalentValuesIn(currencyCode)
 
         // Configure UserAccountViewModel to obtain the missing account ids
-        mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
-
-        mUserAccountViewModel.getMissingUserAccountIds().observe(this, Observer<List<String>>{ userAccountIds ->
+        userAccountViewModel.getMissingUserAccountIds().observe(this, { userAccountIds ->
             if (userAccountIds.isNotEmpty()) {
                 missingUserAccounts.clear()
                 for (userAccountId in userAccountIds)
                     missingUserAccounts.add(UserAccount(userAccountId))
 
-                mHandler.postDelayed(mRequestMissingUserAccountsTask, Constants.NETWORK_SERVICE_RETRY_PERIOD)
+                mHandler.postDelayed(
+                    mRequestMissingUserAccountsTask,
+                    Constants.NETWORK_SERVICE_RETRY_PERIOD
+                )
             }
         })
 
         // Configure UserAccountViewModel to obtain the missing account ids
-        mBalanceViewModel = ViewModelProviders.of(this).get(BalanceViewModel::class.java)
-
-        mBalanceViewModel.getMissingAssetIds().observe(this, Observer<List<String>>{ assetIds ->
+        balanceViewModel.getMissingAssetIds().observe(this, { assetIds ->
             if (assetIds.isNotEmpty()) {
                 missingAssets.clear()
                 for (assetId in assetIds)
                     missingAssets.add(Asset(assetId))
 
-                mHandler.postDelayed(mRequestMissingAssetsTask, Constants.NETWORK_SERVICE_RETRY_PERIOD)
+                mHandler
+                    .postDelayed(mRequestMissingAssetsTask, Constants.NETWORK_SERVICE_RETRY_PERIOD)
             }
         })
 
         //Configure TransferViewModel to obtain the Transfer's block numbers with missing time information, one by one
-        mTransferViewModel = ViewModelProviders.of(this).get(TransferViewModel::class.java)
-
-        mTransferViewModel.getTransferBlockNumberWithMissingTime().observe(this, Observer<Long>{ blockNumber ->
+        transferViewModel.getTransferBlockNumberWithMissingTime().observe(this, { blockNumber ->
             if (blockNumber != null && blockNumber != blockNumberWithMissingTime) {
                 blockNumberWithMissingTime = blockNumber
                 mHandler.post(mRequestBlockMissingTimeTask)
@@ -167,13 +163,14 @@ abstract class ConnectedActivity : AppCompatActivity() {
         mCompositeDisposable.add(disposable)
 
 
-        val info = this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
+        val info =
+            this.packageManager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
         val versionCode = PackageInfoCompat.getLongVersionCode(info)
         val hasPurgedEquivalentValues = PreferenceManager.getDefaultSharedPreferences(this)
             .getBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, false)
-        if(versionCode > 11 && !hasPurgedEquivalentValues) {
+        if (versionCode > 11 && !hasPurgedEquivalentValues) {
             thread {
-                mConnectedActivityViewModel.purgeEquivalentValues()
+                connectedActivityViewModel.purgeEquivalentValues()
                 PreferenceManager.getDefaultSharedPreferences(this)
                     .edit()
                     .putBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, true)
@@ -201,7 +198,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
      * Error consumer used to handle potential errors caused by the NetworkService while processing
      * incoming data.
      */
-    private fun handleError(throwable: Throwable){
+    private fun handleError(throwable: Throwable) {
         Log.e(TAG, "Error while processing received message. Msg: " + throwable.message)
         val stack = throwable.stackTrace
         for (e in stack) {
@@ -217,24 +214,24 @@ abstract class ConnectedActivity : AppCompatActivity() {
             if (message.error == null) {
                 if (responseMap.containsKey(message.id)) {
                     when (responseMap[message.id]) {
-                        RESPONSE_GET_FULL_ACCOUNTS      ->
+                        RESPONSE_GET_FULL_ACCOUNTS ->
                             handleAccountDetails((message.result as List<*>)[0] as FullAccountDetails)
 
-                        RESPONSE_GET_ACCOUNTS           ->
+                        RESPONSE_GET_ACCOUNTS ->
                             handleAccountProperties(message.result as List<AccountProperties>)
 
-                        RESPONSE_GET_ACCOUNT_BALANCES   ->
+                        RESPONSE_GET_ACCOUNT_BALANCES ->
                             handleBalanceUpdate(message.result as List<AssetAmount>)
 
-                        RESPONSE_GET_ASSETS             ->
+                        RESPONSE_GET_ASSETS ->
                             handleAssets(message.result as List<Asset>)
 
-                        RESPONSE_GET_BLOCK_HEADER       -> {
+                        RESPONSE_GET_BLOCK_HEADER -> {
                             val blockNumber = requestIdToBlockNumberMap[message.id] ?: 0L
                             handleBlockHeader(message.result as BlockHeader, blockNumber)
                             requestIdToBlockNumberMap.remove(message.id)
                         }
-                        RESPONSE_GET_MARKET_HISTORY     -> handleMarketData(message.result as List<BucketObject>)
+                        RESPONSE_GET_MARKET_HISTORY -> handleMarketData(message.result as List<BucketObject>)
                     }
                     responseMap.remove(message.id)
                 }
@@ -259,11 +256,11 @@ abstract class ConnectedActivity : AppCompatActivity() {
                 responseMap.clear()
             } else if (message.updateCode == ConnectionStatusUpdate.API_UPDATE) {
                 // If we got an API update
-                if(message.api == ApiAccess.API_HISTORY) {
+                if (message.api == ApiAccess.API_HISTORY) {
                     // Starts the procedure that will obtain the missing equivalent values
-                    mTransferViewModel
-                        .getTransfersWithMissingBtsValue().observe(this, Observer<Transfer> {
-                            if(it != null) handleTransfersWithMissingBtsValue(it)
+                    transferViewModel
+                        .getTransfersWithMissingBtsValue().observe(this, {
+                            if (it != null) handleTransfersWithMissingBtsValue(it)
                         })
                 }
             }
@@ -274,13 +271,16 @@ abstract class ConnectedActivity : AppCompatActivity() {
      * Method called whenever we get a list of transfers with their bts value missing.
      */
     private fun handleTransfersWithMissingBtsValue(transfer: Transfer) {
-        if(mNetworkService?.isConnected == true){
+        if (mNetworkService?.isConnected == true) {
             val base = Asset(transfer.transferAssetId)
             val quote = Asset("1.3.0")
             val bucket: Long = TimeUnit.SECONDS.convert(1, TimeUnit.DAYS)
             val end: Long = transfer.timestamp * 1000L
             val start: Long = (transfer.timestamp - bucket) * 1000L
-            val id = mNetworkService!!.sendMessage(GetMarketHistory(base, quote, bucket, start, end), GetMarketHistory.REQUIRED_API)
+            val id = mNetworkService!!.sendMessage(
+                GetMarketHistory(base, quote, bucket, start, end),
+                GetMarketHistory.REQUIRED_API
+            )
             responseMap[id] = RESPONSE_GET_MARKET_HISTORY
             this.transfer = transfer
         }
@@ -292,11 +292,17 @@ abstract class ConnectedActivity : AppCompatActivity() {
      */
     private fun handleAccountDetails(accountDetails: FullAccountDetails) {
         val latestOpCount = accountDetails.statistics.total_ops
-        Log.d(TAG, "handleAccountDetails. prev count: $storedOpCount, current count: $latestOpCount")
+        Log.d(
+            TAG,
+            "handleAccountDetails. prev count: $storedOpCount, current count: $latestOpCount"
+        )
 
         if (latestOpCount == 0L) {
-            Log.d(TAG, "The node returned 0 total_ops for current account and may not have installed the history plugin. " +
-                    "\nAsk the NetworkService to remove the node from the list and connect to another one.")
+            Log.d(
+                TAG,
+                "The node returned 0 total_ops for current account and may not have installed the history plugin. " +
+                        "\nAsk the NetworkService to remove the node from the list and connect to another one."
+            )
             mNetworkService?.reconnectNode()
         } else if (storedOpCount == -1L) {
             // Initial case when the app starts
@@ -317,7 +323,8 @@ abstract class ConnectedActivity : AppCompatActivity() {
      * create a list of BiTSy's UserAccount objects and stores them into the database
      */
     private fun handleAccountProperties(accountPropertiesList: List<AccountProperties>) {
-        val userAccounts = ArrayList<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>()
+        val userAccounts =
+            ArrayList<cy.agorise.bitsybitshareswallet.database.entities.UserAccount>()
 
         for (accountProperties in accountPropertiesList) {
             val userAccount = cy.agorise.bitsybitshareswallet.database.entities.UserAccount(
@@ -329,7 +336,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
             userAccounts.add(userAccount)
         }
 
-        mUserAccountViewModel.insertAll(userAccounts)
+        userAccountViewModel.insertAll(userAccounts)
         missingUserAccounts.clear()
     }
 
@@ -346,7 +353,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
             balances.add(balance)
         }
 
-        mBalanceViewModel.insertAll(balances)
+        balanceViewModel.insertAll(balances)
     }
 
     /**
@@ -382,35 +389,38 @@ abstract class ConnectedActivity : AppCompatActivity() {
 
         try {
             val date = dateFormat.parse(blockHeader.timestamp)
-            mTransferViewModel.setBlockTime(blockNumber, date.time / 1000)
+            transferViewModel.setBlockTime(blockNumber, date.time / 1000)
         } catch (e: ParseException) {
             Log.e(TAG, "ParseException. Msg: " + e.message)
         }
     }
 
     private fun handleMarketData(buckets: List<BucketObject>) {
-        if(buckets.isNotEmpty()){
-            Log.d(TAG,"handleMarketData. Bucket is not empty")
+        if (buckets.isNotEmpty()) {
+            Log.d(TAG, "handleMarketData. Bucket is not empty")
             val bucket = buckets[0]
             val pair = Pair(transfer, bucket)
             val disposable = Observable.just(pair)
                 .subscribeOn(Schedulers.computation())
-                .map { mTransferViewModel.updateBtsValue(it.first!!, it.second) }
-                .subscribe({},{
-                    Log.e(TAG,"Error at updateBtsValue. Msg: ${it.message}")
-                    for(line in it.stackTrace) Log.e(TAG, "${line.className}#${line.methodName}:${line.lineNumber}")
+                .map { transferViewModel.updateBtsValue(it.first!!, it.second) }
+                .subscribe({}, {
+                    Log.e(TAG, "Error at updateBtsValue. Msg: ${it.message}")
+                    for (line in it.stackTrace)
+                        Log.e(TAG, "${line.className}#${line.methodName}:${line.lineNumber}")
                 })
             mCompositeDisposable.add(disposable)
-        }else{
-            Log.i(TAG,"handleMarketData. Bucket IS empty")
-            AsyncTask.execute { mTransferViewModel.updateBtsValue(transfer!!, Transfer.ERROR) }
+        } else {
+            Log.i(TAG, "handleMarketData. Bucket IS empty")
+            AsyncTask.execute { transferViewModel.updateBtsValue(transfer!!, Transfer.ERROR) }
         }
     }
 
     private fun updateBalances() {
         if (mNetworkService?.isConnected == true) {
-            val id = mNetworkService!!.sendMessage(GetAccountBalances(mCurrentAccount, ArrayList()),
-                GetAccountBalances.REQUIRED_API)
+            val id = mNetworkService!!.sendMessage(
+                GetAccountBalances(mCurrentAccount, ArrayList()),
+                GetAccountBalances.REQUIRED_API
+            )
 
             responseMap[id] = RESPONSE_GET_ACCOUNT_BALANCES
         }
@@ -447,10 +457,13 @@ abstract class ConnectedActivity : AppCompatActivity() {
     private val mRequestMissingUserAccountsTask = object : Runnable {
         override fun run() {
             if (mNetworkService?.isConnected == true) {
-                val id = mNetworkService!!.sendMessage(GetAccounts(missingUserAccounts), GetAccounts.REQUIRED_API)
+                val id = mNetworkService!!.sendMessage(
+                    GetAccounts(missingUserAccounts),
+                    GetAccounts.REQUIRED_API
+                )
 
                 responseMap[id] = RESPONSE_GET_ACCOUNTS
-            } else if (missingUserAccounts.isNotEmpty()){
+            } else if (missingUserAccounts.isNotEmpty()) {
                 mHandler.postDelayed(this, Constants.NETWORK_SERVICE_RETRY_PERIOD)
             }
         }
@@ -462,10 +475,11 @@ abstract class ConnectedActivity : AppCompatActivity() {
     private val mRequestMissingAssetsTask = object : Runnable {
         override fun run() {
             if (mNetworkService?.isConnected == true) {
-                val id = mNetworkService!!.sendMessage(GetAssets(missingAssets), GetAssets.REQUIRED_API)
+                val id =
+                    mNetworkService!!.sendMessage(GetAssets(missingAssets), GetAssets.REQUIRED_API)
 
                 responseMap[id] = RESPONSE_GET_ASSETS
-            } else if (missingAssets.isNotEmpty()){
+            } else if (missingAssets.isNotEmpty()) {
                 mHandler.postDelayed(this, Constants.NETWORK_SERVICE_RETRY_PERIOD)
             }
         }
@@ -480,13 +494,17 @@ abstract class ConnectedActivity : AppCompatActivity() {
                 if (mCurrentAccount != null) {
                     val userAccounts = ArrayList<String>()
                     userAccounts.add(mCurrentAccount!!.objectId)
-                    val id = mNetworkService!!.sendMessage(GetFullAccounts(userAccounts, false),
-                        GetFullAccounts.REQUIRED_API)
+                    val id = mNetworkService!!.sendMessage(
+                        GetFullAccounts(userAccounts, false),
+                        GetFullAccounts.REQUIRED_API
+                    )
 
                     responseMap[id] = RESPONSE_GET_FULL_ACCOUNTS
                 }
             } else {
-                Log.w(TAG, "NetworkService is null or is not connected. mNetworkService: $mNetworkService")
+                val msg = "NetworkService is null or is not connected. " +
+                        "mNetworkService: $mNetworkService"
+                Log.w(TAG, msg)
             }
             mHandler.postDelayed(this, Constants.MISSING_PAYMENT_CHECK_PERIOD)
 
@@ -500,8 +518,10 @@ abstract class ConnectedActivity : AppCompatActivity() {
         override fun run() {
 
             if (mNetworkService?.isConnected == true) {
-                val id = mNetworkService!!.sendMessage(GetBlockHeader(blockNumberWithMissingTime),
-                    GetBlockHeader.REQUIRED_API)
+                val id = mNetworkService!!.sendMessage(
+                    GetBlockHeader(blockNumberWithMissingTime),
+                    GetBlockHeader.REQUIRED_API
+                )
 
                 responseMap[id] = RESPONSE_GET_BLOCK_HEADER
                 requestIdToBlockNumberMap[id] = blockNumberWithMissingTime
@@ -521,7 +541,7 @@ abstract class ConnectedActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         mNetworkService?.nodeLatencyVerifier?.nodeList?.let { nodes ->
-            mConnectedActivityViewModel.updateNodeLatencies(nodes as List<FullNode>)
+            connectedActivityViewModel.updateNodeLatencies(nodes as List<FullNode>)
         }
 
         mHandler.removeCallbacks(mCheckMissingPaymentsTask)
@@ -532,6 +552,6 @@ abstract class ConnectedActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if(!mCompositeDisposable.isDisposed) mCompositeDisposable.dispose()
+        if (!mCompositeDisposable.isDisposed) mCompositeDisposable.dispose()
     }
 }

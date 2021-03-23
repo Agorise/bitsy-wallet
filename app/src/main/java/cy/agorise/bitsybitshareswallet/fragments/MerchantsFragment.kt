@@ -18,8 +18,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.cursoradapter.widget.SimpleCursorAdapter
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -73,12 +72,12 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         private const val SUGGEST_COLUMN_IMAGE_RESOURCE = "suggest_image_resource"
     }
 
+    private val viewModel: MerchantViewModel by viewModels()
+
     private var _binding: FragmentMerchantsBinding? = null
     private val binding get() = _binding!!
 
     private var mMap: GoogleMap? = null
-
-    private lateinit var mMerchantViewModel: MerchantViewModel
 
     private var mMarkerManager: MarkerManager? = null
 
@@ -166,8 +165,6 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        mMerchantViewModel = ViewModelProviders.of(this).get(MerchantViewModel::class.java)
-
         setupPopupWindow()
 
         // Gets the screen width to correctly place the merchants and tellers popup menu
@@ -245,12 +242,12 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
 
     private fun updateSearchViewSuggestions(query: String) {
         // Obtain observable of the list of merchants matching the query
-        val merchantsObs = mMerchantViewModel.queryMerchants(query)
+        val merchantsObs = viewModel.queryMerchants(query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).toObservable()
 
         // Obtain observable of the list of tellers matching the query
-        val tellerObs = mMerchantViewModel.queryTellers(query)
+        val tellerObs = viewModel.queryTellers(query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).toObservable()
 
@@ -449,7 +446,10 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
     }
 
     private fun verifyLocationPermission() {
-        if (ContextCompat.checkSelfPermission(activity!!, Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ContextCompat.checkSelfPermission(
+                requireActivity(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
             != PackageManager.PERMISSION_GRANTED
         ) {
             // Permission is not already granted
@@ -482,7 +482,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         // Force marker to use a custom info window
         mMerchantClusterManager?.markerCollection?.setOnInfoWindowAdapter(MerchantInfoWindowAdapter())
 
-        mMerchantViewModel.getAllMerchants().observe(this, Observer<List<Merchant>> { merchants ->
+        viewModel.getAllMerchants().observe(viewLifecycleOwner, { merchants ->
             this.merchants.clear()
             this.merchants.addAll(merchants)
             showHideMerchantsMarkers()
@@ -508,7 +508,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
         // Force marker to use a custom info window
         mTellerClusterManager?.markerCollection?.setOnInfoWindowAdapter(TellerInfoWindowAdapter())
 
-        mMerchantViewModel.getAllTellers().observe(this, Observer<List<Teller>> { tellers ->
+        viewModel.getAllTellers().observe(viewLifecycleOwner, { tellers ->
             this.tellers.clear()
             this.tellers.addAll(tellers)
             showHideTellersMarkers()

@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
@@ -60,10 +60,10 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         private const val RESPONSE_BROADCAST_TRANSACTION = 3
     }
 
+    private val viewModel: SettingsFragmentViewModel by viewModels()
+
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var mViewModel: SettingsFragmentViewModel
 
     private var mUserAccount: UserAccount? = null
 
@@ -119,19 +119,16 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
 
         // Configure ViewModel
-        mViewModel = ViewModelProviders.of(this).get(SettingsFragmentViewModel::class.java)
+        viewModel.getUserAccount(userId).observe(viewLifecycleOwner, { userAccount ->
+            if (userAccount != null) {
+                mUserAccount = UserAccount(userAccount.id, userAccount.name)
+                binding.btnUpgradeToLTM.isEnabled =
+                    !userAccount.isLtm  // Disable button if already LTM
+            }
+        })
 
-        mViewModel.getUserAccount(userId).observe(this,
-            androidx.lifecycle.Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount> { userAccount ->
-                if (userAccount != null) {
-                    mUserAccount = UserAccount(userAccount.id, userAccount.name)
-                    binding.btnUpgradeToLTM.isEnabled =
-                        !userAccount.isLtm  // Disable button if already LTM
-                }
-            })
-
-        mViewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal).observe(this,
-            androidx.lifecycle.Observer<String> { encryptedWIF ->
+        viewModel.getWIF(userId, AuthorityType.ACTIVE.ordinal)
+            .observe(viewLifecycleOwner, { encryptedWIF ->
                 context?.let {
                     try {
                         privateKey = CryptoUtils.decrypt(it, encryptedWIF)
@@ -624,7 +621,7 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
     private fun removeAccount(context: Context) {
         // Clears the database.
-        mViewModel.clearDatabase(context)
+        viewModel.clearDatabase(context)
 
         // Clears the shared preferences.
         val pref = PreferenceManager.getDefaultSharedPreferences(context)

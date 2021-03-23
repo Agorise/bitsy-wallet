@@ -402,7 +402,7 @@ class ImportBrainkeyFragment : BaseAccountFragment() {
                 for (accountProperties in accountPropertiesList) {
                     candidates.add(accountProperties.name)
                 }
-                MaterialDialog(context!!)
+                MaterialDialog(requireContext())
                     .title(R.string.dialog__account_candidates_title)
                     .message(R.string.dialog__account_candidates_content)
                     .listItemsSingleChoice(

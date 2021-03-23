@@ -11,8 +11,7 @@ import android.widget.AdapterView
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.google.common.primitives.UnsignedLong
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -52,10 +51,10 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         private const val OTHER_ASSET = "other_asset"
     }
 
+    private val viewModel: ReceiveTransactionViewModel by viewModels()
+
     private var _binding: FragmentReceiveTransactionBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var mViewModel: ReceiveTransactionViewModel
 
     /** Current user account */
     private var mUserAccount: UserAccount? = null
@@ -118,53 +117,49 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         crashlytics.setCustomKey(Constants.CRASHLYTICS_KEY_LAST_SCREEN, TAG)
 
         // Configure ViewModel
-        mViewModel = ViewModelProviders.of(this).get(ReceiveTransactionViewModel::class.java)
-
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "")
 
-        mViewModel.getUserAccount(userId!!).observe(this,
-            Observer<cy.agorise.bitsybitshareswallet.database.entities.UserAccount> { user ->
-                mUserAccount = UserAccount(user.id, user.name)
-            })
+        viewModel.getUserAccount(userId!!).observe(viewLifecycleOwner, { user ->
+            mUserAccount = UserAccount(user.id, user.name)
+        })
 
-        mViewModel.getAllNonZero().observe(this,
-            Observer<List<cy.agorise.bitsybitshareswallet.database.entities.Asset>> { assets ->
-                mAssets.clear()
-                mAssets.addAll(assets)
+        viewModel.getAllNonZero().observe(viewLifecycleOwner, { assets ->
+            mAssets.clear()
+            mAssets.addAll(assets)
 
-                // Add BTS to always show a QR
-                if (mAssets.isEmpty())
-                    mAssets.add(
-                        cy.agorise.bitsybitshareswallet.database.entities.Asset(
-                            "1.3.0", "BTS", 5, "", ""
-                        )
+            // Add BTS to always show a QR
+            if (mAssets.isEmpty())
+                mAssets.add(
+                    cy.agorise.bitsybitshareswallet.database.entities.Asset(
+                        "1.3.0", "BTS", 5, "", ""
                     )
-
-                mAssets.sortWith(
-                    Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
                 )
 
-                // Add an option at the end so the user can search for an asset other than the ones saved in the db
-                val asset = cy.agorise.bitsybitshareswallet.database.entities.Asset(
-                    OTHER_ASSET, getString(R.string.text__other), 0, "", ""
-                )
-                mAssets.add(asset)
+            mAssets.sortWith(
+                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
+            )
 
-                mAssetsAdapter =
-                    AssetsAdapter(context!!, android.R.layout.simple_spinner_item, mAssets)
-                binding.spAsset.adapter = mAssetsAdapter
+            // Add an option at the end so the user can search for an asset other than the ones saved in the db
+            val asset = cy.agorise.bitsybitshareswallet.database.entities.Asset(
+                OTHER_ASSET, getString(R.string.text__other), 0, "", ""
+            )
+            mAssets.add(asset)
 
-                // Try to select the selectedAssetSymbol
-                for (i in 0 until mAssetsAdapter!!.count) {
-                    if (mAssetsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
-                        binding.spAsset.setSelection(i)
-                        break
-                    }
+            mAssetsAdapter =
+                AssetsAdapter(requireContext(), android.R.layout.simple_spinner_item, mAssets)
+            binding.spAsset.adapter = mAssetsAdapter
+
+            // Try to select the selectedAssetSymbol
+            for (i in 0 until mAssetsAdapter!!.count) {
+                if (mAssetsAdapter!!.getItem(i)!!.symbol == selectedAssetSymbol) {
+                    binding.spAsset.setSelection(i)
+                    break
                 }
-            })
+            }
+        })
 
-        mViewModel.qrCodeBitmap.observe(this, Observer { bitmap ->
+        viewModel.qrCodeBitmap.observe(viewLifecycleOwner, { bitmap ->
             binding.ivQR.setImageBitmap(bitmap)
         })
 
@@ -204,7 +199,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         // Add adapter to the Assets AutoCompleteTextView
         mAutoSuggestAssetAdapter =
-            AutoSuggestAssetAdapter(context!!, android.R.layout.simple_dropdown_item_1line)
+            AutoSuggestAssetAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line)
         binding.actvAsset.setAdapter(mAutoSuggestAssetAdapter)
 
         // Use RxJava Debounce to avoid making calls to the NetworkService on every text change event and also avoid
@@ -311,7 +306,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
         )
         Log.d(TAG, "invoice: " + invoice.toJsonString())
         try {
-            mViewModel.updateInvoice(invoice, min(binding.ivQR.width, binding.ivQR.height))
+            viewModel.updateInvoice(invoice, min(binding.ivQR.width, binding.ivQR.height))
             updateAmountAddressUI(amount, asset.symbol, asset.precision, mUserAccount!!.name)
         } catch (e: NullPointerException) {
             Log.e(TAG, "NullPointerException. Msg: " + e.message)
@@ -366,7 +361,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
     private fun verifyStoragePermission() {
         if (ContextCompat.checkSelfPermission(
-                activity!!,
+                requireActivity(),
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE
             )
             != PackageManager.PERMISSION_GRANTED
@@ -411,7 +406,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
 
         // Get Screenshot
         val screenshot = Helper.loadBitmapFromView(binding.container)
-        val imageUri = Helper.saveTemporalBitmap(context!!, screenshot)
+        val imageUri = Helper.saveTemporalBitmap(requireContext(), screenshot)
 
         // Prepare information for share intent
         val subject = getString(R.string.msg__invoice_subject, mUserAccount?.name)

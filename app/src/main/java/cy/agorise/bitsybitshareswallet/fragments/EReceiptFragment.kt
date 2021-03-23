@@ -12,8 +12,7 @@ import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
@@ -38,12 +37,13 @@ class EReceiptFragment : Fragment() {
         private const val REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 100
     }
 
+    private val args: EReceiptFragmentArgs by navArgs()
+
+    private val viewModel: EReceiptViewModel by viewModels()
+
     private var _binding: FragmentEReceiptBinding? = null
     private val binding get() = _binding!!
 
-    private val args: EReceiptFragmentArgs by navArgs()
-
-    private lateinit var mEReceiptViewModel: EReceiptViewModel
     private lateinit var mLocale: Locale
 
     override fun onCreateView(
@@ -75,12 +75,9 @@ class EReceiptFragment : Fragment() {
 
         val transferId = args.transferId
 
-        mEReceiptViewModel = ViewModelProviders.of(this).get(EReceiptViewModel::class.java)
-
-        mEReceiptViewModel.get(userId, transferId)
-            .observe(this, Observer<TransferDetail> { transferDetail ->
-                bindTransferDetail(transferDetail)
-            })
+        viewModel.get(userId, transferId).observe(viewLifecycleOwner, { transferDetail ->
+            bindTransferDetail(transferDetail)
+        })
     }
 
     private fun bindTransferDetail(transferDetail: TransferDetail) {
@@ -165,7 +162,7 @@ class EReceiptFragment : Fragment() {
      * shares it but if it is not then it asks the user for that permission */
     private fun verifyStoragePermission() {
         if (ContextCompat
-                .checkSelfPermission(activity!!, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .checkSelfPermission(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED
         ) {
             // Permission is not already granted

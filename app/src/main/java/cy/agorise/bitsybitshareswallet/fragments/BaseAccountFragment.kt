@@ -3,6 +3,7 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.preference.PreferenceManager
 import androidx.navigation.fragment.findNavController
 import cy.agorise.bitsybitshareswallet.R
+import cy.agorise.bitsybitshareswallet.activities.ConnectedActivity
 import cy.agorise.bitsybitshareswallet.database.entities.Authority
 import cy.agorise.bitsybitshareswallet.repositories.AuthorityRepository
 import cy.agorise.bitsybitshareswallet.repositories.UserAccountRepository
@@ -13,7 +14,6 @@ import cy.agorise.graphenej.BrainKey
 import cy.agorise.graphenej.PublicKey
 import cy.agorise.graphenej.models.AccountProperties
 import org.bitcoinj.core.ECKey
-import cy.agorise.bitsybitshareswallet.activities.ConnectedActivity
 
 
 abstract class BaseAccountFragment : ConnectedFragment() {
@@ -36,7 +36,7 @@ abstract class BaseAccountFragment : ConnectedFragment() {
         val hashedPIN = CryptoUtils.createSHA256Hash(salt + pin)
 
         // Stores the user selected PIN, hashed
-        PreferenceManager.getDefaultSharedPreferences(context!!).edit()
+        PreferenceManager.getDefaultSharedPreferences(requireContext()).edit()
             .putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPIN)
             .putString(Constants.KEY_PIN_PATTERN_SALT, salt)
             .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 1).apply() // 1 -> PIN
@@ -44,15 +44,17 @@ abstract class BaseAccountFragment : ConnectedFragment() {
         // Stores the accounts this key refers to
         val id = accountProperties.id
         val name = accountProperties.name
-        val isLTM = accountProperties.membership_expiration_date == Constants.LIFETIME_EXPIRATION_DATE
+        val isLTM =
+            accountProperties.membership_expiration_date == Constants.LIFETIME_EXPIRATION_DATE
 
-        val userAccount = cy.agorise.bitsybitshareswallet.database.entities.UserAccount(id, name, isLTM)
+        val userAccount =
+            cy.agorise.bitsybitshareswallet.database.entities.UserAccount(id, name, isLTM)
 
-        val userAccountRepository = UserAccountRepository(context!!.applicationContext)
+        val userAccountRepository = UserAccountRepository(requireContext().applicationContext)
         userAccountRepository.insert(userAccount)
 
         // Stores the id of the currently active user account
-        PreferenceManager.getDefaultSharedPreferences(context!!).edit()
+        PreferenceManager.getDefaultSharedPreferences(requireContext()).edit()
             .putString(Constants.KEY_CURRENT_ACCOUNT_ID, accountProperties.id).apply()
 
         // Trying to store all possible authorities (owner, active and memo) into the database
@@ -65,13 +67,25 @@ abstract class BaseAccountFragment : ConnectedFragment() {
             val publicKey = PublicKey(ECKey.fromPublicOnly(mBrainKey!!.privateKey.pubKey))
 
             if (ownerAuthority.keyAuths.keys.contains(publicKey)) {
-                addAuthorityToDatabase(accountProperties.id, AuthorityType.OWNER.ordinal, mBrainKey!!)
+                addAuthorityToDatabase(
+                    accountProperties.id,
+                    AuthorityType.OWNER.ordinal,
+                    mBrainKey!!
+                )
             }
             if (activeAuthority.keyAuths.keys.contains(publicKey)) {
-                addAuthorityToDatabase(accountProperties.id, AuthorityType.ACTIVE.ordinal, mBrainKey!!)
+                addAuthorityToDatabase(
+                    accountProperties.id,
+                    AuthorityType.ACTIVE.ordinal,
+                    mBrainKey!!
+                )
             }
             if (options.memoKey == publicKey) {
-                addAuthorityToDatabase(accountProperties.id, AuthorityType.MEMO.ordinal, mBrainKey!!)
+                addAuthorityToDatabase(
+                    accountProperties.id,
+                    AuthorityType.MEMO.ordinal,
+                    mBrainKey!!
+                )
             }
         }
 
@@ -91,13 +105,21 @@ abstract class BaseAccountFragment : ConnectedFragment() {
         val wif = brainKey.walletImportFormat
         val sequenceNumber = brainKey.sequenceNumber
 
-        val encryptedBrainKey = CryptoUtils.encrypt(context!!, brainKeyWords)
-        val encryptedSequenceNumber = CryptoUtils.encrypt(context!!, sequenceNumber.toString())
-        val encryptedWIF = CryptoUtils.encrypt(context!!, wif)
+        val encryptedBrainKey = CryptoUtils.encrypt(requireContext(), brainKeyWords)
+        val encryptedSequenceNumber =
+            CryptoUtils.encrypt(requireContext(), sequenceNumber.toString())
+        val encryptedWIF = CryptoUtils.encrypt(requireContext(), wif)
 
-        val authority = Authority(0, userId, authorityType, encryptedWIF, encryptedBrainKey, encryptedSequenceNumber)
+        val authority = Authority(
+            0,
+            userId,
+            authorityType,
+            encryptedWIF,
+            encryptedBrainKey,
+            encryptedSequenceNumber
+        )
 
-        val authorityRepository = AuthorityRepository(context!!)
+        val authorityRepository = AuthorityRepository(requireContext())
         authorityRepository.insert(authority)
     }
 }

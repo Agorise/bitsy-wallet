@@ -11,8 +11,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsMultiChoice
@@ -20,7 +19,6 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.appcompat.queryTextChangeEvents
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.TransfersDetailsAdapter
-import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
 import cy.agorise.bitsybitshareswallet.databinding.FragmentTransactionsBinding
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.*
@@ -42,10 +40,10 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         private const val REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION = 100
     }
 
+    private val viewModel: TransactionsViewModel by viewModels()
+
     private var _binding: FragmentTransactionsBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var mViewModel: TransactionsViewModel
 
     private var mDisposables = CompositeDisposable()
 
@@ -74,31 +72,28 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
         val userId = PreferenceManager.getDefaultSharedPreferences(context)
             .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
 
-        val transfersDetailsAdapter = TransfersDetailsAdapter(context!!)
+        val transfersDetailsAdapter = TransfersDetailsAdapter(requireContext())
         binding.rvTransactions.adapter = transfersDetailsAdapter
         binding.rvTransactions.layoutManager = LinearLayoutManager(context)
 
         // Configure TransactionsViewModel to fetch the transaction history
-        mViewModel = ViewModelProviders.of(this).get(TransactionsViewModel::class.java)
+        viewModel.getFilteredTransactions(userId).observe(viewLifecycleOwner, { transactions ->
+            if (transactions.isEmpty()) {
+                binding.rvTransactions.visibility = View.GONE
+                binding.tvEmpty.visibility = View.VISIBLE
+            } else {
+                binding.rvTransactions.visibility = View.VISIBLE
+                binding.tvEmpty.visibility = View.GONE
 
-        mViewModel.getFilteredTransactions(userId).observe(this,
-            Observer<List<TransferDetail>> { transactions ->
-                if (transactions.isEmpty()) {
-                    binding.rvTransactions.visibility = View.GONE
-                    binding.tvEmpty.visibility = View.VISIBLE
-                } else {
-                    binding.rvTransactions.visibility = View.VISIBLE
-                    binding.tvEmpty.visibility = View.GONE
+                val shouldScrollUp = transactions.size - transfersDetailsAdapter.itemCount == 1
+                transfersDetailsAdapter.replaceAll(transactions)
 
-                    val shouldScrollUp = transactions.size - transfersDetailsAdapter.itemCount == 1
-                    transfersDetailsAdapter.replaceAll(transactions)
-
-                    // Scroll to the top only if the difference between old and new items is 1
-                    // which most likely means a new transaction was received/sent.
-                    if (shouldScrollUp)
-                        binding.rvTransactions.scrollToPosition(0)
-                }
-            })
+                // Scroll to the top only if the difference between old and new items is 1
+                // which most likely means a new transaction was received/sent.
+                if (shouldScrollUp)
+                    binding.rvTransactions.scrollToPosition(0)
+            }
+        })
 
         // Set custom touch listener to handle bounce/stretch effect
         val bounceTouchListener = BounceTouchListener(binding.rvTransactions)
@@ -118,7 +113,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 .map { it.queryText.toString().toLowerCase() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
-                    mViewModel.setFilterQuery(it)
+                    viewModel.setFilterQuery(it)
                 }
         )
 
@@ -133,7 +128,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 val args = Bundle()
                 args.putParcelable(
                     FilterOptionsDialog.KEY_FILTER_OPTIONS,
-                    mViewModel.getFilterOptions()
+                    viewModel.getFilterOptions()
                 )
                 filterOptionsDialog.arguments = args
                 filterOptionsDialog.show(childFragmentManager, "filter-options-tag")
@@ -163,13 +158,13 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
      * Gets called when the user selects some filter options in the [FilterOptionsDialog] and wants to apply them.
      */
     override fun onFilterOptionsSelected(filterOptions: FilterOptions) {
-        mViewModel.applyFilterOptions(filterOptions)
+        viewModel.applyFilterOptions(filterOptions)
     }
 
     /** Verifies that the storage permission has been granted before attempting to generate the export options */
     private fun verifyStoragePermission() {
         if (ContextCompat.checkSelfPermission(
-                activity!!,
+                requireActivity(),
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             )
             != PackageManager.PERMISSION_GRANTED
@@ -205,7 +200,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
     }
 
     private fun showExportOptionsDialog() {
-        MaterialDialog(context!!).show {
+        MaterialDialog(requireContext()).show {
             title(R.string.title_export_transactions)
             listItemsMultiChoice(
                 R.array.export_options,
@@ -228,7 +223,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
                 return
         }
 
-        mViewModel.getFilteredTransactionsOnce()?.let { filteredTransactions ->
+        viewModel.getFilteredTransactionsOnce()?.let { filteredTransactions ->
             if (exportPDF)
                 activity?.let { PDFGeneratorTask(it).execute(filteredTransactions) }
 

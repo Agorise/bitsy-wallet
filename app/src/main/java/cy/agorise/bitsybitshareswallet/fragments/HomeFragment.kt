@@ -6,16 +6,15 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
-import cy.agorise.bitsybitshareswallet.database.entities.UserAccount
 import cy.agorise.bitsybitshareswallet.databinding.FragmentHomeBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.viewmodels.UserAccountViewModel
@@ -27,10 +26,10 @@ class HomeFragment : Fragment() {
         private const val TAG = "HomeFragment"
     }
 
+    private val viewModel: UserAccountViewModel by viewModels()
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var mUserAccountViewModel: UserAccountViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +46,8 @@ class HomeFragment : Fragment() {
         // MerchantsFragment (visibility)
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        toolbar?.navigationIcon = resources.getDrawable(R.drawable.ic_bitsy_logo_2, null)
+        toolbar?.navigationIcon =
+            ResourcesCompat.getDrawable(resources, R.drawable.ic_bitsy_logo_2, null)
         toolbar?.setBackgroundResource(if (!nightMode) R.color.colorPrimary else R.color.colorToolbarDark)
         toolbar?.visibility = View.VISIBLE
         toolbar?.title = getString(R.string.app_name)
@@ -94,22 +94,19 @@ class HomeFragment : Fragment() {
         }
 
         // Configure UserAccountViewModel to show the current account
-        mUserAccountViewModel = ViewModelProviders.of(this).get(UserAccountViewModel::class.java)
-
-        mUserAccountViewModel.getUserAccount(userId)
-            .observe(this, Observer<UserAccount> { userAccount ->
-                if (userAccount != null) {
-                    binding.tvAccountName.text = userAccount.name
-                    if (userAccount.isLtm) {
-                        // Add the lightning bolt to the start of the account name if it is LTM
-                        binding.tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
-                            R.drawable.ic_ltm_account, 0, 0, 0
-                        )
-                        // Add some padding so that the lightning bolt icon is not too close to the account name text
-                        binding.tvAccountName.compoundDrawablePadding = 12
-                    }
+        viewModel.getUserAccount(userId).observe(viewLifecycleOwner, { userAccount ->
+            if (userAccount != null) {
+                binding.tvAccountName.text = userAccount.name
+                if (userAccount.isLtm) {
+                    // Add the lightning bolt to the start of the account name if it is LTM
+                    binding.tvAccountName.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_ltm_account, 0, 0, 0
+                    )
+                    // Add some padding so that the lightning bolt icon is not too close to the account name text
+                    binding.tvAccountName.compoundDrawablePadding = 12
                 }
-            })
+            }
+        })
 
         // Navigate to the Receive Transaction Fragment
         binding.fabReceiveTransaction.setOnClickListener(
@@ -149,11 +146,11 @@ class HomeFragment : Fragment() {
         }
 
         override fun getPageTitle(position: Int): CharSequence {
-            return listOf(
-                getString(R.string.title_balances),
-                getString(R.string.title_net_worth),
-                ""
-            )[position]
+            return when (position) {
+                0 -> getString(R.string.title_balances)
+                1 -> getString(R.string.title_net_worth)
+                else -> ""
+            }
         }
 
         override fun getCount(): Int {
