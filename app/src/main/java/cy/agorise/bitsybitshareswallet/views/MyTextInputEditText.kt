@@ -13,7 +13,7 @@ import cy.agorise.bitsybitshareswallet.utils.hideKeyboard
  * A TextInputEditText that hides the keyboard when the focus is removed from it and also lets you
  * use actions ("Done", "Go", etc.) on multi-line edits.
  */
-class MyTextInputEditText(context: Context?, attrs: AttributeSet?) : TextInputEditText(context, attrs){
+class MyTextInputEditText(context: Context, attrs: AttributeSet?) : TextInputEditText(context, attrs){
 
     override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
         val connection = super.onCreateInputConnection(outAttrs)

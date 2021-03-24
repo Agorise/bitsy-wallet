@@ -11,8 +11,10 @@ import androidx.core.os.ConfigurationCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointBackward
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.adapters.BalancesDetailsAdapter
 import cy.agorise.bitsybitshareswallet.database.joins.BalanceDetail
 import cy.agorise.bitsybitshareswallet.databinding.DialogFilterOptionsBinding
@@ -20,7 +22,6 @@ import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import cy.agorise.bitsybitshareswallet.utils.Helper
 import cy.agorise.bitsybitshareswallet.viewmodels.BalanceDetailViewModel
-import cy.agorise.bitsybitshareswallet.views.DatePickerFragment
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -30,15 +31,11 @@ import kotlin.collections.ArrayList
  * Creates a Dialog that communicates with {@link TransactionsActivity} to give it parameters about
  * how to filter the list of Transactions
  */
-class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListener {
+class FilterOptionsDialog : DialogFragment() {
 
-    companion object {
-        private const val TAG = "FilterOptionsDialog"
-
-        const val KEY_FILTER_OPTIONS = "key_filter_options"
-
-        const val START_DATE_PICKER = 0
-        const val END_DATE_PICKER = 1
+    // Container Fragment must implement this interface
+    interface OnFilterOptionsSelectedListener {
+        fun onFilterOptionsSelected(filterOptions: FilterOptions)
     }
 
     private val viewModel: BalanceDetailViewModel by viewModels()
@@ -60,44 +57,6 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
     private var mBalancesDetailsAdapter: BalancesDetailsAdapter? = null
 
     private lateinit var mCurrency: Currency
-
-    override fun onDateSet(which: Int, timestamp: Long) {
-        when (which) {
-            START_DATE_PICKER -> {
-                mFilterOptions.startDate = timestamp
-
-                updateDateTextViews()
-            }
-            END_DATE_PICKER -> {
-                mFilterOptions.endDate = timestamp
-
-                // Make sure there is at least one moth difference between start and end time
-                val calendar = Calendar.getInstance()
-                calendar.timeInMillis = mFilterOptions.endDate
-                calendar.add(Calendar.MONTH, -1)
-
-                val tmpTime = calendar.timeInMillis
-
-                if (tmpTime < mFilterOptions.startDate)
-                    mFilterOptions.startDate = tmpTime
-
-                updateDateTextViews()
-            }
-        }
-    }
-
-    private fun updateDateTextViews() {
-        var date = Date(mFilterOptions.startDate)
-        binding.tvStartDate.text = dateFormat.format(date)
-
-        date = Date(mFilterOptions.endDate)
-        binding.tvEndDate.text = dateFormat.format(date)
-    }
-
-    // Container Fragment must implement this interface
-    interface OnFilterOptionsSelectedListener {
-        fun onFilterOptionsSelected(filterOptions: FilterOptions)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -136,9 +95,9 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         }
         binding.cbDateRange.isChecked = mFilterOptions.dateRangeAll
 
-        binding.tvStartDate.setOnClickListener(mDateClickListener)
+        binding.tvStartDate.setOnClickListener { showDateRangePicker() }
 
-        binding.tvEndDate.setOnClickListener(mDateClickListener)
+        binding.tvEndDate.setOnClickListener { showDateRangePicker() }
 
         updateDateTextViews()
 
@@ -220,27 +179,38 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
         }
     }
 
-    private val mDateClickListener = View.OnClickListener { v ->
-        val calendar = Calendar.getInstance()
+    private fun updateDateTextViews() {
+        var date = Date(mFilterOptions.startDate)
+        binding.tvStartDate.text = dateFormat.format(date)
 
-        // Variable used to select that date on the calendar
-        var currentTime = calendar.timeInMillis
-        var maxTime = currentTime
+        date = Date(mFilterOptions.endDate)
+        binding.tvEndDate.text = dateFormat.format(date)
+    }
 
-        var which = -1
-        if (v.id == R.id.tvStartDate) {
-            which = START_DATE_PICKER
-            currentTime = mFilterOptions.startDate
-            calendar.timeInMillis = mFilterOptions.endDate
-            calendar.add(Calendar.MONTH, -1)
-            maxTime = calendar.timeInMillis
-        } else if (v.id == R.id.tvEndDate) {
-            which = END_DATE_PICKER
-            currentTime = mFilterOptions.endDate
+    private fun showDateRangePicker() {
+        // Makes only dates until today selectable.
+        val constraintsBuilder =
+            CalendarConstraints.Builder()
+                .setValidator(DateValidatorPointBackward.now())
+
+        val dateRangePicker =
+            MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(
+                    androidx.core.util.Pair(
+                        mFilterOptions.startDate,
+                        mFilterOptions.endDate
+                    )
+                )
+                .setCalendarConstraints(constraintsBuilder.build())
+                .build()
+
+        dateRangePicker.addOnPositiveButtonClickListener {
+            mFilterOptions.startDate = it.first!! // This is safe cause these should never be null
+            mFilterOptions.endDate = it.second!!
+            updateDateTextViews()
         }
 
-        val datePickerFragment = DatePickerFragment.newInstance(which, currentTime, maxTime)
-        datePickerFragment.show(childFragmentManager, "date-picker")
+        dateRangePicker.show(childFragmentManager, "date-picker")
     }
 
     private fun validateFields() {
@@ -282,5 +252,11 @@ class FilterOptionsDialog : DialogFragment(), DatePickerFragment.OnDateSetListen
 
         mCallback!!.onFilterOptionsSelected(mFilterOptions)
         dismiss()
+    }
+
+    companion object {
+        private const val TAG = "FilterOptionsDialog"
+
+        const val KEY_FILTER_OPTIONS = "key_filter_options"
     }
 }
