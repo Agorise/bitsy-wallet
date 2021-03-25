@@ -99,6 +99,8 @@ class FilterOptionsDialog : DialogFragment() {
 
         binding.tvEndDate.setOnClickListener { showDateRangePicker() }
 
+        dateFormat.timeZone = TimeZone.getTimeZone("UTC")
+
         updateDateTextViews()
 
         // Initialize Asset

@@ -67,6 +67,7 @@
         android:text="@string/text__date_range"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="@id/cbDateRange"
+        app:layout_constraintBottom_toBottomOf="@id/cbDateRange"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <CheckBox
@@ -118,6 +119,7 @@
         android:text="@string/text__asset"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="@id/cbAsset"
+        app:layout_constraintBottom_toBottomOf="@id/cbAsset"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <CheckBox
@@ -158,6 +160,7 @@
         android:text="@string/text__equivalent_value"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="@id/cbEquivalentValue"
+        app:layout_constraintBottom_toBottomOf="@id/cbEquivalentValue"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <CheckBox

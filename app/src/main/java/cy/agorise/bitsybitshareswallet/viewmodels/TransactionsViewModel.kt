@@ -2,6 +2,7 @@ package cy.agorise.bitsybitshareswallet.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.google.android.material.datepicker.MaterialDatePicker
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
 import cy.agorise.bitsybitshareswallet.models.FilterOptions
 import cy.agorise.bitsybitshareswallet.repositories.TransferDetailRepository
@@ -10,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.*
+
 
 class TransactionsViewModel(application: Application) : AndroidViewModel(application) {
     companion object {
@@ -32,10 +34,17 @@ class TransactionsViewModel(application: Application) : AndroidViewModel(applica
 
     init {
         // Initialize the start and end dates for the FilterOptions
-        val calendar = Calendar.getInstance()
+        val calendar = getClearedUtc()
+        calendar.timeInMillis = MaterialDatePicker.todayInUtcMilliseconds()
         mFilterOptions.endDate = calendar.timeInMillis
-        calendar.add(Calendar.MONTH, -2)
+        calendar.roll(Calendar.MONTH, -2)
         mFilterOptions.startDate = calendar.timeInMillis
+    }
+
+    private fun getClearedUtc(): Calendar {
+        val utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        utc.clear()
+        return utc
     }
 
     internal fun getFilteredTransactions(userId: String): LiveData<List<TransferDetail>> {
