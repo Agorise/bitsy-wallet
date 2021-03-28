@@ -43,7 +43,7 @@ class TransferViewModel(application: Application) : AndroidViewModel(application
         mTransferRepository.update(transfer)
     }
 
-    fun updateBtsValue(transfer: Transfer, value: Long?) {
+    fun updateBtsValue(transfer: Transfer, value: Long) {
         transfer.btsValue = value
         mTransferRepository.update(transfer)
     }

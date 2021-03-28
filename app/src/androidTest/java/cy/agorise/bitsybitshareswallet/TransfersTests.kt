@@ -6,14 +6,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.jraska.livedata.test
+import cy.agorise.bitsybitshareswallet.LiveDataTestUtil.blockingObserve
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.database.entities.EquivalentValue
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
-import org.junit.After
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 import org.junit.runner.RunWith
 import java.io.IOException
 
@@ -111,13 +108,12 @@ class TransfersTests {
             "1.2.1029856",
             98,
             "1.3.120",
-            "",
-            1000)
+            "")
         db.transferDao().insert(t1)
         db.transferDao().insert(t2)
-        db.transferDao().getTransfersWithMissingBtsValue()
-            .test()
-            .assertHasValue()
-            .assertValue { transfer -> transfer.id == "1.11.702181910" }
+
+        // transfer should be t2
+        val transfer = db.transferDao().getTransfersWithMissingBtsValue().blockingObserve()
+        Assert.assertEquals("1.11.684483739", transfer?.id)
     }
 }

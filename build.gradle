@@ -38,8 +38,6 @@ allprojects {
                 includeModule("me.dm7.barcodescanner", "zxing")
                 includeModule("me.dm7.barcodescanner", "core")
                 includeModule("com.andrognito.patternlockview", "patternlockview")
-                includeModule("com.jraska.livedata", "testing-ktx")
-                includeModule("com.jraska.livedata", "testing")
             }
         }
     }

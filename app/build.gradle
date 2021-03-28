@@ -131,7 +131,6 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$room_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'com.jraska.livedata:testing-ktx:1.0.0'
 }
 
 // Added to avoid the compilation problem due to a duplicate ListenableFuture library

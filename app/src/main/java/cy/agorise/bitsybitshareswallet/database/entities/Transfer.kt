@@ -19,16 +19,18 @@ data class Transfer (
     @ColumnInfo(name = "memo") val memo: String,
     @ColumnInfo(name = "bts_value") var btsValue: Long? = NOT_CALCULATED
     ){
-    companion object {
-        // Constant used to specify an uninitialized BTS equivalent value
-        val NOT_CALCULATED: Long? = -1L
-        // Constant used to specify a BTS equivalent value whose calculation returned an error
-        val ERROR: Long? = -2L
-    }
+
     init {
         if(transferAssetId == "1.3.0"){
             // If the transferred asset is BTS, we can fill the btsValue field immediately
             btsValue = transferAmount
         }
+    }
+
+    companion object {
+        // Constant used to specify an uninitialized BTS equivalent value
+        const val NOT_CALCULATED: Long = -1L
+        // Constant used to specify a BTS equivalent value whose calculation returned an error
+        const val ERROR: Long = -2L
     }
 }
