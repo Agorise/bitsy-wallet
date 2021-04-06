@@ -2,11 +2,12 @@ package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.preference.PreferenceManager
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.utils.Constants
 import io.reactivex.disposables.CompositeDisposable
@@ -118,10 +119,10 @@ abstract class BaseSecurityLockDialog : DialogFragment() {
 
         incorrectSecurityLockTime = now
 
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-            .putInt(Constants.KEY_INCORRECT_SECURITY_LOCK_ATTEMPTS, ++incorrectSecurityLockAttempts)
-            .putLong(Constants.KEY_INCORRECT_SECURITY_LOCK_TIME, now)
-            .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit {
+            putInt(Constants.KEY_INCORRECT_SECURITY_LOCK_ATTEMPTS, ++incorrectSecurityLockAttempts)
+            putLong(Constants.KEY_INCORRECT_SECURITY_LOCK_TIME, now)
+        }
     }
 
     /**
@@ -132,10 +133,10 @@ abstract class BaseSecurityLockDialog : DialogFragment() {
         incorrectSecurityLockTime = 0
         incorrectSecurityLockAttempts = 0
 
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-            .putInt(Constants.KEY_INCORRECT_SECURITY_LOCK_ATTEMPTS, incorrectSecurityLockAttempts)
-            .putLong(Constants.KEY_INCORRECT_SECURITY_LOCK_TIME, incorrectSecurityLockTime)
-            .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit {
+            putInt(Constants.KEY_INCORRECT_SECURITY_LOCK_ATTEMPTS, incorrectSecurityLockAttempts)
+            putLong(Constants.KEY_INCORRECT_SECURITY_LOCK_TIME, incorrectSecurityLockTime)
+        }
     }
 
     protected fun startContDownTimer() {

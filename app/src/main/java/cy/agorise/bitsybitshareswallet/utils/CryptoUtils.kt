@@ -1,8 +1,9 @@
 package cy.agorise.bitsybitshareswallet.utils
 
 import android.content.Context
-import android.preference.PreferenceManager
 import android.util.Base64
+import androidx.core.content.edit
+import androidx.preference.PreferenceManager
 
 import com.moldedbits.r2d2.R2d2
 import java.security.MessageDigest
@@ -32,11 +33,9 @@ object CryptoUtils {
     fun put(context: Context, key: String, value: String) {
         val r2d2 = R2d2(context)
         val encrypted = r2d2.encryptData(value)
-        PreferenceManager
-            .getDefaultSharedPreferences(context)
-            .edit()
-            .putString(key, encrypted)
-            .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit {
+                putString(key, encrypted)
+            }
     }
 
     /**

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.*
 import android.widget.AdapterView
@@ -12,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.preference.PreferenceManager
 import com.google.common.primitives.UnsignedLong
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -136,9 +136,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
                     )
                 )
 
-            mAssets.sortWith(
-                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-            )
+            mAssets.sortWith { a, b -> a.toString().compareTo(b.toString(), true) }
 
             // Add an option at the end so the user can search for an asset other than the ones saved in the db
             val asset = cy.agorise.bitsybitshareswallet.database.entities.Asset(
@@ -208,7 +206,7 @@ class ReceiveTransactionFragment : ConnectedFragment() {
             binding.actvAsset.textChanges()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
-                .map { it.toString().trim().toUpperCase() }
+                .map { it.toString().trim().toUpperCase(Locale.getDefault()) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     if (!selectedInAutoCompleteTextView) {

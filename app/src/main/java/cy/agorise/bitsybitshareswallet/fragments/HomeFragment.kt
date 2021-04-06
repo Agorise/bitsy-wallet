@@ -1,7 +1,6 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -13,6 +12,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.databinding.FragmentHomeBinding
@@ -135,7 +135,8 @@ class HomeFragment : Fragment() {
     /**
      * Pager adapter to create the placeholder fragments
      */
-    private inner class PagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class PagerAdapter(fm: FragmentManager) :
+        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.

@@ -1,8 +1,8 @@
 package cy.agorise.bitsybitshareswallet.processors
 
 import android.content.Context
-import android.preference.PreferenceManager
 import android.util.Log
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
 import cy.agorise.bitsybitshareswallet.models.HistoricalOperationEntry
 import cy.agorise.bitsybitshareswallet.repositories.AuthorityRepository
@@ -75,8 +75,8 @@ class TransfersLoader(private var mContext: Context?) {
         transferRepository = TransferRepository(mContext!!)
         authorityRepository = AuthorityRepository(mContext!!)
 
-        val pref = PreferenceManager.getDefaultSharedPreferences(mContext)
-        val userId = pref.getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
+        val userId = PreferenceManager.getDefaultSharedPreferences(mContext)
+            .getString(Constants.KEY_CURRENT_ACCOUNT_ID, "") ?: ""
         if (userId != "") {
             mCurrentAccount = UserAccount(userId)
             mDisposables.add(

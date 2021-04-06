@@ -3,7 +3,6 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
 import android.provider.Settings
 import android.util.Log
 import android.view.*
@@ -15,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.preference.PreferenceManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.google.android.material.snackbar.Snackbar
@@ -52,7 +52,6 @@ import java.text.DecimalFormatSymbols
 import java.util.ArrayList
 import java.util.Locale
 import java.util.concurrent.TimeUnit
-import kotlin.Comparator
 
 class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHandler,
     BaseSecurityLockDialog.OnPINPatternEnteredListener {
@@ -186,9 +185,7 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
         balanceDetailViewModel.getAll().observe(viewLifecycleOwner, { balancesDetails ->
             mBalancesDetails.clear()
             mBalancesDetails.addAll(balancesDetails)
-            mBalancesDetails.sortWith(
-                Comparator { a, b -> a.toString().compareTo(b.toString(), true) }
-            )
+            mBalancesDetails.sortWith { a, b -> a.toString().compareTo(b.toString(), true) }
             mBalancesDetailsAdapter = BalancesDetailsAdapter(
                 requireContext(),
                 android.R.layout.simple_spinner_item,
@@ -461,9 +458,11 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
 
             // Try to select the invoice's Asset in the Assets spinner
             for (i in 0 until (mBalancesDetailsAdapter?.count ?: 0)) {
-                if (mBalancesDetailsAdapter?.getItem(i)?.symbol == invoice.currency.toUpperCase() ||
+                if (mBalancesDetailsAdapter?.getItem(i)?.symbol == invoice.currency
+                        .toUpperCase(Locale.getDefault()) ||
                     (invoice.currency.startsWith("bit", true) &&
-                            invoice.currency.replaceFirst("bit", "").toUpperCase() ==
+                            invoice.currency.replaceFirst("bit", "")
+                                .toUpperCase(Locale.getDefault()) ==
                             mBalancesDetailsAdapter?.getItem(i)?.symbol)
                 ) {
                     binding.spAsset.setSelection(i)
@@ -477,7 +476,10 @@ class SendTransactionFragment : ConnectedFragment(), ZXingScannerView.ResultHand
             if (balanceDetail == null) {
                 Snackbar.make(
                     binding.rootView,
-                    getString(R.string.error__you_dont_own_asset, invoice.currency.toUpperCase()),
+                    getString(
+                        R.string.error__you_dont_own_asset,
+                        invoice.currency.toUpperCase(Locale.getDefault())
+                    ),
                     Snackbar.LENGTH_INDEFINITE
                 ).setAction(android.R.string.ok) { }.show()
                 return

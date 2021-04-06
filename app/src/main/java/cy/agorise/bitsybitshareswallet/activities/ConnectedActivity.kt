@@ -4,12 +4,13 @@ import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.content.pm.PackageInfoCompat
+import androidx.preference.PreferenceManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.database.entities.Balance
 import cy.agorise.bitsybitshareswallet.database.entities.Transfer
@@ -171,10 +172,9 @@ abstract class ConnectedActivity : AppCompatActivity() {
         if (versionCode > 11 && !hasPurgedEquivalentValues) {
             thread {
                 connectedActivityViewModel.purgeEquivalentValues()
-                PreferenceManager.getDefaultSharedPreferences(this)
-                    .edit()
-                    .putBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, true)
-                    .apply()
+                PreferenceManager.getDefaultSharedPreferences(this).edit {
+                    putBoolean(Constants.KEY_HAS_PURGED_EQUIVALENT_VALUES, true)
+                }
             }
         }
     }
@@ -388,8 +388,9 @@ abstract class ConnectedActivity : AppCompatActivity() {
         dateFormat.timeZone = TimeZone.getTimeZone("GMT")
 
         try {
-            val date = dateFormat.parse(blockHeader.timestamp)
-            transferViewModel.setBlockTime(blockNumber, date.time / 1000)
+            dateFormat.parse(blockHeader.timestamp)?.let { date ->
+                transferViewModel.setBlockTime(blockNumber, date.time / 1000)
+            }
         } catch (e: ParseException) {
             Log.e(TAG, "ParseException. Msg: " + e.message)
         }

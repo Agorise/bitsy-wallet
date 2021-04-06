@@ -1,10 +1,11 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
+import androidx.preference.PreferenceManager
 import com.andrognito.patternlockview.PatternLockView
 import com.andrognito.patternlockview.listener.PatternLockViewListener
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -131,11 +132,11 @@ class PatternSecurityLockDialog : BaseSecurityLockDialog() {
                             val hashedPattern = CryptoUtils.createSHA256Hash(salt + patternConfirm)
 
                             // Stores the newly selected Pattern, encrypted
-                            PreferenceManager.getDefaultSharedPreferences(it).edit()
-                                .putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPattern)
-                                .putString(Constants.KEY_PIN_PATTERN_SALT, salt)
-                                .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 2)
-                                .apply() // 2 -> Pattern
+                            PreferenceManager.getDefaultSharedPreferences(it).edit {
+                                putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPattern)
+                                putString(Constants.KEY_PIN_PATTERN_SALT, salt)
+                                putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 2) // 2 -> Pattern
+                            }
 
                             dismiss()
                             mCallback?.onPINPatternChanged()

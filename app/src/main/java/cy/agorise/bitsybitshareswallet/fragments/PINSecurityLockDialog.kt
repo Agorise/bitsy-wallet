@@ -1,12 +1,13 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
+import androidx.core.content.edit
+import androidx.preference.PreferenceManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.jakewharton.rxbinding3.widget.textChanges
 import cy.agorise.bitsybitshareswallet.R
@@ -100,10 +101,11 @@ class PINSecurityLockDialog : BaseSecurityLockDialog() {
                         val hashedPIN = CryptoUtils.createSHA256Hash(salt + pinConfirm)
 
                         // Stores the newly selected PIN, hashed
-                        PreferenceManager.getDefaultSharedPreferences(v.context).edit()
-                            .putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPIN)
-                            .putString(Constants.KEY_PIN_PATTERN_SALT, salt)
-                            .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 1).apply() // 1 -> PIN
+                        PreferenceManager.getDefaultSharedPreferences(v.context).edit {
+                            putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPIN)
+                            putString(Constants.KEY_PIN_PATTERN_SALT, salt)
+                            putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 1) // 1 -> PIN
+                        }
 
                         dismiss()
                         mCallback?.onPINPatternChanged()

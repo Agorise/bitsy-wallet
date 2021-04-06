@@ -2,7 +2,6 @@ package cy.agorise.bitsybitshareswallet.activities
 
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.MenuItem
 import androidx.navigation.findNavController
@@ -11,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.databinding.ActivityMainBinding
 import cy.agorise.bitsybitshareswallet.utils.Constants
@@ -36,6 +36,7 @@ class MainActivity : ConnectedActivity() {
         ) {
             setTheme(R.style.Theme_Bitsy_Dark)
         }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

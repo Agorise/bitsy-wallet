@@ -3,15 +3,16 @@ package cy.agorise.bitsybitshareswallet.fragments
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.collection.LongSparseArray
+import androidx.core.content.edit
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onDismiss
@@ -485,9 +486,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
 
                     when (index) {
                         0 -> { /* None */
-                            PreferenceManager.getDefaultSharedPreferences(context).edit()
-                                .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0)
-                                .apply() // 0 -> None
+                            PreferenceManager.getDefaultSharedPreferences(context).edit {
+                                putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 0) // 0 -> None
+                            }
 
                             // Call this function to update the UI
                             onPINPatternChanged()
@@ -564,8 +565,9 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
                 .cancelable(false)
                 .positiveButton(R.string.button__copied) {
                     val now = System.currentTimeMillis()
-                    PreferenceManager.getDefaultSharedPreferences(it.context).edit()
-                        .putLong(Constants.KEY_LAST_ACCOUNT_BACKUP, now).apply()
+                    PreferenceManager.getDefaultSharedPreferences(it.context).edit {
+                        putLong(Constants.KEY_LAST_ACCOUNT_BACKUP, now)
+                    }
                     binding.tvBackupWarning.visibility = View.GONE
                 }
 
@@ -623,14 +625,12 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         // Clears the database.
         viewModel.clearDatabase(context)
 
-        // Clears the shared preferences.
-        val pref = PreferenceManager.getDefaultSharedPreferences(context)
-        pref.edit().clear().apply()
-
-        // Marks the license as agreed, so that it is not shown to the user again.
-        pref.edit().putInt(
-            Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION
-        ).apply()
+        val pref = PreferenceManager.getDefaultSharedPreferences(context).edit {
+            // Clears the shared preferences.
+            clear()
+            // Marks the license as agreed, so that it is not shown to the user again.
+            putInt(Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION)
+        }
 
         // Restarts the activity, which will restart the whole application since it uses a
         // single activity architecture.
@@ -639,4 +639,3 @@ class SettingsFragment : ConnectedFragment(), BaseSecurityLockDialog.OnPINPatter
         activity?.startActivity(intent)
     }
 }
-

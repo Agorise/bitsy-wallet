@@ -62,8 +62,9 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "2.3.1"
     def arch_version = "2.1.0"
+    def lifecycle_version = "2.3.1"
+    def preference_version = "1.1.1"
     def room_version = "2.2.6"
     def rx_bindings_version = '3.0.0'
     def version_coroutine = '1.4.1'
@@ -75,6 +76,7 @@ dependencies {
     // AndroidX
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.preference:preference-ktx:$preference_version"
     // Google
     implementation 'com.google.zxing:core:3.4.0'
     implementation 'com.google.code.gson:gson:2.8.6'

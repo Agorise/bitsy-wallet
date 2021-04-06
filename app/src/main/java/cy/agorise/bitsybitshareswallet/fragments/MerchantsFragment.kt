@@ -6,7 +6,6 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.database.MatrixCursor
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.*
 import android.widget.PopupWindow
@@ -19,6 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.cursoradapter.widget.SimpleCursorAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.preference.PreferenceManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -549,7 +549,7 @@ class MerchantsFragment : Fragment(), OnMapReadyCallback, SearchView.OnSuggestio
             try {
                 mMap?.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100))
             } catch (e: Exception) {
-                Log.d(TAG, e.message)
+                Log.d(TAG, e.message ?: "")
             }
         }
         return true

@@ -5,13 +5,13 @@ import android.content.pm.PackageManager
 import android.graphics.Point
 import android.os.Bundle
 import android.os.Environment
-import android.preference.PreferenceManager
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItemsMultiChoice
@@ -26,6 +26,7 @@ import cy.agorise.bitsybitshareswallet.viewmodels.TransactionsViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import java.io.File
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
@@ -110,7 +111,7 @@ class TransactionsFragment : Fragment(), FilterOptionsDialog.OnFilterOptionsSele
             searchView.queryTextChangeEvents()
                 .skipInitialValue()
                 .debounce(500, TimeUnit.MILLISECONDS)
-                .map { it.queryText.toString().toLowerCase() }
+                .map { it.queryText.toString().toLowerCase(Locale.getDefault()) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     viewModel.setFilterQuery(it)

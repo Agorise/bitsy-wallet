@@ -1,7 +1,8 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
-import android.preference.PreferenceManager
+import androidx.core.content.edit
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.activities.ConnectedActivity
 import cy.agorise.bitsybitshareswallet.database.entities.Authority
@@ -36,10 +37,11 @@ abstract class BaseAccountFragment : ConnectedFragment() {
         val hashedPIN = CryptoUtils.createSHA256Hash(salt + pin)
 
         // Stores the user selected PIN, hashed
-        PreferenceManager.getDefaultSharedPreferences(requireContext()).edit()
-            .putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPIN)
-            .putString(Constants.KEY_PIN_PATTERN_SALT, salt)
-            .putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 1).apply() // 1 -> PIN
+        PreferenceManager.getDefaultSharedPreferences(requireContext()).edit {
+            putString(Constants.KEY_HASHED_PIN_PATTERN, hashedPIN)
+            putString(Constants.KEY_PIN_PATTERN_SALT, salt)
+            putInt(Constants.KEY_SECURITY_LOCK_SELECTED, 1) // 1 -> PIN
+        }
 
         // Stores the accounts this key refers to
         val id = accountProperties.id

@@ -2,9 +2,10 @@ package cy.agorise.bitsybitshareswallet.repositories
 
 import android.content.Context
 import android.os.AsyncTask
-import android.preference.PreferenceManager
 import android.util.Log
+import androidx.core.content.edit
 import androidx.lifecycle.LiveData
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.database.daos.MerchantDao
 import cy.agorise.bitsybitshareswallet.database.entities.Merchant
@@ -41,7 +42,7 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        bitsyWebservice = retrofit.create<BitsyWebservice>(BitsyWebservice::class.java)
+        bitsyWebservice = retrofit.create(BitsyWebservice::class.java)
     }
 
     /** Returns a LiveData object directly from the database while the response from the WebService is obtained. */
@@ -79,8 +80,9 @@ class MerchantRepository internal constructor(val context: Context) : retrofit2.
                 updateMerchants(merchantsList)
 
                 val now = System.currentTimeMillis()
-                PreferenceManager.getDefaultSharedPreferences(context).edit()
-                    .putLong(Constants.KEY_MERCHANTS_LAST_UPDATE, now).apply()
+                PreferenceManager.getDefaultSharedPreferences(context).edit {
+                    putLong(Constants.KEY_MERCHANTS_LAST_UPDATE, now)
+                }
             }
         }
     }

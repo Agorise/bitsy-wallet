@@ -1,9 +1,7 @@
 package cy.agorise.bitsybitshareswallet.repositories
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.AsyncTask
-import android.preference.PreferenceManager
 import android.util.Log
 import androidx.lifecycle.LiveData
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
@@ -27,20 +25,18 @@ class TransferRepository internal constructor(context: Context) {
     private val mTransferDao: TransferDao
     private val mEquivalentValuesDao: EquivalentValueDao
     private val compositeDisposable = CompositeDisposable()
-    private val mPreferences: SharedPreferences
 
     init {
         val db = BitsyDatabase.getDatabase(context)
         mTransferDao = db!!.transferDao()
         mEquivalentValuesDao = db.equivalentValueDao()
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(context)
     }
 
     fun insertAll(transfers: List<Transfer>) {
         insertAllAsyncTask(mTransferDao).execute(transfers)
     }
 
-    fun update(transfer: Transfer){
+    fun update(transfer: Transfer) {
         mTransferDao.insert(transfer)
     }
 
@@ -82,11 +78,17 @@ class TransferRepository internal constructor(context: Context) {
         compositeDisposable.add(mTransferDao.getTransfersWithMissingValueIn(symbol)
             .map { transfer -> obtainFiatValue(transfer, symbol) }
             .subscribe({
-                if(it.value >= 0) mEquivalentValuesDao.insert(it)
-            },{
-                Log.e(TAG,"Error while trying to create a new equivalent value. Msg: ${it.message}")
-                for(element in it.stackTrace){
-                    Log.e(TAG,"${element.className}#${element.methodName}:${element.lineNumber}")
+                if (it.value >= 0) mEquivalentValuesDao.insert(it)
+            }, {
+                Log.e(
+                    TAG,
+                    "Error while trying to create a new equivalent value. Msg: ${it.message}"
+                )
+                for (element in it.stackTrace) {
+                    Log.e(
+                        TAG,
+                        "${element.className}#${element.methodName}:${element.lineNumber}"
+                    )
                 }
             })
         )
@@ -107,20 +109,23 @@ class TransferRepository internal constructor(context: Context) {
         val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
         val date = Date(transfer.timestamp * 1000)
         val response = sg.getService(CoingeckoService::class.java)
-                        ?.getHistoricalValueSync("bitshares", dateFormat.format(date), false)
-                        ?.execute()
+            ?.getHistoricalValueSync("bitshares", dateFormat.format(date), false)
+            ?.execute()
         var equivalentFiatValue = -1L
-        if(response?.isSuccessful == true){
-            val price: Double = response.body()?.market_data?.current_price?.get(symbol.toLowerCase()) ?: -1.0
-            if(price > 0){
+        if (response?.isSuccessful == true) {
+            val price: Double = response.body()?.market_data?.current_price
+                ?.get(symbol.toLowerCase(Locale.getDefault())) ?: -1.0
+            if (price > 0) {
                 // The equivalent value is obtained by:
                 // 1- Dividing the base value by 100000 (BTS native precision)
                 // 2- Multiplying that BTS value by the unit price in the chosen fiat
                 // 3- Multiplying the resulting value by 100 in order to express it in cents
-                equivalentFiatValue = Math.round(transfer.btsValue?.toFloat()?.div(1e5)?.times(price)?.times(100) ?: -1.0)
+                equivalentFiatValue = Math.round(
+                    transfer.btsValue?.toFloat()?.div(1e5)?.times(price)?.times(100) ?: -1.0
+                )
             }
-        }else{
-            Log.w(TAG,"Request was not successful. code: ${response?.code()}")
+        } else {
+            Log.w(TAG, "Request was not successful. code: ${response?.code()}")
         }
         return EquivalentValue(transfer.id, equivalentFiatValue, symbol)
     }
@@ -160,7 +165,7 @@ class TransferRepository internal constructor(context: Context) {
      * be cleared.
      */
     fun onCleared() {
-        if(!compositeDisposable.isDisposed)
+        if (!compositeDisposable.isDisposed)
             compositeDisposable.clear()
     }
 }

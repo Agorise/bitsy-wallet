@@ -1,13 +1,14 @@
 package cy.agorise.bitsybitshareswallet.fragments
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.databinding.FragmentLicenseBinding
@@ -67,9 +68,9 @@ class LicenseFragment : Fragment() {
      * sends the user to import/create account.
      */
     private fun agree() {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-            .putInt(Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION)
-            .apply()
+        PreferenceManager.getDefaultSharedPreferences(context).edit {
+            putInt(Constants.KEY_LAST_AGREED_LICENSE_VERSION, Constants.CURRENT_LICENSE_VERSION)
+        }
 
         findNavController().navigate(R.id.import_brainkey_action)
     }

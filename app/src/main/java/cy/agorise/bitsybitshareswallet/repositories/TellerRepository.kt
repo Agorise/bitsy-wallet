@@ -2,9 +2,10 @@ package cy.agorise.bitsybitshareswallet.repositories
 
 import android.content.Context
 import android.os.AsyncTask
-import android.preference.PreferenceManager
 import android.util.Log
+import androidx.core.content.edit
 import androidx.lifecycle.LiveData
+import androidx.preference.PreferenceManager
 import cy.agorise.bitsybitshareswallet.database.BitsyDatabase
 import cy.agorise.bitsybitshareswallet.database.daos.TellerDao
 import cy.agorise.bitsybitshareswallet.database.entities.Teller
@@ -79,8 +80,9 @@ class TellerRepository internal constructor(val context: Context) : retrofit2.Ca
                 updateTellers(tellersList)
 
                 val now = System.currentTimeMillis()
-                PreferenceManager.getDefaultSharedPreferences(context).edit()
-                    .putLong(Constants.KEY_TELLERS_LAST_UPDATE, now).apply()
+                PreferenceManager.getDefaultSharedPreferences(context).edit {
+                    putLong(Constants.KEY_TELLERS_LAST_UPDATE, now).apply()
+                }
             }
         }
     }

@@ -5,15 +5,15 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.preference.PreferenceManager
-import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.core.os.ConfigurationCompat
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.preference.PreferenceManager
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import cy.agorise.bitsybitshareswallet.R
 import cy.agorise.bitsybitshareswallet.database.joins.TransferDetail
@@ -130,12 +130,11 @@ class EReceiptFragment : Fragment() {
     /** Formats the transfer TextView to show a link to explore the given transfer
      * in a BitShares explorer */
     private fun formatTransferTextView(transferId: String) {
-        val tx = Html.fromHtml(
-            getString(
-                R.string.template__tx,
-                "<a href=\"http://bitshares-explorer.io/#/operations/$transferId\">$transferId</a>"
-            )
+        val html = getString(
+            R.string.template__tx,
+            "<a href=\"http://bitshares-explorer.io/#/operations/$transferId\">$transferId</a>"
         )
+        val tx = HtmlCompat.fromHtml(html, HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.tvTransferID.text = tx
         binding.tvTransferID.movementMethod = LinkMovementMethod.getInstance()
     }
