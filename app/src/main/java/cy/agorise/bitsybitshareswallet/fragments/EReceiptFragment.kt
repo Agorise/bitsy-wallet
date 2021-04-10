@@ -132,7 +132,7 @@ class EReceiptFragment : Fragment() {
     private fun formatTransferTextView(transferId: String) {
         val html = getString(
             R.string.template__tx,
-            "<a href=\"http://bitshares-explorer.io/#/operations/$transferId\">$transferId</a>"
+            "<a href=\"http://blocksights.info/#/operations/$transferId\">$transferId</a>"
         )
         val tx = HtmlCompat.fromHtml(html, HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.tvTransferID.text = tx
